@@ -61,7 +61,6 @@ node_modules/
 .env.production.local
 
 # Файлы с данными и результаты экспериментов
-*.csv
 *.tsv
 *.xlsx
 *.xls
