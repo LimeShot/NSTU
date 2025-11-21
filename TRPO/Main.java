@@ -1,9 +1,14 @@
+import java.io.DataInputStream;
 import java.io.DataOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  * @author Lime
@@ -60,6 +65,7 @@ class SparseMatrix {
     }
 
     // Добавляем элементы из this, но не добавляем элементы из b, которых нет в this
+    // Переписать со словарем?
     public SparseMatrix add(SparseMatrix b) {
         if (this.n != b.n || this.m != b.m) {
             throw new IllegalArgumentException("Размерности матриц не совпадают");
@@ -75,9 +81,20 @@ class SparseMatrix {
                     found = true;
                 }
             }
-            if (!found) {
+            if (!found)
                 res.elems.add(new Elem(elemA.x, elemA.y, elemA.v));
+        }
+
+        for (Elem elemB : b.elems) {
+            boolean found = false;
+            for (Elem elemA : this.elems) {
+                if (elemA.x == elemB.x && elemA.y == elemB.y) {
+                    found = true;
+                    break;
+                }
             }
+            if (!found)
+                res.elems.add(new Elem(elemB.x, elemB.y, elemB.v));
         }
         return res;
     }
@@ -98,41 +115,40 @@ class SparseMatrix {
                             found = true;
                         }
                     }
-                    if (!found) {
+                    if (!found)
                         res.elems.add(new Elem(elemA.x, elemB.y, elemA.v * elemB.v));
-                    }
                 }
             }
         }
 
         for (Elem elemRes : res.elems) {
-            if (elemRes.v == 0) {
+            if (elemRes.v == 0)
                 res.elems.remove(elemRes);
-            }
         }
         return res;
     }
 
     public SparseMatrix multiply(double b) {
         SparseMatrix res = new SparseMatrix(this.n, this.m);
-        for (Elem elemA : this.elems) {
+        for (Elem elemA : this.elems)
             res.elems.add(new Elem(elemA.x, elemA.y, elemA.v * b));
-        }
         return res;
     }
 
     public SparseMatrix transpose() {
         SparseMatrix result = new SparseMatrix(n, m);
-        for (Elem e : elems) {
+        for (Elem e : elems) 
             result.elems.add(new Elem(e.y, e.x, e.v));
-        }
         return result;
     }
 
     public SparseMatrix setElem(int x, int y, double v) {
         for (Elem e : elems) {
             if (e.x == x && e.y == y) {
-                e.v = v;
+                if (v == 0) 
+                    elems.remove(e);
+                else 
+                    e.v = v;
                 return this;
             }
         }
@@ -143,9 +159,8 @@ class SparseMatrix {
     public void saveToText(String filePath) {
         try (PrintWriter writer = new PrintWriter(filePath)) {
             writer.println(n + " " + m);
-            for (Elem e : elems) {
+            for (Elem e : elems)
                 writer.println(e.x + " " + e.y + " " + e.v);
-            }
         } catch (IOException e) {
             System.err.println("Ошибка при сохранении файла: " + e.getMessage());
         }
@@ -167,5 +182,39 @@ class SparseMatrix {
         }
     }
 
-    // Добавить считывание из bin и txt
+    public static SparseMatrix loadFromTxt(String filePath) {
+        try (Scanner scanner = new Scanner(new File("numbers.txt"))){
+            int n = scanner.nextInt();
+            int m = scanner.nextInt();
+            SparseMatrix returnMatrix = new SparseMatrix(n, m);
+            while (scanner.hasNext()) {
+                int x = scanner.nextInt();
+                int y = scanner.nextInt();
+                double v = scanner.nextDouble();
+                returnMatrix.setElem(x,y,v);
+            }
+            return returnMatrix;
+        } catch (IOException e) {
+            System.err.println("Ошибка при чтении файла:" + e.getMessage());
+            return new SparseMatrix();
+        }
+    }
+
+    public static SparseMatrix loadFromBin (String filePath){
+        try (DataInputStream dis = new DataInputStream(new FileInputStream("file.bin"))) {
+            int n = dis.readInt();
+            int m = dis.readInt();
+            SparseMatrix returnMatrix = new SparseMatrix(n, m);
+            while(dis.available() > 0){
+                int x = dis.readInt();
+                int y = dis.readInt();
+                double v = dis.readDouble();
+                returnMatrix.setElem(x,y,v);
+            }
+            return returnMatrix;
+        } catch (IOException e) {
+            System.err.println("Ошибка при чтении файла:" + e.getMessage());
+            return new SparseMatrix();
+        }
+    }
 }
