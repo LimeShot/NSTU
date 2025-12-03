@@ -2,6 +2,8 @@ data <- read.table("D:\\NSTU\\R\\вариант-8(л.р.1).csv", header=TRUE, se
 
 View(data)
 
+summary(data)
+
 colnames(data)[5] <- "кол.во.покупок"
 colnames(data)[6] <- "ср.стоим.покупок"
 colnames(data)[7] <- "ср.число.стр"
@@ -19,6 +21,8 @@ View(subset(data, data$возраст < 30))
 dataup30 = subset(data, data$возраст > 30)
 
 datadown30 = subset(data, data$возраст < 30)
+
+View(data[1:9, 1:4])
 
 str(data)
 
@@ -155,6 +159,7 @@ data_col2 <- data[data$возраст > 30, c(3, 9, 11)]
 table11 = table(data_col1$пол,data_col1$участие.в.опросах)
 table12 = table(data_col1$пол,data_col1$степень.удов.кач)
 table13 = table(data_col1$участие.в.опросах,data_col1$степень.удов.кач)
+
 table21 = table(data_col2$пол,data_col2$участие.в.опросах)
 table22 = table(data_col2$пол,data_col2$степень.удов.кач)
 table23 = table(data_col2$участие.в.опросах,data_col2$степень.удов.кач)
@@ -209,11 +214,57 @@ library(corrplot)
 
 par(mfrow = c(1, 1))
 
-col <- colorRampPalette(c("#BB4444", "#EE9988", "#FFFFFF", "#77AADD",
-                          "#4477AA"))
+corrplot(cor_dup, method="color", col=NULL,
+         type="upper", order="hclust",
+         addCoef.col = "black", tl.col="black", tl.srt=45,
+         sig.level = 0.01, insig = "blank",
+         diag=FALSE
+)
+
 corrplot(cor_dus, method="color", col=NULL,
          type="upper", order="hclust",
          addCoef.col = "black", tl.col="black", tl.srt=45,
          sig.level = 0.01, insig = "blank",
          diag=FALSE
 )
+
+corrplot(cor_duk, method="color", col=NULL,
+         type="upper", order="hclust",
+         addCoef.col = "black", tl.col="black", tl.srt=45,
+         sig.level = 0.01, insig = "blank",
+         diag=FALSE
+)
+
+corrplot(cor_downp, method="color", col=NULL,
+         type="upper", order="hclust",
+         addCoef.col = "black", tl.col="black", tl.srt=45,
+         sig.level = 0.01, insig = "blank",
+         diag=FALSE
+)
+
+corrplot(cor_downs, method="color", col=NULL,
+         type="upper", order="hclust",
+         addCoef.col = "black", tl.col="black", tl.srt=45,
+         sig.level = 0.01, insig = "blank",
+         diag=FALSE
+)
+
+corrplot(cor_downk, method="color", col=NULL,
+         type="upper", order="hclust",
+         addCoef.col = "black", tl.col="black", tl.srt=45,
+         sig.level = 0.01, insig = "blank",
+         diag=FALSE
+)
+
+ggpairs(dataup30[, quantitative_colls],
+        title = "Матричный график для группы после 30",
+        lower = list(continous = "smooth", combo = "facetdensity"),
+        upper = list(continous = "cor", combo = "box"),
+        diag = list(continous = "density", discrete = "bar"))
+
+ggpairs(datadown30[, quantitative_colls],
+        title = "Матричный график для группы до 30",
+        lower = list(continous = "smooth", combo = "facetdensity"),
+        upper = list(continous = "cor", combo = "box"),
+        diag = list(continous = "density", discrete = "bar"))
+
