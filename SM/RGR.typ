@@ -61,7 +61,7 @@
 
 = Сравнение баз научных работ
 
--  *Elibrary*
+- *Elibrary*
 
   Очень много специфически направленных исследований на генерацию данных для какого-то определенного сервиса/по/задачи.
   
@@ -156,12 +156,17 @@
 
 *Дата публикации:* 
 
+- v1. 08.02.2023
+
+  ...
+- v10. 04.04.2025
+
 *Cодержание:*
 Комплексный систематический обзор существующих исследований, использующих модели машинного обучения для генерации синтетических данных. Работа анализирует различные подходы к генерации синтетических данных с применением методов машинного обучения, включая методы для траекторий, временных рядов и других типов данных. Особое внимание уделяется методам, обеспечивающим дифференциальную приватность.
 
 5) *Synthetic Data and Artificial Neural Networks for Natural Scene Text Recognition*
 
-*Автор: *Max Jaderberg, Karen Simonyan, Andrea Vedaldi, Andrew Zisserman
+*Авторы: *Max Jaderberg, Karen Simonyan, Andrea Vedaldi, Andrew Zisserman
 
 *Место публикации:* arXiv
 
@@ -175,43 +180,46 @@
 
 6) **
 
-*Автор: *
+*Авторы: * 
 
-*Место публикации:* 
+*Место публикации:*
 
-*Даты публикации:* 
-
-*Cодержание:*
-
-7) **
-
-*Автор: *
-
-*Место публикации:* 
-
-*Даты публикации:* 
+*Даты публикации:*
 
 *Cодержание:*
 
-8) **
+7) *The Curious Decline of Linguistic Diversity: Training Language Models on Synthetic Text*
 
-*Автор: *
+*Автор: * Yanzhu Guo, Guokan Shang, Michalis Vazirgiannis, Chloé Clavel
 
-*Место публикации:* 
+*Место публикации:* NAACL
+
+*Даты публикации:* 29.05.2024
+
+*Cодержание:* Исследование последствий обучения языковых моделей на синтетических данных, генерируемых их предшественниками, особенно при рекурсивном применении. Авторы разработали набор метрик, охватывающих лексическое, синтаксическое и семантическое разнообразие. Результаты выявляют последовательное снижение разнообразия выходных данных модели с каждой итерацией, особенно заметное в творческих задачах.
+
+8) *Large Language Model as Attributed Training Data Generator: A Tale of Diversity and Bias*
+
+*Автор: * Yue Yu, Yuchen Zhuang, Jieyu Zhang, Yu Meng, Alexander J Ratner, Ranjay Krishna, Jiaming Shen, Chao Zhang
+
+*Место публикации:* NeurIPS
+
+*Даты публикации:* 10.12.2023
+
+*Cодержание:* LLM для генерации синтетических датасетов могут ограничивать разнообразие и наследовать bias, особенно в задачах классификации тематического текста.
+
+9) *On the Diversity of Synthetic Data and its Impact on Training Large Language Models*
+
+*Автор: * Hao Chen, Abdul Waheed, Xiang Li, Yidong Wang, Jindong Wang, Bhiksha Raj, Marah I. Abdin
+
+*Место публикации:* arXiv
 
 *Даты публикации:* 
 
-*Cодержание:*
+- v1. 19.07.2024
+- v2. 22.07.2024
 
-9) **
-
-*Автор: *
-
-*Место публикации:* 
-
-*Даты публикации:* 
-
-*Cодержание:*
+*Cодержание:* Исследование влияния разнообразия синтетических данных на производительность LLM на этапах предварительного обучения и fine-tuning. Авторы вводят метрику LLM cluster-agent для оценки разнообразия. Контролируемые эксперименты показывают, что разнообразие синтетических данных при предварительном обучении более значимо влияет на fine-tuning, чем на само предварительное обучение.
 
 10) **
 
@@ -224,76 +232,39 @@
 *Cодержание:*
 
 
-
-
-
 = Определение влиятельных авторов
 
-
-1) *Ian Goodfellow*
-
-*Время работы:* 11 лет
-
-*Цитирований:* 393172
-
-*Индекс h*: 101
-
-*Индекс i10:* 185		
-
-*Ссылка на профиль:* https://scholar.google.com/citations?user=iYN86KEAAAAJ&hl=en&oi=ao
-
-2) *Mihaela van der Schaar*
-
-Время работы: 11 лет
-
-Цитирований: 43887
-
-Индекс h: 95	
-
-Индекс i10: 600	
-
-Ссылка на профиль: https://scholar.google.com/citations?user=DZ3S--MAAAAJ&hl=en
-
-3) *Yejin Choi*
-
-*Время работы:* 18
-
-*Цитирований:* 80421
-
-*Индекс h*: 128
-
-*Индекс i10:* 348		
-
-*Ссылка на профиль:* https://scholar.google.com/citations?user=vhP-tlcAAAAJ
-
-4) *Jonathan Ho*
-
-*Время работы:* 12 лет
-
-*Цитирований:* 76556
-
-*Индекс h*: 36	
-
-*Индекс i10:* 41		
-
-*Ссылка на профиль:* https://scholar.google.com/citations?user=iVLAQysAAAAJ&hl=en
-
-5) *Samuli Laine*
-
-*Время работы:* 9 лет
-
-*Цитирований:* 60888	
-
-*Индекс h*: 47	
-
-*Ссылка на профиль:* 96	
-
-
-
-
+#figure(
+  kind: table,
+  caption: [Влиятельные авторы в теме генерации синтетических данных],
+  table(
+  columns: 6,
+  align: (x, y) => if x == 0 { left + horizon } else { center + horizon },
+  inset: 7pt,
+  table.header[Имя атвора][Время работы][Цитиро\u{00AD}ваний][Индекс h][Индекс i10][Ссылка на профиль],
+  [Ian\ Goodfellow],[11 лет],[93172],[101],[185],[#link("https://scholar.google.com/citations?user=iYN86KEAAAAJ&hl=en&oi=ao")[гойда]],
+  [Mihaela van der Schaar],[11 лет],[43887],[95],[600],[#link("https://scholar.google.com/citations?user=iVLAQysAAAAJ&hl=en")[гойда]],
+  [Yejin Choi],[18 лет],[80421],[128],[348],[#link("https://scholar.google.com/citations?user=vhP-tlcAAAAJ")[гойда]],
+  [Jonathan Ho],[12 лет],[76556],[36],[41],[#link("https://scholar.google.com/citations?hl=ru&user=iVLAQysAAAAJ")[гойда]],
+  [Samuli Laine],[9 лет],[60888],[47],[96],[#link("https://scholar.google.com/citations?user=UCXJOTUAAAAJ&hl=en")[гойда]]),
+) <crng2>
 
 = Определение влиятельных изданий
 
+#figure(
+  kind: table,
+  caption: [Влиятельные издания в теме генерации синтетических данных],
+table(
+  columns: 3,
+  align: center + horizon,
+  inset: 10pt,
+table.header[Название издания][Импакт фактор][Индексы],
+[Nature Machine Intelligence],[23.9],[Scopus, Web of Science],
+[IEEE TPAMI],[18.6],[Scopus, Web of Science],
+[Artificial Intelligence Review],[13.9],[Scopus, Web of Science],
+[Journal of Machine Learning Research],[5.2],[Scopus, Web of Science],
+[Artificial Intelligence (Elsevier)],[4.6],[Scopus, Web of Science]),
+) <crng>
 
 
 = Подбор международных научных конференций
@@ -303,4 +274,24 @@
 В ходе РГР освоены онлайн-инструменты, проведено сравнение баз, подобраны материалы и налажено взаимодействие в ResearchGate.
 
 
-= Тест
+
+
+
+
+1) *Comprehensive Exploration of Synthetic Data Generation: A Survey*
+
+2) *Generative Adversarial Networks for Synthetic Data Generation in Deep Learning Applications*
+
+3) *Synthetic Data Generation by Diffusion Models*
+
+4) *Machine Learning for Synthetic Data Generation: A Review*
+
+5) *Synthetic Data and Artificial Neural Networks for Natural Scene Text Recognition*
+
+6) *Artificial Hivemind: The Open-Ended Homogeneity of Language Models (and Beyond)*
+
+7) *The Curious Decline of Linguistic Diversity: Training Language Models on Synthetic Text*
+
+8) *Large Language Model as Attributed Training Data Generator: A Tale of Diversity and Bias*
+
+9) *On the Diversity of Synthetic Data and its Impact on Training Large Language Models*
