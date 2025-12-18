@@ -1,0 +1,29 @@
+{
+    "model_type": "\u041d\u0435\u0439\u0440\u043e\u043d\u043d\u0430\u044f \u0441\u0435\u0442\u044c \u043d\u0430 17 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u0430\u0445",
+    "needs_scaling": true,
+    "features": [
+        "Age",
+        "HoursPerWeek",
+        "APM",
+        "SelectByHotkeys",
+        "AssignToHotkeys",
+        "UniqueHotkeys",
+        "MinimapAttacks",
+        "MinimapRightClicks",
+        "NumberOfPACs",
+        "GapBetweenPACs",
+        "ActionLatency",
+        "ActionsInPAC",
+        "TotalMapExplored",
+        "WorkersMade",
+        "UniqueUnitsMade",
+        "ComplexUnitsMade",
+        "ComplexAbilitiesUsed"
+    ],
+    "target": [
+        "LeagueIndex"
+    ],
+    "R2": 0.461,
+    "RMSE": 1.031,
+    "coefs": "linear.pkl"
+}

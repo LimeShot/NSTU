@@ -1,0 +1,14 @@
+{
+    "model_type": "\u041d\u0435\u0439\u0440\u043e\u043d\u043d\u0430\u044f \u0441\u0435\u0442\u044c \u043d\u0430 2 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u0430\u0445",
+    "needs_scaling": true,
+    "features": [
+        "APM",
+        "NumberOfPACs"
+    ],
+    "target": [
+        "LeagueIndex"
+    ],
+    "R2": 0.349,
+    "RMSE": 0.179304,
+    "coefs": "NN_2.keras"
+}

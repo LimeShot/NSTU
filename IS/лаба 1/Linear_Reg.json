@@ -1,0 +1,18 @@
+{
+    "model_type": "Linear Regression",
+    "needs_scaling": false,
+    "features": [
+        "ActionLatency",
+        "APM",
+        "NumberOfPACs",
+        "AssignToHotkeys",
+        "SelectByHotkeys",
+        "UniqueHotkeys"
+    ],
+    "target": [
+        "LeagueIndex"
+    ],
+    "R2": 0.461,
+    "RMSE": 1.031,
+    "coefs": "linear.pkl"
+}

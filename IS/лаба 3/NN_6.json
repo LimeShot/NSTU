@@ -1,0 +1,20 @@
+{
+    "model_type": "\u041d\u0435\u0439\u0440\u043e\u043d\u043d\u0430\u044f \u0441\u0435\u0442\u044c \u043d\u0430 6 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u0430\u0445",
+    "needs_scaling": true,
+    "features": [
+        "ActionLatency",
+        "APM",
+        "NumberOfPACs",
+        "AssignToHotkeys",
+        "SelectByHotkeys",
+        "UniqueHotkeys"
+    ],
+    "target": [
+        "LeagueIndex"
+    ],
+    "R2": 0.4,
+    "RMSE": 0.172034,
+    "coefs": "NN_6.keras",
+    "x_scaler": "scalerX_NN_6.pkl",
+    "y_scaler": "scalerY_NN.pkl"
+}
