@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'chumakov/styles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+<body>
+    {% include 'chumakov/includes/header.html' %}
+    <h1>{{ title }}</h1>
+    {% autoescape off %}
+    {{ plot_div }}
+    {% endautoescape %}
+    {% include 'chumakov/includes/footer.html' %}
+</body>
+</html>

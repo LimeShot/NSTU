@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Данные климата</title>
+</head>
+<body>
+  <h1>Данные климата</h1>
+
+  {% if error %}
+    <p>{{ error }}</p>
+  {% endif %}
+
+  {% if d %}
+    <p>Количество записей: {{ d|length }}</p>
+    <table border="1" cellspacing="0" cellpadding="4">
+      <thead>
+        <tr>
+          {% for key, value in d.0.items %}
+            <th>{{ key }}</th>
+          {% endfor %}
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in d|slice:":50" %}
+          <tr>
+            {% for key, value in row.items %}
+              <td>{{ value }}</td>
+            {% endfor %}
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <p>Показаны первые 50 строк.</p>
+  {% else %}
+    <p>Данные отсутствуют.</p>
+  {% endif %}
+</body>
+</html>
