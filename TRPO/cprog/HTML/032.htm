@@ -1,0 +1,857 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=Generator content="Microsoft Word 11 (filtered)">
+<title>Романов Е.Л. Беседы о программировании</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Times New Roman CYR";
+	panose-1:2 2 6 3 5 4 5 2 3 4;}
+@font-face
+	{font-family:"Arial CYR";
+	panose-1:2 11 6 4 2 2 2 2 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";}
+h1
+	{margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Arial CYR";}
+h2
+	{margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Arial CYR";
+	font-style:italic;}
+h3
+	{margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Arial CYR";
+	font-weight:normal;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+p.a, li.a, div.a
+	{margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman CYR";}
+p.a0, li.a0, div.a0
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.a1, li.a1, div.a1
+	{margin-top:6.0pt;
+	margin-right:18.45pt;
+	margin-bottom:0cm;
+	margin-left:1.0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-18.0pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman CYR";}
+p.a2, li.a2, div.a2
+	{margin-top:12.0pt;
+	margin-right:32.9pt;
+	margin-bottom:12.0pt;
+	margin-left:35.45pt;
+	text-align:justify;
+	text-indent:.55pt;
+	border:none;
+	padding:0cm;
+	font-size:12.0pt;
+	font-family:"Arial CYR";}
+p.a3, li.a3, div.a3
+	{margin-top:12.0pt;
+	margin-right:32.9pt;
+	margin-bottom:12.0pt;
+	margin-left:5.0cm;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	font-style:italic;}
+p.a4, li.a4, div.a4
+	{margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:12.0pt;
+	font-family:"Times New Roman CYR";}
+p.a5, li.a5, div.a5
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:14.0pt;
+	font-family:"Courier New";
+	layout-grid-mode:line;
+	font-weight:bold;}
+p.a6, li.a6, div.a6
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Arial;}
+ /* Page Definitions */
+ @page Section1
+	{size:21.0cm 842.0pt;
+	margin:33.45pt 42.55pt 72.0pt 89.85pt;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=RU background="back.gif">
+
+<div class=Section1>
+
+<h2><font face="Arial">3.2 «Историческое» <span lang=EN-US>проектирование</span></font></h2>
+
+<h3><font face="Arial">Естественный подход к проектированию</font></h3>
+
+<p class=a4>Первое, что приходит в голову – записывать последовательность
+действий в проектируемом алгоритме в том порядке, в котором они будут
+выполняться в программе. Для этого удобнее всего использовать графическое
+представление алгоритма – блок-схему. Блок-схема базируется на трех
+элементарных конструкциях:</p>
+
+<p class=a1><span style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>действия, связанные с обработкой данных, в том числе
+последовательность операций (выражение), присваивание и ввод-вывод записываются
+в прямоугольнике:</p>
+
+<p class=a1 style='margin-left:17.45pt;text-indent:0cm'>
+
+<table cellpadding=0 cellspacing=0 align=left width="138">
+ <tr>
+  <td width=59 height=14></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td width=77 height=34 bgcolor=white style='border:.75pt solid black;
+  vertical-align:top;background:white'><span lang="en-us"><b><a name="m1">
+	<font face="Courier New" size="4">&nbsp;a</font></b></span><b><a name="m2"><font face="Courier New" size="4"><span lang=EN-US>=b+c</span></font></b></td>
+ </tr>
+</table>
+
+<span lang=EN-US>&nbsp;</span></p>
+
+<p class=a1 style='margin-left:17.45pt;text-indent:0cm'><span lang=EN-US>&nbsp;</span></p>
+
+<br clear=ALL>
+
+<p class=a1><span style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>проверка условия изображается ромбом, в котором записано условие,
+и который имеет один вход и два выхода в зависимости от результата (0 – ложь, 1
+–истина):</p>
+
+<p class=a1 style='margin-left:0cm;text-indent:0cm'>
+
+<table cellpadding=0 cellspacing=0 align=left>
+ <tr>
+  <td width=33 height=7></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td><img width=164 height=61 src="Images/032-01.gif"></td>
+ </tr>
+</table>
+
+<span lang=EN-US>&nbsp;</span></p>
+
+<p class=a1 style='margin-left:0cm;text-indent:0cm'>&nbsp;</p>
+
+<br clear=ALL>
+
+<p class=a1><span style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>переход, обозначение последовательности выполнения перечисленных
+действий (связь по управлению, поток команд), обозначаемый стрелкой:</p>
+
+<p class=a1 style='margin-left:17.45pt;text-indent:0cm'>
+
+<table cellpadding=0 cellspacing=0 align=left>
+ <tr>
+  <td width=31 height=8></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td><img width=391 height=62 src="Images/032-02.gif"></td>
+ </tr>
+</table>
+
+<span lang=EN-US>&nbsp;</span></p>
+
+<p class=a1 style='margin-left:17.45pt;text-indent:0cm'><span lang=EN-US>&nbsp;</span></p>
+
+<p class=a4><b><a name="m3"><span lang=EN-US>&nbsp;</span></b></p>
+
+<br clear=ALL>
+
+<p class=a4>Триада управляющих конструкций <b><a name="m4">действие-условие-переход </b>является
+универсальной и самодостаточной: с ее помощью можно построить любой алгоритм.
+Но не единственной. Традиционная технология структурного программирования
+базируется на триаде <b><a name="m5">последовательность-ветвление-цикл. </b>Другая
+экзотическая триада <b><a name="m6">последовательность -ветвление-рекурсия </b>применяется,
+например, в языке ПРОЛОГ или при описании синтаксиса языков программирования
+(формальные грамматики).</p>
+
+<p class=a4><b><a name="m7">Исторические корни «исторического» программирования. </b>Несмотря
+на свою архаичность, блок-схема имеет свои преимущества (наглядность), а также
+исторические корни в компьютерной архитектуре. Память программы является
+линейной, поэтому при «вытягивании в линию» изображенной на плоскости
+блок-схемы соответствующий программный код должен содержать команды перехода.
+Самый простой набор инструкций процессора содержит три группы команд:</p>
+
+<p class=a1><span style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>команды обработки данных;</p>
+
+<p class=a1><span style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>проверки условий;</p>
+
+<p class=a1><span style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>безусловного и условных переходов.</p>
+
+<p class=a4>Поэтому программный код во внутреннем представлении (и на языке
+Ассемблера) ближе к языку блок-схем, нежели к структурированным конструкциям
+языков высокого уровня. Между прочим, одна из основных функций фазы генерации
+кода в трансляторе заключается в распределении линейно адресуемой памяти для
+структурированных операторов типа <b><a name="m8"><span lang=EN-US>if</span>-<span
+lang=EN-US>then</span>-<span lang=EN-US>else </span></b>или
+<b><a name="m9"><span lang=EN-US>do</span>-<span lang=EN-US>while</span>.</b></p>
+
+<p class=a4><b><a name="m10">&nbsp;</b></p>
+
+<p class=a4>
+
+<table cellpadding=0 cellspacing=0>
+ <tr>
+  <td width=65 height=0></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td><img width=404 height=184 src="Images/032-03.gif"></td>
+ </tr>
+</table>
+
+<br clear=ALL>
+«Историческому» принципу проектирования также наиболее соответствует блок-схема
+алгоритма. К этому есть несколько причин:</p>
+
+<p class=a1><span style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>«рисование» блок-схемы идет в виде волны: разработчик каждый раз
+решает в контексте текущего состояния, что же делать дальше, при наличии
+условий процесс проектирования становится параллельным: каждую ветку можно
+вести независимо от другой;</p>
+
+<p class=a1><span style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>циклы возникают естественным образом, при возникновении ощущения,
+что следующая последовательность действий уже встречалось в программе («де жа
+вю»), следует сделать переход к этой части программы (обратная связь цикла).
+При этом необходимо проверить и другие составляющие возникающего цикла: условия
+завершения (или продолжения), переход к следующему шагу. Возможно, что придется
+переделать уже «нарисованный» фрагмент – он был спроектирован без учета
+возникшего цикла.</p>
+
+<p class=a4>
+<img width=23 height=24 src="Images/smile.jpg" align=left
+hspace=12><b><a name="m11">История в картинках. </b>1978 год. Появление тонких ростков
+структурного программирования в буйных зарослях Ассемблера и Фортрана. Я взялся
+за свой первый серьезный программный проект – транслятор. Как учили. Взял в
+общежитии у старшекурсников рулон миллиметровки, расстелил его на столе и стал
+рисовать блок-схему транслятора. Когда полез на вторую половину стола, начал
+путаться, куда же вести очередную стрелку. Когда дошел до второго метра
+блок-схемы, запутался окончательно.</p>
+
+<h3>Простой пример. Поиск простых чисел</h3>
+
+<p class=a4><b><a name="m12"><i>Обсуждение идеи</i></b><i>. </i>Простое число – число,
+которое делится <b><a name="m13">только </b> на 1 и на само себя. Легко заметить, что это
+определение «от противного» - оно <b><a name="m14">не делится </b>на числа в диапазоне от 2
+до самого себя (до <span lang=EN-US>n</span>-1 или до <span lang=EN-US>n</span>/2).
+Если вспомнить, что среди этих чисел есть тоже простые и составные, то
+достаточно проверить, делится ли это число <b><a name="m15">на уже накопленные </b>простые
+числа (алгоритм «решето Эратосфена»).</p>
+
+<p class=a4><b><a name="m16"><i>Исходные и вспомогательные данные</i></b><i>.</i> Поскольку
+алгоритм достаточно прост, все используемые им данные можно перечислить сразу
+(в более сложных случаях данные определяются и осмысливаются по мере проработки
+алгоритма):</p>
+
+<p class=a1><span style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>массив накапливаемых простых чисел размерности <b><a name="m17"><span
+lang=EN-US>N</span> – <span lang=EN-US>A</span>[<span lang=EN-US>N</span>]</b>;</p>
+
+<p class=a1><span style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>диапазон проверяемых значений <b><a name="m18"><span lang=EN-US>v</span>;</b></p>
+
+<p class=a1><span style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>текущее проверяемое число <b><a name="m19"><span lang=EN-US>n</span>;</b></p>
+
+<p class=a1><span style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>индекс (номер) текущего проверяемого элемент массива <b><a name="m20"><span
+lang=EN-US>j</span>;</b></p>
+
+<p class=a1><span style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>количество накопленных простых чисел в <b><a name="m21"><span lang=EN-US>A</span>[]
+– <span lang=EN-US>k</span>;</b></p>
+
+<p class=a4><b><a name="m22"><i> «Выстраивание алгоритма». </i></b>То, что в самом прямом
+смысле понимается под программированием, это выстраивание последовательности
+действий из уже имеющихся составных частей. Последовательность перечисления
+шагов алгоритма возникает в процессе их «рисования»:</p>
+
+<p class=a1 style='margin-left:7.1pt;text-indent:0cm'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Установка начальных значений – <b><a name="m23"><span lang=EN-US>k</span>=0, n=2 </b>соответствует
+состоянию «массив пуст» и проверка начинается с 2. Это может вызвать некоторое
+замешательство– как следует проверять пустой массив? Заметим, что проблема
+первого шага при «историческом» подходе возникает практически всегда, он обычно
+отличается от последующих, и на нем поведение программы нехарактерно. Изменить
+ситуацию в данном случае можно, записав в массив первое простое число: <b><a name="m24"><span
+lang=EN-US>k</span>=1; <span lang=EN-US>n</span>=3; <span
+lang=EN-US>A</span>[0]=2;</b></p>
+
+<p class=a1 style='margin-left:7.1pt;text-indent:0cm'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Просмотр массива начинаем с <b><a name="m25"><span lang=EN-US>j</span>=0</b>.</p>
+
+<p class=a1 style='margin-left:7.1pt;text-indent:0cm'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Проверяем делимость числа <b><a name="m26"><span lang=EN-US>n </span></b>на
+очередной элемент массива <b><a name="m27"><span lang=EN-US>A</span>[<span lang=EN-US>j</span>].
+</b>При проверке условия возникают два возможных направления продолжения
+алгоритма: каждое из них рассматривается независимо. Выберем сначала более
+простое. <b><a name="m28">Замечание: </b>после этого шага становится ясно, что первый вариант
+начальных значений (<b><a name="m29"><span lang=EN-US>k</span>=0, n=2) </b>приведет <b><a name="m30">в
+такой блок-схеме </b>к ошибке, поскольку проверка делимости при пустом массиве
+вообще не должна выполняться.</p>
+
+<p class=a1 style='margin-left:7.1pt;text-indent:0cm'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Если число делится на уже имеющееся простое, то происходит переход к
+следующему (<b><a name="m31"><span lang=EN-US>n</span>++</b>), если интервал просмотра
+закончился, алгоритм завершается. В противном случае необходимо вернуться на
+начало проверки очередного числа (возникновение цикла).</p>
+
+<p class=a1 style='margin-left:7.1pt;text-indent:0cm'>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Если число не делится на имеющееся простое, переходим к следующему (<b><a name="m32"><span
+lang=EN-US>j</span>++</b>).</p>
+
+<p class=a1 style='margin-left:7.1pt;text-indent:0cm'>6.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Если в массиве есть еще не проверенные числа (<b><a name="m33"><span lang=EN-US>j</span>&lt;<span
+lang=EN-US>k</span></b>), то <b><a name="m34">возвращается </b>к проверке делимости на
+очередное простое число (возникновение цикла).</p>
+
+<p class=a4><span style='position:relative;z-index:2;left:-11px;top:0px;
+width:631px;height:465px'><img width=631 height=465 src="Images/032-05.gif"></span><br
+clear=ALL>
+<b><a name="m35"><i><br clear=all style='page-break-before:always'>
+Реализация на языке программирования. </i></b>Для перевода блок-схемы в
+программный код прежде всего следует учитывать структурированный характер
+конструкций языков программирования (дань структурному программированию): они
+являются  вложенными друг в друга и операторы перехода включаются туда в
+порядке исключения. На блок-схеме явно видны два цикла:</p>
+
+<p class=a1><span style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>внешний цикл перебирает последовательные значения, проверяя их на
+простоту;</p>
+
+<p class=a1><span style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>внутренний цикл проверяет делимость очередного значения на уже
+записанные в массив простые числа.</p>
+
+<p class=a>Если по поводу внешнего цикла проблем не возникает, то внутренний
+цикл не так то просто перевести в конструкции языка. Он имеет два выхода:</p>
+
+<p class=a1><span style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>по обнаружении делимости (число – не простое) внутренний цикл
+должен завершиться «без последствий» - продолжением внешнего цикла;</p>
+
+<p class=a1><span style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>по завершении просмотра массива без обнаружения делимости –
+необходимо добавить вновь обнаруженное простое число в массив.</p>
+
+<p class=a>Поскольку цикл имеет только одно условие продолжения (или
+завершения), то второе должно быть реализовано через оператор альтернативного
+выхода <b><a name="m36"><span lang=EN-US>break</span>. </b></p>
+
+<p class=a4><b><a name="m37"><i>&nbsp;</i></b></p>
+
+<p class=a0><span lang=EN-US>//-------------------------------------------------------------------------------------------------------32-01</span></p>
+
+<p class=a0><span lang=EN-US>#define N 100</span></p>
+
+<p class=a0><span lang=EN-US>void main(){</span></p>
+
+<p class=a0><span lang=EN-US>int A[N],n,k,j,v;</span></p>
+
+<p class=a0><span lang=EN-US>printf(&quot;v=&quot;);
+scanf(&quot;%d&quot;,&amp;v);</span></p>
+
+<p class=a0>k=1; A[0]=2;</p>
+
+<p class=a0>for (n=3; n&lt;v &amp;&amp; k &lt; N; n++){                              //
+Внешний цикл перебора n      </p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US>j=0;</span></p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US>while</span> (<span
+lang=EN-US>n</span>%<span lang=EN-US>A</span>[<span lang=EN-US>j</span>]!=0){                                   //
+Внутренний цикл перебора <span lang=EN-US>A</span>[]</p>
+
+<p class=a0>                        <span lang=EN-US>j</span>++;                                          //
+A[] закончился -</p>
+
+<p class=a0 style='margin-left:36.0pt;text-indent:36.0pt'>if (j==k) {<span
+lang=EN-US>A</span>[<span lang=EN-US>k</span>++]=<span lang=EN-US>n</span>; <span
+lang=EN-US>break</span>; }        // добавить очередной в <span lang=EN-US>A</span>[]</p>
+
+<p class=a0>            }}                                                          //
+Альтернативный выход по break</p>
+
+<p class=a0><span lang=EN-US>for</span> (<span lang=EN-US>j</span>=0;<span
+lang=EN-US>j</span>&lt;<span lang=EN-US>k</span>;<span lang=EN-US>j</span>++) <span
+lang=EN-US>printf</span>(&quot;%<span lang=EN-US>d</span> &quot;,<span
+lang=EN-US>A</span>[<span lang=EN-US>j</span>]);</p>
+
+<p class=a0>}</p>
+
+<p class=a>Если же в заголовок внутреннего цикла внести ограничение по
+завершению просмотра массива (<b><a name="m38"><span lang=EN-US>j</span>==<span
+lang=EN-US>k</span></b>), то добавление нового простого числа <b><a name="m39"><span
+lang=EN-US>A</span>[<span lang=EN-US>k</span>++]=<span
+lang=EN-US>n </span></b>придется делать вне этого цикла
+(т.е.после). Тогда можно сделать цикл с завершением по любому из двух условий и
+повторной проверкой условия добавления после выхода.</p>
+
+<p class=a0>&nbsp;</p>
+
+<p class=a0><span lang=EN-US>//-------------------------------------------------------------------------------------------------------32-02</span></p>
+
+<p class=a0><span lang=EN-US>#define N 100</span></p>
+
+<p class=a0><span lang=EN-US>void main(){</span></p>
+
+<p class=a0><span lang=EN-US>int A[N],n,k,j,v;</span></p>
+
+<p class=a0><span lang=EN-US>printf(&quot;v=&quot;);
+scanf(&quot;%d&quot;,&amp;v);</span></p>
+
+<p class=a0><span lang=EN-US>for (k=0,n=3; n&lt;v &amp;&amp; k &lt; N; n++){                       //
+</span>Внешний цикл перебора<span lang=EN-US> n      </span></p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US>for</span> (<span
+lang=EN-US>j</span>=0; <span lang=EN-US>j</span>&lt;<span lang=EN-US>k</span>
+&amp;&amp;  <span lang=EN-US>n</span>%<span lang=EN-US>A</span>[<span
+lang=EN-US>j</span>]!=0; <span lang=EN-US>j</span>++);             //
+Внутренний цикл перебора <span lang=EN-US>A</span>[] (без тела)</p>
+
+<p class=a0 style='text-indent:36.0pt'>if (j==k) <span lang=EN-US>A</span>[<span
+lang=EN-US>k</span>++]=<span lang=EN-US>n</span>;                                 //
+добавить очередной в <span lang=EN-US>A</span>[]</p>
+
+<p class=a0>            }}                                                          //
+при выходе по второму условию</p>
+
+<p class=a0><span lang=EN-US>for (j=0;j&lt;k;j++) printf(&quot;%d &quot;,A[j]);</span></p>
+
+<p class=a0>}</p>
+
+<p class=a>Несмотря на формальные, казалось бы, преобразования, новый вариант
+несколько отличается: он работоспособен при пустом массиве (проверке, начиная с
+2), поскольку условие проверки размерности записано первым, а проверки свойства
+делимости - вторым. Как видим, при записи алгоритма на языке программирования
+имеют место некоторые преобразования структуры алгоритма, которые, однако, не
+должны менять логику программы.</p>
+
+<h3><font face="Arial">«Историческое» программирование с разных сторон</font></h3>
+
+<p class=a4><b><a name="m40">«Детская болезнь исторического программизма». </b>Коль скоро
+программа представляет собой последовательность выполняемых действий, то
+начинающий программист обычно так и поступает: начинает записывать ход своих
+рассуждений, переводя его на язык логических конструкций языка
+программирования. Соответственно, получается так называемый «исторический»
+подход. Как правило, на третьей или четвертой конструкции человек начинает
+терять нить рассуждений и останавливается. Такой принцип изложения характерен
+для художественной литературы, да и то не всегда. По той причине, что
+литературный текст является последовательным, хотя и допускает вложенность
+(«лирические отступления») и даже параллелизм сюжетных линий. С программой
+сложнее: ее логика включает не только последовательность действий, но и
+вложенность одних конструкций в другие. Поэтому начало некоторой конструкции
+может отстоять от ее конца на значительном расстоянии, но обдумываться она
+должна как единое целое. Тем не менее, эта технология программирования
+существует и даже имеет свое название:  «метод северо-западного угла». Имеется
+в виду экран монитора или лист бумаги. </p>
+
+<p class=a4>Есть несколько признаков, по которым можно отличить «исторического»
+программиста:</p>
+
+<p class=a1><span style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>никогда сразу не закрывает синтаксическую конструкцию (оператор),
+пока не напишет содержимое вложенных в нее конструкций до конца.
+&quot;Структурный&quot; программист сначала пишет конструкцию, например, пару
+скобок «{ }», а потом начинает обдумывать и записывать ее содержимое;</p>
+
+<p class=a1><span style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>начинает обсуждение цикла с первого шага. «Структурный»
+программист сначала определяет условия протекания циклического процесса, а
+замет работает с произвольным его шагом.</p>
+
+<p class=a4>
+<img width=303 height=330 src="Images/032-06.jpg" align=left
+hspace=12><b><a name="m41">Самый простой тест. </b>Приводимый ниже пример использовался
+сначала для определения «нулевого» уровня знаний в разделе «Работа со
+строками». Оказалось, что его можно с равным успехом использовать для проверки,
+насколько «исторический» принцип превалирует над логическим. Итак, задана
+строка в массиве символов. Требуется дописать в конец символ «*». Некоторый
+процент начинающих рассуждает примерно так: необходимо найти конец строки, для
+чего надо написать цикл движения по строке. Далее: если встречается символ
+конца строки  (символ с кодом 0), то необходимо заменит его на символ
+&quot;*&quot;, а вслед за ним записать код конца строки. В результате
+получается примерно следующее.</p>
+
+<p class=a>&nbsp;</p>
+
+<p class=a0><span lang=EN-US>char c[80]=”aaaaaaaaaa”;</span></p>
+
+<p class=a0><span lang=EN-US>for (i=0; c[i]!=0; i++)</span></p>
+
+<p class=a0><span lang=EN-US>            if (c[i]!=0) { c[i]=’*’; c[i+1]=0; }</span></p>
+
+<p class=a0><span lang=EN-US>&nbsp;</span></p>
+
+<p class=a4>Даже невооруженным взглядом заметно, что эта программа работать не
+будет. Хотя бы потому, что внутри цикла проверяется условие, которое
+ограничивает этот же цикл. После указания на это противоречие некоторая часть
+исправляет ошибку.</p>
+
+<p class=a4>&nbsp;</p>
+
+<p class=a0><span lang=EN-US>for (i=0; i&lt;80; i++)</span></p>
+
+<p class=a0><span lang=EN-US>            if (c[i]!=0) { c[i]=’*’; c[i+1]=0; 
+break; }</span></p>
+
+<p class=a0><span lang=EN-US>&nbsp;</span></p>
+
+<p class=a4>В таком виде программа работоспособна. Но на самом деле, есть более
+естественный вариант, который продполагает последовательное выполнение двух
+действий: поиск конца строки и замена его на символ &quot;*&quot;.</p>
+
+<p class=a0>&nbsp;</p>
+
+<p class=a0><span lang=EN-US>for (i=0; c[i]!=0; i++);</span></p>
+
+<p class=a0><span lang=EN-US>c[i]=’*’; c[i+1]=0;</span></p>
+
+<p class=a>Этот вариант более предпочтителен хотя бы потому, что каждое из
+действий независимо друга от друга  в том смысле, что не подчиняется одно
+другому, не вложено одно в другое. То есть отношение последовательности и
+равноправия более приемлемо для них, нежели отношение подчиненности  и
+вложенности. Почему же с самого начала это не было видно. Именно потому, что
+первоначально алгоритм не рассматривался как последовательность <b><a name="m42">абстрактных </b>действий
+высокого уровня, не имеющих прямого выражения в простых операциях языка - поиск
+конца строки.</p>
+
+<p class=a4><b><a name="m43">Шиворот – навыворот. </b>«Исторический» подход в проектировании
+программы по своей природе выделяет фрагменты программы, лежащие &quot;ближе к
+земле&quot;, то есть самого внутреннего уровня вложенности. При этом внешних,
+наиболее «абстрактных» конструкций программист не замечает. К пониманию того,
+что они должны быть, он приходит уже позднее, и в дело вступают различные
+&quot;заплатки&quot; в виде операторов <b><a name="m44"><span lang=EN-US>goto </span></b>для возвращения на уже пройденные участки программы, как
+замаскированное проявление незамеченных вовремя циклов. В качестве примера
+достаточно будет посмотреть на любую сортировку (например, выбором или
+вставками). Начав с проектирования процесса выбора или вставки (причем,
+конкретно для первого шага), программист оказывается перед фактом, что уже
+написанная часто программы должна повторяться. Благо, ему достанет ума включить
+уже написанную часть в тело цикла и несколько подкорректировать границы
+параметры-границы протекания процессов. Сохраняющий приверженность
+&quot;историческому&quot; принципу напишет <b><a name="m45"><span lang=EN-US>goto</span>,</b>
+сопровождая его манипуляциями индексами. Пример: сортировка выбором: выбирается
+минимальный из неотсортированной части и переставляется с первым из
+наотсортированной. В результате неотсортированная часть сокращается слева на
+один элемент.</p>
+
+<p class=a>Итак, «историк» напишет поиск минимального во всем массиве и обмен с
+первым. Это не составит труда, если он помнит контекст поиска индекса
+минимального и правило «трех стаканов».</p>
+
+<p class=a0>&nbsp;</p>
+
+<p class=a0><span lang=EN-US>void sort(int A[], int n){</span></p>
+
+<p class=a0><span lang=EN-US>for (int i=1,k=0; i&lt;n; i++)</span></p>
+
+<p class=a0><span lang=EN-US>            if (A[i]&lt;A[k]) k=i;</span></p>
+
+<p class=a0><span lang=EN-US>int c=A[0]; A[0]=A[k]; A[k]=A[0];</span></p>
+
+<p class=a0>...</p>
+
+<p class=a0>&nbsp;</p>
+
+<p class=a4>После чего возникнет необходимость «отказаться» от 0-го элемента.
+Он будет заменен на <span lang=EN-US>j</span>-ый, а в программу будет добавлен <b><a name="m46"><span
+lang=EN-US>goto </span></b>для повтора уже написанного
+фрагмента.</p>
+
+<p class=a0><span style='font-size:14.0pt;font-family:"Times New Roman CYR"'>&nbsp;</span></p>
+
+<p class=a0><span lang=EN-US>void sort(int A[], int n){</span></p>
+
+<p class=a0><b><a name="m47"><span lang=EN-US>int j=0;</span></b></p>
+
+<p class=a0><b><a name="m48"><span lang=EN-US>retry:</span></b></p>
+
+<p class=a0><span lang=EN-US>for (int i=<b><a name="m49">j+</b>1,k=<b><a name="m50">j</b>; i&lt;n; i++)</span></p>
+
+<p class=a0><span lang=EN-US>            if (A[i]&lt;A[k]) k=i;</span></p>
+
+<p class=a0><span lang=EN-US>int c=A[<b><a name="m51">j</b>]; A[<b><a name="m52">j</b>]=A[k]; A[k]=A[0];</span></p>
+
+<p class=a0><b><a name="m53"><span lang=EN-US>j++; if (j!=n) goto retry;</span></b></p>
+
+<p class=a0>}</p>
+
+<p class=a4>Хорошо еще, если сразу станет понятно, что переменная <b><a name="m54"><span
+lang=EN-US>j </span></b>соответствует длине
+упорядоченной части массива и все &quot;нули&quot; в написанном фрагменте нужно
+заменить на <b><a name="m55"><span lang=EN-US>j</span>.</b> </p>
+
+<p class=a4><b><a name="m56">Два в одном – шампунь и бальзам-ополаскиватель. </b>В некоторых
+достаточно простых случаях удается решить задачу с помощью
+&quot;исторического&quot; подхода, когда программа заканчивается раньше, чем
+программист теряет логическую нить рассуждений. Но при этом довольно часто
+несколько независимых управляющих конструкций алгоритма оказываются &quot;слитыми&quot;
+в одну. Конечно, это делает программу более компактной, но не более
+воспринимаемой и управляемой. Простой пример: поиск подстроки в строке.
+Исторический подход. Берем по очереди <b><a name="m57"><span lang=EN-US>i</span>-ый </b>символ
+строки и проводит в цикле попарное сравнение его с <b><a name="m58"><span lang=EN-US>k</span>-ым
+</b>символом второй строки. Если они совпадают, то переходим к следующей паре (<b><a name="m59"><span
+lang=EN-US>k</span>++ </b>в самом теле цикла и <b><a name="m60"><span lang=EN-US>i</span>++ </b>в
+заголовке). Если не совпадают, то возвращается на начало второй строки и к
+следующему символу первой (от начала совпадающего фрагмента). Успешное
+завершение поиска - достижение конца второй строки.</p>
+
+<p class=a>&nbsp;</p>
+
+<p class=a0><span lang=EN-US>int find(char c1[], char c2[]){</span></p>
+
+<p class=a0><span lang=EN-US>for (int k=0,i=0; c1[i]!=0; i++){</span></p>
+
+<p class=a0><span lang=EN-US>            if (c2[k]==0) return i;</span></p>
+
+<p class=a0><span lang=EN-US>                        if (c1[i]==c2[k]) k++;</span></p>
+
+<p class=a0><span lang=EN-US>                        else      { i-=k; k=0; }</span></p>
+
+<p class=a0 style='text-indent:36.0pt'>}</p>
+
+<p class=a0><span lang=EN-US>return</span> -1; }</p>
+
+<p class=a0>&nbsp;</p>
+
+<p class=a4>Не будем придираться. Программа работает, хотя процессы,
+происходящие в ее единственном цикле можно обозначить как
+&quot;возвратно-поступательными&quot;. Это видно из того, что индекс <b><a name="m61"><span
+lang=EN-US>i</span>,  </b>который определяет характер протекания цикла,
+меняется в самом этом цикле, да притом при выполнении определенного условия. С
+точки зрения понимания процесса &quot;движения&quot; программы по циклу это
+&quot;не есть хорошо&quot;. Интуитивно ясно, что такое &quot;движение&quot;
+раскладывается на две составляющих: движение по первой строке и параллельное
+движение по второй и по первой строке (относительно текущего символа первого
+цикла). То, что это не было замечено, характеризует &quot;исторический&quot; 
+подход: мысль о том, что необходим &quot;откат&quot; возникла уже после
+описания процесса параллельного движения по строкам. Если же проектировать 
+программу, то схематичное описание логики алгоритма выглядит так: для каждого
+символа первой: произвести параллельное движение по с строкам до обнаружения
+расхождения. Если при этом мы остановимся на конце второй строки, то фрагмент
+найден и функция должна быть завершена, иначе процесс продолжается.</p>
+
+<p class=a0>&nbsp;</p>
+
+<p class=a0><span lang=EN-US>int find(char c[]){</span></p>
+
+<p class=a0><span lang=EN-US>for (int i=0; c[i]!=0; i++)</span></p>
+
+<p class=a0><span lang=EN-US>            </span>{</p>
+
+<p class=a0>            // 1. Попарное сравнение символов <span lang=EN-US>c</span>2
+- от начала и <span lang=EN-US>c</span>1 - от <span lang=EN-US>i</span>.</p>
+
+<p class=a0>            // 2. Если достигли конца <span lang=EN-US>c</span>2 -
+выйти и вернуть <span lang=EN-US>i</span></p>
+
+<p class=a0>            }</p>
+
+<p class=a0><span lang=EN-US>return</span> -1; }</p>
+
+<p class=a0>&nbsp;</p>
+
+<p class=a4>Понятно, что &quot;исторически&quot; достигнуть условия в <b><a name="m62">п2</b>
+довольно трудно. Логически же две эти конструкции конкретизируются &quot;в
+легкую&quot; с использованием общей переменной - индекса <b><a name="m63"><span lang=EN-US>k</span>.</b></p>
+
+<p class=a4>&nbsp;</p>
+
+<p class=a0><span lang=EN-US>int find(char c[]){</span></p>
+
+<p class=a0><span lang=EN-US>for (int i=0; c[i]!=0; i++)</span></p>
+
+<p class=a0><span lang=EN-US>            </span>{</p>
+
+<p class=a0>            // 1. Попарное сравнение символов <span lang=EN-US>c</span>2
+- от начала и <span lang=EN-US>c</span>1 - от <span lang=EN-US>i</span>.</p>
+
+<p class=a0>            <span lang=EN-US>for (int k=0; c2[k]!=0 &amp;&amp;
+c1[k]==c2[k]; k++);</span></p>
+
+<p class=a0><span lang=EN-US>            </span>// 2. Если достигли конца <span
+lang=EN-US>c</span>2 - выйти и вернуть <span lang=EN-US>i</span></p>
+
+<p class=a0>            <span lang=EN-US>if (c2[k]==0) return i;</span></p>
+
+<p class=a0 style='text-indent:36.0pt'>}</p>
+
+<p class=a0><span lang=EN-US>return</span> -1; }</p>
+
+<p class=a4><b><a name="m64">Иногда это удается. </b>В простейших случаях удается довести
+«исторический» процесс программирования до конца и получить даже более
+компактный код. В качестве примера рассмотрим программу поиска наименьшего
+общего кратного для массива значений. «Историк» будет рассуждать так:</p>
+
+<p class=a4>1. Установим начальное значение делителя, равное первому элементу
+массива и начнем просматривать массив.</p>
+
+<p class=a0>&nbsp;</p>
+
+<p class=a0><span lang=EN-US>int F(int A[], int n)</span></p>
+
+<p class=a0><span lang=EN-US>{ int NOK=A[0];</span></p>
+
+<p class=a0><span lang=EN-US>for (int i=0; i&lt;n; i++). . . </span></p>
+
+<p class=a0><span lang=EN-US>&nbsp;</span></p>
+
+<p class=a4>2.  Если <span lang=EN-US>NOK</span> делится на очередной элемент –
+переходим к следующему.</p>
+
+<p class=a0>&nbsp;</p>
+
+<p class=a0><span lang=EN-US>if (NOK % A[i]==0) continue;</span></p>
+
+<p class=a0><span lang=EN-US>&nbsp;</span></p>
+
+<p class=a4>3. Иначе нужно увеличить <span lang=EN-US>NOK</span> на 1 и
+повторить просмотр с первого элемента.</p>
+
+<p class=a0>&nbsp;</p>
+
+<p class=a0><span lang=EN-US>NOK</span>++; <span lang=EN-US>i</span>=0;</p>
+
+<p class=a0>&nbsp;</p>
+
+<p class=a4>4. Если цикл дойдет до конца, то текущее значение <span lang=EN-US>NOK</span>
+и  будет наименьшим общим кратным. Собрав все «до кучи» и убрав лишние ветви,
+получим</p>
+
+<p class=a0>&nbsp;</p>
+
+<p class=a0><span lang=EN-US>int F(int A[], int n)</span></p>
+
+<p class=a0><span lang=EN-US>{ int NOK=A[0];</span></p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US>for (int i=0; i&lt;n;
+i++)</span></p>
+
+<p class=a0 style='margin-left:36.0pt;text-indent:36.0pt'><span lang=EN-US>if
+(NOK % A[i]!=0) </span></p>
+
+<p class=a0 style='margin-left:72.0pt;text-indent:36.0pt'><span lang=EN-US>{
+NOK++; i=0; }</span></p>
+
+<p class=a0><span lang=EN-US>return NOK; }</span></p>
+
+<p class=a0><span lang=EN-US>&nbsp;</span></p>
+
+<p class=a>Для разработанной программы характерно «возвратно-поступательное»
+изменение индекса <b><a name="m65"><span lang=EN-US>i</span>. </b>Это происходит потому, что
+в теле цикла индекс, регулярно изменяемый в заголовке, периодически
+сбрасывается.  Таким образом, внешне «правильный» цикл ведет себя не так, как
+это обозначено в заголовке. А это «не есть хорошо». Этот процесс можно разбить
+на два последовательных, вложенных друг в друга процесса (цикла): внешний
+перебирает возможные значения <span lang=EN-US>NOK</span>, а внутренний –
+элементы массива с целью определения условия делимости текущего <span
+lang=EN-US>NOK</span>.</p>
+
+<p class=a>&nbsp;</p>
+
+<p class=a0><span lang=EN-US>//-------------------------------------------------------------------------------------------------------32-03</span></p>
+
+<p class=a0><span lang=EN-US>int F(int A[], int n)</span></p>
+
+<p class=a0>{ </p>
+
+<p class=a0><span lang=EN-US>for</span> (<span lang=EN-US>int NOK</span>=<span lang=EN-US>A</span>[0];1;<span
+lang=EN-US>NOK</span>++)       // последовательно проверять <span lang=EN-US>NOK</span></p>
+
+<p class=a0 style='text-indent:36.0pt'>{</p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US>for</span> (<span
+lang=EN-US>int i</span>=0; <span
+lang=EN-US>i</span>&lt;<span lang=EN-US>n</span>; <span lang=EN-US>i</span>++)       //
+последовательно проверять делимость</p>
+
+<p class=a0 style='margin-left:36.0pt;text-indent:36.0pt'><span lang=EN-US>if
+(NOK % A[i]!=0) break; </span></p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US>if</span> (<span
+lang=EN-US>i</span>==<span lang=EN-US>n</span>) <span lang=EN-US>break</span>;               //
+все поделились – выход, можно <span lang=EN-US>return</span></p>
+
+<p class=a0 style='text-indent:36.0pt'>}</p>
+
+<p class=a0><span lang=EN-US>return NOK</span>; }</p>
+
+<p class=a0>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>

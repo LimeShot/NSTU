@@ -1,0 +1,1196 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=Edit-Time-Data href="034.files/editdata.mso">
+<title>3.4. Модульное программирование</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>www.PHILka.RU</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>vtpc112</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>148</o:TotalTime>
+  <o:Created>2008-07-15T10:54:00Z</o:Created>
+  <o:LastSaved>2008-07-15T10:54:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>2454</o:Words>
+  <o:Characters>13989</o:Characters>
+  <o:Company>NSTU_VT</o:Company>
+  <o:Bytes>11776</o:Bytes>
+  <o:Lines>116</o:Lines>
+  <o:Paragraphs>32</o:Paragraphs>
+  <o:CharactersWithSpaces>16411</o:CharactersWithSpaces>
+  <o:Version>11.6360</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DoNotHyphenateCaps/>
+  <w:DrawingGridHorizontalSpacing>0,55 пт</w:DrawingGridHorizontalSpacing>
+  <w:DrawingGridVerticalSpacing>0,55 пт</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:UseMarginsForDrawingGridOrigin/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DrawingGridVerticalOrigin>99,25 пт</w:DrawingGridVerticalOrigin>
+  <w:Compatibility>
+   <w:WW6BorderRules/>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+   <w:UseWord97LineBreakingRules/>
+   <w:SelectEntireFieldWithStartOrEnd/>
+   <w:UseWord2002TableStyleRules/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:"Times New Roman CYR";
+	panose-1:2 2 6 3 5 4 5 2 3 4;
+	mso-font-charset:204;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+@font-face
+	{font-family:"Arial CYR";
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+h1
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:14.0pt;
+	mso-bidi-font-weight:normal;}
+h2
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-font-weight:normal;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+h3
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	font-weight:normal;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a, li.a, div.a
+	{mso-style-name:текст;
+	mso-style-link:"текст Знак";
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a0, li.a0, div.a0
+	{mso-style-name:программа;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a1, li.a1, div.a1
+	{mso-style-name:список;
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:18.45pt;
+	margin-bottom:0cm;
+	margin-left:64.35pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-18.0pt;
+	mso-pagination:widow-orphan;
+	mso-list:l1 level1 lfo1;
+	tab-stops:42.55pt list 64.35pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a2, li.a2, div.a2
+	{mso-style-name:определение;
+	mso-style-parent:текст;
+	margin-top:12.0pt;
+	margin-right:32.9pt;
+	margin-bottom:12.0pt;
+	margin-left:35.45pt;
+	text-align:justify;
+	text-indent:.55pt;
+	mso-pagination:widow-orphan;
+	border:none;
+	mso-border-alt:solid windowtext 1.5pt;
+	padding:0cm;
+	mso-padding-alt:1.0pt 1.0pt 1.0pt 1.0pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a3, li.a3, div.a3
+	{mso-style-name:эпиграф;
+	margin-top:0cm;
+	margin-right:32.9pt;
+	margin-bottom:0cm;
+	margin-left:5.0cm;
+	margin-bottom:.0001pt;
+	text-align:right;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.a4, li.a4, div.a4
+	{mso-style-name:"от края";
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a5, li.a5, div.a5
+	{mso-style-name:Формула;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.a6, li.a6, div.a6
+	{mso-style-name:"без формата";
+	mso-style-parent:программа;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a7, li.a7, div.a7
+	{mso-style-name:стихи;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.1, li.1, div.1
+	{mso-style-name:эпиграф1;
+	mso-style-parent:эпиграф;
+	margin-top:0cm;
+	margin-right:9.35pt;
+	margin-bottom:0cm;
+	margin-left:9.0cm;
+	margin-bottom:.0001pt;
+	text-align:right;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+span.a8
+	{mso-style-name:"текст Знак";
+	mso-style-locked:yes;
+	mso-style-link:текст;
+	mso-ansi-font-size:12.0pt;
+	font-family:"Times New Roman CYR";
+	mso-ascii-font-family:"Times New Roman CYR";
+	mso-hansi-font-family:"Times New Roman CYR";
+	mso-ansi-language:RU;
+	mso-fareast-language:RU;
+	mso-bidi-language:AR-SA;}
+ /* Page Definitions */
+ @page
+	{mso-footnote-separator:url("034.files/header.htm") fs;
+	mso-footnote-continuation-separator:url("034.files/header.htm") fcs;
+	mso-endnote-separator:url("034.files/header.htm") es;
+	mso-endnote-continuation-separator:url("034.files/header.htm") ecs;}
+@page Section1
+	{size:21.0cm 842.0pt;
+	margin:33.45pt 42.55pt 72.0pt 89.85pt;
+	mso-header-margin:14.2pt;
+	mso-footer-margin:31.75pt;
+	mso-even-header:url("034.files/header.htm") eh1;
+	mso-header:url("034.files/header.htm") h1;
+	mso-even-footer:url("034.files/header.htm") ef1;
+	mso-footer:url("034.files/header.htm") f1;
+	mso-first-header:url("034.files/header.htm") fh1;
+	mso-first-footer:url("034.files/header.htm") ff1;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:847135903;
+	mso-list-type:simple;
+	mso-list-template-ids:68747279;}
+@list l0:level1
+	{mso-level-tab-stop:18.0pt;
+	mso-level-number-position:left;
+	margin-left:18.0pt;
+	text-indent:-18.0pt;}
+@list l1
+	{mso-list-id:1628194852;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-964799380 -1450833310 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-style-link:список;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:64.35pt;
+	mso-level-number-position:left;
+	margin-left:64.35pt;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l2
+	{mso-list-id:2046249180;
+	mso-list-type:simple;
+	mso-list-template-ids:-979449202;}
+@list l2:level1
+	{mso-level-start-at:0;
+	mso-level-number-format:bullet;
+	mso-level-text:-;
+	mso-level-tab-stop:54.0pt;
+	mso-level-number-position:left;
+	margin-left:54.0pt;
+	text-indent:-18.0pt;
+	font-family:"Times New Roman";}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Обычная таблица";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+table.MsoTableGrid
+	{mso-style-name:"Сетка таблицы";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+  <o:regrouptable v:ext="edit">
+   <o:entry new="1" old="0"/>
+   <o:entry new="2" old="1"/>
+   <o:entry new="3" old="0"/>
+   <o:entry new="4" old="0"/>
+  </o:regrouptable>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=RU style='tab-interval:36.0pt' background="back.gif">
+
+<div class=Section1>
+
+<h2>3.4. Модульное программирование</h2>
+
+<p class=1><span style='mso-spacerun:yes'> </span>«Divide et impera<br>
+(Разделяй и властвуй)»<br>
+<b style='mso-bidi-font-weight:normal'><a name="m1">Латинская формулировка принципа<o:p></o:p></b></p>
+
+<p class=1><b style='mso-bidi-font-weight:normal'><a name="m2"><span
+style='mso-spacerun:yes'> </span>империалистической политики, <o:p></o:p></b></p>
+
+<p class=1><b style='mso-bidi-font-weight:normal'><a name="m3">возникшая уже в новое время</b>.
+</p>
+
+<p class=a>Модульное проектирование – наиболее очевидная вещь в технологии
+программирования. Тем более, что любая промышленная технология производства
+рано или поздно приходит к сборке сложных изделий из набора совместимых и
+взаимозаменяемых деталей. Никому не надо объяснять термин «интерфейс». Тем не
+менее, наиболее сложно соблюдать эту заповедь: разрабатывать модульные
+программы. Отчасти это происходит потому, что<span style='mso-spacerun:yes'> 
+</span>взаимодействие модулей в программе несколько отличается от
+взаимодействия между модулями в другой технической системе. </p>
+
+<h3>Особенности функции как модуля</h3>
+
+<p class=a>В чем разница между модулями (функциями) в программе и модулями в
+другой технической системе, например автомобиле. Там и здесь речь идет о
+завершенных изделиях, имеющих стандартные интерфейсы соединения модулей
+(например, шланг подачи бензина или провод подключения аккумулятора в силовом
+агрегате автомобиля). Но в конкретной технической системе соединение модулей
+производится раз и навсегда (<b style='mso-bidi-font-weight:normal'><a name="m4">статически</b>),
+а в интерфейсах протекают непрерывные процессы: по бензопроводу подается
+горючее, а от аккумулятора – напряжение. Все модули работают непрерывно и
+параллельно. В программных модулях в каждый момент времени выполняется одна
+функция (<b style='mso-bidi-font-weight:normal'><a name="m5"><span lang=EN-US
+style='mso-ansi-language:EN-US'>F</span></b>). Если в теле функции <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>F</span><span lang=EN-US> </span></b>в выражении встречается <b
+style='mso-bidi-font-weight:normal'>вызов – </b>имя другой функции (<b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>G</span></b>), то между ними устанавливается временная (<b
+style='mso-bidi-font-weight:normal'>динамическая</b>) связь:<span
+style='mso-spacerun:yes'>  </span>выполнение первой функции прекращается до тех
+пор, пока не выполниться вторая. Этот принцип выполнения называется <b
+style='mso-bidi-font-weight:normal'>вложенностью вызовов функций </b>и может
+быть повторен многократно.</p>
+
+<p class=a><o:p>
+<img border="0" src="Images/034-01.gif" width="600" height="163">&nbsp;</o:p></p>
+
+<p class=a><o:p>&nbsp;</o:p><b style='mso-bidi-font-weight:
+normal'><a name="m6">Рис. 34-1. Статическое связывание модулей и динамическое связывание
+вызовов функций<o:p></o:p></b></p>
+
+<p class=a>Итак, первое, в чем нельзя ошибаться: функции синтаксически
+записываются как <b style='mso-bidi-font-weight:normal'><a name="m7">независимые </b>модули,
+установление связей между ними через вложенные вызовы производится в процессе
+выполнения, то есть динамически. </p>
+
+<p class=a>Далее необходимо установить различие между формальными и фактическими
+параметрами. Прежде всего, это два разных взгляда на программный интерфейс
+функции. Формальные параметры – это описание этого интерфейса изнутри. Оно
+дается в виде <b style='mso-bidi-font-weight:normal'><a name="m8">определения переменных, </b>то
+есть описания свойств объекта, который может быть передан на вход. Имя
+фактического параметра – это обобщенное (абстрактное) обозначение некоторой
+переменной, видимой в процессе работы функции <b style='mso-bidi-font-weight:
+normal'><a name="m9">изнутри. </b>Например, функция обрабатывает абстрактный массив с именем
+<b style='mso-bidi-font-weight:normal'><a name="m10"><span lang=EN-US style='mso-ansi-language:
+EN-US'>A</span><span lang=EN-US> </span></b>и размерностью <b style='mso-bidi-font-weight:
+normal'><a name="m11"><span lang=EN-US style='mso-ansi-language:EN-US'>n</span>. </b>При
+вызове функции в списке присутствуют фактические параметры, имеющие синтаксис <b
+style='mso-bidi-font-weight:normal'>выражений</b>, то есть уже определенных
+переменных или промежуточных результатов, которые в данном вызове <b
+style='mso-bidi-font-weight:normal'>ставятся в соответствие </b>формальным
+параметрам. Таким образом, они представляют взгляд на тот же самый интерфейс,
+но уже со стороны вызывающей функции.</p>
+
+<p class=a4 align=center style='text-align:center'>
+<img border="0" src="Images/034-02.jpg" width="444" height="413"><p align="center">
+<b style='mso-bidi-font-weight:normal'><a name="m12">Рис. 34-2. Интерфейс передачи параметров
+в функцию<o:p></o:p></b></p>
+</p>
+
+<p class=a>Итак, формальные и фактические параметры имеют принципиально разный
+синтаксис: описания переменных (определения) и использования их (выражения).
+Связь между ними также устанавливается в момент вызова динамически.</p>
+
+<p class=a>Главное, к чему необходимо привыкнуть: функция пишется для обработки
+данных <b style='mso-bidi-font-weight:normal'><a name="m13">вообще, </b>то есть представляет
+собой обобщенное описание алгоритма для некоторых произвольных данных, имена
+которых представляют собой их «будущие обозначения» в процессе работы функции.
+Что же касается транслятора, то для него формальные параметры представляют
+собой «ожидаемые на входе значения», своего рода «заглушки», поэтому функция и
+транслируется применительно к имеющимся определениям (именам и типам).</p>
+
+<p class=a>Вызов функции, наоборот, представляет собой выполнение <b
+style='mso-bidi-font-weight:normal'>частный </b>случай выполнения алгоритма для
+конкретных данных.</p>
+
+<p class=a>Рассмотренная модель может быть применима сама к себе: реальная
+программа представляет собой иерархию вызовов функции, а формальные параметры
+функции верхнего уровня могут быть фактическими параметрами в следующем
+(вложенном) вызове.</p>
+
+<p class=a>Итак, главное необходимое условие модульного программирования –
+научиться абстрагироваться от конкретных обрабатываемых данных и выносить их
+«за пределы» проектируемого алгоритма.</p>
+
+<p class=a>По отношению к результату функции можно сформулировать те же самые
+принципы: результат – это обобщенное значение, которое возвращается после
+вызова функции в конкретное выражение, где расположен вызов.</p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m14">Модульность формальная и
+истинная. </b>Формально соблюдаемая модульность – синтаксическая: программа
+состоит из множества вызывающих друг друга функций (модулей), размер модуля
+ограничен определенным числом строк текста программы. Но не любая программа,
+разбитая на функции, будет модульной. Соблюдение духа, но не буквы модульного
+программирования, требует соблюдения следующих принципов:</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b style='mso-bidi-font-weight:normal'><a name="m15">логическая
+завершенность. </b>Функция (модуль) должна реализовывать логически законченный,
+целостный алгоритм;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b style='mso-bidi-font-weight:normal'><a name="m16">ограниченность.
+</b>Функция (модуль) должна быть ограничена в размерах, в противном случае ее
+необходимо разбить на логически завершенные части - модули, вызывающие друг
+друга;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b style='mso-bidi-font-weight:normal'><a name="m17">замкнутость.
+</b>Функция (модуль) не должна использовать глобальные данные, иметь «связь с
+внешним миром» помимо программного интерфейса, не должна содержать ввода и
+вывода результатов во внешние потоки - результаты должны быть размещены в
+структурах данных;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b style='mso-bidi-font-weight:normal'><a name="m18">универсальность.
+</b>Функция (модуль) должна быть универсальна, параметры процесса обработки и
+сами данные должны передаваться извне, а не должны подразумеваться или
+устанавливаться постоянными;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b style='mso-bidi-font-weight:normal'><a name="m19">принцип
+«черного ящика». </b>Функция (модуль) должна иметь продуманный «программный
+интерфейс» - набор фактических параметров и результат функции, через который
+она «подключается» к другим частям программы (вызывается). </p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m20">Естественное появление
+модулей при разработке программы. </b>В процессе проектирования модули
+возникают естественным образом в процессе разбиения решаемой задачи на подзадачи,
+либо при выделении фрагментов некоторой задачи в отдельную подзадачу. Кроме
+того, функции (модули) могут иметь и «технологическое» происхождение. Если
+некоторая задача в процессе проектирования порождает значительное число
+программных контекстов и имеет значительный уровень вложенности управляющих
+конструкций, то в ней можно выделить подзадачу, оформив ее в виде функции с
+однократным вызовом.</p>
+
+<p class=a>Второй случай появления модулей связан с эффектом «де жа вю»: если в
+процессе разработки алгоритма возникает непреодолимое желание повторить уже
+выполненную последовательность действий, возможны следующие варианты:</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>выполнить <span lang=EN-US style='mso-ansi-language:
+EN-US'>goto</span><span lang=EN-US> </span>к имеющемуся фрагменту
+(категорически не рекомендуется);</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>повторить текст фрагмента в новом месте (не
+эффективно);</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>оформить повторяющийся фрагмент в виде модуля с
+вызовом в двух точках программы (лучше всего).</p>
+
+<h3><o:p>&nbsp;</o:p>Примеры модульного проектирования</h3>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m21">Супер-простое число. </b>Число
+1997 обладает замечательным свойством: само оно простое, простыми также
+являются любые разбиения его цифр на 2 части, то есть 1-997, 19-97, 199-7.
+Требуется найти все такие числа для заданного количества значащих цифр.</p>
+
+<p class=a>Поскольку проверка, является ли число простым, будет применяться
+многократно по отношению как к самому числу, так и к его частям, функцию
+проверки, является ли заданное число простым, оформим в виде функции, применив
+тем самым принцип модульного программирования.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//------------------------------------------------------34-01.<span
+lang=EN-US style='mso-ansi-language:EN-US'>cpp</span></p>
+
+<p class=a0>//----- Функция проверки, является ли число простым</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>int PR(int a){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>if (a==0) return 0;<span
+style='mso-spacerun:yes'>                      </span>//
+0 это не простое число<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>for ( int n=2; n&lt;a; n++)<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-spacerun:yes; mso-ansi-language:EN-US' lang="EN-US">      </span>{ <span lang=EN-US
+style='mso-ansi-language:EN-US'>if</span> (<span lang=EN-US style='mso-ansi-language:
+EN-US'>a</span>%<span lang=EN-US style='mso-ansi-language:EN-US'>n</span>==0) <span
+lang=EN-US style='mso-ansi-language:EN-US'>return</span> 0 ; }<span
+style='mso-spacerun:yes'>    </span><span style='mso-tab-count:1'>   </span>//
+Если делится, можно выйти сразу</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>return</span> 1;}<span
+style='mso-spacerun:yes'>                                </span><span
+style='mso-tab-count:1'>  </span>// Дошли до конца - простое</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a4>Дополнительная проверка «крайностей»: 1 является простым числом, но
+для нее цикл не выполнится ни разу и будет возвращена «истина». 0, вообще
+говоря, простым числом не является, поэтому должен быть «отсечен».</p>
+
+<p class=a4>1. Сам алгоритм представляет собой полный перебор <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>n</span>-</b>значных чисел. Прежде всего, необходимо получить сам
+диапазон. Для этого 1 умножается в цикле <b style='mso-bidi-font-weight:normal'><a name="m22"><span
+lang=EN-US style='mso-ansi-language:EN-US'>n</span><span lang=EN-US> </span></b>раз
+на 10. Верхняя граница – в 10 раз больше нижней. Полученные числа сохранять не
+будем, будем просто выводить.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void super(int n){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>long v,a; int i;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>for</span> (<span
+lang=EN-US style='mso-ansi-language:EN-US'>v</span>=1,<span lang=EN-US
+style='mso-ansi-language:EN-US'>i</span>=0; <span lang=EN-US style='mso-ansi-language:
+EN-US'>i</span>&lt;<span lang=EN-US style='mso-ansi-language:EN-US'>n</span>; <span
+lang=EN-US style='mso-ansi-language:EN-US'>i</span>++) <span lang=EN-US
+style='mso-ansi-language:EN-US'>v</span>*=10;<span style='mso-tab-count:2'>                    </span>//
+Определение нижней границы</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>for</span> (<span
+lang=EN-US style='mso-ansi-language:EN-US'>a</span>=<span lang=EN-US
+style='mso-ansi-language:EN-US'>v</span>; <span lang=EN-US style='mso-ansi-language:
+EN-US'>a</span>&lt;10*<span lang=EN-US style='mso-ansi-language:EN-US'>v</span>;
+<span lang=EN-US style='mso-ansi-language:EN-US'>a</span>++){</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>// Проверить число
+на супер-простоту</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>if (… суперпростое…) cout &lt;&lt; a &lt;&lt;
+endl;<o:p></o:p></span></p>
+
+<p class=a0>}}</p>
+
+<p class=a4>2. Фрагмент проверки является скорее «технологической заглушкой»,
+обозначающей общую логику процесса. Саму проверку удобнее произвести по принципу
+просеивания: если очередное условие не соблюдается, выполняется переход к
+следующему шагу цикла оператором <b style='mso-bidi-font-weight:normal'><a name="m23"><span
+lang=EN-US style='mso-ansi-language:EN-US'>continue</span>. </b>Первое условие,
+что само число является простым, проверяется вызовом функции. Сложнее проверить
+его части. Для получения частей необходимо рассмотреть частные и остатки от
+деления этого числа на 10,100 и т.д. до <b style='mso-bidi-font-weight:normal'><a name="m24"><span
+lang=EN-US style='mso-ansi-language:EN-US'>v</span> - </b>нижней границы
+диапазона. Если хотя бы одно частное или остаток из них не является простым, то
+все число также не является супер-простым. Грубо процесс проверки можно
+представить так.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>If</span> (<span
+lang=EN-US style='mso-ansi-language:EN-US'>PR</span>(<span lang=EN-US
+style='mso-ansi-language:EN-US'>a</span>)==0) <span lang=EN-US
+style='mso-ansi-language:EN-US'>continue</span>;</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>for</span> (<span
+lang=EN-US style='mso-ansi-language:EN-US'>long</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>ll</span>=10; <span lang=EN-US
+style='mso-ansi-language:EN-US'>ll</span>&lt;<span lang=EN-US style='mso-ansi-language:
+EN-US'>v</span>; <span lang=EN-US style='mso-ansi-language:EN-US'>ll</span>*=10){<span
+style='mso-tab-count:2'>                      </span>// <span lang=EN-US
+style='mso-ansi-language:EN-US'>ll</span><span lang=EN-US> </span>пробегает
+значения 10,100, 1000 &lt; <span lang=EN-US style='mso-ansi-language:EN-US'>v</span></p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>… <span
+lang=EN-US style='mso-ansi-language:EN-US'>PR</span>(<span lang=EN-US
+style='mso-ansi-language:EN-US'>a</span>/<span lang=EN-US style='mso-ansi-language:
+EN-US'>ll</span>)…<span style='mso-tab-count:3'>                              </span>//
+Проверка старшей части</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>… <span
+lang=EN-US style='mso-ansi-language:EN-US'>PR</span>(<span lang=EN-US
+style='mso-ansi-language:EN-US'>a</span>%<span lang=EN-US style='mso-ansi-language:
+EN-US'>ll</span>)…<span style='mso-tab-count:3'>                            </span>//
+Проверка младшей части</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>}</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>if</span> (…все
+части простые…) <span lang=EN-US style='mso-ansi-language:EN-US'>cout</span>
+&lt;&lt; <span lang=EN-US style='mso-ansi-language:EN-US'>a</span> &lt;&lt; <span
+lang=EN-US style='mso-ansi-language:EN-US'>endl</span>;</p>
+
+<p class=a4>3. В предыдущем варианте мы отступили от принципа нисходящего
+проектирования, поскольку сначала требовалось сформулировать условие: проверить,
+являются ли все части числа простыми, из чего следует, что написанный нами
+вчерне процесс проверяет условие всеобщности. Для его реализации будем
+использовать стандартный контекст с <b style='mso-bidi-font-weight:normal'><a name="m25"><span
+lang=EN-US style='mso-ansi-language:EN-US'>break</span>. </b>Если условие не
+соблюдается (то есть выполняется обратное), то происходит досрочный выход,
+тогда «естественное» достижение конца цикла по условию, стоящему в заголовке,
+говорит о справедливости свойства всеобщности. </p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//------------------------------------------------------34-02.<span
+lang=EN-US style='mso-ansi-language:EN-US'>cpp</span></p>
+
+<p class=a0>//------- Супер-простое число с <span lang=EN-US style='mso-ansi-language:
+EN-US'>n</span> значащими цифрами</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>void super(int n){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>long v,a; int i;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>for</span> (<span lang=EN-US style='mso-ansi-language:
+EN-US'>v</span>=1,<span lang=EN-US style='mso-ansi-language:EN-US'>i</span>=0; <span
+lang=EN-US style='mso-ansi-language:EN-US'>i</span>&lt;<span lang=EN-US
+style='mso-ansi-language:EN-US'>n</span>; <span lang=EN-US style='mso-ansi-language:
+EN-US'>i</span>++) <span lang=EN-US style='mso-ansi-language:EN-US'>v</span>*=10;<span
+style='mso-spacerun:yes'>         &nbsp;&nbsp;&nbsp;&nbsp; </span>// Определение нижней границы</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>for (a=v/10; a&lt;v; a++){<o:p></o:p></span></p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>if (PR(a)==0) continue;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>for (long ll=10; ll&lt;v; ll*=10){
+</span><span style='mso-ansi-language:EN-US'>&nbsp;&nbsp;&nbsp; </span><span lang=EN-US style='mso-ansi-language:EN-US'>// ll пробегает значения 10,100, 1000 &lt; v<o:p></o:p></span></p>
+
+<p class=a0 style='margin-left:36.0pt;text-indent:36.0pt'><span lang=EN-US
+style='mso-ansi-language:EN-US'>if</span> (<span lang=EN-US style='mso-ansi-language:
+EN-US'>PR</span>(<span lang=EN-US style='mso-ansi-language:EN-US'>a</span>/<span
+lang=EN-US style='mso-ansi-language:EN-US'>ll</span>)==0)<span
+style='mso-spacerun:yes'>          </span>//
+Проверка старшей части</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>break</span>;<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>// Не простое досрочный выход</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>if</span> (<span lang=EN-US
+style='mso-ansi-language:EN-US'>PR</span>(<span lang=EN-US style='mso-ansi-language:
+EN-US'>a</span>%<span lang=EN-US style='mso-ansi-language:EN-US'>ll</span>)==0)<span
+style='mso-spacerun:yes'>        </span>// Проверка младшей части</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>break</span>;<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>// Не простое досрочный выход</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span
+style='mso-spacerun:yes'>  </span><span style='mso-tab-count:1'>          </span>}</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span><span style='mso-tab-count:
+1'>           </span><span lang=EN-US style='mso-ansi-language:EN-US'>if</span>
+(<span lang=EN-US style='mso-ansi-language:EN-US'>ll</span>==<span lang=EN-US
+style='mso-ansi-language:EN-US'>v</span>)<span
+style='mso-spacerun:yes'>                         </span><span
+style='mso-tab-count:1'>            </span>// Достигли конца все простые</p>
+
+<p class=a0 style='margin-left:36.0pt;text-indent:36.0pt'><span lang=EN-US
+style='mso-ansi-language:EN-US'>printf(&quot;super=%ld\n&quot;,a);<o:p></o:p></span></p>
+
+<p class=a0>}}</p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m26">Сортировка слов в строке. </b>Требуется
+отсортировать слова в строке: получить выходную строку со словами,
+упорядоченными по различным критериям: по длине или по алфавиту.</p>
+
+<p class=a>Возможны различные варианты решения этой задачи, в частности, можно
+попытаться по максимуму свести эту задачу к стандартным. Например, запомнить в
+массиве пары характеристик каждого слова: начало и длина. Затем отсортировать
+массив по длинам <b style='mso-bidi-font-weight:normal'><a name="m27">любым </b>известным
+способом. После чего переписать слова в выходную строку, зная их начала в
+исходной.</p>
+
+<p class=a>Мы рассмотрим более компактный вариант, использующий естественное
+представление и преобразование данных. Если найти в строке слово с минимальной
+характеристикой (минимальной длины или первое по алфавиту), то после переписывания
+в выходную строку его можно удалить, заменив пробелами. Последовательное
+применение этого действия к исходной строке даст нам сортировку <b
+style='mso-bidi-font-weight:normal'>выбором. </b><span
+style='mso-spacerun:yes'> </span>Программу в такой постановке можно разбить на
+три модуля<span lang=EN-US style='mso-ansi-language:EN-US'>:<o:p></o:p></span></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>поиск слова с минимальной характеристикой;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>основная функция – выбор и переписывание слов;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>функция сравнения двух слов в одной строке по алфавиту.</p>
+
+<p class=a>Для начала </p>
+
+<p class=a>При помощи функции поиска можно выполнить упорядочение слов по
+длине. Данный пример является хорошей иллюстрацией сущности сортировки выбором,
+приведенной в 2.6 для обычных массивов: из входного множества объектов
+(последовательности) выбирается минимальный (максимальный) и переносится в выходное.
+Наглядность программы состоит в том, что найденное слово удаляется из входной
+строки путем его «забивания» пробелами.</p>
+
+<p class=a>Выделение отдельного модуля и его проектирование начинается с
+определения интерфейсов – заголовков функций. Если функция поиска слова с
+минимальной характеристикой возвращает индекс его в строке (или -1 при
+отсутствии слов), то основная функция сортировки записывается в виде двойного
+цикла.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<span style='font-size:10.0pt;font-family:Arial;mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:RU;mso-fareast-language:
+RU;mso-bidi-language:AR-SA'><br clear=all style='page-break-before:always'>
+</span>
+
+<p class=a0>//------------------------------------------------------34-03.cpp</p>
+
+<p class=a0>///---- Сортировка слов в строке в порядке возрастания (выбором)</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>void sort(char in[], char out[]){<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-spacerun:yes; mso-ansi-language:EN-US' lang="EN-US"> </span>int i=0,k;</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>while((<b style='mso-bidi-font-weight:
+normal'><a name="m28">k=find1(in)</b>)!=-1) {<span style='mso-tab-count:2'>                        </span>//
+Получить индекс очередного слова</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>for (; in[k]!=' ' &amp;&amp; in[k]!=0; i++,k++)
+{<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:2; mso-ansi-language:EN-US' lang="EN-US">                        </span>out[i]=in[k];
+in[k]=' ';<span style='mso-tab-count:1'>       </span>// Переписать с
+затиранием</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span>}</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>out[i++]=' ';<span
+style='mso-spacerun:yes'>              </span><span style='mso-tab-count:1'>                  </span><span
+style='mso-spacerun:yes'> </span>// После слова добавить пробел</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>}</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>out[i]=0;}<span
+style='mso-tab-count:1'>                                              </span>//
+В конце – конец строки</p>
+
+<p class=a>Используется присваивание результата вызываемой функции «на лету» <b
+style='mso-bidi-font-weight:normal'>k=find1(in</b>), т.к. он проверяется на -1,
+а затем используется в теле цикла. В теле цикла происходит простое копирование
+символов, во входной строке используется индекс <b style='mso-bidi-font-weight:
+normal'><a name="m29"><span lang=EN-US style='mso-ansi-language:EN-US'>k</span><span
+lang=EN-US> </span>– </b>возвращенный функцией поиска, в выходной строке –
+собственный линейно изменяющийся индекс записи – <b style='mso-bidi-font-weight:
+normal'><a name="m30"><span lang=EN-US style='mso-ansi-language:EN-US'>i</span>. </b>Одновременно
+после копирования символ заменяется на пробел.</p>
+
+<p class=a>Варианты функции поиска слова с минимальной характеристикой будем
+разрабатывать по технологии «грязного» программирования (см.<b
+style='mso-bidi-font-weight:normal'>3.5</b>). Функция-заготовка просматривает
+строку по словам (см. <b style='mso-bidi-font-weight:normal'><a name="m31">4.4</b>).
+Структурные компоненты строки – цепочка пробелов и цепочка символов слова имеют
+каждый свой цикл просмотра. <span style='mso-spacerun:yes'> </span>В программе
+можно выделить точку, где она находится в момент обнаружения начала очередного
+слова.</p>
+
+<p class=a0><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:
+"Times New Roman CYR";mso-bidi-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0>//------------------------------------------------------34-03.cpp</p>
+
+<p class=a0>//---- Поиск слова с минимальной характеристикой</p>
+
+<p class=a0>// &quot;грязная программа&quot; - пословная обработка</p>
+
+<p class=a0><span style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span><span lang=EN-US>void find0(char in[]){<o:p></o:p></span></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>int i=0;<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-spacerun:yes; mso-ansi-language:EN-US' lang="EN-US"> </span>while (in[i]!=0) {<span
+style='mso-tab-count:3'>                         </span>// Цикл пословного
+просмотра строки</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span
+style='mso-spacerun:yes'> </span>while (in[i]==' ') i++;<span style='mso-tab-count:
+1'>       </span>// Пропуск пробелов перед словом</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span
+style='mso-spacerun:yes'> </span><span lang=EN-US style='mso-ansi-language:
+EN-US'>if</span> (<span lang=EN-US style='mso-ansi-language:EN-US'>in</span>[<span
+lang=EN-US style='mso-ansi-language:EN-US'>i</span>]==0) <span lang=EN-US
+style='mso-ansi-language:EN-US'>return</span>;<span style='mso-tab-count:1'>         </span>//
+После пробелов нет слова - выход</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span
+style='mso-spacerun:yes'> </span>//<b style='mso-bidi-font-weight:normal'><a name="m32">
+Начало очередного слова - <span
+lang=EN-US style='mso-ansi-language:EN-US'>i</span></b></p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span
+style='mso-spacerun:yes'> </span><span lang=EN-US style='mso-ansi-language:
+EN-US'>for</span> (<span lang=EN-US style='mso-ansi-language:EN-US'>k</span>=0;<span
+lang=EN-US style='mso-ansi-language:EN-US'>in</span>[<span lang=EN-US
+style='mso-ansi-language:EN-US'>i</span>]!=' ' &amp;&amp; <span lang=EN-US
+style='mso-ansi-language:EN-US'>in</span>[<span lang=EN-US style='mso-ansi-language:
+EN-US'>i</span>]!=0; <span lang=EN-US style='mso-ansi-language:EN-US'>i</span>++);
+</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span
+style='mso-spacerun:yes'> </span>}<span
+style='mso-spacerun:yes'>                             </span><span style='mso-tab-count:1'>     </span>//
+Цикл просмотра слова</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>}</p>
+
+<p class=a>Для варианта с выбором слова минимальной длины можно просто
+доработать эту функцию: внести в цикл, движущийся по символам слова, счетчик
+длины и добавить контекст сравнения на минимум.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//---- Поиск слова максимальной длины пословная обработка</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>int find1(char in[]){<o:p></o:p></span></p>
+
+<p class=a0><span style='mso-spacerun:yes' lang="EN-US"> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>int</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>i</span>=0, <span lang=EN-US
+style='mso-ansi-language:EN-US'>k</span>, <span lang=EN-US style='mso-ansi-language:
+EN-US'>m</span>=0, <span lang=EN-US style='mso-ansi-language:EN-US'>b</span>=-1;</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>while (in[i]!=0) {<span
+style='mso-tab-count:3'>                         </span>// Цикл пословного
+просмотра строки</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>while (in[i]==' ')
+i++;<span style='mso-spacerun:yes'>     </span><span style='mso-tab-count:1'>   </span>//
+Пропуск пробелов перед словом</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>if (in[i]==0) return b;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>for (k=0;in[i]!=' ' &amp;&amp;
+in[i]!=0; i++,k++); </span><span style='mso-tab-count:1'>     </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>// </span>Подсчет<span
+style='mso-ansi-language:EN-US'> </span>длины<span style='mso-ansi-language:
+EN-US'> </span>слова<span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>if (b==-1 || k&lt;m){<span
+style='mso-tab-count:1'>            </span>// Контекст выбора минимума</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span>m=k;
+b=i-k; }<span style='mso-spacerun:yes'>      </span>// Одновременно
+запоминается</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>}<span
+style='mso-spacerun:yes'>                           </span><span
+style='mso-tab-count:1'>        </span>// </span>индекс<span style='mso-ansi-language:
+EN-US'> </span>начала<span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>return b; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a>Для варианта сортировки по алфавиту удобнее вынести сравнение двух слов
+в строке в отдельную функцию, хотя она и будет вызываться один раз. Это нужно,
+чтобы изменения, вносимые в «грязную» программу, были минимальными и
+обозримыми. Сама функция представляет собой простой цикл попарного сравнения с
+обнаружением первого расхождения.</p>
+
+<span style='font-size:10.0pt;font-family:Arial;mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:RU;mso-fareast-language:
+RU;mso-bidi-language:AR-SA'><br clear=all style='page-break-before:always'>
+</span>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//------------------------------------------------------34-03.cpp<o:p></o:p></span></p>
+
+<p class=a0>#<span lang=EN-US style='mso-ansi-language:EN-US'>define</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>CMP</span>(<span
+lang=EN-US style='mso-ansi-language:EN-US'>i</span>) (<span lang=EN-US
+style='mso-ansi-language:EN-US'>c</span>[<span lang=EN-US style='mso-ansi-language:
+EN-US'>i</span>]==0 || <span lang=EN-US style='mso-ansi-language:EN-US'>c</span>[<span
+lang=EN-US style='mso-ansi-language:EN-US'>i</span>]==' ')<span
+style='mso-tab-count:1'>            </span>// Определение подстановки -
+проверка</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>//---- Сравнение слов в строке<span
+style='mso-tab-count:1'>              </span>//
+символа на конец слова</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>int my_cmp(char c[], int i1, int i2){<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-spacerun:yes; mso-ansi-language:EN-US' lang="EN-US"> </span>while(1){<span style='mso-tab-count:
+4'>                                               </span>// Вечный цикл с
+определением </p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>if (CMP(i1)
+&amp;&amp; CMP(i2))<span style='mso-tab-count:2'>              </span>//
+первого расхождения</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span>return
+0;<span style='mso-tab-count:2'>                        </span>// Кончились одновременно
+- равны</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>if (CMP(i1))
+return -1;<span style='mso-tab-count:1'>      </span><span style='mso-tab-count:
+1'>            </span>// Одно кончилось раньше другого</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>if (CMP(i2)) return 1;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if (c[i1]!=c[i2]) return
+c[i1]-c[i2];<span style='mso-tab-count:1'>    </span>// </span>Обнаружено<span
+style='mso-ansi-language:EN-US'> </span>расхождение<span style='mso-ansi-language:
+EN-US'> <span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>i1++; i2++;<span
+style='mso-tab-count:1'>                                </span>// Иначе – к следующей паре</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>}</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>}</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a>В функцию поиска минимального слова по алфавиту в точке обнаружения
+начала слова нужно вставить стандартный контекст запоминания минимального, в
+котором вызывается функция сравнения для текущего слова (индекс <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>i</span></b>) и слова, которое считается минимальным (индекс <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>b</span></b>). Для первого сравнения устанавливается и проверяется «защелка»
+<b style='mso-bidi-font-weight:normal'><a name="m33"><span lang=EN-US style='mso-ansi-language:
+EN-US'>b=-1</span>.</b></p>
+
+<p class=a0>//------------------------------------------------------34-03.<span
+lang=EN-US style='mso-ansi-language:EN-US'>cpp</span></p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>//---- Поиск слова
+минимального по алфавиту</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>int find2(char in[]){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>int i=0, k, m, b;<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-spacerun:yes; mso-ansi-language:EN-US' lang="EN-US"> </span>b=-1; m=0;</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>while (in[i]!=0) {<span
+style='mso-tab-count:1'> </span><span style='mso-tab-count:3'>                                    </span>//
+Цикл пословного просмотра строки</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>while (in[i]==' ')
+i++;<span style='mso-tab-count:2'>                    </span>// Пропуск
+пробелов перед словом</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>if (in[i]==0) return b;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if</span> (<span lang=EN-US
+style='mso-ansi-language:EN-US'>b</span>==-1 || <span lang=EN-US
+style='mso-ansi-language:EN-US'>my</span>_<span lang=EN-US style='mso-ansi-language:
+EN-US'>cmp</span>(<span lang=EN-US style='mso-ansi-language:EN-US'>in</span>,<span
+lang=EN-US style='mso-ansi-language:EN-US'>i</span>,<span lang=EN-US
+style='mso-ansi-language:EN-US'>b</span>)&lt;0)<span style='mso-tab-count:1'>      </span>//
+Начало очередного слова</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span>b=i;<span
+style='mso-tab-count:3'>                               </span>// i - очередной,
+b - оптимальное</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>for (k=0;in[i]!=' <span
+lang=EN-US style='mso-ansi-language:EN-US'>' &amp;&amp; in[i]!=0; i++); <o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>}<span
+style='mso-spacerun:yes'>                             </span><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>return b; }<o:p></o:p></span></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+</div>
+
+</body>
+
+</html>

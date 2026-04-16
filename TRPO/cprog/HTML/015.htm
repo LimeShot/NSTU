@@ -1,0 +1,1382 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=File-List href="015.files/filelist.xml">
+<link rel=Edit-Time-Data href="015.files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>1.5. Алгоритм Операторы</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>www.PHILka.RU</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>vtpc112</o:LastAuthor>
+  <o:Revision>3</o:Revision>
+  <o:TotalTime>312</o:TotalTime>
+  <o:Created>2008-07-04T09:22:00Z</o:Created>
+  <o:LastSaved>2008-07-04T09:22:00Z</o:LastSaved>
+  <o:Pages>9</o:Pages>
+  <o:Words>2421</o:Words>
+  <o:Characters>13805</o:Characters>
+  <o:Company>NSTU_VT</o:Company>
+  <o:Bytes>11776</o:Bytes>
+  <o:Lines>115</o:Lines>
+  <o:Paragraphs>32</o:Paragraphs>
+  <o:CharactersWithSpaces>16194</o:CharactersWithSpaces>
+  <o:Version>11.6360</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DoNotHyphenateCaps/>
+  <w:DrawingGridHorizontalSpacing>0,55 пт</w:DrawingGridHorizontalSpacing>
+  <w:DrawingGridVerticalSpacing>0,55 пт</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:UseMarginsForDrawingGridOrigin/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DrawingGridVerticalOrigin>99,25 пт</w:DrawingGridVerticalOrigin>
+  <w:Compatibility>
+   <w:WW6BorderRules/>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+   <w:UseWord97LineBreakingRules/>
+   <w:SelectEntireFieldWithStartOrEnd/>
+   <w:UseWord2002TableStyleRules/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:"Times New Roman CYR";
+	panose-1:2 2 6 3 5 4 5 2 3 4;
+	mso-font-charset:204;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+@font-face
+	{font-family:"Courier New CYR";
+	panose-1:2 7 3 9 2 2 5 2 4 4;
+	mso-font-charset:204;
+	mso-generic-font-family:modern;
+	mso-font-pitch:fixed;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+@font-face
+	{font-family:"Arial CYR";
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+h1
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:14.0pt;
+	mso-bidi-font-weight:normal;}
+h2
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-font-weight:normal;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+h3
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	font-weight:normal;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.a, li.a, div.a
+	{mso-style-name:текст;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a0, li.a0, div.a0
+	{mso-style-name:программа;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a1, li.a1, div.a1
+	{mso-style-name:список;
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:18.45pt;
+	margin-bottom:0cm;
+	margin-left:64.35pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-18.0pt;
+	mso-pagination:widow-orphan;
+	mso-list:l4 level1 lfo1;
+	tab-stops:42.55pt list 64.35pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a2, li.a2, div.a2
+	{mso-style-name:определение;
+	mso-style-parent:текст;
+	margin-top:12.0pt;
+	margin-right:32.9pt;
+	margin-bottom:12.0pt;
+	margin-left:35.45pt;
+	text-align:justify;
+	text-indent:.55pt;
+	mso-pagination:widow-orphan;
+	border:none;
+	mso-border-alt:solid windowtext 1.5pt;
+	padding:0cm;
+	mso-padding-alt:1.0pt 1.0pt 1.0pt 1.0pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a3, li.a3, div.a3
+	{mso-style-name:эпиграф;
+	margin-top:0cm;
+	margin-right:32.9pt;
+	margin-bottom:0cm;
+	margin-left:5.0cm;
+	margin-bottom:.0001pt;
+	text-align:right;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.a4, li.a4, div.a4
+	{mso-style-name:"от края";
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a5, li.a5, div.a5
+	{mso-style-name:Формула;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.a6, li.a6, div.a6
+	{mso-style-name:"без формата";
+	mso-style-parent:программа;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a7, li.a7, div.a7
+	{mso-style-name:стихи;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.1, li.1, div.1
+	{mso-style-name:эпиграф1;
+	mso-style-parent:эпиграф;
+	margin-top:0cm;
+	margin-right:9.35pt;
+	margin-bottom:0cm;
+	margin-left:9.0cm;
+	margin-bottom:.0001pt;
+	text-align:right;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.2, li.2, div.2
+	{mso-style-name:"заголовок 2";
+	mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;
+	font-style:italic;}
+p.3, li.3, div.3
+	{mso-style-name:"заголовок 3";
+	mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";}
+p.31, li.31, div.31
+	{mso-style-name:"заголовок 31";
+	mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";}
+ /* Page Definitions */
+ @page
+	{mso-footnote-separator:url("015.files/header.htm") fs;
+	mso-footnote-continuation-separator:url("015.files/header.htm") fcs;
+	mso-endnote-separator:url("015.files/header.htm") es;
+	mso-endnote-continuation-separator:url("015.files/header.htm") ecs;}
+@page Section1
+	{size:21.0cm 842.0pt;
+	margin:33.45pt 42.55pt 72.0pt 89.85pt;
+	mso-header-margin:14.2pt;
+	mso-footer-margin:31.75pt;
+	mso-even-header:url("015.files/header.htm") eh1;
+	mso-header:url("015.files/header.htm") h1;
+	mso-even-footer:url("015.files/header.htm") ef1;
+	mso-footer:url("015.files/header.htm") f1;
+	mso-first-header:url("015.files/header.htm") fh1;
+	mso-first-footer:url("015.files/header.htm") ff1;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:263923361;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1826399952 68747265 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l1
+	{mso-list-id:294870641;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1263662882 68747265 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l2
+	{mso-list-id:700514448;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1921475170 68747265 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l2:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l3
+	{mso-list-id:1224684207;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1182793740 68747265 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l3:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l4
+	{mso-list-id:1628194852;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-964799380 -1530635034 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l4:level1
+	{mso-level-number-format:bullet;
+	mso-level-style-link:список;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:64.35pt;
+	mso-level-number-position:left;
+	margin-left:64.35pt;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l5
+	{mso-list-id:1754887697;
+	mso-list-type:simple;
+	mso-list-template-ids:68747269;}
+@list l5:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:18.0pt;
+	mso-level-number-position:left;
+	margin-left:18.0pt;
+	text-indent:-18.0pt;
+	font-family:Wingdings;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Обычная таблица";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+table.MsoTableGrid
+	{mso-style-name:"Сетка таблицы";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+  <o:regrouptable v:ext="edit">
+   <o:entry new="1" old="0"/>
+   <o:entry new="2" old="1"/>
+   <o:entry new="3" old="0"/>
+   <o:entry new="4" old="0"/>
+   <o:entry new="5" old="0"/>
+   <o:entry new="6" old="5"/>
+   <o:entry new="7" old="0"/>
+   <o:entry new="8" old="0"/>
+   <o:entry new="9" old="0"/>
+  </o:regrouptable>
+ </o:shapelayout></xml><![endif]-->
+<!--[if gte mso 9]>
+<xml><o:shapedefaults v:ext="edit" spidmax="1027"/>
+</xml><![endif]-->
+</head>
+
+<body lang=RU style='tab-interval:36.0pt' background="back.gif">
+
+<div class=Section1>
+
+<h2 style='mso-outline-level:2'>1.5. Алгоритм. Операторы</h2>
+
+<p class=a>Следующий «слой» конструкций языка программирования – операторы. Они
+создают то, что в обыденном сознании ассоциируется с понятием алгоритм –
+описание последовательности действий, выполняемых<span
+style='mso-spacerun:yes'>  </span>программой, или логика ее работы. Это, в свою
+очередь, ассоциируется с понятием «блок-схема», что, в целом, довольно близко к
+истине. На этом уровне языки программирования проявляют завидное единообразие,
+поскольку<span style='mso-spacerun:yes'>  </span>количество видов управляющей
+логики программы ограничено. В Си/Си++ реализован общий для большинства языков
+программирования «джентльменский набор» управляющих конструкций:</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>линейная<span style='mso-ansi-language:EN-US'> </span>последовательность
+действий<span lang=EN-US style='mso-ansi-language:EN-US'>;</span></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>условная конструкция (если-то-иначе);</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>конструкция повторения (цикл)<span lang=EN-US
+style='mso-ansi-language:EN-US'>;</span></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>переход (и его разновидности).</p>
+
+<p class=a>Сразу же отметим, что этот набор является функционально избыточным,
+и для записи любого алгоритма достаточно только три вида.</p>
+
+<p class=a>Описание <b style='mso-bidi-font-weight:normal'><a name="m1">управляющих
+конструкций языка</b> (<b style='mso-bidi-font-weight:normal'><a name="m2">операторов</b>) удобнее
+всего делать с помощью блок-схем. Хотя на самом деле блок-схема тоже
+представляет собой средство описания логики алгоритма, так что мы вроде как
+меняем «шило на мыло». Но все-таки для такого представления есть два основания:</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>элементы блок-схемы соответствуют основным
+компонентам системы команд компьютера с размещением программы в линейной памяти
+(см.<b style='mso-bidi-font-weight:normal'><a name="m3">1.2</b>) – командам обработки
+данных, проверки условий и безусловных (условных) переходов; </p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>блок-схемы являются естественным инструментом технологии
+«исторического» программирования, базирующейся на развертке процесса выполнения
+проектируемой программы во времени (см.<b style='mso-bidi-font-weight:normal'><a name="m4">3.2</b>).</p>
+
+<p class=a>Блок-схема содержит элементы трех видов:</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b style='mso-bidi-font-weight:normal'><a name="m5">действие</b>,
+связанное с обработкой данных, в том числе последовательность операций
+(выражение), присваивание и ввод-вывод. Изображается прямоугольником, имеющим
+один вход и один выход<span lang=EN-US style='mso-ansi-language:EN-US'>;</span></p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img border="0" src="Images/015-00.gif" width="111" height="70">&nbsp;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b style='mso-bidi-font-weight:normal'><a name="m6">проверка
+условия.</b> Изображается ромбом, в котором записано условие, и который имеет
+один вход и два выхода в зависимости от результата (0 – ложь, 1 –истина);</p>
+
+<p class="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img border="0" src="Images/015-01.gif" width="164" height="61"></p>
+
+<br style='mso-ignore:vglayout' clear=ALL>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b style='mso-bidi-font-weight:normal'><a name="m7">переход</b>
+явно связывает <span style='mso-spacerun:yes'> </span>последовательно
+выполняемые действия (связь по управлению, поток команд) и обозначается
+стрелкой.</p>
+
+<p class=a1 style='margin-left:1.0cm;text-indent:0cm;mso-list:none;tab-stops:
+42.55pt'>&nbsp;&nbsp;&nbsp;
+<img border="0" src="Images/015-02.gif" width="391" height="62"><h3>Принцип вложенности и структурированные блок-схемы</h3>
+
+<p class=a>Управляющие конструкции языка являются <b style='mso-bidi-font-weight:
+normal'><a name="m8">структурированными, </b><span style='mso-spacerun:yes'> </span>если
+эквивалентная им блок-схема имеет один вход и один выход. Тогда ее можно
+представить как элементарное действие в конструкции более высокого уровня.
+Возникает «матрешка», в которой логическая и синтаксическая вложенность
+операторов идентичны друг другу: каждый оператор «не выходит за рамки», т.е. не
+передает управления вне<span style='mso-spacerun:yes'>  </span>той
+синтаксической конструкции, в которую он вписан. Блок-схема, состоящая из таких
+структурированных конструкций, также является <b style='mso-bidi-font-weight:
+normal'><a name="m9">структурированной. </b>В структурированной блок-схеме элемент-прямоугольник
+«действие» может содержать как элементарное действие (выражение, простой
+оператор), так и вложенную управляющую конструкцию.</p>
+
+<p class=a><img border="0" src="Images/015-03.gif" width="620" height="540"><br style='mso-ignore:vglayout' clear=ALL>
+
+<p class=a align=center style='text-align:center;text-indent:0cm'><b
+style='mso-bidi-font-weight:normal'>Рис.15.1. Структурированные конструкции
+и<span style='mso-spacerun:yes'>   </span>блок-схема<o:p></o:p></b></p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m10">Принцип вложенности и
+операторы перехода. </b>Группа операторов перехода (<span lang=EN-US
+style='mso-ansi-language:EN-US'>goto</span>, <span lang=EN-US style='mso-ansi-language:
+EN-US'>continue</span>, <span lang=EN-US style='mso-ansi-language:EN-US'>break</span>,
+<span lang=EN-US style='mso-ansi-language:EN-US'>return</span>, <span
+lang=EN-US style='mso-ansi-language:EN-US'>throw</span>) также могут быть
+синтаксически вложенными, т.е. являться составной частью (действием) операторов
+более высокого уровня. Но при этом логическая вложенность (структурированность)
+не соблюдается: оператор «выводит» поток управления за пределы той конструкции,
+в которую он вписан (см.ниже). Все остальные виды управляющих конструкций
+(последовательность, ветвление и цикл) являются структурированными.</p>
+
+<h3 style='mso-outline-level:3'>Операторы линейной последовательности действий</h3>
+
+<p class=a><span style='mso-spacerun:yes'> </span>Основным «источником»
+операторов в программе являются выражения. Любое из них, ограниченное символом
+«<b style='mso-bidi-font-weight:normal'><a name="m11">;-</b>точка с запятой», превращается в
+оператор. По аналогии символ «<b style='mso-bidi-font-weight:normal'><a name="m12">;</b>»,
+встречающийся в программе «сам по себе» обозначает <b style='mso-bidi-font-weight:
+normal'><a name="m13">пустой оператор</b>, не производящий никаких действий. Пустой оператор
+используется там, где по синтаксису требуется наличие оператора, но никаких
+действий производить не нужно. Например, в цикле, где все необходимое делается
+в его заголовке:</p>
+
+<p class=a><o:p>&nbsp;</o:p></p>
+
+<p class=a0 style='text-indent:36.0pt'>for (i=0; i&lt;n; i++) s = s + A[i]; 
+<span style='mso-tab-count:1; mso-bidi-font-family:Arial'>    </span>//
+Обычный цикл</p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>for (i=0; A[i]!=0 &amp;&amp; i&lt;n; i++);<span style='mso-tab-count:
+1'>       </span>// </span>Цикл<span style='mso-ansi-language:EN-US'> </span>с<span
+style='mso-ansi-language:EN-US'> </span>пустым<span style='mso-ansi-language:
+EN-US'> </span>оператором<span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a>Управляющая конструкция<span style='mso-spacerun:yes'>  </span>- <b
+style='mso-bidi-font-weight:normal'>линейная последовательность действий </b>является
+основной в языках программирования, но в синтаксисе она, как правило, задается
+неявно. Банальность, о которой даже неудобно говорить, звучит так: <b
+style='mso-bidi-font-weight:normal'>последовательно записанные действия одного
+уровня <span style='mso-spacerun:yes'> </span>выполняются последовательно. </b><span
+style='mso-spacerun:yes'> </span></p>
+
+<p class=a align=center style='text-align:center;text-indent:0cm'><p>
+<img border="0" src="Images/015-04.gif" width="344" height="137"><br
+style='mso-ignore:vglayout' clear=ALL>
+<b style='mso-bidi-font-weight:normal'><a name="m14">Рис.15.2. Линейная последовательность
+операторов<o:p></o:p></b></p>
+</p>
+
+<p class=a>В соответствии с принципом вложенности элементами последовательности
+могут быть не только элементарные действия (простые операторы), но и вложенные синтаксические
+конструкции, которые на текущем уровне также выполняются последовательно друг
+за другом.</p>
+
+<p class=a>В связи с этим для любой последовательности действий в языке
+программирования важно только обозначить ее начало и конец. Во многих языках
+программирования для этой цели используются ключевые слова-ограничители,
+которые содержатся в конструкции верхнего уровня, куда заключена
+последовательность. Например, а Бейсике тело цикла представляет собой
+конструкцию<span style='mso-spacerun:yes'>  </span><b style='mso-bidi-font-weight:
+normal'><a name="m15"><span lang=EN-US style='mso-ansi-language:EN-US'>do</span>-последовательность
+операторов – </b><b style='mso-bidi-font-weight:normal'><a name="m16"><span lang=EN-US
+style='mso-ansi-language:EN-US'>loop</span>.<o:p></o:p></b></p>
+
+<p class=a>В Си используется другой принцип: если составной частью управляющей
+конструкции является единственный оператор, то он никак синтаксически не
+выделяется. Если же составной частью является последовательность операторов, то
+она заключается в фигурные скобки (<b style='mso-bidi-font-weight:normal'><a name="m17">{}</b>)
+и образует <b style='mso-bidi-font-weight:normal'><a name="m18">блок.<o:p></o:p></b></p>
+
+<p class=a>Блок, или <b style='mso-bidi-font-weight:normal'><a name="m19">составной оператор </b>выступает
+как единая синтаксическая единица, вложенная в конструкцию верхнего уровня. В
+начале его могут быть определены собственные переменные блока, действие которых
+не распространяется за его пределы, а время существования совпадает с временем
+его выполнения. Операторы, составляющие блок, выполняются последовательно друг
+за другом. </p>
+
+<p class=a0 style='text-indent:36.0pt'><o:p>&nbsp;</o:p></p>
+
+<p class=a0>for (i=0; i&lt;n-1; <span lang=EN-US style='font-family:"Courier New";
+mso-ansi-language:EN-US'>i</span>++)<span style='mso-tab-count:1'>        </span>
+</p>
+
+<p class=a0 style='text-indent:36.0pt'><b style='mso-bidi-font-weight:normal'><a name="m20">{
+<span style='mso-tab-count:2'>                      </span>// Составной
+оператор - блок<o:p></o:p></b></p>
+
+<p class=a0 style='text-indent:36.0pt'><b style='mso-bidi-font-weight:normal'><a name="m21"><span
+lang=EN-US style='mso-ansi-language:EN-US'>int c;<span style='mso-tab-count:
+6'>                                                                </span><o:p></o:p></span></b></p>
+
+<p class=a0 style='text-indent:36.0pt'><b style='mso-bidi-font-weight:normal'><a name="m22"><span
+lang=EN-US style='mso-ansi-language:EN-US'>c = A[i]; <o:p></o:p></span></b></p>
+
+<p class=a0 style='text-indent:36.0pt'><b style='mso-bidi-font-weight:normal'><a name="m23"><span
+lang=EN-US style='mso-ansi-language:EN-US'>A[i]=A[i+1]; <o:p></o:p></span></b></p>
+
+<p class=a0 style='text-indent:36.0pt'><b style='mso-bidi-font-weight:normal'><a name="m24">A[i+1]=c;<o:p></o:p></b></p>
+
+<p class=a0 style='text-indent:36.0pt'><b style='mso-bidi-font-weight:normal'><a name="m25">}</b><span
+style='mso-tab-count:1'>           </span><b style='mso-bidi-font-weight:normal'><a name="m26"><o:p></o:p></b></p>
+
+<span style='font-size:12.0pt;font-family:"Arial CYR";mso-fareast-font-family:
+"Times New Roman";mso-ansi-language:RU;mso-fareast-language:RU;mso-bidi-language:
+AR-SA'><br clear=all style='page-break-before:always'>
+</span>
+
+<h3 style='mso-outline-level:3'>Условные операторы</h3>
+
+<p class=a><span style='mso-spacerun:yes'> </span>Единственный условный оператор
+имеет две разновидности: с <b style='mso-bidi-font-weight:normal'><a name="m27"><span
+lang=EN-US style='mso-ansi-language:EN-US'>else</span><span lang=EN-US> </span></b>и
+без него.</p>
+
+<p class=a0><img border="0" src="Images/015-05.gif" width="625" height="235"><br
+style='mso-ignore:vglayout' clear=ALL>
+</p>
+
+<p class=a4 align=center style='text-align:center'><b style='mso-bidi-font-weight:
+normal'><a name="m28">Рис.15.</b><b style='mso-bidi-font-weight:normal'><a name="m29"><span lang=EN-US
+style='mso-ansi-language:EN-US'>3</span>. Условный оператор<o:p></o:p></b></p>
+
+<p class=a><o:p>&nbsp;</o:p></p>
+
+<p class=a>В качестве условия выступает выражение, которое может иметь любой
+целый результат и интерпретируется в соответствии с принятыми в Си соглашениями
+о логических значениях: 0 –«ложь», не 0 – «истина». Круглые скобки являются
+частью синтаксиса (потому что отсутствует другой ограничитель выражения,
+например ключевое слово <b><a name="m30">then).</b> Действует он как и во всех языках
+программирования: если значение выражения есть «истина», то выполняется первый
+оператор, если «ложь» - второй (после <b><a name="m31">else</b>). Конструкция является
+структурированной, обе ветви – прямая и альтернативная – «сливаются» в одну</p>
+
+<h3 style='mso-outline-level:3'>Операторы цикла</h3>
+
+<p class=a><p><br
+style='mso-ignore:vglayout' clear=ALL>
+<span style='mso-spacerun:yes'> </span>В Си имеется три вида циклических
+конструкций. Общее у них одно: все условия в них являются <b style='mso-bidi-font-weight:
+normal'><a name="m32">условиями продолжения</b>, то есть циклы продолжаются, пока значение этих
+условных выражений – «истина». Операторы цикла состоят из заголовка, в котором
+определяется характер циклического процесса и оператора - тела цикла. Скобки в
+заголовке цикла являются неотъемлемым элементом синтаксиса языка. Первые два
+вида циклов отличаются временем проверки условия продолжения - до или после
+очередного шага цикла: </p>
+<p><img border="0" src="Images/015-06.gif" width="625" height="213"></p>
+</p>
+
+<p class=a4 align=center style='text-align:center'><b style='mso-bidi-font-weight:
+normal'><a name="m33">Рис.15.4. Цикл с пред- и постусловием.<o:p></o:p></b></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a>Наиболее универсальный цикл<b style='mso-bidi-font-weight:normal'><a name="m34">
+for</b> имеет полный эквивалент в цикле <b><a name="m35">while, </b><span style='mso-bidi-font-weight:
+bold'>поэтому<span style='mso-spacerun:yes'>  </span>его блок-схему можно и не
+приводить.</span></p>
+
+<p class=a0><b><a name="m36"><span style='font-size:12.0pt'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=a0><b><a name="m37"><span style='font-size:12.0pt'>for (выражение 1; условие;<span
+style='mso-spacerun:yes'>  </span>выражение 2) оператор <o:p></o:p></span></b></p>
+
+<p class=a0><b><a name="m38"><span style='font-size:12.0pt'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=a0><b><a name="m39"><span style='font-size:12.0pt'>выражение 1; <o:p></o:p></span></b></p>
+
+<p class=a0><b><a name="m40"><span style='font-size:12.0pt'>while (условие) { оператор
+выражение 2; }</span><span style='font-size:12.0pt;mso-bidi-font-family:
+"Courier New"'><o:p></o:p></span></b></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a>Цикл <b style='mso-bidi-font-weight:normal'><a name="m41"><span lang=EN-US
+style='mso-ansi-language:EN-US'>for</span></b><span lang=EN-US> </span>включает
+в себя четыре обязательные компоненты каждого цикла:</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b style='mso-bidi-font-weight:normal'><a name="m42">выражение_1</b>
+однократно вычисляется перед началом цикла и устанавливает его начальное состояние;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b style='mso-bidi-font-weight:normal'><a name="m43">условие</b>
+является условием продолжения цикла. Оно проверяется перед каждым шагом цикла,
+и при его истинности цикл повторяется. В соответствии с соглашениями, принятыми
+в Си, в качестве условия может выступать любое выражение со значением 0 – <span
+style='mso-spacerun:yes'> </span>«ложь», не 0 – «истина»;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>на каждом шаге цикла выполняется оператор (тело
+цикла) и <b style='mso-bidi-font-weight:normal'><a name="m44">выражение_2</b>, оба они являются
+повторяющейся частью цикла. Выражение включает в себя необходимые действия для
+перехода к следующему шагу.</p>
+
+<p class=a>Цикл <b style='mso-bidi-font-weight:normal'><a name="m45">for</b> не накладывает
+никаких ограничений на вид выражений в его заголовке (отсутствует понятие
+«переменная цикла», все значения, изменяемые в цикле, сохраняются после выхода,
+количество и способы изменения<span style='mso-spacerun:yes'> 
+</span>переменных могут быть различными). Самый распространенный вариант, в <span
+style='mso-spacerun:yes'> </span>котором переменная пробегает ряд
+последовательных значений от <b style='mso-bidi-font-weight:normal'><a name="m46">0</b> до <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>n</span>-1 </b>включительно, выглядит так:</p>
+
+<p class=a0><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:"Times New Roman CYR";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>for (i=0; i&lt;n; i++) ...</span>тело<span
+style='mso-ansi-language:EN-US'> </span>цикла<span style='mso-ansi-language:
+EN-US'> </span>для<span style='mso-ansi-language:EN-US'> <span lang=EN-US>i…<o:p></o:p></span></span></p>
+
+<h3 style='mso-outline-level:3'>Операторы перехода</h3>
+
+<p class=a><span style='mso-spacerun:yes'> </span>Простая последовательность,
+условный оператор и цикл составляют «прожиточный минимум» операторов, при
+помощи которых можно написать любую программу. Они соблюдают строгую иерархию синтаксической
+и логической вложенности операторов одного в другой. Но существует оператор,
+нарушающий этот установленный порядок, который позволяет из любой точки программы
+переместиться в другую, разумеется, в пределах одной функции. Это действие
+называется «переходом» («передачей управления»), а сам оператор - оператором
+перехода (<b><a name="m47">goto</b>). Для указания оператора, к которому производится переход
+из данной точки программы, используется метка. Метка - это идентификатор,
+ограниченный двоеточием и поставленный перед оператором, который в таком случае
+называется помеченным: </p>
+
+<p class=a0><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0><span style='mso-tab-count:
+1; font-family:Courier New'>      </span>оператор</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>goto mmm:</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>...<span
+style='font-family:"Courier New"'><o:p></o:p></span></p>
+
+<p class=a0>mmm:<span style='mso-tab-count:1'>   </span>оператор</p>
+
+<p class=a>Оператор <b><a name="m48">goto</b> дает программисту большую свободу связывать
+между собой различные части программы. Как осознанно пользоваться этой свободой
+и не злоупотреблять ей, обсуждается в <b style='mso-bidi-font-weight:normal'><a name="m49">3.3</b>.
+Операторы <b><a name="m50">break, continue, return, <span lang=EN-US style='mso-ansi-language:
+EN-US'>throw</span></b> являются вариантами оператора перехода, действующими в
+рамках текущего цикла и функции. Поэтому они в меньшей мере нарушают
+естественную логику работы программы, заданную другими операторами: </p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='mso-spacerun:yes'> </span>оператор <b><a name="m51">continue</b>
+выполняет переход из тела цикла к его повторяющейся части, то есть досрочно
+завершает текущий шаг и переходит к следующему; </p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='mso-spacerun:yes'> </span>оператор <b><a name="m52">break</b>
+производит альтернативный выход из самого внутреннего цикла, то есть переходит
+к первому оператору, следующему за текущим оператором цикла. Заметим, что
+«покинуть» одновременно несколько вложенных друг в друга циклов при помощи <b><a name="m53">break</b>
+не удается; </p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='mso-spacerun:yes'> </span>оператор <b><a name="m54">return</b>
+производит досрочный выход из текущей функции. Он, кроме всего прочего,
+возвращает значение результата функции (см. <b style='mso-bidi-font-weight:
+normal'><a name="m55">1.6)</b>;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>оператор генерации исключения <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>throw</span><span lang=EN-US> </span></b>используется в Си++ как
+средство обработки ошибок, выполняя, в том числе, и действия, эквивалентные
+оператору <b style='mso-bidi-font-weight:normal'><a name="m56"><span lang=EN-US
+style='mso-ansi-language:EN-US'>return</span> (</b>см. <b style='mso-bidi-font-weight:
+normal'><a name="m57">12.2)</b></p>
+
+<p class=a><span style='font-family:"Courier New CYR"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0>void<span style='mso-tab-count:1'>       </span>F() {<span
+style='mso-tab-count:3'>                              </span>// Не совсем
+синтаксически корректная </p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>for (i=0; i&lt;n; <b
+style='mso-bidi-font-weight:normal'>m1:</b> i++) <span style='mso-tab-count:
+2'>                </span>// </span>иллюстрация<span style='mso-ansi-language:
+EN-US'> </span>выполнения<span style='mso-ansi-language:EN-US'> <span
+lang=EN-US>continue, break, return<o:p></o:p></span></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>{ </p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>if (A[i]==0)<span style='mso-spacerun:yes'> 
+</span>continue; <span style='mso-tab-count:1'>     </span>// goto m1;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if (A[i]==-1) return;<span
+style='mso-spacerun:yes'>   </span><span style='mso-tab-count:1'>       </span>//
+goto m2;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if (A[i] &lt;0)<span
+style='mso-spacerun:yes'>   </span>break;<span
+style='mso-spacerun:yes'>    </span><span style='mso-tab-count:1'>      </span>//
+goto m3; <o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>} </p>
+
+<p class=a0><b style='mso-bidi-font-weight:normal'><a name="m58">m2:</b><span
+style='mso-tab-count:1'>      </span>// продолжение тела функции</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>...</p>
+
+<p class=a0><b style='mso-bidi-font-weight:normal'><a name="m59">m3:</b><span
+style='mso-tab-count:1'>      </span>// завершение функции</p>
+
+<p class=a0>}</p>
+
+<p class=a>Операторы <b><a name="m60">continue, break и return</b> должны завершаться
+ограничителем <b><a name="m61">&quot;;&quot;</b>. </p>
+
+<h3><span style='mso-spacerun:yes'> </span>Оператор <span lang=EN-US
+style='mso-ansi-language:EN-US'>switch</span><span style='font-family:"Times New Roman";
+mso-bidi-font-family:"Arial CYR"'><o:p></o:p></span></h3>
+
+<p class=a>Оператор <b><a name="m62">switch</b> – «синтаксический монстр» языка Си, по
+существу является множественным переходом по группе значений заданного выражения.
+</p>
+
+<p class=a0 style='text-indent:36.0pt'><o:p>&nbsp;</o:p></p>
+
+<p class=a0 style='text-indent:36.0pt'><b style='mso-bidi-font-weight:normal'><a name="m63">switch</b>
+(выражение)</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span>{</p>
+
+<p class=a0 style='text-indent:36.0pt'><b style='mso-bidi-font-weight:normal'><a name="m64">case</b>
+константа1: последовательность операторов_1</p>
+
+<p class=a0 style='text-indent:36.0pt'><b style='mso-bidi-font-weight:normal'><a name="m65">case</b>
+константа2: последовательность операторов_2</p>
+
+<p class=a0 style='text-indent:36.0pt'><b style='mso-bidi-font-weight:normal'><a name="m66">case</b>
+константа3: последовательность операторов_3</p>
+
+<p class=a0 style='text-indent:36.0pt'><b style='mso-bidi-font-weight:normal'><a name="m67">default</b>:
+<span style='mso-tab-count:1'>           </span><span
+style='mso-spacerun:yes'> </span>последовательность операторов</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span>}</p>
+
+<p class=a>Выполняется он следующим образом. Вычисляется значение выражения,
+стоящего в скобках. Затем последовательно проверяется его совпадение с каждой
+из констант, стоящих после ключевого слова <b><a name="m68">case</b> и ограниченных
+двоеточием. Если произошло совпадение, то производится переход на идущую за
+константой простую последовательность операторов. Отсюда следует, что если не
+предпринять никаких действий, то после перехода к <b style='mso-bidi-font-weight:
+normal'><a name="m69">n-ой</b> последовательности операторов будет выполнена <b><a name="m70">n+1</b><b
+style='mso-bidi-font-weight:normal'>-ая</b> и все последующие. Чтобы этого не
+происходило, в конце каждой из них явным образом помещается оператор <b><a name="m71">break</b>,
+который в данном случае производит выход за пределы оператора <b><a name="m72">switch</b>. Метка
+<b><a name="m73">default</b> обозначает последовательность, которая выполняется «по умолчанию»,
+то есть когда не было перехода по какому-либо <b style='mso-bidi-font-weight:
+normal'><a name="m74"><span lang=EN-US style='mso-ansi-language:EN-US'>case</span></b>. Все
+эти нюансы отражены в примере, содержащем полный программный эквивалент
+оператора <b><a name="m75">switch</b> с использованием операторов <b><a name="m76">goto</b>.</p>
+
+<p class=a><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>switch (n){<span
+style='mso-tab-count:2'>                     </span>// </span><span
+style='mso-tab-count:1'>         </span>Эквивалент<span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>                               </span><span
+style='mso-tab-count:1'>     </span>//<span style='mso-tab-count:1'>          </span>if
+(n==1) goto m1;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>                             </span><span
+style='mso-tab-count:1'>       </span>//<span style='mso-tab-count:1'>          </span>if
+(n==2) goto m2;<o:p></o:p></span></p>
+
+<p class=a0 style='margin-left:72.0pt;text-indent:36.0pt'><span lang=EN-US
+style='mso-ansi-language:EN-US'>//<span style='mso-tab-count:1'>          </span>if
+(n==4) goto m3;<o:p></o:p></span></p>
+
+<p class=a0 style='margin-left:72.0pt;text-indent:36.0pt'><span lang=EN-US
+style='mso-ansi-language:EN-US'>//<span style='mso-tab-count:1'>          </span>goto
+mdef;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>case 1:<span
+style='mso-spacerun:yes'>   </span>n=n+2; break;<span style='mso-tab-count:
+1'>  </span>// m1:<span style='mso-tab-count:1'>    </span>n=n+2; goto mend;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>case 2:<span
+style='mso-spacerun:yes'>   </span>n=0;<span style='mso-spacerun:yes'>  
+ </span>break;<span style='mso-spacerun:yes'>  </span>//
+m2:<span style='mso-tab-count:1'>    </span>n=0;<span
+style='mso-spacerun:yes'>     </span>goto mend;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>case 4:<span
+style='mso-spacerun:yes'>   </span>n++;<span style='mso-spacerun:yes'>  
+  </span>break;<span
+style='mso-spacerun:yes'>  </span>// m4: <span style='mso-tab-count:1'>  </span>n++;
+<span style='mso-tab-count:1'>    </span>goto mend;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>default:<span
+style='mso-spacerun:yes'>   </span>n=-1;<span style='mso-spacerun:yes'>     
+</span><span style='mso-tab-count:1'>         </span>// mdef: n=-1;<o:p></o:p></span></p>
+
+<p class=a0><span style='mso-spacerun:yes'>               </span>}<span
+style='mso-spacerun:yes'>                </span><span style='mso-tab-count:
+1'>    </span>// mend: ...</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a><span style='mso-spacerun:yes'> </span>Оператор <b><a name="m77">switch</b> обычно
+используется при анализе значений переменной, когда он заменяет группу условных
+операторов: </p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>switch (c) {<span
+style='mso-spacerun:yes'>             </span><span style='mso-tab-count:1'>       </span>//
+</span>Эквивалент<span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>case ' ':<span
+style='mso-spacerun:yes'>  </span>... <span style='mso-spacerun:yes'> </span>break;<span
+style='mso-spacerun:yes'>         </span><span
+style='mso-tab-count:1'>            </span>// if (c==' ') {...}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>case '+':<span
+style='mso-spacerun:yes'>  </span>... break;<span
+style='mso-spacerun:yes'>       </span><span style='mso-tab-count:1'>  </span>//
+if (c=='+') {...} <o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>case '-':<span
+style='mso-spacerun:yes'>  </span>... <span style='mso-spacerun:yes'> </span>break;
+<span style='mso-tab-count:1'>        </span>// if (c=='-') {...}<o:p></o:p></span></p>
+
+<p class=a0><span style='mso-spacerun:yes'>       </span>}</p>
+
+<p class=a><span style='mso-spacerun:yes'> </span>Если несколько ветвей
+оператора <b><a name="m78">switch</b> должны содержать идентичные действия (возможно, с
+различными параметрами), то можно использовать общую последовательность
+операторов в одной ветви, не отделяя ее оператором <b><a name="m79">break</b> от предыдущих: </p>
+
+<p class=a><o:p>&nbsp;</o:p></p>
+
+<p class=a0>sign=0;<span style='mso-tab-count:1'> </span><span
+style='mso-tab-count:2'>                        </span>// Ветвь для значения c,
+равного '+',</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>s</span>witch (c){<span
+style='mso-tab-count:1'>                     </span>//
+используется и предыдущей ветвью<span style='mso-tab-count:2'>              </span></p>
+
+<p class=a0>case '-':<span style='mso-tab-count:1'> </span> sign=1; <span
+style='mso-tab-count:1'>           </span>// для значения '-'</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>case '+': Sum(a,b,sign);
+<o:p></o:p></span></p>
+
+<p class=a0 style='margin-left:36.0pt;text-indent:36.0pt'><span lang=EN-US
+style='mso-ansi-language:EN-US'>break</span>; }</p>
+
+<h3>Еще один «джентльменский набор»</h3>
+
+<p class=a>Набор управляющих конструкций алгоритма может быть различным и
+избыточным. Но минимально необходимой является триада: для архитектурно-ориентированной
+логики – это действие, условие, переход. Структурированные конструкции –
+последовательность, выбор (ветвление), повторение (цикл) – также обладают
+необходимой полнотой. Но на практике встречается еще одна, довольно
+экзотическая триада: последовательность, ветвление и <b style='mso-bidi-font-weight:
+normal'><a name="m80">рекурсия. </b>Являясь технологическим приемом программирования (см.<b
+style='mso-bidi-font-weight:normal'>7.1</b>), она способна, как минимум,
+заменить конструкцию повторения (цикл). Существуют языки программирования (ПРОЛОГ),
+а также математические формализмы (формальные грамматики, частично-рекурсивные
+функции), опирающиеся на эту триаду.</p>
+
+<p class=a><o:p>&nbsp;</o:p></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 width=631
+ style='width:473.2pt;border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-yfti-tbllook:480;mso-padding-alt:0cm 5.4pt 0cm 5.4pt;mso-border-insideh:
+ .5pt solid windowtext;mso-border-insidev:.5pt solid windowtext'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=156 valign=top style='width:117.2pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><span style='font-size:10.0pt;font-family:Arial'>Логика алгоритма<o:p></o:p></span></p>
+  </td>
+  <td width=165 valign=top style='width:123.85pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><span style='font-size:10.0pt;font-family:Arial'>Набор
+  конструкций<o:p></o:p></span></p>
+  </td>
+  <td width=310 valign=top style='width:232.15pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><span style='font-size:10.0pt;font-family:Arial'>Применение<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=156 valign=top style='width:117.2pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><span style='font-size:10.0pt;font-family:Arial'>Архитектурно-ориентированная<o:p></o:p></span></p>
+  </td>
+  <td width=165 valign=top style='width:123.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4 style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+  margin-left:9.05pt;margin-bottom:.0001pt;text-indent:0cm;mso-list:l3 level1 lfo6;
+  tab-stops:0cm 2.1pt list 16.3pt'><![if !supportLists]>
+	<span style='mso-list:Ignore; font-size:10.0pt; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;
+  </span></span><![endif]><span style='font-size:10.0pt;font-family:
+  Arial'>действие<o:p></o:p></span></p>
+  <p class=a4 style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+  margin-left:9.05pt;margin-bottom:.0001pt;text-indent:0cm;mso-list:l3 level1 lfo6;
+  tab-stops:0cm 2.1pt list 16.3pt'><![if !supportLists]>
+	<span style='mso-list:Ignore; font-size:10.0pt; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;
+  </span></span><![endif]><span style='font-size:10.0pt;font-family:
+  Arial'>условие<o:p></o:p></span></p>
+  <p class=a4 style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+  margin-left:9.05pt;margin-bottom:.0001pt;text-indent:0cm;mso-list:l3 level1 lfo6;
+  tab-stops:0cm 2.1pt list 16.3pt'><![if !supportLists]>
+	<span style='mso-list:Ignore; font-size:10.0pt; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;
+  </span></span><![endif]><span style='font-size:10.0pt;font-family:
+  Arial'>переход<o:p></o:p></span></p>
+  </td>
+  <td width=310 valign=top style='width:232.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4 align=left style='text-align:left'><span style='font-size:10.0pt;
+  font-family:Arial'>«Историческое» программирование, программирование на
+  уровне архитектуры (системы команд) - <span style='mso-spacerun:yes'> </span>Ассемблер<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td width=156 valign=top style='width:117.2pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><span style='font-size:10.0pt;font-family:Arial'>Структурированная<o:p></o:p></span></p>
+  </td>
+  <td width=165 valign=top style='width:123.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4 style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+  margin-left:9.05pt;margin-bottom:.0001pt;text-indent:0cm;mso-list:l3 level1 lfo6;
+  tab-stops:0cm 2.1pt list 16.3pt'><![if !supportLists]>
+	<span style='mso-list:Ignore; font-size:10.0pt; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;
+  </span></span><![endif]><span style='font-size:10.0pt;font-family:
+  Arial'>последовательность<o:p></o:p></span></p>
+  <p class=a4 style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+  margin-left:9.05pt;margin-bottom:.0001pt;text-indent:0cm;mso-list:l3 level1 lfo6;
+  tab-stops:0cm 2.1pt list 16.3pt'><![if !supportLists]>
+	<span style='mso-list:Ignore; font-size:10.0pt; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;
+  </span></span><![endif]><span style='font-size:10.0pt;font-family:
+  Arial'>выбор (ветвление)<o:p></o:p></span></p>
+  <p class=a4 style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+  margin-left:9.05pt;margin-bottom:.0001pt;text-indent:0cm;mso-list:l3 level1 lfo6;
+  tab-stops:0cm 2.1pt list 16.3pt'><![if !supportLists]>
+	<span style='mso-list:Ignore; font-size:10.0pt; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;
+  </span></span><![endif]><span style='font-size:10.0pt;font-family:
+  Arial'>повторение (цикл)<o:p></o:p></span></p>
+  </td>
+  <td width=310 valign=top style='width:232.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><span style='font-size:10.0pt;font-family:Arial'>Технология
+  структурного программирования<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3;mso-yfti-lastrow:yes'>
+  <td width=156 valign=top style='width:117.2pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><span style='font-size:10.0pt;font-family:Arial'>Рекурсивная<o:p></o:p></span></p>
+  </td>
+  <td width=165 valign=top style='width:123.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4 style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+  margin-left:9.05pt;margin-bottom:.0001pt;text-indent:0cm;mso-list:l3 level1 lfo6;
+  tab-stops:0cm 2.1pt list 16.3pt'><![if !supportLists]>
+	<span style='mso-list:Ignore; font-size:10.0pt; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;
+  </span></span><![endif]><span style='font-size:10.0pt;font-family:
+  Arial'>последовательность<o:p></o:p></span></p>
+  <p class=a4 style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+  margin-left:9.05pt;margin-bottom:.0001pt;text-indent:0cm;mso-list:l3 level1 lfo6;
+  tab-stops:0cm 2.1pt list 16.3pt'><![if !supportLists]>
+	<span style='mso-list:Ignore; font-size:10.0pt; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;
+  </span></span><![endif]><span style='font-size:10.0pt;font-family:
+  Arial'>выбор (ветвление)<o:p></o:p></span></p>
+  <p class=a4 style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+  margin-left:9.05pt;margin-bottom:.0001pt;text-indent:0cm;mso-list:l3 level1 lfo6;
+  tab-stops:0cm 2.1pt list 16.3pt'><![if !supportLists]>
+	<span style='mso-list:Ignore; font-size:10.0pt; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;
+  </span></span><![endif]><span style='font-size:10.0pt;font-family:
+  Arial'>рекурсия<o:p></o:p></span></p>
+  </td>
+  <td width=310 valign=top style='width:232.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4 align=left style='text-align:left;tab-stops:164.65pt'><span
+  style='font-size:10.0pt;font-family:Arial'>Функциональное программирование (ПРОЛОГ),
+  представление синтаксиса в формальных грамматиках (трансляторы),
+  частично-рекурсивные функции (теория алгоритмов) <o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<h3>Подводные камни</h3>
+
+<p class=a>Особенность синтаксиса Си состоит в том, что последовательности управляющих
+конструкций, отличающиеся буквально на один символ, могут быть синтаксически
+правильными, но давать различные последовательности выполнения действий в
+программе. Это касается, прежде всего, тела цикла, где обнаруживается
+максимальное количество ошибок программирования (но то же самое можно отнести и
+к составным частям условного оператора). Итак, тело цикла может иметь четыре
+различных варианта реализации<span lang=EN-US style='mso-ansi-language:EN-US'>:<o:p></o:p></span></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>пустой оператор – символ «<b style='mso-bidi-font-weight:
+normal'><a name="m81">;</b> - точка с запятой»;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>простой (первичный) оператор – выражение,
+ограниченное символом «;»;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>единственный оператор, имеющий произвольную
+внутреннюю структуру своего тела – условный, цикл, переключатель;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>составной оператор – блок, содержащий
+последовательность операторов, объединенную скобками «<b style='mso-bidi-font-weight:
+normal'><a name="m82">{}</b>».</p>
+
+<p class=a>Отсюда следует, что символ «точка с запятой» нельзя расставлять «для
+надежности», он может выступить в качестве пустого оператора, отрезав заголовок
+цикла от его настоящего тела. Аналогично, при усложнении тела цикла в процессе
+модификации программы (вместо одного оператора – последовательность из нескольких)
+не нужно забывать объединять получающиеся последовательности в блоки. Иначе к
+телу цикла будет отнесен только первый из них.</p>
+
+<p class=a><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_s1333" type="#_x0000_t75" style='position:absolute;
+ margin-left:0;margin-top:10.5pt;width:15pt;height:15pt;z-index:6;float:left'>
+ <v:imagedata src="" o:title="smile"/>
+</v:shape><![endif]--><span
+style='mso-spacerun:yes'> </span>Следующий фрагмент показывает, к чему приводит
+привычка – ставить символ «<b style='mso-bidi-font-weight:normal'><a name="m83">;</b>» для
+надежности. Все выполняется в соответствии с песней: «Лучше сорок раз по разу,
+чем ни разу сорок раз». Лишняя точка с запятой создает пустой оператор, который
+является телом цикла. А настоящее тело цикла выполняется один раз и «после»,
+причем с некорректным значением индекса.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>for (int s=0,i=0;
+i&lt;40; i++) <span style='mso-tab-count:2'>                      </span>// </span>Сорок<span
+style='mso-ansi-language:EN-US'> </span>раз<span style='mso-ansi-language:EN-US'>
+</span>по<span style='mso-ansi-language:EN-US'> </span>разу<span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>s</span>=<span lang=EN-US style='mso-ansi-language:EN-US'>s</span>+<span
+lang=EN-US style='mso-ansi-language:EN-US'>A</span>[<span lang=EN-US
+style='mso-ansi-language:EN-US'>i</span>];</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>for</span> (<span
+lang=EN-US style='mso-ansi-language:EN-US'>int</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>s</span>=0,<span lang=EN-US
+style='mso-ansi-language:EN-US'>i</span>=0; <span lang=EN-US style='mso-ansi-language:
+EN-US'>i</span>&lt;40; <span lang=EN-US style='mso-ansi-language:EN-US'>i</span>++)<b
+style='mso-bidi-font-weight:normal'>; </b><span style='mso-tab-count:2'>                     </span>//
+Ни разу сорок раз </p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>s</span>=<span lang=EN-US style='mso-ansi-language:EN-US'>s</span>+<span
+lang=EN-US style='mso-ansi-language:EN-US'>A</span>[<span lang=EN-US
+style='mso-ansi-language:EN-US'>i</span>];<span style='mso-tab-count:3'>                                   </span>//
+Один раз – после (со значением <span lang=EN-US style='mso-ansi-language:EN-US'>A</span>[40]
+вне массива)</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>
+<span style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span><span
+style='mso-tab-count:2'>                        </span><span style='mso-tab-count:
+1'>            </span>// «Гильотина» - тело цикла отдельно от «головы»</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+</div>
+
+</body>
+
+</html>

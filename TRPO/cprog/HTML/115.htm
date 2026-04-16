@@ -1,0 +1,1599 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=Edit-Time-Data href="115.files/editdata.mso">
+<title>11.5. &quot;Тотальное&quot; ООП</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>www.PHILka.RU</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>FuckYouBill</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>318</o:TotalTime>
+  <o:Created>2008-11-13T17:24:00Z</o:Created>
+  <o:LastSaved>2008-11-13T17:24:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>2025</o:Words>
+  <o:Characters>11547</o:Characters>
+  <o:Company>NSTU_VT</o:Company>
+  <o:Bytes>11776</o:Bytes>
+  <o:Lines>96</o:Lines>
+  <o:Paragraphs>27</o:Paragraphs>
+  <o:CharactersWithSpaces>13545</o:CharactersWithSpaces>
+  <o:Version>11.6360</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DoNotHyphenateCaps/>
+  <w:DrawingGridHorizontalSpacing>0,55 пт</w:DrawingGridHorizontalSpacing>
+  <w:DrawingGridVerticalSpacing>0,55 пт</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:UseMarginsForDrawingGridOrigin/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DrawingGridVerticalOrigin>99,25 пт</w:DrawingGridVerticalOrigin>
+  <w:Compatibility>
+   <w:WW6BorderRules/>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+   <w:UseWord97LineBreakingRules/>
+   <w:SelectEntireFieldWithStartOrEnd/>
+   <w:UseWord2002TableStyleRules/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:"Times New Roman CYR";
+	panose-1:2 2 6 3 5 4 5 2 3 4;
+	mso-font-charset:204;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+@font-face
+	{font-family:"Arial CYR";
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+h1
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:14.0pt;
+	mso-bidi-font-weight:normal;}
+h2
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-font-weight:normal;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+h3
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	font-weight:normal;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";}
+p.a, li.a, div.a
+	{mso-style-name:текст;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a0, li.a0, div.a0
+	{mso-style-name:программа;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a1, li.a1, div.a1
+	{mso-style-name:список;
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:18.45pt;
+	margin-bottom:0cm;
+	margin-left:64.35pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-18.0pt;
+	mso-pagination:widow-orphan;
+	mso-list:l0 level1 lfo1;
+	tab-stops:42.55pt list 64.35pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a2, li.a2, div.a2
+	{mso-style-name:определение;
+	mso-style-parent:текст;
+	margin-top:12.0pt;
+	margin-right:32.9pt;
+	margin-bottom:12.0pt;
+	margin-left:35.45pt;
+	text-align:justify;
+	text-indent:.55pt;
+	mso-pagination:widow-orphan;
+	border:none;
+	mso-border-alt:solid windowtext 1.5pt;
+	padding:0cm;
+	mso-padding-alt:1.0pt 1.0pt 1.0pt 1.0pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a3, li.a3, div.a3
+	{mso-style-name:эпиграф;
+	margin-top:0cm;
+	margin-right:32.9pt;
+	margin-bottom:0cm;
+	margin-left:5.0cm;
+	margin-bottom:.0001pt;
+	text-align:right;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.a4, li.a4, div.a4
+	{mso-style-name:"от края";
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a5, li.a5, div.a5
+	{mso-style-name:Формула;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.a6, li.a6, div.a6
+	{mso-style-name:"без формата";
+	mso-style-parent:программа;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a7, li.a7, div.a7
+	{mso-style-name:стихи;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.1, li.1, div.1
+	{mso-style-name:эпиграф1;
+	mso-style-parent:эпиграф;
+	margin-top:0cm;
+	margin-right:9.35pt;
+	margin-bottom:0cm;
+	margin-left:9.0cm;
+	margin-bottom:.0001pt;
+	text-align:right;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+ /* Page Definitions */
+ @page
+	{mso-footnote-separator:url("115.files/header.htm") fs;
+	mso-footnote-continuation-separator:url("115.files/header.htm") fcs;
+	mso-endnote-separator:url("115.files/header.htm") es;
+	mso-endnote-continuation-separator:url("115.files/header.htm") ecs;}
+@page Section1
+	{size:21.0cm 842.0pt;
+	margin:33.45pt 42.55pt 72.0pt 89.85pt;
+	mso-header-margin:14.2pt;
+	mso-footer-margin:31.75pt;
+	mso-even-header:url("115.files/header.htm") eh1;
+	mso-header:url("115.files/header.htm") h1;
+	mso-even-footer:url("115.files/header.htm") ef1;
+	mso-footer:url("115.files/header.htm") f1;
+	mso-first-header:url("115.files/header.htm") fh1;
+	mso-first-footer:url("115.files/header.htm") ff1;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:1628194852;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-964799380 -1450833310 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-style-link:список;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:64.35pt;
+	mso-level-number-position:left;
+	margin-left:64.35pt;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Обычная таблица";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+table.MsoTableGrid
+	{mso-style-name:"Сетка таблицы";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+  <o:regrouptable v:ext="edit">
+   <o:entry new="1" old="0"/>
+   <o:entry new="2" old="1"/>
+   <o:entry new="3" old="0"/>
+   <o:entry new="4" old="0"/>
+  </o:regrouptable>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=RU style='tab-interval:36.0pt' background="back.gif">
+
+<div class=Section1>
+
+<h2>11.5. «Тотальное» ООП</h2>
+
+<p class=a4>
+<img border="0" src="Images/smile.jpg" width="40" height="41" align="left">Инженер
+знает, как разработать прибор, но не знает, кому продать и где взять на это деньги.
+Финансовый директор знает, где взять деньги, но не знает, что с ними делать. Коммерческий
+директор знает, кому продать прибор, но не знает, как его сделать. Менеджер
+знает, как организовать работу инженера, но не знает, чем инженеру следует
+заниматься. И, наконец, генеральный директор не знает ничего перечисленного, но
+может заставить работать всех вместе.</p>
+
+<p class=a>Приведенный образец «разделения труда» как нельзя лучше отражает
+основной принцип ООП: каждый класс моделирует отдельную сущность и работает в
+пределах своей компетенции. С точки зрения этого подхода программа выглядит как
+система взаимодействующих объектов различных классов. При этом основной элемент
+традиционной технологии программирования – поток управления (последовательность
+команд) как бы «исчезает». На самом деле он никуда не девается, просто его становится
+сложно отследить в тексте программы, которая, как единое синтаксическое целое,
+«распадается» на систему объектов. Перечислим еще раз компоненты технологии,
+«ответственные»<span style='mso-spacerun:yes'>  </span>за такое представление
+программы.</p>
+
+<p class=a style='text-indent:0cm'><b><a name="m1">Синтаксическая последовательность
+«объект-метод-объект». </b>Объектно-ориентированный подход заключается в
+первичности данных (объектов) по отношению к алгоритмам (методам) их обработки.
+Причем любая сущность, с которой программист сталкивается при написании
+программы, должна являться объектом (меню, файл, таблица, строка, вплоть до
+самой <b style='mso-bidi-font-weight:normal'><a name="m2"><span lang=EN-US style='font-family:
+"Times New Roman";mso-ansi-language:EN-US'>main</span></b>). Цепочка вызовов
+функций («функция-функция») в такой программе заменяется на последовательность
+«объект-метод-объект», которая уже не всегда является строго древовидной.
+Рассмотрим два примера.</p>
+
+<p class=a style="text-align: center">
+<img border="0" src="Images/115-01.gif" width="626" height="264"><br
+style='mso-ignore:vglayout' clear=ALL>
+</p>
+
+<p class=a4 align=center style='text-align:center'><b><a name="m3">Рис. 115-1. Цепочка
+«объект-метод-объект»<o:p></o:p></b></p>
+
+<p class=a>Объект <b style='mso-bidi-font-weight:normal'><a name="m4"><span lang=EN-US
+style='mso-ansi-language:EN-US'>aa</span><span lang=EN-US> </span></b>класса <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>A</span><span lang=EN-US> </span></b>вызывает метод <b style='mso-bidi-font-weight:
+normal'><a name="m5"><span lang=EN-US style='mso-ansi-language:EN-US'>F</span>, </b>в
+котором создается локальный объект <b style='mso-bidi-font-weight:normal'><a name="m6"><span
+lang=EN-US style='mso-ansi-language:EN-US'>bb</span><span lang=EN-US> </span></b>класса
+<b style='mso-bidi-font-weight:normal'><a name="m7"><span lang=EN-US style='mso-ansi-language:
+EN-US'>B</span>, </b>для которого вызывается метод <b style='mso-bidi-font-weight:
+normal'><a name="m8"><span lang=EN-US style='mso-ansi-language:EN-US'>G</span>. </b>Здесь мы
+имеем некоторый эквивалент цепочки вызовов функций: объект во время работы
+порождает объект, во время работы с ним порождается объект и т.д..</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>class B{<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>public:<span
+style='mso-tab-count:1'>   </span>void G(){ … }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>};<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>class A{<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>public:<span
+style='mso-tab-count:1'>   </span>void F(){ B bb; bb.G(); … }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>};<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void main(){ A aa;
+aa.F(); }<o:p></o:p></span></p>
+
+<p class=a><span style='mso-no-proof:yes'>С</span>труктура данных, хранящая
+указатели на объекты различных типов с общим (интерфейсным) базовым классом, сохраняет
+свое содержимое в двоичном файле. Определяется локальный объект класса <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>BinFile</span> (</b>двоичный файл<b style='mso-bidi-font-weight:normal'><a name="m9">).
+</b>Затем метод просматривает структуру данных, выбирая из нее указатели на
+объекты, и вызывает для них виртуальную функцию <b style='mso-bidi-font-weight:
+normal'><a name="m10"><span lang=EN-US style='mso-ansi-language:EN-US'>Append</span>, </b>которая
+в качестве параметра получает ссылку на двоичный файл. В результате будет
+выполнен метод <b style='mso-bidi-font-weight:normal'><a name="m11"><span lang=EN-US
+style='mso-ansi-language:EN-US'>Append</span><span lang=EN-US> </span></b>в одном
+из производных классов, который в свою очередь может использовать объект <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>BinFile</span><span lang=EN-US> </span></b>для выполнения собственных
+действий, определяемых форматом представления этого объекта в двоичном файле.</p>
+
+<p class=a style='text-indent:0cm'><b style='mso-bidi-font-weight:normal'><a name="m12">Внутренний
+и внешний полиморфизм </b>Вызов виртуальной функции в производном классе из
+программного кода базового класса (внутренний полиморфизм) дает возможность выполнять
+действия в объектах производных классов по событиям, происходящим в базовом
+классе («отложенное программирование»).<b style='mso-bidi-font-weight:normal'><a name="m13"> </b>Вызов
+виртуальной функции через указатель на объект базового класса позволяет использовать
+один и тот же программный код для работы с объектами разных типов – создавать абстрактные
+сущности и интерфейсы. И тот, и другой используют динамическое связывание
+вызова функции с ее телом.</p>
+
+<h3>Способы взаимодействия объектов в программе. </h3>
+
+<p class=a>В «тотальном» ООП очень важным становится вопрос - сколько объектов
+имеется в программе, как они получают информацию друг о друге, кто и когда их
+создает и уничтожает. В зависимости от принятых решений и выбранной стратегии
+взаимодействия объектов находятся такие свойства программы как гибкость, и
+универсальность. Применительно к связям между объектами можно употребить термины
+«статический» и «динамический»:<b><a name="m14"><o:p></o:p></b></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>объекту известно имя другого объекта - в этом
+случае связь устанавливается программистом при написании программы и никогда не
+меняется<span style='font-family:"Times New Roman"'>;</span></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>объект получает<span style='mso-spacerun:yes'> 
+</span>указатель на другой объект.<span style='font-family:"Times New Roman"'> </span>В
+этом случае связи между объектами устанавливаются динамически<span
+style='font-family:"Times New Roman"'> во время работы программы.<o:p></o:p></span></p>
+
+<p class=a>Прежде всего, необходимо провести четкую грань между динамическими и
+обыкновенными именованными (в этом смысле - статическими) переменными и
+объектами. Обычные объекты, имеющие имя, (локальные и глобальные) синтаксически
+привязаны к управляющей структуре программы (функциям, методам), а поэтому так
+или иначе связаны с последовательностью их вызовов. </p>
+
+<p class=a><span style='mso-spacerun:yes'> </span>Динамические объекты могут
+создаваться программой когда угодно, их создание и уничтожение не связано с
+управляющей структурой программы. Но при их использовании возникает другая
+проблема<span style='font-family:"Times New Roman"'>: </span>как объекты «будут
+знать» о существовании друг друга. В любом случае проблема «знания» упирается в
+вопрос: кто будет хранить указатели на динамические объекты? Рассмотрим возможные
+варианты<span lang=EN-US style='mso-ansi-language:EN-US'>:<o:p></o:p></span></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b style='mso-bidi-font-weight:normal'><a name="m15">порождение
+объектами объектов. </b>Объект класса, создающий динамический объект, несет
+полную ответственность за работу с ним и доступ к нему. Обычно это
+осуществляется в форме сеанса: объект создает динамический объект и запоминает
+указатель на него, после чего он может работать с этим объектом сам, передавать
+указатель другим объектам, а также уничтожать его по окончании работы. Если
+динамических объектов несколько, то это не меняет дела: объект – прародитель
+должен интегрировать указатели на них в собственную структуру данных;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b style='mso-bidi-font-weight:normal'><a name="m16">интегрирование
+динамических объектов в структуру данных. </b>Объекты<span
+style='mso-spacerun:yes'>  </span>нескольких родственных классов (например,
+графические элементы изображения) могут интегрироваться в общую структуру
+данных, через которую любой желающий<span style='mso-tab-count:1'>  </span> может
+получить доступ к ним. Этот механизм можно скрыть в базовом классе, тогда
+интеграция будет неявной и запоминание указателя на объект не потребуется
+вообще.</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b style='mso-bidi-font-weight:normal'><a name="m17">скрытые
+механизмы <span style='mso-spacerun:yes'> </span>взаимодействия объектов. </b>До
+сих пор считалось, что для доступа к объекту нужно знать его имя, либо иметь
+указатель на него. В принципе, указатели на объекты можно сохранять средствами
+базового класса, включив в него скрытые механизмы взаимодействия объектов.
+Например, это может быть сделано в виде системы обмена сообщениями по принципу
+широковещательной локальной сети - «каждый со всеми». Объект имеет право
+послать сообщение, которое будет получено всеми объектами программы. В этом
+случае «правила игры» устанавливаются на основе реакции различных объектов на
+сообщения различных типов.<span style='mso-spacerun:yes'>  </span></p>
+
+<h3>Система объектов, управляемых сообщениями</h3>
+
+<p class=a>Система объектов, управляемых сообщениями, должна включать в себя
+несколько классов, взаимодействие между которыми скрыто от прикладного
+программиста:<span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>класс сообщений<span style='font-family:"Times New Roman"'>;<o:p></o:p></span></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>базовый класс «процессов», управляемых сообщениями<span
+style='font-family:"Times New Roman"'>;<o:p></o:p></span></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-family:"Times New Roman"'>производные
+классы «процессов», объекты которых взаимодействуют друг с другом на основе
+обмена сообщениями различных типов;<o:p></o:p></span></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>класс прикладной программы, который содержит в
+себе структуры данных системы управления <span
+style='mso-spacerun:yes'> </span>и реализует в своем методе <b><a name="m18"><span
+lang=EN-US style='font-family:"Times New Roman";mso-ansi-language:EN-US'>run</span></b>
+диспетчерские функции распределения сообщений по объектам-«процессам».</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a>Прежде всего, нам понадобится структура данных типа «очередь» для
+поддержки очередей сообщений и процессов. Это можно сделать в виде шаблона
+структуры данных – односвязного списка, хранящего указатели на объекты.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//------------------------------------------------------------------------------------------------115-01.<span
+lang=EN-US style='mso-ansi-language:EN-US'>cpp</span></p>
+
+<p class=a0>// Система объектов, управляемых сообщениями</p>
+
+<p class=a0>//--------------Шаблон класса очереди, содержащей адреса объектов</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>template &lt;class
+T&gt; class queue{<span style='mso-tab-count:3'>                         </span><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>public:<span
+style='mso-tab-count:1'>   </span>struct elem{<span style='mso-tab-count:2'>                   </span>//
+</span>Элемент<span style='mso-ansi-language:EN-US'> </span>списка<span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>T</span> *<span lang=EN-US
+style='mso-ansi-language:EN-US'>data</span>;<span style='mso-tab-count:3'>                         </span>//
+Указатель на хранимый объект</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>elem</span> *<span lang=EN-US style='mso-ansi-language:
+EN-US'>next</span>;<span style='mso-tab-count:2'>                    </span>// Ссылка
+в списке</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>};<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>elem</span> *<span
+lang=EN-US style='mso-ansi-language:EN-US'>fst</span>,*<span lang=EN-US
+style='mso-ansi-language:EN-US'>lst</span>;<span style='mso-tab-count:3'>                             </span>//
+Указатели на первый и последний в списке</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>queue</span>();</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>~queue();<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>T</span> *<span
+lang=EN-US style='mso-ansi-language:EN-US'>out</span>();<span style='mso-tab-count:
+3'>                         </span>// Извлечение из очереди</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>in</span>(<span
+lang=EN-US style='mso-ansi-language:EN-US'>T</span> *<span lang=EN-US
+style='mso-ansi-language:EN-US'>s</span>);<span style='mso-tab-count:3'>                              </span>//
+Постановка в очередь</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>remove</span>(<span
+lang=EN-US style='mso-ansi-language:EN-US'>T</span> *<span lang=EN-US
+style='mso-ansi-language:EN-US'>s</span>); };<span style='mso-tab-count:2'>                    </span>//
+Удаление по адресу хранимого объекта</p>
+
+<p class=a>Вводится класс сообщения - единственной и универсальной единицы
+обмена данными между объектами. Сообщение не является адресным, поскольку объекты
+не располагают информацией ни о своем количестве, ни о своем расположении.
+Вместо этого в него вводится <b><a name="m19">код</b> или вид сообщения. Кроме того,
+сообщение в зависимости от кода может нести данные и указатель на область
+памяти (например, объект может передать указатель на<span
+style='mso-spacerun:yes'>  </span>какой либо объект-«процесс», в том числе на
+самого себя).</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//------------------------------------------------------------------------------------------------115-01.cpp<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>struct mes {<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int<span style='mso-tab-count:1'>         </span>type;<span
+style='mso-tab-count:3'>                             </span>// </span>Тип<span
+style='mso-ansi-language:EN-US'> </span>сообщения<span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>long<span style='mso-tab-count:
+1'>      </span>value;<span style='mso-tab-count:3'>                            </span>//
+Значение сообщения</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>void<span style='mso-tab-count:1'>       </span>*addr;<span
+style='mso-tab-count:3'>                            </span>// </span>Адрес<span
+style='mso-ansi-language:EN-US'> </span>объекта<span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>mes(int t0, long v0=0, void *a=NULL);<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>};</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a>Базовый класс <b style='mso-bidi-font-weight:normal'><a name="m20"><span
+lang=EN-US style='mso-ansi-language:EN-US'>process</span></b><span lang=EN-US> </span>является
+основой всех объектов-процессов, при конструировании он запоминает указатель на
+объект-«программу» как непосредственно, так и из объекта-прародителя. Кроме
+того, в нем содержится метод передачи сообщения и виртуальный метод (функция)
+обработки сообщения <b style='mso-bidi-font-weight:normal'><a name="m21"><span lang=EN-US
+style='mso-ansi-language:EN-US'>procMes</span></b>, которая переопределяется в
+производных классах.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//------------------------------------------------------------------------------------------------115-01.<span
+lang=EN-US style='mso-ansi-language:EN-US'>cpp</span></p>
+
+<p class=a0>class process {<span style='mso-tab-count:4'>                                      </span>//
+Класс &quot;процесс&quot; - указатель объекта &quot;программа&quot;</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>programm0 *prg;</p>
+
+<p class=a0>public:<span style='mso-tab-count:5'>                                                   </span>//
+Конструктор: процесс порождается программой</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>process(programm0 *p0=NULL){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>prg=p0;<span
+style='mso-tab-count:4'>                                     </span><o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:2; mso-ansi-language:EN-US' lang="EN-US">                        </span>send(wasBorn,0,this);}<span
+style='mso-tab-count:1'>    </span>// Конструктор: процесс порождается
+процессом</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>process(process *parent){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>prg=parent-&gt;prg;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>send(wasBorn,0,this);}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>void send(int t0,long v0=0,void
+*a0=NULL)<o:p></o:p></span></p>
+
+<p class=a0 style='margin-left:36.0pt;text-indent:36.0pt'><span lang=EN-US
+style='mso-ansi-language:EN-US'>{ prg-&gt;M.in(new mes(t0,v0,a0)); }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span><span style='mso-tab-count:
+3'>                                    </span>// </span>Виртуальная<span
+style='mso-ansi-language:EN-US'> </span>функция<span style='mso-ansi-language:
+EN-US'> </span>обработки<span style='mso-ansi-language:EN-US'> </span>сообщения<span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>virtual int procMes(mes &amp;m){
+return 0; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>virtual ~process(){}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>};</span></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a>Класс <b style='mso-bidi-font-weight:normal'><a name="m22"><span lang=EN-US
+style='mso-ansi-language:EN-US'>programm</span></b><span lang=EN-US> </span>содержит
+два объекта шаблонного класса <b style='mso-bidi-font-weight:normal'><a name="m23"><span
+lang=EN-US style='mso-ansi-language:EN-US'>queue</span><span lang=EN-US> </span>–
+</b>очереди сообщений и очередь объектов-процессов. Ввиду того, что классы <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>program</span><span lang=EN-US> </span></b>и <b style='mso-bidi-font-weight:
+normal'><a name="m24"><span lang=EN-US style='mso-ansi-language:EN-US'>process</span><span
+lang=EN-US> </span></b>взаимно ссылаются друг на друга, класс <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>program</span><span lang=EN-US> </span></b>разбит на два (базовый и
+производный), в связи с чем они определяются в последовательности <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>programm</span>0 – <span
+lang=EN-US style='mso-ansi-language:EN-US'>process</span><span lang=EN-US> </span>–
+<span lang=EN-US style='mso-ansi-language:
+EN-US'>program</span>.</b></p>
+
+<p class=a>Метод <b><a name="m25"><span lang=EN-US style='font-family:"Times New Roman";
+mso-ansi-language:EN-US'>run</span></b><span lang=EN-US style='font-family:
+"Times New Roman"'> </span>представляет собой диспетчер сообщений, обеспечивая
+с их помощью связь типа «каждый с каждым». Это значит, что любое сообщение
+пропускается через все множество объектов-процессов, в которых вызывается
+виртуальный метод <b style='mso-bidi-font-weight:normal'><a name="m26"><span lang=EN-US
+style='mso-ansi-language:EN-US'>procMes</span>, </b>в котором сообщение либо
+игнорируется, либо обрабатывается. Обработка может закончиться сбросом
+сообщения, тогда оно будет принято всего одним (первым) объектом, В противном
+случае сообщение будет широковещательным, то есть на него будут реагировать все
+объекты, которые настроены на его обработку.</p>
+
+<p class=a>И, наконец, еще одна тонкость. Поскольку уничтожение и создание
+объектов-процессов происходит при обработке сообщений и затрагивает очередь
+объектов-процессов (с которой в данный момент работает метод <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>run</span></b>), то процессы сами не выполняют этих действий, а посылают
+специальные сообщения. Их обработка производится методом <b style='mso-bidi-font-weight:
+normal'><a name="m27"><span lang=EN-US style='mso-ansi-language:EN-US'>run</span></b><span
+lang=EN-US> </span>особым образом. Есть еще один резон. Динамический объект не
+может разрушить сам себя (выполнить <b style='mso-bidi-font-weight:normal'><a name="m28"><span
+lang=EN-US style='mso-ansi-language:EN-US'>delete</span><span lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:
+EN-US'>this</span></b>), это за него должен сделать кто-нибудь другой.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>#define wasBorn <span style='mso-tab-count:1'>           </span>0<span
+style='mso-tab-count:2'>                      </span>// Сообщение - создать
+процесс</p>
+
+<p class=a0>#define killMe<span style='mso-spacerun:yes'>  </span><span
+style='mso-tab-count:2'>              </span>1<span style='mso-tab-count:2'>                      </span>//
+Сообщение - уничтожить процесс</p>
+
+<p class=a0>#define keyBrd<span style='mso-spacerun:yes'>  </span>2<span style='mso-tab-count:2'>                      </span>//
+Сообщение от клавиатуры</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//------------------------------------------------------------------------------------------------115-01.<span
+lang=EN-US style='mso-ansi-language:EN-US'>cpp</span></p>
+
+<p class=a0>class programm0{<span style='mso-tab-count:3'>                                  </span>//
+Начало класса &quot;программа&quot; - очередь сообщений</p>
+
+<p class=a0>public:</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>queue&lt;mes&gt;
+M;</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>};</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//------------------------------------------------------------------------------------------------115-01.cpp<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>class programm :
+public programm0{<span style='mso-tab-count:1'>       </span><o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>queue&lt;process&gt; P;<span
+style='mso-tab-count:2'>                    </span>// Класс
+&quot;программа&quot; - очередь процессов</p>
+
+<p class=a0>public:</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>void run(){<span
+style='mso-tab-count:3'>                                  </span>// Диспетчер
+сообщений</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span>while(1){<span
+style='mso-tab-count:2'>                        </span>// Сообщения от
+источника - клавиатуры</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>M.in(new mes(keyBrd,getch()));<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:2; mso-ansi-language:EN-US' lang="EN-US">                        </span>while(M.isData()){<span
+style='mso-tab-count:1'>           </span>// Очередь сообщений не пуста</p>
+
+<p class=a0><span style='mso-tab-count:3'>                                    </span>mes
+*mm=M.out();// Извлечь сообщение<span style='mso-tab-count:1'>           </span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:5; mso-ansi-language:EN-US' lang="EN-US">                                                            </span>//
+Сообщение о порождении процесса</p>
+
+<p class=a0><span style='mso-tab-count:5'>                                                            </span>//
+поставить в очередь</p>
+
+<p class=a0><span style='mso-tab-count:3'>                                    </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>if
+(mm-&gt;type==wasBorn)P.in((process*)mm-&gt;addr);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:3'>                                    </span>else<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:3'>                                    </span>if
+(mm-&gt;type==killMe) {<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:5; mso-ansi-language:EN-US' lang="EN-US">                                                            </span>//
+Сообщение об уничтожении процесса</p>
+
+<p class=a0><span style='mso-tab-count:5'>                                                            </span>//
+удалить из очереди и уничтожить объект</p>
+
+<p class=a0><span style='mso-tab-count:4'>                                                </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>process *q=(process*)mm-&gt;addr;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:4'>                                                </span>P.remove(q);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:4'>                                                </span>delete
+q;<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:4; mso-ansi-language:EN-US' lang="EN-US">                                                </span>}</p>
+
+<p class=a0><span style='mso-tab-count:3'>                                    </span>else<span
+style='mso-tab-count:2'>                  </span>// Иначе - пропустить через
+все процессы</p>
+
+<p class=a0><span style='mso-tab-count:3'>                                    </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>for (queue&lt;process&gt;::elem
+*q=P.fst; q!=NULL; q=q-&gt;next)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:4'>                                                </span>if
+(q-&gt;data-&gt;procMes(*mm)) break;<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:3; mso-ansi-language:EN-US' lang="EN-US">                                    </span>delete
+mm;</p>
+
+<p class=a0><span style='mso-tab-count:3'>                                    </span>}}}};</p>
+
+<p class=a>Простейшая система процессов содержит объекты-процессы двух видов.
+Первичный процесс класса <b style='mso-bidi-font-weight:normal'><a name="m29"><span
+lang=EN-US style='mso-ansi-language:EN-US'>PRC</span>1</b> при получении
+сообщения от клавиатуры с символом «+» создает вторичный объект-процесс класса <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>PRC</span>2</b>. Он, в свою очередь по сообщению с символом «?» выводит
+собственный адрес, а по сообщению с символом «-» посылает объекту-«программе»
+сообщение с просьбой уничтожить его. При этом он запрещает дальнейшее
+распространение сообщения, в связи с чем каждый раз уничтожается только один
+процесс.</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span></p>
+
+<p class=a0>//------------------------------------------------------------------------------------------------115-01.<span
+lang=EN-US style='mso-ansi-language:EN-US'>cpp</span></p>
+
+<p class=a0>// Вторичный процесс. При получении '-' просит уничтожить себя,</p>
+
+<p class=a0>// При получении '?' - сообщает о себе</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>class PRC2 :
+process{<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>public:<span
+style='mso-tab-count:1'>   </span>PRC2(process *pp):process(pp){}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int procMes(mes &amp;m){<span
+style='mso-tab-count:2'>                </span><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>if (m.type==keyBrd){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:3'>                                    </span>if<span
+style='mso-spacerun:yes'>  </span>(m.value=='-') { send(killMe,0,this); return
+1; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:3'>                                    </span>if<span
+style='mso-spacerun:yes'>  </span>(m.value=='?') { printf(&quot;A am
+%lx\n&quot;,this); }<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:3; mso-ansi-language:EN-US' lang="EN-US">                                    </span>}</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span>return
+0;<span style='mso-ansi-language:EN-US'> </span>}};</p>
+
+<p class=a0>// Первичный процесс. При получении '+' порождает вторичный процесс</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>class PRC1 :
+process{<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>public:<span
+style='mso-tab-count:1'>   </span>PRC1(programm *pp):process(pp){}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int procMes(mes &amp;m){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>if (m.type==keyBrd){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:3'>                                    </span>if<span
+style='mso-spacerun:yes'>  </span>(m.value=='+') new PRC2(this);<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:3; mso-ansi-language:EN-US' lang="EN-US">                                    </span>}</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span>return
+0;}};</p>
+
+<p class=a>И наконец, в <b style='mso-bidi-font-weight:normal'><a name="m30"><span
+lang=EN-US style='mso-ansi-language:EN-US'>main</span><span lang=EN-US> </span></b><a name="m30">определяется
+объект-«программа» и с ним связывается динамический объект-процесс <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>PRC</span>1, </b>после чего в «программе» вызывается метод <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>run</span><span lang=EN-US> </span>– </b>диспетчер сообщений.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>void main() {<span style='mso-tab-count:2'>                   </span>//
+Основная программа</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>programm P;<span
+style='mso-tab-count:1'>     </span>// Определяет объект «программа»</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>new PRC1(&amp;P);<span
+style='mso-tab-count:1'> </span>// Создает «процесс» и привязывает его к
+«программе»</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>P.run();<span
+style='mso-tab-count:2'>             </span>// Вызывает метод run в «программе»</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>}</p>
+<p class=a0>&nbsp;</p>
+<h3>Событийное программирование. Модель оконного приложения в <span lang="EN-US">
+Java</span></h3>
+<p class="a">Программирование на основе обмена сообщениями между компонентами 
+(объектами) называют еще <b>событийным. </b>Наиболее известным примером из этой 
+области являются оконные приложения. В отличие от предыдущего примера источником 
+событий является единственный объект – окно, который получает от нижележащего 
+уровня программирования приложения (<span lang="EN-US">API</span>), который, в 
+свою очередь, получает их от ядра ОС, включающего себя компоненты графического 
+интерфейса (<span lang="EN-US">GUI</span>). В качестве примера воспроизведем 
+механизмы программирования оконных приложений, принятые в <span lang="EN-US">
+Java</span>.</p>
+<p class="a">Прежде всего, все внутренние механизмы обработки событий оконного 
+приложения должны быть прописаны исключительно с использованием средств ООП – 
+наследования и полиморфизма. Этот момент является принципиальным еще и потому, 
+что классы оконных приложений являются библиотекой, формально <b>внешней </b>по 
+отношению к языку, коды которой уже скомпилированы.&nbsp; Как мы увидим, это создает 
+некоторые неудобства, для преодоления которых &nbsp;в язык вводятся дополнительные 
+синтаксические конструкции. </p>
+<p class="a">Все элементы управления окна (кнопки, текстовые поля, списки и 
+т.п.) являются классами, производными от абстрактного класса <b>
+<span lang="EN-US">Component</span>. </b>Он содержит данные и методы, общие для 
+всех элементов управления (например, положение и размеры компонента), проверку 
+на попадание координат точки в &nbsp;заданный компонент, а также <b>полиморфные 
+методы </b>(уникальные&nbsp; в каждом классе), например, реакции на клик мышью по 
+компоненте на экране или его перерисовка.</p>
+<p class="MsoNormal" style="text-autospace: none">
+<span style="font-family: Courier New; color: green">&nbsp;</span></p>
+<p class="a0">
+//---------------------------------------------------------------------------------115-02.<span lang="EN-US">cpp</span></p>
+<p class="a0"><span lang="EN-US" style="color: blue">class</span><span lang="EN-US"> 
+Component{</span></p>
+<p class="a0"><span lang="EN-US" style="color: blue">public</span><span lang="EN-US">:</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:blue">int</span> 
+x,y,w,h;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Component(){ </span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x=y=h=w=0; </span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>ml=NULL; </p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span lang="EN-US">
+al=NULL;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span lang="EN-US">// </span>
+Обработчиков нет</p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:blue">void</span> 
+setSize</span>(<span lang="EN-US" style="color: blue">int</span><span lang="EN-US"> 
+x</span>0,<span lang="EN-US" style="color: blue">int</span><span lang="EN-US"> y</span>0,<span lang="EN-US" style="color: blue">int</span><span lang="EN-US"> 
+w</span>0,<span lang="EN-US" style="color: blue">int</span><span lang="EN-US"> h</span>0){&nbsp;&nbsp;
+<b>// Установка положения и размеров</b></p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span lang="EN-US">x=x0; y=y0; h=h0; w=w0;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:blue">virtual</span>
+<span style="color:blue">int</span> inside(<span style="color:blue">int</span> 
+xx,<span style="color:blue">int</span> yy){&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>// </b></span><b>
+Точка внутри элемента управления</b></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">return</span> xx&gt;=x &amp;&amp; xx&lt;=x+w &amp;&amp; yy&gt;=y &amp;&amp; yy&lt;=y+h;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:blue">virtual</span>
+</span><span lang="EN-US" style="color: blue">void</span><span lang="EN-US"> 
+paint</span>()=0;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>// Перерисовка объекта управления (в ПК)</b></p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span lang="EN-US">MouseListener</span> *<span lang="EN-US">ml</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+// Объект-обработчик события типа &quot;мышь&quot;(в нем метод)</p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ActionListener *al;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Объект-обработчик 
+события типа &quot;действие&quot;(в нем метод)</p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span lang="EN-US" style="color: blue">virtual</span><span lang="EN-US">
+</span><span lang="EN-US" style="color: blue">void</span><span lang="EN-US"> 
+MouseClick</span>(<span lang="EN-US" style="color: blue">int</span><span lang="EN-US"> 
+xx</span>,<span lang="EN-US" style="color: blue">int</span><span lang="EN-US"> 
+yy</span>)=0;&nbsp; <b>// Реакция на «клик мышью» по объекту (в ПК)</b></p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }; </p>
+<p class="a">Объект оконного класса <b><span lang="EN-US">Frame </span></b>имеет 
+внутреннюю структуру данных, содержащую ссылки (указатели) на созданные объекты 
+управления, а также метод <b><span lang="EN-US">add</span>, </b>с помощью 
+которого они «объявляются» в окне. Таким образом, оконному объекты становятся 
+известны все элементы управления. Они создаются в конструктуоре производного 
+класса и там же передаются в базовый.</p>
+<p class="a0">&nbsp;</p>
+<p class="a0">
+//---------------------------------------------------------------------------------115-02.<span lang="EN-US">cpp</span></p>
+<p class="a0"><span style="color: blue">class</span> Frame{</p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Component **ctrl;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>// Объекты 
+управления в окне - ДМУ</b></p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:blue">int</span> nc,sz;</p>
+<p class="a0"><span lang="EN-US" style="color: blue">public</span><span lang="EN-US">:</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Frame(){</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; setlocale(LC_ALL,<span style="color:#A31515">&quot;Russian&quot;</span>);</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ctrl=<span style="color:blue">new</span> 
+Component*[20];</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; nc=0;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sz=20;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:blue">void</span> 
+add</span>(<span lang="EN-US">Component</span> *<span lang="EN-US">p</span>){&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<b>// Сохранить указатель в ДМУ</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span lang="EN-US" style="color: blue">if</span><span lang="EN-US"> 
+(nc==sz){ sz*=2; ctrl=(Component**)realloc(ctrl,sz*<span style="color:blue">sizeof</span>(Component*)); 
+}</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ctrl[nc++]=p;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:blue">virtual</span>
+<span style="color:blue">void</span> paint(){</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>// Заливка экрана + 
+прорисовка элементов управления</p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // ГРАФИКА - отвечает USER</p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span lang="EN-US">puts(<span style="color:#A31515">&quot;</span></span><span style="color: #A31515">Перерисовка 
+окна</span><span lang="EN-US" style="color: #A31515">&quot;</span><span lang="EN-US">);</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">for</span> (<span style="color:blue">int</span> 
+i=0;i&lt;nc;i++) ctrl[i]-&gt;paint();</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // СОБЫТИЯ от ядра ОС - получение событий от ядра</p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span lang="EN-US" style="color: blue">void</span><span lang="EN-US"> 
+loop(){</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">while</span>(1){</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">char</span> c=getch();</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">if</span> (c==<span style="color:#A31515">' '</span>)
+<span style="color:blue">return</span>;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<span style="color: blue">if</span> (c==<span style="color:#A31515">'c'</span>) 
+paint();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>// Перерисовка экрана == ВЫЗОВ в ПК</b></p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:blue">if</span> (c==<span style="color:#A31515">'m'</span>) 
+{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>// МЫШЬ</b></p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf(<span style="color:#A31515">&quot;Координаты 
+мыши:&quot;</span>);</p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:blue">int</span> 
+xx,yy;</p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; scanf(<span style="color:#A31515">&quot;%d%d&quot;</span>,&amp;xx,&amp;yy);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<b>// Передать объектам !!!!!!!!!!!!</b></p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span lang="EN-US" style="color: blue">for</span><span lang="EN-US"> (<span style="color:blue">int</span> 
+i=0;i&lt;nc;i++){</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">if</span> (ctrl[i]-&gt;inside(xx,yy)) {</span></p>
+<p class="a0"><span lang="EN-US">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ctrl[i]-&gt;MouseClick(xx,yy);</span></p>
+<p class="a0"><span lang="EN-US">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }}};</p>
+<p class="a">&nbsp;</p>
+<p class="a">При разработке оконного приложения программист создает производный 
+от <b><span lang="EN-US">Frame </span></b>класс, в его конструкторе – все 
+элементы управления в виде динамических объектов, устанавливает их параметры и 
+объявляет в классе.</p>
+<p class="a0"><span style="color: blue">&nbsp;</span></p>
+<p class="a0"><span lang="EN-US">
+//---------------------------------------------------------------------------------115-02.cpp</span></p>
+<p class="a0"><span lang="EN-US" style="color: blue">class</span><span lang="EN-US"> 
+MyFrame : <span style="color:blue">public</span> Frame,<span style="color:blue">public</span> 
+ActionListener{</span></p>
+<p class="a0"><span lang="EN-US" style="color: blue">public</span><span lang="EN-US">:</span></p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:green">
+//---------------------------------------------------------------------------------</span></p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b><span style="color:black">// Отложенное 
+программирование - перерисовка графики</span></b></p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:blue">void</span> paint(){</p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Frame::paint();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<b><span style="color:black">// Явно вызвать старый код</span></b></p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; puts(<span style="color:#A31515">&quot;Перерисовка 
+графики&quot;</span>);</p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MyFrame(){</p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Button *b1=<span style="color:blue">new</span> 
+Button(<span style="color:#A31515">&quot;Дави&quot;</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>
+<span style="color:black">// Создать КНОПКУ</span></b></p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b1-&gt;setSize(100,200,50,20);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span lang="EN-US">// </span></p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span lang="EN-US">
+add(b1);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>
+<span lang="EN-US" style="color: black">// </span><span style="color: black">
+ПЕРЕДАТЬ ОКНУ</span></b></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b</span>1=<span lang="EN-US" style="color: blue">new</span><span lang="EN-US"> 
+Butto</span>n(<span style="color:#A31515">&quot;Стоп&quot;</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<b><span style="color:black">// Создать КНОПКУ</span></b></p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span lang="EN-US">
+b1-&gt;setSize(100,230,50,20);</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+add(b1);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>
+<span style="color:black">// </span></b></span><b><span style="color: black">
+ПЕРЕДАТЬ ОКНУ</span></b></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b1-&gt;addActionListener(<span style="color:blue">this</span>);</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b1-&gt;addActionListener(<span style="color:blue">new</span> 
+adapter_F2(<span style="color:blue">this</span>));</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TextField *t1=<span style="color:blue">new</span> 
+TextField(10);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b><span style="color:black">// </span></b></span><b>
+<span style="color: black">Создать ТЕКСТ</span></b></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+t1-&gt;setSize(100,250,100,20);</p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+add(t1);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>
+<span style="color:black">// ПЕРЕДАТЬ ОКНУ</span></b></p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>
+<p class="a0">};</p>
+<p class="a">Рассмотрим, как выглядит процесс программирования реакции на 
+события, связанные с перерисовкой окна и кликом мыши по отдельным элементам 
+управления. В базовом классе постоянно «крутится» метод <b><span lang="EN-US">
+loop </span></b>(для чего может создаваться отдельный поток, параллелльный
+<span lang="EN-US">main</span>’у). При получании от ядра сообщений об изменении 
+размеров или состояния окна производится перерисовка его содержимого в следующей 
+последовательности:</p>
+<p class="a1"><span style="font-family: Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>в базовом класссе окна (<b><span lang="EN-US">Frame</span></b>) 
+вызывается метод <b><span lang="EN-US">paint</span>, </b>поскольку он 
+полиморфный, то происходит переход в производный класс (<b><span lang="EN-US">MyFrame</span></b>), 
+где он отвечает за рисование графики;</p>
+<p class="a1"><span style="font-family: Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>в производном классе метод <b><span lang="EN-US">paint </span></b>
+первым делом вызывает одноименный метод базового класса, который перезаливает 
+окно, перебирает все заявленные элементы кправления и вызывает <b>(полиморфно)
+</b>одноименный метод их прорисовки;</p>
+<p class="a1"><span style="font-family: Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>по возвращении в производный класс в нем производится прорисовка 
+графики.</p>
+<p class="a">Обработка сообщений, инициирующих выполнение некоторого действия в 
+окне (например, различные манипуляции мышью над объектами управления), 
+происходит по той же схеме. Просматривается множество всех заявленных объектов 
+(в массиве указателей)&nbsp; и для них выполняется метод <b><span lang="EN-US">inside</span>,
+</b>позволяющий определить «попадание» кликом мыши по объекту на экране. В 
+результате чего вызвается <b>полиморфный метод</b> запуска обработчиков события 
+(<b><span lang="EN-US">MouseClick</span></b>), предназначенного данному 
+элементу. </p>
+<p class="a">Создание «обратной связи» от сообщения в базовом классе к 
+обработчику события в окне внешне выглядит просто: необходимо на каждое событие 
+в элементе управления «навесить» функцию, выполняемую к контексте окна (т.е. 
+имеющую доступ к его данным и методам). Т.е. создается цепочка: <b>базовый класс 
+окна – структура данных элементов управления – объект элемента управления – 
+связанная с ним функция, работающая в контексте окна.</b></p>
+<p class="a">При программировании на «классическом» Си на последнем шаге можно 
+использовать такой тип данных, как указатель на функцию, которая, в свою 
+очередь, получает указатель на оконный объект производного класса. В ООП понятие 
+«функция вне класса» не приветствуется, поэтому вместо него нужно использовать 
+метод в специалльном классе-адаптере. А поскольку все объекты обработчики 
+вызывают разные методы, то он должен быть <b>полиморфным</b>, чтобы выглядеть 
+одинаково для всех элементов управления в окне. Рассмотрим эту схему подробнее.</p>
+<p class="a">Поскольку имеется довольно много видов событий от разных 
+источников, они разбиты на классы. Например, такие действия, как нажатие кнопок 
+и выбор пунктов меню сопровождаются событиями класса <b><span lang="EN-US">
+ActionEvent </span></b>(событие типа «действие»)<b>. </b>Кроме того, на каждый 
+класс событий имеется абстрактный класс – обработчик событий этого вида (или <b>
+слушатель</b>). Он не имеет данных и содержит объявление пустых полиморфных 
+методов (в терминах <span lang="EN-US">Java </span>это называется <b>интерфейсом</b>). 
+Каждый метод предназначен для обработки своего подвида события. Например, для 
+события типа «действие» имеется интерфейс <b><span lang="EN-US">ActionListener</span>.
+</b>Он содержит единственный метод – <b><span lang="EN-US">actionPerformed</span>.
+</b>Интерфейс событий, получаемых от мыши, содержит множество методов по числу 
+производимых мышью действий (наведение, клик, двойной клик и т.д.).</p>
+<p class="a0">&nbsp;</p>
+<p class="a0">
+//---------------------------------------------------------------------------------115-02.<span lang="EN-US">cpp</span></p>
+<p class="a0">// Класс СОБЫТИЯ и интерфейс СЛУШАТЕЛЯ для &quot;мыши&quot;</p>
+<p class="a0"><span lang="EN-US" style="color: blue">class</span><span lang="EN-US"> 
+MouseEvent{</span></p>
+<p class="a0"><span lang="EN-US" style="color: blue">public</span><span lang="EN-US">:&nbsp;
+<span style="color:blue">int</span> x,y;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MouseEvent(<span style="color:blue">int</span> 
+x0,<span style="color:blue">int</span> y0){ x=x0; y=y0; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; };</span></p>
+<p class="a0"><span lang="EN-US" style="color: blue">class</span><span lang="EN-US"> 
+MouseListener</span> {&nbsp;&nbsp; // КЛАСС (ИНТЕРФЕЙС) <span lang="EN-US">C</span>ЛУШАТЕЛЯ 
+(Базовый и абстрактный)</p>
+<p class="a0"><span lang="EN-US" style="color: blue">public</span><span lang="EN-US">:</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:blue">virtual</span>
+<span style="color:blue">void</span> mouseClicked(MouseEvent ee)=0;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>};</p>
+<p class="a0">
+//--------------------------------------------------------------------------</p>
+<p class="a0">// Класс СОБЫТИЯ и интерфейс СЛУШАТЕЛЯ для &quot;действия&quot;</p>
+<p class="a0"><span lang="EN-US" style="color: blue">class</span><span lang="EN-US"> 
+ActionEvent{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // </span>МЕНЮ и КНОПКИ<span lang="EN-US"> - Action</span></p>
+<p class="a0"><span lang="EN-US" style="color: blue">public</span><span lang="EN-US">:&nbsp;
+</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:blue">char</span> 
+*name;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ActionEvent(<span style="color:blue">char</span> 
+*ss){ name=ss; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; };</span></p>
+<p class="a0"><span lang="EN-US" style="color: blue">class</span><span lang="EN-US"> 
+ActionListener</span> {&nbsp;&nbsp;&nbsp; // КЛАСС (ИНТЕРФЕЙС) <span lang="EN-US">C</span>ЛУШАТЕЛЯ 
+(Базовый и абстрактный)</p>
+<p class="a0"><span lang="EN-US" style="color: blue">public</span><span lang="EN-US">:</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:blue">virtual</span>
+<span style="color:blue">void</span> actionPerformed(ActionEvent ee)=0;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>};</p>
+<p class="a">Базовый класс элементов управления (<b><span lang="EN-US">Component</span></b>) 
+содержит указатели на объекты базовых классов (интерфейсов) обработчиков 
+событий.</p>
+<p class="a0">&nbsp;</p>
+<p class="a0"><span lang="EN-US">
+//---------------------------------------------------------------------------------115-02.cpp</span></p>
+<p class="a0"><span lang="EN-US" style="color: blue">class</span><span lang="EN-US"> 
+Component{</span></p>
+<p class="a0"><span lang="EN-US" style="color: blue">public</span><span lang="EN-US">:</span></p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; …</p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span lang="EN-US">MouseListener</span> *<span lang="EN-US">ml</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<b>// Объект-обработчик события типа &quot;мышь&quot;(в нем метод)</b></p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ActionListener *al;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>// Объект-обработчик 
+события типа &quot;действие&quot;(в нем метод)</b></p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; … };</p>
+<p class="a">Производные классы элементов управления содержат методы 
+«назначения» объектов-слушателей, которые сохраняют переданные указатели на 
+обработчики событий, свойственные этому типу объектов.</p>
+<p class="a0">&nbsp;</p>
+<p class="a0">
+//---------------------------------------------------------------------------------115-02.cpp</p>
+<p class="a0">class Button : public Component{</p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char *label;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>
+<span lang="EN-US">// </span>Надпись на кнопке</b></p>
+<p class="a0">public:</p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span lang="EN-US">Button</span>(<span lang="EN-US">char</span> 
+*<span lang="EN-US">s</span>){ <span lang="EN-US">label</span>=<span lang="EN-US">s</span>; 
+}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>// Запоминание указателя на обработчик события</b></p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; void <b>addActionListener</b>(ActionListener *ff){ al=ff; 
+}</p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; void <b>addMouseListener</b>(MouseListener *ff){ ml=ff; 
+}</p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span lang="EN-US">void MouseClick</span>(<span lang="EN-US">int 
+xx</span>,<span lang="EN-US">int yy</span>){&nbsp;&nbsp;&nbsp; <b>// Обработка клика мыши по 
+элементу на экране</b></p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (al!=NULL) 
+al-&gt;actionPerformed(ActionEvent(label));</p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if (ml!=NULL) 
+ml-&gt;mouseClicked(MouseEvent(xx,yy));</p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>//
+<span lang="EN-US">Action</span> на кнопке, если нет обработчика - клик</b></p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; };</p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
+<p class="a">Итак, последовательность обработки сообщения, полученного оконным 
+классом, выглядит так:</p>
+<p class="a1"><span style="font-family: Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>метод <b><span lang="EN-US">loop</span></b><span lang="EN-US">
+</span>в базовом классе, получающий в цикле сообщения от ядра ОС, для сообщений, 
+относящихся, к манипуляциями мышью, просматривает все объекты управления (из 
+массива указателей <b><span lang="EN-US">ctrl</span></b>) и вызвает метод 
+проверки «попадания» клика на объект;</p>
+<p class="a1"><span style="font-family: Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>при «попадании» вызвается полиморфный метод <b><span lang="EN-US">
+MouseClick</span>, </b>который в каждом типе объектов управления вызывает 
+соответствуюшие ему обработчики. Например, при клике мышью по кнопке вызвается 
+обработчик типа <b>ActionListener </b>(точнее, метод <b>actionPerformed </b>с 
+передачей надписи на кнопке), а при его отсутствии – обработчик типа <b>
+MouseListener (</b>метод <b>mouseClicked) </b>с передачей координа мыши;</p>
+<p class="a1"><span style="font-family: Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>вызов обрабочиков событий является <b>полиморфным, </b>т.к. метод 
+вызывается по ссылке на абстракный базовый класс-слушатель.</p>
+<p class="a">В принципе, объект обработчик может быть объектом любого класса, в 
+том числе и не имеющим отношения к окну, в котором произошло событие. Но 
+все-таки чаще обработка события порождает действия в самом окне, поэтому 
+объект-обработчик должен «знать» расположение объекта оконного класса. Это можно 
+сделать различными способами<span lang="EN-US">:</span></p>
+<p class="a1"><span style="font-family: Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>обработчиком является сам оконный класс. В этом случае он 
+наследует интерфейс слушателя и переопределяет методы обработки события. Но если 
+таким образом назначить обработку одного вида событий от нескольких элементов 
+управления, то они будут перенаправляться в единственный метод и в нем придется 
+делать дополнительную селекцию (например кнопки по ее подписи или пункта меню по 
+параметру-строке, передачаемом в объекте-событии);</p>
+<p class="a0">&nbsp;</p>
+<p class="a0"><span lang="EN-US">
+//---------------------------------------------------------------------------------115-02.cpp</span></p>
+<p class="MsoNormal" style="text-autospace: none">
+<span lang="EN-US" style="font-family: Arial; color: blue">class</span><span lang="EN-US" style="font-family: Arial"> 
+MyFrame : <span style="color:blue">public</span> Frame,<span style="color:blue">public</span>
+<b><span style="color:black">ActionListener</span></b>{</span></p>
+<p class="MsoNormal" style="text-autospace: none">
+<span lang="EN-US" style="font-family: Arial; color: blue">public</span><span lang="EN-US" style="font-family: Arial">:</span></p>
+<p class="MsoNormal" style="text-autospace: none">
+<span style="font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MyFrame(){</span></p>
+<p class="MsoNormal" style="text-autospace: none">
+<span style="font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Button *b1=<span style="color:blue">new</span> 
+Button(<span style="color:#A31515">&quot;Дави&quot;</span>);&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:green">
+// Создать КНОПКУ</span></span></p>
+<p class="MsoNormal" style="text-autospace: none">
+<span style="font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b1-&gt;setSize(100,200,50,20);</span></p>
+<p class="MsoNormal" style="text-autospace: none">
+<span style="font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; add(b1);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:green">// ПЕРЕДАТЬ ОКНУ</span></span></p>
+<p class="MsoNormal" style="text-autospace: none">
+<span style="font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b1-&gt;addActionListener(<span style="color:blue">this</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<b><span style="color:black">// Обработчик - само окно</span></b></span></p>
+<p class="MsoNormal" style="text-autospace: none">
+<span style="font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b1=<span style="color:blue">new</span> 
+Button(<span style="color:#A31515">&quot;Стоп&quot;</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:green">// Создать КНОПКУ</span></span></p>
+<p class="MsoNormal" style="text-autospace: none">
+<span style="font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<span lang="EN-US" style="font-family: Arial">b</span><span style="font-family: Arial">1-&gt;</span><span lang="EN-US" style="font-family: Arial">setSize</span><span style="font-family: Arial">(100,230,50,20);<span style="color:green"> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+<p class="MsoNormal" style="text-autospace: none">
+<span style="font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<span lang="EN-US" style="font-family: Arial">add</span><span style="font-family: Arial">(</span><span lang="EN-US" style="font-family: Arial">b</span><span style="font-family: Arial">1);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:green">// ПЕРЕДАТЬ ОКНУ</span></span></p>
+<p class="MsoNormal" style="text-autospace: none">
+<span style="font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<span lang="EN-US" style="font-family: Arial">b1-&gt;addActionListener(<span style="color:blue">this</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<b><span style="color:black">// </span></b></span><b>
+<span style="font-family: Arial; color: black">Обработчик</span><span lang="EN-US" style="font-family: Arial; color: black"> 
+- </span><span style="font-family: Arial; color: black">само окно</span></b></p>
+<p class="MsoNormal" style="text-autospace: none">
+<span lang="EN-US" style="font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TextField</span><span style="font-family: Arial"> 
+*</span><span lang="EN-US" style="font-family: Arial">t</span><span style="font-family: Arial">1=</span><span lang="EN-US" style="font-family: Arial; color: blue">new</span><span lang="EN-US" style="font-family: Arial"> 
+TextField</span><span style="font-family: Arial">(10);&nbsp;&nbsp;
+<span style="color:green">// Создать ТЕКСТ</span></span></p>
+<p class="MsoNormal" style="text-autospace: none">
+<span style="font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<span lang="EN-US" style="font-family: Arial">t</span><span style="font-family: Arial">1-&gt;</span><span lang="EN-US" style="font-family: Arial">setSize</span><span style="font-family: Arial">(</span><span lang="EN-US" style="font-family: Arial">100,250,100,20);</span></p>
+<p class="MsoNormal" style="text-autospace: none">
+<span lang="EN-US" style="font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; add</span><span style="font-family: Arial">(</span><span lang="EN-US" style="font-family: Arial">t</span><span style="font-family: Arial">1);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:green">// ПЕРЕДАТЬ ОКНУ</span></span></p>
+<p class="MsoNormal" style="text-autospace: none">
+<span style="font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></p>
+<p class="MsoNormal" style="text-autospace: none"><b>
+<span style="font-family: Arial; color: green">
+//================================================================</span></b></p>
+<p class="MsoNormal" style="text-autospace: none"><b>
+<span style="font-family: Arial; color: black">//&nbsp; Объект-обработчик = само окно 
+- ОБРАТЫВАЕТ СОБЫТИЯ ОТ ВСЕХ ИСТОЧНИКОВ</span></b></p>
+<p class="MsoNormal" style="text-autospace: none">
+<span style="font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<span lang="EN-US" style="font-family: Arial; color: blue">void</span><span lang="EN-US" style="font-family: Arial"> 
+actionPerformed(ActionEvent ee){</span></p>
+<p class="MsoNormal" style="text-autospace: none">
+<span lang="EN-US" style="font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf(<span style="color:#A31515">&quot;</span></span><span style="font-family: Arial; color: #A31515">Обработка 
+в окне нажатия</span><span lang="EN-US" style="font-family: Arial; color: #A31515"> 
+%s\n&quot;</span><span lang="EN-US" style="font-family: Arial">,<b>ee.name</b>);</span></p>
+<p class="MsoNormal" style="text-autospace: none">
+<span style="font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<span lang="EN-US" style="font-family: Arial">if (strcmp(ee.name,<span style="color:#A31515"> 
+&quot;</span></span><span style="font-family: Arial; color: #A31515">Стоп</span><span lang="EN-US" style="font-family: Arial; color: #A31515">&quot;</span><span lang="EN-US" style="font-family: Arial">)==0) 
+{…}</span><span style="font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b>
+<span lang="EN-US" style="font-family: Arial">// </span>
+<span style="font-family: Arial">Выбор кнопки по подписи</span></b></p>
+<p class="MsoNormal" style="text-autospace: none">
+<span style="font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<span lang="EN-US" style="font-family: Arial">if (strcmp(ee.name,<span style="color:#A31515"> 
+&quot;</span></span><span style="font-family: Arial; color: #A31515">Дави</span><span lang="EN-US" style="font-family: Arial; color: #A31515">&quot;</span><span lang="EN-US" style="font-family: Arial">)==0) 
+{…}</span></p>
+<p class="MsoNormal" style="text-autospace: none">
+<span lang="EN-US" style="font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></p>
+<p class="a0">};</p>
+<p class="a1"><span style="font-family: Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>на каждый обработчик создается отдельный класс-адаптер. Объект 
+этого класса при создании сохраняет ссылку (указатель) на объект оконного класса 
+и назначается в качестве обработчика. Вызываемый в нем интерфейсный метод 
+обработки события просто выполняет вызов метода с уникальным именем в оконном 
+классе;</p>
+<p class="a0">&nbsp;</p>
+<p class="a0"><span lang="EN-US">
+//---------------------------------------------------------------------------------115-02.cpp</span></p>
+<p class="a0"><span lang="EN-US" style="color: blue">class</span><span lang="EN-US"> 
+MyFrame : <span style="color:blue">public</span> Frame{</span></p>
+<p class="a0"><span lang="EN-US" style="color: blue">public</span><span lang="EN-US">:&nbsp;
+<span style="color:green">//--------------------------------------------- </span>
+</span><b><span style="color: black">Вложенный класс</span><span lang="EN-US" style="color: black">-</span><span style="color: black">адаптер</span></b></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:blue">class</span> 
+adapter_F1 : <span style="color:blue">public</span> ActionListener{</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MyFrame</span> *<span lang="EN-US">pp</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<b><span style="color:black">// Указатель на ОКНО, в котором работает</span></b></p>
+<p class="a0"><span lang="EN-US" style="color: blue">public</span><span lang="EN-US">:&nbsp; 
+adapter_F1(MyFr</span>ame *p0)</p>
+<p class="a0" style="margin-left:36.0pt;text-indent:36.0pt">{ pp=p0; 
+}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b><span style="color:black">// При создании - запоминает 
+указатель на окно</span></b></p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span lang="EN-US" style="color: blue">void</span><span lang="EN-US"> 
+actionPerformed(ActionEvent ee){ pp-&gt;<b>F1</b>(ee); }</span></p>
+<p class="a0"><b><span lang="EN-US" style="color: black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<span style="color: black">// При вызове в качестве обработчика событий – 
+вызывает </span><span lang="EN-US" style="color: black">F</span><span style="color: black">1 
+в классе окна</span></b></p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; };</p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span lang="EN-US" style="color: blue">class</span><span lang="EN-US"> 
+adapter_F2 : <span style="color:blue">public</span> ActionListener{</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>MyFrame *pp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</p>
+<p class="a0"><span lang="EN-US" style="color: blue">public</span><span lang="EN-US">:&nbsp; 
+adapter_F2(MyFrame *p0){ pp=p0; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:blue">void</span> 
+actionPerformed(ActionEvent ee){ pp-&gt;<b>F2</b>(ee); }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>};</p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MyFrame(){</p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Button *b1=<span style="color:blue">new</span> 
+Button(<span style="color:#A31515">&quot;Дави&quot;</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:green">// Создать КНОПКУ</span></p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b1-&gt;setSize(100,200,50,20);</p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span lang="EN-US">
+add(b1);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:green">
+// </span></span><span style="color: green">ПЕРЕДАТЬ ОКНУ</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b1-&gt;addActionListener(<b><span style="color:blue">new</span> 
+adapter_F1(<span style="color:blue">this</span>));</b></span></p>
+<p class="a0"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Передать объект-обработчик класса
+<span lang="EN-US">adapter</span>_<span lang="EN-US">F</span>1, а ему – 
+указатель на окно</b></p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span lang="EN-US">b</span>1=<span lang="EN-US" style="color: blue">new</span><span lang="EN-US"> 
+B</span>utton(<span style="color:#A31515">&quot;Стоп&quot;</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:green">// Создать КНОПКУ</span></p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span lang="EN-US">
+b1-&gt;setSize(100,230,50,20);</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+add(b1);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:green">
+// </span></span><span style="color: green">ПЕРЕДАТЬ ОКНУ</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b1-&gt;addActionListener(<span style="color:blue">this</span>);</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b1-&gt;addActionListener(<b><span style="color:blue">new</span> 
+adapter_F2(<span style="color:blue">this</span>));</b></span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TextField *t1=<span style="color:blue">new</span> 
+TextField(10);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:green">// </span></span>
+<span style="color: green">Создать ТЕКСТ</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>t1-&gt;setSize(100,250,100,20);</p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; add(t1);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:green">// ПЕРЕДАТЬ ОКНУ</span></p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>
+<p class="a0"><b><span lang="EN-US" style="color: black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // </span>
+<span style="color: black">Вызываются из классов</span><span lang="EN-US" style="color: black">-</span><span style="color: black">адаптеров</span></b></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:blue">void</span> 
+F1(ActionEvent ee){</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf(<span style="color:#A31515">&quot;</span></span><span style="color: #A31515">Обработка 
+в</span><span lang="EN-US" style="color: #A31515"> F1 </span>
+<span style="color: #A31515">нажатия</span><span lang="EN-US" style="color: #A31515"> 
+%s\n&quot;</span><span lang="EN-US">,ee.name);</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:blue">void</span> 
+F2(ActionEvent ee){</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf(<span style="color:#A31515">&quot;</span></span><span style="color: #A31515">Обработка 
+в</span><span lang="EN-US" style="color: #A31515"> F2 </span>
+<span style="color: #A31515">нажатия</span><span lang="EN-US" style="color: #A31515"> 
+%s\n&quot;</span><span lang="EN-US">,ee.name);</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</p>
+<p class="a0">};</p>
+<p class="a1"><span style="font-family: Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>в <span lang="EN-US">Java </span>специально для компактного 
+описания обработчиков событий введен синтаксис <b>анонимного класса. </b>При 
+создании динамического объекта абстрактного класса (интерфейса) он сразу же 
+доопределяется путем записи недостающих методов&nbsp; в теле класса в фигурных 
+скобках. При этом он является вложенных и по правилам <span lang="EN-US">Java
+</span>ему доступен по умолчанию контекст объекта внешнего класса-родителя (чего 
+нет в Си++). Таким образом, метод обработки события имеет стандартное имя и 
+каждый раз переписывается в новом экземпляре класса «на лету». Это выглядит 
+примерно так.</p>
+<p class="a0">&nbsp;</p>
+<p class="a0"><span lang="EN-US">B2.addActionListener(new ActionListener<b>(){ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // </b></span><b>Тело анонимного класса</b></p>
+<p class="a0" style="text-indent:36.0pt"><b><span lang="EN-US">void 
+actionPerformed(ActionEvent M){ pt.setText(&quot;Pressed B2&quot;);&nbsp; }</span></b></p>
+<p class="a0" style="text-indent:36.0pt"><b><span lang="EN-US">}</span></b></p>
+<p class="a0" style="text-indent:36.0pt"><span lang="EN-US">);</span></p>
+<p class="MsoPlainText">&nbsp;</p>
+<p class=a0>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>

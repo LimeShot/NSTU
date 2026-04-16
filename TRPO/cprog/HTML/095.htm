@@ -1,0 +1,3701 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=Edit-Time-Data href="095.files/editdata.mso">
+<title>9.5. Структуры данных в двоичных файлах</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>www.PHILka.RU</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>vtpc112</o:LastAuthor>
+  <o:Revision>3</o:Revision>
+  <o:TotalTime>275</o:TotalTime>
+  <o:Created>2008-08-09T05:04:00Z</o:Created>
+  <o:LastSaved>2008-08-09T05:04:00Z</o:LastSaved>
+  <o:Pages>3</o:Pages>
+  <o:Words>7213</o:Words>
+  <o:Characters>41118</o:Characters>
+  <o:Company>NSTU_VT</o:Company>
+  <o:Bytes>11776</o:Bytes>
+  <o:Lines>342</o:Lines>
+  <o:Paragraphs>96</o:Paragraphs>
+  <o:CharactersWithSpaces>48235</o:CharactersWithSpaces>
+  <o:Version>11.6360</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DoNotHyphenateCaps/>
+  <w:DrawingGridHorizontalSpacing>0,55 пт</w:DrawingGridHorizontalSpacing>
+  <w:DrawingGridVerticalSpacing>0,55 пт</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:UseMarginsForDrawingGridOrigin/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DrawingGridVerticalOrigin>99,25 пт</w:DrawingGridVerticalOrigin>
+  <w:Compatibility>
+   <w:WW6BorderRules/>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+   <w:UseWord97LineBreakingRules/>
+   <w:SelectEntireFieldWithStartOrEnd/>
+   <w:UseWord2002TableStyleRules/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:"Times New Roman CYR";
+	panose-1:2 2 6 3 5 4 5 2 3 4;
+	mso-font-charset:204;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+@font-face
+	{font-family:"Arial CYR";
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+h1
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:14.0pt;
+	mso-bidi-font-weight:normal;}
+h2
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-font-weight:normal;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+h3
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	font-weight:normal;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";}
+p.a, li.a, div.a
+	{mso-style-name:текст;
+	mso-style-link:"текст Знак";
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a0, li.a0, div.a0
+	{mso-style-name:программа;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a1, li.a1, div.a1
+	{mso-style-name:список;
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:18.45pt;
+	margin-bottom:0cm;
+	margin-left:64.35pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-18.0pt;
+	mso-pagination:widow-orphan;
+	mso-list:l0 level1 lfo1;
+	tab-stops:42.55pt list 64.35pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a2, li.a2, div.a2
+	{mso-style-name:определение;
+	mso-style-parent:текст;
+	margin-top:12.0pt;
+	margin-right:32.9pt;
+	margin-bottom:12.0pt;
+	margin-left:35.45pt;
+	text-align:justify;
+	text-indent:.55pt;
+	mso-pagination:widow-orphan;
+	border:none;
+	mso-border-alt:solid windowtext 1.5pt;
+	padding:0cm;
+	mso-padding-alt:1.0pt 1.0pt 1.0pt 1.0pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a3, li.a3, div.a3
+	{mso-style-name:эпиграф;
+	margin-top:0cm;
+	margin-right:32.9pt;
+	margin-bottom:0cm;
+	margin-left:5.0cm;
+	margin-bottom:.0001pt;
+	text-align:right;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.a4, li.a4, div.a4
+	{mso-style-name:"от края";
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a5, li.a5, div.a5
+	{mso-style-name:Формула;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.a6, li.a6, div.a6
+	{mso-style-name:"без формата";
+	mso-style-parent:программа;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a7, li.a7, div.a7
+	{mso-style-name:стихи;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.1, li.1, div.1
+	{mso-style-name:эпиграф1;
+	mso-style-parent:эпиграф;
+	margin-top:0cm;
+	margin-right:9.35pt;
+	margin-bottom:0cm;
+	margin-left:9.0cm;
+	margin-bottom:.0001pt;
+	text-align:right;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+span.a8
+	{mso-style-name:"номер страницы";}
+span.a9
+	{mso-style-name:"текст Знак";
+	mso-style-locked:yes;
+	mso-style-link:текст;
+	mso-ansi-font-size:12.0pt;
+	font-family:"Times New Roman CYR";
+	mso-ascii-font-family:"Times New Roman CYR";
+	mso-hansi-font-family:"Times New Roman CYR";
+	mso-ansi-language:RU;
+	mso-fareast-language:RU;
+	mso-bidi-language:AR-SA;}
+ /* Page Definitions */
+ @page
+	{mso-footnote-separator:url("095.files/header.htm") fs;
+	mso-footnote-continuation-separator:url("095.files/header.htm") fcs;
+	mso-endnote-separator:url("095.files/header.htm") es;
+	mso-endnote-continuation-separator:url("095.files/header.htm") ecs;}
+@page Section1
+	{size:21.0cm 842.0pt;
+	margin:33.45pt 42.55pt 72.0pt 89.85pt;
+	mso-header-margin:14.2pt;
+	mso-footer-margin:31.75pt;
+	mso-even-header:url("095.files/header.htm") eh1;
+	mso-header:url("095.files/header.htm") h1;
+	mso-even-footer:url("095.files/header.htm") ef1;
+	mso-footer:url("095.files/header.htm") f1;
+	mso-first-header:url("095.files/header.htm") fh1;
+	mso-first-footer:url("095.files/header.htm") ff1;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:1628194852;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-964799380 -1450833310 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-style-link:список;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:64.35pt;
+	mso-level-number-position:left;
+	margin-left:64.35pt;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l1
+	{mso-list-id:1872306324;
+	mso-list-type:simple;
+	mso-list-template-ids:285097064;}
+@list l1:level1
+	{mso-level-start-at:0;
+	mso-level-number-format:bullet;
+	mso-level-text:-;
+	mso-level-tab-stop:57.2pt;
+	mso-level-number-position:left;
+	margin-left:57.2pt;
+	text-indent:-18.0pt;
+	font-family:"Times New Roman";}
+@list l2
+	{mso-list-id:2101293803;
+	mso-list-type:hybrid;
+	mso-list-template-ids:647401266 68747279 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l2:level1
+	{mso-level-tab-stop:64.35pt;
+	mso-level-number-position:left;
+	margin-left:64.35pt;
+	text-indent:-18.0pt;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Обычная таблица";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+table.MsoTableGrid
+	{mso-style-name:"Сетка таблицы";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+  <o:regrouptable v:ext="edit">
+   <o:entry new="1" old="0"/>
+   <o:entry new="2" old="1"/>
+   <o:entry new="3" old="0"/>
+  </o:regrouptable>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=RU style='tab-interval:36.0pt' background="back.gif">
+
+<div class=Section1>
+
+<h2>9.5. Структуры данных в двоичных файлах</h2>
+
+<h3>Последовательный двоичный файл</h3>
+
+<p class=a>Технология сохранения данных в последовательном файле не меняется в
+зависимости от того, текстовые это данные или двоичные. В обоих случаях используются
+одни и те же принципы сохранения данных в последовательном
+саморазворачивающимся формате. Например, рекурсивный формат сохранения дерева,
+рассмотренный в <b style='mso-bidi-font-weight:normal'><a name="m1">8.2 </b>при реализации
+его в двоичном файле получается путем простой замены функций <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>fprintf</span>/<span
+lang=EN-US style='mso-ansi-language:EN-US'>fcsanf</span></b> на <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>fwrite</span>/<span
+lang=EN-US style='mso-ansi-language:EN-US'>fread</span>.<o:p></o:p></b></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//------------------------------------------------------95-01.cpp</p>
+
+<p class=a0>//-------------Сохранение дерева в двоичный последовательный поток</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void save(tree *p,
+FILE *fd){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>fwrite</span>(&amp;<span lang=EN-US
+style='mso-ansi-language:EN-US'>p</span>-&gt;<span lang=EN-US style='mso-ansi-language:
+EN-US'>cnt</span>,<span lang=EN-US style='mso-ansi-language:EN-US'>sizeof</span>(<span
+lang=EN-US style='mso-ansi-language:EN-US'>int</span>),1,<span lang=EN-US
+style='mso-ansi-language:EN-US'>fd</span>);<span style='mso-tab-count:1'>     </span>//
+Запись вершины во внутренней форме</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>fwrite(&amp;p-&gt;val,sizeof(int),1,fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>fwrite(&amp;p-&gt;n,sizeof(int),1,fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>for</span> (<span lang=EN-US
+style='mso-ansi-language:EN-US'>int</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>i</span>=0;<span lang=EN-US
+style='mso-ansi-language:EN-US'>i</span>&lt;<span lang=EN-US style='mso-ansi-language:
+EN-US'>p</span>-&gt;<span lang=EN-US style='mso-ansi-language:EN-US'>n</span>;<span
+lang=EN-US style='mso-ansi-language:EN-US'>i</span>++)<span style='mso-tab-count:
+2'>                 </span>// Рекурсивное сохранение потомков</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>save(p-&gt;ch[i],fd);<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>}</p>
+
+<p class=a0>//-------------Загрузка дерева из двоичного последовательного
+потока</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>tree *load(FILE
+*fd){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>tree *p=new tree;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>fread(&amp;p-&gt;cnt,sizeof(int),1,fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>fread(&amp;p-&gt;val,sizeof(int),1,fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>fread(&amp;p-&gt;n,sizeof(int),1,fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>for (int i=0;i&lt;p-&gt;n;i++)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>p-&gt;ch[i]=load(fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>return</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>p</span>; }</p>
+
+<h3>Записи переменной длины</h3>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m2">Запись переменной длины</b>
+(ЗПД) - единица хранения, меняющая свою размерность в различных экземплярах. В
+формате записей переменной длины могут быть представлены данные различного вида:
+динамические массивы, строки текста, последовательности данных, имеющие
+собственный внутренний формат.</p>
+
+<p class=a>Имеется два основных способа хранения записей переменной длины в
+файле: </p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='mso-spacerun:yes'> </span>используется
+специальное значение или код - ограничитель записи. Типичным примером является
+строка текста в памяти, имеющая в качестве ограничителя символ <b
+style='mso-bidi-font-weight:normal'>'\0'</b>, который в файле превращается в
+последовательность символов '<b style='mso-bidi-font-weight:normal'><a name="m3">\r' и '\n'.</b>
+В этом смысле обычный текстовый файл при работе с ним построчно есть файл
+записей переменной длины; </p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>запись предваряется переменной-счетчиком,
+которая содержит длину этой записи. Содержимое записи при этом может быть любым,
+поскольку явно выделенные коды-ограничители отсутствуют (свойство <b
+style='mso-bidi-font-weight:normal'>прозрачности данных</b>). Этот формат
+удобен еще и тем, что при чтении из последовательного файла программа, зная
+размерность записи, может сразу же резервировать необходимую динамическую
+память для ее размещения. </p>
+
+<p class=a>По своей природе такой файл является файлом последовательного
+доступа, поскольку определить адрес любой записи без знания размерности всех
+предыдущих не представляется возможным. </p>
+
+<p class=a>Интерпретация содержимого записи никак не связана со способом ее
+хранения. В следующем примере запись переменной длины хранит структурированную
+переменную (фиксированная размерность) и связанную с ней строка (переменная
+размерность). При сохранении в файл они объединяются в единую запись с общим
+счетчиком длины, а при чтении загружаются отдельно: структура – в динамическую
+переменную, а строка – в связанный с ней динамический массив.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//------------------------------------------------------95-02.cpp</p>
+
+<p class=a0>//------ Структура + строка = запись переменной длины</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>struct vrec {<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int dd,mm,yy;<span style='mso-tab-count:
+3'>                            </span>// </span>Дата<span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>char name[20];<span
+style='mso-tab-count:3'>                          </span>// Строка ограниченной
+длины</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>char *addr; };<span
+style='mso-tab-count:3'>                             </span>// Строка
+переменной длины (внешняя)</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>put</span>(<span
+lang=EN-US style='mso-ansi-language:EN-US'>FILE</span> *<span lang=EN-US
+style='mso-ansi-language:EN-US'>fd</span>, <span lang=EN-US style='mso-ansi-language:
+EN-US'>vrec</span> &amp;<span lang=EN-US style='mso-ansi-language:EN-US'>R</span>){<span
+style='mso-tab-count:2'>                     </span><span style='mso-tab-count:
+1'>            </span>// Добавление записи</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>int</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>sz</span>=<span lang=EN-US
+style='mso-ansi-language:EN-US'>sizeof</span>(<span lang=EN-US
+style='mso-ansi-language:EN-US'>vrec</span>)+<span lang=EN-US style='mso-ansi-language:
+EN-US'>strlen</span>(<span lang=EN-US style='mso-ansi-language:EN-US'>R</span>.<span
+lang=EN-US style='mso-ansi-language:EN-US'>addr</span>)+1;<span
+style='mso-tab-count:1'>        </span>// Общая длина</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>fwrite</span>(&amp;<span lang=EN-US
+style='mso-ansi-language:EN-US'>sz</span>,<span lang=EN-US style='mso-ansi-language:
+EN-US'>sizeof</span>(<span lang=EN-US style='mso-ansi-language:EN-US'>int</span>),1,<span
+lang=EN-US style='mso-ansi-language:EN-US'>fd</span>);<span style='mso-tab-count:
+2'>                       </span>// Запись счетчика длины</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>fwrite</span>(&amp;<span lang=EN-US
+style='mso-ansi-language:EN-US'>R</span>,<span lang=EN-US style='mso-ansi-language:
+EN-US'>sizeof</span>(<span lang=EN-US style='mso-ansi-language:EN-US'>vrec</span>),1,<span
+lang=EN-US style='mso-ansi-language:EN-US'>fd</span>);<span style='mso-tab-count:
+2'>                      </span>// Фиксированная часть</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>fwrite</span>(<span lang=EN-US
+style='mso-ansi-language:EN-US'>R</span>.<span lang=EN-US style='mso-ansi-language:
+EN-US'>addr</span>,<span lang=EN-US style='mso-ansi-language:EN-US'>strlen</span>(<span
+lang=EN-US style='mso-ansi-language:EN-US'>R</span>.<span lang=EN-US
+style='mso-ansi-language:EN-US'>addr</span>)+1,1,<span lang=EN-US
+style='mso-ansi-language:EN-US'>fd</span>);<span style='mso-tab-count:1'>          </span>//
+Переменная часть</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>vrec *get(FILE
+*fd){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int size=0; vrec *p;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if
+(fread(&amp;size,sizeof(int),1,fd)==0)<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:2; mso-ansi-language:EN-US' lang="EN-US">                        </span>return NULL;;<span
+style='mso-tab-count:3'>                             </span>// Чтение счетчика
+длины - конец файла</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>if (size &lt; sizeof(vrec)) <o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>return NULL;<span
+style='mso-tab-count:3'>                              </span>// </span>Короткая<span
+style='mso-ansi-language:EN-US'> </span>запись<span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>p</span>=<span lang=EN-US
+style='mso-ansi-language:EN-US'>new</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>vrec</span>;<span style='mso-tab-count:
+4'>                                           </span>// Выделение памяти под <span
+lang=EN-US style='mso-ansi-language:EN-US'>struct</span></p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>fread</span>(<span lang=EN-US style='mso-ansi-language:
+EN-US'>p</span>,<span lang=EN-US style='mso-ansi-language:EN-US'>sizeof</span>(<span
+lang=EN-US style='mso-ansi-language:EN-US'>vrec</span>),1,<span lang=EN-US
+style='mso-ansi-language:EN-US'>fd</span>); <span style='mso-tab-count:2'>                        </span>//
+Постоянная часть записи</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>size -= sizeof(
+vrec);<span style='mso-spacerun:yes'>      </span><span style='mso-tab-count:
+3'>                         </span>// Остаток записи - строка</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>p</span>-&gt;<span lang=EN-US style='mso-ansi-language:
+EN-US'>addr</span>=<span lang=EN-US style='mso-ansi-language:EN-US'>new</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>char</span>[<span
+lang=EN-US style='mso-ansi-language:EN-US'>size</span>];<span style='mso-tab-count:
+3'>                         </span>// Выделение памяти под строку</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>fread(p-&gt;addr,size,1,fd);<span
+style='mso-tab-count:2'>              </span><span style='mso-tab-count:1'>            </span>//
+Переменная часть записи</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>return p; }<o:p></o:p></span></p>
+
+<h3>Записи фиксированной длины</h3>
+
+<p class=a>Файл <b style='mso-bidi-font-weight:normal'><a name="m4">записей фиксированной
+длины</b> (ЗФД) фактически представляет собой обычный массив, размещенный в
+двоичном файле. При принятом в Си низкоуровневом представлении данных в файле,
+адрес любого элемента массива вычисляется по простой формуле <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>A</span>=<span lang=EN-US
+style='mso-ansi-language:EN-US'>A</span><sub>0</sub>+</b><b style='mso-bidi-font-weight:
+normal'><a name="m5"><span lang=EN-US style='mso-ansi-language:EN-US'>i</span>*</b><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>sizeof</span>(<span
+lang=EN-US style='mso-ansi-language:EN-US'>type</span>), </b>где <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>A</span><sub>0</sub></b> – начальный адрес массива, а <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>i</span> – </b>индекс (номер) его элемента. Таким образом, к его
+элементам возможен произвольный (прямой) доступ.</p>
+
+<p class=a><p><br
+style='mso-ignore:vglayout' clear=ALL>
+С точки зрения физического представления массивы различных типов идентичны и
+отличаются только размерностью элементов. Поэтому программа, работающая с
+файлом записей фиксированной длины, может быть универсальна и применима к
+любому типу. Но для этого в самом файле желательно хранить размерность элемента
+(а также их количество). В результате получаем следующий формат, имеющий, между
+прочим, избыточность. Последнее дает дополнительные гарантии корректности
+данных в файле.</p>
+</p>
+
+<p class=a4 align=center style='text-align:center'>
+<img border="0" src="Images/095-01.gif" width="511" height="128"></p>
+<p class=a4 align=center style='text-align:center'>
+<b style='mso-bidi-font-weight:
+normal'><a name="m6">рис. 95-</b><b style='mso-bidi-font-weight:normal'><a name="m7"><span lang=EN-US
+style='mso-ansi-language:EN-US'>2</span>. Формат файла записей фиксированной
+длины<o:p></o:p></b></p>
+
+<p class=a>В начале файла хранится счетчик записей <b style='mso-bidi-font-weight:
+normal'><a name="m8"><span lang=EN-US style='mso-ansi-language:EN-US'>nr</span><span
+lang=EN-US> </span></b>и размерность записи <b style='mso-bidi-font-weight:
+normal'><a name="m9"><span lang=EN-US style='mso-ansi-language:EN-US'>sz</span>. </b>Работу
+с файлом удобнее всего организовать в режиме сеанса. Для этого здесь и далее
+будем использовать структурированный тип со встроенными функциями (см. <b
+style='mso-bidi-font-weight:normal'>5.3</b>). Элементы данных структуры будут
+содержать фрагменты образа структур данных двоичного файла, а встроенные
+функции – выполнять требуемые операции. При открытии файла в память читаются
+значения <b style='mso-bidi-font-weight:normal'><a name="m10"><span lang=EN-US
+style='mso-ansi-language:EN-US'>nr</span></b><span lang=EN-US> </span>и <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>sz</span><span lang=EN-US> </span></b>и проверяется его корректность: с
+учетом размерностей всех элементов его длина должна быть равна <b
+style='mso-bidi-font-weight:normal'>nr*sz+2*sizeof(int).</b> </p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//------------------------------------------------------95-03.cpp</p>
+
+<p class=a0>//<span style='mso-spacerun:yes'>  </span>Файл записей
+фиксированной длины</p>
+
+<p class=a0>//<span style='mso-spacerun:yes'>  </span>Структурированный тип со
+встроенными функциями</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>struct BFILE{<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>FILE *fd;<span style='mso-tab-count:
+2'>                        </span><span style='mso-tab-count:1'>            </span>//
+</span>Файл<span style='mso-ansi-language:EN-US'> </span>в<span lang=EN-US
+style='mso-ansi-language:EN-US'> stdio<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>int nr,sz;<span
+style='mso-tab-count:3'>                                   </span>// Образ
+структур данных файла </p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int create(char
+*name,int sz0){<span style='mso-tab-count:2'>                </span>// </span>Создать<span
+style='mso-ansi-language:EN-US'> </span>пустой<span style='mso-ansi-language:
+EN-US'> </span>файл<span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if
+((fd=fopen(name,&quot;wb&quot;))==NULL)<span style='mso-spacerun:yes'>        
+</span><o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:2; mso-ansi-language:EN-US' lang="EN-US">                        </span>return 0;<span
+style='mso-tab-count:2'>                        </span>// Создать новый для
+записи</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>int nr0=0;<span
+style='mso-tab-count:3'>                                  </span>// Записать
+счетчик и размерность</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>fwrite((void*)&amp;sz0,sizeof(int),1,fd);<span
+style='mso-spacerun:yes'>   </span><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>fwrite((void*)&amp;nr0,sizeof(int),1,fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>fclose(fd); fd=NULL; return 1; }<o:p></o:p></span></p>
+
+<p class=a0>// Открыть существующий файл с проверкой</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int open(char
+*name,int sz0){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if (fd!=NULL) return 0;<span
+style='mso-tab-count:2'>                 </span>// </span>Файл<span
+style='mso-ansi-language:EN-US'> </span>уже<span style='mso-ansi-language:EN-US'>
+</span>открыт<span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if
+((fd=fopen(name,&quot;rb+wb+&quot;))==NULL)<span
+style='mso-spacerun:yes'>         </span><o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:2; mso-ansi-language:EN-US' lang="EN-US">                        </span>return 0;<span
+style='mso-tab-count:2'>                        </span>// Открыть для чтения и
+записи</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>fread((void*)&amp;sz,sizeof(int),1,fd);<span
+style='mso-tab-count:1'>  </span>// Читать из файла nr и sz</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>fread((void*)&amp;nr,sizeof(int),1,fd);<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>fseek(fd,0L,SEEK_END);<span
+style='mso-tab-count:1'>            </span>// Соответствует ли длина файла</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>if (ftell(fd)!=<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span><b style='mso-bidi-font-weight:
+normal'><a name="m11">2*sizeof(int)+nr*sz</b>)<span style='mso-tab-count:1'>       </span>// </span>значениям<span
+lang=EN-US style='mso-ansi-language:EN-US'> nr </span>и<span lang=EN-US
+style='mso-ansi-language:EN-US'> sz?<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>{ fclose(fd); fd=NULL;
+return 0;}<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>return 1;}</p>
+
+<p class=a0>// Читать запись с заданным номером из открытого файла</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void *get(int i){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if (fd==NULL) return NULL;<span
+style='mso-tab-count:1'>          </span>// </span>Файл<span style='mso-ansi-language:
+EN-US'> </span>не<span style='mso-ansi-language:EN-US'> </span>открыт<span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if (i&lt;0 || i&gt;=nr) return
+NULL;<span style='mso-spacerun:yes'>  </span><span style='mso-tab-count:1'>       </span>//
+</span>Номер<span style='mso-ansi-language:EN-US'> </span>записи<span
+style='mso-ansi-language:EN-US'> </span>некорректен<span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>void *q=new char[sz];<span
+style='mso-spacerun:yes'>           </span><span style='mso-tab-count:1'>      </span>//
+</span>Выделить<span style='mso-ansi-language:EN-US'> </span>память<span
+lang=EN-US style='mso-ansi-language:EN-US'> (</span>в<span style='mso-ansi-language:
+EN-US'> </span>байтах<span lang=EN-US style='mso-ansi-language:EN-US'>)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if (fseek(fd,<b style='mso-bidi-font-weight:
+normal'><a name="m12">2*sizeof(int)+i*sz</b>,SEEK_SET)==EOF)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span><span style='mso-spacerun:yes'> 
+</span></span>{ <span lang=EN-US style='mso-ansi-language:EN-US'>delete</span>
+[]<span lang=EN-US style='mso-ansi-language:EN-US'>q</span>; <span lang=EN-US
+style='mso-ansi-language:EN-US'>return</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>NULL</span>; }<span
+style='mso-spacerun:yes'>  </span><span style='mso-tab-count:1'>      </span>//
+Позиционирование по</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>if</span> (<span lang=EN-US style='mso-ansi-language:
+EN-US'>fread</span>(<span lang=EN-US style='mso-ansi-language:EN-US'>q</span>,<span
+lang=EN-US style='mso-ansi-language:EN-US'>sz</span>,1,<span lang=EN-US
+style='mso-ansi-language:EN-US'>fd</span>)!=1)<span style='mso-tab-count:2'>                  </span>//
+вычисляемому адресу</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span
+style='mso-spacerun:yes'>  </span><span lang=EN-US style='mso-ansi-language:
+EN-US'>{ delete []q; return NULL; }<span style='mso-tab-count:1'>        </span>//
+</span>Ошибка<span style='mso-ansi-language:EN-US'> </span>чтения<span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>return q; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>// </span>Добавить<span
+style='mso-ansi-language:EN-US'> </span>запись<span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int append(void
+*pp){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if (fd==NULL) return NULL;<span
+style='mso-tab-count:1'>          </span>// </span>Файл<span style='mso-ansi-language:
+EN-US'> </span>не<span style='mso-ansi-language:EN-US'> </span>открыт<span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>fseek(fd,0L,SEEK_END);<span
+style='mso-spacerun:yes'>          </span><span style='mso-tab-count:1'>  </span>//
+Установиться на конец файла</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>if (fwrite(pp,sz,1,fd)!=1) <o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:2; mso-ansi-language:EN-US' lang="EN-US">                        </span>return 0;<span
+style='mso-tab-count:2'>                        </span>// Добавить запись</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>nr++;<span
+style='mso-tab-count:4'>                                        </span>//
+Обновить переменную nr в файле</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>fseek(fd,sizeof( int),SEEK_SET);<span
+style='mso-spacerun:yes'>  </span><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if
+(fwrite((void*)&amp;nr,sizeof(int),1,fd)!=1)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>return 0;<span
+style='mso-spacerun:yes'>                                            </span><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>return 1; }};<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a>Создание двоичного файла представляет собой отдельную операцию <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>create</span></b>. Она не просто создает «пустой» файл, а записывает
+туда исходное состояние структуры данных, в нашем случае нулевой счетчик
+записей и переданную размерность типа данных. Остальные операции выполняются в
+файле, открытом в режиме чтения/записи/добавления. Кроме добавления и получения
+записи по логическому номеру возможно еще и обновление существующих записей.
+Операция физического удаления записи, а также вставки в таком файле отсутствуют:
+сдвигать записи в файле не принято, а «сжатие» файла может быть произведено
+только при его полной перезаписи в новый файл.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//------------------------------------------------------95-03.cpp</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>main</span>(){<span
+style='mso-tab-count:4'>                                            </span></p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>BFILE FF={NULL,0,0};<span style='mso-tab-count:
+2'>                </span>// </span>Структура<span lang=EN-US style='mso-ansi-language:
+EN-US'> – </span>файл<span style='mso-ansi-language:EN-US'> </span>ЗФД<span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>double A[]={4,6,2,8,3,4,1,5,6};<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int n=sizeof(A)/sizeof(double);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>FF.create(&quot;95-03.dat&quot;,sizeof(double));<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if (!FF.open(&quot;95-03.dat&quot;,sizeof(double)))
+return;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>for (int i=0;i&lt;n;i++)
+FF.append(&amp;A[i]);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>for</span> (<span lang=EN-US
+style='mso-ansi-language:EN-US'>i</span>=<span lang=EN-US style='mso-ansi-language:
+EN-US'>n</span>-1; <span lang=EN-US style='mso-ansi-language:EN-US'>i</span>&gt;=0;
+<span lang=EN-US style='mso-ansi-language:EN-US'>i</span>--){<span
+style='mso-tab-count:2'>                    </span>// Чтение в обратном порядке</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>double *pd=(double*)FF.get(i);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>printf(&quot;%lf\n&quot;,*pd);
+delete pd;<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:2; mso-ansi-language:EN-US' lang="EN-US">                        </span>}}</p>
+
+<p class=a>Приведенный <b style='mso-bidi-font-weight:normal'><a name="m13"><span lang=EN-US
+style='mso-ansi-language:EN-US'>main</span><span lang=EN-US> </span></b>демонстрирует
+особенности такого файла: он работает только на дополнение, уже имеющиеся
+записи можно извлекать и обновлять в любом порядке.</p>
+
+<p class=a>Следующий пример показывает, насколько далеко можно зайти, используя
+только последовательное чтение и вычисление адресов в массивах. Таблица
+произвольной размерности (столбцы и строки), с любыми, закрепленными за
+столбцами типами данных,<span style='mso-spacerun:yes'>  </span>представляет
+собой параметризованный файл записей фиксированной длины: размерности записей,
+будучи фиксированными, вычисляются с использованием данных, хранящихся в том же
+файле, ближе к началу.</p>
+
+<p class=a><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span><span lang=EN-US style='mso-ansi-language:EN-US'><o:p><img border="0" src="Images/095-02.gif" width="614" height="143"></o:p></span></p>
+
+<p class=a4 align=center style='text-align:center'>
+<b style='mso-bidi-font-weight:normal'><a name="m14">рис. 95-3. Формат файла с таблицей
+произвольной размерности<o:p></o:p></b></p>
+
+<p class=a>Конкретнее, в начале файла находятся размерности таблицы –
+количество столбцов <b style='mso-bidi-font-weight:normal'><a name="m15"><span lang=EN-US
+style='mso-ansi-language:EN-US'>nc</span></b> и строк <b style='mso-bidi-font-weight:
+normal'><a name="m16"><span lang=EN-US style='mso-ansi-language:EN-US'>nr</span>. </b>За ними
+следуют описатели столбцов, которые являются записями фиксированной длины
+(структурированный тип <b style='mso-bidi-font-weight:normal'><a name="m17"><span lang=EN-US
+style='mso-ansi-language:EN-US'>cDef</span></b>). Описатель столбца содержит
+имя, тип и размерность типа в байтах. Таким образом, каждый столбец имеет
+собственные характеристики. Далее располагаются записи (строки таблицы),
+которые также представляют собой записи фиксированной длины. Каждая из них
+состоит из набора полей, соответствующих столбцам, и ее размерность равна
+суммарной размерности данных в столбцах.</p>
+
+<p class=a>Перейдем теперь к вычислениям. Начальный адрес области данных <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>adata</span><span lang=EN-US> </span></b>в файле вычисляется по формуле <b
+style='mso-bidi-font-weight:normal'><span style='mso-spacerun:yes'> </span><span lang=EN-US style='mso-ansi-language:
+EN-US'>sizeof</span>(<span
+lang=EN-US style='mso-ansi-language:EN-US'>int</span>)*2+<span lang=EN-US style='mso-ansi-language:
+EN-US'>sizeof</span>(<span
+lang=EN-US style='mso-ansi-language:EN-US'>cDef</span>)*<span lang=EN-US style='mso-ansi-language:
+EN-US'>nc</span><span lang=EN-US> </span></b>как сумма размерностей
+предшествующих данных<b style='mso-bidi-font-weight:normal'><a name="m18">. </b>Размерность
+строки таблицы <b style='mso-bidi-font-weight:normal'><a name="m19"><span lang=EN-US
+style='mso-ansi-language:EN-US'>lr</span><span lang=EN-US> </span></b>вычисляется
+как сумма размерностей столбцов, которые хранятся в описателях <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>lr</span>=<span
+style='font-family:"Times New Roman"'>&#931;</span></b><b style='mso-bidi-font-weight:
+normal'><a name="m20"><span lang=EN-US style='mso-ansi-language:EN-US'>size<sub>i</sub></span><sub><span
+lang=EN-US> </span></sub>(</b><b style='mso-bidi-font-weight:normal'><a name="m21"><span
+lang=EN-US style='mso-ansi-language:EN-US'>i</span>=0..</b><b style='mso-bidi-font-weight:
+normal'><a name="m22"><span lang=EN-US style='mso-ansi-language:EN-US'>nc</span>-1). </b>И,
+наконец, адрес произвольной ячейки таблицы также может быть вычислен: <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>Adr</span>(<span lang=EN-US
+style='mso-ansi-language:EN-US'>i</span>,</b><b style='mso-bidi-font-weight:
+normal'><a name="m23"><span lang=EN-US style='mso-ansi-language:EN-US'>j</span>)=</b><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>adata</span>+<span
+lang=EN-US style='mso-ansi-language:EN-US'>i</span>*</b><b style='mso-bidi-font-weight:
+normal'><a name="m24"><span lang=EN-US style='mso-ansi-language:EN-US'>lr</span>+</b><b
+style='mso-bidi-font-weight:normal'><span style='font-family:"Times New Roman"'>
+&#931;</span><span lang=EN-US
+style='mso-ansi-language:EN-US'>size<sub>k</sub></span>(<span lang=EN-US style='mso-ansi-language:
+EN-US'>k</span>=0..<span lang=EN-US
+style='mso-ansi-language:EN-US'>j</span>-1) – </b>он складывается из начального
+адреса области данных, суммы размерностей предшествующих строк и суммы
+размерностей предшествующих полей в текущей строке.</p>
+
+<p class=a>В структурированном типе <b style='mso-bidi-font-weight:normal'><a name="m25"><span
+lang=EN-US style='mso-ansi-language:EN-US'>FTABLE</span><span lang=EN-US> </span></b>находятся
+фрагменты образа структуры данных файла: размерности и динамический массив
+описателей столбцов. Процедура открытия такого файла реализуется в режиме
+«раскрутки» - прочитанные данные используются для определения количества и
+размерностей следующих за ними.<span style='mso-spacerun:yes'>  </span>Сначала
+читаются размерности таблицы, по ним создается динамический массив описателей и
+читается из файла. Размерность записи определяется как сумма размерностей
+столбцов. </p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//------------------------------------------------------95-04.cpp</p>
+
+<p class=a0>//---- Файл - таблица произвольной размерности</p>
+
+<p class=a0>struct cDef {<span style='mso-tab-count:2'>                  </span><span
+style='mso-tab-count:1'>            </span>// Описатель столбца</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>int type;<span
+style='mso-spacerun:yes'>                       </span>// тип столбца</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>int size;<span
+style='mso-spacerun:yes'>                       </span><span style='mso-tab-count:
+1'>  </span>// размерность столбца в байтах</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>char</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>name</span>[30]; };<span
+style='mso-tab-count:1'>           </span>// Имя столбца </p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>struct</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>FTABLE</span>{</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>FILE *fd;<span style='mso-spacerun:yes'>      
+                </span><span
+style='mso-tab-count:1'> </span>// </span>Файл<span style='mso-ansi-language:
+EN-US'> </span>в<span lang=EN-US style='mso-ansi-language:EN-US'> stdio<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>int nc;<span
+style='mso-spacerun:yes'>                         </span><span
+style='mso-tab-count:1'>  </span>// Количество столбцов</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>int nr;<span
+style='mso-tab-count:3'>                            </span>// Количество строк</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>int lr;<span
+style='mso-spacerun:yes'>                         </span><span
+style='mso-tab-count:1'>    </span>// Размер строки таблицы</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>long adata;<span
+style='mso-spacerun:yes'>                     </span>// Начальный адрес области
+строк</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>cDef *ST;<span
+style='mso-spacerun:yes'>                       </span><span style='mso-tab-count:
+1'>           </span>// Динамический массив описателей</p>
+
+<p class=a0>//------ Открыть файл и прочитать описатели столбцов </p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>int open(char *name) {<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int i; <o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if
+((fd=fopen(name,&quot;rb&quot;))==NULL) return 0;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>fread(&amp;nc,sizeof(int),1,fd);<span
+style='mso-tab-count:1'>           </span>// </span>Чтение<span lang=EN-US
+style='mso-ansi-language:EN-US'> nc<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>fread(&amp;nr,sizeof(int),1,fd);<span
+style='mso-spacerun:yes'>    </span><span style='mso-tab-count:1'>        </span>//
+</span>Чтение<span lang=EN-US style='mso-ansi-language:EN-US'> nr<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>ST= new cDef[nc];<span
+style='mso-spacerun:yes'>               </span><span style='mso-tab-count:1'>      </span>//
+Память под массив описателей</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>fread(ST,sizeof(cDef),nc,fd);<span
+style='mso-tab-count:1'>        </span>// Чтение массива описателей</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>adata=sizeof(int)*2+sizeof(cDef)*nc;<span
+style='mso-spacerun:yes'>        </span><o:p></o:p></span></b></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:5; mso-ansi-language:EN-US' lang="EN-US">                                                            </span>//
+Вычисление адреса области данных </p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>for (i=0,lr=0;
+i&lt;nc; i++)<span style='mso-spacerun:yes'>       </span><span
+style='mso-tab-count:1'>         </span>// Вычисление длины строки </p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>lr += ST[i].size; <o:p></o:p></span></b></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>return 1;}</span></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//------------------------------------------------------95-04.cpp</p>
+
+<p class=a0>//----- Чтение элемента таблицы из столбца j строки i</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void *get(int i,
+int j){ <o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if (fd==NULL) return NULL;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if (nc &lt;=j || nr &lt;=i) return
+NULL; <o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>for ( int k=0,lnt=0; k&lt;j; k++)<span
+style='mso-tab-count:1'>        </span>// </span>Смещение<span lang=EN-US
+style='mso-ansi-language:EN-US'> j-</span>го<span style='mso-ansi-language:
+EN-US'> </span>столбца<span style='mso-ansi-language:EN-US'> </span>в<span
+style='mso-ansi-language:EN-US'> </span>строке<span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span><b style='mso-bidi-font-weight:
+normal'><a name="m26">lnt</b></span><b style='mso-bidi-font-weight:normal'><a name="m27"> += <span lang=EN-US style='mso-ansi-language:
+EN-US'>ST</span>[<span lang=EN-US
+style='mso-ansi-language:EN-US'>k</span>].</b><b style='mso-bidi-font-weight:
+normal'><a name="m28"><span lang=EN-US style='mso-ansi-language:EN-US'>size</span></b>;<span
+style='mso-tab-count:1'>          </span>// как сумма длин предыдущих столбцов</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>void *data=new char[ST[j].size];<span
+style='mso-tab-count:1'>  </span>// </span>Память<span style='mso-ansi-language:
+EN-US'> </span>под<span style='mso-ansi-language:EN-US'> </span>ячейку<span
+style='mso-ansi-language:EN-US'> </span>таблицы<span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>fseek(fd, <b style='mso-bidi-font-weight:
+normal'><a name="m29">adata+i*lr+lnt</b>,SEEK_SET); <o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>fread</span>(<span lang=EN-US
+style='mso-ansi-language:EN-US'>data</span>,<span lang=EN-US style='mso-ansi-language:
+EN-US'>ST</span>[<span lang=EN-US style='mso-ansi-language:EN-US'>j</span>].<span
+lang=EN-US style='mso-ansi-language:EN-US'>size</span>,1,<span lang=EN-US
+style='mso-ansi-language:EN-US'>fd</span>); <span style='mso-tab-count:1'>          </span>//
+Чтение ячейки таблицы по адресу</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>return data;} <o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>};</span></p>
+
+<h3>Указатели в файлах. Связанные записи</h3>
+
+<p class=a>Структуры данных, содержащие указатели, могут быть «спроецированы»
+из внутренней памяти во внешнюю – двоичный файл.<span
+style='mso-spacerun:yes'>  </span>Само собой разумеется, что значение
+указателя, представляющего собой адрес указуемой переменной в памяти программы,
+не имеет никакого смысла при размещении той же переменной в файле. Тогда
+каждому указателю, связывающему две переменные в памяти, нужно сопоставить
+аналогичный <b style='mso-bidi-font-weight:normal'><a name="m30">указатель в файле </b>(или <b
+style='mso-bidi-font-weight:normal'>файловый указатель</b>)<b style='mso-bidi-font-weight:
+normal'><a name="m31">. </b>Его значением является позиция (адрес) переменной при ее
+размещении в файле. </p>
+
+<p class=a>При наличии записей в файле, связанных указателем, имеют место два
+способа их размещения. При записи структуры данных в файл «хвостом вперед» сначала
+размещаются указуемые записи с целью получения их адресов в файле, а затем записи,
+содержащие указатели. В принципе сохранение цепочки связанных записей в таком
+виде может производиться вообще без позиционирования (в режиме последовательного
+доступа).</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>#define FNULL -1L <o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>struct</span><span
+style='mso-spacerun:yes'>  </span><span lang=EN-US style='mso-ansi-language:
+EN-US'>x</span> { int<span style='mso-tab-count:1'>      </span>val;<span
+style='mso-tab-count:1'>       </span>// Связанная запись в памяти</p>
+
+<p class=a0 style='margin-left:36.0pt'><span style='mso-spacerun:yes'>  
+</span>x <span style='mso-tab-count:1'>      </span>*ptr; };<span
+style='mso-tab-count:1'>   </span>// Указатель в памяти</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>struct fx{<span
+style='mso-spacerun:yes'>  </span>int val;<o:p></o:p></span></p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'><span style='mso-spacerun:yes'>   </span>long<span style='mso-tab-count:
+1'>   </span>fptr;}; <span style='mso-tab-count:1'>    </span>// </span>Файловый<span
+style='mso-ansi-language:EN-US'> </span>указатель<span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>x a1 = {0,NULL}; x
+a2 = {1, &amp;a1}; <o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>fx</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>b</span>1,<span
+lang=EN-US style='mso-ansi-language:EN-US'>b</span>2;<span style='mso-tab-count:
+2'>                        </span>// <span lang=EN-US style='mso-ansi-language:
+EN-US'>a</span>2 ссылается на <span lang=EN-US style='mso-ansi-language:EN-US'>a</span>1</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0>fseek(fd, 0L, SEEK_END);<span style='mso-tab-count:2'>                      </span>//
+Разместить в файле указуемую<span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>b</span>1.<span
+lang=EN-US style='mso-ansi-language:EN-US'>val</span>=<span lang=EN-US
+style='mso-ansi-language:EN-US'>a</span>1.<span lang=EN-US style='mso-ansi-language:
+EN-US'>val</span>;</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>b</span>2.fptr =
+ftell(fd);<span style='mso-tab-count:3'>                         </span>// запись
+<span lang=EN-US style='mso-ansi-language:EN-US'>b</span>1 и сохранить ее адрес
+в <span lang=EN-US style='mso-ansi-language:EN-US'>b</span>2</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>fwrite(&amp;b1,
+sizeof(fx), 1, fd);<o:p></o:p></span></p>
+
+<p class=a0>…</p>
+
+<p class=a0>fseek(fd, 0L, SEEK_END);<span style='mso-tab-count:2'>                      </span>//
+Разместить в файле запись,</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>b</span>2.<span
+lang=EN-US style='mso-ansi-language:EN-US'>val</span>=<span lang=EN-US
+style='mso-ansi-language:EN-US'>a</span>2.<span lang=EN-US style='mso-ansi-language:
+EN-US'>val</span>;</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>fwrite</span>(&amp;<span
+lang=EN-US style='mso-ansi-language:EN-US'>b</span>2, <span lang=EN-US
+style='mso-ansi-language:EN-US'>sizeof</span>(<span lang=EN-US
+style='mso-ansi-language:EN-US'>fx</span>), 1, <span lang=EN-US
+style='mso-ansi-language:EN-US'>fd</span>); <span style='mso-tab-count:1'>                    </span>// содержащую файловый указатель</p>
+
+<p class=a0><span style='font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a>Естественное размещение «головой вперед» несколько сложнее:</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>разместить в файле все указуемые записи
+структуры данных и запомнить их файловые адреса; </p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>сформировать значения файловых указателей в записях
+структуры данных, расположенных в памяти; </p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>обновить значения записей структуры данных в
+файле, то есть переписать их из памяти по тем же файловым адресам. </p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>fseek(fd, 0L, SEEK_END);<span style='mso-tab-count:2'>                      </span>//
+Разместить в файле запись,</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>long
+pb2=ftell(fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>b</span>2.<span
+lang=EN-US style='mso-ansi-language:EN-US'>val</span>=<span lang=EN-US
+style='mso-ansi-language:EN-US'>a</span>2.<span lang=EN-US style='mso-ansi-language:
+EN-US'>val</span>;</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>fwrite</span>(&amp;<span
+lang=EN-US style='mso-ansi-language:EN-US'>b</span>2, <span lang=EN-US
+style='mso-ansi-language:EN-US'>sizeof</span>(<span lang=EN-US
+style='mso-ansi-language:EN-US'>fx</span>), 1, <span lang=EN-US
+style='mso-ansi-language:EN-US'>fd</span>); <span style='mso-tab-count:1'>                    </span>// содержащую файловый указатель</p>
+
+<p class=a0>…</p>
+
+<p class=a0>fseek(fd, 0L, SEEK_END);<span style='mso-tab-count:2'>                      </span>//
+Разместить в файле указуемую</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>b</span>1.<span
+lang=EN-US style='mso-ansi-language:EN-US'>val</span>=<span lang=EN-US
+style='mso-ansi-language:EN-US'>a</span>1.<span lang=EN-US style='mso-ansi-language:
+EN-US'>val</span>;</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>b</span>2.fptr =
+ftell(fd);<span style='mso-tab-count:3'>                         </span>// запись
+<span lang=EN-US style='mso-ansi-language:EN-US'>b</span>1 и сохранить ее адрес
+в <span lang=EN-US style='mso-ansi-language:EN-US'>b</span>2</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>fwrite(&amp;b1,
+sizeof(fx), 1, fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>fseek</span>(<span
+lang=EN-US style='mso-ansi-language:EN-US'>fd</span>, <span lang=EN-US
+style='mso-ansi-language:EN-US'>pb</span>2, <span lang=EN-US style='mso-ansi-language:
+EN-US'>SEEK</span>_<span lang=EN-US style='mso-ansi-language:EN-US'>SET</span>);<span
+style='mso-tab-count:2'>                     </span>// Вернуться к записи со
+ссылкой <span style='mso-tab-count:2'>                     </span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>fwrite</span>(&amp;<span
+lang=EN-US style='mso-ansi-language:EN-US'>b</span>2, <span lang=EN-US
+style='mso-ansi-language:EN-US'>sizeof</span>(<span lang=EN-US
+style='mso-ansi-language:EN-US'>x</span>), 1, <span lang=EN-US
+style='mso-ansi-language:EN-US'>fd</span>); <span style='mso-tab-count:2'>                    </span>//
+и обновить ее</p>
+
+<p class=a4>Такой алгоритм единственно возможен в структуре данных с
+циклическим (перекрестными) ссылками, например, в циклическом списке или графе.</p>
+
+<h3>Массив указателей</h3>
+
+<p class=a>На примере массива указателей можно продемонстрировать различные
+технологические приемы работы со структурами данных в двоичном файле. Но для
+начала дадим описание формата представления данных в двоичном файле, содержащем
+массив файловых указателей на строки. Это необходимо хотя бы потому, что в
+самой программе формат файла определяется очень «косвенно», через
+последовательность операций позиционирования и чтения/записи данных:</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>в начале файла содержится описание массива
+файловых указателей: его размерность <b style='mso-bidi-font-weight:normal'><a name="m32"><span
+lang=EN-US style='mso-ansi-language:EN-US'>sz</span>, </b>текущее количество
+строк (рабочих указателей) <b style='mso-bidi-font-weight:normal'><a name="m33"><span
+lang=EN-US style='mso-ansi-language:EN-US'>ns</span><span lang=EN-US> </span></b>и
+абсолютный адрес самого массива указателей в файле <b style='mso-bidi-font-weight:
+normal'><a name="m34"><span lang=EN-US style='mso-ansi-language:EN-US'>p</span>0. </b>Это
+необходимо для будущего перераспределения памяти во время переполнения массива
+указателей: его новая копия увеличенной размерности будет копироваться в конец
+файла;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>сам массив файловых указателей содержит
+абсолютные адреса строк;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><p><br
+style='mso-ignore:vglayout' clear=ALL>
+строки представлены как записи переменной длины в формате «счетчик символов (<b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>int</span></b>) символы строки (<b style='mso-bidi-font-weight:normal'><a name="m35"><span
+lang=EN-US style='mso-ansi-language:EN-US'>char</span></b>). Символ –
+ограничитель строки также сохраняется в записи.</p>
+</p>
+
+<p class=a4 align=center style='text-align:center'>
+<img border="0" src="Images/095-03.gif" width="530" height="118"></p>
+<p class=a4 align=center style='text-align:center'>
+<b style='mso-bidi-font-weight:
+normal'><a name="m36">рис. 95-5. Формат файла с массивом указателей на строки<o:p></o:p></b></p>
+
+<p class=a>Для такого файла в памяти может быть создан идентичный образ
+структуры данных – это динамический массив указателей на строки. Для массива
+файловых указателей строится соответствующий ему образ в памяти - динамический
+массив переменных типа <b style='mso-bidi-font-weight:normal'><a name="m37"><span lang=EN-US
+style='mso-ansi-language:EN-US'>long</span></b>. Он сначала заполняется, а
+затем уже записывается в файл. Входной текстовый файл прочитывается два раза,
+первый раз - для определения количества строк и размерности массива указателей,
+второй раз - для формирования структуры данных. Массив файловый указателей
+пишется в двоичный файл также два раза: в первый раз, чтобы «занять место», а
+во второй раз - чтобы записать сформированные адреса строк (обновление). </p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//------------------------------------------------------95-06.cpp</p>
+
+<p class=a0>//---- Создание файла с массивом указателей из текстового файла</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>#define FNULL 0<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>void save(char *in, char *out){ </span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>FILE *fdi,*fdo; char c[80]; int ns;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>if ((fdi=fopen(in,&quot;r&quot;))==NULL)
+return;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>if ((fdo=fopen(out,&quot;wb&quot;))==NULL)
+return;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>for (ns=0; fgets(c,80,fdi)!=NULL; ns++); <span
+style='mso-tab-count:1'>  </span>// </span>Количество<span style='mso-ansi-language:
+EN-US'> </span>строк<span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-spacerun:yes; mso-ansi-language:EN-US' lang="EN-US"> </span>int sz=ns*1.2;<span style='mso-tab-count:
+4'>                                       </span>// Размерность с учетом
+резерва</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>fseek(fdi,0l,SEEK_SET);<span
+style='mso-spacerun:yes'>                    </span><span style='mso-tab-count:
+1'>    </span>// Вернуться к началу</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>long *pp = new long[sz];<span
+style='mso-tab-count:2'>                        </span>// Образ массива файловых
+указателей</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>for (int i=0;i&lt;sz;i++) pp[i]=FNULL;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>long p0=2*sizeof(int)+sizeof(long);<span
+style='mso-spacerun:yes'>        </span></span><span style='mso-tab-count:1'>  </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>// </span>Начальное<span
+style='mso-ansi-language:EN-US'> </span>смещением<span style='mso-ansi-language:
+EN-US'> </span>МУ<span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fwrite</span>(&amp;<span lang=EN-US
+style='mso-ansi-language:EN-US'>sz</span>,<span lang=EN-US style='mso-ansi-language:
+EN-US'>sizeof</span>(<span lang=EN-US style='mso-ansi-language:EN-US'>int</span>),1,<span
+lang=EN-US style='mso-ansi-language:EN-US'>fdo</span>);<span
+style='mso-spacerun:yes'>             </span><span style='mso-tab-count:1'>       </span>//
+Записать размерность МУ</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>fwrite</span>(&amp;<span lang=EN-US
+style='mso-ansi-language:EN-US'>ns</span>,<span lang=EN-US style='mso-ansi-language:
+EN-US'>sizeof</span>(<span lang=EN-US style='mso-ansi-language:EN-US'>int</span>),1,<span
+lang=EN-US style='mso-ansi-language:EN-US'>fdo</span>);<span
+style='mso-spacerun:yes'>             </span><span style='mso-tab-count:1'>       </span>//
+Записать количество строк</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>fwrite(&amp;p0,sizeof(long),1,fdo);<span
+style='mso-spacerun:yes'>            </span><span style='mso-tab-count:1'>     </span>//
+Записать адрес МУ</p>
+
+<p class=a0><span
+style='mso-spacerun:yes'> </span>fwrite(pp,sizeof(long),sz,fdo);<span
+style='mso-spacerun:yes'>            </span><span style='mso-tab-count:1'>      </span>//
+Записать «пустой» МУ</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>for (i=0; i&lt;ns; i++) {<span
+style='mso-tab-count:3'>                               </span>// Повторное
+чтение строк</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span
+style='mso-spacerun:yes'>  </span>pp[i]=ftell(fdo);<span style='mso-tab-count:
+3'>                          </span>// Получить адрес i-ой строки в файле</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span
+style='mso-spacerun:yes'>  </span>fgets(c,80,fdi);<span style='mso-tab-count:
+3'>                          </span>// и сохранить в массиве указателей</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span
+style='mso-spacerun:yes'>  </span>int l=strlen(c)+1;<span style='mso-tab-count:
+2'>                      </span>// Переписать в формате ЗПД</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span
+style='mso-spacerun:yes'>  </span><span lang=EN-US style='mso-ansi-language:
+EN-US'>fwrite(&amp;l,sizeof(int),1,fdo);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span><span style='mso-spacerun:yes'> 
+</span>fwrite(c,l,1,fdo); }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fseek(fdo,p0,SEEK_SET);<span
+style='mso-spacerun:yes'>                    </span><span style='mso-tab-count:
+1'>  </span>// </span>Обновить<span style='mso-ansi-language:EN-US'> </span>в<span
+style='mso-ansi-language:EN-US'> </span>файле<span style='mso-ansi-language:
+EN-US'> </span>массив<span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fwrite(pp,sizeof(long),sz,fdo);<span
+style='mso-tab-count:2'>                  </span>// </span>файловых<span
+style='mso-ansi-language:EN-US'> </span>указателей<span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fclose(fdo);}<o:p></o:p></span></p>
+
+<p class=a4>В программе присутствует единственное позиционирование - перед
+обновлением массива файловых указателей. Все остальные данные (размерность,
+смещение, массив указателей, сами строки) сохраняются последовательно.</p>
+
+<p class=a>Функция загрузки иллюстрирует тот факт, что структура данных должна
+полностью создаваться в динамический памяти.<span style='mso-spacerun:yes'> 
+</span>Происходит это в два этапа. Сначала создается и загружается образ
+массива файловых указателей, для которого создается аналогичный массив
+указателей на строки, но уже в памяти. Затем читаются сами строки.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//------------------------------------------------------95-07.cpp</p>
+
+<p class=a0>//----- Загрузка массива указателей на строки из двоичного файла</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>char **load(char *name)<span
+style='mso-tab-count:1'> </span>// Функция возвращает динамический</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>{ FILE *fd; int
+i,sz,ns;<span style='mso-spacerun:yes'>       </span><span style='mso-tab-count:
+1'>         </span>// массив указателей на строки</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>long *pp,p0;<span
+style='mso-tab-count:3'>                              </span>// Динамический
+массив файловых указателей</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>char **p;<span
+style='mso-spacerun:yes'>                      </span><span style='mso-tab-count:
+2'>             </span>// Динамический МУ на строки</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>if ((fd=fopen(name,&quot;rb&quot;))==NULL)
+return NULL;<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-spacerun:yes; mso-ansi-language:EN-US' lang="EN-US"> </span>fread(&amp;sz,sizeof(int),1,fd);<span
+style='mso-spacerun:yes'>   </span><span style='mso-tab-count:1'>       </span>//
+Прочитать размерность</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>fread(&amp;ns,sizeof(int),1,fd);<span
+style='mso-spacerun:yes'>   </span><span style='mso-tab-count:1'>       </span>//
+Прочитать количество строк</p>
+
+<p class=a0><span
+style='mso-spacerun:yes'> </span>fread(&amp;p0,sizeof(long),1,fd);<span
+style='mso-spacerun:yes'>  </span><span style='mso-tab-count:1'>      </span>//
+и адрес массива файловых указателей</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>pp=new long[ns];<span
+style='mso-spacerun:yes'>               </span><span style='mso-tab-count:1'>       </span>//
+Создать динамический массив</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>p=new char*[ns+1];<span
+style='mso-spacerun:yes'>              </span><span style='mso-tab-count:1'>     </span>//
+файловых указателей и указателей на строки</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>fseek(fd,p0,SEEK_SET);<span
+style='mso-spacerun:yes'>         </span><span style='mso-tab-count:1'>  </span>//
+Позиционироваться на МУ в файле</p>
+
+<p class=a0><span
+style='mso-spacerun:yes'> </span>fread(pp,sizeof(long),ns,fd);<span
+style='mso-tab-count:1'>        </span>// Читать массив файловых указателей</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>for (i=0; i&lt;ns; i++)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span><span style='mso-spacerun:yes'> 
+</span>{ int sz;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span><span style='mso-spacerun:yes'> 
+</span></span>fseek(fd,pp[i],SEEK_SET);<span style='mso-tab-count:1'>        </span>//
+Установиться по i-му файловому</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span
+style='mso-spacerun:yes'>  </span>fread(&amp;sz,sizeof(int),1,fd);<span
+style='mso-tab-count:1'>         </span>// указателю и прочитать запись</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span
+style='mso-spacerun:yes'>  </span>p[i]=new char[sz];<span
+style='mso-spacerun:yes'>            </span><span style='mso-tab-count:1'>        </span>//
+переменной длины - строку</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>  </span>fread(p[i],sz,1,fd);
+}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>p[ns]=NULL; fclose(fd); return p;}<o:p></o:p></span></p>
+
+<p class=a>Строки как записи переменной длины позволяют работать с файлом
+только в режиме последовательного доступа. Наличие в файле массива
+указателей<span style='mso-spacerun:yes'>  </span>позволяет<span
+style='mso-spacerun:yes'>  </span>извлекать их<span style='mso-spacerun:yes'> 
+</span>в произвольном порядке. При <b style='mso-bidi-font-weight:normal'><a name="m38">поэлементой
+загрузке </b>структуры данных в память читаются только те данные, которые
+необходимы для выполнения текущей операции. Для этого достаточно трех операций
+чтения и двух позиционирований. Массив указателей также не читается полностью,
+из него извлекается указатель по адресу <b style='mso-bidi-font-weight:normal'><a name="m39"><span
+lang=EN-US style='mso-ansi-language:EN-US'>p</span>0+</b><b style='mso-bidi-font-weight:
+normal'><a name="m40"><span lang=EN-US style='mso-ansi-language:EN-US'>sizeof</span>(</b><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>long</span>)*<span
+lang=EN-US style='mso-ansi-language:EN-US'>num</span>.</b></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//------------------------------------------------------95-08.cpp</p>
+
+<p class=a0>//---- Массив указателей на строки, чтение по логическому номеру</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>char *load(char *name, int num)<span
+style='mso-tab-count:2'>             </span>// </span>Возвращается<span
+style='mso-ansi-language:EN-US'> </span>строка<span lang=EN-US
+style='mso-ansi-language:EN-US'> =<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>{ FILE *fd; int i,n,sz; long p0,pp;<span
+style='mso-spacerun:yes'>    </span></span><span style='mso-tab-count:1'>         </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>// </span>динамический<span
+style='mso-ansi-language:EN-US'> </span>массив<span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>if ((fd=fopen(name,&quot;rb&quot;))==NULL)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span><span style='mso-spacerun:yes'> 
+</span></span>return NULL;<span style='mso-tab-count:3'>                            </span>//
+Режим чтения двоичного файла</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>fread(&amp;sz,sizeof(int),1,fd);<span
+style='mso-spacerun:yes'>         </span><span
+style='mso-tab-count:1'>            </span>// Считать размерность МУ</p>
+
+<p class=a0><span
+style='mso-spacerun:yes'> </span>fread(&amp;n,sizeof(int),1,fd);<span
+style='mso-spacerun:yes'>         </span><span style='mso-tab-count:1'>               </span>// Считать количество указателей</p>
+
+<p class=a0><span
+style='mso-spacerun:yes'> </span>fread(&amp;p0,sizeof(long),1,fd);<span
+style='mso-spacerun:yes'>        </span><span style='mso-tab-count:1'>            </span>//
+и начальный адрес МУ в файле</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>if (num&gt;=n) return
+NULL;<span style='mso-spacerun:yes'>               </span><span
+style='mso-tab-count:1'>        </span>// Нет записи с таким номером</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>fseek(fd,<b style='mso-bidi-font-weight:normal'><a name="m41">p0+sizeof(long)*num</b>,SEEK_SET);<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-spacerun:yes; mso-ansi-language:EN-US' lang="EN-US"> </span>fread(&amp;pp,sizeof(long),1,fd);<span
+style='mso-tab-count:2'>                    </span>// Прочитать указатель с
+номером num</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>fseek(fd,pp,SEEK_SET);<span
+style='mso-tab-count:2'>                       </span>// Установиться на запись</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>fread(&amp;sz,sizeof(int),1,fd);<span
+style='mso-spacerun:yes'>    </span><span style='mso-tab-count:1'>                  </span>// Прочитать длину записи</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>char *p=new char[sz];<span
+style='mso-spacerun:yes'>                  </span><span style='mso-tab-count:
+1'>         </span>// Создать динамический массив</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>fread(p,sz,1,fd);<span
+style='mso-spacerun:yes'>               </span><span style='mso-tab-count:2'>                      </span>//
+Прочитать запись - строку</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>fclose(fd); return p; }<span
+style='mso-tab-count:3'>                              </span>// Возвратить
+указатель на строку</p>
+
+<p class=a>Обратите внимание, что операция чтения переменной <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>pp</span></b><span lang=EN-US> </span>из файла и последующего позиционирования
+по ее значению<b style='mso-bidi-font-weight:normal'><a name="m42"> </b>функционально
+эквивалентна косвенному обращению по указателю (операция &quot;*&quot;) при
+работе с аналогичными структурами данных в памяти.</p>
+
+<p class=a>В заключение рассмотрим вариант загрузки частичного образа двоичного
+файла. Имеются в виду управляющие структуры<span style='mso-spacerun:yes'> 
+</span>- заголовок и сам массив файловых указателей. Они используются наиболее
+часто, и поэтому будут храниться в виде элементов данных структурированной
+переменной (объекта). Работа с файлом будет производиться в режиме сеанса. </p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//------------------------------------------------------95-09.cpp</p>
+
+<p class=a0>//---- Массив указателей на строки - загрузка управляющих данных</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>struct</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>DMUS</span>{</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>FILE *fd;<span style='mso-tab-count:3'>                                    </span>//
+</span>Файл<span style='mso-ansi-language:EN-US'> </span>в<span
+style='mso-ansi-language:EN-US'> <span lang=EN-US>stdio<o:p></o:p></span></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>int sz,ns;<span
+style='mso-tab-count:3'>                                   </span>// Данные
+заголовка</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>long p0, *pp;<span
+style='mso-tab-count:3'>                              </span>// Образ массива
+файловых указателей</p>
+
+<p class=a0>// Открытие файла и загрузка управляющих структур</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int open(char
+name[]){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if
+((fd=fopen(name,&quot;rb+wb+&quot;))==NULL)<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:2; mso-ansi-language:EN-US' lang="EN-US">                        </span>return 0;<span
+style='mso-tab-count:2'>                        </span>// Режим
+чтения/записи/добавления</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>fread(&amp;sz,sizeof(int),1,fd);<span
+style='mso-tab-count:1'>           </span>// Считать размерность МУ</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>fread(&amp;ns,sizeof(int),1,fd);<span
+style='mso-tab-count:1'>           </span>// Считать количество указателей</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>fread(&amp;p0,sizeof(long),1,fd);<span
+style='mso-tab-count:1'>         </span>// и начальный адрес МУ в файле</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>pp=new long[sz];<span
+style='mso-tab-count:2'>                       </span>// Создать образ МУ</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>fseek(fd,p0,SEEK_SET);<span
+style='mso-tab-count:1'>            </span>// и прочитать его содержимое из
+файла</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>fread(pp,sizeof(long),sz,fd);<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>return 1;</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>}</p>
+
+<p class=a0>// Обновление управляющих структур</p>
+
+<p class=a0>void updateSys(){</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>fseek(fd,0,SEEK_SET);<span
+style='mso-tab-count:2'>              </span>// В начале файла</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>fwrite(&amp;sz,sizeof(int),1,fd);<span
+style='mso-tab-count:1'>           </span>// Обновить заголовок</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>fwrite(&amp;ns,sizeof(int),1,fd); <o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>fwrite(&amp;p0,sizeof(long),1,fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>fseek(fd,p0,SEEK_SET);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>fwrite(pp,sizeof(long),sz,fd);}</span></p>
+
+<p class=a>В дополнение к операции открытия файла реализуется операция
+обновления образа управляющих структур из памяти в двоичный файл. Затем
+решается проблема придания «динамичности» массиву файловых указателей.
+Встроенная функция <b style='mso-bidi-font-weight:normal'><a name="m43"><span lang=EN-US
+style='mso-ansi-language:EN-US'>extend</span>, </b>вызываемая во всех
+операциях, связанных с увеличением размерности, сначала делает проверку на
+возможное переполнение и перераспределяет память в массиве файловых указателей,
+удваивая его размерность. Затем она позиционируется в конец файла, и полученный
+при помощи функции <b style='mso-bidi-font-weight:normal'><a name="m44"><span lang=EN-US
+style='mso-ansi-language:EN-US'>ftell</span><span lang=EN-US> </span></b>адрес
+запоминает в<b style='mso-bidi-font-weight:normal'><a name="m45"> </b><b style='mso-bidi-font-weight:
+normal'><a name="m46"><span lang=EN-US style='mso-ansi-language:EN-US'>p</span>0 </b>как новый
+адрес массива файловых указателей. После чего вызов функции обновления
+управляющих данных <b style='mso-bidi-font-weight:normal'><a name="m47"><span lang=EN-US
+style='mso-ansi-language:EN-US'>updateSys</span><span lang=EN-US> </span></b>сохранить
+расширенный массив по новому адресу в конце файла.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//------------------------------------------------------95-09.cpp</p>
+
+<p class=a0>// Перераспределение памяти под массив файловых указателей</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void extend(){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if (ns!=sz) return;<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>sz*=2;<span style='mso-tab-count:
+4'>                                       </span>// расширить образ МУ в памяти</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>pp=(long*)realloc(pp,sizeof(long)*sz);<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>fseek(fd,0,SEEK_END);<span
+style='mso-tab-count:2'>              </span>// Установиться на конец файла</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>p0=ftell(fd);<span
+style='mso-tab-count:3'>                                </span>// и получить
+новый адрес МУ в файле</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>updateSys();<span
+style='mso-tab-count:2'>                  </span><span style='mso-tab-count:
+1'>            </span>// Обновить заголовок и МУ на новом месте</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>}</p>
+
+<p class=a>После всего этого программирование операций над отдельными строками
+превращается в банальные операции над образом массива файловых указателей.
+Например, для вставки строки по логическому номеру необходимо записать ее в
+конец файла, а полученный адрес вставить в массив файловых указателей на нужную
+позицию.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//------------------------------------------------------95-09.cpp</p>
+
+<p class=a0>// Чтение по логическому номеру</p>
+
+<p class=a0>char *get(int k){</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>if (fd==NULL || k&gt;=ns) return NULL;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>fseek(fd,pp[k],SEEK_SET);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int ll;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>fread(&amp;ll,sizeof(int),1,fd);<span
+style='mso-tab-count:1'> </span>// </span>Прочитать<span style='mso-ansi-language:
+EN-US'> </span>длину<span style='mso-ansi-language:EN-US'> </span>записи<span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>char</span> *<span lang=EN-US
+style='mso-ansi-language:EN-US'>p</span>=<span lang=EN-US style='mso-ansi-language:
+EN-US'>new</span><span lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:
+EN-US'>char</span>[<span lang=EN-US style='mso-ansi-language:EN-US'>ll</span>];<span
+style='mso-spacerun:yes'>           </span><span style='mso-tab-count:1'>       </span>//
+Создать динамический массив</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>fread(p,ll,1,fd);<span
+style='mso-tab-count:3'>                            </span>// Прочитать запись
+- строку</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>return p; }</p>
+
+<p class=a0>// вставка по логическому номеру</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int insert(char
+*s, int k){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if (fd==NULL || k&gt;=ns) return 0;<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>extend();<span
+style='mso-tab-count:3'>                                   </span>// Отработать
+переполнение</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>fseek(fd,0,SEEK_END);<span
+style='mso-tab-count:2'>              </span>// Спозиционироваться в конец
+файла</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>for(int j=ns-1;j&gt;=k;j--)<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:2; mso-ansi-language:EN-US' lang="EN-US">                        </span>pp[j+1]=pp[j];<span
+style='mso-tab-count:2'>                 </span>// Сдвинуть указатели в массиве</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>ns++; pp[k]=ftell(fd);<span
+style='mso-tab-count:1'>                   </span>//
+Записать адрес новой строки</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>int
+ll=strlen(s)+1;</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>fwrite(&amp;ll,sizeof(int),1,fd);<span
+style='mso-tab-count:1'> </span>// Записать строку в формате ЗПД</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>fwrite(s,ll,1,fd);<span style='mso-tab-count:
+3'>                           </span><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>return 1;</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>// </span>Закрытие<span
+style='mso-ansi-language:EN-US'> </span>файла<span lang=EN-US style='mso-ansi-language:
+EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void close(){
+updateSys(); fclose(fd); }};<o:p></o:p></span></p>
+
+<p class=a>Обратите внимание, что при вставке строк содержимое массива файловых
+указателей будет обновляться в файле только при переполнении. Поэтому при
+закрытии файла эту процедуру необходимо повторить. Пример работы с аналогичной
+структурой данных в двоичном файле см. также в <b style='mso-bidi-font-weight:
+normal'><a name="m48">11.6</b>.</p>
+
+<h3>Деревья</h3>
+
+<p class=a>При работе с деревом в режиме создания <b style='mso-bidi-font-weight:
+normal'><a name="m49">полного образа структуры данных</b> программа поддерживает два вида
+вершин: вершина в памяти, содержащая обычные указатели и вершина в файле,
+содержащая массив файловых указателей. Небольшое различие заключается еще и в
+способе хранения строки, связанной с вершиной: в памяти она адресуется
+отдельным указателем, а в файле – размещается непосредственно за вершиной в
+формате записи переменной длины (вершина содержит счетчик символов строки).</p>
+
+<p class=a>Операции сохранения и загрузки являются рекурсивными. Функция
+сохранения вершины «меняет ее адрес в памяти на адрес в файле», т.е. дописывает
+вершину в файл, предварительно сохранив в ней адреса потомков. Такая процедура
+записи дерева «хвостом вперед» вообще обходится без позиционирования, т.е.
+работает с файлом как с последовательным. Единственное позиционирование
+происходит при обновлении в начале файла указателя на корневую вершину </p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//------------------------------------------------------95-10.cpp</p>
+
+<p class=a0>//---- Сохранение дерева в файле &quot;хвостом вперед&quot;</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>struct tree {<span
+style='mso-tab-count:2'>                  </span>// Вершина дерева в памяти</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>char *str;<span
+style='mso-spacerun:yes'>          </span>//
+Строка в памяти</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>int n;<span
+style='mso-tab-count:2'>                 </span>// Количество потомков</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>tree *p[4];<span
+style='mso-spacerun:yes'>          </span>// Указатели на потомков в памяти</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>};</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>struct ftree{<span
+style='mso-tab-count:2'>                   </span>// Вершина дерева в файле</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>int n;<span
+style='mso-tab-count:2'>                 </span>// Количество потомков</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>long fp[4];<span
+style='mso-spacerun:yes'>          </span>// Указатели на потомков в файле</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>int sz; };<span
+style='mso-spacerun:yes'>             </span>// Длина строки в файле (ЗПД)</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>#define FNULL -1L<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>#define TSZ sizeof(ftree)</span></p>
+
+<p class=a0>//------ Функция записи возвращает адрес размещенной вершины в
+файле</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>long PutTree(tree *q, FILE *fd){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if (q == NULL) return FNULL;<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>ftree CUR; CUR.n=q-&gt;n;<span
+style='mso-tab-count:1'> </span>// Текущая вершина - локальная переменная</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>long pos;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>for</span> (<span lang=EN-US
+style='mso-ansi-language:EN-US'>int</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>i</span>=0; <span lang=EN-US
+style='mso-ansi-language:EN-US'>i</span>&lt;<span lang=EN-US style='mso-ansi-language:
+EN-US'>q</span>-&gt;<span lang=EN-US style='mso-ansi-language:EN-US'>n</span>; <span
+lang=EN-US style='mso-ansi-language:EN-US'>i</span>++)<span style='mso-tab-count:
+1'>   </span><span style='mso-tab-count:1'>            </span>// Рекурсивное сохранение
+потомков</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>CUR.fp[i]=PutTree(q-&gt;p[i],fd);<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>pos = ftell(fd);<span
+style='mso-spacerun:yes'>            </span><span style='mso-tab-count:2'>                </span>//
+Адрес вершины</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>CUR.sz=strlen(q-&gt;str)+1;<span
+style='mso-spacerun:yes'>    </span><span style='mso-tab-count:1'>        </span>//
+Длина строки (ЗПД)</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>fwrite(&amp;CUR,TSZ,1,fd);<span
+style='mso-spacerun:yes'>      </span><span style='mso-tab-count:1'>          </span>//
+Сохранить вершину</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>fwrite(q-&gt;str,CUR.sz,1,fd);
+<span style='mso-tab-count:1'>          </span>// Сохранить строку</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>return pos;}</p>
+
+<p class=a0>// В начало файла записывается указатель на головную</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>// </span>вершину<span
+style='mso-ansi-language:EN-US'> </span>дерева<span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void SaveTree(tree
+*p, char *name){<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>FILE *fd; long pos0;<span
+style='mso-tab-count:2'>                    </span>// Указатель на корневую
+вершину</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>if ((fd=fopen(name,&quot;wb&quot;)) ==NULL)
+return;<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>fwrite(&amp;pos0,sizeof(long),1,fd);
+<span style='mso-tab-count:1'>    </span>// Резервировать место под указатель</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>pos0 =
+PutTree(p,fd);<span style='mso-spacerun:yes'>       </span><span
+style='mso-tab-count:1'>           </span>// Сохранить дерево</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><b
+style='mso-bidi-font-weight:normal'>fseek(fd,0L,SEEK_SET);</b><span
+style='mso-tab-count:1'>            </span>// Обновить указатель</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>fwrite(&amp;pos0,sizeof(long),1,fd); <o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>fclose(fd);}<o:p></o:p></span></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=a>Для сохранения дерева «головой вперед» требуются небольшие изменения.
+Рекурсивная функция записи сначала размещает текущую вершину и запоминает ее
+адрес в файле, и только затем вызывает самое себя для размещения потомков.
+Полученные после размещения файловые указатели запоминает в образе текущей вершины,
+после чего обновляет ее в файле.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//------------------------------------------------------95-11.cpp</p>
+
+<p class=a0>//------ Функция записи возвращает адрес размещенной вершины в
+файле</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>long PutTree(tree *q, FILE *fd){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if (q == NULL) return FNULL;<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>ftree CUR; CUR.n=q-&gt;n;<span
+style='mso-tab-count:1'> </span>// Текущая вершина - локальная переменная</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>fseek(fd,0,SEEK_END);<span
+style='mso-tab-count:2'>              </span>// Записать вершину - занять место</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>long
+pos=ftell(fd);</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>CUR.sz=strlen(q-&gt;str)+1;<span
+style='mso-spacerun:yes'>    </span><span style='mso-tab-count:1'>        </span>//
+Длина строки (ЗПД)</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>fwrite(&amp;CUR,TSZ,1,fd);<span
+style='mso-spacerun:yes'>      </span><span style='mso-tab-count:1'>          </span>//
+Сохранить вершину</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>fwrite(q-&gt;str,CUR.sz,1,fd);
+<span style='mso-tab-count:1'>          </span>// Сохранить строку</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>for (int i=0;
+i&lt;q-&gt;n; i++)<span style='mso-tab-count:1'>               </span>// Рекурсивное сохранение потомков</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>CUR.fp[i]=PutTree(q-&gt;p[i],fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>fseek</span>(<span lang=EN-US
+style='mso-ansi-language:EN-US'>fd</span>,<span lang=EN-US style='mso-ansi-language:
+EN-US'>pos</span>,<span lang=EN-US style='mso-ansi-language:EN-US'>SEEK</span>_<span
+lang=EN-US style='mso-ansi-language:EN-US'>SET</span>);<span style='mso-tab-count:
+1'>           </span>// Обновить вершину</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>fwrite</span>(&amp;<span lang=EN-US
+style='mso-ansi-language:EN-US'>CUR</span>,<span lang=EN-US style='mso-ansi-language:
+EN-US'>TSZ</span>,1,<span lang=EN-US style='mso-ansi-language:EN-US'>fd</span>);<span
+style='mso-spacerun:yes'>      </span><span style='mso-tab-count:1'>          </span>//
+</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>return pos;}</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a>Последовательность действий по чтению образа дерева из файла более
+простая: по имеющемуся адресу вершины рекурсивная функция загружает локальную переменную
+– образ текущей вершины, из которой берутся значения файловых указателей на
+другие вершины и процесс повторяется. Вершины дерева в памяти, наоборот,
+создаются как динамические переменные. </p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//------------------------------------------------------95-12.cpp</p>
+
+<p class=a0>//----- Загрузка вершины дерева и потомков из файла</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>tree *GetTree(long pos, FILE *fd){ <span
+style='mso-tab-count:1'>          </span>// </span>Вход<span lang=EN-US
+style='mso-ansi-language:EN-US'> - </span>адрес<span style='mso-ansi-language:
+EN-US'> </span>вершины<span style='mso-ansi-language:EN-US'> </span>в<span
+style='mso-ansi-language:EN-US'> </span>файле<span lang=EN-US style='mso-ansi-language:
+EN-US'><o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>if (pos == FNULL) return
+NULL;<span style='mso-spacerun:yes'>  </span>// Результат - указатель на</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>tree *q=new
+tree;<span style='mso-spacerun:yes'>               </span><span
+style='mso-tab-count:1'>        </span>// вершину поддерева в памяти</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>ftree A;<span
+style='mso-spacerun:yes'>                        </span><span style='mso-tab-count:
+2'>              </span>// Текущая вершина из файла -</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>fseek(fd,pos,SEEK_SET);<span
+style='mso-spacerun:yes'>         </span><span style='mso-tab-count:1'>  </span>//
+в локальной переменной</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>fread(&amp;A,sizeof(ftree),1,fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>q-&gt;str=new char[A.sz];<span
+style='mso-spacerun:yes'>         </span><span style='mso-tab-count:1'>      </span>//
+</span>Загрузка<span style='mso-ansi-language:EN-US'> </span>строки<span
+lang=EN-US style='mso-ansi-language:EN-US'> - </span>ЗПД<span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>fread(q-&gt;str,A.sz,1,fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>q-&gt;n=A.n;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>for (int i=0; i&lt;A.n; i++)<span
+style='mso-tab-count:3'>                            </span>// </span>Рекурсивная<span
+style='mso-ansi-language:EN-US'> </span>загрузка<span style='mso-ansi-language:
+EN-US'> </span>потомков<span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>q-&gt;p[i]=GetTree(A.fp[i],fd);<span
+style='mso-tab-count:1'>          </span>// </span>и<span style='mso-ansi-language:
+EN-US'> </span>сохранение<span style='mso-ansi-language:EN-US'> </span>указателей<span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>return q; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>// </span>В<span
+style='mso-ansi-language:EN-US'> </span>начале<span style='mso-ansi-language:
+EN-US'> </span>файла<span lang=EN-US style='mso-ansi-language:EN-US'> - </span>файловый<span
+style='mso-ansi-language:EN-US'> </span>указатель<span style='mso-ansi-language:
+EN-US'> </span>на<span style='mso-ansi-language:EN-US'> </span>корневую<span
+style='mso-ansi-language:EN-US'> </span>вершину<span style='mso-ansi-language:
+EN-US'> </span>дерева<span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>tree
+*LoadTree(char *name){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>FILE *fd; long phead;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if ((fd =
+fopen(name,&quot;rb&quot;)) ==NULL) return NULL;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>fread(&amp;phead, sizeof(long), 1,
+fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>return GetTree(phead, fd); }<o:p></o:p></span></p>
+
+<p class=a>Технологию <b style='mso-bidi-font-weight:normal'><a name="m50">поэлементной
+загрузки </b>проиллюстрируем на примере двоичного дерева. Операции поиска и
+вставки являются линейно рекурсивными, поэтому просматривать (и загружать из
+файла) требуется не все вершины, а только вершины «по пути следования». Образ
+текущей вершины загружается в локальную переменную, строка - в динамический
+массив.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//------------------------------------------------------95-13.cpp</p>
+
+<p class=a0>//------ Поиск в двоичном дереве по образцу с поэлементной
+загрузкой</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>struct ftree {<span
+style='mso-tab-count:2'>                  </span>// Вершина дерева в файле</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>long fl,fr;<span
+style='mso-spacerun:yes'>                </span><span style='mso-tab-count:
+1'>       </span>// Указатели на потомков в файле</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>int sz; };<span
+style='mso-spacerun:yes'>                 </span><span style='mso-tab-count:
+1'>      </span>// Длина строки в файле (ЗПД)</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>char *FindTree(long pos, char *key, FILE *fd){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span><span
+style='mso-spacerun:yes'> </span>ftree A; char *str;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if (pos == FNULL) return NULL;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>fseek(fd, pos, SEEK_SET);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>fread(&amp;A, sizeof( ftree), 1,
+fd);<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>str=new char[A.sz];<span
+style='mso-tab-count:1'>        </span>// Чтение строки в динамический массив</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>fread(str,A.sz,1,fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if ( strncmp(str,key,strlen(key))==0)<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:2; mso-ansi-language:EN-US' lang="EN-US">                        </span>return str;<span
+style='mso-spacerun:yes'>         </span>//
+Совпадение с образцом</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>char *pnext;<span
+style='mso-spacerun:yes'>            </span><span style='mso-tab-count:1'>       </span>//
+Найденная строка от потомка</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>if (strcmp(str,key) &gt; 0)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>pnext=FindTree(A.fl,key,fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>else<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>pnext=FindTree(A.fr,key,fd);<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>delete str;<span
+style='mso-spacerun:yes'>             </span><span style='mso-tab-count:1'>         </span>//
+Уничтожить текущую строку</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>return pnext;
+}<span style='mso-spacerun:yes'>         </span><span style='mso-tab-count:
+1'>       </span>// и вернуть строку потомка</p>
+
+<p class=a>Аналогичная схема имеет место, когда производятся изменения в
+структуре данных. Если это связано с изменением связей между элементами
+структуры, то переменные (образы вершин), в которых изменяются значения файловых
+указателей, необходимо обновлять в файле. </p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//------------------------------------------------------95-14.cpp</p>
+
+<p class=a0>//---- Добавление новой вершины в двоичное дерево в двоичном файле</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>long AppendOne( char *str, FILE *fd){<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>long pos;<span
+style='mso-tab-count:1'>           </span>// Добавить в файл новую вершину
+дерева</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>ftree Elem;<span
+style='mso-spacerun:yes'>        </span>// Образ вершины - локальная переменная</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>Elem.fr=Elem.fl=FNULL;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>Elem.sz=strlen(str)+1;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>fseek(fd,0L,SEEK_END);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>pos = ftell(fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>fwrite(&amp;Elem,sizeof(ftree),1,fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>fwrite(str, Elem.sz, 1, fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>return pos; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void
+AppendTree(long pos, char *newstr, FILE *fd){ <o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>ftree A; char *str;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>fseek(fd, pos, SEEK_SET);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>fread(&amp;A, sizeof(ftree), 1, fd);<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>str=new char[A.sz];<span
+style='mso-tab-count:2'>                    </span>// Чтение строки в
+динамический массив</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>fread(str,A.sz,1,fd);<span
+style='mso-tab-count:2'>                    </span>// в формате ЗПД<span
+style='mso-tab-count:1'>          </span></p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>if ( strcmp(str,newstr)&gt;0){<span
+style='mso-tab-count:1'>            </span>// Выбор поддерева</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span>if
+(A.fl!=FNULL){<span style='mso-tab-count:1'> </span>// Есть потомок -
+рекурсивный вызов</p>
+
+<p class=a0><span style='mso-tab-count:3'>                                    </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>AppendTree(A.fl,newstr,fd); <o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:3; mso-ansi-language:EN-US' lang="EN-US">                                    </span>delete
+str; return;}<span style='mso-tab-count:1'>          </span>// Выход без
+обновления</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>else A.fl=AppendOne(newstr,fd);<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:2; mso-ansi-language:EN-US' lang="EN-US">                        </span>}<span
+style='mso-tab-count:3'>                                   </span>// Нет
+потомка - добавить в это место вершину</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>else {<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>if (A.fr !=FNULL){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:3'>                                    </span>AppendTree(A.fr,newstr,fd);
+<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:3'>                                    </span>delete str;
+return; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>else A.fr =
+AppendOne(newstr,fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>fseek(fd, pos, SEEK_SET);<span
+style='mso-tab-count:1'>         </span>// </span>Обновить<span
+style='mso-ansi-language:EN-US'> </span>текущую<span style='mso-ansi-language:
+EN-US'> </span>вершину<span style='mso-ansi-language:EN-US'> </span>дерева<span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>fwrite(&amp;A, sizeof( ftree), 1,
+fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>delete</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>str</span>; }</p>
+
+<p class=a4><i style='mso-bidi-font-style:normal'>Замечание:</i> функция добавления
+вершины в дерево не работает с пустым деревом, поэтому этот случай необходимо
+рассматривать отдельно перед ее вызовом.</p>
+
+<h3>Списки</h3>
+
+<p class=a>Списки довольно редко используются в двоичных файлах, поскольку
+являются последовательными структурами данных, а весь эффект работы с файлами
+базируется на прямом доступе. Тем не менее,<span style='mso-spacerun:yes'> 
+</span>приведем пример построения односвязного списка в файле с <b
+style='mso-bidi-font-weight:normal'>поэлементной загрузкой </b>в процессе
+упорядоченной вставки новых элементов. Обратите внимание на полную
+функциональную аналогию алгоритма работы с односвязным списком в памяти и в
+файле. Особенности работы с файлом заключаются в том, что для каждого
+активизируемого элемента структуры данных необходим аналогичный элемент в
+памяти, а для указателя на него - соответствующий файловый указатель. Так, если
+для включения в односвязный список с сохранением упорядоченности необходимо
+использовать текущий и предыдущий элементы списка, то необходимы две локальные
+структурированные переменные - текущий и предыдущий элементы списка <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>cur</span><span lang=EN-US> </span></b>и <b style='mso-bidi-font-weight:
+normal'><a name="m51"><span lang=EN-US style='mso-ansi-language:EN-US'>prev</span>, </b><span
+style='mso-spacerun:yes'> </span>а также два файловых указателя, определяющих
+их расположение в файле - <b style='mso-bidi-font-weight:normal'><a name="m52"><span
+lang=EN-US style='mso-ansi-language:EN-US'>fcur</span></b><span lang=EN-US> </span>и
+<b style='mso-bidi-font-weight:normal'><a name="m53"><span lang=EN-US style='mso-ansi-language:
+EN-US'>fprev</span></b>. В начале файла размещается заголовок списка - файловый
+указатель на первый элемент.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//------------------------------------------------------95-15.cpp</p>
+
+<p class=a0>//--------- Односвязный список в файле. Поэлементная загрузка.</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>#define FNULL -1L</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>struct flist {<span
+style='mso-tab-count:3'>                               </span>// Определение
+элемента списка в файле</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>int val;<span
+style='mso-tab-count:4'>                                      </span>//
+Значение элемента списка</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>long fnext;<span
+style='mso-tab-count:3'>                                </span>// Файловый
+указатель на следующий элемент</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>};<span style='mso-tab-count:
+4'>                                             </span>// При поэлементной
+работе flist *next не нужен </p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>void show(FILE *fd)<span
+style='mso-tab-count:2'>                    </span>// Просмотр списка</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>{ flist cur;<span
+style='mso-tab-count:3'>                                  </span>// Файловый
+указатель текущего элемента</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>long</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>fcur</span>;<span
+style='mso-spacerun:yes'>                     </span><span style='mso-tab-count:
+2'>             </span>// Текущий элемент </p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>fseek</span>(<span lang=EN-US style='mso-ansi-language:
+EN-US'>fd</span>,0<span lang=EN-US style='mso-ansi-language:EN-US'>L</span>,<span
+lang=EN-US style='mso-ansi-language:EN-US'>SEEK</span>_<span lang=EN-US
+style='mso-ansi-language:EN-US'>SET</span>);</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>fread(&amp;fcur,sizeof(long),1,fd);<span
+style='mso-tab-count:1'>      </span>// Загрузить указатель на первый</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>for (; fcur!=FNULL; fcur=cur.fnext) { <o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-spacerun:yes; mso-ansi-language:EN-US' lang="EN-US">      </span><span style='mso-tab-count:1'>      </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>fseek(fd,fcur,SEEK_SET);<span
+style='mso-spacerun:yes'>  </span><span style='mso-tab-count:1'>         </span>//
+</span>Загрузка<span style='mso-ansi-language:EN-US'> </span>текущего<span
+style='mso-ansi-language:EN-US'> </span>элемента<span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-spacerun:yes; mso-ansi-language:EN-US' lang="EN-US">      </span><span style='mso-tab-count:1'>      </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>fread(&amp;cur,sizeof(flist),1,fd);<o:p></o:p></span></p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>printf(&quot;%d &quot;,cur.val);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>} puts(&quot;&quot;); }<o:p></o:p></span></p>
+
+<p class=a0>// Включение с сохранением упорядоченности</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>void ins_sort(FILE *fd, int
+vv) {</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>flist cur,prev,lnew;<span
+style='mso-tab-count:2'>                     </span>// Текущий, предыдущий и
+новый элементы списка</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>long fnew,fcur,fprev;<span
+style='mso-spacerun:yes'>          </span><span style='mso-tab-count:1'>         </span>//
+Файловые указатели элементов списка</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>fseek(fd,0L,SEEK_SET);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fread(&amp;fcur,sizeof(long),1,fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>for (fprev=FNULL; fcur!=FNULL;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fprev=fcur, prev=cur, fcur=cur.fnext)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span><span style='mso-spacerun:yes'> 
+</span></span>{<span style='mso-tab-count:3'>                                 </span><span
+style='mso-tab-count:1'>            </span>// Переход к следующему</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span
+style='mso-spacerun:yes'>  </span>fseek(fd,fcur,SEEK_SET);<span
+style='mso-tab-count:1'>         </span>// с запоминанием предыдущего</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span
+style='mso-spacerun:yes'>  </span>fread(&amp;cur,sizeof(flist),1,fd);<span
+style='mso-tab-count:1'>       </span>// элемента и его адреса</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span
+style='mso-spacerun:yes'>  </span>if (cur.val &gt; vv) break;<span
+style='mso-tab-count:2'>                </span>// Поиск места - текущий &gt;
+нового</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span
+style='mso-spacerun:yes'>  </span><span lang=EN-US style='mso-ansi-language:
+EN-US'>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>lnew.val = vv;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>lnew.fnext=fcur;<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-spacerun:yes; mso-ansi-language:EN-US' lang="EN-US"> </span>fseek(fd,0L,SEEK_END);<span
+style='mso-tab-count:2'>                       </span>// Заполнение нового
+элемента списка</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>fnew=ftell(fd);<span
+style='mso-tab-count:4'>                                        </span>//
+Запись в файл и получение адреса</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>fwrite(&amp;lnew,sizeof(flist),1,fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span><span style='mso-spacerun:yes'> 
+</span></span>if (fprev==FNULL) {<span style='mso-spacerun:yes'>          
+</span><span style='mso-tab-count:1'>        </span>// Включение первым - обновить
+заголовок </p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span
+style='mso-spacerun:yes'>  </span><span style='mso-tab-count:1'>          </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>fseek(fd,0L,SEEK_SET);<span
+style='mso-spacerun:yes'>        </span><span style='mso-tab-count:1'>    </span></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span><span
+style='mso-spacerun:yes'> </span></span><span style='mso-tab-count:1'>           </span><span
+lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fwrite(&amp;fnew,sizeof(long),1,fd);}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span><span style='mso-spacerun:yes'> 
+</span>else {<span style='mso-spacerun:yes'>                        </span><span
+style='mso-tab-count:2'>              </span>// </span>Включение<span
+style='mso-ansi-language:EN-US'> </span>после<span style='mso-ansi-language:
+EN-US'> </span>предыдущего<span lang=EN-US style='mso-ansi-language:EN-US'> -<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span><span style='mso-spacerun:yes'> 
+</span></span><span style='mso-tab-count:1'>          </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>prev</span>.<span lang=EN-US style='mso-ansi-language:
+EN-US'>fnext</span>=<span lang=EN-US style='mso-ansi-language:EN-US'>fnew</span>;<span
+style='mso-spacerun:yes'>            </span>// обновить предыдущий</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span
+style='mso-spacerun:yes'>  </span><span style='mso-tab-count:1'>          </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>fseek(fd,fprev,SEEK_SET);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span><span style='mso-spacerun:yes'> 
+</span></span><span style='mso-tab-count:1'>          </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>fwrite(&amp;prev,sizeof(flist),1,fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span><span style='mso-spacerun:yes'> 
+</span>}}<o:p></o:p></span></p>
+
+<a name="lr16"><h3>Лабораторный практикум</h3>
+
+<p class=a1 style='margin-left:42.55pt;mso-list:l2 level1 lfo3;tab-stops:list 42.55pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Файл<span style='mso-spacerun:yes'> 
+</span>записей<span style='mso-spacerun:yes'>  </span>переменной<span
+style='mso-spacerun:yes'>  </span>длины<span style='mso-spacerun:yes'> 
+</span>перед каждой записью содержит целое,<span style='mso-spacerun:yes'> 
+</span>определяющее длину этой записи. Написать функции ввода и вывода записи в
+такой файл. Функция ввода (чтения) должна возвращать размер очередной<span
+style='mso-spacerun:yes'>  </span>прочитанной<span style='mso-spacerun:yes'> 
+</span>записи. <span style='mso-spacerun:yes'> </span>Использовать<span
+style='mso-spacerun:yes'>  </span>функции для работы с двумя файлами - строк и
+динамических массивов целых чисел.</p>
+
+<p class=a1 style='margin-left:42.55pt;mso-list:l2 level1 lfo3;tab-stops:list 42.55pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Программа создает в файле массив указателей
+фиксированной размерности на строки текста. Размерность массива находится в
+начале файла, сами строки также хранятся в файле в виде записей<span
+style='mso-spacerun:yes'>  </span>переменной длины. Написать функции
+чтения/записи строки из файла по заданному номеру.</p>
+
+<p class=a1 style='margin-left:42.55pt;mso-list:l2 level1 lfo3;tab-stops:list 42.55pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Программа переписывает дерево с ограниченным
+количеством потомков из памяти в файл записей фиксированной длины, заменяя
+указатели на вершины номерами записей в<span style='mso-spacerun:yes'> 
+</span>файле. Затем выполняет обратную операцию.</p>
+
+<p class=a1 style='margin-left:42.55pt;mso-list:l2 level1 lfo3;tab-stops:list 42.55pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Дерево представлено в файле записей
+фиксированной длины естественным образом: если вершина дерева в файле находится
+в записи<span style='mso-spacerun:yes'>  </span>под номером N, то ее потомки -
+под номерами 2N и 2N+1. Корень<span style='mso-spacerun:yes'>  </span>дерева -
+запись с номером 1. Написать функции включения в дерево<span
+style='mso-spacerun:yes'>  </span>с сохранением упорядоченности и обхода дерева
+(вывод упорядоченных записей). (Необходимо учесть, что несуществующие
+потомки<span style='mso-spacerun:yes'>  </span>должны быть записями
+специального вида (например, пустой строкой)).</p>
+
+<p class=a1 style='margin-left:42.55pt;mso-list:l2 level1 lfo3;tab-stops:list 42.55pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Упорядоченные по возрастанию строки хранятся в
+файле в виде массива указателей (см.вар.2). Написать функции включения строки в
+файл и вывода упорядоченной последовательности строк (просмотр файла).</p>
+
+<p class=a1 style='margin-left:42.55pt;mso-list:l2 level1 lfo3;tab-stops:list 42.55pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>6.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Для произвольного текстового файла программа
+составляет файл записей фиксированной длины, содержащий файловые указатели на
+строки (см. л/р 6, вар.3). Используя массив указателей<span
+style='mso-spacerun:yes'>   </span>на строки из этого файла программа
+производит логическое удаление, перестановку и сортировку строк, не меняя
+самого текстового файла.</p>
+
+<p class=a1 style='margin-left:42.55pt;mso-list:l2 level1 lfo3;tab-stops:list 42.55pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>7.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Выполнить задание<span
+style='mso-spacerun:yes'>  </span>3<span style='mso-spacerun:yes'> 
+</span>применительно<span style='mso-spacerun:yes'>  </span>к<span
+style='mso-spacerun:yes'>  </span>графу,<span style='mso-spacerun:yes'> 
+</span>представленному списковой структурой.</p>
+
+<p class=a1 style='margin-left:42.55pt;mso-list:l2 level1 lfo3;tab-stops:list 42.55pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>8.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Составить файл записей фиксированной длины,<span
+style='mso-spacerun:yes'>  </span>в<span style='mso-spacerun:yes'> 
+</span>котором<span style='mso-spacerun:yes'>  </span>группы<span
+style='mso-spacerun:yes'>  </span>записей<span style='mso-spacerun:yes'> 
+</span>связаны<span style='mso-spacerun:yes'>  </span>в<span
+style='mso-spacerun:yes'>  </span>односвязные<span style='mso-spacerun:yes'> 
+</span>списки<span style='mso-spacerun:yes'>  </span>(например,<span
+style='mso-spacerun:yes'>  </span>списочный состав студентов различных групп).
+В начале файла предусмотреть<span style='mso-spacerun:yes'> 
+</span>таблицу<span style='mso-spacerun:yes'>  </span>заголовков<span
+style='mso-spacerun:yes'>  </span>списков.<span style='mso-spacerun:yes'> 
+</span>Написать<span style='mso-spacerun:yes'>  </span>функции<span
+style='mso-spacerun:yes'>  </span>дополнения<span style='mso-spacerun:yes'> 
+</span>и просмотра списка с заданным номером.</p>
+
+<p class=a1 style='margin-left:42.55pt;mso-list:l2 level1 lfo3;tab-stops:list 42.55pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>9.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Создать файл, содержащий массив указателей на
+строки, представленные записями переменной длины. В начале файла - целая
+переменная - размерность массива указателей. Последовательность указателей
+ограничена <span lang=EN-US style='mso-ansi-language:EN-US'>NULL</span><span
+lang=EN-US> </span>- указателем. Реализовать функции загрузки строки по
+логическому номеру и добавления строки по логическому номеру.</p>
+
+<p class=a1 style='margin-left:42.55pt;mso-list:l2 level1 lfo3;tab-stops:list 42.55pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>10.<span style='font:7.0pt "Times New Roman"'>&nbsp; </span></span>
+<![endif]>Создать
+файл, содержащий массив указателей на упорядоченные в алфавитном порядке
+строки, представленные записями переменной длины. Реализовать функцию двоичного
+поиска строки по строке-образцу, начало которой совпадает с искомой строкой.</p>
+
+<p class=a1 style='margin-left:42.55pt;mso-list:l2 level1 lfo3;tab-stops:list 42.55pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>11.<span style='font:7.0pt "Times New Roman"'>&nbsp; </span></span>
+<![endif]>В
+файле<span style='mso-spacerun:yes'>  </span>записей фиксированной длины
+содержится двоичное дерево. Вершина содержит знчение типа <span lang=EN-US
+style='mso-ansi-language:EN-US'>int</span>, а также номера соответствующих
+записей для правого и левого потомков. Реализовать функцию включения нового
+значения в существующий файл в виде новой вершины двоичного дерева.</p>
+
+<p class=a1 style='margin-left:42.55pt;mso-list:l2 level1 lfo3;tab-stops:list 42.55pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>12.<span style='font:7.0pt "Times New Roman"'>&nbsp; </span></span>
+<![endif]>Вершина
+двоичного дерева содержит указатель на строку. Написать функции сохранения и
+загрузки дерева из файла. Вершина дерева должна содержать файловые указатели на
+потомков, а также файловый указатель на строку - запись переменной длины.</p>
+
+<p class=a1 style='margin-left:42.55pt;mso-list:l2 level1 lfo3;tab-stops:list 42.55pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>13.<span style='font:7.0pt "Times New Roman"'>&nbsp; </span></span>
+<![endif]>Вершина
+двоичного дерева содержит указатель на строку. Написать функции сохранения и загрузки
+дерева из файла. Вершина дерева должна быть записью переменной длины, содержать
+файловые указатели на потомков и строку.</p>
+
+<p class=a1 style='margin-left:42.55pt;mso-list:l2 level1 lfo3;tab-stops:list 42.55pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>14.<span style='font:7.0pt "Times New Roman"'>&nbsp; </span></span>
+<![endif]>Файл
+содержит односвязный список. Элемент списка содержит файловый указатель на
+следующий и строку - запись переменной длины. В начале файла - указатель на
+первый элемент списка. Реализовать функции просмотра списка и включения строки
+по номеру.</p>
+
+<p class=a1 style='margin-left:42.55pt;mso-list:l2 level1 lfo3;tab-stops:list 42.55pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>15.<span style='font:7.0pt "Times New Roman"'>&nbsp; </span></span>
+<![endif]>Файл
+содержит односвязный список. Элемент списка содержит файловый указатель на
+следующий и строку - запись переменной длины. В начале файла - указатель на
+первый элемент списка. Реализовать функции просмотра списка и включения строки
+с сохранением упорядоченности.</p>
+
+<h3>Вопросы без ответов</h3>
+
+<p class=a>Определите структуру данных в двоичном файле произвольного доступа
+путем анализа последовательности операций позиционирования и ввода-вывода.</p>
+
+<p class=a4><b style='mso-bidi-font-weight:normal'><a name="m54">Пример оформления тестового
+задания. </b>Ввиду того, что для вызова большинства функций необходимо иметь
+двоичный файл соответствующего формата, можно ограничиться анализом текста
+программы.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//------------------------------------------------------</span>95<span
+lang=EN-US style='mso-ansi-language:EN-US'>-1</span>6<span lang=EN-US
+style='mso-ansi-language:EN-US'>.cpp<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//------------------------------------------------------
+<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>#define FNULL -1L<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>struct tree { tree *p[4]; char *s; };<span
+style='mso-spacerun:yes'>      </span><span style='mso-tab-count:1'>      </span>//
+</span>Вершина<span style='mso-ansi-language:EN-US'> </span>дерева<span
+style='mso-ansi-language:EN-US'> </span>в<span style='mso-ansi-language:EN-US'>
+</span>памяти<span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>struct ftree { long fp[4]; int sz; };<span
+style='mso-spacerun:yes'>       </span><span style='mso-tab-count:1'>      </span>//
+</span>Вершина<span style='mso-ansi-language:EN-US'> </span>дерева<span
+style='mso-ansi-language:EN-US'> </span>в<span style='mso-ansi-language:EN-US'>
+</span>файле<span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>tree *F(FILE *fd, long pos) <o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-spacerun:yes; mso-ansi-language:EN-US' lang="EN-US"> </span>{ ftree A;<span
+style='mso-spacerun:yes'>                                </span><span
+style='mso-tab-count:2'>               </span>// Текущая вершина из файла</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>if (pos==FNULL) return NULL;<span
+style='mso-spacerun:yes'>              </span><span style='mso-tab-count:1'>  </span>//
+NULL-</span>указатель<span lang=EN-US style='mso-ansi-language:EN-US'> - </span>выйти<span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-spacerun:yes; mso-ansi-language:EN-US' lang="EN-US"> </span>tree *q = new tree;<span
+style='mso-spacerun:yes'>            </span><span style='mso-tab-count:1'>                    </span>// Создать вершину в динам. памяти </p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>fseek(fd,pos,SEEK_SET);<span
+style='mso-spacerun:yes'>    </span><span style='mso-tab-count:2'>                  </span>//
+Позиционироваться на вершину</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>fread( (void*)&amp;A,
+sizeof(ftree),1,fd);<span style='mso-spacerun:yes'>    </span><span
+style='mso-tab-count:1'>      </span>// в файле и читать ее</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>q-&gt;s= new
+char[A.sz+1];<span style='mso-spacerun:yes'>     </span><span style='mso-tab-count:
+1'>      </span><span style='mso-tab-count:1'>            </span>// Строка
+запись переменной длины</p>
+
+<p class=a0><span
+style='mso-spacerun:yes'> </span>fread(q-&gt;s,A.sz,1,fd);<span
+style='mso-spacerun:yes'>          </span><span style='mso-tab-count:2'>                   </span>//
+следует сразу за вершиной</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>q-&gt;s[A.sz]=0;<span
+style='mso-spacerun:yes'>                   </span><span style='mso-tab-count:
+1'>        </span><span style='mso-tab-count:1'>            </span>// Добавить
+ограничитель конца строки</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>for</span> (<span lang=EN-US style='mso-ansi-language:
+EN-US'>int</span><span lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:
+EN-US'>i</span>=0; <span lang=EN-US style='mso-ansi-language:EN-US'>i</span>&lt;4;
+<span lang=EN-US style='mso-ansi-language:EN-US'>i</span>++)<span
+style='mso-spacerun:yes'>           </span><span style='mso-tab-count:2'>                   </span>//
+рекурсивная загрузка потомков</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>q</span>-&gt;<span lang=EN-US style='mso-ansi-language:
+EN-US'>p</span>[<span lang=EN-US style='mso-ansi-language:EN-US'>i</span>]=<span
+lang=EN-US style='mso-ansi-language:EN-US'>F</span>(<span lang=EN-US
+style='mso-ansi-language:EN-US'>fd</span>,<span lang=EN-US style='mso-ansi-language:
+EN-US'>A</span> .<span lang=EN-US style='mso-ansi-language:EN-US'>fp</span>[<span
+lang=EN-US style='mso-ansi-language:EN-US'>i</span>]);</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>return q; }<span
+style='mso-spacerun:yes'>                        </span><span style='mso-tab-count:
+1'>         </span><span style='mso-tab-count:1'>            </span>// В начале
+файла корневая вершина</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>void</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>main</span>() { <span lang=EN-US
+style='mso-ansi-language:EN-US'>FILE</span> *<span lang=EN-US style='mso-ansi-language:
+EN-US'>fd</span>=<span lang=EN-US style='mso-ansi-language:EN-US'>fopen</span>(&quot;<span
+lang=EN-US style='mso-ansi-language:EN-US'>a.dat&quot;,&quot;rb&quot;); tree
+*head = F(fd,0L); } <o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a>Несомненно, речь идет о дереве, которое строится в памяти, поскольку
+функция является рекурсивной и возвращает указатель на вершину дерева в памяти.
+Вершина дерева в памяти содержит до 4 указателей на потомков и указатель на
+связанную с ней строку. Функция создает в динамической памяти вершину дерева,
+получая в качестве параметров открытый файл и файловый указатель на место
+расположения текущей вершины. В файле также имеет место дерево, фиксированная
+часть вершины которого представлена структурой <span lang=EN-US
+style='mso-ansi-language:EN-US'>ftree</span>. Текущая вершина в файле
+загружается в локальную переменную <span lang=EN-US style='mso-ansi-language:
+EN-US'>A</span>. Вершина в файле содержит массив файловых указателей на
+потомков – <span lang=EN-US style='mso-ansi-language:EN-US'>fp</span><span
+lang=EN-US> </span>и строку, представленную записью переменной длины. В самой
+структуре <span lang=EN-US style='mso-ansi-language:EN-US'>ftree</span><span
+lang=EN-US> </span>имеется счетчик длины строки – <span lang=EN-US
+style='mso-ansi-language:EN-US'>sz</span>. То, что чтение строки производится
+без позиционирования, говорит о том, что сама строка непосредственно следует
+за<span style='mso-spacerun:yes'>  </span>вершиной. В памяти программы строка
+размещается в отдельном динамическом массиве. В начале файла находится корневая
+вершина дерева (следует из <span lang=EN-US style='mso-ansi-language:EN-US'>main</span>).</p>
+
+<p class=a4><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//------------------------------------------------------</span>95<span
+lang=EN-US style='mso-ansi-language:EN-US'>-1</span>7<span lang=EN-US
+style='mso-ansi-language:EN-US'>.cpp<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>struct man { int dd,mm,yy; char *addr; };<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//------------------------------------------------------
+1<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>man *F1(int n, FILE *fd)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>{ man *p = new man;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fseek (fd, (long)sizeof( man)*n, SEEK_SET);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fread (p, sizeof( man),1,fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>return(p); }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>//------------------------------------------------------
+2<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>void *F2(FILE *fd)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>{ int n; void *p;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fread(&amp;n,sizeof(int),1,fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>if (n==0) return(NULL);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>p = ( void*) new char[n];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fread(p,n,1,fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>return p; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>//------------------------------------------------------
+3<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>double *F3(FILE *fd)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>{ int n; double *p;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fread(&amp;n,sizeof(int),1,fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>if (n==0) return(NULL);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>p = new double[ n+1];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fread(p,sizeof(double),n,fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>p[n]=0.0;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>return p; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>//------------------------------------------------------
+4<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>#define FNULL -1L<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>struct xxx { long fnext; /*. . .*/ };<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>xxx *F4(int n,FILE *fd)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>{ xxx *p; long p0;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>p = new xxx;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fseek(fd,0L,SEEK_SET);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fread(&amp;p0,sizeof(long),1,fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>for (; p0!=FNULL &amp;&amp; n!=0; n--, p0 =
+p-&gt;fnext) {<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span>fseek(fd,p0,SEEK_SET);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span>fread(p,sizeof( xxx),1,fd); }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>return p; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>//------------------------------------------------------
+5<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>man *F5(int n, FILE *fd)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>{ long fp; man *p = new man;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fseek(fd, sizeof(long)*n,SEEK_SET);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fread(&amp;fp,sizeof(long),1,fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fseek(fd,fp,SEEK_SET);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fread(p,sizeof(man),1,fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>return p; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>//------------------------------------------------------
+6<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>void *F6(int n, FILE *fd)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>{ int sz; void *p;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fseek(fd,0L,SEEK_SET);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fread(&amp;sz,sizeof(int),1,fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>p = ( void*) new char[sz];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fseek (fd, (long)sz * n +sizeof(int),
+SEEK_SET);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fread (p, sz,1,fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>return p; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>//------------------------------------------------------
+7<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>void *F7(int n, FILE *fd)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>{ int sz; void *p; long p0;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fseek(fd,0L,SEEK_SET);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fread(&amp;sz,sizeof(int),1,fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fread(&amp;p0,sizeof(long),1,fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>p = (void*)new char[sz];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fseek (fd, p0 + sizeof(long)*n, SEEK_SET);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fread (&amp;p0, sizeof(long),1,fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fseek(fd, p0, SEEK_SET);<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-spacerun:yes; mso-ansi-language:EN-US' lang="EN-US"> </span>fread(p, sz, 1, fd);</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>return p; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>//------------------------------------------------------
+8<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>char *F8(int n, FILE *fd)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>{ char *p; long fp; int i;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fseek(fd, sizeof(long)*n,SEEK_SET);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fread(&amp;fp,sizeof(long),1,fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fseek(fd,fp,SEEK_SET);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>n = 80; p = new char [n];<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-spacerun:yes; mso-ansi-language:EN-US' lang="EN-US"> </span>for (i=0;; i++) {</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span>if (i==n) p = (char*)realloc(p, n=n*2);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span>fread(p+i,1,1,fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span>if (p[i]=='\0') return p;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>return p; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>//------------------------------------------------------
+9<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>#define FNULL -1L<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>char *F9(int n, FILE *fd)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>{ long p0; int sz; char *p;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fseek(fd,0L,SEEK_SET);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fread(&amp;p0,sizeof(long),1,fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>for (; p0!=FNULL &amp;&amp; n!=0; n--) {<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span>fseek(fd,p0,SEEK_SET);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span>fread(&amp;p0,sizeof(long),1,fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>if (p0==FNULL) return(NULL);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fread(&amp;sz,sizeof(int),1,fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>p = new char[sz+1];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fread(p,sz,1,fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>p[sz]='\0'; return p;}<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-spacerun:yes; mso-ansi-language:EN-US' lang="EN-US"> </span>//--------------------------------------------------------
+10</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>char *F10(FILE *fd)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>{ int n; char *p;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fread(&amp;n,sizeof(int),1,fd);<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-spacerun:yes; mso-ansi-language:EN-US' lang="EN-US"> </span>if (n==0) return(NULL);</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>p = new char[n];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fread(p,n,1,fd);<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-spacerun:yes; mso-ansi-language:EN-US' lang="EN-US"> </span>return p; }</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>//--------------------------------------------------------
+11<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>void F11(FILE *fd, char *s)<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-spacerun:yes; mso-ansi-language:EN-US' lang="EN-US"> </span>{ int n;</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fseek(fd,0L,SEEK_END);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>n = strlen(s)+1;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fwrite(&amp;n,sizeof(int),1,fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fwrite(s,n,1,fd); }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>//--------------------------------------------------------
+12<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>double *F12(FILE *fd)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>{ int n, dn; double *p;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fread(&amp;n,sizeof(int),1,fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>if (n==0) return(NULL);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>dn = n / sizeof(double);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>p = new double[ dn+1];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>p[0]=dn;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fread(p+1,sizeof(double), dn, fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>return p; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>//--------------------------------------------------------
+13<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>void F13(FILE *fd, double *s, int dn)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>{ int n;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>n = dn * sizeof(double);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fseek(fd,0L,SEEK_END);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fwrite(&amp;n,sizeof(int),1,fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fwrite(s,sizeof(double),dn,fd); }<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-spacerun:yes; mso-ansi-language:EN-US' lang="EN-US"> </span>//------------------------------------------------------
+14</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>void F14(FILE *fd)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>{ int n; void *p;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fread(&amp;n,sizeof(int),1,fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>if (n==0) return;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>p = ( void*) new char[n];<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-spacerun:yes; mso-ansi-language:EN-US' lang="EN-US"> </span>fread(p,n,1,fd);</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span>switch (n) {<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>case sizeof(int): <span style='mso-tab-count:
+1'>           </span>printf(&quot;%d &quot;,*(int*)p); break;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>case sizeof(long): <span style='mso-tab-count:
+1'>         </span>printf(&quot;%ld &quot;,*(long*)p); break;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>default: <span style='mso-tab-count:2'>                        </span>printf(&quot;%s
+&quot;,(char*)p); break;<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-spacerun:yes; mso-ansi-language:EN-US' lang="EN-US">      </span>} delete p; }</p>
+
+<p class=a0><span
+style='mso-spacerun:yes'> </span>//------------------------------------------------------
+15</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>char *F15(int n, FILE *fd)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>{ int m; char *p; long fp;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fseek(fd, sizeof(long)*n,SEEK_SET);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fread(&amp;fp,sizeof(long),1,fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fseek(fd,fp,SEEK_SET);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fread(&amp;m,sizeof(int),1,fd);<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-spacerun:yes; mso-ansi-language:EN-US' lang="EN-US"> </span>p=new char [m];</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fread(p,m,1,fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>return p ; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>//------------------------------------------------------
+16<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>char *F16(int n, FILE *fd1, FILE *fd2)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>{ long pp; char *q;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fseek(fd1,n*sizeof(long),SEEK_SET);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fread(&amp;pp,sizeof(long),1,fd1);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>q = new char[80];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fseek(fd2,pp,SEEK_SET);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fgets(q,80,fd2);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>return q; }<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-spacerun:yes; mso-ansi-language:EN-US' lang="EN-US"> </span>//------------------------------------------------------
+17</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>char **F17(FILE *fd)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>{ int n,m,i; char **p; long *fp;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fseek(fd, 0L,SEEK_SET);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fread(&amp;n,sizeof(int),1,fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>p = new char *[n+1];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fp = new long[n];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fread(fp,sizeof(long),n,fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>for (i=0; i&lt;n; i++) {<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span>fseek(fd, fp[i],SEEK_SET);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span>fread(&amp;m,sizeof(int),1,fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span>p[i]= new char[m];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span>fread(p[i],m,1,fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>p[n]=NULL; return p ; }<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-spacerun:yes; mso-ansi-language:EN-US' lang="EN-US"> </span>//------------------------------------------------------
+18</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>#define FNULL -1L<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>struct ooo { ooo *p[20]; char *s; long fs;
+long fp[20]; };<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>ooo *F18(FILE *fd, long pos)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>{ int i,m; ooo *q;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>if (pos==FNULL) return NULL;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>q = new ooo;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fseek(fd,pos,SEEK_SET);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fread(q, sizeof(ooo),1,fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fseek(fd,q-&gt;fs,SEEK_SET);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fread(&amp;m,sizeof(int),1,fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>q-&gt;s= new char[m];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fread(q-&gt;s,m,1,fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>for (i=0; i&lt;20; i++)
+q-&gt;p[i]=F18(fd,q-&gt;fp[i]);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>return q; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>void main() { FILE *fd; ooo *head =
+F18(fd,0L); }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>//------------------------------------------------------
+19<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>man *F19(FILE *fd)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>{ man *p; int n;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fread(&amp;n,sizeof(int),1,fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>p = new man;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fread (p, sizeof(man),1,fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>n = n - sizeof(man);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>p-&gt;addr = new char[n];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fread(p-&gt;addr,n,1,fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>return p; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>//------------------------------------------------------
+20<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>void F20(FILE *fd, man *p)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>{ int n = sizeof(man)+strlen(p-&gt;addr)+1;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fseek(fd,0L,SEEK_END);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fwrite(&amp;n,sizeof(int),1,fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fwrite (p, sizeof(man),1,fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>n = n - sizeof(man);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>fwrite (p-&gt;addr, n,1,fd ); }<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<h2><o:p>&nbsp;</o:p></h2>
+
+</div>
+
+</body>
+
+</html>

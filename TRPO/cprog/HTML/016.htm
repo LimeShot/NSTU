@@ -1,0 +1,1578 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=Edit-Time-Data href="016.files/editdata.mso">
+<title>1.6. Функции и структура программы </title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>www.PHILka.RU</o:Author>
+  <o:LastAuthor>www.PHILka.RU</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>437</o:TotalTime>
+  <o:Created>2008-07-07T20:29:00Z</o:Created>
+  <o:LastSaved>2008-07-07T20:29:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>3310</o:Words>
+  <o:Characters>18873</o:Characters>
+  <o:Company>NSTU_VT</o:Company>
+  <o:Bytes>11776</o:Bytes>
+  <o:Lines>157</o:Lines>
+  <o:Paragraphs>44</o:Paragraphs>
+  <o:CharactersWithSpaces>22139</o:CharactersWithSpaces>
+  <o:Version>11.6360</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DoNotHyphenateCaps/>
+  <w:DrawingGridHorizontalSpacing>0,55 пт</w:DrawingGridHorizontalSpacing>
+  <w:DrawingGridVerticalSpacing>0,55 пт</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:UseMarginsForDrawingGridOrigin/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DrawingGridVerticalOrigin>99,25 пт</w:DrawingGridVerticalOrigin>
+  <w:Compatibility>
+   <w:WW6BorderRules/>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+   <w:UseWord97LineBreakingRules/>
+   <w:SelectEntireFieldWithStartOrEnd/>
+   <w:UseWord2002TableStyleRules/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:"Courier New CYR";
+	panose-1:2 7 3 9 2 2 5 2 4 4;
+	mso-font-charset:204;
+	mso-generic-font-family:modern;
+	mso-font-pitch:fixed;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+@font-face
+	{font-family:"Times New Roman CYR";
+	panose-1:2 2 6 3 5 4 5 2 3 4;
+	mso-font-charset:204;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+@font-face
+	{font-family:"Arial CYR";
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+h1
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:14.0pt;
+	mso-bidi-font-weight:normal;}
+h2
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-font-weight:normal;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+h3
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	font-weight:normal;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";}
+p.a, li.a, div.a
+	{mso-style-name:текст;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a0, li.a0, div.a0
+	{mso-style-name:программа;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a1, li.a1, div.a1
+	{mso-style-name:список;
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:18.45pt;
+	margin-bottom:0cm;
+	margin-left:64.35pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-18.0pt;
+	mso-pagination:widow-orphan;
+	mso-list:l4 level1 lfo1;
+	tab-stops:42.55pt list 64.35pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a2, li.a2, div.a2
+	{mso-style-name:определение;
+	mso-style-parent:текст;
+	margin-top:12.0pt;
+	margin-right:32.9pt;
+	margin-bottom:12.0pt;
+	margin-left:35.45pt;
+	text-align:justify;
+	text-indent:.55pt;
+	mso-pagination:widow-orphan;
+	border:none;
+	mso-border-alt:solid windowtext 1.5pt;
+	padding:0cm;
+	mso-padding-alt:1.0pt 1.0pt 1.0pt 1.0pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a3, li.a3, div.a3
+	{mso-style-name:эпиграф;
+	margin-top:0cm;
+	margin-right:32.9pt;
+	margin-bottom:0cm;
+	margin-left:5.0cm;
+	margin-bottom:.0001pt;
+	text-align:right;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.a4, li.a4, div.a4
+	{mso-style-name:"от края";
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a5, li.a5, div.a5
+	{mso-style-name:Формула;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.a6, li.a6, div.a6
+	{mso-style-name:"без формата";
+	mso-style-parent:программа;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a7, li.a7, div.a7
+	{mso-style-name:стихи;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.1, li.1, div.1
+	{mso-style-name:эпиграф1;
+	mso-style-parent:эпиграф;
+	margin-top:0cm;
+	margin-right:9.35pt;
+	margin-bottom:0cm;
+	margin-left:9.0cm;
+	margin-bottom:.0001pt;
+	text-align:right;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.2, li.2, div.2
+	{mso-style-name:"заголовок 2";
+	mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;
+	font-style:italic;}
+p.3, li.3, div.3
+	{mso-style-name:"заголовок 3";
+	mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";}
+ /* Page Definitions */
+ @page
+	{mso-footnote-separator:url("016.files/header.htm") fs;
+	mso-footnote-continuation-separator:url("016.files/header.htm") fcs;
+	mso-endnote-separator:url("016.files/header.htm") es;
+	mso-endnote-continuation-separator:url("016.files/header.htm") ecs;}
+@page Section1
+	{size:21.0cm 842.0pt;
+	margin:33.45pt 42.55pt 72.0pt 89.85pt;
+	mso-header-margin:14.2pt;
+	mso-footer-margin:31.75pt;
+	mso-even-header:url("016.files/header.htm") eh1;
+	mso-header:url("016.files/header.htm") h1;
+	mso-even-footer:url("016.files/header.htm") ef1;
+	mso-footer:url("016.files/header.htm") f1;
+	mso-first-header:url("016.files/header.htm") fh1;
+	mso-first-footer:url("016.files/header.htm") ff1;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:413860063;
+	mso-list-type:hybrid;
+	mso-list-template-ids:490221550 68747279 68747289 68747291 68747279 68747289 68747291 68747279 68747289 68747291;}
+@list l0:level1
+	{mso-level-tab-stop:50.2pt;
+	mso-level-number-position:left;
+	margin-left:50.2pt;
+	text-indent:-18.0pt;}
+@list l1
+	{mso-list-id:1108084465;
+	mso-list-type:hybrid;
+	mso-list-template-ids:183648586 68747279 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l1:level1
+	{mso-level-tab-stop:64.35pt;
+	mso-level-number-position:left;
+	margin-left:64.35pt;
+	text-indent:-18.0pt;}
+@list l2
+	{mso-list-id:1486243798;
+	mso-list-type:hybrid;
+	mso-list-template-ids:924079340 68747279 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l2:level1
+	{mso-level-tab-stop:64.35pt;
+	mso-level-number-position:left;
+	margin-left:64.35pt;
+	text-indent:-18.0pt;}
+@list l3
+	{mso-list-id:1615092951;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-793345698 68747265 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l3:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	margin-left:72.0pt;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l4
+	{mso-list-id:1628194852;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-964799380 -1450833310 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l4:level1
+	{mso-level-number-format:bullet;
+	mso-level-style-link:список;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:64.35pt;
+	mso-level-number-position:left;
+	margin-left:64.35pt;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Обычная таблица";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+table.MsoTableGrid
+	{mso-style-name:"Сетка таблицы";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+  <o:regrouptable v:ext="edit">
+   <o:entry new="1" old="0"/>
+   <o:entry new="2" old="1"/>
+   <o:entry new="3" old="0"/>
+   <o:entry new="4" old="0"/>
+  </o:regrouptable>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=RU style='tab-interval:36.0pt' background="back.gif">
+
+<div class=Section1>
+
+<a name="m1">
+
+<h2 style='mso-outline-level:2'>1.6. Функции и структура программы </h2>
+
+<p class=a><span style='mso-spacerun:yes'> </span>Следующим уровнем в
+синтаксической структуре программы за выражениями и операторами является
+уровень функций. В отличие от предыдущих он является не только средством описания
+некоторой части программы, но и служит для оформления логически завершенного
+действия с собственным набором входных и выходных параметров. Термин функция,
+принятый в Си, имеет в других языках программирования родственные термины - процедура,
+модуль. Функция является основной программной единицей уже потому, что вся
+программа представляет собой множество вызывающих друг друга функций. Часть из
+них может быть получена «со стороны» - из библиотек или из программ, написанных
+в другое время, в другом месте, другими людьми и даже на другом языке программирования.
+То есть на уровне функций осуществляется «сборочный процесс» программы из
+отдельных составляющих. </p>
+
+<h3 style='mso-outline-level:3'>Синтаксис определения и вызова функции</h3>
+
+<p class=a>
+<p><br
+style='mso-ignore:vglayout' clear=ALL>
+Синтаксис функций (определения и вызова) включает в себя до десятка терминов и
+определений, поэтому придется сначала договориться о терминологии, не вникая в
+суть, а затем обсуждать механизмы ее работы.</p>
+</p>
+
+<p class=a4 align=center style='text-align:center'>
+<img border="0" src="Images/016-01.gif" width="596" height="403"></p>
+<p class=a4 align=center style='text-align:center'>
+<b style='mso-bidi-font-weight:
+normal'><a name="m2">рис. 16.1. Синтаксис определения и вызова функции<o:p></o:p></b></p>
+
+<p class=a>Функция состоит из заголовка (<b style='mso-bidi-font-weight:normal'><a name="m3">1</b>)
+и тела (<b style='mso-bidi-font-weight:normal'><a name="m4">2</b>). <b style='mso-bidi-font-weight:
+normal'><a name="m5">Заголовок функции – </b>это ее интерфейсная (описательная) часть, которая
+не дает программного кода, а содержит описание входных и выходных параметров,
+необходимых при ее выполнении (вызове). <b style='mso-bidi-font-weight:normal'><a name="m6">Тело
+функции – </b>это программный код (блок), ограниченный фигурными скобками. Тело
+функции при трансляции преобразуется во внутреннее (двоичное) представление и
+размещается в сегменте команд программы (см.<b style='mso-bidi-font-weight:
+normal'><a name="m7">1.2</b>). Существует также синтаксис, в котором присутствует только
+заголовок, ограниченный символом «<b style='mso-bidi-font-weight:normal'><a name="m8">;</b>».
+В этом случае речь идет об <b style='mso-bidi-font-weight:normal'><a name="m9">объявлении </b>функции
+– информировании транслятора о ее наличии и интерфейсе.</p>
+
+<p class=a>В заголовке находится <span style='mso-spacerun:yes'> </span><b
+style='mso-bidi-font-weight:normal'>имя функции </b>(<b style='mso-bidi-font-weight:
+normal'><a name="m10">3</b>), после которого в скобках – <b style='mso-bidi-font-weight:normal'><a name="m11">список
+формальных параметров, </b>разделенных запятыми (<b style='mso-bidi-font-weight:
+normal'><a name="m12">4</b>)<b style='mso-bidi-font-weight:normal'><a name="m13">. </b>Список может быть и
+пустым. Синтаксис формального параметра (<b style='mso-bidi-font-weight:normal'><a name="m14">5</b>)
+– это <i style='mso-bidi-font-style:normal'>синтаксис определения</i>
+переменной (см.<b style='mso-bidi-font-weight:normal'><a name="m15">1.3</b>), что наводит на
+мысль, что формальные параметры – это <i style='mso-bidi-font-style:normal'>особого
+рода переменные, которые используются для передачи параметров (значений) при
+вызове (выполнении) функции</i>. </p>
+
+<p class=a>Внутри тела функции могут находиться определения обычных переменных
+(<b style='mso-bidi-font-weight:normal'><a name="m16">7</b>), которые называются <b
+style='mso-bidi-font-weight:normal'>локальными</b> (в терминологии Си -
+автоматическими). Тело каждой функции представляет собой отдельное
+изолированное пространство, в котором допустимо использование собственных
+переменных (<b style='mso-bidi-font-weight:normal'><a name="m17">9</b>), составляющих неявное
+окружение – <b style='mso-bidi-font-weight:normal'><a name="m18">контекст функции. </b>В него
+входят вышеуказанные формальные параметры и локальные переменные. Кроме того, контекст
+функции является короткоживущим: <span style='mso-spacerun:yes'> </span>он создается
+при входе в функцию и разрушается при завершении ее выполнения.</p>
+
+<p class=a>Формальные параметры используются для передачи входных и выходных данных
+в функцию. Кроме них функция имеет еще одну неявную выходную переменную – <b
+style='mso-bidi-font-weight:normal'>результат функции. </b>Результат функции -
+это временная переменная, которая возвращается функцией и может быть
+использована как<span style='mso-spacerun:yes'>   </span>операнд в той части
+выражения (<b style='mso-bidi-font-weight:normal'><a name="m19">13</b>), где был произведен
+ее вызов (<b style='mso-bidi-font-weight:normal'><a name="m20">10</b>). </p>
+
+<p class=a>Как любая другая переменная, результат функции относится к
+определенному типу данных, который указан в заголовке функции (<b
+style='mso-bidi-font-weight:normal'>6</b>). Это делается тем же способом, что и
+для обычных переменных. Используется тот же самый синтаксис, в котором имя
+функции выступает в роли переменной-результата. Тип результата может быть
+любым, за исключением функции или массива.</p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:14.2pt'><o:p>&nbsp;</o:p></p>
+
+<p class=a0>int<span style='mso-tab-count:1'>         </span>sum(...<span
+style='mso-tab-count:2'>              </span>// Результат - целая переменная</p>
+
+<p class=a0>char<span style='mso-tab-count:1'>      </span>*FF(...<span
+style='mso-tab-count:2'>               </span>// Результат - указатель на
+символ</p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:14.2pt'><o:p>&nbsp;</o:p></p>
+
+<p class=a><span style='mso-spacerun:yes'> </span>Значение переменной -
+результатa устанавливается в операторе <b><a name="m21">return (8)</b>, который производит
+это действие наряду с завершением выполнения функции и выходом из нее. Между
+ключевым словом<b><a name="m22"> return</b> и ограничивающим символом &quot;;&quot; может
+стоять любое выражение, значение которого и становится результатом функции.
+Если вспомнить еще и о преобразованиях типов, то при таком «присваивании»
+результата таковое должно производиться от типа, соответствующего выражению к
+типу результата функции: </p>
+
+<p class=MsoNormal><b><a name="m23"><span style='font-family:"Courier New CYR"'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>double<span
+style='mso-tab-count:1'>   </span>FF()<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>{ int nn;<span
+style='mso-tab-count:3'>                         </span>// </span>Эквивалент<span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>return (nn+1) ;<span
+style='mso-tab-count:2'>                </span>// FF = (double)(nn + 1)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:14.2pt'><span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a>Имеется специальный пустой тип результата - <b><a name="m24">void</b>, который
+обозначает, что функция не возвращает никакого результата и, соответственно, не
+может быть вызвана внутри выражения. Оператор <b style='mso-bidi-font-weight:
+normal'><a name="m25">return</b> в такой функции также не содержит никакого выражения. При
+вызове этой функции ее результат не может быть использован.</p>
+
+<p class=MsoNormal><b><a name="m26"><span style='font-family:"Courier New CYR"'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=a0>void<span style='mso-tab-count:1'>       </span>Nothing()<span
+style='mso-spacerun:yes'>  </span>{ return; }</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>main</span>(){</p>
+
+<p class=a0 style='text-indent:36.0pt'>Nothing();<span style='mso-tab-count:
+2'>                      </span>// Просто вызов без использования результата</p>
+
+<p class=a0 style='margin-left:36.0pt'>}</p>
+
+<p class=a><o:p>&nbsp;</o:p></p>
+
+<p class=a>Определение функции представляет собой всего лишь статическую
+«заготовку» программы. Выполнение ее происходит тогда, когда в процессе
+вычисления выражения встречается вызов функции. Синтаксически <b
+style='mso-bidi-font-weight:normal'>вызовом функции </b>называется упоминание
+имени этой функции в выражений (<b style='mso-bidi-font-weight:normal'><a name="m27">10</b>),
+причем после имени функции в скобках следует список <b style='mso-bidi-font-weight:
+normal'><a name="m28">фактических параметров (12).<o:p></o:p></b></p>
+
+<p class=a>Фактические параметры – переменные, константы и выражения, которые
+ставятся в соответствие формальным параметрам при текущем вызове функции. По
+поводу них можно сказать следующее<span lang=EN-US style='mso-ansi-language:
+EN-US'>:<o:p></o:p></span></p>
+
+<p class=a1><![if !supportLists]>
+<span
+style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol; mso-bidi-font-weight:bold'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>между формальными и фактическими параметрами
+устанавливается «один-один» соответствие, которое действует только в течение
+текущего вызова функции (динамически);<b><a name="m29"><span style='font-family:"Courier New CYR"'><o:p></o:p></span></b></p>
+
+<p class=a1><![if !supportLists]>
+<span
+style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol; mso-bidi-font-weight:bold'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>существуют различные способы установления
+соответствия, на настоящий момент реально распространенными в языках
+программирования являются способы передачи параметров <b style='mso-bidi-font-weight:
+normal'><a name="m30">по ссылке </b>и <b style='mso-bidi-font-weight:normal'><a name="m31">по значению;</b><b><a name="m32"><span
+style='font-family:"Courier New CYR"'><o:p></o:p></span></b></p>
+
+<p class=a1><![if !supportLists]>
+<span
+style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol; mso-bidi-font-weight:bold'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>фактические параметры имеются синтаксис <i
+style='mso-bidi-font-style:normal'>выражения </i>(см <b style='mso-bidi-font-weight:
+normal'><a name="m33">1.4</b>)<i style='mso-bidi-font-style:normal'>. </i>Это значит, что в
+них не <i style='mso-bidi-font-style:normal'>определяются, а используются </i>переменные
+и их сочетания, определенные в текущем контексте (<b style='mso-bidi-font-weight:
+normal'><a name="m34">11</b>). Например, если определение массива имеет вид <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>int</span><span lang=EN-US> </span></b><b style='mso-bidi-font-weight:
+normal'><a name="m35"><span lang=EN-US style='mso-ansi-language:EN-US'>A</span>[], </b>и в
+таком виде оно будет присутствовать в списке формальных параметров, то при
+вызове функции фактическим параметром может быть имя массива <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>C</span><span lang=EN-US> </span></b>определенного аналогичным образом
+(т.е. переменная <b style='mso-bidi-font-weight:normal'><a name="m36"><span lang=EN-US
+style='mso-ansi-language:EN-US'>C</span>,</b> являющаяся массивом).<b><a name="m37"><span
+style='font-family:"Courier New CYR"'><o:p></o:p></span></b></p>
+
+<p class=a>В программе должна присутствовать функция (<b style='mso-bidi-font-weight:
+normal'><a name="m38">14</b>), которая автоматически вызывается при загрузке программы в
+память и ее выполнении. Более никаких особенностей, кроме указанной, эта
+функция не имеет.<span style='mso-spacerun:yes'>  </span>Ее вид<span
+style='font-family:"Times New Roman"'>:</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:14.2pt'><span
+style='mso-spacerun:yes'> </span></p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>void main() {...}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>void main(void) {...}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>void</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>main</span>(<span
+lang=EN-US style='mso-ansi-language:EN-US'>int</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>narg</span>, <span lang=EN-US
+style='mso-ansi-language:EN-US'>char</span> *<span lang=EN-US style='mso-ansi-language:
+EN-US'>argv</span>[]) {...}<span style='mso-tab-count:1'>          </span>// с интерфейсом
+командной строки</p>
+
+<h3>Способы соответствия формальных и фактических параметров</h3>
+
+<p class=a>В настоящее время в большинстве языков программирования используются
+два способа передачи параметров: по ссылке и по значению. Особенностью Си
+является то, что он имеет возможность использовать ссылки не только неявно, но
+и с использованием такого архитектурно-ориентированного средства как указатель Кроме
+того, указатель и ссылка могут быть не только формальным параметром, но и
+результатом функции (<b style='mso-bidi-font-weight:normal'><a name="m39">5.2</b>). Пока же
+мы ограничимся общепринятыми для всех языков программирования рамками.</p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m40">Передача параметра по
+значению </b>представляет собой <b style='mso-bidi-font-weight:normal'><a name="m41">копирование
+</b>значения фактического параметра в формальный, т.е. является неявным присваиванием
+фактическому параметру значения формального. Этот способ обладает следующими
+свойствами:</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>формальные параметры являются собственными
+переменными функции, аналогом локальных переменных; </p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>при вызове функции происходит присваивание формальным
+параметрам значений фактических (копирование вторых в первые); </p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>при изменении формальных параметров значения
+соответствующих им фактических параметров не меняются;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>передача параметров по значению используется для
+задании функции входных данных.</p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m42">Передача параметра по ссылке </b>осуществляется
+<b style='mso-bidi-font-weight:normal'><a name="m43">отображением </b>формального параметра в
+фактический:</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>формальные параметры существуют как синонимы
+фактических, в этом смысле они не являются «настоящими» переменными, под
+которые отводится память, а реализуется как элемент отображения; </p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>при изменении значений формальных параметров эти
+изменения проецируются на соответствующие им фактические;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>передача параметров по ссылке может
+использоваться для данных, которые являются либо чисто выходными (неявный
+результат функции), либо представляют собой внешние для функции данные, которые
+она должна изменить.</p>
+
+<p class=a4>
+<img border="0" src="Images/science.jpg" align="left" width="43" height="33">Доступ
+к объекту в виде значения (копии) и ссылки на оригинал широко используются в
+информационных технологиях. Для любого набора данных можно создать копию,
+передав ее пользователю, либо создать ссылку на оригинал. Например, на рабочем
+столе можно разместить копию файла (аналог передачи по значению), либо его
+ярлык (аналог передачи по ссылке).</p>
+
+<p class=a>В Си приняты следующие правила передачи, которые определяются
+синтаксическим видом формальных параметров в заголовке функции:</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>по умолчанию (т.е. при отсутствии явных символов
+обозначения) все параметры, кроме массивов, передаются <i style='mso-bidi-font-style:
+normal'>по значению, </i>т.е. копируются<i style='mso-bidi-font-style:normal'>;</i></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>массивы передаются исключительно <i
+style='mso-bidi-font-style:normal'>по ссылке</i>, т.е. отображаются;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>для явного указания способа передачи параметра
+по ссылке служит символ «<b style='mso-bidi-font-weight:normal'><a name="m44">&amp;</b>»,
+который записывается перед именем формального параметра.</p>
+
+<h3>Механизм вызова функции</h3>
+
+<p class=a>Механизм вызова функции является динамическим, т.е. действия,
+связанные с его реализацией, осуществляются при выполнении программы. Именно
+поэтому текст программы и его «развертка» во времени представляют для функции
+«две большие разницы». Это касается двух вещей<span lang=EN-US
+style='mso-ansi-language:EN-US'>:<o:p></o:p></span></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>последовательность выполняемых действий (поток
+управления) при вызовах функций:</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>соответствие между формальными и фактическими
+параметрами.</p>
+
+<p class=a>Именно поэтому мы и рассмотрим процесс вызова вышеприведенной функции
+в «исторической перспективе»:</p>
+
+<p class=a1 style='mso-list:l1 level1 lfo5'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>результатом трансляции функции является программный
+код, размещенный в сегменте команд;<p></p>
+
+<p class=a1 style='mso-list:l1 level1 lfo5'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span>
+<![endif]>в вызывающей функции (<b style='mso-bidi-font-weight:
+normal'><a name="m45"><span lang=EN-US style='mso-ansi-language:EN-US'>main</span></b>)
+определяются переменные, используемые в качестве фактических параметров вызова
+функции (массив <b style='mso-bidi-font-weight:normal'><a name="m46">B</b>);</p>
+
+<p class=a1 style='mso-list:l1 level1 lfo5'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span><![endif]>выполняется программный код вызывающей функции,
+пока в ней не встретится выражение, содержащий вызов функции;</p>
+
+<p class=a1 style='mso-list:l1 level1 lfo5'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>
+<![endif]>в соответствии со списком фактических параметров устанавливается соответствие
+между элементами контекста вызывающей функции и формальными параметрами;<p>
+</p>
+
+<p class=a4 align=center style='text-align:center'><b style='mso-bidi-font-weight:
+normal'><a name="m47"><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=a4 align=center style='text-align:center'><b style='mso-bidi-font-weight:
+normal'><a name="m48"><img border="0" src="Images/016-02.gif" width="617" height="313"></b></p>
+<p class=a4 align=center style='text-align:center'>
+<b style='mso-bidi-font-weight:
+normal'><a name="m49">Рис.16.2. Механизм вызова функции<o:p></o:p></b></p>
+
+<p class=a1 style='mso-list:l1 level1 lfo5'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><![endif]>формальный параметр – массив <b
+style='mso-bidi-font-weight:normal'>A</b> передается по ссылке - отображается
+на фактический параметр, аналогичный массив <b style='mso-bidi-font-weight:
+normal'><a name="m50">B</b>, определенный в контексте вызывающей функции;</p>
+
+<p class=a1 style='mso-list:l1 level1 lfo5'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>6.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>формальный параметр <b style='mso-bidi-font-weight:
+normal'><a name="m51"><span lang=EN-US style='mso-ansi-language:EN-US'>n</span></b><span
+lang=EN-US> </span>– размерность массива <b style='mso-bidi-font-weight:normal'><a name="m52">A
+</b>передается по значению, т.е. копируется, в качестве копируемого значения
+выступает константа;</p>
+
+<p class=a1 style='mso-list:l1 level1 lfo5'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>7.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>сохраняется точка возврата в вызывающую функцию,
+после чего происходит переход к началу блока программного кода функции <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>sum</span></b>;</p>
+
+<p class=a1 style='mso-list:l1 level1 lfo5'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>8.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>выполняется программный код функции <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>sum</span>;</b></p>
+
+<p class=a1 style='mso-list:l1 level1 lfo5'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>9.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>в контексте вызываемой функции используются
+локальные переменные и формальные параметры, в соответствии со способами
+передачи параметров массив <b style='mso-bidi-font-weight:normal'><a name="m53">A </b>отображается
+на исходный массив <b style='mso-bidi-font-weight:normal'><a name="m54">B </b>в контексте <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>main</span>;</b></p>
+
+<p class=a1 style='mso-list:l1 level1 lfo5'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>10.<span style='font:7.0pt "Times New Roman"'>&nbsp; </span></span>
+<![endif]>оператор
+<b style='mso-bidi-font-weight:normal'><a name="m55"><span lang=EN-US style='mso-ansi-language:
+EN-US'>return</span><span lang=EN-US> </span></b>возвращает значение локальной
+переменной <b style='mso-bidi-font-weight:normal'><a name="m56"><span lang=EN-US
+style='mso-ansi-language:EN-US'>s</span><span lang=EN-US> </span></b>в качестве
+переменной – результата в выражение, где находится вызов;</p>
+
+<p class=a1 style='mso-list:l1 level1 lfo5'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>11.<span style='font:7.0pt "Times New Roman"'>&nbsp; </span></span>
+<![endif]>одновременно
+<b style='mso-bidi-font-weight:normal'><a name="m57"><span lang=EN-US style='mso-ansi-language:
+EN-US'>return</span><span lang=EN-US> </span></b>производит переход в
+вызывающую функцию <b style='mso-bidi-font-weight:normal'><a name="m58">main </b>в точку
+возврата;</p>
+
+<p class=a1 style='mso-list:l1 level1 lfo5'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>12.<span style='font:7.0pt "Times New Roman"'>&nbsp; </span></span>
+<![endif]>продолжается
+выполнение программного кода вызывающей функции.</p>
+
+<h3 style='mso-outline-level:3'>Области действия функций. Определения и
+объявления</h3>
+
+<p class=a>До сих пор мы ничего не говорили ни о взаимном расположении в
+программе определения функции и ее вызова, ни о соответствии формальных и
+фактических параметров, ни о контроле такого соответствия. Конечно, нельзя
+считать, что транслятор «знает» о всех функциях, когда либо написанных, либо
+находящихся в библиотеках, текстовых файлах и т.д.. Каждая программа должна
+сама сообщать транслятору необходимую информацию о функциях, которые она
+собирается вызывать. Перечислим, какую именно: </p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>имя функции; </p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>тип результата; </p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>список формальных параметров (переменные и
+типы). </p>
+
+<p class=a>При ее наличии транслятор может корректно сформировать вызов
+функции, даже если текст ее (определение) отсутствует в программе. Вся
+перечисленная информация о функции находится в ее заголовке. Таким образом,
+достаточно этот заголовок привести отдельно, и проблема корректного вызова
+решается. Такой заголовок называется <b style='mso-bidi-font-weight:normal'><a name="m59">объявлением</b>
+или в рассматриваемом нами варианте синтаксиса <b style='mso-bidi-font-weight:
+normal'><a name="m60">прототипом функции</b></p>
+
+<p class=a>Теперь перечислим причины такого «незнания» транслятора. Во-первых,
+трансляторы обычно используют довольно простые алгоритмы просмотра текста
+программы, «не заглядывая» вперед. Поэтому обычно на данный момент трансляции
+содержание текста программы за текущим транслируемым оператором ему неизвестно.
+Во-вторых, функция может быть в библиотеке. В третьих - в другом текстовом
+файле (модуле), содержащем часть Си-программы. Во всех этих случаях необходимо
+использовать объявления. Единственный случай, когда этого делать не надо, когда
+определение функции присутствует ранее по тексту программы.</p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:14.2pt'><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int<span
+style='mso-tab-count:1'>         </span>B[10];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int sum(int
+s[],int n);<span style='mso-tab-count:1'>       </span><span style='mso-tab-count:
+1'>            </span>// </span>Объявление<span style='mso-ansi-language:EN-US'>
+</span>функции<span lang=EN-US style='mso-ansi-language:EN-US'>, <o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:4; mso-ansi-language:EN-US' lang="EN-US">                                                </span>//
+определенной далее по тексту</p>
+
+<p class=a0>extern int printf(char *,...);<span style='mso-tab-count:1'>           </span>//
+Объявление библиотечной функции</p>
+
+<p class=a0><span style='mso-tab-count:4'>                                                </span>//
+с переменным числом параметров</p>
+
+<p class=a0>extern int other(void);<span style='mso-tab-count:1'>                  </span>// Объявление функции без </p>
+
+<p class=a0><span style='mso-tab-count:4'>                                                </span>//
+параметров из другого </p>
+
+<p class=a0>void main()<span style='mso-tab-count:3'>                                 </span>//
+файла программы</p>
+
+<p class=a0>{ sum(B,10); <span lang=EN-US style='mso-ansi-language:EN-US'>other</span>();
+}<span style='mso-tab-count:2'>                 </span>// Вызовы объявленных
+функций</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int sum(int s[], int
+n) {...}<span style='mso-tab-count:2'>             </span>// </span>Определение
+ранее объявленной функции</p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:14.2pt'><span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a>
+<span
+style='mso-spacerun:yes; mso-ansi-language:EN-US' lang="EN-US"> </span>Из примера видно, что объявление
+функции практически дублирует заголовок, отличаясь в некоторых деталях: </p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>объявление заканчивается символом &quot;;&quot;
+; </p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>если функция находится вне текущего файла, то
+объявление предваряется служебным словом <b><a name="m61">extern;</b> </p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>имена переменных в списке формальных параметров
+объявления могут отсутствовать; </p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>если функция не имеет формальных параметров, то
+в объявлении присутствует формальный параметр типа <b style='mso-bidi-font-weight:
+normal'><a name="m62">void</b>. </p>
+
+<p class=a><span style='mso-spacerun:yes'> </span>Имея предварительно
+определенную функцию или ее объявление, транслятор в состоянии проверить
+соответствие формальных и фактических параметров как по их количеству, так и по
+типам. При этом транслятор может выполнить неявные преобразования типов
+фактических параметров к типам формальных, если это потребуется: </p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:14.2pt'><o:p>&nbsp;</o:p></p>
+
+<p class=a0>extern double sin(double);</p>
+
+<p class=a0>int<span style='mso-spacerun:yes'>    </span>x; double y;</p>
+
+<p class=a0>y = sin(x);<span style='mso-tab-count:3'>                                 </span>//------Неявное
+преобразование (double)x</p>
+
+<h3 style='mso-outline-level:3'>Глобальные переменные. Инициализация</h3>
+
+<p class=a><span style='mso-spacerun:yes'> </span>Программа в целом представляет
+собой набор вызывающих друг друга функций с обязательной функцией <b
+style='mso-bidi-font-weight:normal'>main</b>, имеющих собственные наборы
+локальных переменных. </p>
+
+<p class=a>Но кроме этого в ее состав включаются еще переменные, доступные
+сразу нескольким функциям. Такие переменные называются <b style='mso-bidi-font-weight:
+normal'><a name="m63">глобальными</b> (в терминологии Си – <b style='mso-bidi-font-weight:
+normal'><a name="m64">внешними</b>). Будучи определенными в любом месте программы вне тела
+функции, они становятся доступными любой функции, следующей за ней по тексту
+программы: </p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:14.2pt'><span
+style='mso-tab-count:1'>          </span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int<span
+style='mso-tab-count:1'>         </span>B[10];</span><span lang=EN-US
+style='font-family:"Courier New";mso-ansi-language:EN-US'><span
+style='mso-tab-count:3'>              </span><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>//
+B</span><span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int<span
+style='mso-spacerun:yes'>  </span>sum()</span><span lang=EN-US
+style='font-family:"Courier New";mso-ansi-language:EN-US'><span
+style='mso-tab-count:4'>                      </span>// B</span><span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span><span style='mso-tab-count:1'>         </span>{
+...B[i]... }</span><span lang=EN-US style='font-family:"Courier New";
+mso-ansi-language:EN-US'><span style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>//
+B</span><span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int n;</span><span
+lang=EN-US style='font-family:"Courier New";mso-ansi-language:EN-US'><span
+style='mso-tab-count:5'>                         </span>// B,n</span><span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void nf()</span><span
+lang=EN-US style='font-family:"Courier New";mso-ansi-language:EN-US'><span
+style='mso-tab-count:4'>                  &nbsp;&nbsp;&nbsp;&nbsp; </span>// B,n</span><span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>{...B[i]...n...}</span><span lang=EN-US style='font-family:"Courier New";
+mso-ansi-language:EN-US'><span style='mso-tab-count:3'>              </span>//
+B,n</span><span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>char c[80];</span><span
+lang=EN-US style='font-family:"Courier New";mso-ansi-language:EN-US'><span
+style='mso-tab-count:3'>                </span><span style='mso-tab-count:1'>     </span>//
+B,n,c</span><span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void main()</span><span
+lang=EN-US style='font-family:"Courier New";mso-ansi-language:EN-US'><span
+style='mso-tab-count:3'>                </span><span style='mso-tab-count:1'>     </span>//
+B,n,c</span><span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>{...B[i]...n...c[k]...}</span><span lang=EN-US style='font-family:"Courier New";
+mso-ansi-language:EN-US'> </span>
+<span
+style='mso-tab-count:2; font-family:Courier New'>         </span><span lang=EN-US
+style='font-family:"Courier New";mso-ansi-language:EN-US'>// B,n,c</span><span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a>Глобальные (внешние) переменные являются «стабильными<span
+style='font-family:"Times New Roman"'>»</span> данными в программе. Транслятор
+переводит их во внутреннее представление, в котором им соответствуют
+определенные адреса памяти в сегменте данных (см.<b style='mso-bidi-font-weight:
+normal'><a name="m65">1.2</b>). Можно сказать, что эти переменные находятся в программе
+(программном файле) еще до загрузки ее в память. Такое присваивание начальных
+значений переменным при их трансляции называется <b style='mso-bidi-font-weight:
+normal'><a name="m66">инициализацией.</b> Инициализация включается в синтаксис определения
+переменной: </p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:14.2pt'><o:p>&nbsp;</o:p></p>
+
+<p class=a0>Int a=5, B[10]= {1,5,4,2}, C[]={ 0,1,2,3,4,5 };</p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:14.2pt'><o:p>&nbsp;</o:p></p>
+
+<p class=a>Инициализатор отделяется от переменной в ее определении знаком «=».
+Для простой переменной - это обычная константа, для массива - список констант,
+заключенных в фигурные скобки и разделенных запятыми. Заметим, что размерность
+массива может отсутствовать, если транслятор в состоянии определить ее из
+инициализирующего списка. </p>
+
+<p class=a4>
+<img border="0" src="Images/smile.jpg" width="40" height="41" align="left">Использование
+глобальных переменных в программе «не есть хорошо». Во-первых, оно ограничивает
+возможность работы функции одним и тем же набором параметров, Во-вторых,
+создает неявные связи через данные между различными функциями. Поэтому
+предпочтительнее передавать данные между функциями через формальные параметры.
+Иначе говоря, программисты по своей природе должны быть «антиглобалистами».</p>
+
+<h3>Попытка собрать все в кучу</h3>
+
+<p class=a>После такого количества определений и терминов не грех рассмотреть различные
+варианты организации интерфейса функции и ее вызова.</p>
+
+<p class=a4><b style='mso-bidi-font-weight:normal'><a name="m67">«Процедура» без параметров. </b>Функция,
+не имеющая формальных параметров и результат типа <b style='mso-bidi-font-weight:
+normal'><a name="m68">void (</b>в традиционных терминах - процедура<b style='mso-bidi-font-weight:
+normal'><a name="m69">)</b>, выполняет некоторый набор фиксированных внутренних действий.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//-------------------------------------------------<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void Hello(){ printf(&quot;Hello,
+Im here&quot;); }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void main(){
+Hello(); }</span></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a4><b style='mso-bidi-font-weight:normal'><a name="m70">Входные параметры-значения. </b>Параметры-значения,
+используемые как входные, используются для вычисления результата – наименьшего общего
+кратного.</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//-------------------------------------------------<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int nod(int a,int
+b){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>for (int n=a; !(n%a==0 &amp;&amp;
+n%b==0);n++);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>return n;</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void main(){ int
+y=nod(36,54); }<o:p></o:p></span></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a4><b style='mso-bidi-font-weight:normal'><a name="m71">Ссылка на внешнее значение. </b>Функция
+не имеет явного результата. Параметр, передаваемый явно по ссылке, используется
+для изменения (инкремента) внешнего значения, на который отображается ссылка.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//-------------------------------------------------</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>inc</span>(<span
+lang=EN-US style='mso-ansi-language:EN-US'>int</span> &amp;<span lang=EN-US
+style='mso-ansi-language:EN-US'>n</span>){ <span lang=EN-US style='mso-ansi-language:
+EN-US'>n</span>++; }</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>main</span>(){
+<span lang=EN-US style='mso-ansi-language:EN-US'>int</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>m</span>=6; <span lang=EN-US
+style='mso-ansi-language:EN-US'>inc</span>(<span lang=EN-US style='mso-ansi-language:
+EN-US'>m</span>); }<span style='mso-tab-count:1'>      </span>// Значение <span
+lang=EN-US style='mso-ansi-language:EN-US'>m</span>=7 после вызова</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a4><b><a name="m72">Обмен значений с использованием двух ссылок. </b>Функция не
+имеет явного результата. Два формальных параметра, передаваемых по ссылке,
+используются для обмена значений в тех переменных, на которые они ссылаются.<b><a name="m73"><o:p></o:p></b></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//-------------------------------------------------<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void swap(int
+&amp;a, int &amp;b){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int c=a; a=b;b=c; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void main(){ int
+m1=5,m2=7; swap(m1,m2); } <span style='mso-tab-count:1'>       </span>// m1=7,
+m2=5 после вызова<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a4><b><a name="m74">Обмен значений в массиве. </b><span style='mso-bidi-font-weight:
+bold'>Во внешнем массиве, передаваемом по ссылке, производится обмен значениями
+попарно от краев к середине. Размерность массива передается по значению. Явного
+результата функция не имеет.<o:p></o:p></span></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//-------------------------------------------------<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void swap(int
+A[],int n){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>for (int i=0,j=n-1;i&lt;j;i++,j--)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>{ int c=A[i];A[i]=A[j];A[j]=c;
+}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void main(){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int B[]={3,6,4,5,7};<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>swap(B,5);</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>}<o:p></o:p></span></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a4><b><a name="m75">Результат функции – максимальное значение массива. </b><span
+style='mso-bidi-font-weight:bold'>Функция получает массив по ссылке (единственно
+допустимый способ), используя его как входные данные. Находит максимальное
+значение и возвращает его в качестве переменной-результата. <o:p></o:p></span></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//-------------------------------------------------<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int max(int
+A[],int n){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>for (int i=1,s=A[0];i&lt;n;i++)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>if (A[i]&gt;s) s=A[i];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>return s;</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void main(){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int m,B[]={3,6,4,5,7};<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>m=max(B,5);}</span></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a4><b><a name="m76">Максимальное значение массива, возвращаемое по ссылке. </b><span
+style='mso-bidi-font-weight:bold'>Вариант, аналогичный предыдущему, но функция,
+не имея явного результата, возвращает максимальное значение по ссылке.<o:p></o:p></span></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//-------------------------------------------------<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void max(int
+&amp;s,int A[], int n){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int i;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>for (i=1,s=A[0];i&lt;n;i++)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>if (A[i]&gt;s) s=A[i];<o:p></o:p></span></p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void main(){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int m,B[]={3,6,4,5,7};<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>max(m,B,5);</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>}<o:p></o:p></span></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a4><b><a name="m77">Массив как результат функции. </b><span style='mso-bidi-font-weight:
+bold'>Функция не может возвратить массив в качестве переменной-результата. Для
+того, чтобы это сделать, необходимо передать «пустой» внешний массив по ссылке,
+который заполняется в процессе вызова функции.<o:p></o:p></span></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//-------------------------------------------------</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>pull(int
+v,int A[],int n){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int i=0,m=2;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>while(v!=1 &amp;&amp; i!=n){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>if (v%m==0) { A[i++]=m;
+v/=m; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>else m++;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>return i;</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void main(){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int k,B[10];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>k=pull(1275,B,10); }</span></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a4><b><a name="m78">Функция с двумя результатами. </b><span style='mso-bidi-font-weight:
+bold'>Функция, определяющая в массиве первую последовательность одинаковых
+значений, возвращает в качестве результата индекс начала и длину такой
+последовательности. Индекс возвращается в виде явного результата, длина – через
+формальный параметр – ссылку.<o:p></o:p></span></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//-------------------------------------------------<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int len(int
+&amp;k,int A[],int n){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>for (int i=0;i&lt;n;i++){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>for (k=1;i+k&lt;n
+&amp;&amp; A[i]==A[i+k];k++);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>if (k&gt;1) return i;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>return -1;}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void main(){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int
+k1,m1,B[10]={5,7,6,6,6,6,6,6,5,7};<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>k1=len(m1,B,10); }</p>
+
+<p class=a>В заключение отметим ряд типичных ошибок, допускаемых при
+определении и вызове функции:</p>
+
+<p class=a style='margin-left:72.0pt;text-indent:-18.0pt;mso-list:l3 level1 lfo4;
+tab-stops:list 72.0pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>«вилка и розетка» - несоответствие количества и
+типов формальных и фактических параметров равносильно использованию в
+электротехнике розеток и вилок с разным числом и размерами контактов.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void F(int a, int
+b) {…}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>main</span>(){
+<span style='mso-tab-count:1'>                               </span></p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>n</span>=5;<span style='mso-tab-count:3'>                              </span>//
+«Две дырки и один штырек»</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>F</span>(<b style='mso-bidi-font-weight:normal'><a name="m79"><span
+lang=EN-US style='mso-ansi-language:EN-US'>n</span></b>);}</p>
+
+<p class=a style='margin-left:72.0pt;text-indent:-18.0pt;mso-list:l3 level1 lfo4;
+tab-stops:list 72.0pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='mso-spacerun:yes'> </span>«функция функции
+рознь» - то, что выполнение вызываемой функции «вкладывается» в
+последовательность выполнения вызывающей, вовсе не означает, что они должны
+быть записаны одна внутри другой. Синтаксически функции являются независимыми друг
+от друга единицами;</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void F() {<o:p></o:p></span></p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>void</span><span lang=EN-US> </span></b><b style='mso-bidi-font-weight:
+normal'><a name="m80"><span lang=EN-US style='mso-ansi-language:EN-US'>G</span>(){ }</b><span
+style='mso-tab-count:2'>                    </span>// Вложенное определение</p>
+
+<p class=a0><span style='mso-tab-count:3'>                                    </span>
+<span style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>//
+вместо вызова одной функции из другой</p>
+
+<p class=a0 style='text-indent:36.0pt'>}</p>
+
+<p class=a style='margin-left:72.0pt;text-indent:-18.0pt;mso-list:l3 level1 lfo4;
+tab-stops:list 72.0pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>«Алиса в Зазеркалье» -<span
+style='mso-spacerun:yes'>  </span>каждая функция имеет свой контекст, в
+вызывающей функции – свой, в вызываемой – свой. Попытки использовать контекст
+одной функции, находясь в другой, сравнимы с попыткой схватить собственное
+отражение в зеркале. Связь между контекстами устанавливается только через
+взаимодействие формальных и фактических параметров;</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>F(int n</span>)
+{<span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>a</span>=5;</p>
+
+<p class=a0 style='text-indent:36.0pt'>}</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>main</span>(){
+<span style='mso-tab-count:1'>       </span>
+<span style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span><span
+style='mso-tab-count:1'>            </span></p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>n</span></b>=5;<span style='mso-tab-count:2'>                 </span><span
+style='mso-tab-count:1'>            </span>// Использование контекста
+вызываемой функции</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>F</span>(<b style='mso-bidi-font-weight:normal'><a name="m81"><span
+lang=EN-US style='mso-ansi-language:EN-US'>n</span></b>);</p>
+
+<p class=a0 style='text-indent:36.0pt'>}</p>
+
+<p class=a style='margin-left:72.0pt;text-indent:-18.0pt;mso-list:l3 level1 lfo4;
+tab-stops:list 72.0pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>«путаница в синтаксисе». Синтаксис формальных и
+фактических параметров принципиально различны. Если формальный параметр
+задается как <i style='mso-bidi-font-style:normal'>определение</i> особой
+интерфейсной переменной, то фактический параметр имеет синтаксис <i
+style='mso-bidi-font-style:normal'>использования или обозначения</i> уже
+определенной переменной или выражения – последовательности действий,
+выполненных над несколькими такими переменными<i style='mso-bidi-font-style:
+normal'>.</i></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void F(int A[],
+int n) {<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int a=5;<o:p></o:p></span></p>
+
+<p class=a0 style='text-indent:36.0pt'>}</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>main</span>(){
+<span lang=EN-US style='mso-ansi-language:EN-US'>int B[]={1,5,6};</span><span
+style='mso-tab-count:3'>                                  </span></p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>F</span>(<span lang=EN-US style='mso-ansi-language:
+EN-US'>B</span><b style='mso-bidi-font-weight:normal'><a name="m82">[]</b>,3);<span
+style='mso-tab-count:2'>                        </span>// <span lang=EN-US
+style='mso-ansi-language:EN-US'>B</span><span lang=EN-US> </span>должно быть
+без скобой - </p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>}</span><span style='mso-tab-count:3'>                                   </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>// </span>обозначение объекта,
+который является МАССИВОМ</p>
+
+<p class=a><o:p>&nbsp;</o:p></p>
+
+<p class=a4>
+<img border="0" src="Images/smile.jpg" width="40" height="41" align="left">Прекрасной
+иллюстрацией механизм вызова функции и передачи ее результата служит «Сказка о
+петушке и бобовом зенышке»: петушок подавился зернышком, курочка побежала к
+корове за маслом, корова отправила ее к косцам за сеном, косцы отправили к
+кузнецу за косой. Кузнец отковал косу и т.д. в обратном порядке. Корова, косцы
+и кузнец – это в терминологии программирования функции, коса, сено и масло –
+результаты функций, а курочка – процессор.</p>
+
+<p class=a4>
+<img border="0" src="Images/yan-in.jpg" width="34" height="31" align="left">Понятия
+функции и ее формальных параметров – это еще один уровень абстрагирования.
+Формальный и фактический параметр относятся друг к другу как категории
+«общее-частное». Аналогичное соотношение имеет место между переменной и ее
+значением. Любая переменная в каждый момент времени может хранить одно из
+значений, но как элемент программирования рассматривается как некоторое «обобщенное»
+значение. Точно так же формальному параметру при каждом вызове ставится в
+соответствие конкретный фактический параметр, а при разработке функции
+формальный параметр является обобщением, обозначающим любой возможный
+фактический параметр.<span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a4><img border="0" src="Images/016-03.gif" width="617" height="307"></p>
+
+<p class=a4 align=center style='text-align:center'><b style='mso-bidi-font-weight:
+normal'><a name="m83">Рис. 16.3. Функция как уровень обобщения<o:p></o:p></b></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+</div>
+
+</body>
+
+</html>

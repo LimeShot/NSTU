@@ -1,0 +1,797 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=Edit-Time-Data href="035.files/editdata.mso">
+<title>3.5. Неправильное программирование: историческое, восходящее, грязное</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>www.PHILka.RU</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>vtpc112</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>91</o:TotalTime>
+  <o:Created>2008-07-15T08:12:00Z</o:Created>
+  <o:LastSaved>2008-07-15T08:12:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>1088</o:Words>
+  <o:Characters>6203</o:Characters>
+  <o:Company>NSTU_VT</o:Company>
+  <o:Bytes>11776</o:Bytes>
+  <o:Lines>51</o:Lines>
+  <o:Paragraphs>14</o:Paragraphs>
+  <o:CharactersWithSpaces>7277</o:CharactersWithSpaces>
+  <o:Version>11.6360</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DoNotHyphenateCaps/>
+  <w:DrawingGridHorizontalSpacing>0,55 пт</w:DrawingGridHorizontalSpacing>
+  <w:DrawingGridVerticalSpacing>0,55 пт</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:UseMarginsForDrawingGridOrigin/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DrawingGridVerticalOrigin>99,25 пт</w:DrawingGridVerticalOrigin>
+  <w:Compatibility>
+   <w:WW6BorderRules/>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+   <w:UseWord97LineBreakingRules/>
+   <w:SelectEntireFieldWithStartOrEnd/>
+   <w:UseWord2002TableStyleRules/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:"Times New Roman CYR";
+	panose-1:2 2 6 3 5 4 5 2 3 4;
+	mso-font-charset:204;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+@font-face
+	{font-family:"Arial CYR";
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+h1
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:14.0pt;
+	mso-bidi-font-weight:normal;}
+h2
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-font-weight:normal;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+h3
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	font-weight:normal;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";}
+p.a, li.a, div.a
+	{mso-style-name:текст;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a0, li.a0, div.a0
+	{mso-style-name:программа;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a1, li.a1, div.a1
+	{mso-style-name:список;
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:18.45pt;
+	margin-bottom:0cm;
+	margin-left:64.35pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-18.0pt;
+	mso-pagination:widow-orphan;
+	mso-list:l1 level1 lfo1;
+	tab-stops:42.55pt list 64.35pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a2, li.a2, div.a2
+	{mso-style-name:определение;
+	mso-style-parent:текст;
+	margin-top:12.0pt;
+	margin-right:32.9pt;
+	margin-bottom:12.0pt;
+	margin-left:35.45pt;
+	text-align:justify;
+	text-indent:.55pt;
+	mso-pagination:widow-orphan;
+	border:none;
+	mso-border-alt:solid windowtext 1.5pt;
+	padding:0cm;
+	mso-padding-alt:1.0pt 1.0pt 1.0pt 1.0pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a3, li.a3, div.a3
+	{mso-style-name:эпиграф;
+	margin-top:0cm;
+	margin-right:32.9pt;
+	margin-bottom:0cm;
+	margin-left:5.0cm;
+	margin-bottom:.0001pt;
+	text-align:right;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.a4, li.a4, div.a4
+	{mso-style-name:"от края";
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a5, li.a5, div.a5
+	{mso-style-name:Формула;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.a6, li.a6, div.a6
+	{mso-style-name:"без формата";
+	mso-style-parent:программа;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a7, li.a7, div.a7
+	{mso-style-name:стихи;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.1, li.1, div.1
+	{mso-style-name:эпиграф1;
+	mso-style-parent:эпиграф;
+	margin-top:0cm;
+	margin-right:9.35pt;
+	margin-bottom:0cm;
+	margin-left:9.0cm;
+	margin-bottom:.0001pt;
+	text-align:right;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+ /* Page Definitions */
+ @page
+	{mso-footnote-separator:url("035.files/header.htm") fs;
+	mso-footnote-continuation-separator:url("035.files/header.htm") fcs;
+	mso-endnote-separator:url("035.files/header.htm") es;
+	mso-endnote-continuation-separator:url("035.files/header.htm") ecs;}
+@page Section1
+	{size:21.0cm 842.0pt;
+	margin:33.45pt 42.55pt 72.0pt 89.85pt;
+	mso-header-margin:14.2pt;
+	mso-footer-margin:31.75pt;
+	mso-even-header:url("035.files/header.htm") eh1;
+	mso-header:url("035.files/header.htm") h1;
+	mso-even-footer:url("035.files/header.htm") ef1;
+	mso-footer:url("035.files/header.htm") f1;
+	mso-first-header:url("035.files/header.htm") fh1;
+	mso-first-footer:url("035.files/header.htm") ff1;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:847135903;
+	mso-list-type:simple;
+	mso-list-template-ids:68747279;}
+@list l0:level1
+	{mso-level-tab-stop:18.0pt;
+	mso-level-number-position:left;
+	margin-left:18.0pt;
+	text-indent:-18.0pt;}
+@list l1
+	{mso-list-id:1628194852;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-964799380 -1450833310 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-style-link:список;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:64.35pt;
+	mso-level-number-position:left;
+	margin-left:64.35pt;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Обычная таблица";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+table.MsoTableGrid
+	{mso-style-name:"Сетка таблицы";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+  <o:regrouptable v:ext="edit">
+   <o:entry new="1" old="0"/>
+   <o:entry new="2" old="1"/>
+   <o:entry new="3" old="0"/>
+  </o:regrouptable>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=RU style='tab-interval:36.0pt' background="back.gif">
+
+<div class=Section1>
+
+<h2 style='line-height:200%'>3.5. Неправильное программирование: историческое,
+восходящее, грязное</h2>
+
+<p class=a3>«Марксизм – не догма, </p>
+
+<p class=a3>а руководство к действию».</p>
+
+<p class=a3><b style='mso-bidi-font-weight:normal'><a name="m1">В.И.Ленин<o:p></o:p></b></p>
+
+<p class=a>Технология структурного программирования является наиболее
+правильной с точки зрения управляемости, безошибочности и качества <span
+style='mso-spacerun:yes'> </span>получаемого программного кода. Другие подходы,
+не будучи столь идеальными, тем не менее имеют право на существование хотя бы в
+качестве дополнений к основному методу. Назовем их «неправильным
+программированием». Открывает этот перечень «<b style='mso-bidi-font-weight:
+normal'><a name="m2">историческое программирование</b>», подробно рассмотренное в <b
+style='mso-bidi-font-weight:normal'>3.2. </b>Исторический подход исходит не из
+логической структуры алгоритма, а из его развертки во времени: программа
+пишется в той же последовательности, что и выполняется (блок-схема).</p>
+
+<h3><span style='mso-spacerun:yes'> </span>«Грязное» программирование</h3>
+
+<p class=a>Под «грязным» программированием обычно понимается написание
+программы, грубо воспроизводящей требуемое поведение. Такая программа может
+быть быстро разработана и отлажена, а затем использована для уяснения
+последующих шагов, либо для наложения «заплаток» с целью получения требуемого
+результата. Хотя этот «не есть хорошо» с точки зрения технологии
+проектирования, но может быть оправдано при следующих условиях:</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>«грязная» программа воспроизводит требуемое
+поведение на самом верхнем уровне.</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>в дальнейшем в нее могут встраиваться контексты
+и фрагменты, <i style='mso-bidi-font-style:normal'>не меняющие ее поведения</i>,
+но конкретизирующие ее в нужном направлении.</p>
+
+<p class=a>Основным отличием правильно разрабатываемой «грязной» программы от
+программы, разрабатываемой «как попало»<span style='mso-spacerun:yes'>  </span>является
+соблюдение соотношений, которые она устанавливает в процессе ее работы. Эти
+соотношения необходимо сохранять при включении в программу новых фрагментов,
+они являются ее <b style='mso-bidi-font-weight:normal'><a name="m3">инвариантами (см. 3.7,
+7.1).<o:p></o:p></b></p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m4">Пример «грязного»
+программирования. Обработка строки.</b> Функция заменяет в строке последовательность
+одинаковых символов на константу - счетчик и один такой символ (например, <span
+lang=EN-US style='mso-ansi-language:EN-US'>qwertyaaaaaaaaaaaatybbbbbbbbgg</span>
+– <span lang=EN-US style='mso-ansi-language:EN-US'>qwerty</span>12<span
+lang=EN-US style='mso-ansi-language:EN-US'>aty</span>8<span lang=EN-US
+style='mso-ansi-language:EN-US'>bgg</span>).</p>
+
+<p class=a>«Грязная» программа моделирует основные свойства процесса обработки
+строки: за один шаг цикла просматривается один неповторяющийся символ или
+цепочка повторяющихся. Цикл просмотра цепочки является «заглушкой», заменяющей еще
+не написанный фрагмент ее свертывания. Инвариант программы – переменная цикла
+на каждом шаге должна устанавливаться на начало следующего фрагмента.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//------------------------------------------------------35-01.cpp</p>
+
+<p class=a0>//---------&quot; Грязная&quot; программа просмотр повторяющихся
+цепочек</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>void proc(char c[]){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>for (int i=0; c[i]!=0; i++)<span
+style='mso-spacerun:yes'>         </span><span style='mso-tab-count:1'>     </span>//
+1 </span>шаг<span lang=EN-US style='mso-ansi-language:EN-US'> - 1 </span>символ<span
+style='mso-ansi-language:EN-US'> </span>или<span lang=EN-US style='mso-ansi-language:
+EN-US'> 1 </span>цепочка<span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span><span style='mso-spacerun:yes'> 
+</span>{<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span><span style='mso-spacerun:yes'> 
+</span>if (c[i]!=' ' &amp;&amp; c[i]==c[i+1])<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>                        </span><span
+style='mso-spacerun:yes'>   </span>{<span
+style='mso-spacerun:yes'>                     </span>// </span>заглушка<span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span><span
+style='mso-spacerun:yes'>   </span>putchar('*' );<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span><span
+style='mso-spacerun:yes'>   </span>while (c[i]==c[i+1]) i++;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span><span
+style='mso-spacerun:yes'>   </span>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span><span style='mso-spacerun:yes'> 
+</span>else putchar(c[i]);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span><span style='mso-spacerun:yes'> 
+</span>}}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a>Достоинство такой программы – она может быть проверена и отлажена,
+хотя и бесполезна. Следующий шаг – замена заглушки на требуемый фрагмент. Он
+включает в себя последовательность действий:</p>
+
+<p class=a1 style='margin-left:18.0pt;mso-list:l0 level1 lfo2;tab-stops:list 18.0pt left 42.55pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>определение длины последовательности <span
+style='mso-spacerun:yes'> </span><b style='mso-bidi-font-weight:normal'><a name="m5"><span
+lang=EN-US style='mso-ansi-language:EN-US'>k</span></b><span lang=EN-US> </span>и
+установку индекса на ее последний символ<b style='mso-bidi-font-weight:normal'><a name="m6">
+<span lang=EN-US style='mso-ansi-language:
+EN-US'>j</span></b>;</p>
+
+<p class=a1 style='margin-left:18.0pt;mso-list:l0 level1 lfo2;tab-stops:list 18.0pt left 42.55pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>запись двух цифр счетчика в начало
+последовательности в символьном виде;</p>
+
+<p class=a1 style='margin-left:18.0pt;mso-list:l0 level1 lfo2;tab-stops:list 18.0pt left 42.55pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>сохранение в строке одного символа из повторяющихся;</p>
+
+<p class=a1 style='margin-left:18.0pt;mso-list:l0 level1 lfo2;tab-stops:list 18.0pt left 42.55pt'><![if !supportLists]>
+<span style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR; mso-ansi-language:EN-US' lang="EN-US">4.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>
+<![endif]><span
+lang=EN-US style='mso-ansi-language:EN-US'>сдвиг </span>«<span lang=EN-US
+style='mso-ansi-language:EN-US'>хвоста</span>»<span lang=EN-US
+style='mso-ansi-language:EN-US'>;<o:p></o:p></span></p>
+
+<p class=a1 style='margin-left:18.0pt;mso-list:l0 level1 lfo2;tab-stops:list 18.0pt left 42.55pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>установка индекса <b style='mso-bidi-font-weight:
+normal'><a name="m7"><span lang=EN-US style='mso-ansi-language:EN-US'>i</span></b> на
+последний символ полученного фрагмента с целью сохранения инварианта внешнего
+цикла.</p>
+
+<p class=a0><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;font-family:
+"Times New Roman CYR";mso-bidi-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0>//------------------------------------------------------35-02.cpp</p>
+
+<p class=a0>//----------- Свертка цепочек повторяющихся символов</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>void proc(char c[]){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>for (int i=0; c[i]!=0; i++)<span
+style='mso-tab-count:3'>                          </span>// 1 </span>шаг<span
+lang=EN-US style='mso-ansi-language:EN-US'> - 1 </span>символ<span lang=EN-US
+style='mso-ansi-language:EN-US'> ???<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span>{<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span>if (c[i]!=' ' &amp;&amp; c[i]==c[i+1])<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>           </span>{<span
+style='mso-spacerun:yes'>                 </span><span style='mso-tab-count:
+2'>                   </span>// </span>старая<span style='mso-ansi-language:
+EN-US'> </span>заглушка<span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-spacerun:yes; mso-ansi-language:EN-US' lang="EN-US">                                        </span><span
+style='mso-tab-count:1'>        </span><span lang=EN-US style='mso-ansi-language:
+EN-US'>// <b style='mso-bidi-font-weight:normal'><a name="m8">putchar('*' ); while
+(c[i]==c[i+1]) i++;<o:p></o:p></b></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>                                        </span><span
+style='mso-tab-count:1'>        </span></span>// 1 - длина k</p>
+
+<p class=a0><span
+style='mso-spacerun:yes'>                                        </span><span
+style='mso-tab-count:1'>        </span>// Начало нужно - не трогаем i</p>
+
+<p class=a0><span
+style='mso-spacerun:yes'>                                        </span><span
+style='mso-tab-count:1'>        </span>// Конец фрагмента - j</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>           </span>for (int j=i,k=1; c[j]==c[j+1];
+k++,j++);<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:4; mso-ansi-language:EN-US' lang="EN-US">                                                </span>//
+j - на последний из 'aaaaa'</p>
+
+<p class=a0><span style='mso-tab-count:4'>                                                </span>//
+2 - k - записать в c[] в виде 2 цифр</p>
+
+<p class=a0><span style='mso-tab-count:4'>                                                </span>//
+i - сдвинуть так, чтобы </p>
+
+<p class=a0><span style='mso-tab-count:4'>                                                </span>//
+он оказался там, где надо</p>
+
+<p class=a0><span style='mso-spacerun:yes'>           </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>if (k&gt;=10) c[i++]=k/10+'0';<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>           </span>c[i++]=k%10+'0';<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:4; mso-ansi-language:EN-US' lang="EN-US">                                                </span>//
+3 - оставить 1 символ - уже стоим там !!!!</p>
+
+<p class=a0><span style='mso-tab-count:4'>                                                </span>//
+4 - сдвинуть хвост - </p>
+
+<p class=a0><span style='mso-tab-count:4'>                                                </span>//
+перенос с использованием 2 индексов</p>
+
+<p class=a0><span style='mso-spacerun:yes'>           </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>int i1;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>           </span>for(j++, i1=i+1; c[j]!=0; j++, i1++)
+c[i1]=c[j];<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-spacerun:yes; mso-ansi-language:EN-US' lang="EN-US">           </span>c[i1]=0;</p>
+
+<p class=a0><span style='mso-tab-count:4'>                                                </span>//
+5 на конец полученного фрагмента -</p>
+
+<p class=a0><span style='mso-tab-count:4'>                                                </span>//
+уже стоим там !!!!</p>
+
+<p class=a0><span style='mso-tab-count:4'>                                                </span>//
+свойство - i - на оставленном символе </p>
+
+<p class=a0><span style='mso-spacerun:yes'>           </span>}}}<span
+style='mso-spacerun:yes'>                    </span><span style='mso-tab-count:
+2'>              </span>// i++ =&gt; на следующий фрагмент</p>
+
+<h3>Восходящее программирование</h3>
+
+<p class=a>Восходящее проектирование от внутренней конструкции к внешней имеет
+под собой объективную основу: частности всегда «на виду» и за них в первую
+очередь хватается начинающий. Поэтому можно попытаться выстроить программу
+«изнутри», в этом случае каждый следующих шаг проектирования проще увидеть.</p>
+
+<p class=a>В качестве примера рассмотрим сортировку выбором. Из всего массива
+выбирается минимальный элемент и меняется местами с первым, затем процесс
+повторяется с оставшимися элементами (<b style='mso-bidi-font-weight:normal'><a name="m9">1..<span lang=EN-US style='mso-ansi-language:
+EN-US'>n</span>-1</b>) и т.д., пока не останется один элемент. Если сразу
+схватиться за видимые контексты выбора минимального и обмена, то для начала
+(для первого шага) нужно написать так:</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//------------------------------------------------------35-03.cpp</p>
+
+<p class=a0 style='text-align:justify'>//----------- Сортировка выбором –
+восходящее программирование. Шаг 1. </p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>int j,k;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>for</span> (<span lang=EN-US style='mso-ansi-language:
+EN-US'>k</span>=0,<span lang=EN-US style='mso-ansi-language:EN-US'>j</span>=1;<span
+lang=EN-US style='mso-ansi-language:EN-US'>j</span>&lt;<span lang=EN-US
+style='mso-ansi-language:EN-US'>n</span>;<span lang=EN-US style='mso-ansi-language:
+EN-US'>j</span>++)<span style='mso-tab-count:2'>                  </span>// Поиск
+минимального -<span style='mso-spacerun:yes'>  </span>сохранение индекса</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span
+style='mso-spacerun:yes'> </span><span lang=EN-US style='mso-ansi-language:
+EN-US'>if (A[j]&lt;A[k]) k=j;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>int</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>c</span>=<span lang=EN-US
+style='mso-ansi-language:EN-US'>A</span>[0]; <span lang=EN-US style='mso-ansi-language:
+EN-US'>A</span>[0]=<span lang=EN-US style='mso-ansi-language:EN-US'>A</span>[<span
+lang=EN-US style='mso-ansi-language:EN-US'>k</span>]; <span lang=EN-US
+style='mso-ansi-language:EN-US'>A</span>[<span lang=EN-US style='mso-ansi-language:
+EN-US'>k</span>]=<span lang=EN-US style='mso-ansi-language:EN-US'>c</span>;<span
+style='mso-tab-count:1'>    </span>// Обмен первого <span lang=EN-US
+style='mso-ansi-language:EN-US'>A</span>[0] и минимального</p>
+
+<p class=a>Справедливости ради стоит заметить, что такое программирование
+является одновременно и историческим – текст программы соответствует ее
+развертке во времени. Поскольку записанный фрагмент многократно повторяется, то
+он становится телом цикла. В заголовке цикла появляется переменная <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>i</span>, </b>ее<b style='mso-bidi-font-weight:normal'><a name="m10"> </b>смысловое
+наполнение выглядит как «начало неотсортированной части»<b style='mso-bidi-font-weight:
+normal'><a name="m11">. </b>Соответственно, изменения должны быть внесены в уже написанный
+цикл, начальные значения <span style='mso-spacerun:yes'> </span>переменных <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>j</span>=<span lang=EN-US
+style='mso-ansi-language:EN-US'>i</span>+1</b> и <b style='mso-bidi-font-weight:
+normal'><a name="m12"><span lang=EN-US style='mso-ansi-language:EN-US'>k</span>=</b><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>i</span>. </b></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//------------------------------------------------------35-03.cpp</p>
+
+<p class=a0 style='text-align:justify'>//----------- Сортировка выбором –
+восходящее программирование</p>
+
+<p class=a0>// Шаг 2.</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span><b style='mso-bidi-font-weight:
+normal'><a name="m13"><span lang=EN-US style='mso-ansi-language:EN-US'>for
+(i=0;i&lt;n-1;i++){<o:p></o:p></span></b></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int j,k;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>for (k<b style='mso-bidi-font-weight:
+normal'><a name="m14">=i</b>, j=<b style='mso-bidi-font-weight:normal'><a name="m15">i+1</b>;j&lt;n;j++)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>if (A[j]&lt;A[k]) k=j;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int c=A[<b style='mso-bidi-font-weight:
+normal'><a name="m16">i</b>]; A[<b style='mso-bidi-font-weight:normal'><a name="m17">i</b>]=A[k]; A[k]=c;<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>}</p>
+
+<p class=a>Здесь мы видим недостаток восходящего программирования. При
+включении уже написанного фрагмента в обрамляющую его конструкцию нам
+приходится превращать «частный» случай, для которого он написан, в «общий», в
+котором он получает дополнительные параметры, «смысл» которых задает внешняя
+конструкция.</p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m18">Модульность и восходящее
+программирование. </b>Разделение программы на модули позволяет преодолеть
+основное противоречие структурного программирования: процесс детализации
+программы состоит в движении<span style='mso-spacerun:yes'>  </span>от общего к
+частному, но в то же время наиболее очевидными являются, наоборот, фрагменты
+нижнего уровня. При большом количестве уровней проектирование сверху-вниз
+становится в тупик: слишком много фактов, причем внешние из них плохо
+просматриваются.<span style='mso-spacerun:yes'>  </span>В этом случае можно
+выделить некоторый промежуточный уровень, оформив нижележащие фрагменты в виде
+функции, а в вышележащий поместить ее вызов. </p>
+
+<p class=a>Можно проектировать «снизу-вверх» программный комплекс целиком,
+наращивая слой за слоем набор функций, в которой каждая вышележащая использует
+уже разработанные. Общие принципы структурного проектирования каждой отдельной
+функции сохраняются.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+</div>
+
+</body>
+
+</html>

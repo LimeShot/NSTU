@@ -1,0 +1,1591 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=Edit-Time-Data href="077.files/editdata.mso">
+<title>7.7 Эффективность алгоритмов</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>romanow</o:Author>
+  <o:Template>Форматер</o:Template>
+  <o:LastAuthor>vtpc112</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>609</o:TotalTime>
+  <o:LastPrinted>2004-12-22T04:25:00Z</o:LastPrinted>
+  <o:Created>2008-09-29T09:09:00Z</o:Created>
+  <o:LastSaved>2008-09-29T09:09:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>2692</o:Words>
+  <o:Characters>15346</o:Characters>
+  <o:Company>NSTU_VT</o:Company>
+  <o:Bytes>11776</o:Bytes>
+  <o:Lines>127</o:Lines>
+  <o:Paragraphs>36</o:Paragraphs>
+  <o:CharactersWithSpaces>18002</o:CharactersWithSpaces>
+  <o:Version>11.6360</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DoNotHyphenateCaps/>
+  <w:DrawingGridHorizontalSpacing>0,55 пт</w:DrawingGridHorizontalSpacing>
+  <w:DrawingGridVerticalSpacing>0,55 пт</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:UseMarginsForDrawingGridOrigin/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DrawingGridVerticalOrigin>99,25 пт</w:DrawingGridVerticalOrigin>
+  <w:Compatibility>
+   <w:WW6BorderRules/>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+   <w:UseWord97LineBreakingRules/>
+   <w:SelectEntireFieldWithStartOrEnd/>
+   <w:UseWord2002TableStyleRules/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:"Times New Roman CYR";
+	panose-1:2 2 6 3 5 4 5 2 3 4;
+	mso-font-charset:204;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+@font-face
+	{font-family:"Arial CYR";
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-fareast-language:EN-US;}
+h1
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:14.0pt;
+	mso-fareast-language:EN-US;
+	mso-bidi-font-weight:normal;}
+h2
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-fareast-language:EN-US;
+	mso-bidi-font-weight:normal;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+h3
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-fareast-language:EN-US;
+	font-weight:normal;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;
+	mso-fareast-language:EN-US;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;
+	mso-fareast-language:EN-US;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";}
+p.a, li.a, div.a
+	{mso-style-name:текст;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-fareast-language:EN-US;}
+p.a0, li.a0, div.a0
+	{mso-style-name:программа;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-fareast-language:EN-US;}
+p.a1, li.a1, div.a1
+	{mso-style-name:список;
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:18.45pt;
+	margin-bottom:0cm;
+	margin-left:35.45pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	mso-pagination:widow-orphan;
+	tab-stops:42.55pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-fareast-language:EN-US;}
+p.a2, li.a2, div.a2
+	{mso-style-name:определение;
+	mso-style-parent:текст;
+	margin-top:12.0pt;
+	margin-right:32.9pt;
+	margin-bottom:12.0pt;
+	margin-left:35.45pt;
+	text-align:justify;
+	text-indent:.55pt;
+	mso-pagination:widow-orphan;
+	border:none;
+	mso-border-alt:solid windowtext 1.5pt;
+	padding:0cm;
+	mso-padding-alt:1.0pt 1.0pt 1.0pt 1.0pt;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-fareast-language:EN-US;}
+p.a3, li.a3, div.a3
+	{mso-style-name:эпиграф;
+	margin-top:12.0pt;
+	margin-right:32.9pt;
+	margin-bottom:12.0pt;
+	margin-left:5.0cm;
+	text-align:justify;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-fareast-language:EN-US;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.a4, li.a4, div.a4
+	{mso-style-name:"от края";
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-fareast-language:EN-US;}
+p.a5, li.a5, div.a5
+	{mso-style-name:Формула;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.a6, li.a6, div.a6
+	{mso-style-name:"без формата";
+	mso-style-parent:программа;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-fareast-language:EN-US;}
+p.a7, li.a7, div.a7
+	{mso-style-name:Готовый;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:0cm 47.95pt 95.9pt 143.85pt 191.8pt 239.75pt 287.7pt 335.65pt 383.6pt 431.55pt 479.5pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+p.2, li.2, div.2
+	{mso-style-name:"список 2";
+	mso-style-parent:список;
+	margin-top:6.0pt;
+	margin-right:18.45pt;
+	margin-bottom:0cm;
+	margin-left:1.0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-18.0pt;
+	mso-pagination:widow-orphan;
+	mso-list:l5 level1 lfo6;
+	tab-stops:1.0cm;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-fareast-language:EN-US;}
+ /* Page Definitions */
+ @page
+	{mso-footnote-separator:url("077.files/header.htm") fs;
+	mso-footnote-continuation-separator:url("077.files/header.htm") fcs;
+	mso-endnote-separator:url("077.files/header.htm") es;
+	mso-endnote-continuation-separator:url("077.files/header.htm") ecs;}
+@page Section1
+	{size:21.0cm 842.0pt;
+	margin:33.45pt 42.55pt 72.0pt 89.85pt;
+	mso-header-margin:14.2pt;
+	mso-footer-margin:31.75pt;
+	mso-header:url("077.files/header.htm") h1;
+	mso-even-footer:url("077.files/header.htm") ef1;
+	mso-footer:url("077.files/header.htm") f1;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:320935273;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1178631762 816610096 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l0:level1
+	{mso-level-start-at:0;
+	mso-level-number-format:bullet;
+	mso-level-text:-;
+	mso-level-tab-stop:53.45pt;
+	mso-level-number-position:left;
+	margin-left:53.45pt;
+	text-indent:-18.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+@list l1
+	{mso-list-id:327908262;
+	mso-list-type:simple;
+	mso-list-template-ids:68747279;}
+@list l1:level1
+	{mso-level-tab-stop:18.0pt;
+	mso-level-number-position:left;
+	margin-left:18.0pt;
+	text-indent:-18.0pt;}
+@list l2
+	{mso-list-id:1088962822;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-935814272 -1397193338 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l2:level1
+	{mso-level-start-at:0;
+	mso-level-number-format:bullet;
+	mso-level-text:-;
+	mso-level-tab-stop:53.45pt;
+	mso-level-number-position:left;
+	margin-left:53.45pt;
+	text-indent:-18.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+@list l3
+	{mso-list-id:1204825686;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1384146066 -859654472 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l3:level1
+	{mso-level-start-at:14;
+	mso-level-number-format:bullet;
+	mso-level-text:-;
+	mso-level-tab-stop:55.7pt;
+	mso-level-number-position:left;
+	margin-left:55.7pt;
+	text-indent:-20.25pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-font-weight:bold;}
+@list l4
+	{mso-list-id:1674842426;
+	mso-list-template-ids:631377446;}
+@list l4:level1
+	{mso-level-start-at:11;
+	mso-level-number-format:bullet;
+	mso-level-text:-;
+	mso-level-tab-stop:53.45pt;
+	mso-level-number-position:left;
+	margin-left:53.45pt;
+	text-indent:-18.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+@list l5
+	{mso-list-id:1800220563;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1344839614 -1107558260 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l5:level1
+	{mso-level-number-format:bullet;
+	mso-level-style-link:"список 2";
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:71.45pt;
+	mso-level-number-position:left;
+	margin-left:71.45pt;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l6
+	{mso-list-id:1997145492;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1309980824 68747265 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l6:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:71.45pt;
+	mso-level-number-position:left;
+	margin-left:71.45pt;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Обычная таблица";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=RU style='tab-interval:36.0pt' background="back.gif">
+
+<div class=Section1>
+
+<h2>7.7 Эффективность алгоритмов</h2>
+
+<h3>Эффективность рекурсивных алгоритмов</h3>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=a4><a name="m1">
+<b>
+<img border="0" src="Images/science.jpg" width="43" height="33" align="left">Рекурсия
+и эффективность алгоритмов. </b>Рекурсивное программирование дает нам общий
+подход к решению задач – разбиению их на аналогичные подзадачи меньшей
+размерности, либо на задачи, представляющие собой шаги в возможных направлениях
+ее решения. Так или иначе, рекурсивные вызовы образуют древовидную структуру,
+количество вершин в которой определяет эффективность алгоритма (выражаемую
+обычно через трудоемкость). Разница между различными типами алгоритмов состоит
+в способе получения подзадач, их размерности, способе соединения полученных
+результатов.</p>
+
+<p class=a1 style='margin-left:1.0cm;text-indent:-18.0pt;mso-list:l5 level1 lfo6;
+tab-stops:1.0cm'><![if !supportLists]>
+<span
+style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b><a name="m2">рекурсивное или обычное разделение. </b>Идея
+разделения восходит к технологическому приему - модульному программированию
+(3.6). В своем первоначальном варианте она предполагает разбиение на задачи
+различной природы. Нерекурсивное разделение позволяет достичь определенного
+эффекта за счет разбиения задачи на множество идентичных задач меньшей
+размерности с последующим объединением результата. Типичным примером здесь
+является сортировка однократным слиянием (4.6). Применение того же самого
+алгоритма рекурсивно к полученным подзадачам дает следующий класс алгоритмов –
+рекурсивное разделение. Как правило, независимость полученных подзадач
+подразумевает соответствующее разделение исходных данных задачи на
+непересекающиеся подмножества – этому и соответствует сам термин <b><a name="m3">разделение.
+</b>Эффективность (и трудоемкость) таких алгоритмов, зависит от затрат на само
+разделение и от пропорций разделяемых частей: лучшему случаю соответствует
+деление на равные части (логарифмические зависимость),<span
+style='mso-spacerun:yes'>  </span>худшему – выделение единственного элемента
+(линейные зависимости).</p>
+
+<p class=a1 style='margin-left:1.0cm;text-indent:-18.0pt;mso-list:l5 level1 lfo6;
+tab-stops:1.0cm'><![if !supportLists]>
+<span
+style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b><a name="m4">жадные алгоритмы. </b>Идеальным случаем можно
+считать алгоритм, способный<span style='mso-spacerun:yes'>  </span>«выбрать из
+нескольких зол» единственно правильное. В основе его так же лежит принцип
+разделения, но в каждой точке он<span style='mso-spacerun:yes'>  </span>имеет
+основание выбрать <b><a name="m5">одну из подзадач.</b> Обычно это делается на основании
+особенностей организации обрабатываемых данных или их избыточности. Типичный
+пример: двоичный поиск в упорядоченных данных (4.6). Основой жадных алгоритмов
+является всегда довольно спорное утверждение: движение «по линии наименьшего
+сопротивления» в каждой точке приведет к желаемому результату. </p>
+
+<p class=a1 style='margin-left:1.0cm;text-indent:-18.0pt;mso-list:l5 level1 lfo6;
+tab-stops:1.0cm'><![if !supportLists]>
+<span
+style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b><a name="m6">полный перебор (исчерпывающий, комбинаторный
+перебор). </b><span style='mso-spacerun:yes'> </span>Перечисленные выше подходы
+основаны на всевозможных «ухищрениях», основанных на особенностях предметной
+области алгоритма. Если же ничего не помогает, то остается полный перебор всех
+возможных вариантов решения задачи (8.4).</p>
+
+<p class=a1 style='margin-left:1.0cm;text-indent:-18.0pt;mso-list:l5 level1 lfo6;
+tab-stops:1.0cm'><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol; mso-bidi-font-weight:bold'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b><a name="m7">динамическое программирование. </b>В процессе
+порождения дерева рекурсивных вызовов<span style='mso-spacerun:yes'> 
+</span>возможно повторение подзадач с одними и теми же данными. Если запоминать
+результат их выполнения, то эффективность алгоритма может быть значительно
+увеличена.<b><a name="m8"><o:p></o:p></b></p>
+
+<span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:"Times New Roman CYR";
+mso-fareast-font-family:"Times New Roman";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:RU;mso-fareast-language:EN-US;mso-bidi-language:AR-SA'><br
+clear=all style='mso-special-character:line-break;page-break-before:always'>
+</span>
+
+<p class=a1 style='margin-left:0cm'><o:p>&nbsp;</o:p></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=603
+ style='width:451.95pt;border-collapse:collapse;border:none;mso-border-alt:
+ solid windowtext .5pt;mso-padding-alt:0cm 5.4pt 0cm 5.4pt;mso-border-insideh:
+ .5pt solid windowtext;mso-border-insidev:.5pt solid windowtext'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=144 valign=top style='width:108.25pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><b><a name="m9">Тип алгоритма<o:p></o:p></b></p>
+  </td>
+  <td width=326 valign=top style='width:244.45pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4 align=left style='text-align:left'><b><a name="m10">Идея алгоритма и «природа»
+  его эффективности<o:p></o:p></b></p>
+  </td>
+  <td width=132 valign=top style='width:99.25pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><b><a name="m11">Диапазон трудоемкостей<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=144 valign=top style='width:108.25pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4>Рекурсивное или обычное разделение</p>
+  </td>
+  <td width=326 valign=top style='width:244.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4>«Разделяй и властвуй»: задача разбивается на идентичные
+  подзадачи, результаты которых объединяются в общее решение</p>
+  </td>
+  <td width=132 valign=top style='width:99.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><b style='mso-bidi-font-weight:normal'><a name="m12"><span lang=EN-US
+  style='mso-ansi-language:EN-US'>N …N logN…N<sup>2</sup></span></b><sup><span
+  lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></sup></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td width=144 valign=top style='width:108.25pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4>Полный перебор</p>
+  </td>
+  <td width=326 valign=top style='width:244.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4>«Хуже не бывает» (без комментариев)</p>
+  </td>
+  <td width=132 valign=top style='width:99.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4 style='text-indent:5.4pt'><b style='mso-bidi-font-weight:normal'><a name="m13"><span
+  lang=EN-US style='font-size:14.0pt;mso-bidi-font-size:10.0pt;mso-ansi-language:
+  EN-US'>2<sup>N </sup>… N<sup>N</sup>…N!</span></b><b style='mso-bidi-font-weight:
+  normal'><a name="m14"><span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td width=144 valign=top style='width:108.25pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4>Динамическое программирование</p>
+  </td>
+  <td width=326 valign=top style='width:244.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4>«Де жа вю»: запоминание результатов повторяющихся подзадач,
+  увеличение производительности за счет дополнительной памяти.</p>
+  </td>
+  <td width=132 valign=top style='width:99.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><o:p>&nbsp;</o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4;mso-yfti-lastrow:yes'>
+  <td width=144 valign=top style='width:108.25pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4>Жадный алгоритм</p>
+  </td>
+  <td width=326 valign=top style='width:244.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4>«Рыцарь на распутье»: локальный выбор единственной из подзадач на
+  каждом шаге дает глобальное оптимальное решение</p>
+  </td>
+  <td width=132 valign=top style='width:99.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4 align=left style='text-align:left'><b style='mso-bidi-font-weight:
+  normal'><a name="m15"><span lang=EN-US style='mso-ansi-language:EN-US'>logN</span>…</b><b
+  style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+  EN-US'>N</span></b></p>
+  </td>
+ </tr>
+</table>
+
+<p class=a4><b><a name="m16"><o:p>&nbsp;</o:p></b></p>
+
+<a name="m16">
+
+<h3>Динамическое программирование</h3>
+<p class="a">Итак, основная идея динамического программирования – запоминание 
+результатов решения повторяющихся подзадач, возникающих при поиске методом 
+полного рекурсивного перебора с получением задач меньшей размерности. 
+Рассмотрим, как это выглядит на сравнительно простой задаче. Требуется в двух 
+строках найти общую (одинаковую) подпоследовательность максимальной длины. 
+Подпоследовательность получается путем вычеркивания из строки некоторых 
+символов, саму подпоследовательность запоминать не нужно. Основные принципы 
+рекурсивного решения<span lang="EN-US">:</span></p>
+<p class="2"><span style="font-family: Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>рекурсивная функция решает задачу для двух оставшихся частей строк 
+с длинами <b><span lang="EN-US">k</span>1</b> и <b><span lang="EN-US">k</span>2,
+</b>возвращая в виде результата максимальную длину найденной 
+подпоследовательности;</p>
+<p class="2"><span style="font-family: Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>шаг рекурсии заключается в проверке пары очередных символов и 
+получении аналогичных подзадач меньшей размерности за счет отбрасывания этих 
+символов;</p>
+<p class="2"><span style="font-family: Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>если пара очередных символов совпадает, то они оба отбрасываются, 
+а длина подпоследовательности увеличивается на 1. При этом производится 
+рекурсивный вызов с сокращением длин обеих строк <b><span lang="EN-US">v</span>=<span lang="EN-US">F</span>(<span lang="EN-US">k</span>1-1,<span lang="EN-US">k</span>2-1)+1</b>;</p>
+<p class="2"><span style="font-family: Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>если пара очередных символов не совпадает, то возникают две 
+подзадачи, в которых одна строка укорачивается, а другая остается неизменной. Из 
+результатов двух рекурсивных вызовов выбирается максимальный и возвращается в 
+неизменном виде, т.к. текущий шаг не удлиняет цепочку совпадений;</p>
+<p class="2"><span style="font-family: Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>рекурсивный алгоритм завершается, когда заканчивается хотя бы одна 
+строка, в этом случае функция возвращает 0 совпадений.</p>
+<span style="font-size: 12.0pt; font-family: Times New Roman CYR">
+<br clear="all" style="page-break-before: always">
+&nbsp;</span></a><p class="MsoNormal" style="text-autospace: none" align="center">
+<img border="0" src="Images/077-00.gif" width="337" height="159"></p>
+
+<a name="m16">
+
+<p class="a">Внедрение идеи динамического программирования заключается в 
+запоминании результатов выполнения алгоритма для каждой пары значений оставшихся 
+длин строк <b><span lang="EN-US">k</span>1</b> и <b><span lang="EN-US">k</span>2,
+</b>что потребует прямоугольной матрицы результатов с размерностями, 
+соответствующими длинам строк. Однако количество повторных просмотров «хвостов» 
+строки уменьшается по мере роста их длины, поэтому сохранять результаты можно 
+только для длины строки не более <b><span lang="EN-US">N</span>. </b>Для этого 
+потребуется чисто техническая модификация написанной программы:</p>
+<p class="2"><span style="font-family: Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>создать квадратную матрицу размерности <b><span lang="EN-US">N
+</span></b>в виде динамического массива указателей на строки, в которой значение
+<b>-1 </b>будет обозначать отсутствие просчитанного решения, а неотрицательное 
+значение – его наличие;</p>
+<p class="2"><span style="font-family: Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>при очередном рекурсивном вызове проверяется наличие в матрице 
+решения для заданной размерности, и, если оно там есть, то оно просто повторно 
+оттуда извлекается;</p>
+<p class="2"><span style="font-family: Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>в противном случае выполняется вышеописанный алгоритм и полученное 
+решение запоминается.</p>
+<p class="a">&nbsp;</p>
+<p class="a0">
+//----------------------------------------------------------77-00.cpp</p>
+<p class="a0">// Динамическое программирование - общая подпоследовательность</p>
+<p class="a0"><span lang="EN-US">int **D,N,s1,s2,cnt=0, cnt2=0;</span></p>
+<p class="a0"><span lang="EN-US">char A[]=&quot;ababaaaababababaaabababaaaaaaa&quot;;</span></p>
+<p class="a0"><span lang="EN-US">char B[]=&quot;abbbbabaaabaaabababaaabaabaaaaaabaaababa&quot;;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;</span></p>
+<p class="a0"><span lang="EN-US">int F</span>(<span lang="EN-US">int k</span>1,
+<span lang="EN-US">int k</span>2){&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //
+<span lang="EN-US">k</span>1,<span lang="EN-US">k</span>2 – длины 
+непросмотренных частей строк</p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int v=0;</p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cnt++;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // счетчик 
+рекурсивных вызовов</p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>if (k1==0 || k2==0) return 
+0;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // одна из строк кончилась - общая длина =0</p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>if (k1&lt;N &amp;&amp; k2&lt;N &amp;&amp; D[k1][k2]!=-1){</b></p>
+<p class="a0"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cnt2++; return D[k1][k2];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // 
+повторный выбор уже найденного решения</b></p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // если 
+пара совпадает - отбросить оба</p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span lang="EN-US">if (A[s1-k1]==B[s2-k2]) 
+v=F(k1-1,k2-1)+1;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>else{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+// не совпадает - два варианта отбрасывания</p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int v1=F(k1,k2-1);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // с выбором 
+лучшего</p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span lang="EN-US">int v2=F(k1-1,k2);</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; v=(v1&gt;v2 ? v1 : v2);</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>if (k1&lt;N &amp;&amp; k2&lt;N) D[k1][k2]=v;</b> // запомнить 
+новое решение</p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return v;</p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>
+<p class="a0">&nbsp;</p>
+<p class="a0"><span lang="EN-US">void main(){…F(s1=strlen(A),s2=strlen(B));…}</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;</span></p>
+<p>&nbsp;</p>
+
+<p class=a4><a name="m17">
+<b>
+<img border="0" src="Images/labs.jpg" width="41" height="40" align="left">Динамическое
+программирование. Преобразование строки. </b>Требуется преобразовать исходную
+строку в заданную, используя минимальное количество операций удаления,
+добавления и замены очередного символа.<span style='mso-spacerun:yes'> 
+</span>Задача имеет естественное рекурсивное решение методом полного перебора.
+Сам процесс преобразования представляет собой сравнение пар очередных символов
+из исходной и результирующей строки с выполнением одного из четырех возможных
+действий, связанных с удалением символа из исходной или результирующей строки,
+в результате чего размерность подзадачи уменьшается на единицу:</p>
+
+<p class=2><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>удаление символов из исходной и результирующей
+строки при их совпадении (взаимное уничтожение);</p>
+
+<p class=2><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>замена символа входной строки на символ выходной
+(при их несовпадении) с последующим взаимным уничтожением;</p>
+
+<p class=2><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>удаление символа из входной строки;</p>
+
+<p class=2><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>добавление символа результирующей строки в
+исходную. С учетом их последующего взаимного уничтожения это можно
+рассматривать как удаление символа из результирующей строки.</p>
+
+<p class=a>Вариант с прямым накоплением результата сохраняет<span
+style='mso-spacerun:yes'>  </span>в глобальном массиве последовательность
+выполняемых операций. Сам накапливаемый результат – количество операций
+(вставка, удаление, обмен) передается в качестве формального параметра (<b><a name="m18"><span
+lang=EN-US style='mso-ansi-language:EN-US'>k</span></b>), по завершении
+последовательности рекурсивных вызовов (обе строки пустые) запоминается
+минимальное значение <b><a name="m19"><span lang=EN-US style='mso-ansi-language:EN-US'>k</span><span
+lang=EN-US> </span></b>и связанная с ним строка <b><a name="m20"><span lang=EN-US
+style='mso-ansi-language:EN-US'>s</span> – </b>последовательность операций.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//--------------------------------------------------------------------77-01.cpp</p>
+
+<p class=a0>// Преобразование строки - прямое накопление результата</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>char s[100],min[100]=&quot;&quot;;<span style='mso-tab-count:3'>                         </span>//
+текущая и оптимальная строка операций</p>
+
+<p class=a0>int kmin=-1;<span style='mso-tab-count:4'>                                           </span>//
+минимальное количество операций</p>
+
+<p class=a0>// A,B - указатели на текущие символы строк</p>
+
+<p class=a0>// n - номер шага (глубина рекурсии)</p>
+
+<p class=a0>// k - накопленное количество операций</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>// m - </span>счетчик<span
+style='mso-ansi-language:EN-US'> </span>вариантов<span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void F(char *A,
+char *B,int n,int k,int &amp;m){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>s</span>[<span
+lang=EN-US style='mso-ansi-language:EN-US'>n</span>]=0; <span lang=EN-US
+style='mso-ansi-language:EN-US'>m</span>++;<span style='mso-tab-count:4'>                                         </span>//
+Обе строки закончились</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>if</span> (*<span
+lang=EN-US style='mso-ansi-language:EN-US'>A</span>==0 &amp;&amp; *<span
+lang=EN-US style='mso-ansi-language:EN-US'>B</span>==0) {<span
+style='mso-tab-count:3'>                             </span>// Проверить
+очередной вариант на минимум </p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>if (kmin==-1 || k &lt; kmin) strcpy(min,s),kmin=k;<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>return; }<span
+style='mso-tab-count:4'>                                     </span>// и
+завершить рекурсию</p>
+
+<p class=a0>// Одна из строк закончилась - удалять из противоположной</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>if (*A==0) {
+s[n]='+'; F(A,B+1,n+1,k+1,m); return; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>if (*B==0) {
+s[n]='-'; F(A+1,B,n+1,k+1,m); return; }<o:p></o:p></span></p>
+
+<p class=a0>// Три варианта решения задачи</p>
+
+<p class=a0>if (*A==*B)<span style='mso-tab-count:5'>                                                         </span>//
+Подзадача 1: Символы одинаковые - взаимное уничтожение</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>{ s[n]='x'; F(A+1,B+1,n+1,k,m); }<o:p></o:p></span></p>
+
+<p class=a0>else<span style='mso-tab-count:6'>                                                                  </span>//
+Не одинаковые - замена</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>{ s[n]='c'; F(A+1,B+1,n+1,k+1,m); }<o:p></o:p></span></p>
+
+<p class=a0>s[n]='-'; F(A+1,B,n+1,k+1,m);<span style='mso-tab-count:3'>                              </span>//
+Подзадача 2: Удалить символ из исходной</p>
+
+<p class=a0>s[n]='+'; F(A,B+1,n+1,k+1,m);<span style='mso-tab-count:3'>                             </span>//
+Подзадача 3: Добавить символ в исходную </p>
+
+<p class=a0>}<span style='mso-tab-count:6'>                                                                       </span>//
+(удалить из результирующей)</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a>Для решения задачи методом динамического программирования необходимо
+для начала реализовать в программе обратное накопление результата. Для этого
+рекурсивная функция будет возвращать количество операций над символами строки,
+накопленное в последовательности возвратов из рекурсивных функций.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//----------------------------------------------------------------------77-02.cpp</p>
+
+<p class=a0>// Преобразование строки - обратное накопление результата</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int F(char *A,
+char *B){<span style='mso-tab-count:2'>               </span><o:p></o:p></span></p>
+
+<p class=a0>int k1,k2,k3;<span style='mso-tab-count:4'>                                          </span>//
+Результат функции - количество операций</p>
+
+<p class=a0>if (*A==0 &amp;&amp; *B==0) return 0;<span style='mso-tab-count:
+2'>                  </span>// Завершение рекурсии (первоначальный возврат 0)</p>
+
+<p class=a0>if (*A==0) return strlen(B);<span style='mso-tab-count:2'>                       </span>//
+Одна из строк закончилась</p>
+
+<p class=a0>if (*B==0) return strlen(A);<span style='mso-tab-count:2'>                       </span>//
+- удаление из противоположной</p>
+
+<p class=a0>if (*A==*B)<span style='mso-tab-count:4'>                                             </span>//
+Символы совпадают</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>k1=F(A+1,B+1);<span
+style='mso-tab-count:3'>                         </span>// - взаимное
+уничтожение (+0 операций)</p>
+
+<p class=a0>else</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>k1=F(A+1,B+1)+1; <span
+style='mso-tab-count:2'>                    </span>// Иначе - замена (+1
+операция)</p>
+
+<p class=a0>k2=F(A+1,B)+1;<span style='mso-tab-count:4'>                                     </span>//
+Удаление из исходной (+1 операция)</p>
+
+<p class=a0>k3=F(A,B+1)+1;<span style='mso-tab-count:4'>                                     </span>//
+Вставка в исходную (+1 операция)</p>
+
+<p class=a0>if (k2&lt;k1) k1=k2;<span style='mso-tab-count:3'>                                    </span>//
+Выбор минимального числа</p>
+
+<p class=a0>if (k3&lt;k1) k1=k3;<span style='mso-tab-count:3'>                                    </span>//
+операций, полученное от трех подзадач</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>return k1; }</span></p>
+
+<p class=a>Для накопления последовательности действий в качестве результата следует
+возвращать объект (структурированный тип), в котором хранится как количество
+операций, так и их последовательность.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//----------------------------------------------------------------------77-03.<span
+lang=EN-US style='mso-ansi-language:EN-US'>cpp</span></p>
+
+<p class=a0>// Преобразование строки - обратное накопление результата</p>
+
+<p class=a0>// в структурированной переменной (объекте)</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>struct</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>REZ</span>{<span
+style='mso-tab-count:3'>                                </span>//
+Структурированный тип - результат</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>int</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>k</span>;<span style='mso-tab-count:
+3'>                             </span>// Количество операций</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>char</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>s</span>[100];<span
+style='mso-tab-count:2'>                   </span>// Последовательность
+операций</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>};<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>REZ F(char *A,
+char *B,int n,int &amp;m){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>REZ V1,V2,V3;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>m++;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>if (*A==0
+&amp;&amp; *B==0) { V1.k=0; V1.s[n]=0; return V1; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>if (*A==0) <o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>{ V1=F(A,B+1,n+1,m); V1.s[n]='+';
+V1.k++; return V1; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>if (*B==0)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>{ V1=F(A+1,B,n+1,m); V1.s[n]='-';
+V1.k++; return V1; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>if (*A==*B) <o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>{ V1=F(A+1,B+1,n+1,m); V1.s[n]='x';
+}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>else<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>{ V1=F(A+1,B+1,n+1,m); V1.s[n]='c';
+V1.k++; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>V2=F(A+1,B,n+1,m);
+V2.s[n]='-'; V2.k++; <o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>V3=F(A,B+1,n+1,m);
+V3.s[n]='+'; V3.k++; <o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>if (V2.k&lt;V1.k)
+V1=V2;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>if (V3.k&lt;V1.k)
+V1=V3;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>return V1;</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>}</span></p>
+
+<p class=a>Поскольку в каждой последующей подзадаче мы имеем укорочение одной
+или обеих строк, а содержимое этих строк не меняется, то очевидно, что
+подзадачи с одним и тем же сочетанием «остатков» строк будут повторяться при
+проверке различных вариантов вставки, удаления и замены предыдущих символов.
+Результаты решения подзадач размерности не выше <b><a name="m21"><span lang=EN-US
+style='mso-ansi-language:EN-US'>N</span></b> можно сохранить в квадратной
+матрице, рабочими индексами в которой будут текущие размерности «остатков»
+исходной и результирующей строки. В обоих вариантах программы вносятся
+незначительные изменения:</p>
+
+<p class=2><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>рекурсивная функция получает два дополнительных
+параметра <b><a name="m22"><span lang=EN-US style='mso-ansi-language:EN-US'>s</span>1,<span
+lang=EN-US style='mso-ansi-language:EN-US'>s</span>2</b> – размерности строк,
+дабы не перевычислять их в каждом вызове;</p>
+
+<p class=2><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>в начале рекурсивного вызова проверяется наличие
+в матрице уже сохраненного решения подзадачи текущей размерности (<b><a name="m23"><span
+lang=EN-US style='mso-ansi-language:EN-US'>s</span>1,<span lang=EN-US
+style='mso-ansi-language:EN-US'>s</span>2</b>), и если оно обнаружено, то
+повторно возвращается;</p>
+
+<p class=2><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>перед завершением рекурсивной функции текущее
+решение помещается в матрицу, если размерность задачи не превышает размерности
+матрицы.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//-----------------------------------------------------------------------77-04.cpp</p>
+
+<p class=a0>// Преобразование строки - динамическое программирование</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>#define N 4<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int D[N][N];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int F(char *A,
+char *B,int s1, int s2){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int k1,k2,k3;<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>// Есть уже сохраненное
+решение для строк размерности s1,s2</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>if (s1&lt;N &amp;&amp; s2&lt;N &amp;&amp; D[s1][s2]!=-1)
+return D[s1][s2];<o:p></o:p></span></p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>… предыдущий
+алгоритм (87-02.cpp)<span style='mso-tab-count:1'>    </span></p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>// Найдено решение
+для строк размерности s1,s2 - сохранить</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>if (s1&lt;N &amp;&amp; s2&lt;N) D[s1][s2]=k1;<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>return k1;</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>}</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//----------------------------------------------------------------------77-05.cpp</p>
+
+<p class=a0>// Преобразование строки - обратное накопление результата</p>
+
+<p class=a0>// в структурированном типе (объекте). Динамическое
+программирование</p>
+
+<p class=a0>struct REZ{<span style='mso-tab-count:3'>                                </span>//
+Структурированный тип - результат</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>int k;<span
+style='mso-tab-count:3'>                             </span>// Количество
+операиций</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>char s[100];<span
+style='mso-tab-count:2'>                   </span>// Последовательность операций</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>REZ(){ k=-1; }<span
+style='mso-tab-count:2'>                </span>// Конструктор – подзадач не
+решалась</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>};</p>
+
+<p class=a0>#define N 6<span style='mso-tab-count:3'>                                </span>//
+Массив промежуточных результатов</p>
+
+<p class=a0>REZ D[N][N];<span style='mso-tab-count:3'>                             </span>//
+для остатков строк размерности i,j</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>REZ F(char *A,
+char *B,int n, int &amp;m, int s1, int s2){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>REZ V1,V2,V3;<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>// Есть уже сохраненное
+решение для строк размерности s1,s2</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>if (s1&lt;N &amp;&amp; s2&lt;N &amp;&amp;
+D[s1][s2].k!=-1) return D[s1][s2];<o:p></o:p></span></p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>… предыдущий
+алгоритм (77-04.cpp)<span style='mso-tab-count:1'>    </span></p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>// Найдено решение
+для строк размерности s1,s2 - сохранить</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>if (s1&lt;N &amp;&amp; s2&lt;N) D[s1][s2]=V1;</span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>return V1;</span> }</p>
+
+<h3>Использование дополнительной памяти</h3>
+
+<p class=a>Динамическое программирование сохраняет результаты повторяющихся
+шагов в памяти. В этом смысле оно отражает общий принцип повышения
+эффективности алгоритмов (не обязательно рекурсивных) за счет использования
+дополнительной памяти. Цитата из военной стратегии – проигрываем в
+пространстве, выигрываем во времени – здесь совершенно к месту. Еще один
+принцип: для адресации данных в такой памяти хорошо использовать в качестве
+индексов (адресов расположения) сами значения данных или их частей (<b
+style='mso-bidi-font-weight:normal'>распределение, размещение</b>).</p>
+
+<p class=a>В качестве примера рассмотрим <span
+style='mso-spacerun:yes'> </span>лексикографическую сортировку. Ее название
+следует из того, что при сортировке строк для распределения используются
+значения отдельных символов слова. Хотя можно использовать и любые другие части
+сортируемых элементов данных, например, цифры числа (разряды).</p>
+
+<p class=a>Идея заключается в том, что исходные данные распределяются по
+последовательностям (карманам) в соответствии со значением младшей цифры. Она
+играет роль индекса выходной последовательности. Затем данные сливаются. Далее
+распределение и слияние повторяются по следующим цифрам вплоть до старшей. В
+доказательство правильности такой сортировки можно привести такой факт, что
+инвариантом цикла распределения слияния является упорядоченность по <b
+style='mso-bidi-font-weight:normal'>i </b>разрядам. Действительно, если
+полученная на <b style='mso-bidi-font-weight:normal'><a name="m24">i-1 </b>шаге
+последовательность упорядочена по младшим <b style='mso-bidi-font-weight:normal'><a name="m25">i-1
+</b>разрядам (это значит, что любые два соседних числа расположены в порядке
+возрастания, если рассматривать только младшие <b style='mso-bidi-font-weight:
+normal'><a name="m26">i-1</b> разрядов). Например, при <b style='mso-bidi-font-weight:normal'><a name="m27">i=3
+-<span style='mso-spacerun:yes'>  </span></b>13<b style='mso-bidi-font-weight:
+normal'><a name="m28">11,</b>7<b style='mso-bidi-font-weight:normal'><a name="m29">11,</b>3<b
+style='mso-bidi-font-weight:normal'>12,</b>6<b style='mso-bidi-font-weight:
+normal'><a name="m30">13,</b>22<b style='mso-bidi-font-weight:normal'><a name="m31">15,</b>2<b
+style='mso-bidi-font-weight:normal'>23,</b>3<b style='mso-bidi-font-weight:
+normal'><a name="m32">33,</b>1<b style='mso-bidi-font-weight:normal'><a name="m33">33. </b>При
+распределении переписывание идет линейно (т.е. более «поздние» значения не
+могут следовать вперед более «ранних», т.е. в каждом кармане свойство частичной
+упорядоченности сохраняется. Слияние же добавляет эту упорядоченность по
+следующей цифре. </p>
+
+<p class=a>Эффективность такой сортировки легко подсчитать. Она зависит от
+разрядности сортируемых данных (<b style='mso-bidi-font-weight:normal'><a name="m34"><span
+lang=EN-US style='mso-ansi-language:EN-US'>m</span></b>),<span
+style='mso-spacerun:yes'>  </span>количество перемещений данных равно <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>m</span>*2<span lang=EN-US
+style='mso-ansi-language:EN-US'>N</span>. </b>За линейную зависимость от <b
+style='mso-bidi-font-weight:normal'>N </b>(напомним, что трудоемкость сортировок
+лежит в диапазоне от <b style='mso-bidi-font-weight:normal'><a name="m35">Nlog<sub>2</sub><span lang=EN-US style='mso-ansi-language:
+EN-US'>N</span></b> до <b style='mso-bidi-font-weight:normal'><a name="m36"><span lang=EN-US
+style='mso-ansi-language:EN-US'>N</span><sup>2</sup></b> ) приходится платить
+дополнительной памятью, ее объем равен <b style='mso-bidi-font-weight:normal'><a name="m37"><span
+lang=EN-US style='mso-ansi-language:EN-US'>k</span>*</b><b style='mso-bidi-font-weight:
+normal'><a name="m38"><span lang=EN-US style='mso-ansi-language:EN-US'>N</span>, </b>где <b
+style='mso-bidi-font-weight:normal'>k – </b>количество возможных значений
+символа (цифры). Кстати, в сравнении с лучшим случаем<b style='mso-bidi-font-weight:
+normal'><a name="m39"> <span style='mso-spacerun:yes'> </span>Nlog<sub>2</sub></b><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>N</span><span lang=EN-US> </span></b>лексикографическая сортировка имеет
+преимущества при <b style='mso-bidi-font-weight:normal'><a name="m40"><span lang=EN-US
+style='mso-ansi-language:EN-US'>m</span> &lt;&lt; log<sub>2</sub><span lang=EN-US style='mso-ansi-language:
+EN-US'>N</span>.<o:p></o:p></b></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//----------------------------------------------77-06</p>
+
+<p class=a0>// Лексикографическая сортировка массива. Разряд - десятичная цифра
+</p>
+
+<p class=a0>// Определение кол-ва цифр в чиcле</p>
+
+<p class=a0>int dig_len(int dig,int k){</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>int i;</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>for(
+i=0;(dig/=k)!=0;i++);</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>return i+1;}</p>
+
+<p class=a0>// Выделение цифры на позиции num</p>
+
+<p class=a0>int get_dig(int v,int num,int k){</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>while(num--!=0)
+v/=k;</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>return v%k;}</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>int cnt=0;</p>
+
+<p class=a0>void sort(int A[], int n, int k){<span style='mso-tab-count:1'>        </span></p>
+
+<p class=a0>for (int i=0,max_len=0;i&lt;n;i++){<span style='mso-tab-count:1'>   </span>//
+определение максимальной разрядности</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>int
+l=dig_len(A[i],k);</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>if (l&gt;max_len)
+max_len=l;</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>}</p>
+
+<p class=a0>int **B=new int*[k],*I=new int[k];<span style='mso-tab-count:1'>  </span>//
+создание &quot;карманов&quot; - ДМУ</p>
+
+<p class=a0>for (i=0;i&lt;k; i++) B[i]=new int[n];<span style='mso-tab-count:
+1'>  </span></p>
+
+<p class=a0>for(int raz=0;raz &lt; max_len; raz++)</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>{</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>int i,j,m;</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>for (m=0,i=0;i&lt;k;i++) I[i]=0;<span
+style='mso-tab-count:1'>         </span>// </span>Обнуление<span
+style='mso-ansi-language:EN-US'> </span>счетчиков<span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>for(i=0;i&lt;n;i++)</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span>{</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span>cnt++;</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span>int
+v=get_dig(A[i],raz,k);<span style='mso-tab-count:1'>  </span>// Распределение
+по карманам</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span>B[v][I[v]++]=A[i];<span
+style='mso-tab-count:2'>             </span>// по очередному разряду</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span>}</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>for
+(i=0;i&lt;k;i++)</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>for
+(j=0;j&lt;I[i];j++,cnt++,m++) </p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span>A[m]=B[i][j];<span
+style='mso-tab-count:2'>                  </span>// Слияние карманов</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>}}</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a>Тем не менее, при лексикографической сортировке можно обойтись и без
+дополнительной памяти (по отношению к исходной структуре данных), если
+воспользоваться списками. Общая размерность «карманов» при использовании
+массивов равна <b style='mso-bidi-font-weight:normal'><a name="m41"><span lang=EN-US
+style='mso-ansi-language:EN-US'>k</span>*</b><b style='mso-bidi-font-weight:
+normal'><a name="m42"><span lang=EN-US style='mso-ansi-language:EN-US'>N</span></b>,
+поскольку заранее неизвестно, как разместятся элементы. При использовании
+списков «карманы» не требуют дополнительной памяти, поскольку представляют
+собой те же самые элементы, но связанные в другие последовательности. Исходный
+список и списки – «карманы» можно реализовать в виде односвязных списков с
+указателями <span style='mso-spacerun:yes'> </span>на первый и на последний
+элементы. Это позволить легко извлекать, добавлять данные и склеивать списки.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//-------------------------------------------------------------77-07</p>
+
+<p class=a0>// Лексикографическая сортировка списка</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>struct elem {</span><span
+style='mso-tab-count:5'>                                                      </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>// Элемент списка</span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int v;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>elem *next;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>elem(int v0){ v=v0; next=NULL; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>};<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>struct</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>queue</span>
+{<span style='mso-tab-count:5'>                                                    </span>//
+Заголовок списка содержит</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>elem</span> *<span lang=EN-US style='mso-ansi-language:
+EN-US'>fst</span>,*<span lang=EN-US style='mso-ansi-language:EN-US'>lst</span>;<span
+style='mso-tab-count:4'>                                         </span>// два
+указателя на начало и конец</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>queue(){ fst=lst=NULL; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>};<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void sort(queue
+&amp;Q, int sz){<span style='mso-tab-count:3'>                                 </span>//
+Q – заголовок </span>списка<span lang=EN-US style='mso-ansi-language:EN-US'>,
+sz – </span>размерность<span style='mso-ansi-language:EN-US'> </span>цифры<span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>elem *q;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int max_len=0,l;<o:p></o:p></span></p>
+
+<p class=a0>queue *A=new queue[sz];<span style='mso-tab-count:3'>                                   </span>//
+Очереди - карманы по значениям цифр</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>for
+(q=Q.fst;q!=NULL;q=q-&gt;next)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if
+((l=dig_len(q-&gt;v,sz))&gt;max_len) max_len=l;<o:p></o:p></span></p>
+
+<p class=a0>for(int raz=0;raz &lt; max_len; raz++){<span style='mso-tab-count:
+1'>         </span><span style='mso-tab-count:1'>            </span>// По всем
+цифрам, начиная с младшей</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>while(Q.fst!=NULL){<span
+style='mso-tab-count:3'>                                </span>// Читать
+входной список</p>
+
+<p class=a0><span style='mso-tab-count:1'>                        </span>q=Q.fst; Q.fst=q-&gt;next;<span
+style='mso-tab-count:2'>              </span>// и разбрасывать по
+&quot;карманам&quot;</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span>if
+(Q.fst==NULL) Q.lst=NULL;<span style='mso-tab-count:1'>      </span>// в
+соответствии с очередной цифрой</p>
+
+<p class=a0><span style='mso-tab-count:3'>                                    </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>int m=get_dig(q-&gt;v,raz,sz);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:3'>                                    </span>q-&gt;next=NULL;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:3'>                                    </span>if
+(A[m].fst==NULL) A[m].fst=A[m].lst=q;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:3'>                                    </span>else {
+A[m].lst-&gt;next=q; A[m].lst=q;} <o:p></o:p></span></p>
+
+<p class=a0><span style='mso-tab-count:3'>                                    </span>}</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span>for
+(int i=0;i&lt;sz;i++){<span style='mso-tab-count:2'>                   </span>//
+Склеить списки в карманах</p>
+
+<p class=a0><span style='mso-tab-count:3'>                                    </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>if (A[i].fst==NULL) continue;<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:3; mso-ansi-language:EN-US' lang="EN-US">                                    </span>if
+(Q.fst==NULL){<span style='mso-tab-count:1'>            </span>// Выходная
+пустая - </p>
+
+<p class=a0><span style='mso-tab-count:4'>                                                </span>Q.fst=A[i].fst;<span
+style='mso-tab-count:1'>     </span>// копировать начало и конец очереди</p>
+
+<p class=a0><span style='mso-tab-count:4'>                                                </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>Q.lst=A[i].lst;}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:3'>                                    </span>else{<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:4; mso-ansi-language:EN-US' lang="EN-US">                                                </span>Q.lst-&gt;next=A[i].fst;<span
+style='mso-tab-count:1'>       </span>// не пустая - присоединить к концу</p>
+
+<p class=a0><span style='mso-tab-count:4'>                                                </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>Q.lst=A[i].lst; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:3'>                                    </span>A[i].fst=A[i].lst=NULL;<span
+style='mso-tab-count:2'>                </span>// </span>Очистить<span
+style='mso-ansi-language:EN-US'> </span>карман<span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:3; mso-ansi-language:EN-US' lang="EN-US">                                    </span>}}}</p>
+
+<p class=a4>
+<img border="0" src="Images/science.jpg" width="43" height="33" align="left">С
+помощью дополнительной памяти можно кардинально улучшить качество алгоритма. Зададимся
+вопросом: «Можно ли упорядочить данные за один просмотр массива (цикл)». До сих
+пор нам требовался либо вложенный (двойной) цикл, либо цикл в сочетании с
+рекурсией. В 4.6. мы рассматривали одну из самых неэффективных сортировок – <b
+style='mso-bidi-font-weight:normal'>сортировку подсчетом</b>. Применим эту же
+самую идею – количество элементов, меньших данного, определяет его
+местоположение в выходном массиве. Только теперь будем накапливать все счетчики
+<b style='mso-bidi-font-weight:normal'><a name="m43">одновременно. </b>Для этого заведем
+массив счетчиков, размерность которого равна диапазону изменения сортируемых
+данных. В первом варианте элемент массива счетчиков <b style='mso-bidi-font-weight:
+normal'><a name="m44">cnt[i] </b>будет содержать число повторений значения <b
+style='mso-bidi-font-weight:normal'>i. </b>Затем каждое значение <b
+style='mso-bidi-font-weight:normal'>i </b>последовательно копируется в выходной
+массив столько раз, сколько оно накопилось в счетчике. Во втором варианте к
+каждому счетчику добавляется сумма предыдущих, и мы получаем абсолютно ту же
+реализацию, как в сортировке подсчетом: счетчик <b style='mso-bidi-font-weight:
+normal'><a name="m45">cnt[i] </b>содержит очередную позицию значения <b style='mso-bidi-font-weight:
+normal'><a name="m46">i </b>в выходном массиве. Трудоемкость с учетом диапазона значений <b
+style='mso-bidi-font-weight:normal'>D</b> в обоих случаях равна <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>T</span>=2<span lang=EN-US
+style='mso-ansi-language:EN-US'>D</span>+2</b><b style='mso-bidi-font-weight:
+normal'><a name="m47"><span lang=EN-US style='mso-ansi-language:EN-US'>N</span></b>.<span
+style='mso-spacerun:yes'>  </span>Сортировка так и называется – <b
+style='mso-bidi-font-weight:normal'>распределяющий подсчет.<o:p></o:p></b></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//-------------------------------------------------------------------------77-08</p>
+
+<p class=a0>// Распределяющий подсчет - сортировка за один цикл</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void sort(int A[],
+int n){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int i,j,max;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>for (i=0,max=0; i&lt;n; i++) if
+(A[i]&gt;max) max=A[i];<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>int *cnt=new int[max+2];<span
+style='mso-tab-count:3'>                         </span>// массив счетчиков по
+всему </p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>int *out=new int[n];<span style='mso-tab-count:
+3'>                                 </span>// </span>диапазону<span
+style='mso-ansi-language:EN-US'> </span>значений<span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>for (i=0; i&lt;=max+1; i++)
+cnt[i]=0;<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>// вариант 1
+-------------------------------------------------------</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>// for (i=0; i&lt;n; i++) cnt[A[i]]++;<span
+style='mso-tab-count:2'>               </span>// </span>накопление<span
+style='mso-ansi-language:EN-US'> </span>счетчиков<span style='mso-ansi-language:
+EN-US'> </span>значений<span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>// for (i=0,j=0; i&lt;=max; i++)<span
+style='mso-tab-count:1'>         </span><o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>//<span style='mso-tab-count:
+1'>          </span>while(cnt[i]--!=0) out[j++]=i;<span style='mso-tab-count:
+1'>         </span>// копирование каждого значения</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>// вариант 2
+-------------------------------------------------------</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>for (i=0; i&lt;n;
+i++) cnt[A[i]+1]++;<span style='mso-tab-count:1'>               </span>// накопление счетчиков значений</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>for (i=1;
+i&lt;=max;i++)<span style='mso-tab-count:3'>                              </span>//
+добавление к каждому счетчику</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span>cnt[i]+=cnt[i-1];<span
+style='mso-tab-count:3'>                          </span>// суммы предыдущих</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>for
+(i=0;i&lt;n;i++)<span style='mso-tab-count:4'>                                      </span>//
+перенос в выходную позицию</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span>out[cnt[A[i]]++]=A[i];<span
+style='mso-tab-count:2'>                  </span>// в соответствии со счетчиком
+предыдущих</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>//------------------------------------------------------------------<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>for (i=0; i&lt;n; i++) A[i]=out[i];<span
+style='mso-tab-count:2'>                    </span>// </span>Возвратить<span
+style='mso-ansi-language:EN-US'> </span>данные<span lang=EN-US
+style='mso-ansi-language:EN-US'> <o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>delete cnt;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>delete</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>out</span>;</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>}</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=a4>
+<img border="0" src="Images/smile.jpg" width="40" height="41" align="left">Резюме:
+чтобы превратить самую плохую сортировку в самую хорошую нужна всего лишь
+неограниченная память.</p>
+
+<p class=a4><o:p>&nbsp;</o:p></p>
+
+<p class=a><o:p>&nbsp;</o:p></p>
+
+</div>
+
+</body>
+
+</html>

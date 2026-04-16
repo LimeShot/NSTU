@@ -1,0 +1,1680 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=Edit-Time-Data href="014.files/editdata.mso">
+<title>1.4. Обработка данных. Операции. Выражения</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>www.PHILka.RU</o:Author>
+  <o:LastAuthor>vtpc112</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>296</o:TotalTime>
+  <o:Created>2008-06-08T09:23:00Z</o:Created>
+  <o:LastSaved>2008-06-08T09:23:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>3903</o:Words>
+  <o:Characters>22249</o:Characters>
+  <o:Company>NSTU_VT</o:Company>
+  <o:Bytes>11776</o:Bytes>
+  <o:Lines>185</o:Lines>
+  <o:Paragraphs>52</o:Paragraphs>
+  <o:CharactersWithSpaces>26100</o:CharactersWithSpaces>
+  <o:Version>11.6568</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DoNotHyphenateCaps/>
+  <w:DrawingGridHorizontalSpacing>0,55 пт</w:DrawingGridHorizontalSpacing>
+  <w:DrawingGridVerticalSpacing>0,55 пт</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:UseMarginsForDrawingGridOrigin/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DrawingGridVerticalOrigin>99,25 пт</w:DrawingGridVerticalOrigin>
+  <w:Compatibility>
+   <w:WW6BorderRules/>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+   <w:UseWord97LineBreakingRules/>
+   <w:SelectEntireFieldWithStartOrEnd/>
+   <w:UseWord2002TableStyleRules/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:"Times New Roman CYR";
+	panose-1:2 2 6 3 5 4 5 2 3 4;
+	mso-font-charset:204;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+@font-face
+	{font-family:"Arial CYR";
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+h1
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:14.0pt;
+	mso-bidi-font-weight:normal;}
+h2
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-font-weight:normal;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+h3
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	font-weight:normal;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.a, li.a, div.a
+	{mso-style-name:текст;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a0, li.a0, div.a0
+	{mso-style-name:программа;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a1, li.a1, div.a1
+	{mso-style-name:список;
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:18.45pt;
+	margin-bottom:0cm;
+	margin-left:64.35pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-18.0pt;
+	mso-pagination:widow-orphan;
+	mso-list:l1 level1 lfo1;
+	tab-stops:42.55pt list 64.35pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a2, li.a2, div.a2
+	{mso-style-name:определение;
+	mso-style-parent:текст;
+	margin-top:12.0pt;
+	margin-right:32.9pt;
+	margin-bottom:12.0pt;
+	margin-left:35.45pt;
+	text-align:justify;
+	text-indent:.55pt;
+	mso-pagination:widow-orphan;
+	border:none;
+	mso-border-alt:solid windowtext 1.5pt;
+	padding:0cm;
+	mso-padding-alt:1.0pt 1.0pt 1.0pt 1.0pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a3, li.a3, div.a3
+	{mso-style-name:эпиграф;
+	margin-top:0cm;
+	margin-right:32.9pt;
+	margin-bottom:0cm;
+	margin-left:5.0cm;
+	margin-bottom:.0001pt;
+	text-align:right;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.a4, li.a4, div.a4
+	{mso-style-name:"от края";
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a5, li.a5, div.a5
+	{mso-style-name:Формула;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.a6, li.a6, div.a6
+	{mso-style-name:"без формата";
+	mso-style-parent:программа;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a7, li.a7, div.a7
+	{mso-style-name:стихи;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.1, li.1, div.1
+	{mso-style-name:эпиграф1;
+	mso-style-parent:эпиграф;
+	margin-top:0cm;
+	margin-right:9.35pt;
+	margin-bottom:0cm;
+	margin-left:9.0cm;
+	margin-bottom:.0001pt;
+	text-align:right;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.2, li.2, div.2
+	{mso-style-name:"заголовок 2";
+	mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;
+	font-style:italic;}
+p.3, li.3, div.3
+	{mso-style-name:"заголовок 3";
+	mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";}
+ /* Page Definitions */
+ @page
+	{mso-footnote-separator:url("014.files/header.htm") fs;
+	mso-footnote-continuation-separator:url("014.files/header.htm") fcs;
+	mso-endnote-separator:url("014.files/header.htm") es;
+	mso-endnote-continuation-separator:url("014.files/header.htm") ecs;}
+@page Section1
+	{size:21.0cm 842.0pt;
+	margin:33.45pt 42.55pt 72.0pt 89.85pt;
+	mso-header-margin:14.2pt;
+	mso-footer-margin:31.75pt;
+	mso-even-header:url("014.files/header.htm") eh1;
+	mso-header:url("014.files/header.htm") h1;
+	mso-even-footer:url("014.files/header.htm") ef1;
+	mso-footer:url("014.files/header.htm") f1;
+	mso-first-header:url("014.files/header.htm") fh1;
+	mso-first-footer:url("014.files/header.htm") ff1;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:932394405;
+	mso-list-type:simple;
+	mso-list-template-ids:-2087827260;}
+@list l0:level1
+	{mso-level-text:"%1\. ";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	mso-level-legacy:yes;
+	mso-level-legacy-indent:14.15pt;
+	mso-level-legacy-space:0cm;
+	margin-left:14.15pt;
+	text-indent:-14.15pt;
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-ansi-font-weight:normal;
+	mso-bidi-font-weight:normal;
+	mso-ansi-font-style:normal;
+	mso-bidi-font-style:normal;
+	text-decoration:none;
+	text-underline:none;}
+@list l1
+	{mso-list-id:1628194852;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-964799380 -1450833310 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-style-link:список;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:64.35pt;
+	mso-level-number-position:left;
+	margin-left:64.35pt;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Обычная таблица";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+table.MsoTableGrid
+	{mso-style-name:"Сетка таблицы";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+  <o:regrouptable v:ext="edit">
+   <o:entry new="1" old="0"/>
+   <o:entry new="2" old="1"/>
+   <o:entry new="3" old="0"/>
+  </o:regrouptable>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=RU style='tab-interval:36.0pt' background="back.gif">
+
+<div class=Section1>
+
+<h2>1.4. Обработка данных. Операции. Выражения<span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></h2>
+
+<p class=a>Следующий слой выразительных средств языка – средства обработки
+данных. Это – набор элементарных действий (операций) и их сочетаний
+(выражений), который позволяет изменять значения переменных. К ним относятся:</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>традиционные операции над переменными (например,
+арифметические, логические, поразрядные);</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span lang=EN-US style='mso-ansi-language:EN-US'>присваивание;</span></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span lang=EN-US style='mso-ansi-language:EN-US'>ввод-вывод;</span></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>вызов процедур и функций.</p>
+
+<p class=a>Перечисленные средства объединены <b style='mso-bidi-font-weight:
+normal'><a name="m1">по назначению </b>в программе. Синтаксически они могут относиться к
+различным уровням. Например, в большинстве языков программирования присваивание
+является <b style='mso-bidi-font-weight:normal'><a name="m2">оператором, </b>т.е. элементом
+более высокого синтаксического уровня, чем выражения. Аналогичным образом
+иногда обстоят дела с вызовом функций и вводом-выводом. В Си в этом смысле
+повезло. Всё перечисленное является операциями и объединено в один уровень –
+выражений. (Вызов функций в выражениях, а также библиотека функций ввода-вывода
+будут рассмотрены в <b style='mso-bidi-font-weight:normal'><a name="m3">1.6</b>). </p>
+
+<p class=3>Операции, выражения</p>
+
+<p class=a>Для начала – немного терминологии:</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>операция – элементарное действие по обработке
+данных (по работе с переменными);</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>операнд - переменная, константа, выражение,
+участвующие в операции;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>унарная операция - операция с одним операндом;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>бинарная<span style='mso-spacerun:yes'> 
+</span>операция -<span style='mso-spacerun:yes'>  </span>операция с двумя
+операндами;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>выражение – элемент синтаксиса с описанием
+последовательности выполнения операций и их операндов, в котором результат
+одной операции является операндом другой. </p>
+
+<p class=a>Если посмотреть полный перечень операций в Си, то первое, что
+бросается в глаза, это их многочисленность. Второе (уже упомянутое), что к
+операциям относятся такие действия, которые в других языках программирования
+считаются операторами (например, присваивание). И третье, что все они имеют
+очень «компактный» синтаксис, т.е. при пропуске или добавлении лишнего символа
+одна операция превращается в другую. Все это требует внимательного и
+осознанного отношения к операциям в Си. Перечислим их особенности: </p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='mso-spacerun:yes'> </span>операции
+разбиты на 16 групп по приоритетам их выполнения; </p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='mso-spacerun:yes'> </span>внутри
+каждой группы задается <b style='mso-bidi-font-weight:normal'><a name="m4">направление
+выполнения операции</b> для последовательности операций одного приоритета. Для
+большинства из них имеет место естественное направление слева направо. Однако
+для операций присваивания, условной операции и унарных операций, у которых знак
+(символ) операции находится перед операндом (слева), направление операций
+противоположное - справа налево; </p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='mso-spacerun:yes'> </span>большинство
+операций совместимо по результатам. Это значит, что результат любой операции
+может быть операндом любой другой операции, то есть их можно комбинировать
+между собой как угодно, даже в самых «диких» сочетаниях; </p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='mso-spacerun:yes'> </span>в Си
+отсутствует понятие логического (булевого) типа «истина-ложь». Для его
+представления используются значения целой переменной: 0 –«ложь», 1 (или любое
+отличное от нуля значение) – «истина»; </p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='mso-spacerun:yes'> </span>в
+некоторых операциях возможно изменение значений участвующих в ней операндов; </p>
+
+<p class=3 style='mso-outline-level:3'>Действие и результат</p>
+
+<p class=1>«Борьбу с пьянством прекратить,</p>
+
+<p class=1 style='margin-left:8.0cm'>ибо это – не борьба, и это -<span
+style='mso-spacerun:yes'>  </span>не результат».</p>
+
+<p class=1><b style='mso-bidi-font-weight:normal'><a name="m5">Из миниатюр М.Жванецкого<o:p></o:p></b></p>
+
+<p class=a>Обычно результат операции представляет собой новое, самостоятельное
+значение, которое затем может использоваться в качестве операнда в последующих
+операциях. Входные операнды при этом остаются без изменения. В Си схема может
+быть сложнее -<span style='mso-spacerun:yes'>  </span>операнды некоторых
+операций могут изменяться в процессе ее выполнения. Самый простой пример -
+операция присваивания: <span style='font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<p class=a><o:p>&nbsp;</o:p></p>
+
+<p class=a0>a = b;<span style='mso-tab-count:1'>                </span>// Действие над операндом:
+переменная a получает значение переменной b</p>
+
+<p class=a0 style='margin-left:36.0pt;text-indent:36.0pt'>// Результат:
+значение переменной a после присваивания</p>
+
+<p class=a>Наличие в операции результата позволяет использовать ее в контексте
+(окружении) других операций, например: </p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>c = (a = b) + 5;<span style='mso-spacerun:yes'>   </span>// Эквивалентно<span
+style='mso-spacerun:yes'>  </span>a = b; c = a + 5;</p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a>Более интересный случай представляют собой операции инкремента и
+декремента, в которых действие не совпадает с результатом, например: </p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>a++;<span style='mso-tab-count:1'>                 </span>// Действие над операндом:
+переменная a увеличивается нa 1</p>
+
+<p class=a0 style='margin-left:36.0pt;text-indent:36.0pt'>// Результат:
+значение переменной до ее увеличения</p>
+
+<p class=a0>c = A[i++]; <span style='mso-tab-count:1'>       </span>// Эквивалентно
+c = A[i]; i = i + 1;</p>
+
+<p class=3 style='mso-outline-level:3'>Преобразование типов операндов</p>
+
+<p class=a><span style='mso-spacerun:yes'> </span>В выражениях в качестве
+операндов могут присутствовать переменные и константы разных типов (здесь и
+далее мы ограничимся пока только известными нам базовыми типами данных).
+Результат каждой операции также имеет свой определенный тип, который зависит от
+типов операндов. Если в бинарных операциях типы данных обоих операндов
+совпадают, то результат будет иметь тот же самый тип. Если нет, то транслятор
+должен включить в код программы неявные операции, которые преобразуют тип
+операндов, то есть выполнить <b style='mso-bidi-font-weight:normal'><a name="m6">приведение
+типов</b>. Но прежде, чем изучать подробности таких преобразований, ответим на
+вопрос: «Где они могут происходить»?:</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>при выполнении операции присваивания, когда
+значение переменной или выражения из правой части запоминается в переменной в
+левой части; </p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='mso-spacerun:yes'> </span>при
+прямом указании на необходимость изменения типа данных переменной или
+выражения, для чего используется операция явного преобразования типа; </p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>при выполнении бинарных операций над операндами
+различных типов, когда более «длинный» операнд превалирует над более
+«коротким», вещественное - над целым, а беззнаковое над знаковым.</p>
+
+<p class=a>Преобразование типов может неявно включать в себя следующие
+действия: </p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>преобразование целой переменной в переменную
+вещественную (с плавающей точкой) и наоборот; </p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>увеличение или уменьшение разрядности машинного
+слова, то есть «усечение» или «растягивание» целой переменной; </p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>преобразование знаковой формы представления
+целого в беззнаковую и наоборот. </p>
+
+<p class=a>Возможные ошибки, возникающие при таких преобразованиях, никоим
+образом не фиксируются ни аппаратными средствами, ни исполнительной системой
+языка, т.е. остаются незамеченными. Поэтому здесь нужно быть особенно внимательным
+и при необходимости учитывать особенности представления данных во внутренней
+форме (см. <b style='mso-bidi-font-weight:normal'><a name="m7">1.3</b>).</p>
+
+<p class=a>Уменьшение разрядности машинного слова всегда происходит путем
+отсечения старших разрядов числа. Заметим, что это может привести к ошибкам
+потери значащих цифр и разрядов: </p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>int<span style='mso-tab-count:1'>         </span>n=1045;<span
+style='mso-tab-count:2'>                        </span>// Во внутреннем
+представлении n=0x00000415 (1024+16+5)</p>
+
+<p class=a0>char <span style='mso-tab-count:1'>     </span>c; c = n;<span
+style='mso-tab-count:1'>            </span><span style='mso-tab-count:2'>                        </span>//
+Потеря значащих цифр (0x15)</p>
+
+<p class=a0 style='text-indent:36.0pt'><o:p>&nbsp;</o:p></p>
+
+<p class=a><span style='mso-spacerun:yes'> </span>Увеличение разрядности
+приводит к появлению дополнительных старших разрядов числа. При этом способ их
+заполнения зависит от формы представления целого: </p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>для беззнаковых целых заполнение производится
+нулями; </p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>для целых со знаком они заполняются значением
+знакового (старшего) разряда. </p>
+
+<p class=a>Таким образом, при увеличении размерности целого его значение
+сохраняется (с учетом формы представления): </p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int<span
+style='mso-tab-count:1'>         </span>n; <span style='mso-tab-count:2'>                    </span>unsigned
+u;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>char<span
+style='mso-tab-count:1'>      </span>c=0x84;<span style='mso-tab-count:2'>                        </span>n
+= c;<span style='mso-tab-count:2'>                </span>// </span>Значение<span
+lang=EN-US style='mso-ansi-language:EN-US'> n=0xFFFFFF84<span style='mso-tab-count:
+1'>       </span><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>unsigned char
+uc=0x84;<span style='mso-tab-count:1'> </span>u = uc;<span style='mso-tab-count:
+1'>  </span><span style='mso-tab-count:1'>            </span>// </span>Значение<span
+lang=EN-US style='mso-ansi-language:EN-US'> u=0x00000084<o:p></o:p></span></p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a>
+<span
+style='mso-spacerun:yes; mso-ansi-language:EN-US' lang="EN-US"> </span>При преобразовании вещественного к
+целому происходит потеря дробной части, при этом возможны случаи возникновения
+ошибок переполнения и потери значащих цифр, когда полученное целое имеет
+слишком большое значение: </p>
+
+<p class=a><o:p>&nbsp;</o:p></p>
+
+<p class=a0>double d1=855.666, d2=0.5E16;</p>
+
+<p class=a0>int<span style='mso-tab-count:1'>         </span>n;<span
+style='mso-spacerun:yes'>  </span>n = d1;<span style='mso-tab-count:1'>         </span><span
+style='mso-spacerun:yes'>   </span><span style='mso-tab-count:2'>                     </span>//
+Отбрасывание дробной части</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>n = d2;<span
+style='mso-tab-count:2'>              </span><span style='mso-spacerun:yes'>   
+</span><span style='mso-tab-count:2'>                    </span>// Потеря
+значимости<span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a><span style='mso-spacerun:yes'> </span>Преобразование знаковой формы
+к беззнаковой не сопровождается изменением значения целого числа и вообще не
+приводит к выполнению каких-либо действий в программе. В таких случаях
+транслятор «запоминает», что форма представления целого изменилась: </p>
+
+<p class=a0><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:"Times New Roman CYR";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:"Times New Roman CYR";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>i</span><span lang=EN-US style='mso-ansi-language:
+EN-US'>nt n=-1;<span style='mso-spacerun:yes'>   </span>unsigned d; <span
+style='mso-tab-count:1'>   </span></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>d</span> = <span
+lang=EN-US style='mso-ansi-language:EN-US'>n</span>; <span style='mso-tab-count:
+1'>   </span><span style='mso-tab-count:1'>                                                </span>// Значение <span lang=EN-US
+style='mso-ansi-language:EN-US'>d</span>=0<span lang=EN-US style='mso-ansi-language:
+EN-US'>xFFFFFFFF</span> (-1)</p>
+
+<p class=a>При выполнении бинарных операций принят следующий порядок:</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>короткие типы <b style='mso-bidi-font-weight:
+normal'><a name="m8"><span lang=EN-US style='mso-ansi-language:EN-US'>char</span>, </b><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>short</span></b> и битовые поля удлиняются до <b style='mso-bidi-font-weight:
+normal'><a name="m9"><span lang=EN-US style='mso-ansi-language:EN-US'>int</span>, </b><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>float</span><span lang=EN-US> </span></b>до <b style='mso-bidi-font-weight:
+normal'><a name="m10"><span lang=EN-US style='mso-ansi-language:EN-US'>double</span></b>;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>если один из операндов – длинный вещественный (<b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>long</span><span lang=EN-US> </span></b><b style='mso-bidi-font-weight:
+normal'><a name="m11"><span lang=EN-US style='mso-ansi-language:EN-US'>double</span></b>), то
+второй также приводится к этому типу;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>если один из операндов – длинное целое (<b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>long</span></b>), то второй также приводится к этому типу;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>если один из операндов – беззнаковый (<b
+style='mso-bidi-font-weight:normal'>unsigned</b>), то второй также приводится к
+этому типу;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>в конце концов остаются целые операнды,
+сохраняющие свой тип.</p>
+
+<p class=a>Таким образом, короткие типы данных (знаковые и беззнаковые)
+удлиняются до <b><a name="m12">int и double</b>, а выполнение любой бинарной операции с одним
+<b><a name="m13">long double, double, long, unsigned</b> ведет к преобразованию другого
+операнда к тому же типу. Это может сопровождаться перечисленными выше
+действиями: увеличение разрядности операнда путем его «удлинения»,
+преобразование в форму с плавающей точкой и изменение беззнаковой формы
+представления на знаковую и наоборот. </p>
+
+<p class=a>Следует обратить внимание на одну тонкость: если в процессе преобразования
+требуется увеличение разрядности переменной, то на способ ее «удлинения» влияет
+только наличие или отсутствие знака у самой переменной. Второй операнд, к типу
+которого осуществляется приведение, на этот процесс не влияет (принятые в
+примерах размерности short – 16 разрядов, int – 32 разряда): </p>
+
+<p class=a><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int l= 0x0031;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>unsigned </span>short<span
+lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'> 
+</span>d = 0xFF000;<span style='mso-tab-count:1'>     </span><o:p></o:p></span></p>
+
+<p class=a0>l + d ... <span lang=EN-US
+style='mso-ansi-language:EN-US'><span style='mso-tab-count:1'>            </span>//
+0x00000031 + 0xFF00 = 0x00000031 + 0x0000FF00 = 0x0000FF31<o:p></o:p></span></p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a>В данном случае производится преобразование укороченного целого без
+знака <b><a name="m14">(unsigned)</b> к целому со знаком <b><a name="m15">(<span lang=EN-US
+style='mso-ansi-language:EN-US'>int</span>).</b> В процессе преобразования
+«удлинение» переменной <b><a name="m16">d</b> производится как беззнаковое (разряды
+заполняются нулями), хотя второй операнд и имеет знак. Рассмотрим еще несколько
+примеров. <span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0>int i;<span style='mso-tab-count:1'>      </span>i = 0x<span
+lang=EN-US style='mso-ansi-language:EN-US'>FFFF</span>FFFF;</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a>Целая переменная со знаком получает значение <b style='mso-bidi-font-weight:
+normal'><a name="m17"><span lang=EN-US style='mso-ansi-language:EN-US'>FFFF</span><span
+style='mso-bidi-font-weight:bold'>FFFF</span></b>, что соответствует <b><a name="m18">-1</b>
+для знаковой формы в дополнительном коде. Изменение формы представления с
+беззнаковой на знаковую не сопровождается никакими действиями. </p>
+
+<p class=a><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>short i = 0xFFFF;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>l</span>; <span lang=EN-US
+style='mso-ansi-language:EN-US'>l</span> = <span lang=EN-US style='mso-ansi-language:
+EN-US'>i</span>;</p>
+
+<p class=a><o:p>&nbsp;</o:p></p>
+
+<p class=a>Преобразование <b style='mso-bidi-font-weight:normal'><a name="m19"><span
+lang=EN-US style='mso-ansi-language:EN-US'>short</span></b><span
+style='mso-spacerun:yes'>  </span>в <b><a name="m20">int</b> сопровождается<span
+style='mso-spacerun:yes'>  </span>«удлинением» переменной, что с учетом
+представления <b style='mso-bidi-font-weight:normal'><a name="m21">i</b> со знаком дает <b><a name="m22">FFFFFFFF</b>,
+то есть целое со значением -<b><a name="m23">1</b>. </p>
+
+<p class=a><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>unsigned short n = 0xFF00;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int l;<span
+style='mso-spacerun:yes'>     </span>l = n;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a>Переменная <b><a name="m24">n</b> «удлиняется» как целое без знака, то есть
+переменная <b><a name="m25">l</b> получит значение <b><a name="m26">0000FF00</b>. </p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span></p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>int i; unsigned <span style='mso-spacerun:yes'> </span>u;<span
+style='mso-tab-count:1'>           </span><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>i = u = 0xFFFFFFFF;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if (i &gt; 5) ...<span
+style='mso-tab-count:2'>                     </span>// </span><span
+style='mso-spacerun:yes'> </span>«Ложь»</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if (u &gt; 5) ...<span
+style='mso-tab-count:2'>                    </span></span>//<span
+style='mso-spacerun:yes'>  </span>«Истина»</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a>Значения переменных без знака и со знаком равны <b style='mso-bidi-font-weight:
+normal'><a name="m27">FFFF<span style='mso-bidi-font-weight:bold'>FFFF</span></b> или -<b><a name="m28">1</b>.
+Но результаты сравнения противоположны, так как во втором случае сравнение проводится
+для беззнаковых целых по их абсолютной величине, а в первом случае - путем
+проверки знака результата вычитания, то есть с учетом знаковой формы
+представления чисел. </p>
+
+<p class=a>И последнее, очень важное свойство: преобразование выполняется для
+каждой пары операндов независимо, т.е. абсолютно не важно, какие типы операндов
+имеют место в последующих операциях. «Забывчивость» в этом вопросе приводит к
+ошибкам:</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int a=5, b=2;
+double dd; dd=a/b;<span style='mso-tab-count:2'>              </span>//
+результат dd=2.0, </span>деление<span lang=EN-US style='mso-ansi-language:EN-US'>
+int/int<o:p></o:p></span></p>
+
+<p class=a4>Здесь производится целочисленное деление, несмотря на запоминание
+результата в вещественной форме.</p>
+
+<p class=3 style='mso-outline-level:3'>Классификация операций</p>
+
+<p class=a>Классификацию операций будем проводить не по приоритетам (как это
+делается в справочниках), а по их назначению. Именно такими группами они будут
+встречаться нам в различных областях программирования:</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>арифметические <b><a name="m29">( +,-,*,/,% ) (</b><span
+style='mso-bidi-font-weight:bold'>см.<b><a name="m30"> 4.2);</b></span> </p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='mso-spacerun:yes'> </span>логические
+<b><a name="m31">( &amp;&amp;, ||, ! );</b> </p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='mso-spacerun:yes'> </span>сравнения
+<b><a name="m32">( &lt;,&gt;,&gt;=,&lt;=,==,!=);</b> </p>
+
+<p class=a1 style='margin-right:9.35pt'><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol; mso-bidi-font-weight:bold'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span
+style='mso-spacerun:yes'> </span>поразрядные (машинно-ориентированные) <b><a name="m33">(
+&amp;,|,^,~,&lt;&lt;,&gt;&gt; ) (</b><span style='mso-bidi-font-weight:bold'>см.
+<b><a name="m34">9.1); <o:p></o:p></b></span></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='mso-spacerun:yes'> </span>присваиваниe<b><a name="m35">
+(=,++,--,+=,-=,*-,/= и т.п.);</b> </p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='mso-spacerun:yes'> </span>работa с
+указателями и памятью <b><a name="m36">(*,&amp;,sizeof) (</b><span style='mso-bidi-font-weight:
+bold'>см. <b><a name="m37">5.2,</b> <b><a name="m38">9.2);</b></span> </p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='mso-spacerun:yes'> </span>выделение
+составляющего типа данных<b><a name="m39"> ( (),*,[], . , -&gt; ) (</b><span
+style='mso-bidi-font-weight:bold'>см. <b><a name="m40">5.4) ;</b></span> </p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='mso-spacerun:yes'> </span>явноe
+преобразованиe типа<b><a name="m41"> ( (тип) );</b> </p>
+
+<p class=a1><![if !supportLists]>
+<span
+style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol; mso-bidi-font-weight:bold'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span
+style='mso-spacerun:yes'> </span>последовательность <b><a name="m42">(
+&quot;,&quot;-запятая), </b>условная <b><a name="m43">( ?: ).<o:p></o:p></b></p>
+
+<p class=3 style='mso-outline-level:3'>Арифметические операции</p>
+
+<p class=a><span style='mso-spacerun:yes'> </span>Арифметические операции имеют
+в Си меньше всего специфики. Единственное, на что следует обращать внимание при
+их выполнении, - это размерность используемых целых переменных и переменных с
+плавающей точкой, неявные преобразования типов данных в выражениях и связанные
+со всем этим возможные потери значащих цифр (значимости) результата. </p>
+
+<p class=a>Операция <b style='mso-bidi-font-weight:normal'><a name="m44">%</b> вычисляет
+остаток от деления первого операнда на второй. Она имеет также другой,
+содержательный смысл: второй операнд-константа выступает ограничителем
+возможных изменений первого операнда и называется модулем. Название такой
+операции звучит как <b><a name="m45">&quot;... по модулю ...&quot;: </b></p>
+
+<p class=a><o:p>&nbsp;</o:p></p>
+
+<p class=a0 style='text-indent:36.0pt'>a = (a + 1) % 16;<span style='mso-tab-count:
+1'>           </span>// a присвоить a+1 по модулю 16</p>
+
+<p class=3 style='mso-outline-level:3'>Операции сравнения и логические операции</p>
+
+<p class=a>В Си отсутствует особый базовый тип данных для представления
+логических значений <b><a name="m46">«истина»</b> и <b><a name="m47">«ложь».</b> Для этой цели используются
+значения целой переменной. Значение 0 всегда является <b><a name="m48">&quot;ложью&quot;.</b>
+Значение 1 -<b><a name="m49">&quot;истиной&quot;. </b>Такие значения дают операции сравнения
+и логические операции. Вообще, в широком смысле любое ненулевое значение является
+истинным. В такой интерпретации проверяются условия в операторах программы.
+Поэтому можно записать: </p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>if (1) { A } else { B } <span style='mso-tab-count:1'>                   </span>// Всегда выполнять B</p>
+
+<p class=a0>while (1) { ... }<span style='mso-tab-count:1'>    </span><span
+style='mso-spacerun:yes'>    </span><span style='mso-tab-count:1'>                    </span>// «Вечный» цикл</p>
+
+<p class=a0>if (k) { A } else { B } <span style='mso-tab-count:1'>                   </span>// Эквивалентно if(k !=0)</p>
+
+<p class=a0 style='text-indent:36.0pt'><o:p>&nbsp;</o:p></p>
+
+<p class=a>Все операции сравнения дают в качестве результата значения 1 или 0.
+Следовательно, их можно использовать совместно с арифметическими и другими
+операциями: </p>
+
+<p class=a><o:p>&nbsp;</o:p></p>
+
+<p class=a0>a = b &gt; c;<span style='mso-tab-count:2'>                      </span>//
+Запомнить результат сравнения</p>
+
+<p class=a0>a = (b &gt; c)* 2;<span style='mso-spacerun:yes'>  </span><span
+style='mso-tab-count:1'>              </span>//
+Принимает значения 0 или 2</p>
+
+<p class=a><o:p>&nbsp;</o:p></p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m50">Логические операции</b> <b><a name="m51">И
+(&amp;&amp;) , ИЛИ (||) и НЕ (!)</b> едины для всех языков программирования и
+соответствуют логическим функциям <b><a name="m52">И, ИЛИ и НЕ</b> для логических (булевых)
+переменных. Операция <b><a name="m53">И </b>имеет результатом значение «истина» тогда и
+только тогда, когда оба ее операнда истинны, то есть по отношению к операндам -
+утверждениям звучит как «одновременно оба». Операция <b><a name="m54">ИЛИ</b> имеет
+результатом значение «истина», когда хотя бы один из операндов истинен, то есть
+характеризуется фразой «хотя бы один»: </p>
+
+<p class=a><o:p>&nbsp;</o:p></p>
+
+<p class=a0>if (a &lt; b &amp;&amp; b &lt; c)<span style='mso-tab-count:1'>          </span>//
+если ОДНОВРЕМЕННО ОБА<span style='mso-spacerun:yes'>  </span>a &lt; b и b &lt;
+c, то...</p>
+
+<p class=a0>if (a==0 || b &gt; 0)<span style='mso-tab-count:1'>             </span>// если ХОТЯ БЫ ОДИН a==0 или b &gt;
+0, то...</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a>Логические операции <b><a name="m55">И и ИЛИ</b> имеют в Си еще одно свойство.
+Если в операции <b><a name="m56">И</b> первый операнд имеет значение «ложь», а в операции <b><a name="m57">ИЛИ</b>
+– «истина», то вычисление выражения прекращается, потому что значение его уже
+становится известным («ложь» -для <b><a name="m58">И</b>, «истина» -для <b><a name="m59">ИЛИ</b>). Поэтому
+возможны выражения, где в первом операнде операции <b><a name="m60">И</b> проверяется
+корректность некоторой переменной, а во втором - она же используется с учетом
+этой корректности: </p>
+
+<p class=a0><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:
+"Times New Roman CYR";mso-bidi-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>if (a &gt;=0
+&amp;&amp; sin(sqrt(a)) &gt;0) ... <o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a4>В данном примере второй операнд, включающий в себя функцию
+вычисления квадратного корня, не вычисляется, если первый операнд – «ложь». </p>
+
+<p class=a>Особо следует отметить операцию логической инверсии (отрицания) -<b><a name="m61">&quot;!&quot;</b>.
+Значение «истина» она превращает в «ложь» и наоборот. Если считать значением
+«истина» любое ненулевое значение целой переменной, то эту операцию для целых
+следует понимать как проверку на 0: </p>
+
+<p class=a0><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:
+"Times New Roman CYR";mso-bidi-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0>while(!k) {...}<span style='mso-spacerun:yes'>  </span><span
+style='mso-tab-count:1'>                </span>//
+эквивалентно while(k==0) {...}</p>
+
+<p class=3 style='mso-outline-level:3'>Операции присваивания</p>
+
+<p class=a><span style='mso-spacerun:yes'> </span>К операциям присваивания
+относятся все операции, которые меняют значение одного из операндов. В Си их
+целых три группы: </p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>обычное присваивание <b><a name="m62">(=);</b> </p>
+
+<p class=a1><![if !supportLists]>
+<span
+style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol; mso-bidi-font-weight:bold'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>присваивание, соединенное с одной их бинарных
+операций<b><a name="m63"> (+=, -=, *=, /=, %=, &lt;&lt;=, &gt;&gt;=, &amp;=, |=, ^=); <o:p></o:p></b></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>операции инкремента и декремента (увеличения и
+уменьшения на 1). </p>
+
+<p class=a><span style='mso-spacerun:yes'> </span>Операция присваивания <b><a name="m64">&quot;=&quot;</b>
+сохраняет значение выражения, стоящего в левой части, в переменной, а точнее, в
+адресном выражении, стоящем а правой части. Термин<b><a name="m65"> адресное выражение (или
+l-value</b>) используется для обозначения тех выражений, которым соответствуют исходные
+объекты (переменные) в памяти программы. На данном уровне знакомства со
+структурами данных – это простые переменные и элементы массивов. </p>
+
+<p class=a>Различная интерпретация левой и правой части соответствует дуализму
+понятия «имя переменной»: в левой части под ним понимается ссылка (адрес этой
+переменной в памяти), в правой части – ее значение.</p>
+
+<p class=a4>
+<img border="0" src="Images/smile.jpg" width="40" height="41" align="left">Разница
+между ссылкой и значением такая же, как между стаканом и его содержимым.</p>
+
+<p class=a><span style='mso-spacerun:yes'> </span></p>
+<p class=a>При выполнении операции
+присваивания тип выражения в правой части преобразуется к типу адресного
+выражения в левой. Результатом операции является значение левой части после
+присваивания, соответственно, тип результата - это тип левой части. Кроме того,
+присваивание - одна из немногих операций с направлением выполнения «справа
+налево». Из сказанного следует возможность многократного присваивания «справа
+налево», в котором результат каждого из них используется как правая часть
+последующего: </p>
+
+<p class=a><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>long a; char b;
+int c;<span style='mso-tab-count:1'>       </span><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>a = b = c;<span
+style='mso-tab-count:1'>                      </span>//
+</span>эквивалентно<span lang=EN-US style='mso-ansi-language:EN-US'> b = c; a =
+b; <o:p></o:p></span></p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a>В данном случае при первом (правом) присваивании тип <b><a name="m66">int</b>
+преобразуется к <b><a name="m67">char,</b> а результатом операции является значение
+переменной <b><a name="m68">b</b> типа <b><a name="m69">char</b> после выполнения этого присваивания. Затем
+аналогичным образом происходит присваивание <b style='mso-bidi-font-weight:
+normal'><a name="m70"><span lang=EN-US style='mso-ansi-language:EN-US'>b </span></b>в <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>a.</span></b><span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a>Операция присваивания, соединенная с одной из бинарных операций, - это
+частный случай, когда результат бинарной операции сохраняется (присваивается) в
+первом операнде: </p>
+
+<p class=a0><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:
+"Times New Roman CYR";mso-bidi-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>a +=b; <span
+style='mso-tab-count:3'>                          </span>// </span>эквивалентно<span
+lang=EN-US style='mso-ansi-language:EN-US'> a = a + b; <o:p></o:p></span></p>
+
+<p class=a>Приведенный выше эквивалент этой операции верен лишь в первом
+приближении, потому что в этих операциях левый операнд, если он является
+адресным выражением, вычисляется один, а не два раза. Следующий пример
+показывает это: </p>
+
+<p class=a0><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:
+"Times New Roman CYR";mso-bidi-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>A[i++] +=b;</span><span
+style='mso-tab-count:1; mso-bidi-font-family:Arial; mso-ansi-language:EN-US' lang="EN-US">       </span><span lang=EN-US style='mso-ansi-language:
+EN-US'> <span style='mso-tab-count:1'>           </span>// </span>эквивалентно<span
+lang=EN-US style='mso-ansi-language:EN-US'> A[i] = A[i] + b; i++; <o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a>
+<span
+style='mso-spacerun:yes; mso-ansi-language:EN-US' lang="EN-US"> </span>Операции инкремента и декремента
+увеличивают или уменьшают значение единственного операнда до или после
+использования его значения в выражении: </p>
+
+<p class=a0><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:
+"Times New Roman CYR";mso-bidi-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0>int a;<span style='mso-tab-count:1'>                 </span>// Эквивалент<span
+style='mso-spacerun:yes'>    </span>Интерпретация</p>
+
+<p class=a0>a++;<span style='mso-tab-count:2'>                 </span>// Rez=a;
+a=a+1; Увеличить на 1 после использования</p>
+
+<p class=a0>++a;<span style='mso-tab-count:2'>                 </span>// a=a+1;
+Rez=a; Увеличить на 1 до использования<span style='mso-spacerun:yes'>   </span></p>
+
+<p class=a0>a--;<span style='mso-tab-count:2'>                   </span>//
+Rez=a; a=a-1; Уменьшить на 1 после использования</p>
+
+<p class=a0>--a;<span style='mso-tab-count:2'>                   </span>//
+a=a-1; Rez=a; Уменьшить на 1 до использования<span style='mso-spacerun:yes'>  
+</span></p>
+
+<p class=a0 style='text-indent:36.0pt'><span style='mso-bidi-font-family:Arial'><o:p>&nbsp;</o:p></span></p>
+
+<p class=3 style='mso-outline-level:3'>Явное преобразование типа</p>
+
+<p class=a><span style='mso-spacerun:yes'> </span>В тех случаях, когда
+программиста не устраивает принятый порядок неявного преобразования типов, он
+может сам преобразовать результат к такому типу, какой ему необходим. Это можно
+сделать, в частности, путем присваивания результата дополнительной переменной,
+во время которого требуемое преобразование будет произведено. Но он может
+сделать то же самое внутри выражения «на лету» с помощью специальной операции.
+Она представляет собой имя типа, к которому осуществляется приведение,
+заключенное в круглые скобки и стоящее перед операндом. В качестве примера
+рассмотрим получение дробной части числа: </p>
+
+<p class=a><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>double x,d;<span
+style='mso-tab-count:2'>                    </span>// double x,d; int n;<o:p></o:p></span></p>
+
+<p class=a0>d = x - (int)x;<span style='mso-tab-count:2'>                 </span>//
+n = x; d = x - d;</p>
+
+<p class=a0>
+<span
+style='mso-tab-count:3; mso-ansi-language:EN-US' lang="EN-US">                                    </span><span
+lang=EN-US style='mso-bidi-font-family:Arial;mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=3 style='mso-outline-level:3'>Операции выделения составляющего типа
+данных</p>
+
+<p class=a>Особенность этих операций, <b style='mso-bidi-font-weight:normal'><a name="m71"><span
+style='mso-spacerun:yes'> </span></b>которая служит основанием для их
+объединения, состоит в том, что операций не изменяют данные,<span
+style='mso-spacerun:yes'>  </span>а осуществляют переход от одной формы
+представления к другой - от производного типа к его составляющей и наоборот
+(см. <b style='mso-bidi-font-weight:normal'><a name="m72">5.5). </b>Эти операции касаются,
+прежде всего, работы с различными типами данных и их конструирования в
+программе.</p>
+
+<p class=3 style='mso-outline-level:3'>Условная операция и<span
+style='mso-spacerun:yes'>  </span>операция «запятая»</p>
+
+<p class=a>Эти операции являются частью алгоритмического уровня языка, они
+позволяют «встроить» внутрь выражения небольшую условную конструкцию или
+последовательность независимых действий. </p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int a;<span
+style='mso-spacerun:yes'>   </span>double b;<span style='mso-spacerun:yes'>    
+</span><span style='mso-tab-count:2'>                    </span><span
+style='mso-spacerun:yes'> </span><span style='mso-tab-count:1'>           </span><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>c = x + a &gt; b ?
+a : b;<span style='mso-spacerun:yes'>  </span><span style='mso-tab-count:1'>    </span>//
+</span>Условие<span lang=EN-US style='mso-ansi-language:EN-US'> ? </span>Выражение
+для «истина» : Выражение для «ложь»</p>
+
+<p class=a0 style='text-indent:36.0pt'><o:p>&nbsp;</o:p></p>
+
+<p class=a>Операция использует три операнда и два знака операции <b><a name="m73">(?:)</b>.
+Первым операндом является условие. Если оно истинно, то результатом становится
+значение второго операнда, если ложно - то третьего. В данном примере
+вычисляется максимальное значение переменных <b><a name="m74">a,b</b>. Тип результата
+операции определяется по правилам неявного преобразования типов для второго и
+третьего операндов. Он будет <b style='mso-bidi-font-weight:normal'><a name="m75">всегда один
+и тот же,</b> независимо от выполнения условия. В данном случае - всегда <b><a name="m76">double</b>,
+так как переменная <b><a name="m77">a</b> будет приведена к этому типу. <span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a>Операция <b><a name="m78">&quot;,&quot;</b> позволяет соединить в одно выражение
+несколько выражений, не связанных между собой результатами, то есть просто
+перечислить их. Необходимость ее возникает, когда программисту нужно «втиснуть»
+в то место программы, где по синтаксису стоит одно выражение, несколько
+независимых друг от друга. Типичный пример - работа в цикле с использованием
+двух индексов массива, перемещающихся от концов к середине:</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>for (i=0; i&lt;n;
+i++) </span><span style='mso-spacerun:yes'> </span>{<span lang=EN-US
+style='mso-ansi-language:EN-US'>…A[i]…</span>}<span style='mso-ansi-language:
+EN-US'> <span lang=EN-US><span style='mso-tab-count:1'>                   </span>// </span></span>Обычный<span
+style='mso-ansi-language:EN-US'> </span>цикл<span lang=EN-US style='mso-ansi-language:
+EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>for (i=0 <b
+style='mso-bidi-font-weight:normal'>,</b> j=n-1; i&lt;j; <span
+style='mso-spacerun:yes'> </span>i++ <b style='mso-bidi-font-weight:normal'><a name="m79">, </b>j--)<span
+style='mso-tab-count:2'>                    </span>// </span>Цикл<span
+style='mso-ansi-language:EN-US'> </span>с<span style='mso-ansi-language:EN-US'>
+</span>двумя<span style='mso-ansi-language:EN-US'> </span>индексами<span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span><span
+style='mso-spacerun:yes'>  </span></span>{...A[i]...A[j]...}</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a4>Результатом операции является значение последнего выражения.
+Поэтому если в группе выражений, соединенных запятыми, есть условие, которое
+надлежит проверить, то оно должно быть последним. При этом тип результата также
+равен типу последнего выражения. Например, в заголовке цикла в начале каждого
+шага проверяется условие, перед которым выполняется присваивание:</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>while( a=b, a &lt; 0) {....}</p>
+
+<p class=3 style='mso-outline-level:3'>Подводные камни и маленькие хитрости</p>
+
+<p class=a><span style='mso-spacerun:yes'> </span>Компактный синтаксис
+операций, а также их совместимость по результатам служат источником
+значительного количества ошибок такого плана: при пропуске или, наоборот,
+дублировании знака операции может получиться другая операция, которая при
+принятой в Си «свободе нравов» будет синтаксически корректна, выполнима, но
+даст совершенно незапланированный результат. «Сообразительный» транслятор может
+сопроводить такую ошибку предупреждением (<b style='mso-bidi-font-weight:normal'><a name="m80"><span
+lang=EN-US style='mso-ansi-language:EN-US'>warning</span></b><span lang=EN-US
+style='mso-ansi-language:EN-US'>)</span>. Приведем примеры таких ошибок: </p>
+
+<p class=a><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>if (a=b)<span
+style='mso-tab-count:2'>              </span><span style='mso-tab-count:1'>            </span>//
+</span>вместо<span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>           </span>if (a==b)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>while (a &lt;&lt;
+3)<span style='mso-tab-count:1'>                </span>//
+</span>вместо<span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>           </span>while (a &lt; 3)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>if (a &amp;&amp;
+0x10)<span style='mso-tab-count:1'>                </span>//
+</span>вместо<span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>           </span>if (a &amp; 0x10) </span></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a><span
+style='mso-spacerun:yes; mso-ansi-language:EN-US'> </span>Трудно обнаруживаемые ошибки возникают
+при неявных преобразованиях типов в операциях, особенно при сочетании знаковой
+и беззнаковой форм представления: </p>
+
+<p class=a><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>char<span
+style='mso-tab-count:1'>      </span>c[80];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>#define<span
+style='mso-tab-count:1'>  </span>CODE<span style='mso-tab-count:1'>   </span>193<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>if (c[i] == CODE)<span
+style='mso-tab-count:2'>                        </span>// </span>Эквивалентно<span
+lang=EN-US style='mso-ansi-language:EN-US'> (int)c[i] == 193<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a>В данном примере идентификатором <b><a name="m81">CODE</b> обозначена целая
+константа, которая имеет смысл кода символа, на наличие которого затем
+проверяются элементы массива символов. Но дело в том, что такая операция будет
+давать значение «ложь» всегда. Тип <b><a name="m82">char</b> представляет символы как
+знаковые байты (целые минимальной длины), поэтому этому коду в данной форме
+представления соответствует отрицательное значение -<b><a name="m83">63</b>. Так как любая
+операция преобразует операнды <b><a name="m84">char к int</b>, то получится интересное
+сочетание <b><a name="m85">&quot;-63 == 193&quot;,</b> имеющее значение «ложь» вместо
+планируемого «истина». В таких случаях, когда разрядности переменных меняются,
+лучше не смешивать знаковую и беззнаковую формы. В данном случае исправить
+ошибку можно несколькими способами </p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>#define CODE<span style='mso-tab-count:1'>    </span>-63<span
+style='mso-tab-count:1'>                   </span> //
+Непонятно</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>#define CODE<span
+style='mso-tab-count:1'>    </span>(char)193 <span style='mso-tab-count:1'>          </span>//
+</span>Приемлемо<span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>#define CODE<span
+style='mso-tab-count:1'>    </span>'\301'<span style='mso-spacerun:yes'>   
+</span></span><span style='mso-tab-count:
+1'>            </span><span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0>unsigned char <span style='mso-tab-count:1'>   </span>c[80];<span
+style='mso-tab-count:1'>    </span><span style='mso-spacerun:yes'>    </span><span
+style='mso-tab-count:1'>        </span>// Лучше всего для символов с кодами
+&gt;128</p>
+
+<p class=a>При выполнении операций с переменными различной разрядности нужно
+помнить, что последовательность преобразования разрядностей (типов) связана с
+последовательностью и приоритетами выполнения операций. Поэтому само по себе
+наличие в выражении операнда большей разрядности еще не гарантирует
+правильности вычислений для больших значений. Это видно на примере, где
+используется переменная типа <b><a name="m86">long</b> для хранения произведения переменных
+типа <b><a name="m87">int</b>. Ошибка состоит в том, что операция умножения все равно будет
+производиться с целыми размерности <b><a name="m88">int</b>, что может привести к потере
+значащих цифр произведения: </p>
+
+<p class=a><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>Int a,b;<span
+style='mso-tab-count:1'>  </span>long c;<span style='mso-tab-count:1'>  </span><o:p></o:p></span></p>
+
+<p class=a0>c = a * b;<span style='mso-tab-count:3'>                                   </span>//
+Неправильно</p>
+
+<p class=a0>c = (long)a * b;<span style='mso-tab-count:2'>               </span><span
+style='mso-tab-count:1'>            </span>// Правильно</p>
+
+<p class=a><span style='mso-spacerun:yes'> </span>Операция присваивания,
+операция «запятая» и условная операция позволяют выполнять многие действия «на
+лету», не выходя за пределы синтaксиса выражения в условиях, проверяемых в
+оперaторах <b><a name="m89">if, while</b>, например: </p>
+
+<p class=a0><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:
+"Times New Roman CYR";mso-bidi-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>while
+((c=getchar()) !='*') {...c...} </span><span lang=EN-US style='mso-bidi-font-family:
+Arial;mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a>Здесь в переменной <b style='mso-bidi-font-weight:normal'><a name="m90">c</b>
+запоминается результат функции, вызванной во время проверки условия в операторе
+while, с целью дальнейшего его использования в теле оператора. </p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>while (x0=x1, x0
+&gt; 0) {... x1 =f(x0) ...} <o:p></o:p></span></p>
+
+<p class=a style='text-indent:0cm'>Присваивание выполняется во время проверки
+условия в операторе цикла. </p>
+
+<p class=a0 style='text-indent:36.0pt'><span style='font-size:12.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman CYR";mso-bidi-font-family:
+"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0>for (...; d&gt;0 ? a&gt;b : b&gt;=a; ...) {...}<span lang=EN-US
+style='mso-bidi-font-family:Arial;mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0 style='text-indent:36.0pt'><o:p>&nbsp;</o:p></p>
+
+<p class=a4>В зависимости от значения переменной <b><a name="m91">d</b> меняется условие
+продолжения цикла <b><a name="m92">for</b>. </p>
+
+<p class=a>При наличии в программе нескольких вариантов выбора по группе
+условий программа становится «сильно ветвистой», например: </p>
+
+<p class=a><o:p>&nbsp;</o:p></p>
+
+<p class=a0>if (a&lt;b)</p>
+
+<p class=a0 style='text-indent:36.0pt'>if (a&lt;c) <span style='mso-tab-count:
+2'>             </span></p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span>if
+(b&lt;c) <span style='mso-spacerun:yes'>  </span>{...}<span style='mso-tab-count:
+1'>      </span>// a &lt; b &amp;&amp; a &lt; c &amp;&amp; b &lt; c</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span>else<span
+style='mso-tab-count:1'>      </span> {...}<span style='mso-tab-count:1'>      </span>//
+a &lt; b &amp;&amp; a &lt; c &amp;&amp; b &gt;=c</p>
+
+<p class=a0><span style='mso-spacerun:yes'>    </span><span style='mso-tab-count:
+1'>        </span>else</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span>if
+(b&lt;c) <span style='mso-spacerun:yes'>  </span>{...}<span style='mso-tab-count:
+1'>      </span>// a &lt; b &amp;&amp; a &gt;=c &amp;&amp; b &lt; c</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span>else<span
+style='mso-tab-count:1'>      </span> {...}<span style='mso-tab-count:1'>      </span>//
+a &lt; b &amp;&amp; a &gt;=c &amp;&amp; b &gt;=c</p>
+
+<p class=a0>else<span style='mso-tab-count:1'>      </span>...</p>
+
+<p class=a>Можно воспользоваться тем, что операция сравнения дает целый
+результат (1 или 0) и сформировать переменную, принимающую уникальное значение
+для каждой комбинации сравнений. Тогда программа примет хотя и менее понятный,
+но зато более регулярный вид: </p>
+
+<p class=a><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int<span
+style='mso-tab-count:1'>         </span>n;<span style='mso-spacerun:yes'>   
+</span>n = (a &lt; b)*4 + (a &lt; c)*2 + (b &lt; c);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>switch(n){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>case 0:...<span
+style='mso-tab-count:1'>          </span>break; <span style='mso-tab-count:
+1'>  </span>// a &gt;=b &amp;&amp; a &gt;=c &amp;&amp; b &gt;=c<span
+style='mso-tab-count:1'>       </span><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>case 7: ...<span
+style='mso-tab-count:1'>         </span>break;<span style='mso-tab-count:1'>   </span>//
+a &lt; b <span style='mso-spacerun:yes'> </span>&amp;&amp; a &lt; c &amp;&amp; <span
+style='mso-spacerun:yes'> </span>b &lt; c<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>}</p>
+
+<p class=3 style='mso-outline-level:3'>Роль символа «точка с запятой»</p>
+
+<p class=a><span style='mso-spacerun:yes'> </span>Символ <b><a name="m93">&quot;;&quot;</b>
+(точка с запятой), поставленный в конце выражения, превращает его в конструкцию
+более высокого уровня - оператор. Для обозначения его роли лучше всего подходит
+слово «ограничитель» - он ограничивает текущую синтаксическую конструкцию. То
+же самое он делает в других местах программы, например, в определениях
+переменных. Поэтому транслятор, обнаружив начало выражения или определения,
+продолжает его обработку, пока не встретит <b><a name="m94">&quot;;&quot;</b>. Если
+программист забыл ограничить конструкцию этим символом, то транслятор «не
+заметит» окончания выражения и по инерции будет продолжать анализ последующей
+части программы как часть последнего. Это может привести к появлению ошибок
+трансляции, которых на самом деле нет в программе. </p>
+
+<p class=a0><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0>a = b + c - 5<span style='mso-tab-count:1'>                  </span>// Здесь пропущен символ
+&quot;;&quot;</p>
+
+<p class=a0>if (a &lt; b)<span style='mso-ansi-language:EN-US'> </span>{}<span
+style='mso-tab-count:2'>                     </span>// Здесь транслятор
+обнаружит ошибку </p>
+
+<p class=a0><span style='mso-tab-count:3'>                                    </span>//
+в выражении, которое с его точки </p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span
+style='mso-tab-count:2'>                        </span>// зрения еще не
+закончилось</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>e</span>lse {}<span
+style='mso-tab-count:3'>                           </span>// В этой части
+программы транслятор может</p>
+
+<p class=a0><span style='mso-tab-count:3'>                                    </span>//
+обнаружить «наведенную» ошибку</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+style='mso-tab-count:1'>            </span>// Эту часть программы транслятор
+пропустит</p>
+
+<p class=a><span style='mso-spacerun:yes'> </span>Конечно, здесь много зависит
+от особенностей транслятора, но чтобы не проверять его на «сообразительность»,
+лучше приучить себя вовремя ставить этот ограничитель. </p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m95">Примечание</b>: в Паскале
+символ «<b style='mso-bidi-font-weight:normal'><a name="m96">;</b>» называется разделителем -
+он разделяет два оператора в простой последовательности. Эта тонкость в
+терминологии приводит к тому, что программы на Паскале и Си с точки зрения
+расстановки этого символа существенно различаются.</p>
+
+<h3>Вопросы без ответов</h3>
+
+<p class=a4>Определить значения переменных после выполнения действий.</p>
+
+<p class=a0><span lang=EN-US style='font-family:"Courier New";mso-ansi-language:
+EN-US'>//---------------------------------------------------<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//-------------------------------------------------
+1<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int i1 = 0xFFFFFFFF;
+i1 ++;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//-------------------------------------------------
+2<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>unsigned u1,u2,u;
+u1 = 5; u2 = -1; u=0; <o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>if (u1 &gt; u2)
+u++;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//-------------------------------------------------
+3<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int i1 = 0x01FF;
+char c; c = i1; i1 = c;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//-------------------------------------------------
+4<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int i1 = 0x01FF;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>unsigned char c; c
+= i1; i1 = c;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//-------------------------------------------------
+5<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>double d1,d2,d3;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>d1 = 2.56; d2 = (int)d1 + 1.5;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>d3 = (int)(d1 + 1.5);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//-------------------------------------------------
+6<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>double d1 =
+2.56;<span style='mso-spacerun:yes'>  </span>int<span style='mso-tab-count:
+1'>     </span>i; i = (d1 - (int)d1) * 10;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//-------------------------------------------------
+7<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>i=0; if (i++) i++;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//-------------------------------------------------
+8<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>i=0; if (++i) i++;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//-------------------------------------------------
+9<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>m = a &gt; b ? a :
+b;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//------------------------------------------------
+10<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>m = (a * b) &gt;
+0;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//------------------------------------------------
+11<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>m = a &gt; 0 ? a :
+-a;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

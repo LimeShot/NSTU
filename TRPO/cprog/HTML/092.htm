@@ -1,0 +1,2816 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=Edit-Time-Data href="102.files/editdata.mso">
+<title>10.2. Преобразование указателей&nbsp; и работа с памятью на низком уровне</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>www.PHILka.RU</o:Author>
+  <o:LastAuthor>www.PHILka.RU</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>248</o:TotalTime>
+  <o:Created>2008-07-16T13:41:00Z</o:Created>
+  <o:LastSaved>2008-07-16T13:41:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>5426</o:Words>
+  <o:Characters>30930</o:Characters>
+  <o:Company>NSTU_VT</o:Company>
+  <o:Bytes>11776</o:Bytes>
+  <o:Lines>257</o:Lines>
+  <o:Paragraphs>72</o:Paragraphs>
+  <o:CharactersWithSpaces>36284</o:CharactersWithSpaces>
+  <o:Version>11.6360</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DoNotHyphenateCaps/>
+  <w:DrawingGridHorizontalSpacing>0,55 пт</w:DrawingGridHorizontalSpacing>
+  <w:DrawingGridVerticalSpacing>0,55 пт</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:UseMarginsForDrawingGridOrigin/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DrawingGridVerticalOrigin>99,25 пт</w:DrawingGridVerticalOrigin>
+  <w:Compatibility>
+   <w:WW6BorderRules/>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+   <w:UseWord97LineBreakingRules/>
+   <w:SelectEntireFieldWithStartOrEnd/>
+   <w:UseWord2002TableStyleRules/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Courier;
+	panose-1:2 7 4 9 2 2 5 2 4 4;
+	mso-font-charset:0;
+	mso-generic-font-family:modern;
+	mso-font-format:other;
+	mso-font-pitch:fixed;
+	mso-font-signature:3 0 0 0 1 0;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:"Times New Roman CYR";
+	panose-1:2 2 6 3 5 4 5 2 3 4;
+	mso-font-charset:204;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+@font-face
+	{font-family:"Arial CYR";
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+h1
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:14.0pt;
+	mso-bidi-font-weight:normal;}
+h2
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-font-weight:normal;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+h3
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	font-weight:normal;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{margin-top:0cm;
+	margin-right:4.2pt;
+	margin-bottom:0cm;
+	margin-left:7.1pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:21.25pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a, li.a, div.a
+	{mso-style-name:текст;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a0, li.a0, div.a0
+	{mso-style-name:программа;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a1, li.a1, div.a1
+	{mso-style-name:список;
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:18.45pt;
+	margin-bottom:0cm;
+	margin-left:64.35pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-18.0pt;
+	mso-pagination:widow-orphan;
+	mso-list:l10 level1 lfo1;
+	tab-stops:42.55pt list 64.35pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a2, li.a2, div.a2
+	{mso-style-name:определение;
+	mso-style-parent:текст;
+	margin-top:12.0pt;
+	margin-right:32.9pt;
+	margin-bottom:12.0pt;
+	margin-left:35.45pt;
+	text-align:justify;
+	text-indent:.55pt;
+	mso-pagination:widow-orphan;
+	border:none;
+	mso-border-alt:solid windowtext 1.5pt;
+	padding:0cm;
+	mso-padding-alt:1.0pt 1.0pt 1.0pt 1.0pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a3, li.a3, div.a3
+	{mso-style-name:эпиграф;
+	margin-top:0cm;
+	margin-right:32.9pt;
+	margin-bottom:0cm;
+	margin-left:5.0cm;
+	margin-bottom:.0001pt;
+	text-align:right;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.a4, li.a4, div.a4
+	{mso-style-name:"от края";
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a5, li.a5, div.a5
+	{mso-style-name:Формула;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.a6, li.a6, div.a6
+	{mso-style-name:"без формата";
+	mso-style-parent:программа;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a7, li.a7, div.a7
+	{mso-style-name:стихи;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.1, li.1, div.1
+	{mso-style-name:эпиграф1;
+	mso-style-parent:эпиграф;
+	margin-top:0cm;
+	margin-right:9.35pt;
+	margin-bottom:0cm;
+	margin-left:9.0cm;
+	margin-bottom:.0001pt;
+	text-align:right;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+ /* Page Definitions */
+ @page
+	{mso-footnote-separator:url("102.files/header.htm") fs;
+	mso-footnote-continuation-separator:url("102.files/header.htm") fcs;
+	mso-endnote-separator:url("102.files/header.htm") es;
+	mso-endnote-continuation-separator:url("102.files/header.htm") ecs;}
+@page Section1
+	{size:21.0cm 842.0pt;
+	margin:33.45pt 42.55pt 72.0pt 89.85pt;
+	mso-header-margin:14.2pt;
+	mso-footer-margin:31.75pt;
+	mso-even-header:url("102.files/header.htm") eh1;
+	mso-header:url("102.files/header.htm") h1;
+	mso-even-footer:url("102.files/header.htm") ef1;
+	mso-footer:url("102.files/header.htm") f1;
+	mso-first-header:url("102.files/header.htm") fh1;
+	mso-first-footer:url("102.files/header.htm") ff1;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:73868588;
+	mso-list-type:hybrid;
+	mso-list-template-ids:881760882 -1343698918 68747289 68747291 68747279 68747289 68747291 68747279 68747289 68747291;}
+@list l0:level1
+	{mso-level-start-at:10;
+	mso-level-tab-stop:42.0pt;
+	mso-level-number-position:left;
+	margin-left:42.0pt;
+	text-indent:-24.0pt;}
+@list l1
+	{mso-list-id:122117770;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-473901138 68747279 68747289 68747291 68747279 68747289 68747291 68747279 68747289 68747291;}
+@list l1:level1
+	{mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l2
+	{mso-list-id:131530863;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1310531864 -1343698918 68747289 68747291 68747279 68747289 68747291 68747279 68747289 68747291;}
+@list l2:level1
+	{mso-level-start-at:10;
+	mso-level-tab-stop:42.0pt;
+	mso-level-number-position:left;
+	margin-left:42.0pt;
+	text-indent:-24.0pt;}
+@list l3
+	{mso-list-id:327908262;
+	mso-list-type:simple;
+	mso-list-template-ids:68747279;}
+@list l3:level1
+	{mso-level-tab-stop:18.0pt;
+	mso-level-number-position:left;
+	margin-left:18.0pt;
+	text-indent:-18.0pt;}
+@list l4
+	{mso-list-id:386294958;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1160905970 68747279 68747289 68747291 68747279 68747289 68747291 68747279 68747289 68747291;}
+@list l4:level1
+	{mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l5
+	{mso-list-id:460881892;
+	mso-list-type:hybrid;
+	mso-list-template-ids:732737270 -1343698918 68747289 68747291 68747279 68747289 68747291 68747279 68747289 68747291;}
+@list l5:level1
+	{mso-level-start-at:10;
+	mso-level-tab-stop:60.0pt;
+	mso-level-number-position:left;
+	margin-left:60.0pt;
+	text-indent:-24.0pt;}
+@list l6
+	{mso-list-id:503015531;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-871054048 68747279 68747289 68747291 68747279 68747289 68747291 68747279 68747289 68747291;}
+@list l6:level1
+	{mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l7
+	{mso-list-id:959264608;
+	mso-list-type:hybrid;
+	mso-list-template-ids:390634220 68747279 68747289 68747291 68747279 68747289 68747291 68747279 68747289 68747291;}
+@list l7:level1
+	{mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l8
+	{mso-list-id:1112363606;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1021003464 -1343698918 68747289 68747291 68747279 68747289 68747291 68747279 68747289 68747291;}
+@list l8:level1
+	{mso-level-start-at:10;
+	mso-level-tab-stop:60.0pt;
+	mso-level-number-position:left;
+	margin-left:60.0pt;
+	text-indent:-24.0pt;}
+@list l9
+	{mso-list-id:1547596795;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1964554622 -1343698918 68747289 68747291 68747279 68747289 68747291 68747279 68747289 68747291;}
+@list l9:level1
+	{mso-level-start-at:10;
+	mso-level-tab-stop:42.0pt;
+	mso-level-number-position:left;
+	margin-left:42.0pt;
+	text-indent:-24.0pt;}
+@list l10
+	{mso-list-id:1628194852;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1269767726 -1450833310 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l10:level1
+	{mso-level-number-format:bullet;
+	mso-level-style-link:список;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:64.35pt;
+	mso-level-number-position:left;
+	margin-left:64.35pt;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l11
+	{mso-list-id:1916743749;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-61018060 68747265 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l11:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:71.45pt;
+	mso-level-number-position:left;
+	margin-left:71.45pt;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l12
+	{mso-list-id:1967007814;
+	mso-list-type:hybrid;
+	mso-list-template-ids:2099296004 68747279 68747289 68747291 68747279 68747289 68747291 68747279 68747289 68747291;}
+@list l12:level1
+	{mso-level-tab-stop:64.35pt;
+	mso-level-number-position:left;
+	margin-left:64.35pt;
+	text-indent:-18.0pt;}
+@list l13
+	{mso-list-id:2110923507;
+	mso-list-type:hybrid;
+	mso-list-template-ids:156423144 -1343698918 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l13:level1
+	{mso-level-start-at:10;
+	mso-level-tab-stop:70.35pt;
+	mso-level-number-position:left;
+	margin-left:70.35pt;
+	text-indent:-24.0pt;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Обычная таблица";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+table.MsoTableGrid
+	{mso-style-name:"Сетка таблицы";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+  <o:regrouptable v:ext="edit">
+   <o:entry new="1" old="0"/>
+   <o:entry new="2" old="1"/>
+   <o:entry new="3" old="0"/>
+  </o:regrouptable>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=RU style='tab-interval:36.0pt' background="back.gif">
+
+<div class=Section1>
+
+<h2>9.2. Преобразование указателей <span style='mso-spacerun:yes'> </span>и
+работа с памятью на низком уровне</h2>
+
+<h3>Особенности работы с памятью в Си</h3>
+
+<p class=a>Если под управлением памятью понимать размещение <span
+style='mso-spacerun:yes'> </span>в ней данных, то в большинстве языков высокого
+уровня программист избавлен от этой участи. Более того, сама задача
+эффективного размещения данных в памяти относится к области системного
+программирования, поэтому в средах прикладного программирования эти механизмы
+присутствуют как данность и скрыты. </p>
+
+<p class=a>Поскольку единственным «представителем» памяти в программе выступают
+переменные, то управление памятью определяется тем, каким образом работает с
+ними и с образованными ими структурами данных язык программирования.<span
+style='mso-spacerun:yes'>  </span>Большинство языков программирования
+компилирующего типа однозначно закрепляет за переменными их типы данных и
+ограничивает работу с памятью только теми областями, в которых эти переменные
+размещены. Программист не может выйти за пределы самим же определенного шаблона
+структуры данных. С другой стороны, это позволяет транслятору обнаруживать
+допущенные ошибки, как в процессе трансляции, так и в процессе выполнения
+программы. </p>
+
+<p class=a>Наличие указателей или ссылочных типов (Паскаль, Си, Java) а также
+динамических переменных позволяет «вручную» реализовать динамические структуры
+данных средствами языка программирования, однако принципиально не меняет
+систему взаимоотношений и меру ответственности программиста и транслятора.</p>
+
+<p class=a>В языке Си ситуация принципиально иная по двум причинам:</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>наличие операции адресной арифметики при работе
+с указателями позволяет, в принципе, выйти за пределы памяти, выделенной
+транслятором под указуемую переменную и адресовать память как «до» так и
+«после» нее. Другое дело, что это должно производиться осознанно и корректно;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>присваивание и преобразование указателей
+различных типов, речь о котором пойдет ниже, позволяет рассматривать одну и ту
+же память «под различным углом зрения» в смысле типов заполняющих ее
+переменных. </p>
+
+<h3>Преобразование типа указателя</h3>
+
+<p class=a>Операцию присваивания указателей различных типов следует понимать
+как копирование адреса памяти, содержащегося в указателе. Иначе говоря, назначение
+указателя в левой части на ту же самую область памяти. Но поскольку тип
+указуемых переменных у них разный, то эта область памяти по правилам
+интерпретации указателя будет рассматриваться как заполненная переменными либо
+одного, либо другого типа.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>char A[20]={0x11,0x15,0x32,0x16,0x44,0x1,0x6,0x8A};
+<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>char<span
+style='mso-tab-count:1'>      </span>*p; int *q; long *l;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>p = A; q = (int*)p;<span
+style='mso-spacerun:yes'>  </span>l = (long*)p;<o:p></o:p></span></p>
+
+<p class=a0>p[2] = 5; <span style='mso-tab-count:2'>                       </span>//
+записать 5 во второй байт области A</p>
+
+<p class=a0>q[1] = 7; <span style='mso-tab-count:2'>                       </span>//
+записать 7 в первое слово области A </p>
+
+<p class=a>Здесь <b style='mso-bidi-font-weight:normal'><a name="m1"><span lang=EN-US
+style='mso-ansi-language:EN-US'>p</span></b> - указатель на область байтов, <b
+style='mso-bidi-font-weight:normal'>q </b>- на область целых<b
+style='mso-bidi-font-weight:normal'>, l</b> - на область длинных целых.
+Соответственно операции адресной арифметики <b style='mso-bidi-font-weight:
+normal'><a name="m2">*(p+i), *(q+i), *(l+i)</b> или <b style='mso-bidi-font-weight:normal'><a name="m3"><span
+lang=EN-US style='font-family:"Times New Roman";mso-ansi-language:EN-US'>p</span><span style='font-family:"Times New Roman"'>[</span><span lang=EN-US style='font-family:"Times New Roman";
+mso-ansi-language:EN-US'>i</span><span
+style='font-family:"Times New Roman"'>], </span></b><b style='mso-bidi-font-weight:
+normal'><a name="m4"><span lang=EN-US style='font-family:"Times New Roman";mso-ansi-language:
+EN-US'>q</span></b><b style='mso-bidi-font-weight:normal'><a name="m5"><span
+style='font-family:"Times New Roman"'>[</span></b><b style='mso-bidi-font-weight:
+normal'><a name="m6"><span lang=EN-US style='font-family:"Times New Roman";mso-ansi-language:
+EN-US'>i</span></b><b style='mso-bidi-font-weight:normal'><a name="m7"><span
+style='font-family:"Times New Roman"'>], </span></b><b style='mso-bidi-font-weight:
+normal'><a name="m8"><span lang=EN-US style='font-family:"Times New Roman";mso-ansi-language:
+EN-US'>l</span></b><b style='mso-bidi-font-weight:normal'><a name="m9"><span
+style='font-family:"Times New Roman"'>[</span></b><b style='mso-bidi-font-weight:
+normal'><a name="m10"><span lang=EN-US style='font-family:"Times New Roman";mso-ansi-language:
+EN-US'>i</span></b><b style='mso-bidi-font-weight:normal'><a name="m11"><span
+style='font-family:"Times New Roman"'>]</span></b><span style='font-family:
+"Times New Roman"'> </span>адресуют <b style='mso-bidi-font-weight:normal'><a name="m12">i</b>-ый
+байт,<b style='mso-bidi-font-weight:normal'><a name="m13"> i</b>-ое целое и<b
+style='mso-bidi-font-weight:normal'> i</b>-ое длинное целое от начала области. бласть
+памяти имеет различную структуру (байтовую, словную и т.д.) в зависимости от
+того, через какой указатель мы с ней работаем. При этом неважно, что сама
+область определена как массив типа <b style='mso-bidi-font-weight:normal'><a name="m14">char</b>
+- это имеет отношение только к операциям с использованием идентификатора
+массива. </p>
+
+<p class=a style="text-align: center"><span
+style='mso-spacerun:yes'>
+<img border="0" src="Images/092-01.gif" width="310" height="237"> </span></p>
+
+<p class=a style="text-align: center"><o:p>&nbsp;</o:p><b style='mso-bidi-font-weight:
+normal'><a name="m15">Рис.102-1. Указатели различных типов в общей памяти<o:p></o:p></b></p>
+
+<p class=a>Присваивание значения указателя одного типа указателю другого типа
+сопровождается действием, которое называется в Си <b style='mso-bidi-font-weight:
+normal'><a name="m16">преобразованием типа указателя</b>, и которое в Си++ обозначается
+всегда явно. Операция <b style='mso-bidi-font-weight:normal'><a name="m17">(<span lang=EN-US style='mso-ansi-language:
+EN-US'>int</span>*)<span lang=EN-US
+style='mso-ansi-language:EN-US'>p</span><span lang=EN-US> </span></b>меняет в
+текущем контексте тип указателя <b style='mso-bidi-font-weight:normal'><a name="m18"><span
+lang=EN-US style='mso-ansi-language:EN-US'>char</span>* </b>на <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>int</span>*. </b>На самом деле это действие является чистой фикцией
+(команды транслятором не генерируются). Транслятор просто запоминает, что тип
+указуемой переменной изменился, поэтому операции адресной арифметики и
+косвенного обращения нужно выполнять с учетом нового типа указателя. </p>
+
+<p class=a>Преобразование типа указателя можно выполнить не только при присваивании,
+но и внутри выражения, «на лету». Операция <b style='mso-bidi-font-weight:normal'><a name="m19">явного
+преобразования типа указателя</b> меняет тип указуемого элемента только в
+цепочке выполняемых операций.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>char<span style='mso-tab-count:1'>      </span>A[20];<span
+style='mso-tab-count:1'>   </span>((int *)A<span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>)[</span>2] = 5;<span style='mso-tab-count:
+2; font-family:Courier New; mso-bidi-font-family:Times New Roman'>            </span></p>
+
+<p class=a4>Имя массива <b style='mso-bidi-font-weight:normal'><a name="m20"><span
+lang=EN-US style='mso-ansi-language:EN-US'>A</span> - </b>указатель на его
+начало - имеет тип <b style='mso-bidi-font-weight:normal'><a name="m21"><span lang=EN-US
+style='mso-ansi-language:EN-US'>char</span>*, </b>который явно преобразуется в <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>int</span>*</b>. Тем самым в текущем контексте мы ссылаемся на массив
+как на область целых переменных. Применительно к указателю на массив целых
+выполняется операция индексации и последующее присваивание целого значения 5 во
+второй элемент целого массива, размещенного в <b style='mso-bidi-font-weight:
+normal'><a name="m22">А</b>.</p>
+
+<p class=a>Операция <b style='mso-bidi-font-weight:normal'><a name="m23">*p++</b>
+применительно к любому указателю интерпретируется как «взять указуемую переменную
+и перейти к следующей», значением указателя после выполнения операции будет
+адрес переменной, следующей за выбранной. Использование такой операции в
+сочетании с явным преобразованием типа указателя позволяет извлекать или
+записывать переменные различных типов, последовательно расположенных в памяти.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>char</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>A</span>[20],
+*<span lang=EN-US style='mso-ansi-language:EN-US'>p</span>=<span lang=EN-US
+style='mso-ansi-language:EN-US'>A</span>;</p>
+
+<p class=a0>*<span lang=EN-US style='mso-ansi-language:EN-US'>p</span>++ = 5;<span
+style='mso-tab-count:2'>                      </span>// Записать в массив байт
+с кодом 5</p>
+
+<p class=a0>*((<span lang=EN-US style='mso-ansi-language:EN-US'>int</span>*)<span
+lang=EN-US style='mso-ansi-language:EN-US'>p</span>)++ = 5;<span
+style='mso-tab-count:2'>              </span>// Записать в массив целое 5 вслед
+за ним</p>
+
+<p class=a0>*((<span lang=EN-US style='mso-ansi-language:EN-US'>double</span>*)<span
+lang=EN-US style='mso-ansi-language:EN-US'>p</span>)++ = 5.5; <span
+style='mso-tab-count:1'>    </span>// Записать в массив вещественное 5.5 вслед
+за ним</p>
+
+<p class=a4><i style='mso-bidi-font-style:normal'>Замечание: </i>операция ++ в
+сочетании с преобразованием типа указателя «на лету» принимается не всеми
+трансляторами. В случае неудачи необходимо использовать промежуточное
+присваивание со сменой типа указателя.</p>
+
+<p class=a4><b style='mso-bidi-font-weight:normal'><a name="m24"><o:p>&nbsp;</o:p></b></p>
+
+<h3>Работа с памятью на низком уровне. </h3>
+
+<p class=a>Операции преобразования типа указателя и адресной арифметики дают Си
+невиданную для языков высокого уровня свободу действий по управлению памятью.
+Традиционно языки программирования, даже если они работают с указателями или с
+их неявными эквивалентами - ссылками, не могут выйти за пределы единожды
+определенных типов данных для используемых в программе переменных. Напротив, в
+Си имеется возможность работать с памятью на «низком» уровне (можно сказать,
+ассемблерном или архитектурном). На этом уровне программист имеет дело не с
+переменными, а с помеченными областями памяти, внутри которых он может
+размещать данные любых типов и в любой последовательности, в какой только
+пожелает. Естественно, что при этом ответственность за корректность размещения
+данных ложится целиком на программиста. </p>
+
+<p class=a>Простейшим примером<span style='mso-spacerun:yes'>  </span>перехода
+от низкоуровневого представления к традиционному является использование функций
+динамического распределения памяти. Функция <b style='mso-bidi-font-weight:
+normal'><a name="m25"><span lang=EN-US style='mso-ansi-language:EN-US'>malloc</span></b>
+возвращает указатель типа <b style='mso-bidi-font-weight:normal'><a name="m26">void* </b>как адрес
+выделенной области памяти, который сразу же приводится к требуемому типа <b
+style='mso-bidi-font-weight:normal'>double*</b>. Если исходить из заданной
+физической размерности области памяти (в байтах), то размерность полученного
+массива<span style='mso-spacerun:yes'>  </span>«промеряется» с использованием
+операции <b style='mso-bidi-font-weight:normal'><a name="m27"><span lang=EN-US
+style='mso-ansi-language:EN-US'>sizeof</span></b>. </p>
+
+<p class=a0><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;font-family:
+"Times New Roman CYR";mso-bidi-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>double<span
+style='mso-tab-count:1'>   </span>*d; int N;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>printf</span> (“Сколько
+байтов:”); <span lang=EN-US style='mso-ansi-language:EN-US'>scanf</span>(“%<span
+lang=EN-US style='mso-ansi-language:EN-US'>d</span>”,&amp;<span lang=EN-US
+style='mso-ansi-language:EN-US'>N</span>);</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>d</span>=<span
+lang=EN-US style='mso-ansi-language:EN-US'>(double*)</span>malloc(<span
+lang=EN-US style='mso-ansi-language:EN-US'>N</span>)<span lang=EN-US
+style='mso-ansi-language:EN-US'>;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>sz</span> =
+N / sizeof(double); <span style='mso-tab-count:1'>         </span>// Количество
+вещественных в массиве</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>for (i=0; i &lt; sz;
+i++) d[i] = i;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a>В <b style='mso-bidi-font-weight:normal'><a name="m28">4.5</b> было введено
+понятие <b style='mso-bidi-font-weight:normal'><a name="m29">формат, </b>как описание варьируемого
+(свободного) порядка следования элементов данных в последовательном потоке.
+Операции преобразования типа указателя позволяют хранить разнотипные данные в
+аналогичном виде, но уже непосредственно в памяти. Заметим, что реализовать
+форматное представление данных можно только программно, т.е. динамически,
+статических<span style='mso-spacerun:yes'>  </span>описаний типов данных и
+переменных здесь недостаточно.</p>
+
+<p class=a>Для работы с последовательностью данных разных типов можно также
+применить объединение (<b style='mso-bidi-font-weight:normal'><a name="m30">union</b>, см. <b
+style='mso-bidi-font-weight:normal'>5.3</b>), которое, как известно, позволяет размещать
+все свои элементы в общей памяти (не «друг за другом», а «друг на друге»). Если
+элементами <b style='mso-bidi-font-weight:normal'><a name="m31">union</b> являются указатели,
+то все они «сливаются в один», к которому можно обращаться за любым указуемым
+типом.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>union<span
+style='mso-tab-count:1'>    </span> ptr {<span style='mso-tab-count:1'>     </span><o:p></o:p></span></p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>int <span style='mso-tab-count:1'>        </span>*p;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>double<span style='mso-tab-count:
+1'>   </span>*d;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>long<span style='mso-tab-count:1'>      </span>*l;<span
+style='mso-spacerun:yes'>  </span>} PTR;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int A[100];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>PTR.p=A;<span
+style='mso-spacerun:yes'>  </span>*(PTR.p)++=5; <span
+style='mso-spacerun:yes'> </span>*(PTR.l)++=5L; <span
+style='mso-spacerun:yes'> </span>*(PTR.d)++=5.56;<o:p></o:p></span></p>
+
+<p class=a>Следующая<b style='mso-bidi-font-weight:normal'><a name="m32"> </b>программа
+упаковывает массив вещественных чисел, «сворачивая» последовательности подряд
+идущих нулевых элементов. Формат упакованной последовательности<span
+style='font-family:"Times New Roman"'>:<o:p></o:p></span></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>последовательность ненулевых элементов
+кодируется целым счетчиком (типа <b style='mso-bidi-font-weight:normal'><a name="m33"><span
+lang=EN-US style='font-family:"Times New Roman";mso-ansi-language:EN-US'>int</span></b>),
+за которым следуют сами элементы<span style='font-family:"Times New Roman"'>;<o:p></o:p></span></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>последовательность нулевых элементов кодируется
+отрицательным значением целого счетчика<span style='font-family:"Times New Roman"'>;</span></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>нулевое значение целого счетчика обозначает
+конец последовательности<span style='font-family:"Times New Roman"'>;<o:p></o:p></span></p>
+
+<p class=a4>Исходная и упакованная последовательности выглядят так<span
+style='font-family:"Times New Roman"'>: </span>2.2, 3.3, 4.4, 5.5, 0.0, 0.0,
+0.0, 1.1, 2.2, 0.0, 0.0, 4.4 и <b style='mso-bidi-font-weight:normal'><a name="m34">4</b>,
+2.2, 3.3, 4.4, 5.5, <b style='mso-bidi-font-weight:normal'><a name="m35">-3</b>, <b
+style='mso-bidi-font-weight:normal'>2</b>, 1.1, 2.2, <b style='mso-bidi-font-weight:
+normal'><a name="m36">-2</b>,<span style='mso-spacerun:yes'>  </span><b style='mso-bidi-font-weight:
+normal'><a name="m37">1</b>, 4.4, <b style='mso-bidi-font-weight:normal'><a name="m38">0.</b></p>
+
+<p class=a>В процессе упаковки требуется подсчитывать количество подряд идущих
+нулей. В выходной последовательности запоминается место расположения последнего
+счетчика - также в виде указателя. Смена счетчика происходит, если текущий и
+предыдущий элементы относятся к разным последовательностям (комбинации «нулевой
+- ненулевой» и наоборот). Для записи в последовательность ненулевых значений из
+вещественного массива используется явное преобразование типа указателя <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>int</span>*</b> в <b style='mso-bidi-font-weight:normal'><a name="m39"><span
+lang=EN-US style='mso-ansi-language:EN-US'>double</span>*. </b></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//------------------------------------------------------92-01.cpp</p>
+
+<p class=a0>//----- Упаковка массива с нулевыми элементами</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>void pack(int *p, double v[], int n)<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-spacerun:yes; mso-ansi-language:EN-US' lang="EN-US"> </span>{ int *pcnt=p++;<span
+style='mso-spacerun:yes'>                    </span><span style='mso-tab-count:
+1'>    </span><span style='mso-tab-count:1'>            </span>// Указатель на
+последний счетчик</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>*pcnt=0;<span
+style='mso-spacerun:yes'>                                </span><span
+style='mso-tab-count:1'>               </span>//
+Обнулить последний счетчик</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>for (int i=0; i&lt;n; i++){<span
+style='mso-spacerun:yes'>                               </span><span
+style='mso-tab-count:1'>          </span>// </span>Смена<span style='mso-ansi-language:
+EN-US'> </span>счетчика<span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if (i!=0 &amp;&amp; (v[i]==0
+&amp;&amp; v[i-1]!=0) || v[i]!=0 &amp;&amp; v[i-1]==0)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>         </span><span style='mso-tab-count:1'>   </span></span>{
+pcnt=p++; *pcnt=0; }<span style='mso-spacerun:yes'>      </span><span
+style='mso-tab-count:1'>          </span>// Обнулить последний счетчик</p>
+
+<p class=a0><span style='mso-spacerun:yes'>      </span><span style='mso-tab-count:
+1'>      </span>if (v[i]==0) (*pcnt)--;<span
+style='mso-spacerun:yes'>            </span><span style='mso-tab-count:1'>        </span>//
+-1 к счетчику нулевых</p>
+
+<p class=a0 style='text-indent:36.0pt'>else {<span lang=EN-US style='mso-ansi-language:
+EN-US'><o:p></o:p></span></p>
+
+<p class=a0 style='text-indent:36.0pt'>
+<span style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>(*pcnt)++ ;<span
+style='mso-spacerun:yes'>               </span><span style='mso-tab-count:1'>      </span>//
++1 к счетчику ненулевых</p>
+
+<p class=a0>//<span style='mso-tab-count:2'>                      </span>*((double*)p)++
+= v[i];<span style='mso-tab-count:1'>     </span>// сохранить само значение</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>double *q=(double*)p; *q++=v[i];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>p=(int*)q; <span
+style='mso-spacerun:yes'> </span>}}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>*p++ = 0;}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>//------ </span>Распаковка<span
+style='mso-ansi-language:EN-US'> </span>массива<span style='mso-ansi-language:
+EN-US'> </span>с<span style='mso-ansi-language:EN-US'> </span>нулевыми<span
+style='mso-ansi-language:EN-US'> </span>элементами<span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>int unpack(int *p, double v[])<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>{ int i=0,cnt;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>while ((cnt= *p+</span>+)!=0)<span
+style='mso-spacerun:yes'>                 </span><span style='mso-tab-count:
+1'>           </span>// Пока нет нулевого счетчика</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span
+style='mso-spacerun:yes'>  </span>{</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span
+style='mso-spacerun:yes'>  </span>if (cnt&lt;0)<span
+style='mso-spacerun:yes'>                           </span><span
+style='mso-tab-count:1'>      </span>// Последовательность нулей</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span
+style='mso-spacerun:yes'>  </span>while(cnt++!=0) v[i++]=0;</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span
+style='mso-spacerun:yes'>  </span>else<span
+style='mso-spacerun:yes'>                                       </span>// Ненулевые элементы</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span
+style='mso-spacerun:yes'>  </span>while(cnt--!=0)<span
+style='mso-spacerun:yes'>                     </span><span style='mso-tab-count:
+1'>     </span>// извлечь с преобразованием</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//</span><span
+style='mso-tab-count:1'>          </span><span style='mso-spacerun:yes'> 
+</span><span lang=EN-US style='mso-ansi-language:EN-US'>v[i++]=*((double*)p)++;<span
+style='mso-tab-count:2'>             </span>// </span>типа<span
+style='mso-ansi-language:EN-US'> </span>указателя<span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span><span style='mso-spacerun:yes'> 
+</span>double *q=(double*)p; v[i++] = *q++;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span><span style='mso-spacerun:yes'> 
+</span>p=(int*)q; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span><span style='mso-spacerun:yes'> 
+</span>} return i;}<span
+style='mso-spacerun:yes'>                                         </span><o:p></o:p></span></p>
+
+<h3>Преобразование «целое-указатель» и работа с машинными адресами</h3>
+<p class="a">В конечном счете, значением указателя является адрес - обычное 
+машинное слово определенной размерности, чему в Си соответствует целая 
+переменная. Поэтому в Си преобразования типа «указатель-целое» и 
+«целое-указатель» понимаются как получение адреса памяти в виде целого числа и 
+преобразование целого числа в адрес памяти, то есть как работа с реальными 
+адресами памяти компьютера. Такие операции являются машинно-зависимыми, 
+поскольку требуют знания некоторых особенностей: </p>
+<p class="a1"><span style="font-family: Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>&nbsp;системы преобразования адресов компьютера, размерностей 
+используемых указателей (<b><a name="m40">int</b> или <b><a name="m41">long</b>); </p>
+<p class="a1"><span style="font-family: Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>&nbsp;распределения памяти транслятором и операционной системой; </p>
+<p class="a1"><span style="font-family: Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>архитектуры компьютера, связанной с размещением в памяти 
+специальных областей (например, видеопамять экрана). </p>
+<p class="a">&nbsp;Естественно, что программа, использующая такие знания, не является 
+переносимой (мобильной) и работает только в рамках определенного транслятора, 
+операционной системы или компьютерной архитектуры. Типичный пример: если 
+регистры устройства ввода-вывода размещаются в адресном пространстве основной 
+(оперативной) памяти, то доступ к ним может быть реализован преобразованием 
+константы-адреса к указателю, которое элементарно скрывается в <b><a name="m42">
+<span lang="EN-US">define</span>:</b></p>
+<p class="a0">&nbsp;</p>
+<p class="a0">*(<span lang="EN-US">int</span>*)0<span lang="EN-US">x</span>1000=5;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;// Запись целого 5 по шестнадцатеричному адресу 1000</p>
+<p class="a0">#<span lang="EN-US">define REG</span> *(<span lang="EN-US">char</span>*)0<span lang="EN-US">xFFFFF</span>0<span lang="EN-US">D</span>0</p>
+<p class="a0"><span lang="EN-US">REG</span>=0<span lang="EN-US">xFF</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Запись константы «все 1» по адресу 0<span lang="EN-US">xFFFFF</span>0<span lang="EN-US">D</span>0</p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // 
+регистра данных в пространстве адресов основной памяти</p>
+
+<h3>Динамическое распределение памяти</h3>
+
+<p class=a>Как говорится, «не боги горшки обжигают». Система динамического
+распределения памяти (ДРП) может быть написана на самом же Си, но при этом
+обязательным будет сочетание работы с данными на низком и на высоком уровне.
+Внутреннее представление областей свободной и выделенной памяти может быть
+выполнено в виде любой динамической структуры данных (массив, массив
+указателей, список), работа с которой происходит на традиционном (высоком)
+уровне. Но размерности элементов этой структуры данных будут меняться, поэтому
+здесь не обойтись и без их физического (низкоуровневого) представления. К тому
+же управляющие компоненты структуры данных также являются динамическими,
+поэтому для них требуется динамическая память, распределяемая самой системой.
+Формальный парадокс: при использовании динамического массива указателей на
+свободные блоки во время выполнения функции <b style='mso-bidi-font-weight:
+normal'><a name="m43">free</b> может произойти увеличение его размерности, что потребует
+вызова функций <b style='mso-bidi-font-weight:normal'><a name="m44">realloc </b>или <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>malloc</span>/<span
+lang=EN-US style='mso-ansi-language:EN-US'>free</span><span lang=EN-US> </span></b>той
+же самой проектируемой библиотеки.</p>
+
+<p class=a>В самом простом варианте система ДРП может быть реализована как
+последовательность занятых и свободных блоков, расположенных в памяти физически
+последовательно, т.е. друг за другом. В начале каждого блока размещается целая
+переменная , содержащая его размерность в байтах. Причем для обозначения
+занятости
+блока используется инвертированное (отрицательное) значение.<p></p>
+
+<p class=a4 align=center style='text-align:center'>
+<img border="0" src="Images/092-02.gif" width="572" height="103"></p>
+<p class=a4 align=center style='text-align:center'>
+<b style='mso-bidi-font-weight:
+normal'><a name="m45">рис. 102-2. Система ДРП как последовательность блоков переменной длины<o:p></o:p></b></p>
+
+<p class=a>Для того, чтобы двигаться по цепочке блоков, можно использовать
+указатель типа <b style='mso-bidi-font-weight:normal'><a name="m46">char*, </b>единица
+адресации которого соответствует одному байту. Тогда для извлечения счетчиков
+длин блоков необходимо преобразовать его «на лету» к <b style='mso-bidi-font-weight:
+normal'><a name="m47">int*. </b>В<b style='mso-bidi-font-weight:normal'><a name="m48"> </b>исходном
+состоянии распределяемая область памяти представляет собой один свободный блок:
+в его начало записывается исходная длина.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//-----------------------------------------------92-02.cpp</p>
+
+<p class=a0>// Система динамического распределения памяти</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>char</span> *<span
+lang=EN-US style='mso-ansi-language:EN-US'>pa</span>;<span style='mso-tab-count:
+3'>                                   </span>// Область распределяемой памяти –
+«кучи»</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>sz</span>0;<span
+style='mso-tab-count:4'>                                     </span>// Исходная
+размерность кучи</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>create</span>(<span
+lang=EN-US style='mso-ansi-language:EN-US'>int</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>sz</span>){<span style='mso-tab-count:
+2'>                      </span>// Начальное состояние – один свободный блок</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>pa=new char[sz];<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>*(<span lang=EN-US
+style='mso-ansi-language:EN-US'>int</span>*)<span lang=EN-US style='mso-ansi-language:
+EN-US'>pa</span>=<span lang=EN-US style='mso-ansi-language:EN-US'>sz</span>-<span
+lang=EN-US style='mso-ansi-language:EN-US'>sizeof</span>(<span lang=EN-US
+style='mso-ansi-language:EN-US'>int</span>);<span style='mso-tab-count:1'>   </span>//
+Размерность свободного куска – записать в начало</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>sz0=sz; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//--------------------------------------------------------------------<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void</span> _<span
+lang=EN-US style='mso-ansi-language:EN-US'>show</span>(){<span
+style='mso-tab-count:3'>                             </span>// Просмотр
+состояния кучи<span style='mso-tab-count:3'>                               </span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>char *p=pa;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int lnt;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>while</span>(<span
+lang=EN-US style='mso-ansi-language:EN-US'>p</span>&lt;<span lang=EN-US
+style='mso-ansi-language:EN-US'>pa</span>+<span lang=EN-US style='mso-ansi-language:
+EN-US'>sz</span>0){<span style='mso-tab-count:2'>                       </span>//
+Пока не достигли адреса конца области</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>lnt</span>=*(<span lang=EN-US style='mso-ansi-language:
+EN-US'>int</span>*)<span lang=EN-US style='mso-ansi-language:EN-US'>p</span>;<span
+style='mso-tab-count:2'>                    </span>// Извлечь из-под указателя
+длину блока</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>if (lnt&lt;0){<span
+style='mso-tab-count:2'>                       </span>// Занятый блок -
+пропустить</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>lnt</span>=-<span lang=EN-US
+style='mso-ansi-language:EN-US'>lnt</span>;<span style='mso-tab-count:2'>             </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>// Инвертировать длину</span></p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>printf</span>(&quot;<span
+lang=EN-US style='mso-ansi-language:EN-US'>busy</span>:&quot;);</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span>}</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>else</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>printf</span>(&quot;<span
+lang=EN-US style='mso-ansi-language:EN-US'>free</span>:&quot;);<span
+style='mso-tab-count:1'>          </span>// Вывести адрес (шестнадцатеричный) и
+длину</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>printf(&quot; addr=%8x sz=%d\n&quot;,p,lnt);<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>p+=lnt+sizeof(int);<span
+style='mso-tab-count:1'>          </span>// Сдвинуть указатель на длину блока +
+длина счетчика</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span>}}</p>
+
+<p class=a>При выделении памяти имеется несколько стратегий поиска свободного
+блока. Наиболее простая из них: ищется свободный блок, строго подходящий по
+размеру. Если он обнаруживается, то отмечается как занятый. В противном случае
+необходимый блок «отрезается» от конца самого первого. При таком подходе самый
+первый блок будет всегда свободен, и от него будут отрезаться «недостающие»
+куски. Заметим, что такая стратегия хороша, когда преобладают запросы на
+выделение памяти блоками одного и того же размера.</p>
+
+<p class=a><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//-----------------------------------------------92-02.cpp</p>
+
+<p class=a0>// Поиск строго подходящего или отрезание от первого</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void *_malloc(int
+sz){<span style='mso-tab-count:6'>                                                                  </span><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>char *p=pa;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int lnt;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>while</span>(<span
+lang=EN-US style='mso-ansi-language:EN-US'>p</span>&lt;<span lang=EN-US
+style='mso-ansi-language:EN-US'>pa</span>+<span lang=EN-US style='mso-ansi-language:
+EN-US'>sz</span>0){ <span style='mso-tab-count:2'>                      </span><span
+style='mso-tab-count:1'>            </span>// Пока не достигли адреса конца
+области </p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>lnt=*(int*)p;<span
+style='mso-tab-count:2'>                    </span><span style='mso-tab-count:
+1'>            </span>// Извлечь из-под указателя длину блока</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>if (lnt&lt;0)<span
+style='mso-tab-count:2'>                        </span><span style='mso-tab-count:
+1'>            </span>// Занятый блок - пропустить</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>p</span>+=-<span lang=EN-US
+style='mso-ansi-language:EN-US'>lnt</span>+<span lang=EN-US style='mso-ansi-language:
+EN-US'>sizeof</span>(<span lang=EN-US style='mso-ansi-language:EN-US'>int</span>);</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>else</span><span style='mso-tab-count:1'>      </span>{</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>if</span> (<span lang=EN-US
+style='mso-ansi-language:EN-US'>sz</span>==<span lang=EN-US style='mso-ansi-language:
+EN-US'>lnt</span>) {<span style='mso-tab-count:1'>                   </span>// Свободный – строго подходящий</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span>*(<span
+lang=EN-US style='mso-ansi-language:EN-US'>int</span>*)<span lang=EN-US
+style='mso-ansi-language:EN-US'>p</span>=-<span lang=EN-US style='mso-ansi-language:
+EN-US'>lnt</span>;<span style='mso-tab-count:2'>                   </span>// Обозначить
+как занятый</p>
+
+<p class=a0><span style='mso-tab-count:1'>                        </span><span lang=EN-US style='mso-ansi-language:
+EN-US'>return</span><span lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:
+EN-US'>p</span>+<span lang=EN-US style='mso-ansi-language:EN-US'>sizeof</span>(<span
+lang=EN-US style='mso-ansi-language:EN-US'>int</span>);<span style='mso-tab-count:
+1'>        </span>// Возвратить указатель на область данных</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>}<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span><span style='mso-tab-count:
+1'>            </span><span lang=EN-US style='mso-ansi-language:EN-US'>p</span>+=<span
+lang=EN-US style='mso-ansi-language:EN-US'>lnt</span>+<span lang=EN-US
+style='mso-ansi-language:EN-US'>sizeof</span>(<span lang=EN-US
+style='mso-ansi-language:EN-US'>int</span>);<span style='mso-tab-count:1'>          </span>//
+К следующему блоку</p>
+
+<p class=a0><span style='mso-tab-count:1'>                        </span>}</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>}</p>
+
+<p class=a0>lnt=*(int*)pa;<span style='mso-tab-count:4'>                                          </span>//
+Отрезать от первого – взять длину</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>if (sz+sizeof(int)&gt;lnt)
+return NULL;<span style='mso-tab-count:1'>           </span>// </span>Остаток<span
+style='mso-ansi-language:EN-US'> </span>мал<span lang=EN-US style='mso-ansi-language:
+EN-US'> – </span>нет<span style='mso-ansi-language:EN-US'> </span>памяти<span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>lnt</span><span
+lang=EN-US> </span>-=<span lang=EN-US style='mso-ansi-language:EN-US'>sz</span>+<span
+lang=EN-US style='mso-ansi-language:EN-US'>sizeof</span>(<span lang=EN-US
+style='mso-ansi-language:EN-US'>int</span>);<span style='mso-tab-count:3'>                                </span>//
+Уменьшить размер первого блока</p>
+
+<p class=a0>*(<span lang=EN-US style='mso-ansi-language:EN-US'>int</span>*)<span
+lang=EN-US style='mso-ansi-language:EN-US'>pa</span>=<span lang=EN-US
+style='mso-ansi-language:EN-US'>lnt</span>;<span style='mso-tab-count:4'>                                          </span>//
+и записать полученный остаток</p>
+
+<p class=a0>p=pa+lnt+sizeof(int);<span style='mso-tab-count:3'>                              </span>//
+Указатель на новый блок</p>
+
+<p class=a0>*(<span lang=EN-US style='mso-ansi-language:EN-US'>int</span>*)<span
+lang=EN-US style='mso-ansi-language:EN-US'>p</span>=-<span lang=EN-US
+style='mso-ansi-language:EN-US'>sz</span>;<span style='mso-tab-count:4'>                                           </span>//
+Записать в него размерность (занят – &lt;0)</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>return</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>p</span>+<span
+lang=EN-US style='mso-ansi-language:EN-US'>sizeof</span>(<span lang=EN-US
+style='mso-ansi-language:EN-US'>int</span>);<span style='mso-tab-count:3'>                                </span>//
+Возвратить указатель на память </p>
+
+<p class=a0>}<span style='mso-tab-count:5'>                                                           </span>//
+«вслед за» счетчиком<span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a>Функция выделения памяти возвращает указатель на память «вслед за»
+счетчиком длины выделенной области. Таким образом, ДРП запоминает, сколько
+памяти было выделено, и при выполнении функции освобождения первым делом
+смещает указатель назад к счетчику длины. Заметим, что данная версия ДРП в
+состоянии проверить корректность возвращаемого <b style='mso-bidi-font-weight:
+normal'><a name="m49">main</b>-ом <span style='mso-spacerun:yes'> </span>адреса занятого
+блока (хотя и не обязана это делать).</p>
+
+<p class=a>Кроме формального объявления блока свободным (путем инвертирования
+счетчика) необходимо еще «склеить» с текущим блоком предыдущий и последующий,
+если они также свободны (дефрагментация). Для поиска предыдущего блока
+приходится сделать лишний цикл просмотра содержимого распределяемой памяти с запоминанием
+указателя на предыдущий блок. Сама процедура «склеивания» заключается в
+увеличении длины предыдущего блока на размер текущего (+ счетчик длины
+текущего). Аналогичное действие предпринимается и для следующего блока</p>
+
+<p class=a><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//-----------------------------------------------92-02.cpp</p>
+
+<p class=a0>// Функция освобождения памяти</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void</span> _<span
+lang=EN-US style='mso-ansi-language:EN-US'>free</span>(<span lang=EN-US
+style='mso-ansi-language:EN-US'>void</span> *<span lang=EN-US style='mso-ansi-language:
+EN-US'>q</span>0){</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>char</span> *<span
+lang=EN-US style='mso-ansi-language:EN-US'>q</span>=(<span lang=EN-US
+style='mso-ansi-language:EN-US'>char</span>*)<span lang=EN-US style='mso-ansi-language:
+EN-US'>q</span>0-<span lang=EN-US style='mso-ansi-language:EN-US'>sizeof</span>(<span
+lang=EN-US style='mso-ansi-language:EN-US'>int</span>);<span style='mso-tab-count:
+2'>                   </span>// Сместить указатель на счетчик длины</p>
+
+<p class=a0>int lnt=*(int*)q;<span style='mso-tab-count:4'>                                       </span>//
+Извлечь счетчик длины</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>lnt=-lnt;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>char
+*pr=NULL,*p=pa;<span style='mso-tab-count:3'>                            </span>//
+pr – указатель </span>на<span style='mso-ansi-language:EN-US'> </span>предыдущий<span
+style='mso-ansi-language:EN-US'> </span>блок<span lang=EN-US style='mso-ansi-language:
+EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>while</span>(<span
+lang=EN-US style='mso-ansi-language:EN-US'>p</span>!=<span lang=EN-US
+style='mso-ansi-language:EN-US'>q</span>){<span style='mso-tab-count:4'>                                            </span>//
+Пока не достигли освобождаемого блока</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>int ln=*(int*)p;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if (ln&lt;0) ln=-ln;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>pr</span>=<span lang=EN-US
+style='mso-ansi-language:EN-US'>p</span>;<span style='mso-tab-count:4'>                                         </span>//
+Текущий становится предыдущим</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>p+=ln+sizeof(int);<span
+style='mso-tab-count:2'>                       </span>// Переход к следующему</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>}<span
+style='mso-tab-count:4'>                                               </span>//
+Просмотр до предыдущего</p>
+
+<p class=a0>*(int*)q=lnt;<span style='mso-tab-count:4'>                                            </span>//
+Освободить блок</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>if
+(*(int*)pr&gt;0) {<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>*(int*)pr+=lnt+sizeof(int);<span
+style='mso-tab-count:1'> </span>// </span>Склеить<span style='mso-ansi-language:
+EN-US'> </span>с<span style='mso-ansi-language:EN-US'> </span>предыдущим<span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>p=pr;</span><span style='mso-tab-count:
+4'>                                         </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>// Сделать предыдущий текущим</span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>lnt=*(int*)p;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>q=p+lnt+sizeof(int);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>if</span> (<span
+lang=EN-US style='mso-ansi-language:EN-US'>q</span>&lt;<span lang=EN-US
+style='mso-ansi-language:EN-US'>pa</span>+<span lang=EN-US style='mso-ansi-language:
+EN-US'>sz</span>0 &amp;&amp; *(<span lang=EN-US style='mso-ansi-language:EN-US'>int</span>*)<span
+lang=EN-US style='mso-ansi-language:EN-US'>q</span>&gt;0)<span
+style='mso-tab-count:2'>                     </span>// Есть следующий и он
+свободен</p>
+
+<p class=a0>*(int*)p+=*(int*)q+sizeof(int);<span style='mso-tab-count:1'>                    </span>// Склеить со следующим</p>
+
+<p class=a0>}</p>
+
+<h3>Функции с переменным числом параметров. </h3>
+
+<p class=a>Хотя для работы с переменным списком параметров существуют специальные
+макрокоманды, мы попробуем реализовать эту возможность «вручную», используя
+знания механизма вызова функции (см. <b style='mso-bidi-font-weight:normal'><a name="m50">6.1</b>)
+и технику извлечения данных различных типов с использованием преобразования
+типа указателя.</p>
+
+<p class=a4 align=center style='text-align:center'>
+<img border="0" src="Images/092-03.gif" width="472" height="323"><p align="center">
+<b><a name="m51">рис. 102-3. Передача переменного списка параметров через стек</b></p>
+</p>
+
+<p class=a>Взаимодействие вызывающей и вызываемой функций происходит через стек,
+который <span style='mso-spacerun:yes'> </span>является структурой данных с относительной
+адресацией. Фактические параметры – реальные переменные, создаваемые в стеке
+перед вызовом функции. Формальные параметры представляют собой «ожидаемые»
+смещения в стеке относительно текущего положения указателя стека, по которым
+после вызова должны находиться соответствующие фактические параметры. Такой
+механизм вызова устанавливает соответствие параметров «по договоренности» между
+вызывающей и вызываемой функциями, а компилятор при использовании прототипа
+проверяет эти соглашения. Если в заголовке функции список формальных параметров
+заканчивается переменным списком (обозначенным как «…»), то компилятор просто
+прекращает проверку соответствия, допуская наличие в стеке некоторого «хвоста»
+из последовательности фактических параметров. Добраться до этого списка можно,
+используя указатель на последний из явно определенных формальных параметров. Тогда
+вся область стека будет выглядеть как адресуемая указателем память. Продвигая
+указатель по этой памяти, можно явным образом извлекать эти параметры.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void
+var_list_fun(int a1, int a2, int a3,…){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int</span> *<span
+lang=EN-US style='mso-ansi-language:EN-US'>p</span>=&amp;<span lang=EN-US
+style='mso-ansi-language:EN-US'>a</span>3;<span style='mso-tab-count:2'>                    </span>//
+Указатель на последний<span style='mso-spacerun:yes'>  </span>явный параметр
+функции</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int</span> *<span
+lang=EN-US style='mso-ansi-language:EN-US'>q</span>=&amp;<span lang=EN-US
+style='mso-ansi-language:EN-US'>a</span>3+1;<span style='mso-tab-count:1'>                </span>// Указатель на первый параметр из переменного
+списка</p>
+
+<p class=a0>…</p>
+
+<p class=a>Текущее количество фактических параметров, передаваемых при вызове,
+может быть передано: </p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>отдельным параметром - счетчиком; </p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>параметром ограничителем, значение которого
+отмечает конец списка параметров; </p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>форматной строкой, в которой перечислены спецификации
+параметров. </p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m52">Функция с параметром -
+счетчиком.</b> Первый параметр является счетчиком, определяющим количество
+параметров в переменном списке.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<span style='font-size:10.0pt;font-family:Arial;mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:RU;mso-fareast-language:
+RU;mso-bidi-language:AR-SA'><br clear=all style='page-break-before:always'>
+</span>
+
+<p class=a0>//------------------------------------------------------92-03.<span
+lang=EN-US style='mso-ansi-language:EN-US'>cpp</span></p>
+
+<p class=a0>//----- Сумма произвольного количества параметров по счетчику</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>int</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>sum</span>(<span lang=EN-US
+style='mso-ansi-language:EN-US'>int</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>n</span>,...)<span
+style='mso-spacerun:yes'>                          </span>// <span lang=EN-US
+style='mso-ansi-language:EN-US'>n</span> - счетчик параметров</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>{ <span lang=EN-US
+style='mso-ansi-language:EN-US'>int</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>s</span>,*<span lang=EN-US
+style='mso-ansi-language:EN-US'>p</span> = &amp;<span lang=EN-US
+style='mso-ansi-language:EN-US'>n</span>+1;<span
+style='mso-spacerun:yes'>                </span><span style='mso-tab-count:
+1'>      </span>// Указатель на область параметров</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>for</span> (<span lang=EN-US style='mso-ansi-language:
+EN-US'>s</span>=0; <span lang=EN-US style='mso-ansi-language:EN-US'>n</span>
+&gt; 0; <span lang=EN-US style='mso-ansi-language:EN-US'>n</span>--)<span
+style='mso-tab-count:2'>                    </span>// назначается на область
+памяти </p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>s += *p++;<span style='mso-tab-count:2'>                    </span>//
+вслед за счетчиком<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>return(s); }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>void main(){ printf(&quot;sum(..=%d
+sum(...=%d\n&quot;,sum(5,0,4,2,56,7),sum(2,6,46)); }<o:p></o:p></span></p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m53">Функция с параметром<span
+style='mso-spacerun:yes'>  </span>– ограничителем.</b> Указатель настраивается
+на первый параметр из списка, извлекая последующие до тех пор, пока не встретит
+значение-ограничитель.</p>
+
+<p class=a0><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;font-family:
+"Times New Roman CYR";mso-bidi-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0>//------------------------------------------------------92-04.<span
+lang=EN-US style='mso-ansi-language:EN-US'>cpp</span></p>
+
+<p class=a0>//----- Сумма произвольного количества ненулевых параметров</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>int</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>sum</span>(<span lang=EN-US
+style='mso-ansi-language:EN-US'>int</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>a</span>,...)</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>{ <span lang=EN-US
+style='mso-ansi-language:EN-US'>int</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>s</span>,*<span lang=EN-US
+style='mso-ansi-language:EN-US'>p</span> = &amp;<span lang=EN-US
+style='mso-ansi-language:EN-US'>a</span>;<span style='mso-spacerun:yes'>   
+</span>// Указатель на область параметров назначается на</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>for</span> (<span lang=EN-US style='mso-ansi-language:
+EN-US'>s</span>=0; *<span lang=EN-US style='mso-ansi-language:EN-US'>p</span>
+&gt; 0; <span lang=EN-US style='mso-ansi-language:EN-US'>p</span>++ )<span
+style='mso-spacerun:yes'>      </span><span style='mso-tab-count:1'>          </span>//
+первый параметр из переменного списка</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>s</span> += *<span lang=EN-US style='mso-ansi-language:
+EN-US'>p</span>;<span style='mso-spacerun:yes'>                            
+</span><span style='mso-tab-count:1'>      </span>// Ограничитель -
+отрицательное</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>return</span>(<span lang=EN-US
+style='mso-ansi-language:EN-US'>s</span>); }<span
+style='mso-spacerun:yes'>                        </span><span style='mso-tab-count:1'>        </span>//
+значение</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>void main() { <o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>printf(&quot;sum(..=%d
+sum(...=%d\n&quot;,sum(4,2,56,7,0),sum(6,46,-1 ,7,0));}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m54">Функция с параметром –
+форматной строкой.</b> Если в списке предполагается наличие параметров
+различных типов, то типы их могут быть переданы в функцию отдельной
+спецификацией (подобно форматной строке функции printf). В этом случае область
+фактических параметров представляет собой память, в которой последовательность
+переменных задается внешним форматом, а их извлечение производится с
+использованием операции преобразования<span style='mso-spacerun:yes'> 
+</span>типа указателя.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//------------------------------------------------------92-05.cpp</p>
+
+<p class=a0>//--- Функция с параметром форматной строкой ( printf)</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int my_printf(char
+*s,...)<o:p></o:p></span></p>
+
+<p class=a0>{ int *p = (int*)(&amp;s+1);<span style='mso-spacerun:yes'>    
+</span><span style='mso-tab-count:2'>                        </span>// Указатель на начало списка параметров</p>
+
+<p class=a0>while (*s != '\0') {<span style='mso-spacerun:yes'>               
+</span><span style='mso-tab-count:1'>        </span><span style='mso-tab-count:
+1'>            </span>// Просмотр форматной строки</p>
+
+<p class=a0 style='text-indent:36.0pt'>if (*s != '%') putchar(*s++);<span
+style='mso-spacerun:yes'>    </span><span style='mso-tab-count:1'>      </span>//
+Копирование форматной строки</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>else</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span>{
+s++;<span style='mso-spacerun:yes'>                  </span><span
+style='mso-tab-count:1'>         </span>// Спецификация параметра вида
+&quot;%d&quot;</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span>switch(*s++){
+<span style='mso-tab-count:2'>                </span>// Извлечение параметра</p>
+
+<p class=a0>case 'c': <span style='mso-tab-count:1'>           </span>putchar(*p++);
+break;<span style='mso-spacerun:yes'>   </span><span style='mso-tab-count:1'>  </span>//
+Извлечение символа</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>case 'd': <span
+style='mso-tab-count:1'>           </span>printf( &quot;%d&quot;, *((int*)p)++
+); <o:p></o:p></span></p>
+
+<p class=a0 style='margin-left:36.0pt;text-indent:36.0pt'><span lang=EN-US
+style='mso-ansi-language:EN-US'>break; <span style='mso-tab-count:3'>                          </span>//
+</span>Извлечение<span style='mso-ansi-language:EN-US'> </span>целого<span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>case 'f': printf(
+&quot;%lf&quot;, *((double*)p)++ ); <o:p></o:p></span></p>
+
+<p class=a0 style='margin-left:36.0pt;text-indent:36.0pt'><span lang=EN-US
+style='mso-ansi-language:EN-US'>break; <span style='mso-tab-count:3'>                          </span>//
+</span>Извлечение<span style='mso-ansi-language:EN-US'> </span>вещественного<span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>case</span> '<span
+lang=EN-US style='mso-ansi-language:EN-US'>s</span>': <span lang=EN-US
+style='mso-ansi-language:EN-US'>puts</span>( *((<span lang=EN-US
+style='mso-ansi-language:EN-US'>char</span>**)<span lang=EN-US
+style='mso-ansi-language:EN-US'>p</span>)++ );<span style='mso-spacerun:yes'> 
+</span><span style='mso-tab-count:1'>              </span>//
+Извлечение указателя</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>break;<span
+style='mso-spacerun:yes'>       </span><span style='mso-tab-count:1'>                    </span>// </span>на<span style='mso-ansi-language:
+EN-US'> </span>строку<span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>}}}}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void main(){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>my_printf(&quot;char=%c
+int=%d double=%f char[]=%s&quot;,'f',44,5.5,&quot;qwerty&quot;); }<o:p></o:p></span></p>
+
+<a name="lr14"><h3>Лабораторному практикум</h3>
+
+<p class=a4><b style='mso-bidi-font-weight:normal'><a name="m55">Упаковка переменных
+различного типа в заданном формате<span style='mso-bidi-font-weight:bold'><o:p></o:p></span></b></p>
+
+<p class=a>Разработать две функции, одна из которых вводит с клавиатуры набор
+данных в произвольной последовательности и размещает в памяти в заданном формате.
+Другая функция читает<span style='mso-spacerun:yes'>  </span>эти<span
+style='mso-spacerun:yes'>  </span>данные<span style='mso-spacerun:yes'> 
+</span>и выводит на экран. Программа запрашивает и размещает в памяти несколько
+наборов данных при помощи первой функции, а затем читает их и выводит на экран
+при помощи второй. Размещение данных производить в выделенном массиве байтов
+с<span style='mso-spacerun:yes'>  </span>контролем<span
+style='mso-spacerun:yes'>  </span>его переполнения.</p>
+
+<p class=a4 style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l6 level1 lfo5;
+tab-stops:list 36.0pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Последовательность прямоугольных матриц
+вещественных чисел, предваренная двумя целыми переменными - размерностью
+матрицы.</p>
+
+<p class=a4 style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l6 level1 lfo5;
+tab-stops:list 36.0pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Последовательность строк символов. Каждая строка
+предваряется целым - счетчиком символов. Ограничение последовательности -
+счетчик со значением 0.</p>
+
+<p class=a4 style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l6 level1 lfo5;
+tab-stops:list 36.0pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Упакованный массив целых переменных.
+Байт-счетчик, имеющий положительное значение n, предваряет последовательность
+из n различных целых переменных, байт-счетчик, имеющий отрицательное значение
+-n, обозначает n подряд идущих одинаковых значений целой переменной. Пример:</p>
+
+<p class=a4><span style='font-family:"Times New Roman"'><span style='mso-tab-count:
+1'>            </span>-</span>исходная последовательность:<span
+style='mso-tab-count:1'>       </span><b style='mso-bidi-font-weight:normal'><a name="m56">2
+3 3 3 5 2 4 4 4 4 4 8 -6 8</b></p>
+
+<p class=a4><span style='font-family:"Times New Roman"'><span style='mso-tab-count:
+1'>            </span>-</span>упакованная последовательность: <b
+style='mso-bidi-font-weight:normal'>(1) 2 (-3) 3 (2) 5 2 (-5) 4 (3) 8 -6 8</b></p>
+
+<p class=a4 style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l6 level1 lfo5;
+tab-stops:list 36.0pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Упакованная строка, содержащая символьное
+представление длинных целых чисел. Все символы строки, кроме цифр, помещаются в
+последовательность в исходном виде. Последовательность цифр преобразуется в
+целую переменную, которая записывается в упакованную строку, предваренная
+символом \1. Конец строки - символ \0. Пример:</p>
+
+<p class=a4 style='margin-left:18.0pt'><span style='font-family:"Times New Roman"'><span
+style='mso-tab-count:1'>      </span>- </span>исходная строка: <b
+style='mso-bidi-font-weight:normal'>&quot;aa2456bbbb6665&quot;<o:p></o:p></b></p>
+
+<p class=a4 style='margin-left:18.0pt'><span style='font-family:"Times New Roman"'><span
+style='mso-tab-count:1'>      </span>- </span>упакованная строка: <b
+style='mso-bidi-font-weight:normal'>'a' 'a' '\1' 2456</b><b style='mso-bidi-font-weight:
+normal'><a name="m57"><span lang=EN-US style='mso-ansi-language:EN-US'>L</span> 'b' 'b' 'b'
+'b' '\0' 6665 '\0' </b></p>
+
+<p class=a4 style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l6 level1 lfo5;
+tab-stops:list 36.0pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Произвольная последовательность переменных типа
+char, int и long. Перед каждой переменной размещается байт, определяющий ее тип
+(0-char, 1-int, 2-long). Последовательность вводится в виде целых переменных
+типа long, которые затем «укорачиваются» до минимальной размерности без потери
+значащих цифр. </p>
+
+<p class=a4 style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l6 level1 lfo5;
+tab-stops:list 36.0pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>6.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Последовательность структурированных переменных
+типа <b style='mso-bidi-font-weight:normal'><a name="m58">struct man { char name[20];
+int<span style='mso-spacerun:yes'>  </span>dd,mm,yy; char addr[]; };</b>
+Последняя компонента представляет собой строку переменной размерности,
+расположенную непосредственно за структурированной переменной. Конец
+последовательности - структурированная переменная с пустой строкой в поле name.</p>
+
+<p class=a4 style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l6 level1 lfo5;
+tab-stops:list 36.0pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>7.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>То же самое, что п.4, но для шестнадцатеричных
+чисел.</p>
+
+<p class=a4><span style='font-family:"Times New Roman"'><span style='mso-tab-count:
+1'>            </span>-</span>исходная строка:<b style='mso-bidi-font-weight:
+normal'><a name="m59"> &quot;aa0x24FFbbb0xAA65</b>&quot;</p>
+
+<p class=a4><span style='font-family:"Times New Roman"'><span style='mso-tab-count:
+1'>            </span>-</span>упакованная строка:<b style='mso-bidi-font-weight:
+normal'><a name="m60"> 'a' 'a''\0' 0x24FF 'b' 'b' 'b' '\0' 0xAA65 '\0' '\0'<o:p></o:p></b></p>
+
+<p class=a4 style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l6 level1 lfo5;
+tab-stops:list 36.0pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>8.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>В упакованной строке последовательность
+одинаковых символов длиной <span lang=EN-US style='font-family:"Times New Roman";
+mso-ansi-language:EN-US'>N</span><span lang=EN-US style='font-family:"Times New Roman"'>
+</span>заменяется на байт со значением 0, байт<span style='mso-spacerun:yes'> 
+</span>со значением <span lang=EN-US style='font-family:"Times New Roman";
+mso-ansi-language:EN-US'>N</span><span lang=EN-US style='font-family:"Times New Roman"'>
+</span>и байт - повторяющийся символ. Конец строки обозначается через два
+нулевых байта. </p>
+
+<p class=a4 style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l6 level1 lfo5;
+tab-stops:list 36.0pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>9.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Произвольная последовательность строк и целых
+переменных. Байт со значением 0 - обозначает начало строки (последовательность
+символов, ограниченная нулем). Байт<span style='mso-spacerun:yes'>  </span>со
+значением <span lang=EN-US style='font-family:"Times New Roman";mso-ansi-language:
+EN-US'>N</span> является началом последовательности <span lang=EN-US
+style='font-family:"Times New Roman";mso-ansi-language:EN-US'>N</span><span
+lang=EN-US style='font-family:"Times New Roman"'> </span>целых чисел. Конец
+последовательности - два нулевых байта.</p>
+
+<p class=a4 style='margin-left:42.0pt;text-indent:-24.0pt;mso-list:l0 level1 lfo6;
+tab-stops:list 42.0pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>10.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>В начале области памяти размещается форматная
+строка, аналогичная используемой в <span lang=EN-US style='font-family:"Times New Roman";
+mso-ansi-language:EN-US'>printf</span><span style='font-family:"Times New Roman"'>
+- </span>(%<span lang=EN-US style='font-family:"Times New Roman";mso-ansi-language:
+EN-US'>d</span><span style='font-family:"Times New Roman"'>, %</span><span
+lang=EN-US style='font-family:"Times New Roman";mso-ansi-language:EN-US'>f</span><span
+lang=EN-US style='font-family:"Times New Roman"'> </span>и <span
+style='font-family:"Times New Roman"'>%</span><span lang=EN-US
+style='font-family:"Times New Roman";mso-ansi-language:EN-US'>s</span><span
+lang=EN-US style='font-family:"Times New Roman"'> </span><span
+style='mso-spacerun:yes'> </span>целое, вещественное и строку соответственно).
+Сразу же вслед за строкой размещается последовательность целых, вещественных и
+строк в соответствии с заданным форматом. </p>
+
+<p class=a4 style='margin-left:42.0pt;text-indent:-24.0pt;mso-list:l0 level1 lfo6;
+tab-stops:list 42.0pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>11.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>В начале области памяти размещается форматная
+строка. Выражение &quot;%<span lang=EN-US style='font-family:"Times New Roman";
+mso-ansi-language:EN-US'>nnnd</span>&quot;, где <span lang=EN-US
+style='font-family:"Times New Roman";mso-ansi-language:EN-US'>nnn</span><span
+style='font-family:"Times New Roman"'> - </span>целое - определяет массив из <span
+lang=EN-US style='font-family:"Times New Roman";mso-ansi-language:EN-US'>nnn</span><span
+lang=EN-US style='font-family:"Times New Roman"'> </span>целых чисел<span
+style='font-family:"Times New Roman"'>, </span>&quot;%<span lang=EN-US
+style='font-family:"Times New Roman";mso-ansi-language:EN-US'>d</span>&quot;<span
+style='font-family:"Times New Roman"'> - </span>одно целое число,<span
+style='font-family:"Times New Roman"'> </span>&quot;%<span lang=EN-US
+style='font-family:"Times New Roman";mso-ansi-language:EN-US'>nnnf</span>&quot;
+- массив из <span lang=EN-US style='font-family:"Times New Roman";mso-ansi-language:
+EN-US'>nnn</span><span lang=EN-US style='font-family:"Times New Roman"'> </span>вещественных
+чисел<span style='font-family:"Times New Roman"'>, </span>&quot;%<span
+lang=EN-US style='font-family:"Times New Roman";mso-ansi-language:EN-US'>f</span>&quot;<span
+style='font-family:"Times New Roman"'> - </span>одно вещественное число. Сразу
+же вслед за строкой размещается последовательность целых, вещественных и их
+массивов в соответствии с заданным форматом. </p>
+
+<p class=a4 style='margin-left:42.0pt;text-indent:-24.0pt;mso-list:l0 level1 lfo6;
+tab-stops:list 42.0pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>12.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Область памяти представляет собой строку. Если в
+ней встречается выражение &quot;%<span lang=EN-US style='font-family:"Times New Roman";
+mso-ansi-language:EN-US'>nnnd</span>&quot;, где <span lang=EN-US
+style='font-family:"Times New Roman";mso-ansi-language:EN-US'>nnn</span><span
+style='font-family:"Times New Roman"'> - </span>целое, то сразу же за ним
+следует массив<span style='mso-spacerun:yes'>   </span>из <span lang=EN-US
+style='font-family:"Times New Roman";mso-ansi-language:EN-US'>nnn</span><span
+lang=EN-US style='font-family:"Times New Roman"'> </span>целых чисел (во внутреннем
+представлении, то есть типа <span lang=EN-US style='font-family:"Times New Roman";
+mso-ansi-language:EN-US'>int</span>)<span style='font-family:"Times New Roman"'>.
+</span>За выражением<span style='font-family:"Times New Roman"'> </span>&quot;%<span
+lang=EN-US style='font-family:"Times New Roman";mso-ansi-language:EN-US'>d</span>&quot;<span
+style='font-family:"Times New Roman"'> - </span>одно целое число, за 
+<span style='mso-spacerun:yes; font-family:Times New Roman'> </span>&quot;%<span
+lang=EN-US style='font-family:"Times New Roman";mso-ansi-language:EN-US'>nnnf</span>&quot;
+- массив из <span lang=EN-US style='font-family:"Times New Roman";mso-ansi-language:
+EN-US'>nnn</span><span lang=EN-US style='font-family:"Times New Roman"'> </span>вещественных
+чисел<span style='font-family:"Times New Roman"'>, </span>за &quot;%<span
+lang=EN-US style='font-family:"Times New Roman";mso-ansi-language:EN-US'>f</span>&quot;<span
+style='font-family:"Times New Roman"'> - </span>одно вещественное число.</p>
+
+<p class=a4 style='margin-left:42.0pt;text-indent:-24.0pt;mso-list:l0 level1 lfo6;
+tab-stops:list 42.0pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>13.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Область памяти представляет собой строку. Если в
+ней встречается символ &quot;<span style='font-family:"Times New Roman"'>%</span>&quot;,
+то сразу же за ним находится указатель на другую (обычную )строку.<span
+style='mso-spacerun:yes'>  </span>Все сроки располагаются в той же области
+памяти вслед за основной строкой. </p>
+
+<p class=a4 style='margin-left:42.0pt;text-indent:-24.0pt;mso-list:l0 level1 lfo6;
+tab-stops:list 42.0pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>14.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Разреженная матрица (содержащая значительное
+число нулевых элементов) упаковывается с сохранением значений ненулевых
+элементов в следующем формате<span style='font-family:"Times New Roman"'>: </span>размерности
+(<span lang=EN-US style='font-family:"Times New Roman";mso-ansi-language:EN-US'>int</span>),
+количество ненулевых элементов (<span lang=EN-US style='font-family:"Times New Roman";
+mso-ansi-language:EN-US'>int</span>)<span style='font-family:"Times New Roman"'>,
+</span>для каждого элемента - координаты <span lang=EN-US style='font-family:
+"Times New Roman";mso-ansi-language:EN-US'>x</span><span style='font-family:
+"Times New Roman"'>,</span><span lang=EN-US style='font-family:"Times New Roman";
+mso-ansi-language:EN-US'>y</span><span style='font-family:"Times New Roman"'> (</span><span
+lang=EN-US style='font-family:"Times New Roman";mso-ansi-language:EN-US'>int</span><span
+style='font-family:"Times New Roman"'>) </span>и значение (<span lang=EN-US
+style='font-family:"Times New Roman";mso-ansi-language:EN-US'>double</span><span
+style='font-family:"Times New Roman"'>).</span><span style='mso-spacerun:yes'> 
+</span></p>
+
+<p class=a4><b style='mso-bidi-font-weight:normal'><a name="m61"><a name="lr15">Функция с переменным числом
+параметров<o:p></o:p></b></p>
+
+<p class=a>Разработать функцию с переменным числом параметров. Для извлечения
+параметров из списка использовать операцию преобразования типа указателя.</p>
+
+<p class=a1 style='margin-left:18.0pt;text-indent:0cm;mso-list:none;tab-stops:
+42.55pt'><o:p>&nbsp;</o:p></p>
+
+<p class=a4 style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l1 level1 lfo14;
+tab-stops:list 36.0pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Первый параметр - строка, в которой каждый
+символ «*» обозначает место включения строки, являющейся очередным параметром.
+Функция выводит на экран полученный текст.</p>
+
+<p class=a4 style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l1 level1 lfo14;
+tab-stops:list 36.0pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Каждый параметр - строка, последний параметр - <span
+lang=EN-US style='font-family:"Times New Roman";mso-ansi-language:EN-US'>NULL</span><span
+style='font-family:"Times New Roman"'>. </span>Функция возвращает строку в
+динамической памяти, содержащую объединение строк-параметров.</p>
+
+<p class=a4 style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l1 level1 lfo14;
+tab-stops:list 36.0pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; font-family:Times New Roman'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Последовательность указателей на вещественные
+переменные, ограниченная <span lang=EN-US style='font-family:"Times New Roman";
+mso-ansi-language:EN-US'>NULL</span><span style='font-family:"Times New Roman"'>.</span>.
+Функция возвращает упорядоченный динамический<span style='mso-spacerun:yes'> 
+</span>массив указателей на эти переменные.<span style='font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<p class=a4 style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l1 level1 lfo14;
+tab-stops:list 36.0pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; font-family:Times New Roman'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Последовательность вещественных массивов.
+Сначала идет целый параметр - размерность массива <span style='font-family:
+"Times New Roman"'>(</span><span lang=EN-US style='font-family:"Times New Roman";
+mso-ansi-language:EN-US'>int</span><span style='font-family:"Times New Roman"'>)</span>,
+затем непосредственно<span style='font-family:"Times New Roman"'> </span>последовательность
+значений типа <span lang=EN-US style='font-family:"Times New Roman";mso-ansi-language:
+EN-US'>double</span><span style='font-family:"Times New Roman"'>. </span>Значение
+целого параметра - 0 обозначает конец последовательности. Функция возвращает
+сумму всех элементов. <span style='font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<p class=a4 style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l1 level1 lfo14;
+tab-stops:list 36.0pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Последовательность вещественных массивов.
+Сначала идет целый параметр - размерность массива <span style='font-family:
+"Times New Roman"'>(</span><span lang=EN-US style='font-family:"Times New Roman";
+mso-ansi-language:EN-US'>int</span><span style='font-family:"Times New Roman"'>)</span>,
+затем указатель на массив значений типа <span lang=EN-US style='font-family:
+"Times New Roman";mso-ansi-language:EN-US'>double</span><span style='font-family:
+"Times New Roman"'> (</span>имя массива<span style='font-family:"Times New Roman"'>)</span>.
+<span style='font-family:"Times New Roman"'>. </span>Значение целого параметра
+- 0 обозначает конец последовательности. Функция возвращает сумму всех
+элементов. </p>
+
+<p class=a4 style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l1 level1 lfo14;
+tab-stops:list 36.0pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>6.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Первый параметр - строка, в которой каждый
+символ «*<span lang=EN-US style='font-family:"Times New Roman";mso-ansi-language:
+EN-US'>n</span>», где <span lang=EN-US style='font-family:"Times New Roman";
+mso-ansi-language:EN-US'>n</span><span style='font-family:"Times New Roman"'>-</span>цифра
+-<span style='mso-spacerun:yes'>  </span>обозначает место включения строки,
+являющейся <span lang=EN-US style='font-family:"Times New Roman";mso-ansi-language:
+EN-US'>n</span><span style='font-family:"Times New Roman"'>+1 </span>параметром.
+Функция выводит на экран полученный текст.</p>
+
+<p class=a4 style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l1 level1 lfo14;
+tab-stops:list 36.0pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>7.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Первым параметром является<span
+style='mso-spacerun:yes'>  </span>форматная строка. Выражение &quot;%<span
+lang=EN-US style='font-family:"Times New Roman";mso-ansi-language:EN-US'>nnnd</span>&quot;,
+где <span lang=EN-US style='font-family:"Times New Roman";mso-ansi-language:
+EN-US'>nnn</span><span style='font-family:"Times New Roman"'> - </span>целое -
+определяет массив из <span lang=EN-US style='font-family:"Times New Roman";
+mso-ansi-language:EN-US'>nnn</span><span lang=EN-US style='font-family:"Times New Roman"'>
+</span>целых чисел<span style='font-family:"Times New Roman"'>, </span>&quot;%<span
+lang=EN-US style='font-family:"Times New Roman";mso-ansi-language:EN-US'>d</span>&quot;<span
+style='font-family:"Times New Roman"'> - </span>одно целое число,<span
+style='font-family:"Times New Roman"'> </span>&quot;%<span lang=EN-US
+style='font-family:"Times New Roman";mso-ansi-language:EN-US'>nnnf</span>&quot;
+- массив из <span lang=EN-US style='font-family:"Times New Roman";mso-ansi-language:
+EN-US'>nnn</span><span lang=EN-US style='font-family:"Times New Roman"'> </span>вещественных
+чисел<span style='font-family:"Times New Roman"'>, </span>&quot;%<span
+lang=EN-US style='font-family:"Times New Roman";mso-ansi-language:EN-US'>f</span>&quot;<span
+style='font-family:"Times New Roman"'> - </span>одно вещественное число. Сразу
+же вслед за строкой размещается последовательность целых, вещественных и их
+массивов в соответствии с заданным форматом. Массив передается непосредственно
+в виде последовательности параметров (например <span style='font-family:"Times New Roman"'>&quot;%4</span><span
+lang=EN-US style='font-family:"Times New Roman";mso-ansi-language:EN-US'>d</span><span
+style='font-family:"Times New Roman"'>%2</span><span lang=EN-US
+style='font-family:"Times New Roman";mso-ansi-language:EN-US'>f</span><span
+style='font-family:"Times New Roman"'>&quot;,44,66,55,33,66.5,66.7 </span>)<span
+style='mso-spacerun:yes'>  </span></p>
+
+<p class=a4 style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l1 level1 lfo14;
+tab-stops:list 36.0pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>8.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Первым параметром является<span
+style='mso-spacerun:yes'>  </span>форматная строка. Выражение &quot;%<span
+lang=EN-US style='font-family:"Times New Roman";mso-ansi-language:EN-US'>nnnd</span>&quot;,
+где <span lang=EN-US style='font-family:"Times New Roman";mso-ansi-language:
+EN-US'>nnn</span><span style='font-family:"Times New Roman"'> - </span>целое -
+определяет массив из <span lang=EN-US style='font-family:"Times New Roman";
+mso-ansi-language:EN-US'>nnn</span><span lang=EN-US style='font-family:"Times New Roman"'>
+</span>целых чисел<span style='font-family:"Times New Roman"'>, </span>&quot;%<span
+lang=EN-US style='font-family:"Times New Roman";mso-ansi-language:EN-US'>d</span>&quot;<span
+style='font-family:"Times New Roman"'> - </span>одно целое число,<span
+style='font-family:"Times New Roman"'> </span>&quot;%<span lang=EN-US
+style='font-family:"Times New Roman";mso-ansi-language:EN-US'>nnnf</span>&quot;
+- массив из <span lang=EN-US style='font-family:"Times New Roman";mso-ansi-language:
+EN-US'>nnn</span><span lang=EN-US style='font-family:"Times New Roman"'> </span>вещественных
+чисел<span style='font-family:"Times New Roman"'>, </span>&quot;%<span
+lang=EN-US style='font-family:"Times New Roman";mso-ansi-language:EN-US'>f</span>&quot;<span
+style='font-family:"Times New Roman"'> - </span>одно вещественное число. Сразу
+же вслед за строкой размещается последовательность целых, вещественных и их
+массивов в соответствии с заданным форматом. Массив передается<span
+style='mso-spacerun:yes'>  </span>в виде указателя (имя массива) (например <span
+style='font-family:"Times New Roman"'>&quot;%4</span><span lang=EN-US
+style='font-family:"Times New Roman";mso-ansi-language:EN-US'>d</span><span
+style='font-family:"Times New Roman"'>%2</span><span lang=EN-US
+style='font-family:"Times New Roman";mso-ansi-language:EN-US'>f</span><span
+style='font-family:"Times New Roman"'>&quot;,</span><span lang=EN-US
+style='font-family:"Times New Roman";mso-ansi-language:EN-US'>A</span><span
+style='font-family:"Times New Roman"'>,</span><span lang=EN-US
+style='font-family:"Times New Roman";mso-ansi-language:EN-US'>B</span><span
+lang=EN-US style='font-family:"Times New Roman"'> </span>)<span
+style='mso-spacerun:yes'>  </span></p>
+
+<p class=a4 style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l1 level1 lfo14;
+tab-stops:list 36.0pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>9.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Первый параметр - строка, в которой каждый
+символ «*<span lang=EN-US style='font-family:"Times New Roman";mso-ansi-language:
+EN-US'>n</span>», где <span lang=EN-US style='font-family:"Times New Roman";
+mso-ansi-language:EN-US'>n</span><span style='font-family:"Times New Roman"'>-</span>цифра
+-<span style='mso-spacerun:yes'>  </span>обозначает место включения целого (<span
+lang=EN-US style='font-family:"Times New Roman";mso-ansi-language:EN-US'>int</span>),
+являющегося <span lang=EN-US style='font-family:"Times New Roman";mso-ansi-language:
+EN-US'>n</span><span style='font-family:"Times New Roman"'>+1 </span>параметром.
+Функция выводит на экран полученный текст, содержащий целые значения.</p>
+
+<p class=a4 style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l1 level1 lfo14;
+tab-stops:list 36.0pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>10.<span style='font:7.0pt "Times New Roman"'>&nbsp; </span></span>
+<![endif]>Параметр
+функции - целое - определяет количество строк в следующей за ним группе. Групп
+может быть несколько. Целое со значением 0 - конец последовательности.</p>
+
+<p class=a4 style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l1 level1 lfo14;
+tab-stops:list 36.0pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>11.<span style='font:7.0pt "Times New Roman"'>&nbsp; </span></span>
+<![endif]>Функция
+получает разреженный массив (содержащая значительное число нулевых элементов) в
+виде списка значений ненулевых элементов в следующем формате<span
+style='font-family:"Times New Roman"'>: </span>размерность массива (<span
+lang=EN-US style='font-family:"Times New Roman";mso-ansi-language:EN-US'>int</span>),
+количество ненулевых элементов (<span lang=EN-US style='font-family:"Times New Roman";
+mso-ansi-language:EN-US'>int</span>)<span style='font-family:"Times New Roman"'>,
+</span>для каждого элемента - индекс<span style='font-family:"Times New Roman"'>
+(</span><span lang=EN-US style='font-family:"Times New Roman";mso-ansi-language:
+EN-US'>int</span><span style='font-family:"Times New Roman"'>) </span>и
+значение (<span lang=EN-US style='font-family:"Times New Roman";mso-ansi-language:
+EN-US'>double</span><span style='font-family:"Times New Roman"'>).</span><span
+style='mso-spacerun:yes'>  </span>Функция создает и возвращает динамический
+массив соответствующим содержимым. </p>
+
+<h3>Вопросы без ответов</h3>
+
+<p class=a>Определить способ размещения последовательности переменных в общей
+области памяти, которая читается или заполняется функцией (формат). Для вызова
+функции задайте набор глобальных переменных (транслятор размещает их в
+соответствии с последовательностью их определения) и передайте функции
+указатель на первую из них.</p>
+
+<p class=a4><b style='mso-bidi-font-weight:normal'><a name="m62">Пример оформления тестового
+задания<o:p></o:p></b></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//--------------------------------------------------------102-06.<span
+lang=EN-US style='mso-ansi-language:EN-US'>cpp</span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>double</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>F</span>(<span
+lang=EN-US style='mso-ansi-language:EN-US'>int</span> *<span lang=EN-US
+style='mso-ansi-language:EN-US'>p</span>)<span style='mso-tab-count:2'>                                      </span>// по умолчанию -
+извлекается <span lang=EN-US style='mso-ansi-language:EN-US'>int</span></p>
+
+<p class=a0>{ <span lang=EN-US style='mso-ansi-language:EN-US'>double</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>s</span>=0;<span
+style='mso-tab-count:2'>                 </span><span style='mso-tab-count:
+2'>                        </span>// начальная сумма равна 0</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>while</span> (*<span
+lang=EN-US style='mso-ansi-language:EN-US'>p</span>!=0){<span style='mso-tab-count:
+2'>                 </span><span style='mso-tab-count:2'>                        </span>//
+пока не извлечен нулевой <span lang=EN-US style='mso-ansi-language:EN-US'>int</span></p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>int</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>n</span>=*<span lang=EN-US
+style='mso-ansi-language:EN-US'>p</span>++;<span style='mso-tab-count:3'>                                </span>//
+очередной <span lang=EN-US style='mso-ansi-language:EN-US'>int</span> - счетчик
+цикла</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>double</span> *<span lang=EN-US
+style='mso-ansi-language:EN-US'>q</span>=*((<span lang=EN-US style='mso-ansi-language:
+EN-US'>double</span>**)<span lang=EN-US style='mso-ansi-language:EN-US'>p</span>)++;<span
+style='mso-tab-count:1'>         </span>// следующий за ним - <span lang=EN-US
+style='mso-ansi-language:EN-US'>double</span>*</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>while</span> (<span lang=EN-US
+style='mso-ansi-language:EN-US'>n</span>--!=0) <span lang=EN-US
+style='mso-ansi-language:EN-US'>s</span>+=*<span lang=EN-US style='mso-ansi-language:
+EN-US'>q</span>++;<span style='mso-tab-count:1'>               </span>// суммирование массива</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>}<span style='mso-tab-count:4'>                                               </span>//
+указателем q<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>return s; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>double
+d1[]={1,2,3,4};<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>double</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>d</span>2[]={5,6};</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>a</span>1=4;<span
+style='mso-tab-count:4'>                                               </span>//
+размерность первого массива</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>double</span> *<span
+lang=EN-US style='mso-ansi-language:EN-US'>q</span>1=<span lang=EN-US
+style='mso-ansi-language:EN-US'>d</span>1;<span style='mso-tab-count:3'>                          </span><span
+style='mso-tab-count:1'>            </span>// указатель на первый массив <span
+lang=EN-US style='mso-ansi-language:EN-US'>double</span>*</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>a</span>2=2;<span
+style='mso-tab-count:4'>                                               </span>//
+размерность второго массива</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>double</span> *<span
+lang=EN-US style='mso-ansi-language:EN-US'>q</span>2=<span lang=EN-US
+style='mso-ansi-language:EN-US'>d</span>2;<span style='mso-tab-count:3'>                          </span><span
+style='mso-tab-count:1'>            </span>// указатель на второй массив <span
+lang=EN-US style='mso-ansi-language:EN-US'>double</span>*</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>a</span>3=0;<span
+style='mso-tab-count:4'>                                               </span>//
+ограничитель последовательности</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>main</span>(){</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>printf</span>(&quot;%<span
+lang=EN-US style='mso-ansi-language:EN-US'>lf</span>\<span lang=EN-US
+style='mso-ansi-language:EN-US'>n</span>&quot;,<span lang=EN-US
+style='mso-ansi-language:EN-US'>F</span>(&amp;<span lang=EN-US
+style='mso-ansi-language:EN-US'>a</span>1));<span style='mso-tab-count:1'>      </span><span
+style='mso-tab-count:2'>                        </span>// Должна вывести 21 -
+сумму <span lang=EN-US style='mso-ansi-language:EN-US'>d</span>1 и <span
+lang=EN-US style='mso-ansi-language:EN-US'>d</span>2</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>}<o:p></o:p></span></p>
+
+<p class=a>
+<img border="0" src="Images/092-04.jpg" align="left">Функция
+работает с указателем <b style='mso-bidi-font-weight:normal'><a name="m63"><span lang=EN-US
+style='mso-ansi-language:EN-US'>p</span></b>, извлекая из-под него целые
+переменные, пока не обнаружит 0. Очередная переменная запоминается в <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>n</span><span lang=EN-US> </span></b>и используется в дальнейшем в
+качестве счетчика повторения цикла, то есть определяет количество элементов в
+некотором массиве. В том же цикле суммируемые значения извлекаются из-под
+указателя <span style='mso-spacerun:yes'> </span><b style='mso-bidi-font-weight:
+normal'><a name="m64"><span lang=EN-US style='mso-ansi-language:EN-US'>q</span></b><span
+lang=EN-US> </span>типа <b style='mso-bidi-font-weight:normal'><a name="m65"><span
+lang=EN-US style='mso-ansi-language:EN-US'>double</span>*, </b>то есть речь
+идет о массиве вещественных. Остается определить, как формируется <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>q</span>. </b>Он извлекается из той же последовательности, что и целые
+переменные - с использованием <b style='mso-bidi-font-weight:normal'><a name="m66"><span
+lang=EN-US style='mso-ansi-language:EN-US'>p</span>. </b>Для этого последний
+преобразуется &quot;на лету&quot; в указатель на извлекаемый тип, то есть
+приводится к типу <b style='mso-bidi-font-weight:normal'><a name="m67"><span lang=EN-US
+style='mso-ansi-language:EN-US'>double</span>**. </b>Таким образом,
+последовательность представляет собой пары переменных - целая размерность
+массива и указатель на сам вещественный массив. Размерность, равная 0 -
+ограничитель последовательности.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//------------------------------------------------------92-07.cpp</p>
+
+<p class=a0>//------------------------------------------------------ 1</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>struct man {char name[20];
+int dd,mm,yy; char *addr; };</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>char *F1(char *p, char *nm, char *ad)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>{ man *q =(man*)p;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>strcpy(q-&gt;name,nm);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>strcpy((char*) (q+1 ),ad);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>q-&gt;addr = (char*) (q+1 );<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>for (p=(char*) (q+1 ); *p!=0; p++);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>p++; return p;}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>//------------------------------------------------------
+2<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>struct man1 {char name[20]; int dd,mm,yy; char
+addr[]; };<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>char *F2(char *p, char *nm, char *ad)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>{ man1 *q =(man1*)p;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>strcpy(q-&gt;name,nm);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>strcpy(q-&gt;addr,ad);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>for (p=q-&gt;addr; *p!=0; p++);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>p++; return p;}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>//------------------------------------------------------
+3<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>int *F3(int *q, char *p[])<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>{ char *s;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>for ( int i=0; p[i]!=NULL; i++);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>*q = i;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>for (s = (char*)(q+1), i=0; p[i]!=NULL; i++) {<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span>for ( int j=0; p[i][j]!='\0'; j++) *s++ =
+p[i][j];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span>*s++ = '\0';<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>return (int*)s;}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>//-------------------------------------------------------
+4<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>double F4(int *p)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>{ double *q,s; int m;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>for (q=(double*)(p+1), m=*p, s=0.; m&gt;=0;
+m--) s+= *q++;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>return s;}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>//-------------------------------------------------------
+5<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>char *F5(char *s, char *p[])<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>{ int i,j;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>for (i=0; p[i]!=NULL; i++) {<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span><span style='mso-tab-count:1'>           </span>for
+(j=0; p[i][j]!='\0'; j++) *s++ = p[i][j];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span><span style='mso-tab-count:1'>           </span>*s++
+= '\0';<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span><span
+style='mso-tab-count:1'>      </span>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>*s = '\0'; return s;}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>//-------------------------------------------------------
+6<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>union x {int *pi; long *pl; double *pd;};<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>double F6(int *p)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>{ union x ptr;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>double dd=0;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>for (ptr.pi=p; *ptr.pi !=0; )<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>           </span>switch (*ptr.pi++) {<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>case 1: dd += *ptr.pi++; break;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>case 2: dd += *ptr.pl++; break;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>case 3: dd += *ptr.pd++; break;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span><span style='mso-tab-count:1'>      </span>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>return dd;}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>//-------------------------------------------------------
+7<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>unsigned char *F7(unsigned char *s, char *p)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>{ int n;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>for (n=0; p[n] != '\0'; n++);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>*((int*)s)++ = n;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>for (; *p != '\0'; *s++ = *p++);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>s++; return s;}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>//-------------------------------------------------------
+8<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>int *F8(int *p, int n, double v[])<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>{ *p++ = n;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>for (int i=0; i&lt;n; i++) *((double*)p)++ =
+v[i];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>return p;}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>//-------------------------------------------------------
+9<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>double F9(int *p)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>{ double s=0;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span>while(*p!=0) {<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span>if (*p&gt;0) s+=*p++;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span>else<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>           </span>{ p++; s += *((double*)p)++; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>return s; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>//------------------------------------------------------
+10<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>double F10(char *p)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>{ double s; char *q;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>for (q=p; *q!=0; q++);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>for (q++; *p!=0; p++)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>           </span>switch(*p) {<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>case 'd': s+=*((int*)q)++; break;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>case 'f': s+=*((double*)q)++; break;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>case 'l': s+=*((long*)q)++; break;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>return s; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>//-------------------------------------------------------11<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>int F11(char *p)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>{ int s=0, *v; char *q;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>for (q=p; *q!=0; q++);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>q++; v=(int*)q;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>for(;*p!=0;p++)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span>if (*p&gt;='0' &amp;&amp; *p&lt;='9')
+s+=v[*p-'0'];<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-spacerun:yes; mso-ansi-language:EN-US' lang="EN-US"> </span>return s; }</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a>Определите формат последовательности параметров функции и напишите
+ее вызов с фактическими параметрами – константами.</p>
+
+<p class=a4><b style='mso-bidi-font-weight:normal'><a name="m68">Пример оформления тестового
+задания.<o:p></o:p></b></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//----------------------------------------------------92-08.cpp</p>
+
+<p class=a0>double F(int a1,...)<span style='mso-tab-count:3'>                                  </span>//
+Первый параметр - счетчик цикла</p>
+
+<p class=a0>{ int i,n;</p>
+
+<p class=a0>double s,*q=(double*)(&amp;a1+1);<span style='mso-tab-count:1'>                 </span>// Указатель на второй и последующие</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>for (s=0, n=a1;
+n!=0; n--)<span style='mso-tab-count:2'>             </span>// </span>параметры<span
+lang=EN-US style='mso-ansi-language:EN-US'> - </span>типа<span lang=EN-US
+style='mso-ansi-language:EN-US'> double*<o:p></o:p></span></p>
+
+<p class=a0 style='text-indent:36.0pt'>s += *q++;<span style='mso-tab-count:
+3'>                                </span>// Сумма параметров, начиная </p>
+
+<p class=a0>return s;}<span style='mso-tab-count:4'>                                               </span>//
+со второго</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void main() {
+printf(&quot;%lf\n&quot;,F(3,1.5,2.5,3.5)); }<o:p></o:p></span></p>
+
+<p class=a>Указатель <b style='mso-bidi-font-weight:normal'><a name="m69"><span lang=EN-US
+style='mso-ansi-language:EN-US'>q</span><span lang=EN-US> </span></b>типа <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>double</span>* </b>ссылается на второй параметр функции (первый из
+переменного списка) - <b style='mso-bidi-font-weight:normal'><a name="m70">&amp;<span lang=EN-US style='mso-ansi-language:
+EN-US'>a</span>1+1 –</b> указатель на область памяти, «следующую за…». Первый
+параметр используется в качестве счетчика повторений цикла, цикл суммирует
+значения, последовательно извлекаемые из-под указателя <b style='mso-bidi-font-weight:
+normal'><a name="m71"><span lang=EN-US style='mso-ansi-language:EN-US'>q</span>. </b>Результат
+– функция суммирует вещественные переменные из списка, предваренного целым
+счетчиком.</p>
+
+<p class=a0><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;font-family:
+"Times New Roman CYR";mso-bidi-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//------------------------------------------------------</span><span style='mso-ansi-language:EN-US'>9</span>2<span
+lang=EN-US style='mso-ansi-language:EN-US'>-09.cpp<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//--------------------------------------------------------1<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>void F1(int *p,...)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>{ int **q, i, d;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>for (i=1, q = &amp;p, d=*p; q[i]!=NULL; i++)
+*q[i-1] = *q[i];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>*q[i-1] = d;}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>//--------------------------------------------------------2
+<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>int *F2(int *p,...)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>{ int **q, i, *s;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>for (i=1, q = &amp;p, s=p; q[i]!=NULL; i++)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span>if (*q[i] &gt; *s) s = q[i];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>return s; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>//--------------------------------------------------------3
+<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>int F3(int p[], int a1,...)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>{ int *q, i;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>for (i=0, q = &amp;a1; q[i] &gt; 0; i++) p[i]
+= q[i];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>return i;}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>//--------------------------------------------------------4
+<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>union x { int *pi; long *pl; double *pd; };<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>void F4(int p,...)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>{ union x ptr;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>for (ptr.pi = &amp;p; *ptr.pi != 0; ) {<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span>switch(*ptr.pi++) {<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span><span style='mso-spacerun:yes'> 
+</span>case 1: printf(&quot;%d&quot;,*ptr.pi++); break;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span><span style='mso-spacerun:yes'> 
+</span>case 2: printf(&quot;%ld&quot;,*ptr.pl++); break;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span><span style='mso-spacerun:yes'> 
+</span>case 3: printf(&quot;%lf&quot;,*ptr.pd++); break;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>           </span>}}}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>//--------------------------------------------------------5
+<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>char **F5(char *p,...)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>{ char **q,**s; int i,n;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>for (n=0, q = &amp;p; q[n] !=NULL; n++);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>s = new char*[n+1];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>for (i=0, q = &amp;p; q[i] !=NULL; i++)
+s[i]=q[i];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>s[n]=NULL; return s;}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>//--------------------------------------------------------6
+<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>char *F6(char *p,...)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>{ char **q; int i,n;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>for (i=0, n=0, q = &amp;p; q[i] !=NULL; i++)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span>if (strlen(q[i]) &gt; strlen(q[n])) n=i;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>return q[n]; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>//--------------------------------------------------------7<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>int F7(int a1,...)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>{ int *q, s;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>for (s=0, q = &amp;a1; *q &gt; 0; q++) s+= *q;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>return s;}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>//--------------------------------------------------------8
+<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>union xx { int *pi; long *pl; double *pd; };<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>double F8(int p,...)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>{ union xx ptr;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>double dd=0;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>for (ptr.pi = &amp;p; *ptr.pi != </span>0; )</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span><span style='mso-tab-count:1'>      </span>{<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>         </span>switch(*ptr.pi++) {<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>  </span>case 1: dd+= *ptr.pi++; break;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>  </span>case 2: dd+= *ptr.pl++; break;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>  </span>case 3: dd+= *ptr.pd++; break;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>         </span>}}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>return dd;}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>//-------------------------------------------------------9
+<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>double F9(int a1,...)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>{ double s=0; int *p=&amp;a1;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>while(*p!=0) {<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span><span style='mso-tab-count:1'>           </span>if
+(*p&gt;0) s+=*p++;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span><span style='mso-tab-count:1'>      </span>else<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>           </span>{
+p++; s += *((double*)p)++; } <o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span><span style='mso-tab-count:1'>      </span>}
+return s; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>//--------------------------------------------------------10
+<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>double F10(char *p,...)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>{ double s;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>int *q=(int *)(&amp;p+1);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>for (;*p!=0; p++)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>           </span>switch(*p) {<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>case 'd': s+=*q++; break;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>case 'f': s+=*((double*)q)++; break;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>case 'l': s+=*((long*)q)++; break;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span><span style='mso-tab-count:1'>      </span>}
+return s; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>//--------------------------------------------------------11
+<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>int F11(char *p,...)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>{ int s=0, *q=(int *)(&amp;p+1);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>for(;*p!=0;p++)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span>if (*p&gt;='0' &amp;&amp; *p&lt;='9')
+s+=q[*p-'0'];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>return s; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>//--------------------------------------------------------12
+<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>double F12(int p,...)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>{ double dd=0; int *q=&amp;p;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span>for (; *q != 0; ) {<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span>switch(*q++)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>           </span>{<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>  </span>case 1: dd+= *q++; break;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>  </span>case 2: dd+= *((long*)q)++; break;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>  </span>case 3: dd+= *((double*)q)++; break;<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-spacerun:yes; mso-ansi-language:EN-US' lang="EN-US">           </span>}}</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>return dd;} </p>
+
+<p class=a><o:p>&nbsp;</o:p></p>
+
+<p class=a><o:p>&nbsp;</o:p></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<h2><o:p>&nbsp;</o:p></h2>
+
+</div>
+
+</body>
+
+</html>

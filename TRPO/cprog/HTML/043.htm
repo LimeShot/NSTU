@@ -1,0 +1,2178 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=Edit-Time-Data href="043.files/editdata.mso">
+<title>4.3. Итерационные циклы и приближенные вычисления</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>www.PHILka.RU</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>vtpc112</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>490</o:TotalTime>
+  <o:LastPrinted>2008-07-23T08:54:00Z</o:LastPrinted>
+  <o:Created>2008-07-23T09:10:00Z</o:Created>
+  <o:LastSaved>2008-07-23T09:10:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>2361</o:Words>
+  <o:Characters>13463</o:Characters>
+  <o:Company>NSTU_VT</o:Company>
+  <o:Bytes>11776</o:Bytes>
+  <o:Lines>112</o:Lines>
+  <o:Paragraphs>31</o:Paragraphs>
+  <o:CharactersWithSpaces>15793</o:CharactersWithSpaces>
+  <o:Version>11.6360</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DoNotHyphenateCaps/>
+  <w:DrawingGridHorizontalSpacing>0,55 пт</w:DrawingGridHorizontalSpacing>
+  <w:DrawingGridVerticalSpacing>0,55 пт</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:UseMarginsForDrawingGridOrigin/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DrawingGridVerticalOrigin>99,25 пт</w:DrawingGridVerticalOrigin>
+  <w:Compatibility>
+   <w:WW6BorderRules/>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+   <w:UseWord97LineBreakingRules/>
+   <w:SelectEntireFieldWithStartOrEnd/>
+   <w:UseWord2002TableStyleRules/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:"Times New Roman CYR";
+	panose-1:2 2 6 3 5 4 5 2 3 4;
+	mso-font-charset:204;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+@font-face
+	{font-family:"Courier New CYR";
+	panose-1:2 7 3 9 2 2 5 2 4 4;
+	mso-font-charset:204;
+	mso-generic-font-family:modern;
+	mso-font-pitch:fixed;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+@font-face
+	{font-family:"Arial CYR";
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+h1
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:14.0pt;
+	mso-bidi-font-weight:normal;}
+h2
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-font-weight:normal;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+h3
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	font-weight:normal;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{mso-style-noshow:yes;
+	mso-style-next:Обычный;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:right dotted 481.9pt;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";}
+p.a, li.a, div.a
+	{mso-style-name:текст;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a0, li.a0, div.a0
+	{mso-style-name:программа;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a1, li.a1, div.a1
+	{mso-style-name:список;
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:18.45pt;
+	margin-bottom:0cm;
+	margin-left:64.35pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-18.0pt;
+	mso-pagination:widow-orphan;
+	mso-list:l0 level1 lfo1;
+	tab-stops:42.55pt list 64.35pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a2, li.a2, div.a2
+	{mso-style-name:определение;
+	mso-style-parent:текст;
+	margin-top:12.0pt;
+	margin-right:32.9pt;
+	margin-bottom:12.0pt;
+	margin-left:35.45pt;
+	text-align:justify;
+	text-indent:.55pt;
+	mso-pagination:widow-orphan;
+	border:none;
+	mso-border-alt:solid windowtext 1.5pt;
+	padding:0cm;
+	mso-padding-alt:1.0pt 1.0pt 1.0pt 1.0pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a3, li.a3, div.a3
+	{mso-style-name:эпиграф;
+	margin-top:0cm;
+	margin-right:32.9pt;
+	margin-bottom:0cm;
+	margin-left:5.0cm;
+	margin-bottom:.0001pt;
+	text-align:right;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.a4, li.a4, div.a4
+	{mso-style-name:"от края";
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a5, li.a5, div.a5
+	{mso-style-name:Формула;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.a6, li.a6, div.a6
+	{mso-style-name:"без формата";
+	mso-style-parent:программа;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a7, li.a7, div.a7
+	{mso-style-name:стихи;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.1, li.1, div.1
+	{mso-style-name:эпиграф1;
+	mso-style-parent:эпиграф;
+	margin-top:0cm;
+	margin-right:9.35pt;
+	margin-bottom:0cm;
+	margin-left:9.0cm;
+	margin-bottom:.0001pt;
+	text-align:right;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+ /* Page Definitions */
+ @page
+	{mso-footnote-separator:url("043.files/header.htm") fs;
+	mso-footnote-continuation-separator:url("043.files/header.htm") fcs;
+	mso-endnote-separator:url("043.files/header.htm") es;
+	mso-endnote-continuation-separator:url("043.files/header.htm") ecs;}
+@page Section1
+	{size:21.0cm 842.0pt;
+	margin:33.45pt 42.55pt 72.0pt 89.85pt;
+	mso-header-margin:14.2pt;
+	mso-footer-margin:31.75pt;
+	mso-even-header:url("043.files/header.htm") eh1;
+	mso-header:url("043.files/header.htm") h1;
+	mso-even-footer:url("043.files/header.htm") ef1;
+	mso-footer:url("043.files/header.htm") f1;
+	mso-first-header:url("043.files/header.htm") fh1;
+	mso-first-footer:url("043.files/header.htm") ff1;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:1628194852;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-964799380 -1450833310 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-style-link:список;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:64.35pt;
+	mso-level-number-position:left;
+	margin-left:64.35pt;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Обычная таблица";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+table.MsoTableGrid
+	{mso-style-name:"Сетка таблицы";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+  <o:regrouptable v:ext="edit">
+   <o:entry new="1" old="0"/>
+   <o:entry new="2" old="1"/>
+   <o:entry new="3" old="0"/>
+   <o:entry new="4" old="0"/>
+   <o:entry new="5" old="4"/>
+   <o:entry new="6" old="0"/>
+   <o:entry new="7" old="6"/>
+   <o:entry new="8" old="7"/>
+   <o:entry new="9" old="8"/>
+  </o:regrouptable>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=RU style='tab-interval:36.0pt' background="back.gif">
+
+<div class=Section1>
+
+<h2>4.3. Итерационные циклы и приближенные вычисления</h2>
+
+<h3>Итерационный цикл</h3>
+
+<p class=a>Итак, любой цикл как процесс можно охарактеризовать четырьмя
+составляющими:</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='mso-spacerun:yes'> </span>начальное
+состояние;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>ограничение цикла (условие продолжения или
+завершения):</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>переход к следующему шагу<span lang=EN-US
+style='mso-ansi-language:EN-US'>:</span></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>повторяющееся действие – тело цикла.</p>
+
+<p class=a>В большинстве циклов действия, производимые в теле цикла, не влияют
+на параметры его протекания: количество шагов, характеристики шага. В таких «хороших»
+циклах параметры заголовка цикла не зависят от значений переменных, вычисляемых
+в теле цикла, и цикл имеет постоянное количество повторений, например: </p>
+
+<p class=a0><span style='font-family:"Times New Roman CYR";mso-bidi-font-family:
+"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0>for (i=0; i&lt;n; i++) { ...A[i]... } </p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=a><span style='mso-spacerun:yes'> </span>Если же поведение программы
+на некотором шаге цикла может зависеть от результатов выполнения тела цикла на
+предыдуших шагах, либо число повторений цикла зависит от результатов выполнения
+шага, такие циклы и программируемые ими процессы называются <b
+style='mso-bidi-font-weight:normal'>итерационными</b>. Наиболее широко они
+применяются в вычислительной математике, когда для получения численного
+результата используется итерационный цикл <b style='mso-bidi-font-weight:normal'><a name="m1">последовательных
+приближений</b> к нему. </p>
+
+<p class=a>Если изобразить общую схему итерационного цикла, то в нем
+обязательно будут переменные, сохраняющие результат предыдущего (<b
+style='mso-bidi-font-weight:normal'>x1</b>) и еще более ранних (<b
+style='mso-bidi-font-weight:normal'>x2</b>,...) шагов, а также переменная <b
+style='mso-bidi-font-weight:normal'>x</b> - результат текущего шага: </p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><a name="m2"><span
+style='font-family:"Courier New CYR";mso-bidi-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=a0>for (x1=...,x2=...; условие(x1,x2); <b style='mso-bidi-font-weight:
+normal'><a name="m3">x2=x1,x1=x</b>) <span style='mso-spacerun:yes'> </span>{ ...x =…x1…x2…;...}</p>
+
+<p class=a>Образно говоря, если <b style='mso-bidi-font-weight:normal'><a name="m4"><span
+lang=EN-US style='mso-ansi-language:EN-US'>x</span> – </b>«сегодняшнее»
+значение, то <b style='mso-bidi-font-weight:normal'><a name="m5"><span lang=EN-US
+style='mso-ansi-language:EN-US'>x</span>1 – </b>вчерашнее, а <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>x</span>2 – </b>позавчерашнее. При переходе к следующему шагу
+«вчерашнее» становится «позавчерашним», «сегодняшнее» – «вчерашним».
+Особенность итерационного цикла состоит в том, что </p>
+
+<p class=a>Если в итерационном цикле гарантируется выполнение одного шага, тo
+может быть использован цикл <b style='mso-bidi-font-weight:normal'><a name="m6">do...while.</b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><a name="m7"><span
+style='font-family:"Courier New CYR";mso-bidi-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=a0>x=...; x1=...;<span style='mso-tab-count:4'>                                          </span>//
+Начальное значение текущего шага</p>
+
+<p class=a0>do<span style='mso-tab-count:1'>         </span>{<span
+style='mso-tab-count:1'>           </span></p>
+
+<p class=a0 style='text-indent:36.0pt'>x2 = x1; x1 = x;<span style='mso-tab-count:
+3'>                         </span>// Следующий шаг</p>
+
+<p class=a0 style='text-indent:36.0pt'>x = …x1…x2…; <span style='mso-tab-count:
+2'>                        </span>// Результат текущего шага</p>
+
+<p class=a0 style='text-indent:36.0pt'>} while (условие(x2,x1,x));<span
+style='mso-tab-count:1'>          </span>// Условие завершения</p>
+
+<p class=a>Если использовать результат только текущего шага, который зависит от
+результата предыдущего, то схему цикла можно упростить.</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=a0>for (x=...; условие(x);<span style='mso-spacerun:yes'>  </span>) {
+...x = …x…;... }</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<h3>Рекуррентные последовательности</h3>
+
+<p class=a>Из математики известны <b style='mso-bidi-font-weight:normal'><a name="m8">рекуррентные
+последовательности, </b>в которых очередной элемент вычисляется из нескольких
+предыдущих. Например, числа Фибоначчи – последовательность, в которой очередной
+элемент равен сумме предыдущих:</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a5><span lang=EN-US>F<sub>n</sub></span><span style='mso-ansi-language:
+RU'> = </span><span lang=EN-US>F<sub>n</sub></span><sub><span style='mso-ansi-language:
+RU'>-1 </span></sub><span style='mso-ansi-language:RU'>+ </span><span
+lang=EN-US>F<sub>n</sub></span><sub><span style='mso-ansi-language:RU'>-2</span></sub><span
+style='mso-ansi-language:RU'>,<sub> </sub></span><span lang=EN-US>F</span><sub><span
+style='mso-ansi-language:RU'>0</span></sub><span style='mso-ansi-language:RU'>=1,
+</span><span lang=EN-US>F</span><sub><span style='mso-ansi-language:RU'>1</span></sub><span
+style='mso-ansi-language:RU'>=1<o:p></o:p></span></p>
+
+<p class=a>При прямом вычислении элементов последовательности необходимы три
+переменные для хранения текущего, предыдущего и «позавчерашнего» значений.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//------------------------------------------------------43-01.cpp</p>
+
+<p class=a0>//--- Числа Фибоначчи</p>
+
+<p class=a0>int FIBO(int n){</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>int Fn,Fn1=1,Fn2=1;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>for (int i=2; i&lt;=n; i++){<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:2; mso-ansi-language:EN-US' lang="EN-US">                        </span>Fn=Fn1+Fn2;</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span>Fn2=Fn1;<span
+style='mso-tab-count:2'>                      </span>// Переход к следующему
+шагу:</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span>Fn1=Fn;<span
+style='mso-tab-count:2'>                        </span>// текущий становится
+предыдущим</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>return Fn;}<o:p></o:p></span></p>
+
+<p class=a>Другой пример, синусы или косинусы кратных углов <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>sin</span>(<span lang=EN-US
+style='mso-ansi-language:EN-US'>nx</span>), </b><b style='mso-bidi-font-weight:
+normal'><a name="m9"><span lang=EN-US style='mso-ansi-language:EN-US'>cos</span>(</b><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>nx</span>)</b>, которые потребуются нам при вычислении суммы
+гармонического ряда (см. «Лабораторный практикум»). Вместо того, чтобы каждый
+раз вычислять функции для кратных аргументов, достаточно вычислить один раз
+начальные значения <b style='mso-bidi-font-weight:normal'><a name="m10"><span lang=EN-US
+style='mso-ansi-language:EN-US'>sin</span>(</b><b style='mso-bidi-font-weight:
+normal'><a name="m11"><span lang=EN-US style='mso-ansi-language:EN-US'>x</span>), </b><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>cos</span>(<span lang=EN-US
+style='mso-ansi-language:EN-US'>x</span>)</b>, а затем использовать
+рекуррентную формулу: </p>
+
+<p class=a><o:p>&nbsp;</o:p></p>
+
+<p class=a5><span lang=EN-US>sin(nx) = sin((n-1)x)cos(x) + cos((n-1)x)sin(x)</span></p>
+
+<p class=a5><span lang=EN-US>cos(nx) = cos((n-1)x)cos(x) - sin((n-1)x)sin(x)</span></p>
+
+<p class=a><span style='mso-spacerun:yes'>  </span>При реализации формулы в
+программе необходимо обозначить отдельными переменными значения <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>sin</span></b> и <b style='mso-bidi-font-weight:normal'><a name="m12"><span
+lang=EN-US style='mso-ansi-language:EN-US'>cos</span><span lang=EN-US> </span></b>от
+текущего аргумента <b style='mso-bidi-font-weight:normal'><a name="m13"><span lang=EN-US
+style='mso-ansi-language:EN-US'>nx</span>,<span style='mso-spacerun:yes'> 
+</span></b>от предыдущего <b style='mso-bidi-font-weight:normal'><a name="m14">(<span lang=EN-US style='mso-ansi-language:
+EN-US'>n</span>-1)<span lang=EN-US
+style='mso-ansi-language:EN-US'>x</span><span lang=EN-US> </span></b>и от
+начального <b style='mso-bidi-font-weight:normal'><a name="m15"><span lang=EN-US
+style='mso-ansi-language:EN-US'>x</span>. </b>При переходе к следующему шагу
+цикла текущие копируются в предыдущие.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//------------------------------------------------------43-02.cpp</p>
+
+<p class=a0>//--- sin, cos кратных углов</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void main(){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>int FI=30;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>double pi=3.1415926;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>double Cn,Cn1,C0,Sn,Sn1,S0;<span
+style='mso-tab-count:1'>   </span>// S0=sin(x), Sn1=sin((n-1)x), Sn=sin(nx)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>Cn1=C0=cos(FI*pi/180);<span style='mso-tab-count:
+1'>            </span>// </span>при<span style='mso-ansi-language:EN-US'> <span
+lang=EN-US>n=2 <span style='mso-spacerun:yes'> </span>sin((n-1)x)=sin(x)<o:p></o:p></span></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>Sn1=S0=sin(FI*pi/180);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>printf(&quot;sin(%d*%d)=%lf
+cos(%d*%d)=%lf\n&quot;,1,FI,S0,1,FI,C0); <o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>for (int n=2;n&lt;=10;n++){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>Sn</span>=<span lang=EN-US
+style='mso-ansi-language:EN-US'>Sn</span>1*<span lang=EN-US style='mso-ansi-language:
+EN-US'>C</span>0 + <span lang=EN-US style='mso-ansi-language:EN-US'>Cn</span>1*<span
+lang=EN-US style='mso-ansi-language:EN-US'>S</span>0;<span style='mso-tab-count:
+1'>   </span>// Рекуррентная формула</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>Cn=Cn1*C0 - Sn1*S0;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>printf(&quot;sin(%d*%d)=%lf
+cos(%d*%d)=%lf\n&quot;,n,FI,Sn,n,FI,Cn); <o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>Cn1=Cn;<span
+style='mso-tab-count:2'>                       </span>// Переход к следующему
+шагу</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>Sn1=Sn; <span
+style='mso-tab-count:2'>                      </span>// текущий становится
+предыдущим </p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>}}</p>
+
+<h3>Приближенные вычисления</h3>
+
+<p class=a>Пока что итерационные циклы давали<span style='mso-spacerun:yes'> 
+</span>нам «экономию вычислений», избавляя от повторения одних и тех же
+действий. В вычислительной математике работает другая идея. В <b
+style='mso-bidi-font-weight:normal'>методе последовательных приближений </b>координаты
+очередной точки в пространстве поиска вычисляются через координаты предыдущих
+точек, а сама последовательность бесконечно приближается (сходится) к некоторой
+точке с заданным свойством. Число шагов цикла определяется точностью
+приближения к предельной точке, а оно, в свою очередь, оценивается расстоянием
+между текущей и предыдущей.</p>
+
+<p class=a>Сама идея, на каких принципах организовать движение от точки к
+точке, к программированию, как таковому, не относится. Она лежит в предметной
+области, откуда и ведутся все доказательства работоспособности метода. Для
+практического программирования важно следующее<span lang=EN-US
+style='mso-ansi-language:EN-US'>:<o:p></o:p></span></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>число шагов цикла (скорость сходимости)
+определяется самим методом (функцией, вычисляющей следующую точку), а также
+начальной точкой;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>возможны случаи, когда процесс, наоборот, <b
+style='mso-bidi-font-weight:normal'>расходится, </b>т.е. «уходит» от исходной
+точки, увеличивая значения координат до бесконечности (в программе –
+переполнение).</p>
+
+<p class=a>Рассмотрим простейший способ нахождения корня функции<b
+style='mso-bidi-font-weight:normal'> методом последовательных приближений<span
+style='mso-spacerun:yes'>  </span></b>Для того, чтобы найти корень функции <b
+style='mso-bidi-font-weight:normal'>f(x)=0</b>, решается эквивалентное
+уравнение<span style='font-family:"Times New Roman"'> </span><b
+style='mso-bidi-font-weight:normal'>x = f(x) + x</b>. Если в него подставить
+точное значение корня, то правая и левая части совпадут. Если же поставить в
+правую часть любое «постороннее» значение <b style='mso-bidi-font-weight:normal'><a name="m16"><span
+lang=EN-US style='mso-ansi-language:EN-US'>x</span>1, </b>то в левой части
+получим значение, отличающееся от <b style='mso-bidi-font-weight:normal'><a name="m17"><span
+lang=EN-US style='mso-ansi-language:EN-US'>x</span>1</b>, например <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>x</span>: <span lang=EN-US
+style='mso-ansi-language:EN-US'>x</span>=</b><b style='mso-bidi-font-weight:
+normal'><a name="m18"><span lang=EN-US style='mso-ansi-language:EN-US'>f</span>(</b><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>x</span>1)+<span lang=EN-US
+style='mso-ansi-language:EN-US'>x</span>1.</b></p>
+
+<p class=a>Если значение <b style='mso-bidi-font-weight:normal'><a name="m19">x</b> в правой
+части считать результатом итерационного цикла на предыдущем шаге (<b
+style='mso-bidi-font-weight:normal'>x1</b>), а значение <b style='mso-bidi-font-weight:
+normal'><a name="m20">x</b> в левой части - результатом текущего шага цикла, то такой процесс
+последовательного приближения к результату является итерационным.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>x = x0;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>do<span
+style='mso-tab-count:1'>         </span>{<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>x1 = x;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>x = f(x1) + x1;<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>} while( условие(x,x1) );</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a>То, что это будет последовательность значений <b style='mso-bidi-font-weight:
+normal'><a name="m21"><span lang=EN-US style='mso-ansi-language:EN-US'>x</span></b> (точек на
+числовой оси) – это ясно. Если эта последовательность будет сходиться, то она
+будет сходиться к корню функции – также очевидно. Остается открытым один
+вопрос, а будет ли она сходиться вообще? </p>
+
+<p class=a4 align=center style='text-align:center'>
+<img border="0" src="Images/043-01.gif" width="520" height="239"><br
+style='mso-ignore:vglayout' clear=ALL>
+<b style='mso-bidi-font-weight:normal'><a name="m22">рис. 43-1. Итерационный цикл
+приближенного решения уравнения<o:p></o:p></b><p></p>
+
+<p class=a>Графическая иллюстрация, хотя и не является доказательством, но
+все-таки объясняет, как это работает. Корнем уравнения является пересечение
+графика функции <b style='mso-bidi-font-weight:normal'><a name="m23"><span lang=EN-US
+style='mso-ansi-language:EN-US'>F</span>(</b><b style='mso-bidi-font-weight:
+normal'><a name="m24"><span lang=EN-US style='mso-ansi-language:EN-US'>x</span>)+</b><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>x</span><span lang=EN-US> </span></b>с диагональю (функция <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>y</span>=<span lang=EN-US
+style='mso-ansi-language:EN-US'>x</span>). </b>Когда мы вычисляем очередное
+значение <b style='mso-bidi-font-weight:normal'><a name="m25"><span lang=EN-US
+style='mso-ansi-language:EN-US'>x</span>=</b><b style='mso-bidi-font-weight:
+normal'><a name="m26"><span lang=EN-US style='mso-ansi-language:EN-US'>F</span>(</b><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>x</span>1), </b>мы берем точку на графике функции, соответствующую<b
+style='mso-bidi-font-weight:normal'> <span
+lang=EN-US style='mso-ansi-language:EN-US'>x</span>1. </b>При присваивании <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>x</span>1=<span lang=EN-US
+style='mso-ansi-language:EN-US'>x</span><span lang=EN-US> </span></b>точка
+графика проецируется с оси <b style='mso-bidi-font-weight:normal'><a name="m27"><span
+lang=EN-US style='mso-ansi-language:EN-US'>y</span><span lang=EN-US> </span></b>на
+ось <b style='mso-bidi-font-weight:normal'><a name="m28"><span
+style='mso-spacerun:yes'> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>x</span>, </b>зеркально отражаясь
+относительно диагонали. Затем от нее берется значение функции на графике. На
+рисунке мы видим, что такой переход от одной точки на графике к следующей точке
+можно сделать проще: проводится горизонтальная линия от текущей точки до
+диагонали, а затем – вертикальная до пересечения с графиком функции. Такая
+последовательность движения по горизонтами – до пересечения с диагональю и по
+вертикали – до пересечения с графиком и приводит нас к корню.</p>
+
+<p class=a>Окончательный вид программы включает еще и проверку качественного
+характера (сходимости) процесса. Дело в том, что данный метод успешно работает
+не для всех видов функций <b style='mso-bidi-font-weight:normal'><a name="m29">f()</b> и
+начальных значений <b style='mso-bidi-font-weight:normal'><a name="m30">x0</b>. В принципе
+итерационный процесс может приводить, наоборот, к бесконечному удалению от
+значения корня. Тогда говорят, что процесс расходится. Для проверки сходимости
+приходится запоминать разность значений <b style='mso-bidi-font-weight:normal'><a name="m31">x</b>
+и <b style='mso-bidi-font-weight:normal'><a name="m32">x1</b> предыдущего шага.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//------------------------------------------------------43-03.cpp</p>
+
+<p class=a0>//---- Корень функции по методу последовательных приближений</p>
+
+<p class=a0>// начальное значение, точность и указатель на внешнюю функцию<span
+lang=EN-US style='mso-ansi-language:EN-US'> (</span>см<span lang=EN-US
+style='mso-ansi-language:EN-US'>. <b style='mso-bidi-font-weight:normal'><a name="m33">9</b></span><b
+style='mso-bidi-font-weight:normal'>.3</b><span lang=EN-US style='mso-ansi-language:
+EN-US'>)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>double find(double
+x, double eps , double (*pf)(double)){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>double x1,dd;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>int n=0;<span style='mso-tab-count:5'>                                                            </span>//
+</span>Счетчик<span style='mso-ansi-language:EN-US'> </span>шагов<span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>dd = 100.;<span style='mso-tab-count:4'>                                            </span>//
+</span>Предыдущий интервал</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span><span style='mso-spacerun:yes'> 
+</span>do {<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span><span style='mso-spacerun:yes'> 
+</span>x1 = x; n++;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span><span style='mso-spacerun:yes'> 
+</span>x = (*pf )(x1) + x1;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span><span style='mso-spacerun:yes'> 
+</span>printf(&quot;n=%d x=%lf y=%lf dx=%lf\n&quot;,n,x1,(*pf)(x1),fabs(x1-x));<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span><span
+style='mso-spacerun:yes'>  </span><span lang=EN-US style='mso-ansi-language:
+EN-US'>if</span> (<span lang=EN-US style='mso-ansi-language:EN-US'>fabs</span>(<span
+lang=EN-US style='mso-ansi-language:EN-US'>x</span>1-<span lang=EN-US
+style='mso-ansi-language:EN-US'>x</span>) &gt; <span lang=EN-US
+style='mso-ansi-language:EN-US'>dd</span> ) return 0.;<span style='mso-tab-count:
+1'>     </span>// Процесс расходится</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span
+style='mso-spacerun:yes'>  </span>dd = fabs(x1-x);</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span
+style='mso-spacerun:yes'>  </span>}</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>while (dd &gt; eps);</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>return x; }<span
+style='mso-spacerun:yes'>                        </span><span style='mso-tab-count:
+2'>                     </span>// Выход - значение корня</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span><span lang=EN-US>void main(){ printf(&quot;cos(x)=0
+x=%lf\n&quot;,find(0,0.01,cos)); }<o:p></o:p></span></span></p>
+
+<h3>Вычисление степенных рядов</h3>
+
+<p class=a>Сначала рассмотрим простой вариант с «экономией вычислений». При
+вычислении значения полинома вида <b style='mso-bidi-font-weight:normal'><a name="m34"><span
+lang=EN-US style='mso-ansi-language:EN-US'>f</span>(</b><b style='mso-bidi-font-weight:
+normal'><a name="m35"><span lang=EN-US style='mso-ansi-language:EN-US'>x</span>,</b><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>n</span>) =</b> <b style='mso-bidi-font-weight:normal'><a name="m36"><span lang=EN-US
+style='mso-ansi-language:EN-US'>a</span><sub>0 </sub>+ </b><b style='mso-bidi-font-weight:
+normal'><a name="m37"><span lang=EN-US style='mso-ansi-language:EN-US'>a</span><sub>1</sub></b><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>x</span> + <span lang=EN-US
+style='mso-ansi-language:EN-US'>a</span><sub>2</sub></b><b style='mso-bidi-font-weight:
+normal'><a name="m38"><span lang=EN-US style='mso-ansi-language:EN-US'>x</span><sup>2 </sup>+
+</b><b style='mso-bidi-font-weight:normal'><a name="m39"><span lang=EN-US style='mso-ansi-language:
+EN-US'>a</span><sub>3</sub><span
+lang=EN-US style='mso-ansi-language:EN-US'>x</span><sup>3 </sup>+…+ <span lang=EN-US style='mso-ansi-language:
+EN-US'>a<sub>n</sub>x<sup>n</sup></span><span lang=EN-US> </span></b>можно
+избежать многократного вычисления степеней, если представить полином в виде:</p>
+
+<p class=a5><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=a5><span lang=EN-US>f(x,n)= ((…((a<sub>n</sub>x+a<sub>n-1</sub>)x+a<sub>n-2</sub>)x+…)x+a<sub>1</sub>)x+a<sub>0</sub></span></p>
+
+<p class=a4>Обозначив накопленную частичную сумму, заключенную в скобках, через
+<b style='mso-bidi-font-weight:normal'><a name="m40"><span lang=EN-US style='mso-ansi-language:
+EN-US'>s</span>, </b>получим рекуррентную формулу <b style='mso-bidi-font-weight:
+normal'><a name="m41"><span lang=EN-US style='mso-ansi-language:EN-US'>s</span>=</b><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>s</span>*<span lang=EN-US
+style='mso-ansi-language:EN-US'>x</span>+</b><b style='mso-bidi-font-weight:
+normal'><a name="m42"><span lang=EN-US style='mso-ansi-language:EN-US'>a<sub>i</sub></span>, </b><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>i</span>=<span lang=EN-US
+style='mso-ansi-language:EN-US'>n</span>…0. </b><b style='mso-bidi-font-weight:
+normal'><a name="m43"><span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></b></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//------------------------------------------------------43-04.cpp<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//-----</span>Степенной<span
+style='mso-ansi-language:EN-US'> </span>полином<span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>double poly(double A[], double x, int n){ <o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>int i; double s;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>for (s=A[n], i=n; i&gt;=0; i--) s = s * x +
+A[i];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>return s; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void main(){ double
+B[]={4,0,3,1,8}; printf(&quot;%lf\n&quot;,poly(B,2.,4));}<o:p></o:p></span></p>
+
+<p class=a>Многие стандартные математические функции вычисляются путем их
+разложения в степенные ряды (ряды Тейлора []). Точное значение функции
+определяется как сумма бесконечного ряда <b style='mso-bidi-font-weight:normal'><a name="m44"><span
+lang=EN-US style='mso-ansi-language:EN-US'>f</span>(</b><b style='mso-bidi-font-weight:
+normal'><a name="m45"><span lang=EN-US style='mso-ansi-language:EN-US'>x</span>)=</b><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>S</span><sub>0</sub>+<span
+lang=EN-US style='mso-ansi-language:EN-US'>S</span><sub>1</sub>+<span lang=EN-US style='mso-ansi-language:
+EN-US'>S</span><sub>2</sub>+…<span
+lang=EN-US style='mso-ansi-language:EN-US'>S<sub>n</sub></span>+…,</b>
+слагаемые которого, как правило,<span style='mso-spacerun:yes'> 
+</span>содержат степени и факториалы от текущего порядкового номера элемента.
+Иногда он может содержать другие регулярные выражения (например, произведение
+четных чисел <b style='mso-bidi-font-weight:normal'><a name="m46">2*4*6*…2<span lang=EN-US style='mso-ansi-language:
+EN-US'>n</span></b>, нечетный коэффициент вида <b style='mso-bidi-font-weight:
+normal'><a name="m47">2</b><b style='mso-bidi-font-weight:normal'><a name="m48"><span lang=EN-US
+style='mso-ansi-language:EN-US'>n</span>-1</b> и т.п.).<span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+&nbsp;<p class=a>Например, функцию <b style='mso-bidi-font-weight:normal'><a name="m49"><span
+lang=EN-US style='mso-ansi-language:EN-US'>sin</span>(</b><b style='mso-bidi-font-weight:
+normal'><a name="m50"><span lang=EN-US style='mso-ansi-language:EN-US'>x</span>) </b>можно
+разложить в такой ряд:<span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a5>&nbsp;</p>
+<p class=a5><span lang=EN-US>sin(x) = x-x<sup>3</sup>/3!+x<sup>5</sup>/5!-x<sup>7</sup>/7!+…+(-1)<sup>n+1</sup>x<sup>2n+1</sup>/(2n+1)!+…</span></p>
+
+<p class=a>Выражение для <b style='mso-bidi-font-weight:normal'><a name="m51"><span
+lang=EN-US style='mso-ansi-language:EN-US'>n</span></b>-го слагаемого имеет вид
+<b style='mso-bidi-font-weight:normal'><a name="m52"><span lang=EN-US style='mso-ansi-language:
+EN-US'>S<sub>n</sub></span>=(-1)<sup>n+1</sup>x<sup>2n-1</sup>/(2n+1)!, </b>ряд
+начинается с <b style='mso-bidi-font-weight:normal'><a name="m53"><span lang=EN-US
+style='mso-ansi-language:EN-US'>n</span>=0, </b><b style='mso-bidi-font-weight:
+normal'><a name="m54"><span lang=EN-US style='mso-ansi-language:EN-US'>S</span><sub>0</sub>=</b><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>x</span>. <o:p></o:p></b></p>
+
+<p class=a>Одним из свойств «хороших» степенных рядов является то, что любое
+слагаемое превышает оставшуюся бесконечную сумму «хвоста» ряда. На этом
+основании точность вычисления может быть оценена значением очередного
+слагаемого. </p>
+
+<p class=a>Для «экономии вычислений» степеней, факториалов и других регулярных
+выражений выводится рекуррентная формула, позволяющая вычислить текущее
+слагаемое через предыдущее. Это можно сделать аналитически, разделив в общем
+виде выражение <b style='mso-bidi-font-weight:normal'><a name="m55"><span lang=EN-US
+style='mso-ansi-language:EN-US'>S<sub>n</sub></span><sub><span lang=EN-US> </span></sub>на
+<span lang=EN-US style='mso-ansi-language:
+EN-US'>S<sub>n</sub></span><sub>-1<o:p></o:p></sub></b></p>
+
+<p class=a5><span style='mso-ansi-language:RU'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a5><span lang=EN-US>K(x,n)=Sn/Sn-1=((-1)<sup>n+1</sup>x<sup>2n+1</sup>/(2n+1)!)/((-1)<sup>n</sup>x<sup>2n-1</sup>/(2n-1)!)</span></p>
+
+<p class=a5><span lang=EN-US>K</span><span style='mso-ansi-language:RU'>(</span><span
+lang=EN-US>x</span><span style='mso-ansi-language:RU'>,</span><span lang=EN-US>n</span><span
+style='mso-ansi-language:RU'>)=-</span><span lang=EN-US>x</span><sup><span
+style='mso-ansi-language:RU'>2</span></sup><span style='mso-ansi-language:RU'>/(2</span><span
+lang=EN-US>n</span><span style='mso-ansi-language:RU'>(2</span><span
+lang=EN-US>n</span><span style='mso-ansi-language:RU'>+1))<o:p></o:p></span></p>
+
+<p class=a>Формулу можно вывести индуктивно, рассматривая подряд несколько пар
+соседних слагаемых. Для каждой пары выводится коэффициент перехода, который
+потом приводится к общему виду:</p>
+
+<p class=a><o:p>&nbsp;</o:p></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-yfti-tbllook:480;mso-padding-alt:0cm 5.4pt 0cm 5.4pt;mso-border-insideh:
+ .5pt solid windowtext;mso-border-insidev:.5pt solid windowtext'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=45 valign=top style='width:33.75pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='text-indent:0cm'><b style='mso-bidi-font-weight:normal'><a name="m56"><span
+  lang=EN-US style='font-family:Arial;mso-ansi-language:EN-US'>n<o:p></o:p></span></b></p>
+  </td>
+  <td width=94 valign=top style='width:70.6pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='text-indent:0cm'><b style='mso-bidi-font-weight:normal'><a name="m57"><span
+  lang=EN-US style='font-family:Arial;mso-ansi-language:EN-US'>0<o:p></o:p></span></b></p>
+  </td>
+  <td width=79 valign=top style='width:59.2pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='text-indent:0cm'><b style='mso-bidi-font-weight:normal'><a name="m58"><span
+  lang=EN-US style='font-family:Arial;mso-ansi-language:EN-US'>1<o:p></o:p></span></b></p>
+  </td>
+  <td width=79 valign=top style='width:59.2pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='text-indent:0cm'><b style='mso-bidi-font-weight:normal'><a name="m59"><span
+  lang=EN-US style='font-family:Arial;mso-ansi-language:EN-US'>2<o:p></o:p></span></b></p>
+  </td>
+  <td width=79 valign=top style='width:59.2pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='text-indent:0cm'><b style='mso-bidi-font-weight:normal'><a name="m60"><span
+  lang=EN-US style='font-family:Arial;mso-ansi-language:EN-US'>3<o:p></o:p></span></b></p>
+  </td>
+  <td width=25 valign=top style='width:18.7pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='text-indent:0cm'><b style='mso-bidi-font-weight:normal'><a name="m61"><span
+  style='font-family:Arial'><o:p>&nbsp;</o:p></span></b></p>
+  </td>
+  <td width=122 valign=top style='width:91.8pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='text-indent:0cm'><b style='mso-bidi-font-weight:normal'><a name="m62"><span
+  lang=EN-US style='font-family:Arial;mso-ansi-language:EN-US'>n<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=45 valign=top style='width:33.75pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='text-indent:0cm'><b style='mso-bidi-font-weight:normal'><a name="m63"><span
+  lang=EN-US style='font-family:Arial;mso-ansi-language:EN-US'>Sn<o:p></o:p></span></b></p>
+  </td>
+  <td width=94 valign=top style='width:70.6pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='text-indent:0cm'><b style='mso-bidi-font-weight:normal'><a name="m64"><span
+  lang=EN-US style='font-family:Arial;mso-ansi-language:EN-US'>x<o:p></o:p></span></b></p>
+  </td>
+  <td width=79 valign=top style='width:59.2pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='text-indent:0cm'><b style='mso-bidi-font-weight:normal'><a name="m65"><span
+  lang=EN-US style='font-family:Arial;mso-ansi-language:EN-US'>-x<sup>3</sup>/3!<o:p></o:p></span></b></p>
+  </td>
+  <td width=79 valign=top style='width:59.2pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='text-indent:0cm'><b style='mso-bidi-font-weight:normal'><a name="m66"><span
+  lang=EN-US style='font-family:Arial;mso-ansi-language:EN-US'>x<sup>5</sup>/5!</span><span style='font-family:Arial'><o:p></o:p></span></b></p>
+  </td>
+  <td width=79 valign=top style='width:59.2pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='text-indent:0cm'><b style='mso-bidi-font-weight:normal'><a name="m67"><span
+  lang=EN-US style='font-family:Arial;mso-ansi-language:EN-US'>-x<sup>7</sup>/7!</span><span style='font-family:Arial'><o:p></o:p></span></b></p>
+  </td>
+  <td width=25 valign=top style='width:18.7pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='text-indent:0cm'><b style='mso-bidi-font-weight:normal'><a name="m68"><span
+  style='font-family:Arial'><o:p>&nbsp;</o:p></span></b></p>
+  </td>
+  <td width=122 valign=top style='width:91.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='text-indent:0cm'><b style='mso-bidi-font-weight:normal'><a name="m69"><span
+  lang=EN-US style='font-family:Arial;mso-ansi-language:EN-US'>-x<sup>2n-1</sup>/(2n-1)!</span><span style='font-family:Arial'><o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2;mso-yfti-lastrow:yes'>
+  <td width=45 valign=top style='width:33.75pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='text-indent:0cm'><b style='mso-bidi-font-weight:normal'><a name="m70"><span
+  lang=EN-US style='font-family:Arial;mso-ansi-language:EN-US'>k(x)<o:p></o:p></span></b></p>
+  </td>
+  <td width=94 valign=top style='width:70.6pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='text-indent:0cm'><span style='font-size:10.0pt;font-family:
+  Arial'>Домножить<o:p></o:p></span></p>
+  <p class=a style='text-indent:0cm'><span style='font-size:10.0pt;font-family:
+  Arial'>предыдущий</span><b style='mso-bidi-font-weight:normal'><a name="m71"><span
+  style='font-family:Arial'><o:p></o:p></span></b></p>
+  </td>
+  <td width=79 valign=top style='width:59.2pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='text-indent:0cm'><b style='mso-bidi-font-weight:normal'><a name="m72"><span
+  lang=EN-US style='font-family:Arial;mso-ansi-language:EN-US'>-x<sup>2</sup>/(2*3)<o:p></o:p></span></b></p>
+  </td>
+  <td width=79 valign=top style='width:59.2pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='text-indent:0cm'><b style='mso-bidi-font-weight:normal'><a name="m73"><span
+  lang=EN-US style='font-family:Arial;mso-ansi-language:EN-US'>-x<sup>2</sup>/(4*5)</span><span style='font-family:Arial'><o:p></o:p></span></b></p>
+  </td>
+  <td width=79 valign=top style='width:59.2pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='text-indent:0cm'><b style='mso-bidi-font-weight:normal'><a name="m74"><span
+  lang=EN-US style='font-family:Arial;mso-ansi-language:EN-US'>-x<sup>2</sup>/(6*7)</span><span style='font-family:Arial'><o:p></o:p></span></b></p>
+  </td>
+  <td width=25 valign=top style='width:18.7pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='text-indent:0cm'><b style='mso-bidi-font-weight:normal'><a name="m75"><span
+  style='font-family:Arial'><o:p>&nbsp;</o:p></span></b></p>
+  </td>
+  <td width=122 valign=top style='width:91.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='text-indent:0cm'><b style='mso-bidi-font-weight:normal'><a name="m76"><span
+  lang=EN-US style='font-family:Arial;mso-ansi-language:EN-US'>-x<sup>2</sup>/(2n*(2n+1))</span><span style='font-family:Arial'><o:p></o:p></span></b></p>
+  </td>
+ </tr>
+</table>
+
+<p class=a>В таблице записывается, на что нужно умножить предыдущее слагаемое,
+чтобы получить текущее. Обратите внимание, что значение <b style='mso-bidi-font-weight:
+normal'><a name="m77"><span lang=EN-US style='mso-ansi-language:EN-US'>n</span><span
+lang=EN-US> </span></b>берется для <i style='mso-bidi-font-style:normal'>текущего
+</i>столбца, например, 3 и 7 находятся в таком же соотношении, что и <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>n</span><span lang=EN-US> </span></b>с<b style='mso-bidi-font-weight:
+normal'><a name="m78"> 2</b><b style='mso-bidi-font-weight:normal'><a name="m79"><span lang=EN-US
+style='mso-ansi-language:EN-US'>n</span>+1.</b></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//------------------------------------------------------43-05.cpp</p>
+
+<p class=a0>//--- Вычисление значения функции sin через степенной ряд</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>double sum(double x,double eps,int &amp;n){<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-spacerun:yes; mso-ansi-language:EN-US' lang="EN-US"> </span>double s,sn;<span style='mso-tab-count:
+1'>     </span><span style='mso-tab-count:2'>                        </span>//
+Сумма и текущее слагаемое ряда</p>
+
+<p class=a0><span style='mso-spacerun:yes'>      </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>for (s=0., sn = x, n=1; fabs(sn) &gt; eps; n++)
+{<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span>s += sn;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span>sn = - sn * x * x / (2.*n * (2.*n + 1));<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-spacerun:yes; mso-ansi-language:EN-US' lang="EN-US">      </span>}</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>return s;}</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>// Вычисление степенного
+ряда для x в диапазоне от 0.1 до 1 с шагом 0.1</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>void main(){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>double x,y;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>int nn;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>for (x=0.1; x &lt;= 1.; x += 0.1){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>y=sum(x,0.0001,nn);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>printf(&quot;n=%d x=%0.1lf\t
+sum=%0.4lf\t sin=%0.4lf\n&quot;,nn,x,y,sin(x));<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>}}</p>
+
+<p class=a>В программе текущее слагаемое <b style='mso-bidi-font-weight:normal'><a name="m80"><span
+lang=EN-US style='mso-ansi-language:EN-US'>sn</span><span lang=EN-US> </span></b>каждый
+раз умножается<span style='mso-spacerun:yes'>  </span>на переходный коэффициент
+для получения следующего значения. Перед этим текущее значение добавляется к
+сумме <b style='mso-bidi-font-weight:normal'><a name="m81"><span lang=EN-US style='mso-ansi-language:
+EN-US'>s</span>. </b>В цикле легко ошибиться «на один шаг», поэтому необходимо
+обратить внимание на начало его выполнения: значение <b style='mso-bidi-font-weight:
+normal'><a name="m82"><span lang=EN-US style='mso-ansi-language:EN-US'>sn</span>=</b><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>x</span><span lang=EN-US> </span></b>устанавливается для слагаемого при<b
+style='mso-bidi-font-weight:normal'> <span
+lang=EN-US style='mso-ansi-language:EN-US'>n</span>=0, </b>а на первом шаге
+вычисляется значение <b style='mso-bidi-font-weight:normal'><a name="m83"><span lang=EN-US
+style='mso-ansi-language:EN-US'>sn</span><span lang=EN-US> </span></b>уже для <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>n</span>=1.<o:p></o:p></b></p>
+
+<a name="lr3"><h3>Лабораторный практикум</h3>
+
+<p class=a>Для<span style='mso-spacerun:yes'>  </span>заданного<span
+style='mso-spacerun:yes'>  </span>варианта<span style='mso-spacerun:yes'> 
+</span>написать функцию<span style='mso-spacerun:yes'>  </span>вычисления суммы
+ряда:</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>стандартный диапазон значений <span lang=EN-US
+style='mso-ansi-language:EN-US'>x</span> =0.1...0.9, шаг<span
+style='mso-spacerun:yes'>  </span>0.1. Убедиться, что на этом диапазоне элемент
+суммы ряда стремится к 0, при необходимости скорректировать диапазон;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>вычислить значения суммы ряда<span
+style='mso-spacerun:yes'>  </span>и<span style='mso-spacerun:yes'> 
+</span>контрольной функции, к которой он сходится, с<span
+style='mso-spacerun:yes'>  </span>точностью<span style='mso-spacerun:yes'> 
+</span>до<span style='mso-spacerun:yes'>  </span>4 знаков после запятой<span
+lang=EN-US style='mso-ansi-language:EN-US'>;</span></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>исходя из полученного значения <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>n</span></b><span lang=EN-US> </span>и формулы ряда объяснить различную
+скорость сходимости для разных <b style='mso-bidi-font-weight:normal'><a name="m84"><span
+lang=EN-US style='mso-ansi-language:EN-US'>x</span></b>;</p>
+
+<p class=a>Для<span style='mso-spacerun:yes'>   </span>вариантов<span
+style='mso-spacerun:yes'>  </span>13-17<span style='mso-spacerun:yes'>  </span>реализовать
+рекуррентное вычисление значений <b style='mso-bidi-font-weight:normal'><a name="m85"><span
+lang=EN-US style='mso-ansi-language:EN-US'>sin</span></b><span lang=EN-US> </span>и
+<b style='mso-bidi-font-weight:normal'><a name="m86"><span lang=EN-US style='mso-ansi-language:
+EN-US'>cos</span><span lang=EN-US> </span></b>для кратных значений аргумента <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>nx</span>.</b> При оценке сходимости ряда учесть, что он не является
+монотонно убывающим ввиду периодического характера функций <b style='mso-bidi-font-weight:
+normal'><a name="m87"><span lang=EN-US style='mso-ansi-language:EN-US'>sin</span></b><span
+lang=EN-US> </span>и <b style='mso-bidi-font-weight:normal'><a name="m88"><span lang=EN-US
+style='mso-ansi-language:EN-US'>cos</span>. </b>Для оценки граничного значения
+слагаемого ряда заменить в формуле <b style='mso-bidi-font-weight:normal'><a name="m89"><span
+lang=EN-US style='mso-ansi-language:EN-US'>sin</span></b><span lang=EN-US> </span>и
+<b style='mso-bidi-font-weight:normal'><a name="m90"><span lang=EN-US style='mso-ansi-language:
+EN-US'>cos</span><span lang=EN-US> </span></b>на 1.<span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 width=621
+ style='width:466.1pt;border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-yfti-tbllook:480;mso-padding-alt:0cm 5.4pt 0cm 5.4pt;mso-border-insideh:
+ .5pt solid windowtext;mso-border-insidev:.5pt solid windowtext'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=33 valign=top style='width:25.05pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'><span
+  style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:"Times New Roman CYR";
+  mso-fareast-font-family:"Times New Roman";mso-bidi-font-family:"Times New Roman";
+  mso-ansi-language:RU;mso-fareast-language:RU;mso-bidi-language:AR-SA'><br
+  clear=all style='page-break-before:always'>
+  </span>
+  <p class=a4 align=center style='text-align:center'><b style='mso-bidi-font-weight:
+  normal'><a name="m91"><span style='font-size:11.0pt;font-family:Arial;letter-spacing:1.0pt'>№<o:p></o:p></span></b></p>
+  </td>
+  <td width=468 valign=top style='width:350.85pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4 align=center style='text-align:center'><b style='mso-bidi-font-weight:
+  normal'><a name="m92"><span style='font-size:11.0pt;font-family:Arial;letter-spacing:1.0pt'>Ряд<o:p></o:p></span></b></p>
+  </td>
+  <td width=120 valign=top style='width:90.2pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4 align=center style='text-align:center'><b style='mso-bidi-font-weight:
+  normal'><a name="m93"><span style='font-size:11.0pt;font-family:Arial;letter-spacing:1.0pt'>функция<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=33 valign=top style='width:25.05pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><b style='mso-bidi-font-weight:normal'><a name="m94"><span lang=EN-US
+  style='font-size:11.0pt;font-family:Arial;letter-spacing:1.0pt;mso-ansi-language:
+  EN-US'>1<o:p></o:p></span></b></p>
+  </td>
+  <td width=468 valign=top style='width:350.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><b style='mso-bidi-font-weight:normal'><a name="m95"><span lang=EN-US
+  style='font-size:11.0pt;font-family:Arial;letter-spacing:1.0pt;mso-ansi-language:
+  EN-US'>1 – x<sup>2</sup>/ 2! + x<sup>4</sup>/4! + …+ (-1)<sup>n</sup> x<sup>2n</sup>/(2n)!<o:p></o:p></span></b></p>
+  </td>
+  <td width=120 valign=top style='width:90.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><b style='mso-bidi-font-weight:normal'><a name="m96"><span lang=EN-US
+  style='font-size:11.0pt;font-family:Arial;letter-spacing:1.0pt;mso-ansi-language:
+  EN-US'>cos(x)<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td width=33 valign=top style='width:25.05pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><b style='mso-bidi-font-weight:normal'><a name="m97"><span lang=EN-US
+  style='font-size:11.0pt;font-family:Arial;letter-spacing:1.0pt;mso-ansi-language:
+  EN-US'>2<o:p></o:p></span></b></p>
+  </td>
+  <td width=468 valign=top style='width:350.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><b style='mso-bidi-font-weight:normal'><a name="m98"><span lang=EN-US
+  style='font-size:11.0pt;font-family:Arial;letter-spacing:1.0pt;mso-ansi-language:
+  EN-US'>z=((x-1)/(x+1))<span style='mso-spacerun:yes'>   </span>f(x)= (2/1)z +
+  (2/3) z<sup>3</sup> +...+ (2/2n-1)z<sup>2n-1</sup><span
+  style='mso-spacerun:yes'>      </span><o:p></o:p></span></b></p>
+  </td>
+  <td width=120 valign=top style='width:90.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><b style='mso-bidi-font-weight:normal'><a name="m99"><span lang=EN-US
+  style='font-size:11.0pt;font-family:Arial;letter-spacing:1.0pt;mso-ansi-language:
+  EN-US'>ln(x)<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td width=33 valign=top style='width:25.05pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><b style='mso-bidi-font-weight:normal'><a name="m100"><span lang=EN-US
+  style='font-size:11.0pt;font-family:Arial;letter-spacing:1.0pt;mso-ansi-language:
+  EN-US'>3<o:p></o:p></span></b></p>
+  </td>
+  <td width=468 valign=top style='width:350.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><b style='mso-bidi-font-weight:normal'><a name="m101"><span lang=EN-US
+  style='font-size:11.0pt;font-family:Arial;letter-spacing:1.0pt;mso-ansi-language:
+  EN-US'>1+ x ln3 + (x ln3)<sup>2</sup>/2! +...+(x ln 3)<sup>n</sup>/n</span><span lang=EN-US style='font-size:11.0pt;
+  font-family:Arial;mso-bidi-font-family:"Times New Roman";letter-spacing:1.0pt;
+  mso-ansi-language:EN-US'>!<span style='mso-spacerun:yes'>               
+  </span></span><span lang=EN-US
+  style='font-size:11.0pt;font-family:Arial;letter-spacing:1.0pt;mso-ansi-language:
+  EN-US'><o:p></o:p></span></b></p>
+  </td>
+  <td width=120 valign=top style='width:90.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><b style='mso-bidi-font-weight:normal'><a name="m102"><span lang=EN-US
+  style='font-size:11.0pt;font-family:Arial;letter-spacing:1.0pt;mso-ansi-language:
+  EN-US'>3<sup>x</sup><o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4'>
+  <td width=33 valign=top style='width:25.05pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><b style='mso-bidi-font-weight:normal'><a name="m103"><span lang=EN-US
+  style='font-size:11.0pt;font-family:Arial;letter-spacing:1.0pt;mso-ansi-language:
+  EN-US'>4<o:p></o:p></span></b></p>
+  </td>
+  <td width=468 valign=top style='width:350.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><b style='mso-bidi-font-weight:normal'><a name="m104"><span lang=EN-US
+  style='font-size:11.0pt;font-family:Arial;letter-spacing:1.0pt;mso-ansi-language:
+  EN-US'>(x-1)/x+(x-1)<sup>2</sup>/2x<sup>2</sup>+(x-1)<sup>3</sup>/3x<sup>3</sup>+…+(x-1)<sup>n</sup>/nx<sup>n</sup><o:p></o:p></span></b></p>
+  </td>
+  <td width=120 valign=top style='width:90.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><b style='mso-bidi-font-weight:normal'><a name="m105"><span lang=EN-US
+  style='font-size:11.0pt;font-family:Arial;letter-spacing:1.0pt;mso-ansi-language:
+  EN-US'>ln(x)<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5'>
+  <td width=33 valign=top style='width:25.05pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><b style='mso-bidi-font-weight:normal'><a name="m106"><span lang=EN-US
+  style='font-size:11.0pt;font-family:Arial;letter-spacing:1.0pt;mso-ansi-language:
+  EN-US'>5<o:p></o:p></span></b></p>
+  </td>
+  <td width=468 valign=top style='width:350.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><b style='mso-bidi-font-weight:normal'><a name="m107"><span lang=EN-US
+  style='font-size:11.0pt;font-family:Arial;letter-spacing:1.0pt;mso-ansi-language:
+  EN-US'>x + x<sup>3</sup>/3! + x<sup>5</sup>/5! +…+ x<sup>2n-1</sup>/(2n-1)!<o:p></o:p></span></b></p>
+  </td>
+  <td width=120 valign=top style='width:90.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><b style='mso-bidi-font-weight:normal'><a name="m108"><span lang=EN-US
+  style='font-size:11.0pt;font-family:Arial;letter-spacing:1.0pt;mso-ansi-language:
+  EN-US'>sh(x)<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6'>
+  <td width=33 valign=top style='width:25.05pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><b style='mso-bidi-font-weight:normal'><a name="m109"><span lang=EN-US
+  style='font-size:11.0pt;font-family:Arial;letter-spacing:1.0pt;mso-ansi-language:
+  EN-US'>6<o:p></o:p></span></b></p>
+  </td>
+  <td width=468 valign=top style='width:350.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><b style='mso-bidi-font-weight:normal'><a name="m110"><span lang=EN-US
+  style='font-size:11.0pt;font-family:Arial;letter-spacing:1.0pt;mso-ansi-language:
+  EN-US'>1 + x<sup>2</sup>/2! + x<sup>4</sup>/4! +…+ x<sup>2n</sup>/(2n)!<o:p></o:p></span></b></p>
+  </td>
+  <td width=120 valign=top style='width:90.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><b style='mso-bidi-font-weight:normal'><a name="m111"><span lang=EN-US
+  style='font-size:11.0pt;font-family:Arial;letter-spacing:1.0pt;mso-ansi-language:
+  EN-US'>ch(x)<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:7'>
+  <td width=33 valign=top style='width:25.05pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><b style='mso-bidi-font-weight:normal'><a name="m112"><span lang=EN-US
+  style='font-size:11.0pt;font-family:Arial;letter-spacing:1.0pt;mso-ansi-language:
+  EN-US'>7<o:p></o:p></span></b></p>
+  </td>
+  <td width=468 valign=top style='width:350.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><b style='mso-bidi-font-weight:normal'><a name="m113"><span lang=EN-US
+  style='font-size:11.0pt;font-family:Arial;letter-spacing:1.0pt;mso-ansi-language:
+  EN-US'>x – x<sup>3</sup>/3 + x<sup>5</sup>/5 +…+ (-1)<sup>n+1</sup>x<sup>2n-1</sup>/(2n-1)<o:p></o:p></span></b></p>
+  </td>
+  <td width=120 valign=top style='width:90.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><b style='mso-bidi-font-weight:normal'><a name="m114"><span lang=EN-US
+  style='font-size:11.0pt;font-family:Arial;letter-spacing:1.0pt;mso-ansi-language:
+  EN-US'>arctg(x)<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:8'>
+  <td width=33 valign=top style='width:25.05pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><b style='mso-bidi-font-weight:normal'><a name="m115"><span lang=EN-US
+  style='font-size:11.0pt;font-family:Arial;letter-spacing:1.0pt;mso-ansi-language:
+  EN-US'>8<o:p></o:p></span></b></p>
+  </td>
+  <td width=468 valign=top style='width:350.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><b style='mso-bidi-font-weight:normal'><a name="m116"><span lang=EN-US
+  style='font-size:14.0pt;font-family:"Times New Roman";letter-spacing:1.0pt;
+  mso-ansi-language:EN-US'>&#960;</span></b><b style='mso-bidi-font-weight:
+  normal'><a name="m117"><span lang=EN-US style='font-size:11.0pt;font-family:Arial;
+  letter-spacing:1.0pt;mso-ansi-language:EN-US'>/2 – 1/x + 1/3x<sup>3</sup> –
+  1/5x<sup>5</sup> + (-1)<sup>n</sup>(2n-1)x<sup>2n-1</sup><o:p></o:p></span></b></p>
+  </td>
+  <td width=120 valign=top style='width:90.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><b style='mso-bidi-font-weight:normal'><a name="m118"><span lang=EN-US
+  style='font-size:11.0pt;font-family:Arial;letter-spacing:1.0pt;mso-ansi-language:
+  EN-US'>arctg(x)<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:9'>
+  <td width=33 valign=top style='width:25.05pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><b style='mso-bidi-font-weight:normal'><a name="m119"><span lang=EN-US
+  style='font-size:11.0pt;font-family:Arial;letter-spacing:1.0pt;mso-ansi-language:
+  EN-US'>9<o:p></o:p></span></b></p>
+  </td>
+  <td width=468 valign=top style='width:350.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><b style='mso-bidi-font-weight:normal'><a name="m120"><span lang=EN-US
+  style='font-size:11.0pt;font-family:Arial;letter-spacing:1.0pt;mso-ansi-language:
+  EN-US'>1 - 2x + 3x<sup>2 </sup>- 4x<sup>3</sup>+…+ (-1)<sup>n</sup>(n+1)x<sup>n</sup><o:p></o:p></span></b></p>
+  </td>
+  <td width=120 valign=top style='width:90.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><b style='mso-bidi-font-weight:normal'><a name="m121"><span lang=EN-US
+  style='font-size:11.0pt;font-family:Arial;letter-spacing:1.0pt;mso-ansi-language:
+  EN-US'>1/(1+x)<sup>2</sup><o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:10'>
+  <td width=33 valign=top style='width:25.05pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><b style='mso-bidi-font-weight:normal'><a name="m122"><span lang=EN-US
+  style='font-size:11.0pt;font-family:Arial;letter-spacing:1.0pt;mso-ansi-language:
+  EN-US'>10<o:p></o:p></span></b></p>
+  </td>
+  <td width=468 valign=top style='width:350.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><b style='mso-bidi-font-weight:normal'><a name="m123"><span lang=EN-US
+  style='font-size:11.0pt;font-family:Arial;letter-spacing:1.0pt;mso-ansi-language:
+  EN-US'>x + x<sup>3</sup>*1/(2*3) + x<sup>5</sup>*(1*3)/(2*4*5) +…<o:p></o:p></span></b></p>
+  <p class=a4><b style='mso-bidi-font-weight:normal'><a name="m124"><span lang=EN-US
+  style='font-size:11.0pt;font-family:Arial;letter-spacing:1.0pt;mso-ansi-language:
+  EN-US'>+x<sup>2n+1</sup>(1*3*…*2n-1)/(2*4*…2n(2n+1))<o:p></o:p></span></b></p>
+  </td>
+  <td width=120 valign=top style='width:90.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><b style='mso-bidi-font-weight:normal'><a name="m125"><span lang=EN-US
+  style='font-size:11.0pt;font-family:Arial;letter-spacing:1.0pt;mso-ansi-language:
+  EN-US'>arcsin(x)<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:11'>
+  <td width=33 valign=top style='width:25.05pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><b style='mso-bidi-font-weight:normal'><a name="m126"><span lang=EN-US
+  style='font-size:11.0pt;font-family:Arial;letter-spacing:1.0pt;mso-ansi-language:
+  EN-US'>11<o:p></o:p></span></b></p>
+  </td>
+  <td width=468 valign=top style='width:350.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><b style='mso-bidi-font-weight:normal'><a name="m127"><span lang=EN-US
+  style='font-size:11.0pt;font-family:Arial;letter-spacing:1.0pt;mso-ansi-language:
+  EN-US'>1+x(1/2)+x<sup>2</sup>(1*1)/(2*4)-x<sup>3</sup>(1*1*3)/(2*4*6)+…<o:p></o:p></span></b></p>
+  <p class=a4><b style='mso-bidi-font-weight:normal'><a name="m128"><span lang=EN-US
+  style='font-size:11.0pt;font-family:Arial;letter-spacing:1.0pt;mso-ansi-language:
+  EN-US'>(-1)<sup>n</sup>x<sup>n</sup>(1*1*3*…*2n-3)/(2*4*6*…*2n)<o:p></o:p></span></b></p>
+  </td>
+  <td width=120 valign=top style='width:90.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><b style='mso-bidi-font-weight:normal'><a name="m129"><span lang=EN-US
+  style='font-size:11.0pt;font-family:Arial;letter-spacing:1.0pt;mso-ansi-language:
+  EN-US'>(1+x)<sup>0.5</sup><o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:12'>
+  <td width=33 valign=top style='width:25.05pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><b style='mso-bidi-font-weight:normal'><a name="m130"><span lang=EN-US
+  style='font-size:11.0pt;font-family:Arial;letter-spacing:1.0pt;mso-ansi-language:
+  EN-US'>12<o:p></o:p></span></b></p>
+  </td>
+  <td width=468 valign=top style='width:350.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><b style='mso-bidi-font-weight:normal'><a name="m131"><span lang=EN-US
+  style='font-size:11.0pt;font-family:Arial;letter-spacing:1.0pt;mso-ansi-language:
+  EN-US'>1-x(1/2)+x<sup>2</sup>(1*3)/(2*4)-x<sup>3</sup>(1*3*5)/(2*4*6)+…<o:p></o:p></span></b></p>
+  <p class=a4><b style='mso-bidi-font-weight:normal'><a name="m132"><span lang=EN-US
+  style='font-size:11.0pt;font-family:Arial;letter-spacing:1.0pt;mso-ansi-language:
+  EN-US'>(-1)<sup>n</sup>x<sup>n</sup>(1*3*…*2n-1)/(2*4*…*2n)<o:p></o:p></span></b></p>
+  </td>
+  <td width=120 valign=top style='width:90.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><b style='mso-bidi-font-weight:normal'><a name="m133"><span lang=EN-US
+  style='font-size:11.0pt;font-family:Arial;letter-spacing:1.0pt;mso-ansi-language:
+  EN-US'>1/(1+x)<sup>0.5</sup><o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:13'>
+  <td width=33 valign=top style='width:25.05pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><b style='mso-bidi-font-weight:normal'><a name="m134"><span lang=EN-US
+  style='font-size:11.0pt;font-family:Arial;letter-spacing:1.0pt;mso-ansi-language:
+  EN-US'>13<o:p></o:p></span></b></p>
+  </td>
+  <td width=468 valign=top style='width:350.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><b style='mso-bidi-font-weight:normal'><a name="m135"><span lang=EN-US
+  style='font-size:11.0pt;font-family:Arial;letter-spacing:1.0pt;mso-ansi-language:
+  EN-US'>sin(x)-sin(2x)/2+sin(3x)/3+…+(-1)<sup>n+1</sup>sin(nx)/n<o:p></o:p></span></b></p>
+  </td>
+  <td width=120 valign=top style='width:90.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><b style='mso-bidi-font-weight:normal'><a name="m136"><span lang=EN-US
+  style='font-size:11.0pt;font-family:Arial;letter-spacing:1.0pt;mso-ansi-language:
+  EN-US'>x/2<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:14'>
+  <td width=33 valign=top style='width:25.05pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><b style='mso-bidi-font-weight:normal'><a name="m137"><span lang=EN-US
+  style='font-size:11.0pt;font-family:Arial;letter-spacing:1.0pt;mso-ansi-language:
+  EN-US'>14<o:p></o:p></span></b></p>
+  </td>
+  <td width=468 valign=top style='width:350.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><b style='mso-bidi-font-weight:normal'><a name="m138"><span lang=EN-US
+  style='font-size:11.0pt;font-family:Arial;letter-spacing:1.0pt;mso-ansi-language:
+  EN-US'>-cos(x)+cos(2x)/2<sup>2</sup>-cos(3x)/3<sup>2</sup>+…+(1)<sup>n</sup>cos(nx)/n<sup>2</sup><o:p></o:p></span></b></p>
+  </td>
+  <td width=120 valign=top style='width:90.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><b style='mso-bidi-font-weight:normal'><a name="m139"><span lang=EN-US
+  style='font-size:11.0pt;font-family:Arial;letter-spacing:1.0pt;mso-ansi-language:
+  EN-US'>(x<sup>2</sup>-</span><span
+  lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman";letter-spacing:
+  1.0pt;mso-ansi-language:EN-US'> &#960;</span></b><b style='mso-bidi-font-weight:
+  normal'><a name="m140"><sup><span lang=EN-US style='font-size:11.0pt;font-family:Arial;
+  letter-spacing:1.0pt;mso-ansi-language:EN-US'> 2</span></sup></b><b
+  style='mso-bidi-font-weight:normal'><span lang=EN-US style='font-size:11.0pt;
+  font-family:Arial;letter-spacing:1.0pt;mso-ansi-language:EN-US'>/3)/4<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:15'>
+  <td width=33 valign=top style='width:25.05pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><b style='mso-bidi-font-weight:normal'><a name="m141"><span lang=EN-US
+  style='font-size:11.0pt;font-family:Arial;letter-spacing:1.0pt;mso-ansi-language:
+  EN-US'>15<o:p></o:p></span></b></p>
+  </td>
+  <td width=468 valign=top style='width:350.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><b style='mso-bidi-font-weight:normal'><a name="m142"><span lang=EN-US
+  style='font-size:11.0pt;font-family:Arial;letter-spacing:1.0pt;mso-ansi-language:
+  EN-US'>cos(x)+cos(3x)/3+cos(5x)/5+…+cos(2n-1)/(2n-1)<o:p></o:p></span></b></p>
+  </td>
+  <td width=120 valign=top style='width:90.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><b style='mso-bidi-font-weight:normal'><a name="m143"><span lang=EN-US
+  style='font-size:11.0pt;font-family:Arial;letter-spacing:1.0pt;mso-ansi-language:
+  EN-US'>ln(ctg(x/2))/2<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:16'>
+  <td width=33 valign=top style='width:25.05pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><b style='mso-bidi-font-weight:normal'><a name="m144"><span lang=EN-US
+  style='font-size:11.0pt;font-family:Arial;letter-spacing:1.0pt;mso-ansi-language:
+  EN-US'>16<o:p></o:p></span></b></p>
+  </td>
+  <td width=468 valign=top style='width:350.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><b style='mso-bidi-font-weight:normal'><a name="m145"><span lang=EN-US
+  style='font-size:11.0pt;font-family:Arial;letter-spacing:1.0pt;mso-ansi-language:
+  EN-US'>cos()-cos(2x)/2+cos(3x)/3+…+(-1)<sup>n+1</sup>cos(nx)/n<o:p></o:p></span></b></p>
+  </td>
+  <td width=120 valign=top style='width:90.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><b style='mso-bidi-font-weight:normal'><a name="m146"><span lang=EN-US
+  style='font-size:11.0pt;font-family:Arial;letter-spacing:1.0pt;mso-ansi-language:
+  EN-US'>ln(2cos(x/2)<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:17;mso-yfti-lastrow:yes'>
+  <td width=33 valign=top style='width:25.05pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><b style='mso-bidi-font-weight:normal'><a name="m147"><span lang=EN-US
+  style='font-size:11.0pt;font-family:Arial;letter-spacing:1.0pt;mso-ansi-language:
+  EN-US'>17<o:p></o:p></span></b></p>
+  </td>
+  <td width=468 valign=top style='width:350.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><b style='mso-bidi-font-weight:normal'><a name="m148"><span lang=EN-US
+  style='font-size:11.0pt;font-family:Arial;letter-spacing:1.0pt;mso-ansi-language:
+  EN-US'>sin(x)+sin(3x)/3<sup>3</sup>+sin(5x)/5<sup>3</sup>+…+sin((2n-1)x)/(2n-1)<sup>3</sup><o:p></o:p></span></b></p>
+  </td>
+  <td width=120 valign=top style='width:90.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a4><b style='mso-bidi-font-weight:normal'><a name="m149"><span lang=EN-US
+  style='font-size:11.0pt;font-family:Arial;letter-spacing:1.0pt;mso-ansi-language:
+  EN-US'>x(</span><span lang=EN-US
+  style='font-size:14.0pt;font-family:"Times New Roman";letter-spacing:1.0pt;
+  mso-ansi-language:EN-US'>&#960;</span></b><b style='mso-bidi-font-weight:
+  normal'><a name="m150"><span lang=EN-US style='font-size:11.0pt;font-family:Arial;
+  letter-spacing:1.0pt;mso-ansi-language:EN-US'> -x)(</span></b><b
+  style='mso-bidi-font-weight:normal'><span lang=EN-US style='font-size:14.0pt;
+  font-family:"Times New Roman";letter-spacing:1.0pt;mso-ansi-language:EN-US'> &#960;</span><span lang=EN-US style='font-size:11.0pt;
+  font-family:Arial;letter-spacing:1.0pt;mso-ansi-language:EN-US'> /8)<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+</table>
+
+<p class=a4><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<h3>Вопросы без ответов</h3>
+
+<p class=a>Восстановить в общем виде<span style='mso-spacerun:yes'> 
+</span>формулу степенного ряда, вычисляемого в данной функции<span
+style='font-family:"Times New Roman"'>.<o:p></o:p></span></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>for (s=0, sn = 1
+n=2; fabs(sn) &gt; eps; n+=2)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>{ s += sn;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>sn= sn * x * x / (n*(n+1)); }<o:p></o:p></span></p>
+
+<p class=a>Для получения аналитической зависимости необходимо восстановить
+последовательность значений степеней <b style='mso-bidi-font-weight:normal'><a name="m151"><span
+lang=EN-US style='mso-ansi-language:EN-US'>x</span><span lang=EN-US> </span></b>и
+произведений целых коэффициентов, составляющих факториалы, либо сокращающихся
+при переходе от шага к следующему. После получения явно наблюдаемой зависимости
+необходимо перевести ее в аналитический вид <b style='mso-bidi-font-weight:
+normal'><a name="m152">от натурального </b><b style='mso-bidi-font-weight:normal'><a name="m153"><span
+lang=EN-US style='mso-ansi-language:EN-US'>n</span>.<o:p></o:p></b></p>
+
+<p class=a4><o:p>&nbsp;</o:p></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='margin-left:19.6pt;border-collapse:collapse;border:none;mso-border-alt:
+ solid windowtext .5pt;mso-padding-alt:0cm 5.4pt 0cm 5.4pt;mso-border-insideh:
+ .5pt solid windowtext;mso-border-insidev:.5pt solid windowtext'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=54 valign=top style='width:40.85pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a0><b style='mso-bidi-font-weight:normal'><a name="m154"><span lang=EN-US
+  style='font-size:11.0pt;mso-ansi-language:EN-US'>n<o:p></o:p></span></b></p>
+  </td>
+  <td width=180 valign=top style='width:134.65pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a0><b style='mso-bidi-font-weight:normal'><a name="m155"><span lang=EN-US
+  style='font-size:11.0pt;mso-ansi-language:EN-US'>sn </span><span style='font-size:11.0pt'>до<o:p></o:p></span></b></p>
+  </td>
+  <td width=164 valign=top style='width:123.15pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a0><b style='mso-bidi-font-weight:normal'><a name="m156"><span style='font-size:
+  11.0pt'>коэффициент<o:p></o:p></span></b></p>
+  </td>
+  <td width=169 valign=top style='width:126.6pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a0><b style='mso-bidi-font-weight:normal'><a name="m157"><span lang=EN-US
+  style='font-size:11.0pt;mso-ansi-language:EN-US'>sn </span><span style='font-size:11.0pt'>после<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=54 valign=top style='width:40.85pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a0><b style='mso-bidi-font-weight:normal'><a name="m158"><span lang=EN-US
+  style='font-size:11.0pt;mso-ansi-language:EN-US'>2<o:p></o:p></span></b></p>
+  </td>
+  <td width=180 valign=top style='width:134.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a0><b style='mso-bidi-font-weight:normal'><a name="m159"><span lang=EN-US
+  style='font-size:11.0pt;mso-ansi-language:EN-US'><span
+  style='mso-spacerun:yes'> </span>1<o:p></o:p></span></b></p>
+  </td>
+  <td width=164 valign=top style='width:123.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a0><b style='mso-bidi-font-weight:normal'><a name="m160"><span lang=EN-US
+  style='font-size:11.0pt;mso-ansi-language:EN-US'><span
+  style='mso-spacerun:yes'>  </span>x<sup>2</sup> / (2*3)<o:p></o:p></span></b></p>
+  </td>
+  <td width=169 valign=top style='width:126.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a0><b style='mso-bidi-font-weight:normal'><a name="m161"><span lang=EN-US
+  style='font-size:11.0pt;mso-ansi-language:EN-US'>x<sup>2 </sup>/ </span><span style='font-size:11.0pt'>(2*3)<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td width=54 valign=top style='width:40.85pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a0><b style='mso-bidi-font-weight:normal'><a name="m162"><span style='font-size:
+  11.0pt'>4<o:p></o:p></span></b></p>
+  </td>
+  <td width=180 valign=top style='width:134.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a0><b style='mso-bidi-font-weight:normal'><a name="m163"><span lang=EN-US
+  style='font-size:11.0pt;mso-ansi-language:EN-US'>x</span><sup><span style='font-size:11.0pt'>2 </span></sup><span lang=EN-US style='font-size:11.0pt;
+  mso-ansi-language:EN-US'>/ </span><span
+  style='font-size:11.0pt'>(2*3)<o:p></o:p></span></b></p>
+  </td>
+  <td width=164 valign=top style='width:123.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a0><b style='mso-bidi-font-weight:normal'><a name="m164">
+	<span style='mso-spacerun:yes; font-size:11.0pt'>  </span><span lang=EN-US style='font-size:11.0pt;
+  mso-ansi-language:EN-US'>x</span><sup><span
+  style='font-size:11.0pt'>2</span></sup></b><b style='mso-bidi-font-weight:
+  normal'><a name="m165"><span style='font-size:11.0pt'> / (4*5)<o:p></o:p></span></b></p>
+  </td>
+  <td width=169 valign=top style='width:126.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a0><b style='mso-bidi-font-weight:normal'><a name="m166"><span lang=EN-US
+  style='font-size:11.0pt;mso-ansi-language:EN-US'>x<sup>4 </sup></span><span style='font-size:11.0pt'>/</span><span style='font-size:11.0pt;mso-ansi-language:
+  EN-US'> </span><span
+  style='font-size:11.0pt'>(2*3*4*5)<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td width=54 valign=top style='width:40.85pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a0><b style='mso-bidi-font-weight:normal'><a name="m167"><span style='font-size:
+  11.0pt'>6<o:p></o:p></span></b></p>
+  </td>
+  <td width=180 valign=top style='width:134.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a0><b style='mso-bidi-font-weight:normal'><a name="m168"><span lang=EN-US
+  style='font-size:11.0pt;mso-ansi-language:EN-US'>x</span><sup><span style='font-size:11.0pt'>4</span><span style='font-size:11.0pt;
+  mso-ansi-language:EN-US'> </span></sup></b><b style='mso-bidi-font-weight:
+  normal'><a name="m169"><span lang=EN-US style='font-size:11.0pt;mso-ansi-language:EN-US'>/</span></b><b
+  style='mso-bidi-font-weight:normal'><sup><span lang=EN-US style='font-size:
+  11.0pt'> </span></sup><span
+  style='font-size:11.0pt'>(2*3*4*5)<o:p></o:p></span></b></p>
+  </td>
+  <td width=164 valign=top style='width:123.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a0><b style='mso-bidi-font-weight:normal'><a name="m170">
+	<span style='mso-spacerun:yes; font-size:11.0pt'>  </span><span lang=EN-US style='font-size:11.0pt;
+  mso-ansi-language:EN-US'>x</span><sup><span
+  style='font-size:11.0pt'>2</span></sup></b><b style='mso-bidi-font-weight:
+  normal'><a name="m171"><span style='font-size:11.0pt'> / (6*7)<o:p></o:p></span></b></p>
+  </td>
+  <td width=169 valign=top style='width:126.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a0><b style='mso-bidi-font-weight:normal'><a name="m172"><span lang=EN-US
+  style='font-size:11.0pt;mso-ansi-language:EN-US'>x<sup>6 </sup></span><span style='font-size:11.0pt'>/</span><span style='font-size:11.0pt;mso-ansi-language:
+  EN-US'> </span><span
+  style='font-size:11.0pt'>(2*3*4*5*6*7)<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4'>
+  <td width=54 valign=top style='width:40.85pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a0><b style='mso-bidi-font-weight:normal'><a name="m173"><span lang=EN-US
+  style='font-size:11.0pt;mso-ansi-language:EN-US'>…<o:p></o:p></span></b></p>
+  </td>
+  <td width=180 valign=top style='width:134.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a0><b style='mso-bidi-font-weight:normal'><a name="m174"><span lang=EN-US
+  style='font-size:11.0pt;mso-ansi-language:EN-US'>…<o:p></o:p></span></b></p>
+  </td>
+  <td width=164 valign=top style='width:123.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a0><b style='mso-bidi-font-weight:normal'><a name="m175"><span lang=EN-US
+  style='font-size:11.0pt;mso-ansi-language:EN-US'>…<o:p></o:p></span></b></p>
+  </td>
+  <td width=169 valign=top style='width:126.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a0><b style='mso-bidi-font-weight:normal'><a name="m176"><span lang=EN-US
+  style='font-size:11.0pt;mso-ansi-language:EN-US'>…<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5;mso-yfti-lastrow:yes'>
+  <td width=54 valign=top style='width:40.85pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a0><b style='mso-bidi-font-weight:normal'><a name="m177"><span lang=EN-US
+  style='font-size:11.0pt;mso-ansi-language:EN-US'>m</span><span style='font-size:11.0pt'><o:p></o:p></span></b></p>
+  </td>
+  <td width=180 valign=top style='width:134.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a0><b style='mso-bidi-font-weight:normal'><a name="m178">
+	<span style='mso-spacerun:yes; font-size:11.0pt'> </span><span lang=EN-US style='font-size:11.0pt;
+  mso-ansi-language:EN-US'>x</span><sup><span
+  style='font-size:11.0pt'>2</span></sup></b><b style='mso-bidi-font-weight:
+  normal'><a name="m179"><sup><span lang=EN-US style='font-size:11.0pt;mso-ansi-language:EN-US'>m
+  </span></sup></b><b style='mso-bidi-font-weight:normal'><a name="m180"><span
+  style='font-size:11.0pt'>/</span><span
+  style='font-size:11.0pt;mso-ansi-language:EN-US'> </span><span style='font-size:11.0pt'>(2</span><span lang=EN-US style='font-size:11.0pt;
+  mso-ansi-language:EN-US'>m+</span><span
+  style='font-size:11.0pt'>1)!<o:p></o:p></span></b></p>
+  </td>
+  <td width=164 valign=top style='width:123.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a0><b style='mso-bidi-font-weight:normal'><a name="m181"><span style='font-size:
+  11.0pt'><o:p>&nbsp;</o:p></span></b></p>
+  </td>
+  <td width=169 valign=top style='width:126.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a0><b style='mso-bidi-font-weight:normal'><a name="m182"><span style='font-size:
+  11.0pt'><o:p>&nbsp;</o:p></span></b></p>
+  </td>
+ </tr>
+</table>
+
+<p class=a4>В данном примере накапливаются четные степени <b style='mso-bidi-font-weight:
+normal'><a name="m183"><span lang=EN-US style='mso-ansi-language:EN-US'>x</span><span
+lang=EN-US> </span></b>и нечетные факториалы (обратите внимание, что <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>n</span><span lang=EN-US> </span></b>в самой программе меняется через 2,
+а ряд выражен через натуральное <b style='mso-bidi-font-weight:normal'><a name="m184"><span
+lang=EN-US style='mso-ansi-language:EN-US'>m</span></b>).</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0>//------------------------------------------------------<span
+lang=EN-US style='mso-ansi-language:EN-US'>43</span>-06.cpp</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//-----------------------------------------------1<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>double s,sn; int n;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>for (s=0, sn = 1, n=1; fabs(sn) &gt; eps; n++)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>{ s += sn;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>sn= - sn * x / n; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>//-----------------------------------------------2<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>for (s=0, sn = x, n=1; fabs(sn) &gt; eps; n++)<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-spacerun:yes; mso-ansi-language:EN-US' lang="EN-US"> </span>{ s += sn;</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>sn= - sn * x / n; }</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>//-----------------------------------------------3</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>for (s=0, sn = x; n=1; fabs(sn) &gt; eps;
+n+=2)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>{ s += sn;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>sn= sn * x * x / (n*(n+1) ); }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>//-----------------------------------------------4<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>for (s=0, sn = x, n=1; fabs(sn) &gt; eps;
+n+=2)<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-spacerun:yes; mso-ansi-language:EN-US' lang="EN-US"> </span>{ s += sn;</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>sn= sn * x / (n *(n+1) ); }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>//-----------------------------------------------5<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>for (s=0, sn = x, n=1; fabs(sn) &gt; eps; n++)<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-spacerun:yes; mso-ansi-language:EN-US' lang="EN-US"> </span>{ s += sn;</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>sn= sn * x * (2*n) / (2*n-1); }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>//-----------------------------------------------6<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>for (s=0, sn = x, n=1; fabs(sn) &gt; eps;
+n+=2)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>{ s += sn;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>sn= sn * x *x * n / (n+1); }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>//-----------------------------------------------7<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>for (s=0, sn = x, n=1; fabs(sn) &gt; eps; n++)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>{ s += sn;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>sn= sn * x * x * (2*n-1) / (2*n+1); }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>//-----------------------------------------------8<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>for (s=0, sn = x, n=2; fabs(sn) &gt; eps;
+n+=2)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>{ s += sn;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>sn= sn * x *x * (n -1) / (n+1); } <o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>//-----------------------------------------------9
+<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>for (s=0, sn = 1, n=1; fabs(sn) &gt; eps; n++)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>{ s += sn; <o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>int nn = 2*n-2; if (nn==0) nn=1;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>sn= sn * x * x * nn / (2*n); }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>//-----------------------------------------------10
+<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>for (s=0, sn = 1, n=1; fabs(sn) &gt; eps;
+n+=2)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>{ s += sn;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>int nn = n-1; if (nn==0) nn=1;<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-spacerun:yes; mso-ansi-language:EN-US' lang="EN-US"> </span>sn= sn * x *x * nn / (n+1);}</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span></p>
+
+</div>
+
+</body>
+
+</html>

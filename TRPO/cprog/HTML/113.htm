@@ -1,0 +1,1278 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:st1="urn:schemas-microsoft-com:office:smarttags"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=Edit-Time-Data href="113.files/editdata.mso">
+<title>11.3. Средства времени выполнения и исключения</title>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="metricconverter"/>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>www.PHILka.RU</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>vtpc112</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>275</o:TotalTime>
+  <o:Created>2008-08-09T06:26:00Z</o:Created>
+  <o:LastSaved>2008-08-09T06:26:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>2082</o:Words>
+  <o:Characters>11871</o:Characters>
+  <o:Company>NSTU_VT</o:Company>
+  <o:Bytes>11776</o:Bytes>
+  <o:Lines>98</o:Lines>
+  <o:Paragraphs>27</o:Paragraphs>
+  <o:CharactersWithSpaces>13926</o:CharactersWithSpaces>
+  <o:Version>11.6360</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DoNotHyphenateCaps/>
+  <w:DrawingGridHorizontalSpacing>0,55 пт</w:DrawingGridHorizontalSpacing>
+  <w:DrawingGridVerticalSpacing>0,55 пт</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:UseMarginsForDrawingGridOrigin/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DrawingGridVerticalOrigin>99,25 пт</w:DrawingGridVerticalOrigin>
+  <w:Compatibility>
+   <w:WW6BorderRules/>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+   <w:UseWord97LineBreakingRules/>
+   <w:SelectEntireFieldWithStartOrEnd/>
+   <w:UseWord2002TableStyleRules/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:"Times New Roman CYR";
+	panose-1:2 2 6 3 5 4 5 2 3 4;
+	mso-font-charset:204;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+@font-face
+	{font-family:"Arial CYR";
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+h1
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:14.0pt;
+	mso-bidi-font-weight:normal;}
+h2
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-font-weight:normal;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+h3
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	font-weight:normal;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";}
+p.a, li.a, div.a
+	{mso-style-name:текст;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a0, li.a0, div.a0
+	{mso-style-name:программа;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a1, li.a1, div.a1
+	{mso-style-name:список;
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:18.45pt;
+	margin-bottom:0cm;
+	margin-left:64.35pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-18.0pt;
+	mso-pagination:widow-orphan;
+	mso-list:l0 level1 lfo1;
+	tab-stops:42.55pt list 64.35pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a2, li.a2, div.a2
+	{mso-style-name:определение;
+	mso-style-parent:текст;
+	margin-top:12.0pt;
+	margin-right:32.9pt;
+	margin-bottom:12.0pt;
+	margin-left:35.45pt;
+	text-align:justify;
+	text-indent:.55pt;
+	mso-pagination:widow-orphan;
+	border:none;
+	mso-border-alt:solid windowtext 1.5pt;
+	padding:0cm;
+	mso-padding-alt:1.0pt 1.0pt 1.0pt 1.0pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a3, li.a3, div.a3
+	{mso-style-name:эпиграф;
+	margin-top:0cm;
+	margin-right:32.9pt;
+	margin-bottom:0cm;
+	margin-left:5.0cm;
+	margin-bottom:.0001pt;
+	text-align:right;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.a4, li.a4, div.a4
+	{mso-style-name:"от края";
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a5, li.a5, div.a5
+	{mso-style-name:Формула;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.a6, li.a6, div.a6
+	{mso-style-name:"без формата";
+	mso-style-parent:программа;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a7, li.a7, div.a7
+	{mso-style-name:стихи;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.1, li.1, div.1
+	{mso-style-name:эпиграф1;
+	mso-style-parent:эпиграф;
+	margin-top:0cm;
+	margin-right:9.35pt;
+	margin-bottom:0cm;
+	margin-left:9.0cm;
+	margin-bottom:.0001pt;
+	text-align:right;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+ /* Page Definitions */
+ @page
+	{mso-footnote-separator:url("113.files/header.htm") fs;
+	mso-footnote-continuation-separator:url("113.files/header.htm") fcs;
+	mso-endnote-separator:url("113.files/header.htm") es;
+	mso-endnote-continuation-separator:url("113.files/header.htm") ecs;}
+@page Section1
+	{size:21.0cm 842.0pt;
+	margin:33.45pt 42.55pt 72.0pt 89.85pt;
+	mso-header-margin:14.2pt;
+	mso-footer-margin:31.75pt;
+	mso-even-header:url("113.files/header.htm") eh1;
+	mso-header:url("113.files/header.htm") h1;
+	mso-even-footer:url("113.files/header.htm") ef1;
+	mso-footer:url("113.files/header.htm") f1;
+	mso-first-header:url("113.files/header.htm") fh1;
+	mso-first-footer:url("113.files/header.htm") ff1;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:1628194852;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-964799380 -1450833310 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-style-link:список;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:64.35pt;
+	mso-level-number-position:left;
+	margin-left:64.35pt;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Обычная таблица";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+table.MsoTableGrid
+	{mso-style-name:"Сетка таблицы";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+  <o:regrouptable v:ext="edit">
+   <o:entry new="1" old="0"/>
+   <o:entry new="2" old="1"/>
+   <o:entry new="3" old="0"/>
+   <o:entry new="4" old="0"/>
+   <o:entry new="5" old="0"/>
+   <o:entry new="6" old="0"/>
+  </o:regrouptable>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=RU style='tab-interval:36.0pt' background="back.gif">
+
+<div class=Section1>
+
+<h2>11.3. Средства времени выполнения и исключения</h2>
+
+<p class=a>Язык Си по своей природе ориентирован на <span
+style='mso-spacerun:yes'> </span>«чистую» компиляцию. Это означает, что в
+программном коде отсутствует исходная информация об объектах языка (переменных,
+функциях, классах), их именах и свойствах. Однако в Си++ этот принцип «немного
+нарушается». Иногда это делается «по делу», с целью реализовать необходимые
+механизмы технологии ООП (исключения, полиморфизм), иногда – для контроля
+программы над типами объектов, с которыми она в данный момент работает. </p>
+
+<p class=a>С этой целью транслятор включает в программный код статические
+данные, касающиеся описаний классов (как минимум, их имена) и их взаимосвязей
+по системе наследования. Доступ к этим данным возможен через специальный класс,
+а сам механизм носит название <b style='mso-bidi-font-weight:normal'><a name="m1"><span
+lang=EN-US style='mso-ansi-language:EN-US'>RTTI</span><span lang=EN-US> </span>–
+<span lang=EN-US style='mso-ansi-language:
+EN-US'>run</span><span lang=EN-US> </span>
+</b><b style='mso-bidi-font-weight:
+normal'><a name="m2"><span lang=EN-US style='mso-ansi-language:EN-US'>time</span><span
+lang=EN-US> </span></b><b style='mso-bidi-font-weight:normal'><a name="m3"><span lang=EN-US
+style='mso-ansi-language:EN-US'>type</span><span lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:
+EN-US'>identification</span><span lang=EN-US> </span></b>(идентификация типов
+во время выполнения).</p>
+
+<h3>Идентификация типов и их преобразование</h3>
+
+<p class=a>Прежде всего, программа может проверить, к какому классу относится
+объект. Понятно, если речь идет о прямом именовании объекта, то в этом нет
+необходимости, имя переменной однозначно соотносится с ее типом. Другое дело –
+ссылка или указатель. Преобразование типов указателей от производного класса к
+базовому и наоборот (см. <b style='mso-bidi-font-weight:normal'><a name="m4">11.2</b>)
+являются важным технологическим элементом наследования и полиморфизма (при
+передаче объектов по ссылке происходят аналогичные преобразования ссылочного
+типа).</p>
+
+<p class=a>На каждый класс, используемый в программе, компилятор создает объект
+типа <b style='mso-bidi-font-weight:normal'><a name="m5"><span lang=EN-US style='mso-ansi-language:
+EN-US'>type</span>_<span lang=EN-US
+style='mso-ansi-language:EN-US'>info</span>. </b>Операция <b style='mso-bidi-font-weight:
+normal'><a name="m6"><span lang=EN-US style='mso-ansi-language:EN-US'>typeid</span><span
+lang=EN-US> </span></b>возвращает ссылку на тот объект, к которому относится
+выражение или тип, стоящие в скобках. Класс <b style='mso-bidi-font-weight:
+normal'><a name="m7"><span lang=EN-US style='mso-ansi-language:EN-US'>type</span>_</b><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>info</span><span lang=EN-US> </span></b>имеет метод <b style='mso-bidi-font-weight:
+normal'><a name="m8"><span lang=EN-US style='mso-ansi-language:EN-US'>name</span>, </b>который
+возвращает константную строку с именем типа.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//-------------------------------------------------113-01.cpp</p>
+
+<p class=a0>// Идентификация типов и их преобразование</p>
+
+<p class=a0><b style='mso-bidi-font-weight:normal'><a name="m9"><span lang=EN-US
+style='mso-ansi-language:EN-US'>#include &lt;typeinfo.h&gt;<o:p></o:p></span></b></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>class A{ public:<span
+style='mso-tab-count:1'>  </span>virtual<span style='mso-tab-count:1'>    </span>void
+F(){ }};<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>class B: public
+A{};<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>class C: public
+A{};<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>class D {}; </span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void main(){<o:p></o:p></span></p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>A aa; B bb;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if (typeid(A)!=typeid(B))
+puts(&quot;A!=B&quot;);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>puts(<b style='mso-bidi-font-weight:
+normal'><a name="m10">typeid(A</b>).name());<span style='mso-tab-count:2'>              </span>//
+</span>Выведет<span lang=EN-US style='mso-ansi-language:EN-US'> &quot;class
+A&quot;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>puts(typeid(B).name());<span
+style='mso-tab-count:2'>               </span>// </span>Выведет<span
+lang=EN-US style='mso-ansi-language:EN-US'> &quot;class B&quot;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>puts(<b style='mso-bidi-font-weight:
+normal'><a name="m11">typeid(aa).</b>name());<span style='mso-tab-count:1'>            </span>//
+</span>Выведет<span lang=EN-US style='mso-ansi-language:EN-US'> &quot;class
+A&quot;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>puts(typeid(bb).name());<span
+style='mso-tab-count:1'>              </span>//
+</span>Выведет<span lang=EN-US style='mso-ansi-language:EN-US'> &quot;class
+B&quot;<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>A *p=&amp;bb;<span
+style='mso-tab-count:3'>                                 </span>//
+Преобразование указателя к БК</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>puts(<b style='mso-bidi-font-weight:normal'><a name="m12">typeid(p)</b>.name());<span
+style='mso-tab-count:2'>              </span>// </span>Выведет<span lang=EN-US
+style='mso-ansi-language:EN-US'> &quot;class A*&quot;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>puts(<b style='mso-bidi-font-weight:
+normal'><a name="m13">typeid(*p)</b>.name());<span style='mso-tab-count:1'> </span>// </span>Выведет<span
+lang=EN-US style='mso-ansi-language:EN-US'> &quot;class B&quot;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>A
+*p1=dynamic_cast&lt;A*&gt;(&amp;bb);<span style='mso-tab-count:1'>  </span>// </span>Преобразование<span
+style='mso-ansi-language:EN-US'> </span>ПК<span style='mso-ansi-language:EN-US'>
+</span>к<span style='mso-ansi-language:EN-US'> </span>БК<span lang=EN-US
+style='mso-ansi-language:EN-US'> (B-&gt;A)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>B *p2=dynamic_cast&lt;B*&gt;(p1); <span
+style='mso-tab-count:1'>   </span>// </span>Преобразование<span
+style='mso-ansi-language:EN-US'> </span>БК<span style='mso-ansi-language:EN-US'>
+</span>к<span style='mso-ansi-language:EN-US'> </span>ПК<span lang=EN-US
+style='mso-ansi-language:EN-US'> (A-&gt;B)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>C</span> *<span lang=EN-US
+style='mso-ansi-language:EN-US'>p</span>3=<span lang=EN-US style='mso-ansi-language:
+EN-US'>dynamic</span>_<span lang=EN-US style='mso-ansi-language:EN-US'>cast</span>&lt;<span
+lang=EN-US style='mso-ansi-language:EN-US'>C</span>*&gt;(<span lang=EN-US
+style='mso-ansi-language:EN-US'>p</span>1); <span style='mso-tab-count:1'>   </span>//
+Преобразование БК к ПК (<span lang=EN-US style='mso-ansi-language:EN-US'>A</span>-&gt;С)
+</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>D</span> *<span lang=EN-US
+style='mso-ansi-language:EN-US'>p</span>4=<span lang=EN-US style='mso-ansi-language:
+EN-US'>dynamic</span>_<span lang=EN-US style='mso-ansi-language:EN-US'>cast</span>&lt;<span
+lang=EN-US style='mso-ansi-language:EN-US'>D</span>*&gt;(<span lang=EN-US
+style='mso-ansi-language:EN-US'>p</span>1); <span style='mso-tab-count:1'>   </span>//
+Преобразование ??? (<span lang=EN-US style='mso-ansi-language:EN-US'>A</span>-&gt;<span
+lang=EN-US style='mso-ansi-language:EN-US'>D</span>) </p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>if (p3==NULL) puts(&quot;p3==NULL&quot;); } // </span>Выведет<span
+lang=EN-US style='mso-ansi-language:EN-US'> &quot;p3==NULL&quot;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if (p4==NULL) puts(&quot;p4==NULL&quot;);
+} // </span>Выведет<span lang=EN-US style='mso-ansi-language:EN-US'> &quot;p4==NULL&quot;<o:p></o:p></span></p>
+
+<p class=a>Операция вида <b style='mso-bidi-font-weight:normal'><a name="m14"><span
+lang=EN-US style='mso-ansi-language:EN-US'>dynamic</span>_<span lang=EN-US style='mso-ansi-language:
+EN-US'>cast</span>&lt;<span
+lang=EN-US style='mso-ansi-language:EN-US'>D</span>*&gt; </b>отличается от
+обычного преобразования типа указателя, имеющей вид <b style='mso-bidi-font-weight:
+normal'><a name="m15">(</b><b style='mso-bidi-font-weight:normal'><a name="m16"><span lang=EN-US
+style='mso-ansi-language:EN-US'>D</span>*)</b>, тем, что она использует
+средства <b style='mso-bidi-font-weight:normal'><a name="m17"><span lang=EN-US
+style='mso-ansi-language:EN-US'>RTTI</span></b><span lang=EN-US> <span
+style='mso-spacerun:yes'> </span></span>для проверки такого преобразования «в
+динамике», т.е. во время выполнения. Если таковое невозможно, то она возвращает
+<b style='mso-bidi-font-weight:normal'><a name="m18"><span lang=EN-US style='mso-ansi-language:
+EN-US'>NULL-</span></b>указатель.</p>
+
+<h3>Исключения</h3>
+
+<p class=a>Самое неблагодарное занятие в программировании – контроль и
+исправление ошибок. Видимо программы и содержат их в таком количестве, что у
+программистов не доходят руки до их систематической обработки: в результате
+торжествует принцип «авось» - при возникновении нестандартных ситуаций –
+отсутствие файла, нехватка памяти и т.п. программа, написанная на Си,<span
+style='mso-spacerun:yes'>  </span>просто «валится».</p>
+
+<p class=a>В оправдание отметим, что в традиционных управляющих конструкциях
+языка обработка ошибок действительно реализована весьма неудобно. Посмотрим,
+как это выглядит в самом общем виде<span lang=EN-US style='mso-ansi-language:
+EN-US'>:<o:p></o:p></span></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>источник ошибки обычно находится в самой
+Си-программе: это программный код, который проверяет условие, при выполнении которого
+программа не может дальше выполняться корректно. Например, система
+динамического распределения памяти не может выделить участка требуемого размера;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>источник ошибки находится обычно «глубоко
+внутри» цепочки вызовов функций (в ООП – цепочке вызовов методов). При этом
+реакция на ошибку (обработка) производится, как правило, «на более высоком
+уровне»;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>вызываемая функция «нижнего уровня» обычно
+использует в возвращаемом<span style='mso-spacerun:yes'>  </span>результате
+оригинальное значение (например, <span lang=EN-US style='mso-ansi-language:
+EN-US'>NULL</span>-указатель) для обозначения факта возникновения ошибки;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>вызывающая функция проверяет результат на
+наличие «особого» значения и пытается исправить ситуацию. </p>
+
+<p class=a4 align=center style='text-align:center'><b style='mso-bidi-font-weight:
+normal'><a name="m19"><o:p>&nbsp;<img border="0" src="Images/113-01.gif" width="503" height="189"></o:p></b></p>
+
+<p align="center"><b style='mso-bidi-font-weight:normal'><a name="m20">рис. 112-1. Обработка ошибок
+традиционными средствами<o:p></o:p></b></p>
+</p>
+
+<p class=a>Даже в традиционной схеме видно, что источник и обработчик ошибки
+разнесены в программе. Вызывающая функция, в свою очередь, может попытаться
+исправить ошибку, а может и передать соответствующее значение «вышестоящему
+начальству», т.е. вверх по цепочке вызовов. В идеале хотелось бы, чтобы <b
+style='mso-bidi-font-weight:normal'>поток команд,</b> связанный с обработкой
+ошибок, существовал синтаксически независимо от потока команд, связанного с
+возвратом обычных «правильных» значений. Такой механизм в Си++ носит название <b
+style='mso-bidi-font-weight:normal'>исключений.<o:p></o:p></b></p>
+
+<p class=a>Синтаксически исключение состоит из тех частей, использующих
+служебные слова <b style='mso-bidi-font-weight:normal'><a name="m21"><span lang=EN-US
+style='mso-ansi-language:EN-US'>throw</span>,</b><b style='mso-bidi-font-weight:
+normal'><a name="m22"><span lang=EN-US style='mso-ansi-language:EN-US'>try</span>,</b><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>catch</span></b>:</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>генератор исключений, конструкция вида <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>throw</span> выражение; </b>Она синтаксически и по механизму исполнения
+похожа на оператор <b style='mso-bidi-font-weight:normal'><a name="m23"><span lang=EN-US
+style='mso-ansi-language:EN-US'>return</span>;</b></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>обработчик ошибок<span
+style='mso-spacerun:yes'>  </span>вида <b style='mso-bidi-font-weight:normal'><a name="m24"><span
+lang=EN-US style='mso-ansi-language:EN-US'>catch</span>(формальный
+параметр){…}. </b>Своим синтаксическим видом он напоминает безымянную функцию с
+единственным формальным параметром. Действительно в теле обработчика может быть
+любой программный код и допустимо использование этого формального параметра,
+который может быть передан <i style='mso-bidi-font-style:normal'>как по
+значению, так и по ссылке</i>;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span></span><![endif]>секции защищенного кода вида <b style='mso-bidi-font-weight:normal'><a name="m25"><span
+lang=EN-US style='mso-ansi-language:EN-US'>try</span><span lang=EN-US> </span>{защищенный
+код} <span lang=EN-US
+style='mso-ansi-language:EN-US'>catch</span>(){}…</b><b style='mso-bidi-font-weight:
+normal'><a name="m26"><span lang=EN-US style='mso-ansi-language:EN-US'>catch</span>(){}, </b>которая
+представляет собой блок, предваренный служебным словом <b style='mso-bidi-font-weight:
+normal'><a name="m27"><span lang=EN-US style='mso-ansi-language:EN-US'>try</span><span
+lang=EN-US> </span></b>со следующим за ним одним или несколькими обработчиками.<p align="center">
+<img border="0" src="Images/113-02.gif" width="520" height="208"></p>
+
+<p class=a4 align=center style='text-align:center'><b style='mso-bidi-font-weight:
+normal'><a name="m28">рис. 112-1. Обработка ошибок и помощью исключений<o:p></o:p></b></p>
+
+<p class=a>Механизм обработки исключений можно охарактеризовать следующими
+словами: при генерации исключения моделируется последовательное выполнение
+оператора <b style='mso-bidi-font-weight:normal'><a name="m29"><span lang=EN-US
+style='mso-ansi-language:EN-US'>return</span><span lang=EN-US> </span></b>в
+цепочке вызовов функций (или методов), пока программа не выйдет в программный
+код, защищенный соответствующим обработчиком. Рассмотрим этот процесс более
+подробно<span lang=EN-US style='mso-ansi-language:EN-US'>:<o:p></o:p></span></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>оператор <b style='mso-bidi-font-weight:normal'><a name="m30"><span
+lang=EN-US style='mso-ansi-language:EN-US'>throw</span><span lang=EN-US> </span></b>в
+качестве результат возвращает значение выражения. Оно может быть каким угодно
+(константой, переменной, объектом), но для нас важен его тип. Т.е. исключения
+могут быть различными и иметь разные типы. Каждый <b style='mso-bidi-font-weight:
+normal'><a name="m31">тип исключения </b><span style='mso-spacerun:yes'> </span>имеет свои
+обработчики и обрабатывается независимо от других типов;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>обработка исключения состоит в моделировании
+выполнения оператора <b style='mso-bidi-font-weight:normal'><a name="m32"><span lang=EN-US
+style='mso-ansi-language:EN-US'>return</span>. </b>При выходе из текущей
+функции (метода) выполняются все действия, связанные с разрушением локальной
+среды выполнения процесса: уничтожаются локальные переменные и формальные
+параметры, а если они являются объектами, то для них вызываются <i
+style='mso-bidi-font-style:normal'>деструкторы</i>;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>выполнение последовательности выходов из функций
+(методов) производится до тех пор, пока программа не окажется в <i
+style='mso-bidi-font-style:normal'>защищенной секции</i>, имеющий обработчик
+исключений того же самого типа, что и возвращаемое значение. Например, исключение
+<b style='mso-bidi-font-weight:normal'><a name="m33"><span lang=EN-US style='mso-ansi-language:
+EN-US'>throw</span> 5 </b>требует обработчика <b style='mso-bidi-font-weight:
+normal'><a name="m34"><span lang=EN-US style='mso-ansi-language:EN-US'>catch</span>(</b><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>int</span><span lang=EN-US> </span></b><b style='mso-bidi-font-weight:
+normal'><a name="m35"><span lang=EN-US style='mso-ansi-language:EN-US'>n</span>){…}, </b>а
+исключение <b style='mso-bidi-font-weight:normal'><a name="m36"><span lang=EN-US
+style='mso-ansi-language:EN-US'>throw</span><span lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:
+EN-US'>string</span>(“<st1:metricconverter ProductID="1111”" w:st="on">1111”</st1:metricconverter>)</b>-
+обработчика <b style='mso-bidi-font-weight:normal'><a name="m37"><span lang=EN-US
+style='mso-ansi-language:EN-US'>catch</span>(</b><b style='mso-bidi-font-weight:
+normal'><a name="m38"><span lang=EN-US style='mso-ansi-language:EN-US'>string</span><span
+lang=EN-US> </span></b><b style='mso-bidi-font-weight:normal'><a name="m39"><span lang=EN-US
+style='mso-ansi-language:EN-US'>s</span>){…};</b></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>при обнаружении обработчика необходимого типа
+происходит выполнение его тела. При этом значение, возвращаемое исключением,
+становится его формальным параметром. </p>
+
+<p class=a>Последовательность выходов в поисках нужного обработчика называется
+«разматыванием стека». Если обработчик не найден, то исполнительная система
+завершает выполнение программы.</p>
+
+<p class=a>Таким образом, программа, использующая исключения имеет два выхода
+из защищенной секции. При отсутствии ошибок (без генерации исключений)
+программа выполняет «естественным порядком», возврат происходит в ту же самую
+точку защищенного кода, где происходил вызов. Обработчики при отсутствии ошибок
+являются абсолютно прозрачными. При возникновении ошибки возврат идет «своим
+путем» в тело нужного обработчика, после чего программа покидает защищенный
+код.<span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a>Передача данных между генератором и обработчиком исключений
+осуществляется через параметр, который может быть в том числе и объектом. В
+этом случае в операторе <b style='mso-bidi-font-weight:normal'><a name="m40"><span
+lang=EN-US style='mso-ansi-language:EN-US'>throw</span><span lang=EN-US> </span></b>можно
+использовать <i style='mso-bidi-font-style:normal'>безымянные объекты </i>(см.<b
+style='mso-bidi-font-weight:normal'>10.1</b>). Есть еще несколько упрощений
+синтаксиса. Если обработчик исключений не использует параметр, то в <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>catch</span><span lang=EN-US> </span></b>можно использовать только тип
+без имени, например <b style='mso-bidi-font-weight:normal'><a name="m41"><span lang=EN-US
+style='mso-ansi-language:EN-US'>catch</span>(</b><b style='mso-bidi-font-weight:
+normal'><a name="m42"><span lang=EN-US style='mso-ansi-language:EN-US'>int</span>). </b>И
+наконец, обработчик «всех без исключения необслуженных исключений» имеет вид <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>catch</span>(…){}<i style='mso-bidi-font-style:normal'><o:p></o:p></i></b></p>
+
+<p class=a4><i style='mso-bidi-font-style:normal'>Замечание:</i> столь
+замысловатые действия обработчика исключений требуют запоминания во время
+выполнения программы значительного числа подробностей, касающихся «истории»
+выполнения программы: локальных объектов, наличия обработчиков для исключений
+заданного типа и т.п.. Естественно, что все это сохраняется в стеке и обслуживается
+механизмами, аналогичными <b style='mso-bidi-font-weight:normal'><a name="m43"><span
+lang=EN-US style='mso-ansi-language:EN-US'>RTTI</span>.</b></p>
+
+<p class=a>А теперь посмотрим, как технологически использовать исключения.
+Обработка ошибки может включать в себя различные схемы, которые реализуются
+программистом внутри обработчика:</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>самый простой вариант – <i style='mso-bidi-font-style:
+normal'>игнорирование ошибки</i> получается автоматически при отсутствии в
+защищенном коде обработчика требуемого типа: исключение «передается наверх» по цепочке
+возвратов;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><i style='mso-bidi-font-style:normal'>коррекция
+ошибки </i>предполагает выполнение в программном коде обработчика тех действий,
+которые формируют «исправленное» значение результата защищенного кода; <i
+style='mso-bidi-font-style:normal'><o:p></o:p></i></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><i style='mso-bidi-font-style:normal'>повторное
+выполнение операции с другими параметрами </i>предполагает, что вся конструкция
+<b style='mso-bidi-font-weight:normal'><a name="m44"><span lang=EN-US style='mso-ansi-language:
+EN-US'>try</span>-<span lang=EN-US
+style='mso-ansi-language:EN-US'>catch</span><span lang=EN-US> </span></b>заключается
+в цикл. Обработчик устанавливает в нем условие продолжения (повторения), а
+также новые значения, а сам защищенный код при успешном выполнении операции
+производит завершение цикла (явно через <b style='mso-bidi-font-weight:normal'><a name="m45"><span
+lang=EN-US style='mso-ansi-language:EN-US'>break</span></b> или через тот же
+признак).<i style='mso-bidi-font-style:normal'><o:p></o:p></i></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=a>Еще одну иллюстрацию к принципу динамического «разматывания стека»
+можно получить из рекурсивного программирования (см. <b style='mso-bidi-font-weight:
+normal'><a name="m46">7.3</b>). При обнаружении первого подходящего решения в процессе
+рекурсивного перебора вариантов может быть элементарно сгенерировано исключение.
+Результат поиска может быть передан в виде параметра исключения:</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//------------------------------------------------------------------------<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>struct REZ{<span
+style='mso-tab-count:2'>                    </span>// </span>Класс объекта –
+результата</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>REZ(…){…}</span><span style='mso-tab-count:
+1'>       </span><span lang=EN-US style='mso-ansi-language:EN-US'>// </span>Конструктор
+объекта</p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>};<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>F</span>(…){<span
+style='mso-tab-count:2'>                     </span>// Рекурсивная функция
+поиска первого подходящего</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>if</span> (…) <span lang=EN-US
+style='mso-ansi-language:EN-US'>return</span>;<span style='mso-tab-count:1'>      </span>//
+Условия невозможности продолжения поиска</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>if</span> (…) <span lang=EN-US
+style='mso-ansi-language:EN-US'>throw</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>REZ(…);<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:2; mso-ansi-language:EN-US' lang="EN-US">                        </span><span
+style='mso-tab-count:1'>            </span>// Найден первый подходящий -
+исключение</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>for</span> (…)<span lang=EN-US
+style='mso-ansi-language:EN-US'>F</span>(…);<span style='mso-tab-count:1'>      </span>//
+Продолжение поиска – рекурсивные вызовы</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span><span style='mso-tab-count:
+1'>           </span><span lang=EN-US style='mso-ansi-language:EN-US'>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>main</span>(){</p>
+
+<p class=a0><span style='mso-spacerun:yes'>        </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>try</span><span lang=EN-US> </span>{<span
+style='mso-tab-count:2'>                      </span>// Первоначальный вызов
+рекурсивной функции</p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>F</span>(…);<span style='mso-tab-count:2'>                </span>// в
+секции защищенного кода</p>
+
+<p class=a0 style='text-indent:36.0pt'>} <span lang=EN-US style='mso-ansi-language:
+EN-US'>catch</span>(<span lang=EN-US style='mso-ansi-language:EN-US'>REZ</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>x</span>){ …вывод
+результата <b style='mso-bidi-font-weight:normal'><a name="m47"><span lang=EN-US
+style='mso-ansi-language:EN-US'>x</span></b>… }</p>
+
+<p class=a0>}</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=a4><i style='mso-bidi-font-style:normal'>Замечание:</i> в «тотальных»
+системах ООП исключения являются единственным механизмом, при помощи которого
+стандартные библиотечные классы сообщают об ошибках, при работе программы с их
+объектами. В Си++ «тяжелое наследие» традиционного программирования не
+позволяет этого сделать. Поэтому, например, стандартный ввод-вывод, математика
+и т.п. обходятся без них.</p>
+
+<h3>Вопросы без ответов</h3>
+
+<p class=a>Определите, при каких условиях (ошибках выполнения) генерируются
+исключения. Определите значения переменных, получающихся в результате
+срабатывания исключений в программе.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//-----------------------------------------------------113-02.<span
+lang=EN-US style='mso-ansi-language:EN-US'>cpp</span></p>
+
+<p class=a0>//-----------------------------------------------------</p>
+
+<p class=a0>// Общий код для тестов 1,2</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>class</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>A</span>{</p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>int val;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>public:<span
+style='mso-tab-count:1'>   </span>A(int n=0) { val = n; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span><span style='mso-tab-count:1'>      </span>A
+operator/(A &amp;two){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>         </span><span style='mso-tab-count:2'>               </span>if
+(two.val==0) <b style='mso-bidi-font-weight:normal'><a name="m48">throw *this</b>;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>         </span><span style='mso-tab-count:2'>               </span>A
+t=*this;<o:p></o:p></span></p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'><span style='mso-spacerun:yes'>         </span><span style='mso-tab-count:
+1'>   </span>t.val/=two.val;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>         </span><span style='mso-tab-count:2'>               </span>return
+t; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span><span style='mso-tab-count:1'>      </span>A
+operator-(A &amp;two){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>         </span><span style='mso-tab-count:2'>               </span>if
+(val &lt; two.val) <b style='mso-bidi-font-weight:normal'><a name="m49">throw val - two.val</b>;<o:p></o:p></span></p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>A t=*this;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>         </span><span style='mso-tab-count:1'>   </span>t.val-=two.val;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>         </span><span style='mso-tab-count:1'>   </span>return
+t; }};<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//---------------------------------------------------1<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void main(){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>A a(10),b(0),c(12),e,f,g;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>int m=0;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>try {<span style='mso-tab-count:1'>   </span>e=a/b;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span><span style='mso-tab-count:1'>      </span>f=a-c;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>       </span><span style='mso-tab-count:1'>     </span>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>catch (int n) { m=n; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>catch (A n) { g=n; }}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//---------------------------------------------------2<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void main(){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>A a(10),b(0),c(12),e,f,g;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>int m=0;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>try {<span style='mso-tab-count:1'>   </span>f=a-c;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span><span style='mso-tab-count:1'>      </span>e=a/b;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>       </span><span style='mso-tab-count:1'>     </span>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>catch (int n) { m=n; }<o:p></o:p></span></p>
+
+<p class=a0><span style='mso-spacerun:yes'>   </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>catch</span> (<span lang=EN-US
+style='mso-ansi-language:EN-US'>A</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>n</span>) { <span lang=EN-US
+style='mso-ansi-language:EN-US'>g</span>=<span lang=EN-US style='mso-ansi-language:
+EN-US'>n</span>; }}</p>
+
+<p class=a0>//-----------------------------------------------------</p>
+
+<p class=a0>// Общий код для тестов 3,4</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>class</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>A</span>{</p>
+
+<p class=a0><span style='mso-spacerun:yes'>      </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>int val;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span>int top;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>public:<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span>A(int n=10) { top = n; val=0; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span>A operator=(int v){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span><span style='mso-tab-count:1'>      </span>if
+(v &gt;= top) <b style='mso-bidi-font-weight:normal'><a name="m50">throw v</b>;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>         </span><span style='mso-tab-count:1'>   </span>val=v;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>         </span><span
+style='mso-tab-count:1'>   </span>return *this; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span>A operator+(A &amp;two){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>       </span><span style='mso-tab-count:1'>     </span>if
+(val + two.val &gt;=top) <b style='mso-bidi-font-weight:normal'><a name="m51">throw *this</b>;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>         </span><span style='mso-tab-count:1'>   </span>A
+t=*this;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>         </span><span style='mso-tab-count:1'>   </span>t.val+=two.val;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>         </span><span style='mso-tab-count:1'>   </span>return
+t; }};<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//---------------------------------------------------3<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void main(){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>A a(10),b(15),c(20);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>int m=0;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>try {<span style='mso-tab-count:1'>   </span>a=8;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span><span style='mso-tab-count:1'>      </span>b=18;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span><span style='mso-tab-count:1'>      </span>c=25;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span><span style='mso-tab-count:1'>      </span>a=a+c;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span><span style='mso-tab-count:1'>      </span>b=a+c;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>       </span><span style='mso-tab-count:1'>     </span>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>catch (int n) { c=10; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>catch (A n) { c=1; }}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//---------------------------------------------------4<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void main(){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>A a(10),b(15),c(20);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>int m=0;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>try {<span style='mso-tab-count:1'>   </span>a=8;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span><span style='mso-tab-count:1'>      </span>b=12;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span><span style='mso-tab-count:1'>      </span>c=15;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span><span style='mso-tab-count:1'>      </span>a=a+c;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span><span style='mso-tab-count:1'>      </span>b=a+c;
+<o:p></o:p></span></p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>catch (int n) { c=10; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>catch (A n) { c=n; }}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//------</span>-----------------------------------------------</p>
+
+<p class=a0>// Общий код для тестов 5,6</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>class</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>string</span>{</p>
+
+<p class=a0><span style='mso-spacerun:yes'>   </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>char *str;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>void load(char *s)<span
+style='mso-spacerun:yes'>    </span>{ str=strdup(s); }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>void add(char *s)<span
+style='mso-spacerun:yes'>     </span>{
+str=(char*)realloc(str,strlen(str)+strlen(s)+1); strcat(str,s); }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>int find(char *s)<span
+style='mso-spacerun:yes'>        </span>{
+char *p=strstr(str,s);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>           </span>if
+(p==NULL) <b style='mso-bidi-font-weight:normal'><a name="m52">throw str</b>;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>             </span>return p-str; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>int cmp(string &amp;t)<span
+style='mso-spacerun:yes'>    </span>{ return strcmp(str,t.str); }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>public:<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>string()<span style='mso-tab-count:1'>           </span>{
+load(&quot;&quot;); }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>string(char *s) { load(s); }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>string(string &amp;t){ load(t.str); }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>~string() <span style='mso-tab-count:1'>        </span>{
+delete []str; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>char<span style='mso-spacerun:yes'>  
+</span>operator [](int n) {<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>                           </span>if
+(n&gt;=strlen(str)) <b style='mso-bidi-font-weight:normal'><a name="m53">throw *this</b>;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>                           </span>return str[n]; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>int<span style='mso-spacerun:yes'>  
+</span>operator [](char *s) { return find(s); }};<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//---------------------------------------------------5<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>void main(){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>string
+s1(&quot;abcdefg&quot;),s2(&quot;01234&quot;);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>char *p=&quot;***&quot;, c1='#',c2='#';<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>int n1=0,n2=0;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>try<span style='mso-spacerun:yes'>   </span>{<span style='mso-spacerun:yes'>  </span>c1=s1[3];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>         </span><span style='mso-tab-count:1'>   </span>c2=s2[10];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>         </span><span style='mso-tab-count:1'>   </span>n1=s1[&quot;cde&quot;];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>         </span><span style='mso-tab-count:1'>   </span>n2=s2[&quot;abc&quot;];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>         </span><span style='mso-tab-count:1'>   </span>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>catch (char *s) { p=s; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>catch (string s){ c1=s[1]; }}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//---------------------------------------------------6<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>void main(){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>string s1(&quot;abcdefg&quot;),s2(&quot;01234&quot;);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>char *p=&quot;***&quot;, c1='#',c2='#';<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>int n1=0,n2=0;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>try<span style='mso-spacerun:yes'>  
+</span>{<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>         </span>n1=s1[&quot;cde&quot;];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>         </span>n2=s2[&quot;abc&quot;];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>         </span>c1=s1[3];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>         </span>c2=s2[10];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>         </span>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>catch (char *s) { p=s; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>catch (string s){ c1=s[1]; }}<o:p></o:p></span></p>
+
+<p class=a><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,1342 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=Edit-Time-Data href="087.files/editdata.mso">
+<title>8.7. Эффективность хранения и поиска данных</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>www.PHILka.RU</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>vtpc112</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>1</o:TotalTime>
+  <o:Created>2008-08-16T11:42:00Z</o:Created>
+  <o:LastSaved>2008-08-16T11:42:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>2486</o:Words>
+  <o:Characters>14173</o:Characters>
+  <o:Company>NSTU_VT</o:Company>
+  <o:Bytes>11776</o:Bytes>
+  <o:Lines>118</o:Lines>
+  <o:Paragraphs>33</o:Paragraphs>
+  <o:CharactersWithSpaces>16626</o:CharactersWithSpaces>
+  <o:Version>11.6360</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DoNotHyphenateCaps/>
+  <w:DrawingGridHorizontalSpacing>0,55 пт</w:DrawingGridHorizontalSpacing>
+  <w:DrawingGridVerticalSpacing>0,55 пт</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:UseMarginsForDrawingGridOrigin/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DrawingGridVerticalOrigin>99,25 пт</w:DrawingGridVerticalOrigin>
+  <w:Compatibility>
+   <w:WW6BorderRules/>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+   <w:UseWord97LineBreakingRules/>
+   <w:SelectEntireFieldWithStartOrEnd/>
+   <w:UseWord2002TableStyleRules/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:"Times New Roman CYR";
+	panose-1:2 2 6 3 5 4 5 2 3 4;
+	mso-font-charset:204;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+@font-face
+	{font-family:"Arial CYR";
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+h1
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:14.0pt;
+	mso-bidi-font-weight:normal;}
+h2
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-font-weight:normal;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+h3
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	font-weight:normal;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";}
+p.a, li.a, div.a
+	{mso-style-name:текст;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a0, li.a0, div.a0
+	{mso-style-name:программа;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a1, li.a1, div.a1
+	{mso-style-name:список;
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:18.45pt;
+	margin-bottom:0cm;
+	margin-left:64.35pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-18.0pt;
+	mso-pagination:widow-orphan;
+	mso-list:l0 level1 lfo1;
+	tab-stops:42.55pt list 64.35pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a2, li.a2, div.a2
+	{mso-style-name:определение;
+	mso-style-parent:текст;
+	margin-top:12.0pt;
+	margin-right:32.9pt;
+	margin-bottom:12.0pt;
+	margin-left:35.45pt;
+	text-align:justify;
+	text-indent:.55pt;
+	mso-pagination:widow-orphan;
+	border:none;
+	mso-border-alt:solid windowtext 1.5pt;
+	padding:0cm;
+	mso-padding-alt:1.0pt 1.0pt 1.0pt 1.0pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a3, li.a3, div.a3
+	{mso-style-name:эпиграф;
+	margin-top:0cm;
+	margin-right:32.9pt;
+	margin-bottom:0cm;
+	margin-left:5.0cm;
+	margin-bottom:.0001pt;
+	text-align:right;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.a4, li.a4, div.a4
+	{mso-style-name:"от края";
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a5, li.a5, div.a5
+	{mso-style-name:Формула;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.a6, li.a6, div.a6
+	{mso-style-name:"без формата";
+	mso-style-parent:программа;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a7, li.a7, div.a7
+	{mso-style-name:стихи;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.1, li.1, div.1
+	{mso-style-name:эпиграф1;
+	mso-style-parent:эпиграф;
+	margin-top:0cm;
+	margin-right:9.35pt;
+	margin-bottom:0cm;
+	margin-left:9.0cm;
+	margin-bottom:.0001pt;
+	text-align:right;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+ /* Page Definitions */
+ @page
+	{mso-footnote-separator:url("087.files/header.htm") fs;
+	mso-footnote-continuation-separator:url("087.files/header.htm") fcs;
+	mso-endnote-separator:url("087.files/header.htm") es;
+	mso-endnote-continuation-separator:url("087.files/header.htm") ecs;}
+@page Section1
+	{size:21.0cm 842.0pt;
+	margin:33.45pt 42.55pt 72.0pt 89.85pt;
+	mso-header-margin:14.2pt;
+	mso-footer-margin:31.75pt;
+	mso-header:url("087.files/header.htm") h1;
+	mso-even-footer:url("087.files/header.htm") ef1;
+	mso-footer:url("087.files/header.htm") f1;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:1628194852;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-964799380 -1450833310 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-style-link:список;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:64.35pt;
+	mso-level-number-position:left;
+	margin-left:64.35pt;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l1
+	{mso-list-id:1802383265;
+	mso-list-type:simple;
+	mso-list-template-ids:-338676090;}
+@list l1:level1
+	{mso-level-start-at:0;
+	mso-level-number-format:bullet;
+	mso-level-text:-;
+	mso-level-tab-stop:53.45pt;
+	mso-level-number-position:left;
+	margin-left:53.45pt;
+	text-indent:-18.0pt;
+	font-family:"Times New Roman";}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Обычная таблица";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+table.MsoTableGrid
+	{mso-style-name:"Сетка таблицы";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+  <o:regrouptable v:ext="edit">
+   <o:entry new="1" old="0"/>
+   <o:entry new="2" old="1"/>
+   <o:entry new="3" old="0"/>
+  </o:regrouptable>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=RU style='tab-interval:36.0pt' background="back.gif">
+
+<div class=Section1>
+
+<h2>8.7. Эффективность хранения и поиска данных</h2>
+
+<p class=a>До сих пор мы рассматривали отдельно структуры данных, отдельно –
+алгоритмы. В <b style='mso-bidi-font-weight:normal'><a name="m1">7.7</b> прозвучал тезис о
+том, что эффективность алгоритмов может быть существенно увеличена за счет
+дополнительной памяти. А теперь посмотрим на это дело с другой стороны. Можно
+ли за счет оригинальной организации данных более эффективно решать традиционные
+задачи?</p>
+
+<p class=a>Вернемся к тому, с чего начали: к сортировке и поиску (<b
+style='mso-bidi-font-weight:normal'>4.6</b>). Все известные нам структуры
+данных обеспечивают<span style='mso-spacerun:yes'>  </span>линейную трудоемкость
+на неупорядоченных данных и логарифмическую – на упорядоченных. При этом сами
+хранимые значения никак не влияют на «внешний вид» структуры данных – массив
+остается массивом, а список – списком. Попробуем сделать наоборот, чтобы
+структура данных «участвовала» в размещении хранимых в ней значений, чтобы
+затем их проще было бы найти.</p>
+
+<h3>Распределение по разрядам ключа</h3>
+
+<p class=a>В лексикографической сортировке и распределяющем подсчете (<b
+style='mso-bidi-font-weight:normal'>7.7</b>) мы уже видели, как работает идея
+распределения: очередное значение перемещается в одном из выбранных направлений
+в зависимости от всего значения или отдельной его части (символа, цифры,
+разряда). Но это использовалось в процессе сортировки, после чего данные опять
+сливались в «единое целое».</p>
+<p class=a>&nbsp;</p>
+
+<p class=a4 align=center style='text-align:center'>
+<img border="0" src="Images/087-01.gif" width="534" height="197"><br
+style='mso-ignore:vglayout' clear=ALL>
+<b style='mso-bidi-font-weight:normal'><a name="m2">рис. 87-1. Дерево с распределением по символам
+строки-ключа.</b><p></p>
+
+<p class=a>Попробуем совместить процедуры размещения и поиска, используя
+древовидную структуру, в которой выбор очередного потомка обусловлен значением
+очередного разряда сохраняемого значения (ключа). Например, если размещать в
+дереве слова, то в качестве разряда можно использовать очередной символ
+(вернее, его код), что для типа <b style='mso-bidi-font-weight:normal'><a name="m3"><span
+lang=EN-US style='mso-ansi-language:EN-US'>char</span><span lang=EN-US> </span></b>даст
+нам 256 возможных значений и 256 потомков. (<i style='mso-bidi-font-style:normal'>Замечание:</i>
+для составления словаря достаточно использовать только символы букв, но это
+усложнить иллюстрацию).</p>
+
+<p class=a>Каждая вершина такого дерева хранит слово, а также содержит 256
+указателей на потомков в соответствии с возможным значением очередного символа.
+Алгоритм размещения очередного слова линейно-рекурсивен: очередной символ слова
+является селектором для выбора потомка (при отсутствии потомков они создаются в
+процессе ветвления по дереву). Когда символы слова заканчиваются, процесс
+прекращается и слово размещается в достигнутой им вершине.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//-------------------------------------------------87-01.cpp</p>
+
+<p class=a0>// Дерево с распределением по разрядам ключа</p>
+
+<p class=a0>struct node{</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>char *data;<span
+style='mso-tab-count:1'>        </span>// Текущее слово</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>int cnt;<span
+style='mso-tab-count:2'>              </span>// Счетчик повторений</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>node *pr[256];<span
+style='mso-tab-count:1'>    </span>// Вершины - потомки по разрядам ключа</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>create</span>(){<span
+style='mso-tab-count:2'>                  </span><span style='mso-tab-count:
+2'>                        </span>// Создание вершины</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>for</span> (<span lang=EN-US style='mso-ansi-language:
+EN-US'>int</span><span lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:
+EN-US'>i</span>=0;<span lang=EN-US style='mso-ansi-language:EN-US'>i</span>&lt;256;<span
+lang=EN-US style='mso-ansi-language:EN-US'>i</span>++) <span lang=EN-US
+style='mso-ansi-language:EN-US'>pr</span>[<span lang=EN-US style='mso-ansi-language:
+EN-US'>i</span>]=<span lang=EN-US style='mso-ansi-language:EN-US'>NULL</span>;</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>cnt</span>=0; <span lang=EN-US
+style='mso-ansi-language:EN-US'>data</span>=<span lang=EN-US style='mso-ansi-language:
+EN-US'>NULL</span>;</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>}<span
+style='mso-tab-count:2'>                       </span><span style='mso-tab-count:
+1'>            </span><span style='mso-tab-count:1'>            </span>// Рекурсивное
+включение нового слова</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void insert(unsigned
+char *wd, int lv){<span style='mso-tab-count:1'>        </span>// lv – </span>номер<span
+style='mso-ansi-language:EN-US'> </span>символа<span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if (wd[lv]==0 || wd[lv]==' ' ||
+wd[lv]=='\t'){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>cnt</span>++;<span
+style='mso-tab-count:3'>                           </span>// Конец слова – если
+первое, поместить</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>if (cnt==1) data=strdup((char*)wd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>else</span>{<span style='mso-tab-count:
+1'>     </span><span lang=EN-US style='mso-ansi-language:EN-US'>unsigned</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>k</span>=<span
+lang=EN-US style='mso-ansi-language:EN-US'>wd</span>[<span lang=EN-US
+style='mso-ansi-language:EN-US'>lv</span>];<span style='mso-tab-count:1'>         </span>//
+Очередной символ – селектор потомка</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>if</span> (<span lang=EN-US
+style='mso-ansi-language:EN-US'>pr</span>[<span lang=EN-US style='mso-ansi-language:
+EN-US'>k</span>]==<span lang=EN-US style='mso-ansi-language:EN-US'>NULL</span>)
+{ <span style='mso-tab-count:1'>          </span>// Потомка нет - создать</p>
+
+<p class=a0><span style='mso-tab-count:3'>                                    </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>pr[k]=new node();<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:3'>                                    </span>pr[k]-&gt;create();
+}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span><b style='mso-bidi-font-weight:
+normal'><a name="m4">pr</b></span><b style='mso-bidi-font-weight:normal'><a name="m5">[<span lang=EN-US style='mso-ansi-language:
+EN-US'>k</span>]-&gt;<span
+lang=EN-US style='mso-ansi-language:EN-US'>insert</span>(<span lang=EN-US style='mso-ansi-language:
+EN-US'>wd</span>,<span lang=EN-US
+style='mso-ansi-language:EN-US'>lv</span>+1);</b><a name="m5"><span style='mso-tab-count:
+1'>  </span>// Рекурсивный вызов для потомка и </p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span>}}<span
+style='mso-tab-count:3'>                                  </span>// следующего
+символа</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a>Вершины дерева реализованы структурированным типом со встроенными
+функциями (аналогичные приемы см. в <a name="m18"> <b style='mso-bidi-font-weight:normal'>10.5</b>).
+Рекурсивная функция, примененная к структурированной переменной, берет
+указатель на вершину потомок и вызывает в ней эту же встроенную функцию.
+Рекурсивный обход дерева и подсчет количества вершин, содержащих слова, в
+комментариях не нуждаются. Функция поиска группы слов, имеющих общее начало
+(образец), состоит из уже известных фрагментов. При окончании символов образца
+она выполняет обход поддерева, которого достигла, а иначе – выбирает потомка в
+соответствии с очередным символом – селектором.</a></p>
+
+<p class=a0><o:p><a name="m18">&nbsp;</a></o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><a name="m18">//-------------------------------------------------87-01.cpp</a><o:p></o:p></span></p>
+
+<p class=a0><a name="m18"><span lang=EN-US style='mso-ansi-language:EN-US'>void</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>scan</span>(<span
+lang=EN-US style='mso-ansi-language:EN-US'>int</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>lv</span>){<span style='mso-tab-count:
+3'>                         </span>// Обход поддерева</a></p>
+
+<p class=a0><a name="m18"><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>if</span> (<span lang=EN-US style='mso-ansi-language:
+EN-US'>cnt</span>!=0) { <span lang=EN-US style='mso-ansi-language:EN-US'>char</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>c</span>2[80];<span
+style='mso-tab-count:2'>              </span>// Есть слово – вывести его</a></p>
+
+<p class=a0><a name="m18"><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>CharToOem(data,c2);</span></a><o:p></o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><a name="m18"><span
+style='mso-tab-count:2'>                        </span>printf(&quot;n=%d:%s\n&quot;,cnt,c2);
+}</a><o:p></o:p></span></p>
+
+<p class=a0><a name="m18"><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>for</span> (<span lang=EN-US
+style='mso-ansi-language:EN-US'>int</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>i</span>=0;<span lang=EN-US
+style='mso-ansi-language:EN-US'>i</span>&lt;256;<span lang=EN-US
+style='mso-ansi-language:EN-US'>i</span>++) <span style='mso-tab-count:2'>                 </span>//
+Обход непустых потомков</a></p>
+
+<p class=a0><a name="m18"><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>if (pr[i]!=NULL)
+pr[i]-&gt;scan(lv+1); }</span></a><o:p></o:p></p>
+
+<p class=a0><a name="m18"><span lang=EN-US style='mso-ansi-language:EN-US'>int</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>count</span>(){<span
+style='mso-tab-count:4'>                                             </span>// Подсчет
+количества слов в поддереве</a></p>
+
+<p class=a0><a name="m18"><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>int</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>i</span>,<span lang=EN-US
+style='mso-ansi-language:EN-US'>n</span>=(<span lang=EN-US style='mso-ansi-language:
+EN-US'>data</span>!=<span lang=EN-US style='mso-ansi-language:EN-US'>NULL</span>);<span
+style='mso-tab-count:2'>                  </span>// Есть слово в этом узле – <span
+lang=EN-US style='mso-ansi-language:EN-US'>n</span>=1</a></p>
+
+<p class=a0><a name="m18"><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>for</span> (<span lang=EN-US style='mso-ansi-language:
+EN-US'>i</span>=0; <span lang=EN-US style='mso-ansi-language:EN-US'>i</span>&lt;256;<span
+lang=EN-US style='mso-ansi-language:EN-US'>i</span>++)<span style='mso-tab-count:
+2'>                     </span>// Суммирование счетчиков от потомков</a></p>
+
+<p class=a0><a name="m18"><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>if (pr[i]!=NULL)
+n+=pr[i]-&gt;count();</span></a><o:p></o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><a name="m18"><span
+style='mso-tab-count:1'>            </span>return n;}</a><o:p></o:p></span></p>
+
+<p class=a0><a name="m18"><span lang=EN-US style='mso-ansi-language:EN-US'>void find(char wd[],
+int lv){<span style='mso-tab-count:2'>                        </span>// </span>Поиск<span
+style='mso-ansi-language:EN-US'> </span>группы<span style='mso-ansi-language:
+EN-US'> </span>слов<span style='mso-ansi-language:EN-US'> </span>по<span
+style='mso-ansi-language:EN-US'> </span>общему началу</a></p>
+
+<p class=a0><a name="m18"><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>if</span> (<span lang=EN-US style='mso-ansi-language:
+EN-US'>wd</span>[<span lang=EN-US style='mso-ansi-language:EN-US'>lv</span>]==0)
+{<span style='mso-tab-count:3'>                            </span>// Общее
+начало закончилось</a></p>
+
+<p class=a0><a name="m18"><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>printf</span>(&quot;[%<span
+lang=EN-US style='mso-ansi-language:EN-US'>d</span>]\<span lang=EN-US
+style='mso-ansi-language:EN-US'>n</span>&quot;,<span lang=EN-US
+style='mso-ansi-language:EN-US'>count</span>());<span style='mso-tab-count:
+1'>   </span>// Обход поддерева, в котором оказались</a></p>
+
+<p class=a0><a name="m18"><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>scan(lv); }</span></a><o:p></o:p></p>
+
+<p class=a0><a name="m18"><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>else</span><span lang=EN-US> </span>{<span
+style='mso-tab-count:1'>    </span><span lang=EN-US style='mso-ansi-language:
+EN-US'>unsigned</span><span lang=EN-US> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>char</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>c</span>1=<span lang=EN-US
+style='mso-ansi-language:EN-US'>wd</span>[<span lang=EN-US style='mso-ansi-language:
+EN-US'>lv</span>];// Иначе – рекурсивный переход к потомку</a></p>
+
+<p class=a0><a name="m18"><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>if (pr[c1]!=NULL)
+pr[c1]-&gt;find(wd,lv+1);</span></a><o:p></o:p></p>
+
+<p class=a0><a name="m18"><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>else</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>puts</span>(&quot;<span
+lang=EN-US style='mso-ansi-language:EN-US'>No</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>words</span>&quot;);<span
+style='mso-tab-count:1'>    </span>// по очередному символу - селектору</a></p>
+
+<p class=a0><a name="m18"><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>}</span></a><o:p></o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><a name="m18"><span
+style='mso-tab-count:1'>            </span>}}</a></span></p>
+
+<p class=a4><a name="m18"><i style='mso-bidi-font-style:normal'>Замечание: </i>поскольку все
+типы данных можно так или иначе привести в двоичное представление, то можно
+предложить для размещения любых данных дерево с двумя потомками, в котором
+каждая вершина «отвечает» за очередной двоичный разряд ключа, а левый и правый
+потомки используются для размещения значений, содержащих в очередном разряде 0
+или 1 соответственно.</a></p>
+
+<h3><a name="m18">Хеширование</a></h3>
+
+<p class=a><a name="m18">Если части (разряды) размещаемого значения (ключа) можно
+использовать для определения места его включения, то почему нельзя для этих
+целей использовать все значение? Тогда древовидная структура, а вместе с ней и
+цикл (линейная рекурсия) исчезнут, а на их месте должен возникнуть процесс
+преобразования (отображения) значения в адрес его размещения в линейной
+структуре данных (например, индекс в массиве). Если для такого преобразования использовать
+вычисляемую функцию, то трудоемкость операции поиска теоретически будет равна 1:
+каждое значение сразу же попадает в ту ячейку, где и должно храниться.</a></p>
+<p class=a>&nbsp;</p>
+
+<p class=a4 align=center style='text-align:center'>
+<a name="m18">
+<img border="0" src="Images/087-02.gif" width="503" height="202"></a><br
+style='mso-ignore:vglayout' clear=ALL>
+<a name="m7">
+<b style='mso-bidi-font-weight:normal'>рис. 87-2. Хеширование – размещение вычислением
+адреса.</b><p></p>
+
+<p class=a>Возникает вопрос: а если все так просто, то почему хеширование не
+стало «единственно правильным методом» организации данных? Не вдаваясь в
+подробности, перечислим основные особенности и «подводные камни» этого метода:</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>для преобразования значения в адрес используется
+функция (в обычном, математическом смысле этого слова, преобразующая
+размещаемое значение в адрес – индекс в таблице). Она должна обеспечивать
+псевдо-случайное, хаотическое разбрасывание значений по ячейкам. Для этого
+используются всяческие способы «перемешивания» разрядов размещаемых данных (отсюда
+<b style='mso-bidi-font-weight:normal'><a name="m8"><span lang=EN-US style='mso-ansi-language:
+EN-US'>hash</span></b><span lang=EN-US> </span>– кромсать, перемешивать);</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>при размещении данных возможны столкновения
+(коллизии), когда два разных значения получают от функции один и тот же адрес
+размещения;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>коллизии разрешаются либо за счет размещения «лишних»
+значений в соседних свободных ячейках, либо путем создания из них линейных
+цепочек, например, списков;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>частота коллизий зависит от степени заполнения
+таблицы, чтобы метод работал эффективно, она должна содержать достаточно свободного
+места;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>существует вероятность, что все значения попадут
+в одну и ту же ячейку и тогда структура выродится в неупорядоченную
+последовательность с линейным поиском.</p>
+
+<p class=a>Таким образом, принципиальным «пороком» метода является отсутствие
+гарантий: в целом он имеет трудоемкость, близкую к 1 (точнее, она равна средней
+длине получающихся списков), но может на определенном наборе значений стать линейной.</p>
+
+<p class=a style='margin-top:12.0pt'>Для создания простейшей хеш-таблицы воспользуемся
+динамическим массивом указателей на заголовки списков. В качестве хранимых
+значений будем использовать целые числа с количеством разрядов (цифр) <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>KSIZE</span><span lang=EN-US> </span></b>и диапазоном <b
+style='mso-bidi-font-weight:normal'>10<sup><span
+lang=EN-US style='mso-ansi-language:EN-US'>KSIZE</span></sup>. </b>Поскольку
+индексом в таблице является значение хеш-функции, то размерность таблицы также
+определим как кратную степени 10, <b style='mso-bidi-font-weight:normal'><a name="m9"><span
+lang=EN-US style='mso-ansi-language:EN-US'>sz</span>=10</b><b style='mso-bidi-font-weight:
+normal'><a name="m10"><sup><span lang=EN-US style='mso-ansi-language:EN-US'>POW</span></sup><span
+lang=EN-US> </span>. </b>Для «перемешивания» размещаемых значений найдем первое
+простое число, превышающее <b style='mso-bidi-font-weight:normal'><a name="m11"><span
+lang=EN-US style='mso-ansi-language:EN-US'>sz</span>, </b><span
+style='mso-spacerun:yes'> </span>остаток от деления на него будем использовать
+для адресации в таблице.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<span style='font-size:10.0pt;font-family:Arial;mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:RU;mso-fareast-language:
+RU;mso-bidi-language:AR-SA'><br clear=all style='page-break-before:always'>
+</span>
+
+<p class=a0>//--------------------------------------------------------------87-02.<span
+lang=EN-US style='mso-ansi-language:EN-US'>cpp</span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>struct</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>cell</span>{<span
+style='mso-tab-count:3'>                                 </span>// Ячейка хеш-таблицы
+- элемент списка</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>int ckey;<span
+style='mso-tab-count:2'>                        </span>// Значение ключа</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>cell *next; };<span
+style='mso-tab-count:2'>                   </span>// Ссылка в списке</p>
+
+<p class=a0>struct HASH{<span style='mso-tab-count:3'>                             </span>//
+Структура со встроенными функциями</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>cell **hash;<span
+style='mso-tab-count:2'>                    </span>// Хеш-таблица - массив
+указателей на списки</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>int POW,sz;<span
+style='mso-tab-count:2'>                  </span>// Размерность таблицы
+sz=10^POW</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>int KSIZE,w;<span
+style='mso-tab-count:2'>                  </span>// Размерность ключа (кол-во
+цифр) w=10^KSIZE</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>int s1;<span
+style='mso-tab-count:3'>                           </span>// Простое число,
+следующее за sz</p>
+
+<p class=a0>void reset(){<span style='mso-tab-count:3'>                               </span>//
+Разрушение хеш-таблицы</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>cell *p,*q;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>for</span> (<span lang=EN-US
+style='mso-ansi-language:EN-US'>int</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>i</span>=0;<span lang=EN-US
+style='mso-ansi-language:EN-US'>i</span>&lt;<span lang=EN-US style='mso-ansi-language:
+EN-US'>sz</span>;<span lang=EN-US style='mso-ansi-language:EN-US'>i</span>++)<span
+style='mso-tab-count:1'>        </span>// Разрушение списков</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>for (p=hash[i];p!=NULL;){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:3'>                                    </span>q=p;
+p=p-&gt;next; delete q; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>delete []hash; }<span
+style='mso-tab-count:2'>              </span>// </span>Разрушение<span
+style='mso-ansi-language:EN-US'> </span>ДМУ<span lang=EN-US style='mso-ansi-language:
+EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void init(int p0,
+int ksz0){<span style='mso-tab-count:1'> </span><span style='mso-tab-count:
+1'>            </span>// </span>Создание<span style='mso-ansi-language:EN-US'> </span>хеш<span
+lang=EN-US style='mso-ansi-language:EN-US'>-</span>таблицы<span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>srand(time(NULL));<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>POW=p0; sz=pow(10,POW);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>KSIZE=ksz0; w=pow(10,KSIZE);<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>for(s1=sz+1;1;s1++){<span
+style='mso-tab-count:1'>      </span>// Простое число, следующее за sz</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>for (int i=2;i&lt;s1 &amp;&amp;
+s1%i!=0;i++);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>if (i==s1) break; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>hash</span>=<span lang=EN-US
+style='mso-ansi-language:EN-US'>new</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>cell</span>*[<span lang=EN-US
+style='mso-ansi-language:EN-US'>sz</span>];<span style='mso-tab-count:1'>        </span>//
+Создание ДМУ на списки</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>for (int i=0;i&lt;sz;i++) hash[i]=NULL;<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>}</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>hash</span>_<span
+lang=EN-US style='mso-ansi-language:EN-US'>fun</span>(<span lang=EN-US
+style='mso-ansi-language:EN-US'>int</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>key</span>)<span style='mso-tab-count:
+2'>                   </span>// Хэш-функция – остаток от деления на <span
+lang=EN-US style='mso-ansi-language:EN-US'>s</span>1</p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>{ return (key%s1) %sz; } <span style='mso-tab-count:1'>            </span><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void insert(int
+val){<span style='mso-tab-count:2'>                      </span>// </span>Вставка<span
+style='mso-ansi-language:EN-US'> </span>в<span style='mso-ansi-language:EN-US'>
+</span>хеш<span lang=EN-US style='mso-ansi-language:EN-US'>-</span>таблицу<span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int v=hash_fun(val);<span
+style='mso-tab-count:1'>         </span>// </span>Вызов<span style='mso-ansi-language:
+EN-US'> </span>хеш<span lang=EN-US style='mso-ansi-language:EN-US'>-</span>функции<span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>cell *q;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>for (q=hash[v];q!=NULL;q=q-&gt;next)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span><span style='mso-tab-count:2'>                     </span>if</span>
+(<span lang=EN-US style='mso-ansi-language:EN-US'>q</span>-&gt;<span
+lang=EN-US style='mso-ansi-language:EN-US'>ckey</span>==<span lang=EN-US
+style='mso-ansi-language:EN-US'>val</span>) <span lang=EN-US style='mso-ansi-language:
+EN-US'>break</span>;<span style='mso-tab-count:1'>  </span>// Поиск в списке
+этого значения</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>if (q==NULL){<span
+style='mso-tab-count:3'>                             </span>// Значения в
+таблице нет</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span>q=new
+cell;<span style='mso-tab-count:2'>                    </span>// Вставка в
+начало списка</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>q-&gt;ckey=val;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>q-&gt;next=hash[v];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>hash[v]=q;}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>load</span>_<span
+lang=EN-US style='mso-ansi-language:EN-US'>rand</span>(<span lang=EN-US
+style='mso-ansi-language:EN-US'>double</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>proc</span>){ <span
+style='mso-tab-count:2'>                   </span>// Добавление случайных
+значений</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>for</span> (<span lang=EN-US style='mso-ansi-language:
+EN-US'>int</span><span lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:
+EN-US'>i</span>=0;<span lang=EN-US style='mso-ansi-language:EN-US'>i</span>&lt;<span
+lang=EN-US style='mso-ansi-language:EN-US'>sz</span>*<span lang=EN-US
+style='mso-ansi-language:EN-US'>proc</span>;<span lang=EN-US style='mso-ansi-language:
+EN-US'>i</span>++)<span style='mso-tab-count:1'>            </span>// по
+заданному проценту заполнения</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>insert</span>(<span lang=EN-US
+style='mso-ansi-language:EN-US'>rand</span>()%<span lang=EN-US
+style='mso-ansi-language:EN-US'>w</span>);<span style='mso-tab-count:1'>            </span>//
+таблицы</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>}};</p>
+
+<p class=a>Хеш-таблица реализована в структурированном типе с набором встроенных
+функций для выполнения операций над ней. Усредненную эффективность поиска в
+такой таблице легко вычислить: она будет равна средней длине всех получившихся
+списков.</p>
+
+<p class=a4><i style='mso-bidi-font-style:normal'>Замечание: </i>хеширование
+являет собой классический пример решения задачи методом «а нужно ли ее вообще
+решать?». В упорядоченных данных мы сначала «боремся» за размещение данных,
+чтобы они сохраняли порядок, а потом ищем их на основании имеющегося порядка. Здесь
+же нет ни того, ни другого.</p>
+
+<h3>Иерархические структуры данных</h3>
+
+<p class=a3><span style='mso-spacerun:yes'> </span>«Лучшее - враг хорошего<span
+style='font-family:Arial;mso-bidi-font-family:"Times New Roman"'>»</span>.<span
+style='font-family:Arial;mso-bidi-font-family:"Times New Roman"'> </span><b
+style='mso-bidi-font-weight:normal'>Пословица.</b></p>
+
+<p class=a>При возрастании объема хранимых данных затраты на выполнение операций
+над <span style='mso-spacerun:yes'> </span>отдельными элементами <span
+style='mso-spacerun:yes'> </span>сильно возрастают. Уменьшить их можно, введя в
+структуру данных иерархию. Для этого можно вложить в элемент одной структуры
+данных заголовок другой структуры. Соответственно, вложенными будут определения
+используемых типов данных, а алгоритмы работы будут<span
+style='mso-spacerun:yes'>  </span>содержать вложенные один в другой циклы для
+работы с каждым уровнем. Приведем некоторые примеры<span style='font-family:
+"Times New Roman"'>:</span> <span style='font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>список, элемент которого содержит массив
+указателей.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>struct elem{<span style='mso-tab-count:1'>                   </span>// Элемент односвязного списка</p>
+
+<p class=a0>elem *next;</p>
+
+<p class=a0>void *pp[20]; };<span style='mso-tab-count:1'>               </span>// Массив указателей на элементы
+данных</p>
+
+<p class=a0>// Подсчет количества элементов в структуре данных</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int</span><span
+style='mso-tab-count:1'>         </span><span lang=EN-US style='mso-ansi-language:
+EN-US'>count</span>(<span lang=EN-US style='mso-ansi-language:EN-US'>elem</span>
+*<span lang=EN-US style='mso-ansi-language:EN-US'>p</span>) {</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>elem</span> *<span
+lang=EN-US style='mso-ansi-language:EN-US'>q</span>; <span lang=EN-US
+style='mso-ansi-language:EN-US'>int</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>cnt</span>;<span style='mso-tab-count:
+2'>             </span>// Цикл по списку</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>for</span> (<span
+lang=EN-US style='mso-ansi-language:EN-US'>cnt</span>=0, <span lang=EN-US
+style='mso-ansi-language:EN-US'>q</span>=<span lang=EN-US style='mso-ansi-language:
+EN-US'>p</span>; <span lang=EN-US style='mso-ansi-language:EN-US'>q</span>!=<span
+lang=EN-US style='mso-ansi-language:EN-US'>NULL</span>; <span lang=EN-US
+style='mso-ansi-language:EN-US'>q</span>=<span lang=EN-US style='mso-ansi-language:
+EN-US'>q</span>-&gt;<span lang=EN-US style='mso-ansi-language:EN-US'>next</span>)
+{</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>int i;<span
+style='mso-tab-count:2'>                  </span>// Цикл по массиву указателей</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>for (i=0; q-&gt;pp[i]!=NULL; i++)<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:2; mso-ansi-language:EN-US' lang="EN-US">                        </span>cnt++;</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>}<span
+style='mso-ansi-language:EN-US'> </span>return cnt; }</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>массив, каждый элемент которого является
+заголовком списка</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>struct list {<o:p></o:p></span></p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>list *next;<o:p></o:p></span></p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>void *data; };<o:p></o:p></span></p>
+
+<p class=a0>int<span style='mso-tab-count:1'>         </span>count(list *p[]) {</p>
+
+<p class=a0>int k,cnt;<span style='mso-tab-count:2'>                       </span>//
+Цикл по массиву заголовков списков</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>for (cnt=0, k=0;
+p[k]!=NULL; k++) {<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>list *q;<span style='mso-tab-count:
+2'>               </span>// </span>Цикл<span style='mso-ansi-language:EN-US'> </span>по<span
+style='mso-ansi-language:EN-US'> </span>списку<span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>for (q=p[k]; q!=NULL; q=q-&gt;next)<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:2; mso-ansi-language:EN-US' lang="EN-US">                        </span>cnt++;</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>} return cnt; }</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>двухуровневый массив указателей</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>void **p[20];<span style='mso-tab-count:2'>                   </span>//
+массив указателей на массивы указателей</p>
+
+<p class=a0>int<span style='mso-tab-count:1'>         </span>count(void **p[])
+{</p>
+
+<p class=a0>int k,cnt;<span style='mso-tab-count:1'>                       </span>// Цикл по массиву верхнего уровня</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>for (cnt=0, k=0;
+p[k]!=NULL; k++) {<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>int i;<span style='mso-tab-count:
+2'>                  </span>// Цикл по массиву нижнего уровня</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>for (i=0; p[k][i]!=NULL; i++)<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:3; mso-ansi-language:EN-US' lang="EN-US">                                    </span>cnt++;</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>} return cnt; }</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a>Любая иерархия имеет целью повышение эффективности и управляемости
+системы. Посмотрим, как это воплощается в иерархической структуре данных.</p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m12">Логическая нумерация
+элементов. </b><span style='mso-spacerun:yes'> </span>Логическая нумерация в
+иерархической структуре данных, как и везде, определяется последовательностью
+обхода хранимых в ней элементов. Обратите внимание, что внутренние индексы и
+номера (элементов массивов, списков, вершин деревьев) не имеют к этому никакого
+отношения. Это тем более важно, что резервирование памяти для массивов
+производится однократно с учетом последующего их заполнения (то есть любой
+массив заполнен всегда «частично»).</p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m13">Локальность изменений.</b>
+Любая иерархия хороша тем, что изменение отдельных ее частей в большинстве
+случаев происходят локально, то есть не затрагивают системы в целом.
+Применительно к иерархической структуре данных это означает, что возможные
+перемещения объектов или перераспределение памяти должны осуществляться в
+компонентах нижнего уровня, не затрагивая ни соседей, ни вышележащей структуры
+данных. Например, в двухуровневом массиве указателей указатель на новый объект
+включается в массив нижнего уровня, размерность которого ограничена. При
+отсутствии переполнения перемещение указателей будет производиться только в
+границах этого массива. При переполнении же должна быть выполнена более сложная
+процедура, сохраняющая логическую организацию структуры данных и ее возможность
+к расширению. Для двухуровнего массива указателей в качестве одного из
+вариантов возможно создание динамического массива указателей нижнего уровня и
+перенесение в него половины указателей из заполненного. Естественно, что новый
+массив указателей должен быть связан со структурой данных верхнего уровня – его
+адрес помещается в массив указателей вслед за адресом переполнившегося.</p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m14">Сбалансированность структур
+данных. </b>Необходимой платой<span style='mso-spacerun:yes'>  </span>за
+перечисленные достоинства является поддержка необходимой сбалансированности –
+размерности структур данных нижнего уровня должны быть примерно одинаковы.
+Алгоритмы, выполняющие эту процедуру при каждой операции включения и
+исключения, могут быть достаточно громоздкими. Альтернатива – периодическое
+«утрясание» всей структуры данных (например, путем переписывания всех ее
+элементов в аналогичную новую структуру) при значительном нарушении
+сбалансированности.<span style='mso-spacerun:yes'>  </span></p>
+
+<p class=a4><b style='mso-bidi-font-weight:normal'><a name="m15"><span style='mso-tab-count:
+1'>            </span></b>В качестве примера рассмотрим двухуровневый массив
+указателей.<b style='mso-bidi-font-weight:normal'><a name="m16"> </b>Массив указателей
+верхнего уровня является статическим. Массивы указателей нижнего уровня
+являются динамическими уже потому, что создаются они в процессе заполнения
+структуры данных. Однако размерность их фиксирована и при переполнении память
+под них не перераспределяется.</p>
+
+<p class=a0><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;font-family:
+"Times New Roman CYR";mso-bidi-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0>//------------------------------------------------------87-03.cpp</p>
+
+<p class=a0>//----- Двухуровневый массив указателей на целые</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>#define N 4</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>int **p[20]={NULL};<span
+style='mso-tab-count:2'>                    </span>// Исходное состояние
+структура данных пуста</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>//--- Вспомогательные
+функции для нижнего уровня</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>int size(int *p[])<span
+style='mso-tab-count:3'>                         </span>// Количество элементов
+в массиве указателей </p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>{ for (int i=0; p[i]!=NULL; i++); return i; }<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-spacerun:yes; mso-ansi-language:EN-US' lang="EN-US"> </span>//--- Включение в массив указателей
+нижнего уровня по номеру </p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>int F3(int *p[], int *q, int n) {<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>int i,m=size(p);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>for (i=m; i&gt;=n; i--) p[i+1] = p[i];<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-spacerun:yes; mso-ansi-language:EN-US' lang="EN-US"> </span>p[n] = q;</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>return m+1==N; }<span
+style='mso-tab-count:2'>                      </span>// Результат - проверка на
+переполнение </p>
+
+<p class=a>
+<p><br
+style='mso-ignore:vglayout' clear=ALL>
+В структуре данных применяется сквозная нумерация элементов, то есть логический
+номер определяется в процессе обхода структуры данных. При этом индексы
+элемента в массивах верхнего и нижнего уровня значения не имеют;</p>
+<p>&nbsp;</p>
+</p>
+
+<p class=a0 align="center"><o:p>&nbsp;<img border="0" src="Images/087-03.jpg" width="440" height="366"></o:p></p>
+
+<p class=a4 align=center style='text-align:center'><b><a name="m17">рис. 87-3. Двухуровневый
+массив указателей<o:p></o:p></b></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//------------------------------------------------------87-03.cpp</p>
+
+<p class=a0>//----- Обход структуры данных со сквозной нумерацией</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>void show(int **p[]) <o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>{ int i,j,k;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>for (i=0,k=0; p[i] != NULL; i++)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span>for (j =0; p[i][j] != NULL; j++,k++)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span><span style='mso-spacerun:yes'>  
+</span>printf(&quot;A[%d(%d,%d)]=%d\n&quot;,k,i,j,*p[i][j]);<o:p></o:p></span></p>
+
+<p class=a0><span style='mso-spacerun:yes' lang="EN-US"> </span>}</p>
+
+<p class=a>В алгоритме включения по логическому номеру из логического номера
+вычитается количество указателей в текущем массиве нижнего уровня, пока не
+будет найден тот, в который попадает новый указатель.<span
+style='mso-spacerun:yes'>  </span>При включении указателя в массив нижнего
+уровня соседние массивы не меняются, то есть структура данных модифицируется
+локально. И только при его переполнении создается дополнительный массив, в
+который переписывается половина указателей из исходного. Указатель на новый
+массив также включается в массив верхнего уровня.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//------------------------------------------------------87-03.cpp</p>
+
+<p class=a0>//------ Включение по логическому номеру</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>void Insert_Num(int **p[],int *q, int n)<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-spacerun:yes; mso-ansi-language:EN-US' lang="EN-US"> </span>{ int i,j,l,sz;</p>
+
+<p class=a0><span style='mso-spacerun:yes'>      </span>if (p[0]==NULL){<span
+style='mso-spacerun:yes'>      </span>// Отдельно для пустой структуры данных</p>
+
+<p class=a0><span style='mso-spacerun:yes'>      </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>p[0]=new int*[N+1]; <o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span>p[0][0]=q; p[0][1]=NULL; return;<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-spacerun:yes; mso-ansi-language:EN-US' lang="EN-US">      </span>}<span
+style='mso-spacerun:yes'>                     </span>// Поиск места включения </p>
+
+<p class=a0><span style='mso-spacerun:yes'>      </span>for (i =0; p[i] !=
+NULL; i++,n-=sz) {</p>
+
+<p class=a0><span style='mso-spacerun:yes'>      </span>sz=size(p[i]);<span
+style='mso-spacerun:yes'>        </span>// Количество указателей в массиве</p>
+
+<p class=a0><span style='mso-spacerun:yes'>      </span>if (n&lt;=sz)
+break;<span style='mso-spacerun:yes'>     </span>// Номер попадает в текущий
+массив</p>
+
+<p class=a0><span style='mso-spacerun:yes'>      </span>} </p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>if (p[i]==NULL)<span
+style='mso-spacerun:yes'>            </span>// Не найден включить последним </p>
+
+<p class=a0><span style='mso-spacerun:yes'>      </span>{ i--; n=size(p[i]); }</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>if (F3(p[i],q,n))<span
+style='mso-tab-count:3'>                           </span>// Вызов функции
+включения для нижнего уровня</p>
+
+<p class=a0><span style='mso-spacerun:yes'>      </span>{<span
+style='mso-spacerun:yes'>                     </span>// Переполнение создание
+нового массива</p>
+
+<p class=a0><span style='mso-spacerun:yes'>      </span>for (int ii=0; p[ii] !=
+NULL; ii++);</p>
+
+<p class=a0><span style='mso-spacerun:yes'>      </span>for(int
+h=ii;h&gt;i;h--) // Раздвижка в массиве указателей</p>
+
+<p class=a0><span style='mso-spacerun:yes'>      </span>p[h+1]=p[h];<span
+style='mso-spacerun:yes'>          </span>// верхнего уровня </p>
+
+<p class=a0><span style='mso-spacerun:yes'>      </span>p[i+1]=new int*[N+1];
+// Создание массива нижнего уровня</p>
+
+<p class=a0><span style='mso-spacerun:yes'>     
+</span>for(j=0;j&lt;N/2;j++)<span style='mso-spacerun:yes'>    </span>//
+Перенос указателей</p>
+
+<p class=a0><span style='mso-spacerun:yes'>      </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>p[i+1][j]=p[i][j+N/2];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span>p[i][N/2]=NULL;<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-spacerun:yes; mso-ansi-language:EN-US' lang="EN-US">      </span>p[i+1][N/2]=NULL;</p>
+
+<p class=a0><span style='mso-spacerun:yes'>      </span>}}</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,1674 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=Edit-Time-Data href="094.files/editdata.mso">
+<title>9.4. Двоичные и текстовые файлы</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>www.PHILka.RU</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>vtpc112</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>442</o:TotalTime>
+  <o:Created>2008-08-07T12:34:00Z</o:Created>
+  <o:LastSaved>2008-08-07T12:34:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>4400</o:Words>
+  <o:Characters>25085</o:Characters>
+  <o:Company>NSTU_VT</o:Company>
+  <o:Bytes>11776</o:Bytes>
+  <o:Lines>209</o:Lines>
+  <o:Paragraphs>58</o:Paragraphs>
+  <o:CharactersWithSpaces>29427</o:CharactersWithSpaces>
+  <o:Version>11.6360</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DoNotHyphenateCaps/>
+  <w:DrawingGridHorizontalSpacing>0,55 пт</w:DrawingGridHorizontalSpacing>
+  <w:DrawingGridVerticalSpacing>0,55 пт</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:UseMarginsForDrawingGridOrigin/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DrawingGridVerticalOrigin>99,25 пт</w:DrawingGridVerticalOrigin>
+  <w:Compatibility>
+   <w:WW6BorderRules/>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+   <w:UseWord97LineBreakingRules/>
+   <w:SelectEntireFieldWithStartOrEnd/>
+   <w:UseWord2002TableStyleRules/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:"Arial CYR";
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+@font-face
+	{font-family:"Times New Roman CYR";
+	panose-1:2 2 6 3 5 4 5 2 3 4;
+	mso-font-charset:204;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+h1
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:14.0pt;
+	mso-bidi-font-weight:normal;}
+h2
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-font-weight:normal;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+h3
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	font-weight:normal;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";}
+p.a, li.a, div.a
+	{mso-style-name:текст;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a0, li.a0, div.a0
+	{mso-style-name:программа;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a1, li.a1, div.a1
+	{mso-style-name:список;
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:18.45pt;
+	margin-bottom:0cm;
+	margin-left:64.35pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-18.0pt;
+	mso-pagination:widow-orphan;
+	mso-list:l0 level1 lfo1;
+	tab-stops:42.55pt list 64.35pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a2, li.a2, div.a2
+	{mso-style-name:определение;
+	mso-style-parent:текст;
+	margin-top:12.0pt;
+	margin-right:32.9pt;
+	margin-bottom:12.0pt;
+	margin-left:35.45pt;
+	text-align:justify;
+	text-indent:.55pt;
+	mso-pagination:widow-orphan;
+	border:none;
+	mso-border-alt:solid windowtext 1.5pt;
+	padding:0cm;
+	mso-padding-alt:1.0pt 1.0pt 1.0pt 1.0pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a3, li.a3, div.a3
+	{mso-style-name:эпиграф;
+	margin-top:0cm;
+	margin-right:32.9pt;
+	margin-bottom:0cm;
+	margin-left:5.0cm;
+	margin-bottom:.0001pt;
+	text-align:right;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.a4, li.a4, div.a4
+	{mso-style-name:"от края";
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a5, li.a5, div.a5
+	{mso-style-name:Формула;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.a6, li.a6, div.a6
+	{mso-style-name:"без формата";
+	mso-style-parent:программа;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a7, li.a7, div.a7
+	{mso-style-name:стихи;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.1, li.1, div.1
+	{mso-style-name:эпиграф1;
+	mso-style-parent:эпиграф;
+	margin-top:0cm;
+	margin-right:9.35pt;
+	margin-bottom:0cm;
+	margin-left:9.0cm;
+	margin-bottom:.0001pt;
+	text-align:right;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+span.a8
+	{mso-style-name:"номер страницы";}
+ /* Page Definitions */
+ @page
+	{mso-footnote-separator:url("094.files/header.htm") fs;
+	mso-footnote-continuation-separator:url("094.files/header.htm") fcs;
+	mso-endnote-separator:url("094.files/header.htm") es;
+	mso-endnote-continuation-separator:url("094.files/header.htm") ecs;}
+@page Section1
+	{size:21.0cm 842.0pt;
+	margin:33.45pt 42.55pt 72.0pt 89.85pt;
+	mso-header-margin:14.2pt;
+	mso-footer-margin:31.75pt;
+	mso-even-header:url("094.files/header.htm") eh1;
+	mso-header:url("094.files/header.htm") h1;
+	mso-even-footer:url("094.files/header.htm") ef1;
+	mso-footer:url("094.files/header.htm") f1;
+	mso-first-header:url("094.files/header.htm") fh1;
+	mso-first-footer:url("094.files/header.htm") ff1;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:1628194852;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-964799380 -1450833310 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-style-link:список;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:64.35pt;
+	mso-level-number-position:left;
+	margin-left:64.35pt;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l1
+	{mso-list-id:1856386401;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-323716504 68747279 68747289 68747291 68747279 68747289 68747291 68747279 68747289 68747291;}
+@list l1:level1
+	{mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l2
+	{mso-list-id:1872306324;
+	mso-list-type:simple;
+	mso-list-template-ids:285097064;}
+@list l2:level1
+	{mso-level-start-at:0;
+	mso-level-number-format:bullet;
+	mso-level-text:-;
+	mso-level-tab-stop:57.2pt;
+	mso-level-number-position:left;
+	margin-left:57.2pt;
+	text-indent:-18.0pt;
+	font-family:"Times New Roman";}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Обычная таблица";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+table.MsoTableGrid
+	{mso-style-name:"Сетка таблицы";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+  <o:rules v:ext="edit">
+   <o:r id="V:Rule4" type="callout" idref="#_x0000_s1186"/>
+   <o:r id="V:Rule5" type="callout" idref="#_x0000_s1187"/>
+   <o:r id="V:Rule6" type="callout" idref="#_x0000_s1188"/>
+   <o:r id="V:Rule7" type="callout" idref="#_x0000_s1189"/>
+   <o:r id="V:Rule8" type="callout" idref="#_x0000_s1193"/>
+   <o:r id="V:Rule9" type="callout" idref="#_x0000_s1194"/>
+   <o:r id="V:Rule10" type="callout" idref="#_x0000_s1195"/>
+  </o:rules>
+  <o:regrouptable v:ext="edit">
+   <o:entry new="1" old="0"/>
+   <o:entry new="2" old="1"/>
+   <o:entry new="3" old="0"/>
+   <o:entry new="4" old="0"/>
+   <o:entry new="5" old="0"/>
+  </o:regrouptable>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=RU style='tab-interval:36.0pt' background="back.gif">
+
+<div class=Section1>
+
+<h2>9.4. Двоичные и текстовые файлы</h2>
+
+<p class=a3>«Двоичный файл это: </p>
+
+<p class=a3 style='margin-left:7.0cm'><span lang=EN-US style='mso-ansi-language:
+EN-US'>a</span>). файл, в котором используется двоичный поиск, </p>
+<p class=a3 style='margin-left:7.0cm'>б).файл, в
+котором данные представлены в двоичной системе счисления»</p>
+
+<p class=a3 style='margin-left:7.0cm'><b style='mso-bidi-font-weight:normal'><a name="m1">Несуществующий
+вопрос в системе тестирования по курсу «Информатика».<o:p></o:p></b></p>
+
+<p class=a>Знакомство с вводом-выводом обычно начинается с текстовых файлов
+(см. <b style='mso-bidi-font-weight:normal'><a name="m2">4.5</b>). У многих оно этим и
+заканчивается. Однако<span style='mso-spacerun:yes'>  </span>существует еще
+одна общая форма представления данных в файлах, на самом деле более
+многообразная – двоичный файл. Сюда относятся не только файлы с «мультимедийным»
+содержанием: документы, изображение, звук. Форматы двоичных файлов используются
+в базах данных и в самой файловой системе. Ведь файловая система – это не что
+иное, как большой двоичный файл, в котором построена сложная многоуровневая
+динамическая структура данных, включающая в себя все файлы<span
+style='mso-spacerun:yes'>  </span>каталоги.</p>
+
+<h3>Модель двоичного файла</h3>
+
+<p class=a>Двоичный файл отличается от текстового тем, что данные в нем
+представлены <b style='mso-bidi-font-weight:normal'><a name="m3">во внутренней форме (</b>см.<b
+style='mso-bidi-font-weight:normal'>1.3).</b> А поскольку при внутреннем
+представлении используется двоичная система счисления, то «в честь ее» файлы и
+называются двоичными. По существу, двоичный файл является аналогом внутренней
+(оперативной, физической) памяти – <b style='mso-bidi-font-weight:normal'><a name="m4">неограниченным
+массивом байтов </b>с возможностью непосредственного обращения (<b
+style='mso-bidi-font-weight:normal'>произвольного доступа</b>) к любой его
+части.</p>
+
+<p class=a>Такая модель файла полностью совпадает с системой представлений,
+принятой в Си для работы с памятью на низком (физическом уровне). </p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>физическая память имеет байтную структуру –
+единицей адресации является байт;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>любая переменная занимает фиксированное
+количество байтов, определяемое ее типом. Операция <b style='mso-bidi-font-weight:
+normal'><a name="m5"><span lang=EN-US style='mso-ansi-language:EN-US'>sizeof </span></b>возвращает
+эту размерность<span lang=EN-US style='mso-ansi-language:EN-US'>;</span></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>указатель<span style='mso-spacerun:yes'> 
+</span>на переменную интерпретируется как ее адрес в памяти. Преобразование
+типа указателя к <b style='mso-bidi-font-weight:normal'><a name="m6"><span lang=EN-US
+style='mso-ansi-language:EN-US'>void</span>*</b> позволяет интерпретировать его
+как «чистый» адрес, а преобразование к <b style='mso-bidi-font-weight:normal'><a name="m7"><span
+lang=EN-US style='mso-ansi-language:EN-US'>char</span>*</b> - как указатель на
+массив байтов (физическое представление памяти).</p>
+
+<p class=a><span style='mso-spacerun:yes'> </span>Исходя из этих принципов,
+функции двоичного ввода-вывода <b style='mso-bidi-font-weight:normal'><a name="m8">fread и
+fwrite</b> переносят содержимое памяти в двоичный файл «прозрачно», т.е. байт в
+байт без каких либо преобразований. Функции используются для перенесения данных
+из файла в память программы (чтение) и обратно (запись). </p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int<span
+style='mso-tab-count:1'>         </span>fread<span style='mso-spacerun:yes'> 
+</span>(void *buf, int size, int nrec, FILE *fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int<span
+style='mso-tab-count:1'>         </span>fwrite (void *buf, int size, int nrec,
+FILE *fd);<o:p></o:p></span></p>
+
+<p class=a4>Особенностью этих функций является то, что для них безразличен
+(неизвестен) характер структуры данных в той области памяти, в которую
+осуществляется ввод-вывод (указатель <b style='mso-bidi-font-weight:normal'><a name="m9">void*
+buf).</b> Функци <b style='mso-bidi-font-weight:normal'><a name="m10">fread </b>читает, а
+функция <b style='mso-bidi-font-weight:normal'><a name="m11">fwrite</b> пишет в файл, начиная
+с текущей позиции, массив из <b style='mso-bidi-font-weight:normal'><a name="m12">nrec</b>
+элементов размерностью <b style='mso-bidi-font-weight:normal'><a name="m13">size</b> байтов
+каждый, возвращая количество успешно прочитанных (записанных) элементов. </p>
+
+<p class=a>Чтобы воспользоваться этими функциями, необходимо обеспечить
+преобразования переменных к «массиву байтов», используя указатели для задания
+адресов и операцию <b style='mso-bidi-font-weight:normal'><a name="m14"><span lang=EN-US
+style='mso-ansi-language:EN-US'>sizeof</span></b> для вычисления размерности:</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>// Прочитать <span style='mso-spacerun:yes'> </span>целую переменную
+и следующий за ней</p>
+
+<p class=a0>// динамический массив из n переменных типа double </p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>n</span>; <span
+style='mso-tab-count:4'>                                        </span>// в
+целой переменной – размерность массива</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>fread</span>(&amp;<span
+lang=EN-US style='mso-ansi-language:EN-US'>n</span>, <span lang=EN-US
+style='mso-ansi-language:EN-US'>sizeof</span>(<span lang=EN-US
+style='mso-ansi-language:EN-US'>int</span>),1,<span lang=EN-US
+style='mso-ansi-language:EN-US'>fd</span>);<span style='mso-tab-count:1'>            </span>//
+указатель на переменную <span lang=EN-US style='mso-ansi-language:EN-US'>int</span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>double<span
+style='mso-tab-count:1'>   </span>*pd = new double[n]; <span
+style='mso-spacerun:yes'> </span><span style='mso-tab-count:2'>                </span><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>fread(pd,
+sizeof(double),n,fd);<span style='mso-tab-count:1'>      </span>// </span>преобразование<span
+style='mso-ansi-language:EN-US'> </span>к<span style='mso-ansi-language:EN-US'>
+<b style='mso-bidi-font-weight:normal'><a name="m15"><span lang=EN-US>void* - </span></b></span><b
+style='mso-bidi-font-weight:normal'>неявное</b><span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a>Дальнейшее изложение приходится начинать с банальности: при
+использовании исключительно функций <b style='mso-bidi-font-weight:normal'><a name="m16"><span
+lang=EN-US style='mso-ansi-language:EN-US'>fread</span>/<span lang=EN-US style='mso-ansi-language:
+EN-US'>fwrite</span><span lang=EN-US> </span></b>данные, записанные в
+определенной последовательности в файл, хранятся в нем и читаются в том же
+самом порядке. Этот неизменный порядок извлечения данных называется <b
+style='mso-bidi-font-weight:normal'>последовательным доступом,</b> а файл - <b
+style='mso-bidi-font-weight:normal'><span style='mso-spacerun:yes'> </span>последовательным
+двоичным файлом</b>. Естественно, что нас при этом не интересуют адреса
+размещения данных в файле. Однако существует и другой способ, позволяющий
+извлекать данные в любом произвольном порядке – <b style='mso-bidi-font-weight:
+normal'><a name="m17">прямой (или произвольный) доступ. </b></p>
+
+<p class=a>Произвольный доступ базируется на понятии адреса в двоичном файле. Поскольку
+на физическом уровне двоичный файл представляется как «неограниченно растущий»
+массив байтов, то под адресом понимается порядковый номер байта, начиная с 0. </p>
+
+<p class=a>В Си для представления адресов используются переменные типа <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>long</span>, </b>на которые можно распространить известное понятие указатель<b
+style='mso-bidi-font-weight:normal'> - указатель в файле. </b>Такая образная
+аналогия вполне уместна и позволяет с общих позиций рассматривать структуры
+данных, размещенные в файлах. Указатель в файле не является типизированным, его
+тип никак не связан с типом адресуемых данных и он рассматривается как «чистый»
+физический адрес в файле.</p>
+
+<p class=a>Но для начала обсудим, как произвольный доступ и система адресации
+поддерживается библиотекой ввода-вывода. С каждым открытым файлом связывается такой
+параметр как <b style='mso-bidi-font-weight:normal'><a name="m18">текущая позиция </b>(текущий
+адрес) - номер байта, начиная с которого будет выполняться очередная операция
+чтения-записи. При открытии файла текущая позиция устанавливается на начало
+файла, после чтения-записи порции данных перемещается вперед на размерность
+этих данных. Для дополнения файла новыми данными необходимо установить текущую
+позицию на конец файла и выполнить операцию записи. </p>
+
+<p class=a4><i style='mso-bidi-font-style:normal'>Замечание: </i>текущая
+позиция в файле является адресом размещения переменной в нем, но получить этот
+адрес можно <i style='mso-bidi-font-style:normal'>перед, </i>и не <i
+style='mso-bidi-font-style:normal'>после </i>ее чтения оттуда.</p>
+
+<p class=a>Текущую позицию можно читать и устанавливать с помощью функций
+позиционирования, которые превращают последовательный файл в файл произвольного
+доступа. Функция <b style='mso-bidi-font-weight:normal'><a name="m19"><span style='mso-bidi-font-size:
+12.0pt;font-family:"Times New Roman"'>long ftell(FILE *fp)</span></b>
+возвращает текущую позицию в файле. Если по каким-то причинам текущая позиция
+не определена, функция возвращает <b style='mso-bidi-font-weight:normal'><a name="m20">-1.</b>
+Это же самое значение будем использовать в дальнейшем для представления
+недействительного значения файлового указателя (файловый <b style='mso-bidi-font-weight:
+normal'><a name="m21">NULL</b>), самостоятельно определив его</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=a0>#define<span style='mso-tab-count:1'>  </span>FNULL<span
+style='mso-tab-count:1'>  </span>-1L</p>
+
+<p class=a>Функция <b style='mso-bidi-font-weight:normal'><a name="m22"><span
+style='mso-bidi-font-size:12.0pt;font-family:"Times New Roman"'>int<span
+style='mso-tab-count:1'>    </span>fseek(FILE *fp, long pos, int mode)</span></b><span
+style='font-family:"Arial CYR";mso-bidi-font-family:"Times New Roman";
+letter-spacing:1.0pt'> </span>устанавливает текущую позицию в файле на байт с
+номером <b style='mso-bidi-font-weight:normal'><a name="m23">pos.</b> Параметр <b
+style='mso-bidi-font-weight:normal'>mode </b>определяет, относительно чего
+отсчитывается текущая позиция в файле, и имеет<span style='mso-spacerun:yes'> 
+</span>символические и числовые значения (установленные в <b style='mso-bidi-font-weight:
+normal'><a name="m24">stdio.h)</b>:<span style='font-family:Arial;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=a0>#define SEEK_SET 0<span
+style='mso-tab-count:1'>    </span>// Относительно начала файла</p>
+
+<p class=a0><span style='mso-tab-count:3'>                                    </span>//
+начало файла - позиция 0</p>
+
+<p class=a0>#define<span style='mso-tab-count:1'>  </span>SEEK_CUR 1<span
+style='mso-tab-count:1'>    </span>// Относительно текущей позиции,</p>
+
+<p class=a0><span style='mso-tab-count:3'>                                    </span>//
+&gt;0 - вперед, &lt;0 - назад</p>
+
+<p class=a0>#define SEEK_END 2<span
+style='mso-tab-count:1'>    </span>// Относительно конца файла<span
+style='mso-tab-count:1'>     </span></p>
+
+<p class=a0><span style='mso-tab-count:3'>                                    </span>//
+(значение pos - отрицательное)</p>
+
+<p class=a>Функция <b style='mso-bidi-font-weight:normal'><a name="m25">fseek</b> возвращает
+значение <b style='mso-bidi-font-weight:normal'><a name="m26">0</b> при успешном
+позиционировании и <b style='mso-bidi-font-weight:normal'><a name="m27">-1 (EOF) </b>- при
+ошибке. Различные значения параметра <b style='mso-bidi-font-weight:normal'><a name="m28"><span
+lang=EN-US style='mso-ansi-language:EN-US'>mode</span><span lang=EN-US> </span></b>определяют
+различные способы адресации данных в файле:</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>значение <b style='mso-bidi-font-weight:normal'><a name="m29"><span
+lang=EN-US style='mso-ansi-language:EN-US'>SEEK</span>_</b><b style='mso-bidi-font-weight:
+normal'><a name="m30"><span lang=EN-US style='mso-ansi-language:EN-US'>SET</span><span
+lang=EN-US> </span></b>определяет <b style='mso-bidi-font-weight:normal'><a name="m31">абсолютную
+</b>адресацию данных в файле от его начала. Заметим, что функция <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>ftell</span><span lang=EN-US> </span></b>возвращает текущую позицию в
+абсолютном значении;</p>
+
+<p class=a1 style='margin-top:12.0pt'><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>значение <b style='mso-bidi-font-weight:normal'><a name="m32"><span
+lang=EN-US style='mso-ansi-language:EN-US'>SEEK</span>_</b><b style='mso-bidi-font-weight:
+normal'><a name="m33"><span lang=EN-US style='mso-ansi-language:EN-US'>END</span><span
+lang=EN-US> </span></b>за начало координат берет конец файла (<b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>EOF</span></b>). Адреса уже записанных данных имеют отрицательное
+значение. Например, если в конце файла находится целая переменная, то ее
+позиция при адресации от конца файла будет иметь значение <b style='mso-bidi-font-weight:
+normal'><a name="m34">0–</b><b style='mso-bidi-font-weight:normal'><a name="m35"><span lang=EN-US
+style='mso-ansi-language:EN-US'>sizeof</span>(</b><b style='mso-bidi-font-weight:
+normal'><a name="m36"><span lang=EN-US style='mso-ansi-language:EN-US'>int</span>). </b>В
+этом же режиме можно определить текущую длину файла можно простым
+позиционированием: </p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>long<span style='mso-tab-count:1'>      </span>fsize;</p>
+
+<p class=a0>fseek(fl,0L,SEEK_END);<span style='mso-tab-count:1'> </span>//
+Установить позицию на конец файла</p>
+
+<p class=a0>fsize = ftell(fd);<span style='mso-tab-count:1'>   </span><span
+style='mso-tab-count:2'>                        </span>// Прочитать значение текущей
+позиции</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>значение <b style='mso-bidi-font-weight:normal'><a name="m37"><span
+lang=EN-US style='mso-ansi-language:EN-US'>SEEK</span>_</b><b style='mso-bidi-font-weight:
+normal'><a name="m38"><span lang=EN-US style='mso-ansi-language:EN-US'>CUR</span><span
+lang=EN-US> </span></b>дает способ <b style='mso-bidi-font-weight:normal'><a name="m39">относительной
+</b>адресации от текущего положения указателя в файле. Таким образом, задается <i
+style='mso-bidi-font-style:normal'>расстояние </i>в байтах от текущей
+переменной до адресуемой. Если это<i style='mso-bidi-font-style:normal'>
+расстояние</i> само находится в файле, то оно обычно носит название <b
+style='mso-bidi-font-weight:normal'>смещения.</b></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>fseek</span>(<span
+lang=EN-US style='mso-ansi-language:EN-US'>fd</span>,100,<span lang=EN-US
+style='mso-ansi-language:EN-US'>SEEK</span>_<span lang=EN-US style='mso-ansi-language:
+EN-US'>SET</span>);<span style='mso-tab-count:1'>           </span>// По адресу
+100 находится смещение</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>fread</span>(&amp;<span
+lang=EN-US style='mso-ansi-language:EN-US'>P</span>,<span lang=EN-US
+style='mso-ansi-language:EN-US'>sizeof</span>(<span lang=EN-US
+style='mso-ansi-language:EN-US'>long</span>),1,<span lang=EN-US
+style='mso-ansi-language:EN-US'>fd</span>);<span style='mso-tab-count:1'>          </span>//
+Читается <span lang=EN-US style='mso-ansi-language:EN-US'>P</span>=46, после
+чтения текущая позиция</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>fseek(fd,i,SEEK_CUR);<span
+style='mso-tab-count:2'>               </span>// 100+sizeof(long)=104, </span>позиционирование<span
+lang=EN-US style='mso-ansi-language:EN-US'> 104+46=150</span></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a4><i>Замечание: </i><span style='mso-bidi-font-style:italic'>введя
+понятие произвольного доступа по адресу в файле, мы не ответили на главные
+вопросы: а откуда взять эти адреса и как размещаются данные в файле
+(распределяется память). Эти вопросы – к технологии программирования.<o:p></o:p></span></p>
+
+<p class=a>И, наконец, то, с чего следовало бы начать. При открытии или
+создании нового файла необходимо указать режим работы с файлом как с двоичным.
+Среди множества режимов можно выделить два: создание нового файла для записи
+всех данных, либо начальной структуры данных и открытие существующего файла с
+уже имеющейся структурой данных для чтения, записи и добавления. Последний
+режим наиболее точно соответствует модели двоичного файла как неограниченно
+расширяемого прямо адресуемого массива байтов.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>// Открыть существующий<span style='mso-spacerun:yes'>  </span>как
+двоичный для чтения и записи</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>FILE *fd; fd =
+fopen(&quot;a.dat&quot;,&quot;<b style='mso-bidi-font-weight:normal'><a name="m40">rb+wb</b>&quot;);<o:p></o:p></span></p>
+
+<p class=a0>// Создать новый как<span style='mso-spacerun:yes'> 
+</span>двоичный для записи<span style='mso-spacerun:yes'>  </span>и чтения </p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>fd =
+fopen(&quot;a.dat&quot;,&quot;<b style='mso-bidi-font-weight:normal'><a name="m41">wb+</b>&quot;);
+<span style='mso-tab-count:2'>                      </span><span
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
+
+<h3>Дамп двоичного файла</h3>
+
+<p class=a>При отладке программ, работающих с двоичными файлами, иногда сложно
+установить, какой фрагмент – запись или чтение – содержит ошибку. Аналогично,
+при чтении уже известного формата необходимо проверять, насколько правильно
+читаются данные. Здесь не обойтись без навыков чтения дампа – двоичного
+содержимого файла. Для этого нам придется вспомнить основы представления
+базовых типов данных в памяти (см. <b style='mso-bidi-font-weight:normal'><a name="m42">1.3</b>).
+Естественно, что все данные и адреса присутствуют в шестнадцатеричной системе
+счисления.</p>
+
+<p class=a>Посмотрим, как выглядит двоичный дамп файла, записанного простой
+программой. При создании файла в него записывается переменная типа <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>long</span> – </b>резервируется место под будущий указатель на второй
+массив. Затем пишется размерность первого массива – под него отводится один
+байт и сам массив элементов типа <b style='mso-bidi-font-weight:normal'><a name="m43"><span
+lang=EN-US style='mso-ansi-language:EN-US'>short</span></b> (размерность – 2 байта).
+Далее функцией <b style='mso-bidi-font-weight:normal'><a name="m44"><span lang=EN-US
+style='mso-ansi-language:EN-US'>ftell</span><span lang=EN-US> </span></b>читается
+текущая позиция в файле – адрес будущего второго массива и запоминается в
+переменной <b style='mso-bidi-font-weight:normal'><a name="m45"><span lang=EN-US
+style='mso-ansi-language:EN-US'>p</span>. </b>Записывается размерность второго
+массива (1 байт) и сам массив целых переменных (размерность <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>int</span><span lang=EN-US> </span>– </b>4 байта). И, наконец, текущая
+позиция устанавливается на начало файла и полученное значение адреса из <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>p</span><span lang=EN-US> </span></b>записывается в начало файла.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//-------------------------------------------------94-00.cpp</p>
+
+<p class=a0>// Формирование ДАМПА для чтения файла</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void main(){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>FILE
+*fd=fopen(&quot;94-00.dat&quot;,&quot;wb&quot;);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>char k=10,m=4;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>short
+A[10]={6,3,7,3,4,8,300,5,23,64};<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int<span
+style='mso-spacerun:yes'>   </span>B[4]={6,3,7,3};<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>long p=0,offset;<o:p></o:p></span></p>
+
+<p class=a0>fwrite(&amp;p,sizeof(long),1,fd);<span style='mso-tab-count:1'>          </span>//
+Занять место под указатель</p>
+
+<p class=a0>fwrite(&amp;k,1,1,fd);<span style='mso-tab-count:2'>             </span>//
+Записать один байт - счетчик</p>
+
+<p class=a0>fwrite(A,sizeof(short),k,fd);<span style='mso-tab-count:1'>          </span>//
+Записать массив коротких целых (2B)</p>
+
+<p class=a0>p=ftell(fd);<span style='mso-tab-count:3'>                                  </span>//
+Получить значение указателя<span style='mso-tab-count:1'> </span></p>
+
+<p class=a0>fwrite(&amp;m,1,1,fd);<span style='mso-tab-count:2'>                        </span>//
+Записать один байт - счетчик</p>
+
+<p class=a0>fwrite(B,sizeof(int),m,fd);<span style='mso-tab-count:1'> </span>//
+Записать массив целых</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>fseek(fd,0,SEEK_SET);<span
+style='mso-tab-count:2'>              </span>// </span>К<span style='mso-ansi-language:
+EN-US'> </span>началу<span style='mso-ansi-language:EN-US'> </span>файла<span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0>fwrite(&amp;p,sizeof(long),1,fd);<span style='mso-tab-count:1'>          </span>//
+Обновить указатель на второй массив</p>
+
+<p class=a0>fclose(fd);}</p>
+
+<p class=a4 align=center style='text-align:center'>
+<img border="0" src="Images/094-01.gif" width="514" height="246"><br
+style='mso-ignore:vglayout' clear=ALL>
+<b style='mso-bidi-font-weight:normal'><a name="m46">рис. 94-1. Дамп двоичного файла<o:p></o:p></b><p></p>
+
+<p class=a>Чтобы теперь «увидеть» в дампе то, что мы записали, нужно учесть
+следующее:</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>дамп выводится побайтно, один байт представлен
+двумя шестнадцатеричными цифрами;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>в каждой строке дампа – 16 байтов. Слева
+находится адрес строки (естественно, шестнадцатеричный). На рисунке для
+удобства обозначена младшая цифра адреса каждого байта;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>все данные пишутся «младшими байтами вперед». Т.е.
+для получения значения машинного слова байты надо переписать в обратном порядке;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>абсолютный адрес второго массива, находящийся в
+начале файла имеет размерность <b style='mso-bidi-font-weight:normal'><a name="m47"><span
+lang=EN-US style='mso-ansi-language:EN-US'>long</span><span lang=EN-US> </span></b>(4
+байта в данной версии компилятора). Его шестнадцатеричное содержимое нужно непосредственно
+использовать для поиска адресуемой области в дампе;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>для данных другого типа необходим перевод в
+десятичную систему счисления, а также учет их размерности в соответствии с их
+типом.</p>
+
+<h3>Управление данными в двоичном файле</h3>
+
+<p class=a>Работа с двоичным файлом порождает много вопросов общего порядка. Ответить
+на них можно, исходя из аналогии между двоичным файлом и внутренней
+(физической) памятью программы. Это касается, прежде всего, распределения
+памяти в файле и представления в нем различных структур данных.</p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m48">Распределение памяти в
+двоичном файле. </b>Модель двоичного файла использует представление внешней
+памяти на низком (физическом) уровне. В языке программирования распределение
+памяти производится транслятором (обычные переменные), либо библиотекой
+(динамические переменные и массивы). В двоичном файле программист всего это
+лишен. Поэтому задача размещения данных лежит целиком на программе. К счастью,
+возможность неограниченного расширения файла путем записи данных в его конец
+дает нам самый простой способ распределения памяти: для размещения переменной в
+файле достаточно дописать ее в конец файла, запомнив ее новый адрес.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>// Добавить в файл вещественную переменную<span
+style='mso-spacerun:yes'>  </span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>double b=5.6;<span
+style='mso-tab-count:1'>    </span><span style='mso-spacerun:yes'>  </span><span
+style='mso-tab-count:2'>                      </span><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>fseek</span> (<span
+lang=EN-US style='mso-ansi-language:EN-US'>fd</span>,0<span lang=EN-US
+style='mso-ansi-language:EN-US'>L</span>,<span lang=EN-US style='mso-ansi-language:
+EN-US'>SEEK</span>_<span lang=EN-US style='mso-ansi-language:EN-US'>END</span>);<span
+style='mso-tab-count:1'>           </span>// Позиционироваться на конец файла</p>
+
+<p class=a0><b style='mso-bidi-font-weight:normal'><a name="m49"><span lang=EN-US
+style='mso-ansi-language:EN-US'>long</span><span lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:
+EN-US'>pp</span></b>=<span lang=EN-US style='mso-ansi-language:EN-US'>ftell</span>(<span
+lang=EN-US style='mso-ansi-language:EN-US'>fd</span>);<span style='mso-tab-count:
+2'>                        </span>// Адрес переменной в файле</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>fwrite</span>
+(&amp;<span lang=EN-US style='mso-ansi-language:EN-US'>b</span>, <span
+lang=EN-US style='mso-ansi-language:EN-US'>sizeof</span>(<span lang=EN-US
+style='mso-ansi-language:EN-US'>double</span>),1,<span lang=EN-US
+style='mso-ansi-language:EN-US'>fd</span>);<span style='mso-tab-count:1'>    </span>//
+Записать переменную как массив байтов</p>
+
+<p class=a>Последовательность операций записи в файл создает в нем необходимую
+структуру данных. Иногда эти операции записи являются фиктивными с целью
+«занять место» под переменные с еще не определенными значениями.</p>
+
+<p class=a>Если содержимое двоичного файла при каждом запуске программы
+переписывается от начала до конца, то он всегда будет содержать только
+необходимые данные. Иначе обстоит дело, если двоичный файл при очередном
+запуске редактируется. Тогда при <b style='mso-bidi-font-weight:normal'><a name="m50">удалении
+</b>данных файле остаются неиспользованные участки. То же самое происходит при
+изменении (<b style='mso-bidi-font-weight:normal'><a name="m51">обновлении, </b>в
+терминологии баз данных - <b style='mso-bidi-font-weight:normal'><a name="m52"><span
+lang=EN-US style='mso-ansi-language:EN-US'>update</span>) </b>данных, если их
+размерность увеличивается: они переписываются в конец файла. Эта свободные
+участки называются <b style='mso-bidi-font-weight:normal'><a name="m53">«мусором» </b>и со
+временем они приводят к значительному превышению объема файла относительно его
+полезного содержимого. Программа может придерживаться разных стратегий
+«утилизации мусора»<span lang=EN-US style='mso-ansi-language:EN-US'>:<o:p></o:p></span></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>свободные участки объединяются в отдельную
+структуру данных, например, список, и повторно используются. Недостатком
+является сложность поддержания в файле дополнительной структуры данных;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>периодически выполняется процедура «<b
+style='mso-bidi-font-weight:normal'>сбора мусора</b>», обычно выполняемая в
+виде <b style='mso-bidi-font-weight:normal'><a name="m54">сжатия</b> данных: в новом двоичном
+файле создается аналогичная структура данных и в нее переписываются только
+актуальные (достижимые) данные из исходного файла. Процедура сжатия может быть
+вызвана пользователем явно, либо автоматически, на основании косвенных
+характеристик структур данных в файле.</p>
+
+<p class=a><b><a name="m55">Изменение данных в файле </b><span style='mso-bidi-font-weight:
+bold'>не может быть выполнено непосредственно. Необходимо создать в памяти
+переменную, прочитать туда значение из файла, а после изменения записать
+обратно (обновить).<o:p></o:p></span></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>// Обновить счетчик в двоичном файле</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int a; long pos;</span><span
+style='mso-tab-count:3'>                           </span><span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>fseek(fd,pos,SEEK_SET);<span
+style='mso-tab-count:2'>                       </span>// </span>Читать<span
+style='mso-ansi-language:EN-US'> </span>счетчик<span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>fwrite((void*)&amp;a,
+sizeof(int),1,fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>a++;<span
+style='mso-tab-count:5'>                                                     </span>//
+</span>Увеличить<span style='mso-ansi-language:EN-US'> </span>в<span
+style='mso-ansi-language:EN-US'> </span>памяти<span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>fseek</span>(<span
+lang=EN-US style='mso-ansi-language:EN-US'>fd</span>,<span lang=EN-US
+style='mso-ansi-language:EN-US'>pos</span>,<span lang=EN-US style='mso-ansi-language:
+EN-US'>SEEK</span>_<span lang=EN-US style='mso-ansi-language:EN-US'>SET</span>);<span
+style='mso-tab-count:2'>                       </span>// Записать обратно по
+тому же адресу</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>fwrite((void*)&amp;a,
+sizeof(int),1,fd);<o:p></o:p></span></p>
+
+<p class=a><span style='mso-bidi-font-weight:bold'>В связи с этим возникает
+вопросы о <b><a name="m56">соответствии структур данных в двоичном файле и в памяти</b>, а
+также о способах поддержания соответствия между ними. Как говорится, «возможны
+варианты»</span><span lang=EN-US style='mso-ansi-language:EN-US;mso-bidi-font-weight:
+bold'>:<o:p></o:p></span></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>структуры данных в памяти и в файле
+принципиально различаются. Например, дерево (данные в вершинах и связи) можно
+сохранить в последовательном потоке (файле) в виде рекурсивного
+саморазворачивающегося формата (см. <b style='mso-bidi-font-weight:normal'><a name="m57">8.2</b>).
+В этом случае используется <b style='mso-bidi-font-weight:normal'><a name="m58">полная
+загрузка/сохранение структуры данных</b> в виде единой операции;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>программа может извлекать из двоичного файла
+только те фрагменты, которые необходимы для выполнения текущей операции. При
+такой <b style='mso-bidi-font-weight:normal'><a name="m59">поэлементной загрузке </b>в памяти
+присутствуют только несвязанные копии отдельных фрагментов данных двоичного
+файла, а целостная структура данных не создается;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>в памяти могут создаваться образы наиболее
+важных (часто используемых, управляющих) элементов структуры данных из
+двоичного файла. Например, при наличии в файле массива указателей на строки в
+памяти создается «образ» заголовка файла и массива указателей, а сами строки
+читаются «по необходимости». Такой способ создания и загрузки <b
+style='mso-bidi-font-weight:normal'>частичного образа структуры данных </b>предполагает
+сеансовый режим работы с файлом: частичный образ создается в памяти при
+открытии файла. Здесь также возникает проблема соответствия образа оригиналу и обновления
+последнего;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>возможно создание в памяти <b style='mso-bidi-font-weight:
+normal'><a name="m60">идентичного</b> <b style='mso-bidi-font-weight:normal'><a name="m61">образа структуры
+данных </b><span style='mso-spacerun:yes'> </span>из двоичного файла, и
+наоборот. Например, дерева в памяти можно создать идентичную структуру данных в
+файле, однако вершины дерева в нем будут содержать уже не обычные указатели в
+памяти а указатели в файле.</p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m62">Избыточность в двоичных
+файлах и защита от ошибок. </b>При работе с файлами возникает специфический род
+ошибок программы - ошибки формата файла. Дело в том, что при сбое или аварийном
+завершении программы обычные переменные теряются. Что же касается файлов
+данных, то в таких ситуациях они остаться в промежуточном состоянии, в котором
+структура данных в файле окажется некорректной (Например, при выполнении двух
+последовательных операций программа успевает выполнить только одну из них).
+Другая причина - программа получает файл не того формата, с которым она
+работает (вследствие задания неправильного имени файла). Обычно в файл вносятся
+избыточные данные, позволяющие <span style='mso-spacerun:yes'> </span>обнаружить
+такие ошибки.</p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m63">Терминология, касающаяся
+двоичных файлов.</b> Двоичные файлы имеют свою историческую терминологию, не
+имеющую отношения к конкретным языкам программирования. Тем не менее, при
+работе на Си мы будем ее придерживаться.</p>
+
+<p class=a4><u>Запись</u> - стандартная единица хранения данных в файле Запись
+- это единица хранения, которую получает внешний пользователь, «прикладная»
+часть структуры данных, находящейся в файле. Кроме нее в файле присутствует в
+том или ином виде «системная» часть, которая обеспечивает упорядоченность,
+ускоренный поиск и другой необходимый сервис для работы с записями. В Си под
+записью понимается технологическая единица, поддерживаемая программой,
+поскольку физическая модель файла представлена более низким уровнем. </p>
+
+<p class=a4><u>Запись фиксированной длины</u> - все записи файла представляют
+собой переменные одного типа и имеют фиксированную для данного файла
+размерность. Обычно файл записей фиксированной длины представляет собой массив
+переменных одного типа.</p>
+
+<p class=a4><u>Запись переменной длины</u> – размерность единицы хранения может
+меняться от записи к записи. Записями файла могут быть<span
+style='mso-spacerun:yes'>  </span>переменные различных типов, либо динамические
+массивы, либо любые другие структуры данных переменной<span
+style='mso-spacerun:yes'>  </span>размерности. Типичной записью переменной
+длины является строка.</p>
+
+<p class=a4><span style='mso-spacerun:yes'> </span><u>Произвольный доступ</u> -
+записи файла могут быть прочитаны в любом порядке (вследствие особенностей
+структуры данных, хранящейся в файле).</p>
+
+<p class=a4><u>Последовательный доступ</u> - файл по своей физической
+организации (устройство ввода-вывода) или по характеру структуры данных
+допускает просмотр записей<span style='mso-spacerun:yes'>   </span>в
+последовательном порядке. При отсутствии операций позиционирования записи в
+файле извлекаются в режиме последовательного доступа.<span style='font-family:
+"Times New Roman"'><o:p></o:p></span></p>
+
+<h3>Способы организации данных в файлах</h3>
+
+<p class=a>Речь не идет о классификации форматов файлов, а о перечне
+технологических приемов, используемых при размещении данных. Любой конкретный
+формат может использовать одновременно несколько из них. Кроме того, данные
+могут размещаться и в нескольких файлах, а между ними - устанавливаться
+взаимные ссылки. </p>
+
+<p class=a>Предлагаемая классификация базируется на различии способов доступа к
+данным. Фактически вопрос сводится к способу получения их адреса. Их известно
+несколько:</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>данные извлекаются из последовательного файла в
+заданном формате, поэтому их адресация не требуется. Последовательные файлы
+могут содержать записи как фиксированной, так и переменной длины, в т.ч. строки
+текста, а также любые данные в <b style='mso-bidi-font-weight:normal'><a name="m64">последовательном
+саморазворачивающемся формате</b>;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>адрес вычисляется, исходя из количества и
+размерности переменных. Сюда относятся массивы и более сложные табличные структуры
+данных, размерности которых хранятся в них самих <span
+style='mso-spacerun:yes'> </span>(параметризация).</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>адрес содержится в другой части структуры
+данных, то есть используется <b style='mso-bidi-font-weight:normal'><a name="m65">указатель в
+файле. </b>Указатель может использоваться и эпизодически как адрес (смещение)
+до области данных, так и для поддержания регулярных структур данных, таких как
+массивы указателей, списки и деревья.<b style='mso-bidi-font-weight:normal'><a name="m66"><o:p></o:p></b></p>
+
+<p class=a1 style='margin-left:46.35pt;text-indent:0cm;mso-list:none;
+tab-stops:42.55pt'><b style='mso-bidi-font-weight:normal'><a name="m67"><o:p>&nbsp;</o:p></b></p>
+
+<p class=a4 align=center style='text-align:center'>
+<img border="0" src="Images/094-02.gif" width="486" height="280"><p align="center">
+<b style='mso-bidi-font-weight:normal'><a name="m68">рис. 94-2. Способы организации данных в
+файлах<o:p></o:p></b></p>
+</p>
+
+<h3>Позиционирование в текстовом файле</h3>
+
+<p class=a>Текстовые файлы являются по своей природе файлами последовательного
+доступа. Единственным исключением из этого правила является позиционирование
+(возврат) к уже прочитанному фрагменту текста при помощи функции <b
+style='mso-bidi-font-weight:normal'>fseek</b>. Но для этого необходимо при
+первоначальном последовательном просмотре файла определить текущую позицию
+этого фрагмента в файле функций <b style='mso-bidi-font-weight:normal'><a name="m69">ftell,</b>
+вызвав ее перед функцией чтения. Проиллюстрирует этот принцип рядом примеров.</p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m70">Повторяющиеся фрагменты в
+тексте. </b>Исходный текстовый файл может содержать вложенные друг в друга
+фрагменты вида <b style='mso-bidi-font-weight:normal'><a name="m71">(12 …), </b>ограниченные
+скобками, включающими в себя произвольный текст и счетчик его повторений в виде
+целой константы<span style='mso-spacerun:yes'>  </span>(строки цифр). Требуется
+сгенерировать выходной текст, «раскрыв» повторения.</p>
+
+<p class=a>Наличие вложенных фрагментов определяет рекурсивный характер
+программы. Каждый фрагмент должен обрабатываться отдельным вызовом рекурсивной
+функции. Для устранения проблем, связанных с хранением повторяющегося фрагмента
+произвольной длины, предлагается запомнить начальную позицию фрагмента в
+файле<span style='mso-spacerun:yes'>  </span>и перечитывать его при циклическом
+выводе. Начальной точкой рекурсии удобнее всего считать обнаружение
+открывающейся скобки в текущем потоке (то есть при вызове она считается уже
+прочитанной). </p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//--------------------------------------------------------</span>94<span
+lang=EN-US style='mso-ansi-language:EN-US'>-0</span>1<span lang=EN-US
+style='mso-ansi-language:EN-US'>.cpp<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void more(FILE
+*fd){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>long</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>pp</span>;<span
+style='mso-tab-count:4'>                                     </span><span
+style='mso-tab-count:1'>            </span>// Текущая позиция фрагмента
+повторения</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>char</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>c</span>; <span
+lang=EN-US style='mso-ansi-language:EN-US'>int</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>n</span>=0;<span style='mso-tab-count:
+3'>                          </span><span style='mso-tab-count:1'>            </span>//
+Количество повторов</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>while</span>(1){</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>pp</span>=<span lang=EN-US style='mso-ansi-language:
+EN-US'>ftell</span>(<span lang=EN-US style='mso-ansi-language:EN-US'>fd</span>);<span
+style='mso-tab-count:3'>                                </span>// Запомнить
+текущую позицию</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>char c=getc(fd);<span style='mso-tab-count:
+3'>                         </span>//<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if (!isdigit(c)) break;<span
+style='mso-tab-count:2'>                     </span>//<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>n</span>=<span lang=EN-US
+style='mso-ansi-language:EN-US'>n</span>*10+<span lang=EN-US style='mso-ansi-language:
+EN-US'>c</span>-'0';<span style='mso-tab-count:3'>                             </span>//
+Накопление константы</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>}</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>if</span> (<span
+lang=EN-US style='mso-ansi-language:EN-US'>n</span>==0) <span lang=EN-US
+style='mso-ansi-language:EN-US'>n</span>=1;<span style='mso-tab-count:4'>                                         </span>//
+Отсутствие константы - повторить 1 раз</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>while</span>(<span
+lang=EN-US style='mso-ansi-language:EN-US'>n</span>--!=0){<span
+style='mso-tab-count:4'>                                          </span>//
+Повторять фрагмент</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>fseek</span>(<span lang=EN-US style='mso-ansi-language:
+EN-US'>fd</span>,<span lang=EN-US style='mso-ansi-language:EN-US'>pp</span>,<span
+lang=EN-US style='mso-ansi-language:EN-US'>SEEK</span>_<span lang=EN-US
+style='mso-ansi-language:EN-US'>SET</span>);<span style='mso-tab-count:1'>            </span>//
+Вернуться на начало</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>while <span style='mso-tab-count:1'>    </span>((c=getc(fd))
+!=EOF &amp;&amp; c!=')'){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>if</span> (<span
+lang=EN-US style='mso-ansi-language:EN-US'>c</span>=='(') <span lang=EN-US
+style='mso-ansi-language:EN-US'>more</span>(<span lang=EN-US style='mso-ansi-language:
+EN-US'>fd</span>);<span style='mso-tab-count:1'>          </span>// Вложенный
+фрагмент -</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>else</span><span style='mso-tab-count:
+3'>                              </span>// рекурсивный вызов после '('</p>
+
+<p class=a0><span style='mso-tab-count:3'>                                    </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>putchar</span>(<span lang=EN-US
+style='mso-ansi-language:EN-US'>c</span>);<span style='mso-tab-count:1'>         </span>//
+Перечитать фрагмент до ')'<span style='mso-tab-count:1'>     </span></p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>}}}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void main(){ FILE
+*fd=fopen(&quot;d310-00.txt&quot;,&quot;r&quot;); more(fd); fclose(fd); }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a4>Из <b style='mso-bidi-font-weight:normal'><a name="m72"><span lang=EN-US
+style='mso-ansi-language:EN-US'>main</span></b><span lang=EN-US> </span>функция
+вызывается при установленной начальной позиции файла, что по умолчанию
+определяет однократный просмотр его содержимого. В этом случае признаком
+завершения фрагмента служит конец файла (<span lang=EN-US style='mso-ansi-language:
+EN-US'>EOF</span>).</p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m73">Постраничный просмотр текста.
+</b>Для просмотра текста в произвольном порядке необходимо предварительно
+последовательно прочитать файл, сделав «закладки» в нужных местах,<span
+style='mso-spacerun:yes'>  </span>в нашем случае – запомнить адреса в файле
+каждой страницы текста, вызвав функцию <b style='mso-bidi-font-weight:normal'><a name="m74"><span
+lang=EN-US style='mso-ansi-language:EN-US'>ftell</span><span lang=EN-US> </span></b>перед
+чтением очередной двадцатки строк.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//------------------------------------------------------94-02.cpp</p>
+
+<p class=a0>//----- Вывод текста с заданной страницы</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>void main() {<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>FILE *fd; char
+name[30]=&quot;94.txt&quot; , str[80];<o:p></o:p></span></p>
+
+<p class=a0>int i,n,NP;<span style='mso-tab-count:4'>                                              </span>//
+Количество страниц в файле</p>
+
+<p class=a0>long *POS;<span style='mso-tab-count:4'>                                            </span>//
+Массив адресов начала страниц в файле</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>if
+((fd=fopen(name,&quot;r&quot;))==NULL) return;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>for
+(n=0;fgets(str,80,fd)!=NULL;n++);<o:p></o:p></span></p>
+
+<p class=a0>NP=n/20; if (n%20!=0) NP++;<span style='mso-tab-count:2'>                  </span>//
+Кол-во строк - кол-во-страниц</p>
+
+<p class=a0>fseek(fd,0,SEEK_SET);<span style='mso-tab-count:3'>                          </span>//
+Вернуться в начало файла</p>
+
+<p class=a0>POS=new long[NP];<span style='mso-tab-count:3'>                               </span>//
+Динамический массив &quot;закладок&quot;</p>
+
+<p class=a0>for (n=0; n &lt; NP; n++){<span style='mso-tab-count:3'>                           </span>//
+Просмотр страниц файла</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>POS[n]=ftell(fd);<span
+style='mso-tab-count:3'>                         </span>// Запомнить начало
+страницы</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>for (i=0; i&lt;20;
+i++)<span style='mso-spacerun:yes'>        </span><span style='mso-tab-count:
+2'>              </span>// Чтение строк страницы</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>if (fgets(str,80,fd)==NULL) <o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:3; mso-ansi-language:EN-US' lang="EN-US">                                    </span>break;<span
+style='mso-spacerun:yes'>                </span>// Конец файла - выход из цикла</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>if (i &lt; 20)
+break;<span style='mso-spacerun:yes'>            </span><span style='mso-tab-count:
+2'>             </span>// Неполная страница - выход </p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>while(1){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>printf(&quot;page
+number(0..%d):&quot;,NP-1); scanf(&quot;%d&quot;,&amp;n);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if ((n &gt;= NP) || (n &lt;0))
+break;<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>fseek(fd,POS[n],SEEK_SET);<span
+style='mso-spacerun:yes'>    </span>//
+Позиционироваться на страницу</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>for (i=0; i&lt;20;
+i++) {<span style='mso-tab-count:2'>                    </span>// Повторное
+чтение страницы</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>if (fgets(str,80,fd)==NULL) break;<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-spacerun:yes; mso-ansi-language:EN-US' lang="EN-US">        </span><span style='mso-tab-count:1'>    </span>printf(&quot;%s&quot;,str);</p>
+
+<p class=a0><span style='mso-spacerun:yes'>        </span>}}}</p>
+
+<p class=a>При помощи позиционирования в тексте можно ввести любые системы его
+интерпретации, в том числе аналогичные механизмам, используемым в языках
+программирования. Такие средства непосредственной интерпретации текста называют
+также <b style='mso-bidi-font-weight:normal'><a name="m75">движками. </b>Например, для
+моделирования вызова функции непосредственно над текстом программы необходимо:</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>однократно просмотреть текст, выделить в нем
+заголовки функций и вызовом функции <b style='mso-bidi-font-weight:normal'><a name="m76"><span
+lang=EN-US style='mso-ansi-language:EN-US'>ftell</span><span lang=EN-US> </span></b>запомнить
+их адреса в тексте. Создать таблицу имен, сохранив в ней пары «имя-адрес»<span
+lang=EN-US style='mso-ansi-language:EN-US'>;</span></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>создать в программе стек, содержащий «точки
+возврата», которые также являются адресами в тексте;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>начать интерпретацию текста с того, что найти в
+таблице имя <b style='mso-bidi-font-weight:normal'><a name="m77"><span lang=EN-US
+style='mso-ansi-language:EN-US'>main</span><span lang=EN-US> </span></b>и
+выполнить с помощью <b style='mso-bidi-font-weight:normal'><a name="m78"><span lang=EN-US
+style='mso-ansi-language:EN-US'>fseek</span><span lang=EN-US> </span></b>позиционирование
+к ее телу в файле;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>если при чтении текста встречается «вызов»
+функции, то после его прочтения сохранить в стеке текущий адрес в текстовом
+файле, получив его через <b style='mso-bidi-font-weight:normal'><a name="m79"><span
+lang=EN-US style='mso-ansi-language:EN-US'>ftell</span>. </b>Затем найти в
+таблице имя вызываемой функции и позиционироваться к ее началу с помощью <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>fseek</span>;</b></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>если при чтении обнаруживается завершение
+функции, то из стека извлекается адрес (точка возврата) и к ней производится
+позиционирование с помощью <b style='mso-bidi-font-weight:normal'><a name="m80"><span
+lang=EN-US style='mso-ansi-language:EN-US'>fseek</span>.</b></p>
+
+<p class=a>Как видите, получается полная аналогия механизма вызова функции в
+компьютерной архитектуре с учетом того, что текстовый файл является аналогом
+адресного пространства (сегмента кода) программы. </p>
+
+<p class=a>Насколько же можно продвинуться в прямом доступе в текстовом файле? В
+принципе, никто не мешает нам записывать (обновлять) фрагменты текста, но при
+условии, что их размер будет точно совпадать с имеющимся. Следующий пример
+показывает, как извлечь из текстового файла числовое значение 6-разрядного
+счетчика и, увеличив, аккуратно «вписать» обратно.</p>
+
+<p class=a><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//------------------------------------------------------94-03.cpp</p>
+
+<p class=a0>//----- &quot;Микрохирургическое&quot; исправление счетчика</p>
+
+<p class=a0>void main() {</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>FILE *fd; char cc,
+name[30]=&quot;94-03.txt&quot;;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>long POS; int cnt;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>if
+((fd=fopen(name,&quot;r+w&quot;))==NULL) return;<o:p></o:p></span></p>
+
+<p class=a0>while(1){</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>POS=ftell(fd);<span
+style='mso-tab-count:2'>                 </span><span style='mso-tab-count:
+2'>                        </span>// Запомнить адрес символа</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>if ((cc=getc(fd))==EOF) break;<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>if (cc&gt;='0' &amp;&amp;
+cc&lt;='9'){<span style='mso-tab-count:1'>    </span><span style='mso-tab-count:
+2'>                        </span>// Прочитана цифра</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span>fseek(fd,POS,SEEK_SET);<span
+style='mso-tab-count:1'>         </span>// Вернуться на 1 символ</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span>fscanf(fd,&quot;%d&quot;,&amp;cnt);<span
+style='mso-tab-count:1'>                  </span>//
+и прочитать счетчик - 6 символов</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span>cnt++;<span
+style='mso-tab-count:3'>                           </span><span
+style='mso-tab-count:1'>            </span>// Увеличить счетчик</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span>fseek(fd,POS,SEEK_SET);<span
+style='mso-tab-count:1'>         </span>// Вернуться на начало счетчика</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span>fprintf(fd,&quot;%06d&quot;,cnt);<span
+style='mso-tab-count:1'>                  </span>//
+и записать счетчик - 6 символов</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span>break;
+}</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>} </p>
+
+<p class=a0>fclose(fd);}</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<a name="lr15"><h3>Лабораторный практикум</h3>
+
+<p class=a>Указанные варианты<span style='mso-spacerun:yes'> 
+</span>заданий<span style='mso-spacerun:yes'>  </span>реализовать<span
+style='mso-spacerun:yes'>  </span>с использованием позиционирования указателя в
+текстовом файле и массива указателей, без загрузки самого текстового файла в
+память.</p>
+
+<p class=a1 style='margin-left:36.0pt;mso-list:l1 level1 lfo3;tab-stops:list 36.0pt left 42.55pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Сортировка строк файла по длине и по алфавиту и
+вывод результата в отдельный файл.</p>
+
+<p class=a1 style='margin-left:36.0pt;mso-list:l1 level1 lfo3;tab-stops:list 36.0pt left 42.55pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Программа-интерпретатор текста.<span
+style='mso-spacerun:yes'>  </span>Текстовый<span style='mso-spacerun:yes'> 
+</span>файл разбит на именованные<span style='mso-spacerun:yes'> 
+</span>модули.<span style='mso-spacerun:yes'>  </span>Каждый<span
+style='mso-spacerun:yes'>  </span>модуль<span style='mso-spacerun:yes'> 
+</span>может<span style='mso-spacerun:yes'>  </span>иметь<span
+style='mso-spacerun:yes'>  </span>вызовы<span style='mso-spacerun:yes'> 
+</span>других текстовых модулей.<span style='mso-spacerun:yes'> 
+</span>Требуется вывести текст модуля main с включением текстов других модулей
+в порядке вызова:</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0 style='text-indent:18.0pt'>#aaa{</p>
+
+<p class=a0 style='text-indent:18.0pt'>Произвольные строки модуля текста ааа</p>
+
+<p class=a0 style='text-indent:18.0pt'>}</p>
+
+<p class=a0 style='text-indent:18.0pt'>#ппп{</p>
+
+<p class=a0 style='text-indent:18.0pt'>Произвольные строки текста</p>
+
+<p class=a0 style='text-indent:18.0pt'>#aaa<span
+style='mso-spacerun:yes'>                   </span>// Вызов модуля текста с
+именем aaa<span style='mso-tab-count:1'>        </span></p>
+
+<p class=a0 style='text-indent:18.0pt'>Произвольные строки текста</p>
+
+<p class=a0 style='text-indent:18.0pt'>}</p>
+
+<p class=a0 style='text-indent:18.0pt'>#main{</p>
+
+<p class=a0 style='text-indent:18.0pt'>Основной текст с вызовами других модулей</p>
+
+<p class=a0 style='text-indent:18.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>}<o:p></o:p></span></p>
+
+<p class=a1 style='margin-left:36.0pt;mso-list:l1 level1 lfo3;tab-stops:list 36.0pt left 42.55pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Программа - редактор текста с командами
+удаления,<span style='mso-spacerun:yes'>  </span>копирования, и перестановки
+строк, с прокруткой текста в обоих направлениях (исходный файл при
+редактировании не меняется).</p>
+
+<p class=a1 style='margin-left:36.0pt;mso-list:l1 level1 lfo3;tab-stops:list 36.0pt left 42.55pt'><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Times New Roman'>4.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>
+<![endif]>Программа
+- интерпретатор текста, включающего фрагменты следующего вида<span
+style='font-family:"Times New Roman"'>:<o:p></o:p></span></p>
+
+<p class=a0 style='margin-left:18.0pt;text-indent:18.0pt'><o:p>&nbsp;</o:p></p>
+
+<p class=a0 style='margin-left:18.0pt;text-indent:18.0pt'>#repeat 5</p>
+
+<p class=a0 style='margin-left:18.0pt;text-indent:18.0pt'>Произвольный текст</p>
+
+<p class=a0 style='margin-left:18.0pt;text-indent:18.0pt'>#end<span lang=EN-US
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a1 style='margin-left:35.45pt;text-indent:0cm;mso-list:none;
+tab-stops:42.55pt'>При просмотре файла программа выводит его текст, текст
+фрагментов &quot;#repeat - #end&quot; выводится указанное количество раз.<span
+style='mso-spacerun:yes'>  </span>Фрагменты могут быть вложенными.</p>
+
+<p class=a1 style='margin-left:36.0pt;mso-list:l1 level1 lfo3;tab-stops:list 36.0pt left 42.55pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Программа просмотра блочной структуры
+Си-программы с командами вывода текущего блока, входа<span
+style='mso-spacerun:yes'>  </span>в n-ый по счету вложенный блок и выхода в
+блок верхнего уровня.</p>
+
+<p class=a1 style='margin-left:36.0pt;mso-list:l1 level1 lfo3;tab-stops:list 36.0pt left 42.55pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>6.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Программа<span style='mso-spacerun:yes'> 
+</span>построчного<span style='mso-spacerun:yes'>  </span>сравнения<span
+style='mso-spacerun:yes'>  </span>двух<span style='mso-spacerun:yes'> 
+</span>файлов с выводом групп строк,<span style='mso-spacerun:yes'> 
+</span>вставленных или удаленных из второго файла относительно первого.</p>
+
+<p class=a1 style='margin-left:36.0pt;mso-list:l1 level1 lfo3;tab-stops:list 36.0pt left 42.55pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>7.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Программа просмотра текстового файла по
+предложениям. Предложением считается любая последовательность слов,
+ограниченная точкой, после которой идет большая буква или конец строки. Программа
+выводит на экран любой блок с <span lang=EN-US style='mso-ansi-language:EN-US'>n</span>-го
+по <span lang=EN-US style='mso-ansi-language:EN-US'>m</span>-ое предложение.</p>
+
+<p class=a1 style='margin-left:36.0pt;mso-list:l1 level1 lfo3;tab-stops:list 36.0pt left 42.55pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>8.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Программа просмотра текстового файла по абзацам.
+Абзацем считается любая последовательность строк, ограниченная пустой строкой.
+Программа выводит на экран любой абзац по номеру.</p>
+
+<p class=a1 style='margin-left:36.0pt;mso-list:l1 level1 lfo3;tab-stops:list 36.0pt left 42.55pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>9.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Программа составляет словарь терминов. Каждый
+термин - слово, записанное большими (строчными) буквами. Программа запоминает
+каждый термин и указатель на строку, в которой он встречается. Кроме того,
+программа позволяет просматривать текст в обоих направлениях построчно и при
+выборе текущей строки ищет в ней термин и позиционируется к нему. </p>
+
+<p class=a1 style='margin-left:36.0pt;mso-list:l1 level1 lfo3;tab-stops:list 36.0pt left 42.55pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>10.<span style='font:7.0pt "Times New Roman"'>&nbsp; </span></span>
+<![endif]>Программа
+составляет словарь идентификаторов и служебных слов Си-программы путем
+запоминания каждого идентификатора и указателя на строку, в которой он
+встречается. Кроме того, программа позволяет просматривать текст в обоих
+направлениях построчно и при выборе текущей строки ищет первый идентификатор и
+позиционируется к строке, где он встречается в первый раз. </p>
+
+<p class=a1 style='margin-left:36.0pt;mso-list:l1 level1 lfo3;tab-stops:list 36.0pt left 42.55pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>11.<span style='font:7.0pt "Times New Roman"'>&nbsp; </span></span>
+<![endif]>Программа
+составляет «оглавление» текстового файла путем поиска и запоминания позиций
+строк вида «5.7.6<span style='mso-spacerun:yes'>  </span>Позиционирование в
+текстовом файле». Затем программа составляет меню, с помощью которого
+позиционируется в начало соответствующих разделов и пунктов с прокруткой текста
+в обоих направлениях.</p>
+
+<p class=a1 style='margin-left:36.0pt;mso-list:l1 level1 lfo3;tab-stops:list 36.0pt left 42.55pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>12.<span style='font:7.0pt "Times New Roman"'>&nbsp; </span></span>
+<![endif]>Программа
+составляет словарь функций Си-программы. Затем программа составляет меню, с
+помощью которого позиционируется в начало соответствующих функций. (Функцию
+достаточно идентифицировать по фрагменту вида «идентификатор(...» вне фигурных
+скобок).</p>
+
+<p class=a1 style='margin-left:36.0pt;mso-list:l1 level1 lfo3;tab-stops:list 36.0pt left 42.55pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>13.<span style='font:7.0pt "Times New Roman"'>&nbsp; </span></span>
+<![endif]>Программа
+- редактор текста с командами изменения (редактирования) строки и<span
+style='mso-spacerun:yes'>  </span>прокруткой текста в обоих направлениях
+(измененные строки добавляются в в новый файл, исходный файл не меняется).</p>
+
+<p class=a1 style='margin-left:36.0pt;mso-list:l1 level1 lfo3;tab-stops:list 36.0pt left 42.55pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>14.<span style='font:7.0pt "Times New Roman"'>&nbsp; </span></span>
+<![endif]>Программа
+ищет в тексте Си-программы самый внутренний блок (для простоты начало и конец
+блока располагаются в отдельных строчках), присваивает ему номер и «выкусывает»
+основного текста, заменяя его ссылкой на этот номер. Затем по заданному номеру
+блока производится его вывод на экран, в тексте блока при этом должна
+присутствовать строка вида «#БЛОК <span lang=EN-US style='mso-ansi-language:
+EN-US'>nnn</span>» при наличии вложенного блока. (Процедуру «выкусывания»
+блоков рекомендуется реализовать при помощи «выкусывания» указателей на строки
+вложенного блока в файле и замене их на отрицательное число -<span lang=EN-US
+style='mso-ansi-language:EN-US'>n</span>, где <span lang=EN-US
+style='mso-ansi-language:EN-US'>n</span>-номер, присвоенный блоку).</p>
+
+<p class=a1 style='margin-left:36.0pt;mso-list:l1 level1 lfo3;tab-stops:list 36.0pt left 42.55pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>15.<span style='font:7.0pt "Times New Roman"'>&nbsp; </span></span>
+<![endif]>Программа
+сортировки файла по длине предложений и вывода результата в отдельный файл. При
+выводе каждое предложение следует переформатировать так, чтобы оно начиналось с
+отдельной строки и располагалось в строках размером не более 60 символов.</p>
+
+<p class=a1 style='margin-left:18.0pt;text-indent:0cm;mso-list:none;tab-stops:
+42.55pt'><o:p>&nbsp;</o:p></p>
+
+</div>
+
+</body>
+
+</html>

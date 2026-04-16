@@ -1,0 +1,1620 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=Edit-Time-Data href="054.files/editdata.mso">
+<title>5.4. Иерархия типов данных и функций</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>www.PHILka.RU</o:Author>
+  <o:LastAuthor>FuckYouBill</o:LastAuthor>
+  <o:Revision>3</o:Revision>
+  <o:TotalTime>221</o:TotalTime>
+  <o:Created>2009-01-07T13:20:00Z</o:Created>
+  <o:LastSaved>2009-01-07T13:20:00Z</o:LastSaved>
+  <o:Pages>4</o:Pages>
+  <o:Words>2019</o:Words>
+  <o:Characters>11514</o:Characters>
+  <o:Company>NSTU_VT</o:Company>
+  <o:Bytes>11776</o:Bytes>
+  <o:Lines>95</o:Lines>
+  <o:Paragraphs>27</o:Paragraphs>
+  <o:CharactersWithSpaces>13506</o:CharactersWithSpaces>
+  <o:Version>11.6360</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DoNotHyphenateCaps/>
+  <w:DrawingGridHorizontalSpacing>0,55 пт</w:DrawingGridHorizontalSpacing>
+  <w:DrawingGridVerticalSpacing>0,55 пт</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:UseMarginsForDrawingGridOrigin/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DrawingGridVerticalOrigin>99,25 пт</w:DrawingGridVerticalOrigin>
+  <w:Compatibility>
+   <w:WW6BorderRules/>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+   <w:UseWord97LineBreakingRules/>
+   <w:SelectEntireFieldWithStartOrEnd/>
+   <w:UseWord2002TableStyleRules/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:"Times New Roman CYR";
+	panose-1:2 2 6 3 5 4 5 2 3 4;
+	mso-font-charset:204;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+@font-face
+	{font-family:"Arial CYR";
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+h1
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:14.0pt;
+	mso-bidi-font-weight:normal;}
+h2
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-font-weight:normal;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+h3
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	font-weight:normal;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";}
+p.a, li.a, div.a
+	{mso-style-name:текст;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a0, li.a0, div.a0
+	{mso-style-name:программа;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a1, li.a1, div.a1
+	{mso-style-name:список;
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:18.45pt;
+	margin-bottom:0cm;
+	margin-left:64.35pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-18.0pt;
+	mso-pagination:widow-orphan;
+	mso-list:l1 level1 lfo1;
+	tab-stops:42.55pt list 64.35pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a2, li.a2, div.a2
+	{mso-style-name:определение;
+	mso-style-parent:текст;
+	margin-top:12.0pt;
+	margin-right:32.9pt;
+	margin-bottom:12.0pt;
+	margin-left:35.45pt;
+	text-align:justify;
+	text-indent:.55pt;
+	mso-pagination:widow-orphan;
+	border:none;
+	mso-border-alt:solid windowtext 1.5pt;
+	padding:0cm;
+	mso-padding-alt:1.0pt 1.0pt 1.0pt 1.0pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a3, li.a3, div.a3
+	{mso-style-name:эпиграф;
+	margin-top:0cm;
+	margin-right:32.9pt;
+	margin-bottom:0cm;
+	margin-left:5.0cm;
+	margin-bottom:.0001pt;
+	text-align:right;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.a4, li.a4, div.a4
+	{mso-style-name:"от края";
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a5, li.a5, div.a5
+	{mso-style-name:Формула;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.a6, li.a6, div.a6
+	{mso-style-name:"без формата";
+	mso-style-parent:программа;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a7, li.a7, div.a7
+	{mso-style-name:стихи;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.1, li.1, div.1
+	{mso-style-name:эпиграф1;
+	mso-style-parent:эпиграф;
+	margin-top:0cm;
+	margin-right:9.35pt;
+	margin-bottom:0cm;
+	margin-left:9.0cm;
+	margin-bottom:.0001pt;
+	text-align:right;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+ /* Page Definitions */
+ @page
+	{mso-footnote-separator:url("054.files/header.htm") fs;
+	mso-footnote-continuation-separator:url("054.files/header.htm") fcs;
+	mso-endnote-separator:url("054.files/header.htm") es;
+	mso-endnote-continuation-separator:url("054.files/header.htm") ecs;}
+@page Section1
+	{size:21.0cm 842.0pt;
+	margin:33.45pt 42.55pt 72.0pt 89.85pt;
+	mso-header-margin:14.2pt;
+	mso-footer-margin:31.75pt;
+	mso-even-header:url("054.files/header.htm") eh1;
+	mso-header:url("054.files/header.htm") h1;
+	mso-even-footer:url("054.files/header.htm") ef1;
+	mso-footer:url("054.files/header.htm") f1;
+	mso-first-header:url("054.files/header.htm") fh1;
+	mso-first-footer:url("054.files/header.htm") ff1;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:1523009089;
+	mso-list-type:hybrid;
+	mso-list-template-ids:979267916 68747279 68747289 68747291 68747279 68747289 68747291 68747279 68747289 68747291;}
+@list l0:level1
+	{mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level2
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.";
+	mso-level-tab-stop:40.5pt;
+	mso-level-number-position:left;
+	margin-left:40.5pt;
+	text-indent:-22.5pt;}
+@list l0:level3
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.";
+	mso-level-tab-stop:54.0pt;
+	mso-level-number-position:left;
+	margin-left:54.0pt;
+	text-indent:-36.0pt;}
+@list l0:level4
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.%4\.";
+	mso-level-tab-stop:54.0pt;
+	mso-level-number-position:left;
+	margin-left:54.0pt;
+	text-indent:-36.0pt;}
+@list l0:level5
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.%4\.%5\.";
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	margin-left:72.0pt;
+	text-indent:-54.0pt;}
+@list l0:level6
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.";
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	margin-left:72.0pt;
+	text-indent:-54.0pt;}
+@list l0:level7
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.%7\.";
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	margin-left:72.0pt;
+	text-indent:-54.0pt;}
+@list l0:level8
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.%7\.%8\.";
+	mso-level-tab-stop:90.0pt;
+	mso-level-number-position:left;
+	margin-left:90.0pt;
+	text-indent:-72.0pt;}
+@list l0:level9
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.%7\.%8\.%9\.";
+	mso-level-tab-stop:90.0pt;
+	mso-level-number-position:left;
+	margin-left:90.0pt;
+	text-indent:-72.0pt;}
+@list l1
+	{mso-list-id:1628194852;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-964799380 -1450833310 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-style-link:список;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:64.35pt;
+	mso-level-number-position:left;
+	margin-left:64.35pt;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Обычная таблица";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+table.MsoTableGrid
+	{mso-style-name:"Сетка таблицы";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+  <o:regrouptable v:ext="edit">
+   <o:entry new="1" old="0"/>
+   <o:entry new="2" old="1"/>
+   <o:entry new="3" old="0"/>
+   <o:entry new="4" old="0"/>
+   <o:entry new="5" old="0"/>
+   <o:entry new="6" old="0"/>
+  </o:regrouptable>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=RU style='tab-interval:36.0pt' background="back.gif">
+
+<div class=Section1>
+
+<p class=a4><b style='mso-bidi-font-weight:normal'><a name="m1"><o:p>&nbsp;</o:p></b></p>
+
+<h2>5.4. Иерархия типов данных и функций</h2>
+
+<p class=a3>«На острове – дуб, на дубе – сундук, </p>
+
+<p class=a3>в сундуке – заяц, в зайце – утка, в утке – яйцо,</p>
+
+<p class=a3>в яйце – игла, а на ее конце – Кощеева смерть».</p>
+
+<p class=a3><b style='mso-bidi-font-weight:normal'><a name="m2">Русская народная сказка.<o:p></o:p></b></p>
+
+<p class=a>Иерархический принцип построения системы состоит в том, что более
+сложные компоненты составляются из более простых, ранее определенных. До сих
+пор с иерархией в языках программирования мы сталкивались при вызове функций
+(см. <b style='mso-bidi-font-weight:normal'><a name="m3">3.4</b>). В соответствии с
+принципом модульного программирования, если при решении задачи отдельные ее
+части являются относительно независимыми подзадачами, то последние оформляются
+в виде модулей (функций) с последующим вызовом из главной функции.</p>
+
+<p class=a>Однако речь пока не шла о данных. Если говорить о различных способах
+их представления в программе (типах данных), то их определение образует
+иерархическую систему: более сложные (производные) создаются из определенных
+ранее. Для начала рассмотрим самый естественный случай иерархического
+представления данных, когда массивы и структурированные переменные включаются
+друг в друга по принципу «матрешки». В нашем примере речь идет о таблице «пользователей»,
+представленной массивом структурированных переменных. В каждой записи
+фигурируют строки (массивы символов) – имя и пароль и даты: дата регистрации и множество
+дат посещений (массив). Дата, в свою очередь, представлена структурированным
+типом. Все массивы имеют счетчики текущей размерности. Основная таблица также
+включена в структурированный тип. Таким образом, все данные в программе
+представлены единственной переменной <b style='mso-bidi-font-weight:normal'><a name="m4"><span
+lang=EN-US style='mso-ansi-language:EN-US'>TT</span><span lang=EN-US> </span></b>структурированного
+типа <b style='mso-bidi-font-weight:normal'><a name="m5"><span lang=EN-US style='mso-ansi-language:
+EN-US'>table</span>.</b></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//------------------------------------------------------54-01.<span
+lang=EN-US style='mso-ansi-language:EN-US'>cpp</span></p>
+
+<p class=a0>// Иерархия типов данных и функций</p>
+
+<p class=a0>// Уровень 1. Представление даты</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>struct date{ int dd,mm,yy;}<o:p></o:p></span></p>
+
+<p class=a0>// Уровень 1. Представление строки таблицы (записи)</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>const int NP=100;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>struct user{<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>char name[20],pass[10];<span
+style='mso-tab-count:2'>             </span>// </span>имя<span
+style='mso-ansi-language:EN-US'> </span>и<span style='mso-ansi-language:EN-US'>
+</span>пароль<span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>date birth;</span><span
+style='mso-tab-count:3'>                                  </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>// </span>дата регистрации</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>np</span>;<span style='mso-tab-count:
+4'>                                       </span>// текущая размерность в
+массива дат</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>date</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>SS</span>[<span lang=EN-US
+style='mso-ansi-language:EN-US'>NP</span>];<span style='mso-tab-count:3'>                             </span>//
+массив дат посещений</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>double</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>credit</span>;};</p>
+
+<p class=a0>// Уровень 3 - представление таблицы</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>struct table{<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>user</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>TBL</span>[<span lang=EN-US
+style='mso-ansi-language:EN-US'>N</span>];<span style='mso-tab-count:3'>                              </span>//
+массив структурированных переменных</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>int</span><span style='mso-spacerun:yes'> 
+</span><span lang=EN-US style='mso-ansi-language:EN-US'>nn</span>;};<span
+style='mso-tab-count:3'>                                    </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>// </span>текущая размерность
+массива</p>
+
+<p class=a0>// Уровень 4 - основная программа</p>
+
+<p class=a0>table TT;<span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a>К переменной <b style='mso-bidi-font-weight:normal'><a name="m6"><span
+lang=EN-US style='mso-ansi-language:EN-US'>TT</span></b> можно последовательно
+применять операции, извлекая каждый раз очередную вложенную компоненту,
+например:</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b style='mso-bidi-font-weight:normal'><a name="m7"><span
+lang=EN-US style='mso-ansi-language:EN-US'>TT</span>.</b><b style='mso-bidi-font-weight:
+normal'><a name="m8"><span lang=EN-US style='mso-ansi-language:EN-US'>TBL</span> – </b>массив
+– таблица пользователей;<b style='mso-bidi-font-weight:normal'><a name="m9"><o:p></o:p></b></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b style='mso-bidi-font-weight:normal'><a name="m10"><span
+lang=EN-US style='mso-ansi-language:EN-US'>TT</span>.</b><b style='mso-bidi-font-weight:
+normal'><a name="m11"><span lang=EN-US style='mso-ansi-language:EN-US'>nn</span><span
+style='mso-tab-count:1'>     </span>- </b>текущая размерность таблицы;<b
+style='mso-bidi-font-weight:normal'><o:p></o:p></b></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b style='mso-bidi-font-weight:normal'><a name="m12"><span
+lang=EN-US style='mso-ansi-language:EN-US'>TT</span>.</b><b style='mso-bidi-font-weight:
+normal'><a name="m13"><span lang=EN-US style='mso-ansi-language:EN-US'>TBL</span>[</b><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>i</span>] – </b>строка таблицы с записью об <span lang=EN-US
+style='mso-ansi-language:EN-US'>i</span>-ом пользователе;<b style='mso-bidi-font-weight:
+normal'><a name="m14"><o:p></o:p></b></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b style='mso-bidi-font-weight:normal'><a name="m15"><span
+lang=EN-US style='mso-ansi-language:EN-US'>TT</span>.</b><b style='mso-bidi-font-weight:
+normal'><a name="m16"><span lang=EN-US style='mso-ansi-language:EN-US'>TBL</span>[</b><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>i</span>].<span lang=EN-US
+style='mso-ansi-language:EN-US'>SS</span> – </b>массив дат посещений для <span
+lang=EN-US style='mso-ansi-language:EN-US'>i</span>-го пользователя;<b
+style='mso-bidi-font-weight:normal'><o:p></o:p></b></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b style='mso-bidi-font-weight:normal'><a name="m17"><span
+lang=EN-US style='mso-ansi-language:EN-US'>TT</span>.</b><b style='mso-bidi-font-weight:
+normal'><a name="m18"><span lang=EN-US style='mso-ansi-language:EN-US'>TBL</span>[</b><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>i</span>].<span lang=EN-US
+style='mso-ansi-language:EN-US'>np</span> – </b>текущее количество записей в
+массиве <b style='mso-bidi-font-weight:normal'><a name="m19"><span lang=EN-US
+style='mso-ansi-language:EN-US'>SS</span><o:p></o:p></b></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b style='mso-bidi-font-weight:normal'><a name="m20"><span
+lang=EN-US style='mso-ansi-language:EN-US'>TT</span>.</b><b style='mso-bidi-font-weight:
+normal'><a name="m21"><span lang=EN-US style='mso-ansi-language:EN-US'>TBL</span>[</b><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>i</span>].<span lang=EN-US
+style='mso-ansi-language:EN-US'>SS</span>[</b><b style='mso-bidi-font-weight:
+normal'><a name="m22"><span lang=EN-US style='mso-ansi-language:EN-US'>j</span>] – </b>дата <span
+lang=EN-US style='mso-ansi-language:EN-US'>j</span>-го посещения <span
+lang=EN-US style='mso-ansi-language:EN-US'>i</span>-ым пользователем;<b
+style='mso-bidi-font-weight:normal'><o:p></o:p></b></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b style='mso-bidi-font-weight:normal'><a name="m23"><span
+lang=EN-US style='mso-ansi-language:EN-US'>TT</span>.</b><b style='mso-bidi-font-weight:
+normal'><a name="m24"><span lang=EN-US style='mso-ansi-language:EN-US'>TBL</span>[</b><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>i</span>].<span lang=EN-US
+style='mso-ansi-language:EN-US'>SS</span>[</b><b style='mso-bidi-font-weight:
+normal'><a name="m25"><span lang=EN-US style='mso-ansi-language:EN-US'>j</span>].</b><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>dd</span> –</b> день <span lang=EN-US style='mso-ansi-language:EN-US'>j</span>-го
+посещения <span lang=EN-US style='mso-ansi-language:EN-US'>i</span>-ым
+пользователем.<b style='mso-bidi-font-weight:normal'><a name="m26"><o:p></o:p></b></p>
+
+<p class=a>Каждое из этих выражений имеет свой собственный тип, так <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>TT</span>.<span lang=EN-US
+style='mso-ansi-language:EN-US'>TBL</span>[</b><b style='mso-bidi-font-weight:
+normal'><a name="m27"><span lang=EN-US style='mso-ansi-language:EN-US'>i</span>] </b>является
+структурированной переменной типа <b style='mso-bidi-font-weight:normal'><a name="m28"><span
+lang=EN-US style='mso-ansi-language:EN-US'>user</span>, </b>а <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>TT</span>.<span lang=EN-US
+style='mso-ansi-language:EN-US'>TBL</span>[</b><b style='mso-bidi-font-weight:
+normal'><a name="m29"><span lang=EN-US style='mso-ansi-language:EN-US'>i</span>].</b><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>np</span> – </b>является целым. Операции обработки данных можно
+применять только к базовым типам, поэтому, если обращаться к компонентам,
+начиная с переменной <b style='mso-bidi-font-weight:normal'><a name="m30"><span lang=EN-US
+style='mso-ansi-language:EN-US'>TT</span>, </b>то придется пользоваться такими
+вот громоздкими выражениями.</p>
+
+<p class=a4 align=center style='text-align:center'>
+<p align="center">
+<img border="0" src="Images/054-01.gif" width="517" height="350"><br
+style='mso-ignore:vglayout' clear=ALL>
+<b><a name="m31">рис.54-1. Иерархия типов данных и функций</b></p>
+</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a>Можно пойти по другому пути. Для каждого промежуточного типа данных
+ввести функции, работающие с ним и получающие переменную соответствующего типа
+в качестве формального параметра. Тогда естественным образом параллельно с
+иерархией представления данных возникает иерархия функций. Каждая из них,
+получая в качестве формального параметра переменную (структуру, массив),
+выделяет составляющую ее компоненту и передает следующей функции в качестве
+фактического параметра. Такое решение дает следующие эффекты<span lang=EN-US
+style='mso-ansi-language:EN-US'>:</span></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>программа становится модульной «естественным
+образом». Обработкой каждого типа данных занимается отдельный набор функций;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>исчезают громоздкие последовательности
+выражений, они распадаются на части. Каждая функция использует свою часть
+цепочки действий по обращению к составляющим переменную компонентам;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>формальные параметры передаются по ссылке
+(отображаются на исходную переменную и ее компоненты).</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//-------------------------------------------------------------------------------------</p>
+
+<p class=a0>// Уровень 1. Функция, работающая с датой</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void saveDate(<b
+style='mso-bidi-font-weight:normal'>date &amp;D</b>, FILE *fd){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>fprintf(fd,”%d %d %d ”,<b
+style='mso-bidi-font-weight:normal'>D.dd</b>,D.mm,D.yy);<o:p></o:p></span></p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>}<o:p></o:p></span></p>
+
+<p class=a0>// Уровень 2. Функция, работающая с записью о пользователе</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void saveUser(user
+&amp;U,FILE *fd){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>fprintf(fd,”%s\n%s\n”,<b
+style='mso-bidi-font-weight:normal'>U.name</b>,<b style='mso-bidi-font-weight:
+normal'><a name="m32">U.pass</b>);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>saveDate(<b style='mso-bidi-font-weight:
+normal'><a name="m33">U.birth</b>,fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>fprintf(fd,”\n%d\n”,<b
+style='mso-bidi-font-weight:normal'>U.np</b>);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>for (int i=0;i&lt;U.np;i++) <span
+style='mso-tab-count:1'>   </span>saveDate(<b style='mso-bidi-font-weight:normal'><a name="m34">U.SS[i],</b>fd);<o:p></o:p></span></p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>}<o:p></o:p></span></p>
+
+<p class=a0>// Уровень 3. Функция, работающая с массивом записей (таблицей)</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void
+saveTable(user T[], int n, FILE *fd){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>fprintf(fd,”%d\n”,<b
+style='mso-bidi-font-weight:normal'>n</b>);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>for (int i=0;i&lt;n;i++)<span
+style='mso-spacerun:yes'>  </span>saveUser(<b style='mso-bidi-font-weight:normal'><a name="m35">T[i],</b>fd);<o:p></o:p></span></p>
+
+<p class=a0 style='text-indent:36.0pt'>}</p>
+
+<p class=a0>// Уровень 4. Структура, содержащая таблицу, и основная программа</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>table TT;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void main(){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>TT.nn=0;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>…<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>saveTable(<b style='mso-bidi-font-weight:
+normal'><a name="m36">TT.TBL,TT.nn</b>);}</span></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a>Выражения становятся еще более компактными, если для
+структурированных типов использовать встроенные в них функции (см.<b
+style='mso-bidi-font-weight:normal'>5.3</b>). В них, благодаря контексту
+текущей переменной (объекта), исчезает необходимость использовать формальные
+параметры, а поля текущей структурированной переменной доступны непосредственно
+по их именам.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//------------------------------------------------------54-01.cpp<o:p></o:p></span></p>
+
+<p class=a0>// Иерархия типов данных и функций</p>
+
+<p class=a0>// Уровень 1. Представление даты</p>
+
+<p class=a0>struct date{</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>int <b style='mso-bidi-font-weight:normal'><a name="m37">dd,mm,yy</b>;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>void setDate(int dd0, int mm0, int
+yy0){<span style='mso-tab-count:1'>    </span>// </span>встроенная<span
+style='mso-ansi-language:EN-US'> </span>функция<span style='mso-ansi-language:
+EN-US'> </span>установки<span style='mso-ansi-language:EN-US'> </span>даты<span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>dd=dd0; mm=mm0; yy=yy0;
+}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>void</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>getDate</span>(){<span
+style='mso-tab-count:4'>                                       </span>// встроенная
+функция чтения даты</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>printf(&quot;\nday:&quot;);
+scanf(&quot;%d&quot;,&amp;<b style='mso-bidi-font-weight:normal'><a name="m38">dd</b>);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>printf(&quot;month:&quot;);
+scanf(&quot;%d&quot;,&amp;<b style='mso-bidi-font-weight:normal'><a name="m39">mm</b>);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>printf</span>(&quot;<span
+lang=EN-US style='mso-ansi-language:EN-US'>year</span>:&quot;); <span
+lang=EN-US style='mso-ansi-language:EN-US'>scanf</span>(&quot;%<span
+lang=EN-US style='mso-ansi-language:EN-US'>d</span>&quot;,&amp;<b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>yy</span></b>);<span style='mso-tab-count:1'>   </span>// непосредственный
+доступ по имени поля</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>cmpDate</span>(<span lang=EN-US
+style='mso-ansi-language:EN-US'>date</span> &amp;<span lang=EN-US
+style='mso-ansi-language:EN-US'>T</span>){ <span style='mso-tab-count:3'>                           </span>//
+встроенная функция сравнения дат</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>if (yy!=T.yy) return yy-T.yy;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>if (mm!=T.mm) return
+mm-T.mm;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>return dd-T.dd;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>}<span style='mso-tab-count:
+3'>                                   </span></span><span style='mso-tab-count:
+1'>            </span><span lang=EN-US style='mso-ansi-language:EN-US'>// </span>встроенные<span
+style='mso-ansi-language:EN-US'> </span>функции<span style='mso-ansi-language:
+EN-US'> </span>работы с файлом<span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>void loadDate(FILE *fd){
+fscanf(fd,&quot;%d%d%d&quot;,&amp;dd,&amp;mm,&amp;yy); }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>void saveDate(FILE *fd){
+fprintf(fd,&quot;%d %d %d &quot;,dd,mm,yy); }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>void showDate(){
+printf(&quot;%02d.%02d.%04d &quot;,dd,mm,yy); }<o:p></o:p></span></p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>};</p>
+
+<p class=a>При использовании встроенных функций они также вызываются по
+цепочке, только синтаксис этого вызова отличается от обычного: Функция,
+встроенная в структурированный тип верхнего уровня, выбирает поле структуры, с
+которой она работает, и вызывает в ней встроенную функцию.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//------------------------------------------------------54-01.cpp<o:p></o:p></span></p>
+
+<p class=a0>// Уровень 1. Представление строки таблицы (записи)</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>const int N=100;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>const int NP=100;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>struct user{<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>char name[20],pass[10];<span
+style='mso-tab-count:2'>             </span>// </span>имя<span
+style='mso-ansi-language:EN-US'> </span>и<span style='mso-ansi-language:EN-US'>
+</span>пароль<span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>date</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>birth</span>;<span style='mso-tab-count:
+3'>                                  </span>// дата регистрации</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>int</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>np</span>;<span style='mso-tab-count:
+4'>                                       </span>// текущая размерность в
+массива дат</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>date</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>SS</span>[<span lang=EN-US
+style='mso-ansi-language:EN-US'>NP</span>];<span style='mso-tab-count:3'>                             </span>//
+массив дат посещений</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>double credit;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>void setUser(char nm[], char ps[],
+date b0){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>strcpy(name,nm); strcpy(pass,ps);
+birth=b0; np=0;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>void</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>addDate</span>(<span lang=EN-US
+style='mso-ansi-language:EN-US'>date</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>d</span>0){<span style='mso-tab-count:
+1'>    </span><span style='mso-tab-count:1'>            </span>// встроенная
+функция добавления даты посещения</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>if (np!=NP) SS[np++]=d0; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>void showUser(){ </span><span
+style='mso-tab-count:2'>                       </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>// </span>встренная функция просмотра</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>printf(&quot;%20s<span
+style='mso-spacerun:yes'>  </span>%10s<span style='mso-spacerun:yes'>  
+</span>&quot;,name,pass);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span><b style='mso-bidi-font-weight:
+normal'><a name="m40">birth</b></span><b style='mso-bidi-font-weight:normal'><a name="m41">.<span lang=EN-US style='mso-ansi-language:
+EN-US'>showDate</span></b>();<span style='mso-tab-count:1'>         </span>// вызов
+встроенной функции для поля <b style='mso-bidi-font-weight:normal'><a name="m42"><span
+lang=EN-US style='mso-ansi-language:EN-US'>birth</span></b><span
+style='mso-tab-count:1'>      </span></p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>printf(&quot;%2d\n&quot;,np);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>void showDate(){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>for</span> (<span
+lang=EN-US style='mso-ansi-language:EN-US'>int</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>i</span>=0;<span lang=EN-US
+style='mso-ansi-language:EN-US'>i</span>&lt;<span lang=EN-US style='mso-ansi-language:
+EN-US'>np</span>;<span lang=EN-US style='mso-ansi-language:EN-US'>i</span>++) {
+<span style='mso-tab-count:1'>     </span>// вызов встроенной функции для поля <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>SS</span>[<span lang=EN-US
+style='mso-ansi-language:EN-US'>i</span>]</b></p>
+
+<p class=a0><span style='mso-tab-count:3'>                                    </span><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>SS[i].showDate</span></b><span lang=EN-US style='mso-ansi-language:EN-US'>();
+printf(&quot;\n&quot;); }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>void</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>loadUser</span>(<span lang=EN-US
+style='mso-ansi-language:EN-US'>FILE</span> *<span lang=EN-US style='mso-ansi-language:
+EN-US'>fd</span>){<span style='mso-tab-count:2'>              </span>// встроенная
+функция загрузки из файла</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>fscanf(fd,&quot;%s%s&quot;,name,pass);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span><b style='mso-bidi-font-weight:
+normal'><a name="m43">birth</b></span><b style='mso-bidi-font-weight:normal'><a name="m44">.<span lang=EN-US style='mso-ansi-language:
+EN-US'>loadDate</span></b>(<span lang=EN-US style='mso-ansi-language:EN-US'>fd</span>);<span
+style='mso-tab-count:1'>        </span>// вызов встроенной функции для поля <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>birth</span></b><span style='mso-tab-count:1'>      </span></p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>fscanf(fd,&quot;%d&quot;,&amp;np);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>for (int
+i=0;i&lt;np;i++) SS[i].loadDate(fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>cmpUser</span>(<span lang=EN-US
+style='mso-ansi-language:EN-US'>user</span> &amp;<span lang=EN-US
+style='mso-ansi-language:EN-US'>T</span>,<span lang=EN-US style='mso-ansi-language:
+EN-US'>int</span><span lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:
+EN-US'>mode</span>){ // встроенная функция сравнения записей</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>switch (mode){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>case 0:<span
+style='mso-tab-count:1'> </span>return strcmp(name,T.name);<span
+style='mso-tab-count:1'>      </span>// </span>сравнение<span style='mso-ansi-language:
+EN-US'> </span>по<span style='mso-ansi-language:EN-US'> </span>имени<span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>case</span> 1:<span
+style='mso-tab-count:1'> </span><span lang=EN-US style='mso-ansi-language:EN-US'>return</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>birth</span>.<span
+lang=EN-US style='mso-ansi-language:EN-US'>cmpDate</span>(<span lang=EN-US
+style='mso-ansi-language:EN-US'>T</span>.<span lang=EN-US style='mso-ansi-language:
+EN-US'>birth</span>);<span style='mso-tab-count:1'>       </span>// сравнение по
+дате регистрации</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>case</span> 2:<span
+style='mso-tab-count:1'> </span><span lang=EN-US style='mso-ansi-language:EN-US'>return</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>np</span>-<span
+lang=EN-US style='mso-ansi-language:EN-US'>T</span>.<span lang=EN-US
+style='mso-ansi-language:EN-US'>np</span>;<span style='mso-tab-count:3'>                           </span>//
+сравнение по числу посещений</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span>}}</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>};</p>
+
+<p class=a0>// Уровень 3 - представление таблицы</p>
+
+<p class=a0>struct table{</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>user</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>TBL</span>[<span lang=EN-US
+style='mso-ansi-language:EN-US'>N</span>];<span style='mso-tab-count:3'>                              </span>//
+массив структурированных переменных</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>int</span><span style='mso-spacerun:yes'> 
+</span><span lang=EN-US style='mso-ansi-language:EN-US'>nn</span>;<span
+style='mso-tab-count:1'>  </span><span style='mso-tab-count:3'>                                    </span>//
+текущая размерность массива</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>void</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>loadTable</span>(<span lang=EN-US
+style='mso-ansi-language:EN-US'>char</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>nm</span>[]){<span style='mso-tab-count:
+1'>           </span>// встроенная функция загрузки из файла</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>FILE *fd=fopen(nm,&quot;r&quot;);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>if (fd==NULL) return;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>fscanf(fd,&quot;%d\n&quot;,&amp;nn);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>if</span> (<span
+lang=EN-US style='mso-ansi-language:EN-US'>nn</span>&gt;=<span lang=EN-US
+style='mso-ansi-language:EN-US'>N</span>) <span lang=EN-US style='mso-ansi-language:
+EN-US'>return</span>;<span style='mso-tab-count:1'>            </span>// вызов
+встроенной функции для поля <b style='mso-bidi-font-weight:normal'><a name="m45"><span
+lang=EN-US style='mso-ansi-language:EN-US'>TBL</span>[</b><b style='mso-bidi-font-weight:
+normal'><a name="m46"><span lang=EN-US style='mso-ansi-language:EN-US'>i</span>]</b></p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>for (int i=0;i&lt;nn;i++) <b
+style='mso-bidi-font-weight:normal'>TBL[i].loadUser</b>(fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>fclose(fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>void</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>sortTable</span>(<span lang=EN-US
+style='mso-ansi-language:EN-US'>int</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>mode</span>){<span style='mso-tab-count:
+1'> </span>// встроенная функция сортировки выбором</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>int i,j,k;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>for</span> (<span
+lang=EN-US style='mso-ansi-language:EN-US'>i</span>=0;<span lang=EN-US
+style='mso-ansi-language:EN-US'>i</span>&lt;<span lang=EN-US style='mso-ansi-language:
+EN-US'>nn</span>;<span lang=EN-US style='mso-ansi-language:EN-US'>i</span>++){<span
+style='mso-tab-count:1'>           </span>// вызов встроенной функции сравнения
+записей </p>
+
+<p class=a0><span style='mso-tab-count:3'>                                    </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>for(j=k=i; j&lt;nn;j++)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:4'>                                                </span>if
+(TBL[j].cmpUser(TBL[k],mode)&lt;0) k=j;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:3'>                                    </span>user
+cc=TBL[i]; TBL[i]=TBL[k]; TBL[k]=cc;<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:3; mso-ansi-language:EN-US' lang="EN-US">                                    </span>}</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>}};</p>
+
+<p class=a>На уровне главной функции <b style='mso-bidi-font-weight:normal'><a name="m47"><span
+lang=EN-US style='mso-ansi-language:EN-US'>main</span><span lang=EN-US> </span></b>остается
+только интерактивная компонента общения с пользователем в режиме командной
+строки и вызов необходимых встроенных функций для структурированной переменной <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>TT</span><span lang=EN-US> </span></b>типа <b style='mso-bidi-font-weight:
+normal'><a name="m48"><span lang=EN-US style='mso-ansi-language:EN-US'>table</span>.<o:p></o:p></b></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0>//------------------------------------------------------54-01.<span
+lang=EN-US style='mso-ansi-language:EN-US'>cpp</span></p>
+
+<p class=a0>// Уровень 4 - основная программа</p>
+
+<p class=a0>table TT;<span style='mso-tab-count:4'>                                                </span>//
+структурированная переменная типа «таблица»</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void main(){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>while(1){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>printf(&quot;\na(dd),v(iew),l(oad),s(ave),o(rd
+by),d(ate)\nwhat to do:&quot;);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>switch(getch()){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>case 'a':<span
+style='mso-tab-count:1'>            </span>printf(&quot;\nname:&quot;);
+scanf(&quot;%s&quot;,c1);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>printf(&quot;password:&quot;);
+scanf(&quot;%s&quot;,c2);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>d0.getDate();<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>TT.addUser(c1,c2,d0);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>break;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>case 'o':<span
+style='mso-tab-count:1'>            </span>printf(&quot;\nsort mode (0-by name,
+1-by date, 2-by count(np)):&quot;);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>TT</span>.<span
+lang=EN-US style='mso-ansi-language:EN-US'>sortTable</span>(<span lang=EN-US
+style='mso-ansi-language:EN-US'>getch</span>()-'0'); …………}}}</p>
+
+<a name="lr8"><h3>Лабораторный практикум</h3>
+
+<p class=a>Определить структурированный тип и набор<span
+style='mso-spacerun:yes'>  </span>функций для работы с таблицей записей,
+реализованной в массиве структур. В перечень функций входят:</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>ввод записи таблицы с клавиатуры;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>загрузка и сохранение<span
+style='mso-spacerun:yes'>  </span>таблицы в текстовом файле;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>просмотр таблицы<span lang=EN-US
+style='mso-ansi-language:EN-US'>;</span></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>сортировка таблицы в порядке возрастания
+заданного поля;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>поиск в таблице элемента с заданным значением
+поля или с наиболее близким к нему по значению; </p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>удаление записи;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>изменение (редактирование) записи<span
+lang=EN-US style='mso-ansi-language:EN-US'>;</span></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>вычисление с проверкой и использованием всех <span
+lang=EN-US style='mso-ansi-language:EN-US'>pfgbctq</span> по заданному условию
+и формуле (например, общая сумма на всех счетах).</p>
+
+<p class=a><span style='mso-spacerun:yes'> </span>Перечень полей
+структурированной переменной:</p>
+
+<p class=a1 style='margin-left:1.0cm;text-indent:0cm;mso-list:none;tab-stops:
+42.55pt'>1. Фамилия, номер счета, сумма на счете, дата последнего изменения.</p>
+
+<p class=a1 style='margin-left:1.0cm;text-indent:0cm;mso-list:none;tab-stops:
+42.55pt'>2. Номер страницы, номер строки, текст изменения строки, дата
+изменения.</p>
+
+<p class=a1 style='margin-left:1.0cm;text-indent:0cm;mso-list:none;tab-stops:
+42.55pt'>3. Название экзамена, дата экзамена, фамилия преподавателя,<span
+style='mso-spacerun:yes'>  </span>количество оценок, оценки.</p>
+
+<p class=a1 style='margin-left:1.0cm;text-indent:0cm;mso-list:none;tab-stops:
+42.55pt'>4. Фамилия, номер зачетной книжки, факультет, группа,</p>
+
+<p class=a1 style='margin-left:1.0cm;text-indent:0cm;mso-list:none;tab-stops:
+42.55pt'>5. Фамилия, номер читательского билета, название книги, срок возврата.</p>
+
+<p class=a1 style='margin-left:1.0cm;text-indent:0cm;mso-list:none;tab-stops:
+42.55pt'>6. Наименование товара, цена, количество, процент торговой надбавки.</p>
+
+<p class=a1 style='margin-left:1.0cm;text-indent:0cm;mso-list:none;tab-stops:
+42.55pt'>7. Номер рейса, пункт назначения, время вылета, дата вылета, стоимость
+билета.</p>
+
+<p class=a1 style='margin-left:1.0cm;text-indent:0cm;mso-list:none;tab-stops:
+42.55pt'>8. Фамилия, количество оценок, оценки, средний балл.</p>
+
+<p class=a1 style='margin-left:1.0cm;text-indent:0cm;mso-list:none;tab-stops:
+42.55pt'>9. Фамилия, дата поступления, дата отчисления.</p>
+
+<p class=a1 style='margin-left:1.0cm;text-indent:0cm;mso-list:none;tab-stops:
+42.55pt'>10. Регистрационный номер автомобиля, марка, пробег.</p>
+
+<p class=a1 style='margin-left:1.0cm;text-indent:0cm;mso-list:none;tab-stops:
+42.55pt'>11. Фамилия, количество переговоров (для каждого - дата и
+продолжительность).</p>
+
+<p class=a1 style='margin-left:1.0cm;text-indent:0cm;mso-list:none;tab-stops:
+42.55pt'>12. Номер телефона, дата разговора, продолжительность, код города. </p>
+
+<p class=a1 style='margin-left:1.0cm;text-indent:0cm;mso-list:none;tab-stops:
+42.55pt'>13. Номер поезда, пункт назначения, дни следования, время прибытия, время
+стоянки.</p>
+
+<p class=a1 style='margin-left:1.0cm;text-indent:0cm;mso-list:none;tab-stops:
+42.55pt'>14. Название кинофильма, сеанс, стоимость билета, количество зрителей.
+</p>
+
+<h3>Вопросы без ответов</h3>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a>Определить значения переменных после выполнения действий<span
+style='mso-spacerun:yes'>  </span>над статическими данными.</p>
+
+<p class=a4><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//------------------------------------------------------</span>54<span
+lang=EN-US style='mso-ansi-language:EN-US'>-</span>02<span lang=EN-US
+style='mso-ansi-language:EN-US'>.cpp<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//-------------------------------------------------------
+1<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>struct man1 {<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>char name[20];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>int dd,mm,yy;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>char *zodiak;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>man1 *next; } <o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>A1= {&quot;</span>Петров<span lang=EN-US
+style='mso-ansi-language:EN-US'>&quot;,1,10,1969,&quot;</span>Весы<span
+lang=EN-US style='mso-ansi-language:EN-US'>&quot;,NULL },<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-spacerun:yes; mso-ansi-language:EN-US' lang="EN-US"> </span>B1=
+{&quot;Сидоров&quot;,8,9,1958,&quot;Дева&quot;,&amp;A1 },</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>*p1 = &amp;B1;</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>void F1() { char c1,c2,c3,c4;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>c1 = A1.name[2]; c2 = B1.zodiak[3]; <span
+style='mso-spacerun:yes'> </span>c3 = p1-&gt;name[3]; c4 =
+p1-&gt;next-&gt;zodiak[1]; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>//-------------------------------------------------------
+2<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>struct man2 {<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>char name[20];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>char *zodiak;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>man2 *next;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span>} C2[3] = {<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span>{&quot;</span>Петров<span lang=EN-US
+style='mso-ansi-language:EN-US'>&quot;,&quot;</span>Весы<span lang=EN-US
+style='mso-ansi-language:EN-US'>&quot;,NULL },<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-spacerun:yes; mso-ansi-language:EN-US' lang="EN-US">      </span>{&quot;Сидоров&quot;,&quot;Дева&quot;,&amp;C2[0]
+},</p>
+
+<p class=a0><span style='mso-spacerun:yes'>     
+</span>{&quot;Иванов&quot;,&quot;Козерог&quot;,&amp;C2[1] }<span lang=EN-US
+style='mso-ansi-language:EN-US'>};</span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>void F2() { char c1,c2,c3,c4;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>c1 = C2[0].name[2]; c2 = C2[1].zodiak[3];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>c3 = C2[2].next-&gt;name[3]; <span
+style='mso-spacerun:yes'> </span>c4 = C2[2].next-&gt;next-&gt;zodiak[1]; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>//-------------------------------------------------------
+3<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>struct tree3 {<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>int vv;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>tree3 *l,*r; } <o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>A3 = { 1,NULL,NULL }, B3 = { 2,NULL,NULL },<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>C3 = { 3, &amp;A3, &amp;B3 }, </span>
+<span style='mso-spacerun:yes' lang="EN-US"> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>D3 = { 4, &amp;C3, NULL },<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>*p3 = &amp;D3;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>void F3() { int i1,i2,i3,i4; <span
+style='mso-spacerun:yes'> </span>i1 =A3.vv; i2 = D3.l-&gt;vv; i3
+=p3-&gt;l-&gt;r-&gt;vv; i4 = p3-&gt;vv; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>//-------------------------------------------------------
+4<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>struct tree4 {<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>int vv;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>tree4 *l,*r;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>} F[4] = <o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span>{{ 1,NULL,NULL },<span
+style='mso-spacerun:yes'>  </span>{ 2,NULL,NULL },<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span>{ 3, &amp;F[0], &amp;F[1] }, { 4,
+&amp;F[2], NULL }};<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>void F4() { int i1,i2,i3,i4; i1 = F[0].vv; i2
+= F[3].l-&gt;vv; <span style='mso-spacerun:yes'>  </span>i3 = F[3].l-&gt;r-&gt;vv; i4 = F[2].r-&gt;vv;
+}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>//-------------------------------------------------------
+5<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>struct list5 { <o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>int vv;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>list5 *pred,*next;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>};<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>extern list5 C5,B5,A5;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>list5 A5 = { 1, &amp;C5, &amp;B5 }, B5 = { 2,
+&amp;A5, &amp;C5 }, C5 = { 3, &amp;B5, &amp;A5 }, *p5 = &amp;A5;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>void F5() { int i1,i2,i3,i4;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>i1 = A5.next-&gt;vv; i2 =
+p5-&gt;next-&gt;next-&gt;vv;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>i3 = A5.pred-&gt;next-&gt;vv; i4 =
+p5-&gt;pred-&gt;pred-&gt;pred-&gt;vv; }<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-spacerun:yes; mso-ansi-language:EN-US' lang="EN-US"> </span>//------------------------------------------------------
+6</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>struct dat7 { int
+dd,mm,yy; } <o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>aa = { 17,7,1977 },<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>bb = { 22,7,1982 };<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>struct man7 {<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>char name[20];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>dat7 *pd;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>dat7 dd;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>char *zodiak; }</span></p>
+
+<p class=a0><span style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span><span lang=EN-US><span style='mso-tab-count:
+1'>           </span>A7= {&quot;</span></span>Петров<span lang=EN-US
+style='mso-ansi-language:EN-US'>&quot;, &amp;aa, { 1,10,1969 }, &quot;</span>Весы<span
+lang=EN-US style='mso-ansi-language:EN-US'>&quot; },<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span><span style='mso-tab-count:1'>           </span>B7=
+{&quot;</span>Сидоров<span lang=EN-US style='mso-ansi-language:EN-US'>&quot;,
+&amp;bb, { 8,9,1958 }, &quot;</span>Дева<span lang=EN-US style='mso-ansi-language:
+EN-US'>&quot; },<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>*p7 = &amp;B7;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>void F7() { int i1,i2,i3,i4; i1 = A7.dd.mm; i2
+= A7.pd-&gt;yy; i3 = p7-&gt;dd.dd; i4 = p7-&gt;pd-&gt;yy; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>//------------------------------------------------------
+</span>7</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>struct dat8 { int dd,mm,yy; };<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>struct man8 {<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>char name[20];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>dat8 dd[3];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span>} A8[2] = {<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>         </span>{&quot;</span>Петров<span lang=EN-US
+style='mso-ansi-language:EN-US'>&quot;, {{1,10,1969},{8,8,1988},{3,2,1978}}},<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>         </span>{&quot;</span>Иванов<span lang=EN-US
+style='mso-ansi-language:EN-US'>&quot;,{{8,12,1958},{12,3,1976},{3,12,1967}}}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>};<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>void F8() { int i1,i2;<span
+style='mso-spacerun:yes'>  </span>i1 = A8[0].dd[0].mm; i2 = A8[1].dd[2].dd; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>//------------------------------------------------------
+</span>8</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>struct man9 {<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>char name[20];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>char *zodiak;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>man9 *next;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span>} A9= {&quot;</span>Петров<span
+lang=EN-US style='mso-ansi-language:EN-US'>&quot;,&quot;</span>Весы<span
+lang=EN-US style='mso-ansi-language:EN-US'>&quot;,NULL },<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>B9= {&quot;</span>Сидоров<span lang=EN-US
+style='mso-ansi-language:EN-US'>&quot;,&quot;</span>Дева<span lang=EN-US
+style='mso-ansi-language:EN-US'>&quot;,&amp;A9 },<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>*p9[4] = { &amp;B9, &amp;A9, &amp;A9, &amp;B9
+};<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>void F9() { char c1,c2,c3,c4;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>c1 = p9[0]-&gt;name[2]; c2 =
+p9[2]-&gt;zodiak[3]; </span></p>
+
+<p class=a0><span style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span><span lang=EN-US>c3 =
+p9[3]-&gt;next-&gt;name[3]; c4 = p9[0]-&gt;next-&gt;zodiak[1]; } <o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

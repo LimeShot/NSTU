@@ -1,0 +1,1336 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=Edit-Time-Data href="017.files/editdata.mso">
+<title>1.7. Модульная организация программы</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>www.PHILka.RU</o:Author>
+  <o:LastAuthor>www.PHILka.RU</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>225</o:TotalTime>
+  <o:Created>2008-06-12T13:38:00Z</o:Created>
+  <o:LastSaved>2008-06-12T13:38:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>3837</o:Words>
+  <o:Characters>21876</o:Characters>
+  <o:Company>NSTU_VT</o:Company>
+  <o:Bytes>11776</o:Bytes>
+  <o:Lines>182</o:Lines>
+  <o:Paragraphs>51</o:Paragraphs>
+  <o:CharactersWithSpaces>25662</o:CharactersWithSpaces>
+  <o:Version>11.6360</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DoNotHyphenateCaps/>
+  <w:DrawingGridHorizontalSpacing>0,55 пт</w:DrawingGridHorizontalSpacing>
+  <w:DrawingGridVerticalSpacing>0,55 пт</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:UseMarginsForDrawingGridOrigin/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DrawingGridVerticalOrigin>99,25 пт</w:DrawingGridVerticalOrigin>
+  <w:Compatibility>
+   <w:WW6BorderRules/>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+   <w:UseWord97LineBreakingRules/>
+   <w:SelectEntireFieldWithStartOrEnd/>
+   <w:UseWord2002TableStyleRules/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:"Times New Roman CYR";
+	panose-1:2 2 6 3 5 4 5 2 3 4;
+	mso-font-charset:204;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+@font-face
+	{font-family:"Arial CYR";
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+h1
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:14.0pt;
+	mso-bidi-font-weight:normal;}
+h2
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-font-weight:normal;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+h3
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	font-weight:normal;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.a, li.a, div.a
+	{mso-style-name:текст;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a0, li.a0, div.a0
+	{mso-style-name:программа;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a1, li.a1, div.a1
+	{mso-style-name:список;
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:18.45pt;
+	margin-bottom:0cm;
+	margin-left:64.35pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-18.0pt;
+	mso-pagination:widow-orphan;
+	mso-list:l2 level1 lfo1;
+	tab-stops:42.55pt list 64.35pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a2, li.a2, div.a2
+	{mso-style-name:определение;
+	mso-style-parent:текст;
+	margin-top:12.0pt;
+	margin-right:32.9pt;
+	margin-bottom:12.0pt;
+	margin-left:35.45pt;
+	text-align:justify;
+	text-indent:.55pt;
+	mso-pagination:widow-orphan;
+	border:none;
+	mso-border-alt:solid windowtext 1.5pt;
+	padding:0cm;
+	mso-padding-alt:1.0pt 1.0pt 1.0pt 1.0pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a3, li.a3, div.a3
+	{mso-style-name:эпиграф;
+	margin-top:0cm;
+	margin-right:32.9pt;
+	margin-bottom:0cm;
+	margin-left:5.0cm;
+	margin-bottom:.0001pt;
+	text-align:right;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.a4, li.a4, div.a4
+	{mso-style-name:"от края";
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a5, li.a5, div.a5
+	{mso-style-name:Формула;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.a6, li.a6, div.a6
+	{mso-style-name:"без формата";
+	mso-style-parent:программа;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a7, li.a7, div.a7
+	{mso-style-name:стихи;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.1, li.1, div.1
+	{mso-style-name:эпиграф1;
+	mso-style-parent:эпиграф;
+	margin-top:0cm;
+	margin-right:9.35pt;
+	margin-bottom:0cm;
+	margin-left:9.0cm;
+	margin-bottom:.0001pt;
+	text-align:right;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.2, li.2, div.2
+	{mso-style-name:"заголовок 2";
+	mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;
+	font-style:italic;}
+p.3, li.3, div.3
+	{mso-style-name:"заголовок 3";
+	mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";}
+p.a8, li.a8, div.a8
+	{mso-style-name:Грамматика;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:14.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+ /* Page Definitions */
+ @page
+	{mso-footnote-separator:url("017.files/header.htm") fs;
+	mso-footnote-continuation-separator:url("017.files/header.htm") fcs;
+	mso-endnote-separator:url("017.files/header.htm") es;
+	mso-endnote-continuation-separator:url("017.files/header.htm") ecs;}
+@page Section1
+	{size:21.0cm 842.0pt;
+	margin:33.45pt 42.55pt 72.0pt 89.85pt;
+	mso-header-margin:14.2pt;
+	mso-footer-margin:31.75pt;
+	mso-even-header:url("017.files/header.htm") eh1;
+	mso-header:url("017.files/header.htm") h1;
+	mso-even-footer:url("017.files/header.htm") ef1;
+	mso-footer:url("017.files/header.htm") f1;
+	mso-first-header:url("017.files/header.htm") fh1;
+	mso-first-footer:url("017.files/header.htm") ff1;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:829055557;
+	mso-list-type:simple;
+	mso-list-template-ids:68747279;}
+@list l0:level1
+	{mso-level-tab-stop:18.0pt;
+	mso-level-number-position:left;
+	margin-left:18.0pt;
+	text-indent:-18.0pt;}
+@list l1
+	{mso-list-id:1219821995;
+	mso-list-template-ids:2011041564;}
+@list l1:level1
+	{mso-level-tab-stop:22.5pt;
+	mso-level-number-position:left;
+	margin-left:22.5pt;
+	text-indent:-22.5pt;}
+@list l1:level2
+	{mso-level-text:"%1\.%2\.";
+	mso-level-tab-stop:22.5pt;
+	mso-level-number-position:left;
+	margin-left:22.5pt;
+	text-indent:-22.5pt;}
+@list l1:level3
+	{mso-level-text:"%1\.%2\.%3\.";
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	margin-left:36.0pt;
+	text-indent:-36.0pt;}
+@list l1:level4
+	{mso-level-text:"%1\.%2\.%3\.%4\.";
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	margin-left:36.0pt;
+	text-indent:-36.0pt;}
+@list l1:level5
+	{mso-level-text:"%1\.%2\.%3\.%4\.%5\.";
+	mso-level-tab-stop:54.0pt;
+	mso-level-number-position:left;
+	margin-left:54.0pt;
+	text-indent:-54.0pt;}
+@list l1:level6
+	{mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.";
+	mso-level-tab-stop:54.0pt;
+	mso-level-number-position:left;
+	margin-left:54.0pt;
+	text-indent:-54.0pt;}
+@list l1:level7
+	{mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.%7\.";
+	mso-level-tab-stop:54.0pt;
+	mso-level-number-position:left;
+	margin-left:54.0pt;
+	text-indent:-54.0pt;}
+@list l1:level8
+	{mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.%7\.%8\.";
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	margin-left:72.0pt;
+	text-indent:-72.0pt;}
+@list l1:level9
+	{mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.%7\.%8\.%9\.";
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	margin-left:72.0pt;
+	text-indent:-72.0pt;}
+@list l2
+	{mso-list-id:1628194852;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-964799380 -1450833310 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l2:level1
+	{mso-level-number-format:bullet;
+	mso-level-style-link:список;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:64.35pt;
+	mso-level-number-position:left;
+	margin-left:64.35pt;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l3
+	{mso-list-id:2008702181;
+	mso-list-type:simple;
+	mso-list-template-ids:-1688273568;}
+@list l3:level1
+	{mso-level-start-at:0;
+	mso-level-number-format:bullet;
+	mso-level-text:-;
+	mso-level-tab-stop:53.45pt;
+	mso-level-number-position:left;
+	margin-left:53.45pt;
+	text-indent:-18.0pt;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Обычная таблица";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+table.MsoTableGrid
+	{mso-style-name:"Сетка таблицы";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+  <o:regrouptable v:ext="edit">
+   <o:entry new="1" old="0"/>
+   <o:entry new="2" old="1"/>
+   <o:entry new="3" old="0"/>
+   <o:entry new="4" old="0"/>
+  </o:regrouptable>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=RU style='tab-interval:36.0pt' background="back.gif">
+
+<div class=Section1>
+
+<h2><span lang=EN-US style='mso-ansi-language:EN-US'>1.7. </span>Модульная
+организация программы</h2>
+
+<p class=a>Самый верхний уровень организации программы касается только
+достаточно больших проектов. Это разделение программы на более-менее
+независимые части (модули), их независимое проектирование и<span
+style='mso-spacerun:yes'>  </span>трансляция. </p>
+
+<h3>Иерархия</h3>
+
+<p class=a>Любая сложная система не обходится без иерархии, без нее большая
+система превращается в нечто аморфное, необозримое и слабо управляемое.</p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m1">Логическая иерархия</b>
+отражает логических единиц программы, таких как функции, классы, библиотеки. <b
+style='mso-bidi-font-weight:normal'>Физическая иерархия </b>касается физических
+единиц, на которые разбивается текст программы: файл (модуль), проект. Естественно,
+что между ними существует взаимосвязь, но не жесткая, синтаксическая, а
+технологическая, соблюдаемая программистом. Иерархия программных единиц имеет
+три уровня:</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>элементом самого нижнего уровня является <b
+style='mso-bidi-font-weight:normal'>функция</b> (в объектно-ориентированном
+программировании – метод <b style='mso-bidi-font-weight:normal'><a name="m2">класса</b>).
+Это автономная синтаксическая единица языка. В традиционной технологии
+структурного программирования (см. <b style='mso-bidi-font-weight:normal'><a name="m3">3.5</b>)
+под модульным программированием понимают именно это: представление программы в
+виде системы взаимодействующих функций;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>несколько функций, объединенных общем описанием
+обрабатываемых ими структур данных, составляют <b style='mso-bidi-font-weight:
+normal'><a name="m4">библиотеку функций </b>(эквивалент в ООП - <b style='mso-bidi-font-weight:
+normal'><a name="m5">класс</b>). Все это – элементы логической иерархии. В физическом
+представлении им соответствует <b style='mso-bidi-font-weight:normal'><a name="m6">модуль </b>(в
+интегрированных, закрытых системах) или <b style='mso-bidi-font-weight:normal'><a name="m7">файл
+исходного текста. </b>Особенность модульного программирования в том и состоит,
+что отдельные модули могут разрабатываться, транслироваться и частично
+отлаживаться отдельно друг от друга. Но для этого им могут потребоваться
+описания интерфейсов взаимодействия (в Си – <b style='mso-bidi-font-weight:
+normal'><a name="m8">заголовочные файлы</b>);</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>вся программа в целом образуют <b
+style='mso-bidi-font-weight:normal'>проект</b>. В интегрированных системах
+проект и все его модули могут быть представлены одним файлом. В традиционных
+системах программирования (к ним относится и Си/Си++) проект состоит из файлов
+исходного текста – модулей (обычные текстовые файлы), файла проекта,
+содержащего список модулей, настройки транслятора и т.п., а также
+вспомогательных файлов. В этом случае под проект отводится отдельная папка.</p>
+
+<p class=a>Подробнее создание проектов на Си в классической среде
+программирования рассматривается в <b style='mso-bidi-font-weight:normal'><a name="m9">5.4</b>,
+в объектно-ориентированной – в <b style='mso-bidi-font-weight:normal'><a name="m10">11.1</b>.
+Что же касается небольших программ, то в большинстве систем программирования
+оставлена возможность их автономной трансляции и выполнения вне проекта.</p>
+
+<p class=a>Способы модульной организации программы и взаимодействия ее частей в
+значительной степени обусловлены особенностями трансляции программы, поэтому
+здесь необходимы минимальные знания о трансляции и связывании программы и ее
+элементов.<span style='mso-spacerun:yes'>                               
+</span></p>
+
+<h3>Сущность трансляции. Компиляция и интерпретация</h3>
+
+<p class=a>Под трансляцией в самом широком смысле можно понимать процесс
+восприятия компьютером программы, написанной на некотором формальном языке. При
+всем своем различии языки программирования имеют много общего<span
+style='mso-spacerun:yes'>  </span>и, в принципе, эквиваленты с точки зрения
+потенциальной возможности написать одну и ту же программу на любом из них. На
+самом деле сложно подвести под одну схему имеющееся многообразие языков
+программирования, </p>
+
+<p class=a><span style='mso-spacerun:yes'> </span>Компиляция - преобразование
+объектов (данных и операций над ними) с входного языка в объекты<span
+style='mso-spacerun:yes'>  </span>на другом языке для всей программы в целом с
+последующим выполнением полученной программы в виде отдельного шага.</p>
+
+<p class=a><span style='mso-spacerun:yes'> </span>Интерпретация - анализ
+отдельного объекта на входном языке с одновременным выполнением
+(интерпретацией). </p>
+
+<p class=a><span style='mso-spacerun:yes'> </span>Следовательно, компиляция и
+интерпретация отличаются не характером и методами анализа и преобразования
+объектов программы, а совмещением фаз обработки этих объектов во времени. То
+есть при компиляции фазы преобразования и выполнения действий разнесены во
+времени, но зато каждая из них выполняется над всеми объектами программы
+одновременно. При интерпретации, наоборот, преобразование и выполнение действий
+объединены во времени, но для каждого объекта программы.</p>
+
+<p class=a><span style='mso-spacerun:yes'> </span>Если посмотреть на эти
+различия несколько с другой стороны, то можно заметить, что интерпретатор
+непосредственно выполняет действия, связанные с определением или
+преобразованием объектов программы, а компилятор - переводит их на другой (не
+обязательно машинный язык). Отсюда можно сделать несколько выводов:</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>для выполнения программы, написанной на
+определенном формальном языке после ее компиляции<span
+style='mso-spacerun:yes'>  </span>необходим интерпретатор, выполняющий эту
+программу, но уже записанную на выходном языке компилятора;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>процессор и память любого компьютера (а в
+широком смысле и вся программная среда, создаваемая операционной системой,
+является интерпретатором машинного кода);</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='mso-spacerun:yes'> </span>в
+практике построения трансляторов часто встречается случай, когда программа
+компилируется с входного языка на некоторый промежуточный уровень (внутренний
+язык), для которого имеется программный интерпретатор. Многие языковые системы
+программирования, называемые интерпретаторами, на<span
+style='mso-spacerun:yes'>  </span>самом деле имеют фазу компиляции во внутренне
+представление, на котором производится интерпретация.</p>
+
+<p class=a>Выходной язык компилятора может быть машинным языком для компьютера
+с другой архитектурой, нежели тот, в котором работает компилятор. Такой
+компилятор называется <b><a name="m11">кросс-компилятором</b>, а сама система
+программирования <b><a name="m12">кросс-системой программирования</b>. Такие системы
+используются для разработки программ для архитектур, не имеющих собственных
+операционных систем или систем программирования (контроллеры, управляющие
+микропроцессоры).</p>
+
+<p class=a>Таким образом, граница между компиляцией и интерпретацией в
+трансляторе может перемещаться от входного языка (тогда мы имеем чистый
+интерпретатор) до машинного кода (тогда речь идет о чистом компиляторе).</p>
+
+<p class=a><span style='mso-spacerun:yes'>       </span>Создание слоя
+программной интерпретации для некоторого промежуточного языка в практике
+построения трансляторов обычно встречается при попытке обеспечить совместимость
+для имеющегося многообразия языков программирования, операционных систем,
+архитектур и т.д. То есть определяется некоторый внутренний промежуточный язык,
+достаточно простой, чтобы для него можно было написать интерпретатор для<span
+style='mso-spacerun:yes'>  </span>всего имеющегося многообразия операционных
+систем или архитектур. Затем пишется одни (или несколько) компиляторов для одного
+(или нескольких) входных языков на этот промежуточный уровень. Приведем примеры
+такой стандартизации:</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>для обеспечения совместимости и переносимости
+трансляторов на компьютеры с различной архитектурой или с различными
+операционными системами был разработан универсальный<span
+style='mso-spacerun:yes'>  </span>внутренний язык (P-код). Для каждой такой
+архитектуры необходимо реализовать свой интерпретатор P-кода. При этом все
+разнообразие имеющихся компиляторов с языков высокого уровня на P-код может
+быть использовано без каких-либо изменений.</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><![endif]>язык 
+программирования Java аналогично был разработан для обеспечения переносимости 
+различных приложений в среде Internet. Исходный текст <span lang="EN-US">Java</span>-программы 
+компилируется в <b><a name="m13">байт-код, </b>представляющий собой двоичное представление 
+команд виртуального процессора (виртуальной <span lang="EN-US">Java</span>-машины 
+или <b><a name="m14"><span lang="EN-US">JVM</span></b>). Наличие в любом браузере <b><a name="m15">
+<span lang="EN-US">JVM</span>, </b>которая является интерпретатором байт-кода, 
+позволяет передавать по сети и выполнять <span lang="EN-US">Java</span>-программу, 
+независимо от архитектуры, операционной системы и т.п..</p>
+
+<p class=a>Одним из существенных свойств «классического» Си является <b
+style='mso-bidi-font-weight:normal'>чистый программный код. </b>Что это значит?
+Во-первых, транслятор представляет собой компилятор, генерирующий программный
+код целевого процессора. Во-вторых, транслятор «сознательно» не включает в этот
+код никаких дополнительных команд и обращений к внешним функциям, кроме явно
+прописанных в программе. То же самое касается и обрабатываемых данных: они
+имеют прямое представление в памяти без всяких дополнений или изменений. Все это
+гарантирует программе следующие свойства:</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>программист контролирует эффективность полученного
+программного кода;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>программист контролирует размерности и
+размещение данных в памяти;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>программный код может выполняться без поддержки
+какой-либо операционной среды (исполнительной системы языка, библиотек,
+операционной системы), т.е. на «голой» (<b style='mso-bidi-font-weight:normal'><a name="m16">standalone</b>)
+<span style='mso-spacerun:yes'> </span>машине.</p>
+
+<p class=a>Именно поэтому на классическом Си могут быть написаны такие
+компоненты, как программы для встроенных процессоров, ядро и драйверы
+операционных систем, т.е. то, что традиционно пишется на машинном языке (языке
+Ассемблера). Поэтому «классический» Си еще называют <b style='mso-bidi-font-weight:
+normal'><a name="m17">машинно-независимым Ассемблером.<o:p></o:p></b></p>
+
+<p class=a>Что же касается Си++, то там указанные принципы частично нарушаются,
+хотя он тоже является «чистым» компилятором, но не обеспечивает чистоту
+программного кода и данных.</p>
+
+<h3>Фазы трансляции и выполнения программы</h3>
+
+<p class=a>Технология подготовки программ для языков компилирующего типа (к
+каковым относится Си/Си++) сформировалась в начале 60-х годов и с тех пор не
+претерпела существенных изменений. Заложенные тогда принципы оказывают влияние
+на способы использования стандартных библиотечных функций и разработки больших проектов.</p>
+
+<p class=a>Подготовка программы начинается с редактирования файла, содержащего
+текст этой программы, который имеет стандартное расширение для данного языка.
+Затем выполняется его трансляция (компиляция), которая включает в себя
+несколько фаз: препроцессор, лексический, синтаксический, семантический анализ,
+генерация кода и его оптимизация. В результате трансляции получается объектный
+модуль - некий «полуфабрикат» готовой программы, который потом участвует в ее
+сборке. Файл объектного модуля имеет стандартное расширение <b><a name="m18">obj</b>.
+Компоновка (сборка) программы заключается в объединении одного или нескольких
+объектных модулей программы и объектных модулей, взятых из библиотечных файлов,
+содержащих стандартные функции и другие полезные вещи. В результате получается
+исполняемая программа в виде отдельного файла (загрузочный модуль, программный
+файл) со стандартным расширением - <b style='mso-bidi-font-weight:normal'><a name="m19">exe</b>,
+который затем загружается в память и выполняется. </p>
+
+<p class=a>При модульном проектировании весьма важна разница между определением
+и объявлением объектов программы (переменных, функций, методов, классов). <b
+style='mso-bidi-font-weight:normal'>Определение переменной или функции – </b>это
+фрагмент программы, в котором полностью задано содержание объекта, и по
+которому происходит его трансляция во внутреннее представление. <b
+style='mso-bidi-font-weight:normal'>Объявление </b>только упоминает объект
+языка и перечисляет его свойства, если он недоступен в данной точке программы. С
+учетом раздельного размещения определений и объявлений в проекте модульной
+Си-программы присутствуют три вида файлов (модулей):</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>файлы исходного текста (с расширением - <b
+style='mso-bidi-font-weight:normal'>cpp</b>), содержащие определения
+переменных, функций, методов;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>заголовочные файлы (с расширением - <b
+style='mso-bidi-font-weight:normal'>h</b>), содержащие объявления для
+соответствующих файлов исходного текста;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>объектные модули (с расширением – <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>obj</span>), </b>полученные в результате независимой трансляции файлов исходного
+текста.</p>
+
+<p class=a>Назначение заголовочных файлов заключается в том, что содержащиеся в
+них объявления позволяют сформировать правильный программный код для обращения к
+объекту языка, который определен в другом модуле (следовательно, его внутреннее
+представление находится в другом объектном модуле). Для обращения к такому
+внешнему объекту необходимо подключить соответствующий заголовочный файл с его
+объявлением директивой <b style='mso-bidi-font-weight:normal'><a name="m20"><span lang=EN-US
+style='mso-ansi-language:EN-US'>include</span></b>. То же самое касается данных
+и функций, содержащихся в библиотеках и библиотечных классах.</p>
+
+<p class=a align=center style='text-align:center;text-indent:0cm'>
+<p align="center"><br
+style='mso-ignore:vglayout' clear=ALL>
+<img border="0" src="Images/017-01.gif" width="440" height="474"></p>
+<![if !mso]><![endif]>
+    <![if !mso]><![endif]>
+<p align="center"><b style='mso-bidi-font-weight:normal'><a name="m21">рис. 17.1. Модульное
+проектирование на «классическом» Си</b></p>
+</p>
+
+<h3>Препроцессор </h3>
+
+<p class=a><span style='mso-spacerun:yes'> </span>Собственно говоря,
+препроцессор не имеет никакого отношения к языку. Это предварительная фаза
+трансляции, которая выполняет обработку текста программы, не вдаваясь глубоко в
+ее содержание. Он производит замену одних частей текста на другие, при этом
+сама программа так и остается в исходном виде. В языке Си директивы препроцессора
+оформлены отдельными строками программы, которые начинаются с символа
+&quot;#&quot;. Здесь мы рассмотрим наиболее простые и популярные. </p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>#define<span style='mso-spacerun:yes'>      
+</span>идентификатор<span style='mso-spacerun:yes'>  </span>строка_текста</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a>Директива обеспечивает замену встречающегося в тексте программы
+идентификатора на соответствующую строку текста. Наиболее часто она применяется
+для символического обозначения константы, которая встречается многократно в
+различных частях программы. Например, размерность массива: </p>
+
+<p class=a><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>#define<span
+style='mso-spacerun:yes'>      </span>SIZE<span style='mso-spacerun:yes'>     
+</span>100<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int<span
+style='mso-spacerun:yes'>      </span>A[SIZE];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>for (i=0; i&lt;SIZE;
+i++) {...}<o:p></o:p></span></p>
+
+<p class=a>В данном примере вместо имени SIZE в текст программы будет
+подставлена строка, содержащая константу 100. Теперь, если нас не устраивает
+размерность массива, нам достаточно увеличить это значение в директиве define и
+повторно оттранслировать программу. </p>
+
+<p class=a0><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:
+"Times New Roman CYR";mso-bidi-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0>#define идентификатор(параметры) строка_с_параметрами</p>
+
+<p class=a>Директива отдаленно напоминает определение функции с формальными
+параметрами, где вместо тела функции используется строка текста. Если
+препроцессор находит в тексте программы указанный идентификатор со списком
+фактических параметров в скобках, то он подставляет вместо него соответствующую
+строку из директивы <b><a name="m22">define</b> с заменой в строке формальных параметров на
+фактические. Основное отличие от функции: если функция реализует подобные
+действия (подстановка параметров, вызов) во время работы программы, то
+препроцессор - еще до трансляции. Кроме этого, директива <b><a name="m23">define</b>
+позволяет оформить в таком виде любую часть программы, независимо от того,
+законченная это конструкция языка или ее фрагмент. В следующем примере
+стандартный заголовок цикла <b><a name="m24">for</b> представлен в виде директивы <b><a name="m25">define</b>
+с параметрами: </p>
+
+<p class=a><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>#define<span
+style='mso-spacerun:yes'>      </span>FOR(i,n) <span style='mso-tab-count:1'>       </span>for(i=0;
+i&lt;n; i++)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>FOR(k,20)
+A[k]=0;<span style='mso-spacerun:yes'>      </span><span style='mso-tab-count:
+1'>   </span>// for(k=0; k&lt;20; k++) A[k]=0; <o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>FOR(j,m+2)
+{...}<span style='mso-spacerun:yes'>     </span><span style='mso-tab-count:
+1'>        </span><span style='mso-spacerun:yes'> </span>// for(j=0;
+j&lt;m+2;<span style='mso-spacerun:yes'>  </span>j++) {...}<o:p></o:p></span></p>
+
+<p class=a>В таком варианте директива define представляет собой <b><a name="m26">макроопределение</b>,
+а замена в тексте программы идентификатора с параметрами на строку -<b><a name="m27">макроподстановку</b>.
+</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>#include &lt;</span>имя<span
+lang=EN-US style='mso-ansi-language:EN-US'>_</span>файла<span lang=EN-US
+style='mso-ansi-language:EN-US'>&gt;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>#include &quot;</span>имя<span
+lang=EN-US style='mso-ansi-language:EN-US'>_</span>файла<span lang=EN-US
+style='mso-ansi-language:EN-US'>&quot;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a>В текст программы вместо указанной директивы включается текст файла,
+находящегося в системном или, соответственно, в текущем (явно указанном)
+каталоге. Наиболее часто в программу включаются тексты заголовочных файлов,
+содержащие необходимую информацию транслятору о внешних функциях, находящихся в
+других объектных модулях и библиотеках. Например<span lang=EN-US
+style='mso-ansi-language:EN-US'>, <o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:"Times New Roman CYR";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>#include
+&lt;stdio.h&gt;<span style='mso-spacerun:yes'>      </span><o:p></o:p></span></p>
+
+<p class=a4>включает в программу текст заголовочного файла, содержащего
+объявления внешних функций из библиотеки стандартного ввода-вывода. <span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a>Еще один полезное средство препроцессора – условная трансляция.
+Препроцессор способен устанавливать и проверять наличие определения (<b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>define</span></b>) и значения как собственных переменных, так и
+переменных, содержащих параметры текущего окружения и характеристики
+транслятора. Например, можно исключить повторное включение кода директивой <b
+style='mso-bidi-font-weight:normal'>include, </b>если включаемый текст обрамить
+такой конструкцией:</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0>#<span lang=EN-US style='mso-ansi-language:EN-US'>ifndef</span><span
+style='mso-tab-count:1'>   </span><span lang=EN-US style='mso-ansi-language:
+EN-US'>AA</span><span style='mso-tab-count:2'>                    </span>// Код
+включается только при неопределенной переменной <span lang=EN-US
+style='mso-ansi-language:EN-US'>AA</span></p>
+
+<p class=a0>#<span lang=EN-US style='mso-ansi-language:EN-US'>define</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>AA</span> 0<span
+style='mso-tab-count:2'>                  </span>// Определить переменную
+препроцессора</p>
+
+<p class=a0>…<span style='mso-tab-count:3'>                                 </span>//
+Включаемый код</p>
+
+<p class=a0>#<span lang=EN-US style='mso-ansi-language:EN-US'>endif</span></p>
+
+<p class=a>Аналогичные средства в других языках программирования носят название
+<b><a name="m28">макропроцессор, макросредства</b>. </p>
+
+<h3>Трансляция и ее фазы </h3>
+
+<p class=a>Самое главное<span style='mso-spacerun:yes'>  </span>в процессе
+трансляции состоит в том, что он не является линейным, то есть последовательным
+преобразованием фрагмента программы одного языка на другой.<span
+style='mso-spacerun:yes'>  </span>На процесс трансляции одного фрагмента
+обязательно оказывают влияние другие фрагменты программы. Потому в самом общем
+виде трансляция заключается в <b><a name="m29">анализе текста </b>программы и построения ее <b><a name="m30">внутреннего
+представления </b>(внутренней модели), из которой происходит <b><a name="m31">синтез </b>текста
+эквивалентной программы, но уже на другом языке.<span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a>Что касается анализа, то он происходит в три этапа, которые
+соответствуют трем основным составляющим любого языка программирования.<b><a name="m32"><o:p></o:p></b></p>
+
+<p class=a><b><a name="m33">Лексика</b> языка программирования - это правила «правописания
+слов» программы, таких как идентификаторы, константы, служебные слова,
+комментарии. Лексический анализ разбивает текст программы на указанные
+элементы. Особенность любой лексики -ее элементы представляют собой регулярные
+линейные последовательности символов. Например, <b><a name="m34">Идентификатор</b> - это
+произвольная последовательность букв, цифр и символа &quot;_&quot;,
+начинающаяся с буквы или &quot;_&quot;. </p>
+
+<p class=a><span style='mso-spacerun:yes'> </span><b><a name="m35">Синтаксис</b> языка
+программирования - это правила составления предложений языка из отдельных слов.
+Такими предложениями являются операции, операторы, определения функций и
+переменных. Особенностью синтаксиса является принцип вложенности
+(рекурсивность) правил построения предложений. Это значит, что элемент
+синтаксиса языка в своем определении прямо или косвенно в одной из его частей
+содержит сам себя. Например, в определении оператора цикла телом цикла является
+оператор, частным случаем которого является все тот же оператор цикла. </p>
+
+<p class=a><span style='mso-spacerun:yes'> </span><b><a name="m36">Семантика</b> языка
+программирования - это смысл, который закладывается в каждую конструкцию языка.
+Семантический анализ - это проверка смысловой правильности конструкции. Например,
+если мы в выражении используем переменную, то она должна быть определена ранее
+по тексту программы, а из этого определения может быть получен ее тип. Исходя
+из типа переменной, можно говорит о допустимости операции с данной переменной.</p>
+
+<p class=a>Фаза синтеза зависит от способа трансляции. В компиляторах он
+состоит в генерации кода, в интерпретаторах – в непосредственном исполнении
+(интерпретации) полученного внутреннего представления.</p>
+
+<p class=a><b><a name="m37">Генерация кода</b> - это преобразование элементарных действий,
+полученных в результате лексического, синтаксического и семантического анализа
+программы, в некоторое внутреннее представление. Это могут быть коды команд,
+адреса и содержимое памяти данных, либо текст программы на языке Ассемблера,
+либо стандартизованный промежуточный код (например, P-код). В процессе
+генерации кода производится и его оптимизация. </p>
+
+<h3>Модульное программирование, компоновка </h3>
+
+<p class=a>При независимой трансляции модулей (файлов исходного текста) в
+результате трансляции получается <b style='mso-bidi-font-weight:normal'><a name="m38">объектный
+модуль -<span style='mso-spacerun:yes'>  </span></b>некоторый «полуфабрикат»,
+содержащий оттранслированную часть программы во внутреннем представлении, а
+также информацию о некоторых элементах программы в исходном (символьном) виде:</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>программный код, использующий в своей работе
+только объекты языка (типы данных, переменные, функции), определенные в текущем
+модуле, полностью переводится во внутреннее (двоичное) представление;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>если объект языка допускает внешний доступ из
+других модулей, то в объектом модуле создается <b style='mso-bidi-font-weight:
+normal'><a name="m39">точка входа, </b>содержащая его имя и внутренний адрес в пространстве объектного
+модуля;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>при трансляции обращения к внешнему объекту
+языка объявление, полученное из заголовочного файла позволяет сформировать
+программный код для обращения к нему. Но все равно неизвестным остается его
+адрес. Поэтому вместо адреса транслятор оставляет <b style='mso-bidi-font-weight:
+normal'><a name="m40">внешнюю ссылку, </b>содержащую исходное (символическое) имя объекта.</p>
+
+<p class=a style='text-indent:42.0pt'><b><a name="m41">Библиотека объектных модулей</b> - это
+файл (библиотечный файл), содержащий набор объектных модулей и собственный
+внутренний каталог. Объектные модули библиотеки извлекаются из нее целиком при
+наличии в них требуемых внешних функций и переменных и используются в процессе
+компоновки программы. </p>
+
+<p class=a><span style='mso-spacerun:yes'> </span><b><a name="m42">Компоновка (редактирование
+связей)</b> - это процесс сборки программы из объектных модулей и библиотек, который
+включает в себя:</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>объединение адресных пространств отдельных
+модулей (и их содержимого – внутреннего представления программы) в единое
+адресное пространство программного файла (компоновка);</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>«соединение» внешних ссылок и соответствующих им
+точек входа (редактирование связей);</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>при отсутствии необходимых точек входа для
+внешних ссылок их поиск производится в указанных библиотечных файлах. Если
+точка входа найдена в библиотеке объектных модулей, то весь объектный модуль,
+содержащий эту точку, компонуется в программу и для него повторяется описанный
+выше процесс.</p>
+
+<p class=a>В заключение отметим, что источником объектного модуля может быть не
+только Си-программа, но и программа, написанная на любом другом языке
+программирования, например, на Ассемблере. Но в этом случае необходимы
+дополнительные соглашения по поводу «стыковки» вызовов функций и обращений к
+данным в различных языках. </p>
+
+<span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:"Arial CYR";
+mso-fareast-font-family:"Times New Roman";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:RU;mso-fareast-language:RU;mso-bidi-language:AR-SA'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<h3>Понятие связывания. Статическое и динамическое связывание</h3>
+
+<p class=a>Трансляция и последующие действия по подготовке программы к
+выполнению представляют собой процесс преобразования программы, записанной<span
+style='mso-spacerun:yes'>  </span>на некотором формальном языке, в другую
+формальную систему - архитектуру компьютера, в которой она может быть выполнена
+(интерпретирована).<span style='mso-spacerun:yes'>  </span>Для понимания этого
+процесса, а также отличий, имеющихся в различных языках программирования,
+вводится понятие <b><a name="m43">связывания</b>, а также <b><a name="m44">времени связывания</b>.</p>
+
+<p class=a8 style='text-align:justify'><span style='font-size:12.0pt;
+mso-ansi-language:RU'><o:p>&nbsp;</o:p></span></p>
+
+<div style='mso-element:para-border-div;border:solid windowtext 1.5pt;
+padding:1.0pt 1.0pt 1.0pt 1.0pt;margin-left:35.45pt;margin-right:32.9pt'>
+
+<p class=a2 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:0cm'><b><a name="m45">Связывание</b> - процесс установления соответствия между
+объектами и их свойствами в программе на формальном языке (операции, операторы,
+данные) и элементами архитектуры компьютера (команды, адреса).</p>
+
+</div>
+
+<p class=a><b><a name="m46">Временем связывания</b> называется соответственно фаза подготовки
+программы к выполнению (трансляция, компоновка, загрузка), на которой
+производится это действие. Заметим, что различные характеристики одного и того
+же объекта (например, переменной) могут связываться с различными элементами
+архитектуры в разное время, то есть процесс связывания не является
+одномоментным. Для начала перечислим возможные времена связывания:</p>
+
+<p class=a1 style='margin-left:21.3pt;tab-stops:list 21.3pt'><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>при определении <span
+style='mso-spacerun:yes'> </span>языка;</p>
+
+<p class=a1 style='margin-left:21.3pt;tab-stops:list 21.3pt'><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>при реализации компилятора;</p>
+
+<p class=a1 style='margin-left:21.3pt;tab-stops:list 21.3pt'><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>во время трансляции;</p>
+
+<p class=a1 style='margin-left:21.3pt;tab-stops:list 21.3pt'><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>при компоновке (связывании);</p>
+
+<p class=a1 style='margin-left:21.3pt;tab-stops:list 21.3pt'><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>во время загрузки программы;</p>
+
+<p class=a1 style='margin-left:21.3pt;tab-stops:list 21.3pt'><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>во время выполнения программы, в том числе:</p>
+
+<p class=a1 style='margin-left:21.3pt;tab-stops:list 21.3pt'><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>при входе в модуль (процедуру, функцию);</p>
+
+<p class=a1 style='margin-left:21.3pt;tab-stops:list 21.3pt'><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>в произвольной точке выполнения программы.</p>
+
+<p class=a>В качестве примера рассмотрим простейший фрагмент программы, для
+которого перечислим более-менее полный перечень времен связывания его различных
+свойств с элементами архитектуры компьютера:</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int a,b;<span
+style='mso-spacerun:yes'>  </span>… a+b …<o:p></o:p></span></p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a style='margin-left:18.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo3;
+tab-stops:list 18.0pt left 54.0pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Тип переменных <b style='mso-bidi-font-weight:
+normal'><a name="m47">int</b> - как способ определения целой переменной в машинном слове
+стандартной длины (представление целого со знаком, дополнительный код), связывается
+с аналогичной формой представления данных в компьютере при определении языка.
+Язык Си характерен тем, что базовые типы данных в нем полностью совпадают с
+соответствующими формами представления данных в компьютере.</p>
+
+<p class=a style='margin-left:18.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo3;
+tab-stops:list 18.0pt left 54.0pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Конкретная размерность переменной <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>int</span></b> определяется при реализации соответствующего компилятора.</p>
+
+<p class=a style='margin-left:18.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo3;
+tab-stops:list 18.0pt left 54.0pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Имя <b><a name="m48"><span lang=EN-US style='mso-ansi-language:
+EN-US'>a</span></b> может быть определено в конструкции вида <b><a name="m49">#<span
+lang=EN-US style='mso-ansi-language:EN-US'>define</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>a</span> 0<span lang=EN-US
+style='mso-ansi-language:EN-US'>x</span>11<span lang=EN-US
+style='mso-ansi-language:EN-US'>FF</span></b>. В этом случае имя
+(псевдо-переменная) связывается со своим значением на первой фазе трансляции -
+в препроцессоре.</p>
+
+<p class=a style='margin-left:18.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo3;
+tab-stops:list 18.0pt left 54.0pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Если переменная определяется обычным способом в
+виде <b><a name="m50"><span lang=EN-US style='mso-ansi-language:EN-US'>int</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>a</span>;
+</b>то связывание переменной с соответствующим ей типом происходит во время
+трансляции (на фазе семантического анализа).</p>
+
+<p class=a style='margin-left:18.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo3;
+tab-stops:list 18.0pt left 54.0pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Если переменная определяется как внешняя
+(глобальная, вне тела функции), то смысл ее трансляции заключается в
+распределении под нее памяти в сегменте данных программы, который создается для
+текущего модуля (файла). Но при этом сама распределенной памяти к конкретной
+оперативной памяти осуществляется в несколько этапов:</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>при трансляции переменная привязывается к
+некоторому относительному адресу в сегменте данных объектного модуля (то есть
+ее размещение фиксируется только относительно<span style='mso-spacerun:yes'> 
+</span>начала модуля)</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>при компоновке (связывании) сегменты данных и
+команд различных объектных модулей объединяются в общий программный файл ,
+представляющий собой образ памяти программы. В нем переменная получает уже
+относительный адрес от начала всей программы.</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>при загрузке программы в некоторую область
+памяти (например, в <b style='mso-bidi-font-weight:normal'><a name="m51">DOS</b> или в режиме
+эмуляции <b style='mso-bidi-font-weight:normal'><a name="m52">DOS</b> в <b style='mso-bidi-font-weight:
+normal'><a name="m53">Windows</b>) она может размещаться не с самого начала этой области. В
+этом случае осуществляется привязка адресов переменных, заданных в
+относительных адресах от начала программного модуля к<span
+style='mso-spacerun:yes'>  </span>адресам памяти с учетом перемещения
+программного модуля (так называемый перемещающий загрузчик, которая имеет место
+для exe-файлов в <b style='mso-bidi-font-weight:normal'><a name="m54">DOS</b>).</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>если программа работает не в физической, а в
+виртуальной памяти, то процесс загрузки может быть несколько иным. Программный
+модуль условно считается загруженным в некоторое виртуальное адресное
+пространство (с перемещением или без него как всей программы, так и отдельных
+ее сегментов). Реальная загрузка программы в память осуществляется уже в
+процессе работы программы по частям (сегментам, страницам), причем<span
+style='mso-spacerun:yes'>  </span>установление соответствия (или связывание)
+виртуальных и физических адресов осуществляется динамически операционной
+системой с использованием соответствующих аппаратных средств.</p>
+
+<p class=a style='margin-left:18.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo3;
+tab-stops:list 18.0pt left 54.0pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>6.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Если переменная определяется как автоматическая
+(локальная внутри тела функции или блока), то она размещается<span
+style='mso-spacerun:yes'>  </span>в стеке программы:</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>во время трансляции определяется ее размерность
+и генерируются команды, которые резервируют под нее память в стеке в момент
+входа в тело функции (блок). То есть в процессе трансляции переменная
+связывается только с относительным адресом в стеке программы;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>связывание локальным переменной с ее
+адресом<span style='mso-spacerun:yes'>  </span>в сегменте стека осуществляется
+при<span style='mso-spacerun:yes'>  </span>выполнении в момент входа в тело
+функции (блок). Благодаря такому способу связывания в рекурсивной функции
+существует столько «экземпляров» локальных переменных, сколько раз функция
+вызывает сама себя.</p>
+
+<p class=a style='margin-left:18.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo3;
+tab-stops:list 18.0pt left 54.0pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>7.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Тип операции “+” в конкретном выражении <b><a name="m55"><span
+lang=EN-US style='mso-ansi-language:EN-US'>a</span>+<span lang=EN-US
+style='mso-ansi-language:EN-US'>b</span></b> определяется при трансляции в
+зависимости от типов операндов. В данном случае генерируется операция целого
+сложения.</p>
+
+<p class=a style='margin-left:18.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo3;
+tab-stops:list 18.0pt left 54.0pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>8.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>С точки зрения времени связывания понятие <b><a name="m56">инициализация</b>
+внешних переменных можно определить как связывание переменных с их значениями в
+процессе трансляции программы (<b><a name="m57"><span lang=EN-US style='mso-ansi-language:
+EN-US'>int</span><span lang=EN-US> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>a</span>=10;</b>)<span
+style='mso-spacerun:yes'>  </span>С этой точки зрения обычное присваивание
+можно рассматривать как связывание переменной с ее значением во время
+выполнения программы.</p>
+
+<p class=a>С понятием связывания близко соседствуют термины <b
+style='mso-bidi-font-weight:normal'>статический </b>и <b style='mso-bidi-font-weight:
+normal'><a name="m58">динамический.</b> Статическим называется элемент языка, полностью
+определяемый при трансляции (и компоновке). Соответственно, динамический
+элемент или его свойства определяются при работе программы. Аналогичным образом
+понимаются термины <b style='mso-bidi-font-weight:normal'><a name="m59">статическое и
+динамическое связывание.<o:p></o:p></b></p>
+
+<p class=a>В заключение отметим основные свойства Си с точки зрения понятий «связывание,
+статический, динамический»:</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>язык Си является компилируемым языком с большой
+долей статического связывания. Даже там, где возможно легко реализовать введение
+динамических компонент (например, создание локальных массивов изменяемой
+размерности), это исключается ради поддержания единообразия;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>почти все случаи динамического связывания
+реализуются явно и требуют программной (технологической) поддержки
+программистом.</p>
+
+<p class=a>Именно поэтому примеры динамического связывания можно «перечесть по
+пальцам»:</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>динамические переменные и массивы (<b
+style='mso-bidi-font-weight:normal'>5.6</b>);</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>динамическое связывание функций при помощи
+указателей на функции (<b style='mso-bidi-font-weight:normal'><a name="m60">9.3</b>);</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>виртуальные функции в Си++ (<b style='mso-bidi-font-weight:
+normal'><a name="m61">12.4</b>).</p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:14.2pt'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+</div>
+
+</body>
+
+</html>

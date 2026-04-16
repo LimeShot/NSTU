@@ -1,0 +1,701 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=Edit-Time-Data href="011.files/editdata.mso">
+<title>1.1. Структура программы и языка программирования</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>www.PHILka.RU</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>vtpc112</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>146</o:TotalTime>
+  <o:Created>2008-09-02T10:37:00Z</o:Created>
+  <o:LastSaved>2008-09-02T10:37:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>1207</o:Words>
+  <o:Characters>6883</o:Characters>
+  <o:Company>NSTU_VT</o:Company>
+  <o:Bytes>11776</o:Bytes>
+  <o:Lines>57</o:Lines>
+  <o:Paragraphs>16</o:Paragraphs>
+  <o:CharactersWithSpaces>8074</o:CharactersWithSpaces>
+  <o:Version>11.6360</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DoNotHyphenateCaps/>
+  <w:DrawingGridHorizontalSpacing>0,55 пт</w:DrawingGridHorizontalSpacing>
+  <w:DrawingGridVerticalSpacing>0,55 пт</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:UseMarginsForDrawingGridOrigin/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DrawingGridVerticalOrigin>99,25 пт</w:DrawingGridVerticalOrigin>
+  <w:Compatibility>
+   <w:WW6BorderRules/>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+   <w:UseWord97LineBreakingRules/>
+   <w:SelectEntireFieldWithStartOrEnd/>
+   <w:UseWord2002TableStyleRules/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:"Times New Roman CYR";
+	panose-1:2 2 6 3 5 4 5 2 3 4;
+	mso-font-charset:204;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+@font-face
+	{font-family:"Arial CYR";
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+h1
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:14.0pt;
+	mso-bidi-font-weight:normal;}
+h2
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-font-weight:normal;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+h3
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	font-weight:normal;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.a, li.a, div.a
+	{mso-style-name:текст;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a0, li.a0, div.a0
+	{mso-style-name:программа;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a1, li.a1, div.a1
+	{mso-style-name:список;
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:18.45pt;
+	margin-bottom:0cm;
+	margin-left:64.35pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-18.0pt;
+	mso-pagination:widow-orphan;
+	mso-list:l1 level1 lfo1;
+	tab-stops:42.55pt list 64.35pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a2, li.a2, div.a2
+	{mso-style-name:определение;
+	mso-style-parent:текст;
+	margin-top:12.0pt;
+	margin-right:32.9pt;
+	margin-bottom:12.0pt;
+	margin-left:35.45pt;
+	text-align:justify;
+	text-indent:.55pt;
+	mso-pagination:widow-orphan;
+	border:none;
+	mso-border-alt:solid windowtext 1.5pt;
+	padding:0cm;
+	mso-padding-alt:1.0pt 1.0pt 1.0pt 1.0pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a3, li.a3, div.a3
+	{mso-style-name:эпиграф;
+	margin-top:0cm;
+	margin-right:32.9pt;
+	margin-bottom:0cm;
+	margin-left:5.0cm;
+	margin-bottom:.0001pt;
+	text-align:right;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.a4, li.a4, div.a4
+	{mso-style-name:"от края";
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a5, li.a5, div.a5
+	{mso-style-name:Формула;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.a6, li.a6, div.a6
+	{mso-style-name:"без формата";
+	mso-style-parent:программа;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a7, li.a7, div.a7
+	{mso-style-name:стихи;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.1, li.1, div.1
+	{mso-style-name:эпиграф1;
+	mso-style-parent:эпиграф;
+	margin-top:0cm;
+	margin-right:9.35pt;
+	margin-bottom:0cm;
+	margin-left:9.0cm;
+	margin-bottom:.0001pt;
+	text-align:right;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+ /* Page Definitions */
+ @page
+	{mso-footnote-separator:url("011.files/header.htm") fs;
+	mso-footnote-continuation-separator:url("011.files/header.htm") fcs;
+	mso-endnote-separator:url("011.files/header.htm") es;
+	mso-endnote-continuation-separator:url("011.files/header.htm") ecs;}
+@page Section1
+	{size:21.0cm 842.0pt;
+	margin:33.45pt 42.55pt 72.0pt 89.85pt;
+	mso-header-margin:14.2pt;
+	mso-footer-margin:31.75pt;
+	mso-even-header:url("011.files/header.htm") eh1;
+	mso-header:url("011.files/header.htm") h1;
+	mso-even-footer:url("011.files/header.htm") ef1;
+	mso-footer:url("011.files/header.htm") f1;
+	mso-first-header:url("011.files/header.htm") fh1;
+	mso-first-footer:url("011.files/header.htm") ff1;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:1523009089;
+	mso-list-type:hybrid;
+	mso-list-template-ids:979267916 68747279 68747289 68747291 68747279 68747289 68747291 68747279 68747289 68747291;}
+@list l0:level1
+	{mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level2
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.";
+	mso-level-tab-stop:40.5pt;
+	mso-level-number-position:left;
+	margin-left:40.5pt;
+	text-indent:-22.5pt;}
+@list l0:level3
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.";
+	mso-level-tab-stop:54.0pt;
+	mso-level-number-position:left;
+	margin-left:54.0pt;
+	text-indent:-36.0pt;}
+@list l0:level4
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.%4\.";
+	mso-level-tab-stop:54.0pt;
+	mso-level-number-position:left;
+	margin-left:54.0pt;
+	text-indent:-36.0pt;}
+@list l0:level5
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.%4\.%5\.";
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	margin-left:72.0pt;
+	text-indent:-54.0pt;}
+@list l0:level6
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.";
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	margin-left:72.0pt;
+	text-indent:-54.0pt;}
+@list l0:level7
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.%7\.";
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	margin-left:72.0pt;
+	text-indent:-54.0pt;}
+@list l0:level8
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.%7\.%8\.";
+	mso-level-tab-stop:90.0pt;
+	mso-level-number-position:left;
+	margin-left:90.0pt;
+	text-indent:-72.0pt;}
+@list l0:level9
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.%7\.%8\.%9\.";
+	mso-level-tab-stop:90.0pt;
+	mso-level-number-position:left;
+	margin-left:90.0pt;
+	text-indent:-72.0pt;}
+@list l1
+	{mso-list-id:1628194852;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-964799380 -1450833310 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-style-link:список;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:64.35pt;
+	mso-level-number-position:left;
+	margin-left:64.35pt;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Обычная таблица";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+table.MsoTableGrid
+	{mso-style-name:"Сетка таблицы";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+  <o:regrouptable v:ext="edit">
+   <o:entry new="1" old="0"/>
+   <o:entry new="2" old="1"/>
+   <o:entry new="3" old="0"/>
+   <o:entry new="4" old="0"/>
+   <o:entry new="5" old="0"/>
+   <o:entry new="6" old="5"/>
+   <o:entry new="7" old="0"/>
+  </o:regrouptable>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=RU style='tab-interval:36.0pt' background="back.gif">
+
+<div class=Section1>
+
+<h1>1. Язык программирования и программа</h1>
+
+<h2>1.1. Структура программы и языка программирования</h2>
+
+<p class=a>Изучение программирования нельзя начать, не ответив на ряд вопросов:
+а что же такое <i style='mso-bidi-font-style:normal'>программа, алгоритм,
+данные, язык программирования</i>. В этом списке основным термином является <b
+style='mso-bidi-font-weight:normal'>алгоритм, </b>который, как и большинство
+понятий общего вида, имеет множество определений. Например:</p>
+
+<p class=a4>«Алгоритм — это конечный набор правил, который определяет
+последовательность операций для решения конкретного множества задач и обладает
+пятью важными чертами: конечность, определённость, ввод, вывод, эффективность».
+(<b style='mso-bidi-font-weight:normal'><a name="m1">Д. Э. Кнут</b>)</p>
+
+<p class=a4>«Алгоритм — это точное предписание, определяющее вычислительный
+процесс, идущий от варьируемых исходных данных к искомому результату». (<b
+style='mso-bidi-font-weight:normal'>А. Марков</b>).</p>
+
+<p class=a>
+<p><br
+style='mso-ignore:vglayout' clear=ALL>
+В самых общих чертах <b style='mso-bidi-font-weight:normal'><a name="m2">алгоритм – это однозначное
+описание порядка (последовательности) выполнения действий из заданного набора,
+позволяющее получить требуемый результат за конечное число шагов</b>. Можно
+сказать, что компьютерная программа – это один из способов реализации понятия алгоритма,
+а язык программирования – средство описания алгоритмов. Однако в определении
+алгоритма не говорится, над чем производятся действия., выполняемые в нем. В
+принципе, это могут быть управляемые объекты внешней среды, но тогда они тоже входят
+в состав понятия алгоритм. </p>
+<p>&nbsp;</p>
+</p>
+
+<p class=a style="text-align: center">
+<img border="0" src="Images/011-01.gif" width="550" height="331"></p>
+<p class=a style="text-align: center"><b style='mso-bidi-font-weight:normal'><a name="m3">рис.1.1. Структурная схема
+компьютерной программы</b></p>
+
+<p class=a>Компьютерная программа, в отличие от абстрактного алгоритма, имеет
+собственные элементы, над которыми она совершает действия, и которые являются
+ее составной частью. Это – данные. Таким образом, она представляет собой
+замкнутую систему, отделенную от внешней среды. Посмотрим, из каких еще частей
+состоит компьютерная программа. Все они должны выражаться в соответствующих
+компонентах языка программирования:</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>прежде всего, программа работает не с
+пользователем, а с <b style='mso-bidi-font-weight:normal'><a name="m4">данными</b>. Эта
+первая и основная компонента программы – предметы (объекты), над которыми
+реализуется алгоритм. Данные состоят из отдельных <b style='mso-bidi-font-weight:
+normal'><a name="m5">переменных, </b>связанных как между собой непосредственно (через
+указатели), так и косвенно (как входные данные – результат);</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>в языке программирования имеются средства <b
+style='mso-bidi-font-weight:normal'>описания данных, </b>которые позволяют
+программисту конструировать различные формы их представления – <b
+style='mso-bidi-font-weight:normal'>типы данных;</b></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>программа базируется на <b style='mso-bidi-font-weight:
+normal'><a name="m6">наборе операций (системе команд), </b>которые можно выполнять над
+данными. В этот набор входят арифметические операции, присваивание (сохранение
+результата в переменной), ввод-вывод, проверка значения переменной и т.п..;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>вторая основная компонента программы – описание
+порядка, последовательности выполняемых действий, также называется <b
+style='mso-bidi-font-weight:normal'>алгоритмом </b>«в узком смысле», или
+алгоритмической компонентой. Она обычно состоит из двух частей. Первая часть – <b
+style='mso-bidi-font-weight:normal'>выражения</b>, представляет собой описание
+линейной последовательности выполнения простейших действий из набора операций
+(арифметические операции, присваивание, условные выражения). Они включаются во
+вторую компоненту – <b style='mso-bidi-font-weight:normal'><a name="m7">операторы, </b>которые
+задают ту или иную последовательность действий;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>как уже отмечалось, программа работает
+исключительно с данными, что и определяет сущность алгоритма. В наборе операций
+имеются команды ввода-вывода, осуществляющие обмен данными между переменными и
+внешней средой (посредством устройств ввода-вывода). С «программно-эгоцентрической»
+точки зрения это выглядит чистой формальностью и не является существенной
+частью программы;</p>
+
+<p class=a>Любая программа выполняется в компьютере. Посмотрим, как соотносятся
+между собой компоненты программы и компьютерной архитектуры:<span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>компоненты программы находятся <b
+style='mso-bidi-font-weight:normal'>в памяти. </b>В принципе, память является
+общей для них всех, но логически она разделяется на области, именуемые <b
+style='mso-bidi-font-weight:normal'>сегментами. </b>Прежде всего, это <b
+style='mso-bidi-font-weight:normal'>сегмент данных, </b>содержащий,
+естественно, данные программы. Алгоритмическая компонента (выражения,
+операторы) также находится в памяти в собственном <b style='mso-bidi-font-weight:
+normal'><a name="m8">сегменте команд;</b></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>одновременное нахождение в памяти «алгоритма» и
+данных соответствует принципу <b style='mso-bidi-font-weight:normal'><a name="m9">хранимой
+программы. </b>Перед загрузкой в память эти же компоненты находятся в <b
+style='mso-bidi-font-weight:normal'>программной файле, </b>который представляет
+собой точную копию<span style='mso-spacerun:yes'>  </span>представления
+программы в памяти – «<b style='mso-bidi-font-weight:normal'><a name="m10">образ памяти</b>».
+Это позволяет рассматривать всю программу (в том числе и алгоритм) как данные
+для работы других программ, например, трансляторов;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>набор операций, выполняемый в программе,
+соответствует <b style='mso-bidi-font-weight:normal'><a name="m11">системе команд </b>процессора,
+на котором она выполняется. Сюда же входят команды, которые обеспечивают
+заданный в программе порядок действий (операторов).</p>
+
+<p class=a>И, наконец, язык программирования также содержит в себе компоненты,
+предназначенные для описания соответствующих частей программы:</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>средства описания данных: определение типов
+данных (форма представления) и переменных;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>набор операций над основными типами данных
+(включая ввод-вывод), а также средства записи выражений;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>набор операторов, определяющих различные
+варианты порядка выполнения выражений в программе (последовательность, условие,
+повторение, блок);</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>средства разбиения программы на независимые
+части – модули (функции, процедуры), взаимодействующие между собой через
+программные интерфейсы.</p>
+
+<p class=a4><b style='mso-bidi-font-weight:normal'><a name="m12"><o:p>&nbsp;</o:p></b></p>
+
+<p class=a4>
+<img border="0" src="Images/yan-in.jpg" width="34" height="31" align="left">Определение
+<span style='mso-spacerun:yes'> </span>программы уже давно дано в простой
+формуле: <b style='mso-bidi-font-weight:normal'><a name="m13">«Программа = алгоритм + данные»</b>.
+Но в ней алгоритм и данные не просто «складываются» в одно целое как
+независимые части, но являются двумя взаимозависимыми элементами. Это своего
+рода «Янь и Инь» программы, олицетворяющие единство и борьбу двух
+противоположных начал (в философии этот принцип положен в основу диалектики –
+учения о развитии). Попробуем привести несколько аналогий, поясняющих сущность
+взаимодействий в этой «парочке»:</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>если данные можно в какой-то мере обладают
+свойствами пространства (объем, протяженность), то алгоритм – свойствами
+времени (эффективность, быстродействие). Тезис «проигрывая в пространстве,
+выигрываем во времени» здесь также уместен: эффективность программ может быть
+принципиально повышена за счет использования дополнительных структур данных в
+памяти;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span lang=EN-US style='mso-ansi-language:EN-US'>c</span>интаксически
+данные являются аналогом существительных (объектов, над которыми производятся
+действия), набор операций – аналогом глаголов (выполняемых действий). Программа
+в целом аналогично предложению, описывающему процесс – последовательность действий<span
+style='mso-tab-count:1'>           </span> над заданными предметами с целью
+получения результата.</p>
+
+<p class=a>Взаимосвязь алгоритма и данных в программе не является простой и
+линейной. Процесс выполнения любой программы можно рассматривать с двух точек
+зрения: как последовательность выполнения операций (команд), в которых
+содержится информация об операндах (данных), которые они обрабатывают – <b
+style='mso-bidi-font-weight:normal'>поток команд (поток управления). </b>С
+другой стороны – любой элемент данных можно рассматривать как результат
+выполнения действий над исходными данными и как источник данных (операнд) для
+последующих результатов. Т.е. в программе также присутствует логическая
+последовательность вычислений (преобразований данных), называемая <b
+style='mso-bidi-font-weight:normal'>потоком данных. </b>Исторически сложилось,
+что в традиционной (фон Неймановской) архитектуре в программе в явном виде
+задается последовательность команд, т.е. программа выглядит как <b
+style='mso-bidi-font-weight:normal'>поток управления, </b>в котором
+алгоритмическая компонента является первичной (ведущей), а данные – вторичной
+(ведомой).</p>
+
+<p class=a4>
+<img border="0" src="Images/yan-in.jpg" width="34" height="31" align="left">Для
+начинающего программиста непривычным является «программный эгоцентризм»: <span
+style='mso-spacerun:yes'> </span>ввод-вывод инициализируется не пользователем,
+а программой, которая является активной компонентой и инициатором диалога. Т.е.
+не пользователь ведет диалог с программой, а программа запрашивает у него
+необходимые данные. Другое дело, что «правильные» программные системы работают
+в режиме «всегда готов», но очевиден и другой факт: если программа не требует
+ввода, а «крутится где-то в другом месте», то принудить ее в приему данных
+ничем нельзя.</p>
+
+<p class=a4>
+<img border="0" src="Images/smile.jpg" width="40" height="41" align="left">Уравнение
+«Программа = алгоритм + данные» можно разрешить и по-другому: «Алгоритм = программа
+- данные», что также имеет некоторый смысл, несмотря на явную натяжку. Например,
+<b style='mso-bidi-font-weight:normal'><a name="m14">конечный автомат (</b>см<b
+style='mso-bidi-font-weight:normal'>.3.8) </b><span
+style='mso-spacerun:yes'> </span>как раз и является программой, лишенной
+данных, т.е. алгоритмической компонентой, взаимодействующей с внешней средой
+без сохранения результатов во внутренних данных. Также и «Данные<span
+style='mso-spacerun:yes'>  </span>= программа - алгоритм» определяют их как
+пассивную программную систему, лишенную действий.</p>
+
+<p class=a4><o:p>&nbsp;</o:p></p>
+
+</div>
+
+</body>
+
+</html>

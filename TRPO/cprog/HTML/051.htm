@@ -1,0 +1,622 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=Edit-Time-Data href="051.files/editdata.mso">
+<title>&nbsp;Модульность иерархия абстрагирование</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>www.PHILka.RU</o:Author>
+  <o:LastAuthor>FuckYouBill</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>425</o:TotalTime>
+  <o:Created>2008-12-31T17:40:00Z</o:Created>
+  <o:LastSaved>2008-12-31T17:40:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>814</o:Words>
+  <o:Characters>4643</o:Characters>
+  <o:Company>NSTU_VT</o:Company>
+  <o:Bytes>11776</o:Bytes>
+  <o:Lines>38</o:Lines>
+  <o:Paragraphs>10</o:Paragraphs>
+  <o:CharactersWithSpaces>5447</o:CharactersWithSpaces>
+  <o:Version>11.6360</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DoNotHyphenateCaps/>
+  <w:DrawingGridHorizontalSpacing>0,55 пт</w:DrawingGridHorizontalSpacing>
+  <w:DrawingGridVerticalSpacing>0,55 пт</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:UseMarginsForDrawingGridOrigin/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DrawingGridVerticalOrigin>99,25 пт</w:DrawingGridVerticalOrigin>
+  <w:Compatibility>
+   <w:WW6BorderRules/>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+   <w:UseWord97LineBreakingRules/>
+   <w:SelectEntireFieldWithStartOrEnd/>
+   <w:UseWord2002TableStyleRules/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:"Times New Roman CYR";
+	panose-1:2 2 6 3 5 4 5 2 3 4;
+	mso-font-charset:204;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+@font-face
+	{font-family:"Arial CYR";
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+h1
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:14.0pt;
+	mso-bidi-font-weight:normal;}
+h2
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-font-weight:normal;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+h3
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	font-weight:normal;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.a, li.a, div.a
+	{mso-style-name:текст;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a0, li.a0, div.a0
+	{mso-style-name:программа;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a1, li.a1, div.a1
+	{mso-style-name:список;
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:18.45pt;
+	margin-bottom:0cm;
+	margin-left:64.35pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-18.0pt;
+	mso-pagination:widow-orphan;
+	mso-list:l1 level1 lfo1;
+	tab-stops:42.55pt list 64.35pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a2, li.a2, div.a2
+	{mso-style-name:определение;
+	mso-style-parent:текст;
+	margin-top:12.0pt;
+	margin-right:32.9pt;
+	margin-bottom:12.0pt;
+	margin-left:35.45pt;
+	text-align:justify;
+	text-indent:.55pt;
+	mso-pagination:widow-orphan;
+	border:none;
+	mso-border-alt:solid windowtext 1.5pt;
+	padding:0cm;
+	mso-padding-alt:1.0pt 1.0pt 1.0pt 1.0pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a3, li.a3, div.a3
+	{mso-style-name:эпиграф;
+	margin-top:0cm;
+	margin-right:32.9pt;
+	margin-bottom:0cm;
+	margin-left:5.0cm;
+	margin-bottom:.0001pt;
+	text-align:right;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.a4, li.a4, div.a4
+	{mso-style-name:"от края";
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a5, li.a5, div.a5
+	{mso-style-name:Формула;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.a6, li.a6, div.a6
+	{mso-style-name:"без формата";
+	mso-style-parent:программа;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a7, li.a7, div.a7
+	{mso-style-name:стихи;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.1, li.1, div.1
+	{mso-style-name:эпиграф1;
+	mso-style-parent:эпиграф;
+	margin-top:0cm;
+	margin-right:9.35pt;
+	margin-bottom:0cm;
+	margin-left:9.0cm;
+	margin-bottom:.0001pt;
+	text-align:right;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+ /* Page Definitions */
+ @page
+	{mso-footnote-separator:url("051.files/header.htm") fs;
+	mso-footnote-continuation-separator:url("051.files/header.htm") fcs;
+	mso-endnote-separator:url("051.files/header.htm") es;
+	mso-endnote-continuation-separator:url("051.files/header.htm") ecs;}
+@page Section1
+	{size:21.0cm 842.0pt;
+	margin:33.45pt 42.55pt 72.0pt 89.85pt;
+	mso-header-margin:14.2pt;
+	mso-footer-margin:31.75pt;
+	mso-even-header:url("051.files/header.htm") eh1;
+	mso-header:url("051.files/header.htm") h1;
+	mso-even-footer:url("051.files/header.htm") ef1;
+	mso-footer:url("051.files/header.htm") f1;
+	mso-first-header:url("051.files/header.htm") fh1;
+	mso-first-footer:url("051.files/header.htm") ff1;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:1523009089;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1251484318 2124428168 1588884692 1364331240 -781159528 380674096 -1157585856 -1540180876 1948819982 -1790422198;}
+@list l0:level1
+	{mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level2
+	{mso-level-start-at:0;
+	mso-level-number-format:none;
+	mso-level-text:"";
+	mso-level-tab-stop:18.0pt;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l0:level3
+	{mso-level-start-at:0;
+	mso-level-number-format:none;
+	mso-level-text:"";
+	mso-level-tab-stop:18.0pt;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l0:level4
+	{mso-level-start-at:0;
+	mso-level-number-format:none;
+	mso-level-text:"";
+	mso-level-tab-stop:18.0pt;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l0:level5
+	{mso-level-start-at:0;
+	mso-level-number-format:none;
+	mso-level-text:"";
+	mso-level-tab-stop:18.0pt;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l0:level6
+	{mso-level-start-at:0;
+	mso-level-number-format:none;
+	mso-level-text:"";
+	mso-level-tab-stop:18.0pt;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l0:level7
+	{mso-level-start-at:0;
+	mso-level-number-format:none;
+	mso-level-text:"";
+	mso-level-tab-stop:18.0pt;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l0:level8
+	{mso-level-start-at:0;
+	mso-level-number-format:none;
+	mso-level-text:"";
+	mso-level-tab-stop:18.0pt;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l0:level9
+	{mso-level-start-at:0;
+	mso-level-number-format:none;
+	mso-level-text:"";
+	mso-level-tab-stop:18.0pt;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l1
+	{mso-list-id:1628194852;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-964799380 -1450833310 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-style-link:список;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:64.35pt;
+	mso-level-number-position:left;
+	margin-left:64.35pt;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Обычная таблица";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+table.MsoTableGrid
+	{mso-style-name:"Сетка таблицы";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+  <o:regrouptable v:ext="edit">
+   <o:entry new="1" old="0"/>
+   <o:entry new="2" old="1"/>
+   <o:entry new="3" old="0"/>
+  </o:regrouptable>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=RU style='tab-interval:36.0pt' background="back.gif">
+
+<div class=Section1>
+
+<h2>5.1. Модульность, иерархия, абстрагирование</h2>
+
+<p class=a>До сих пор мы обсуждали проблемы, связанные с разработкой небольших
+программ. Напомним главные из них<span lang=EN-US style='mso-ansi-language:
+EN-US'>:<o:p></o:p></span></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>образное представление программы и выделение из
+него составных частей – фрагментов алгоритма и данных;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>определение переменных и их смысловой
+интерпретации;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>выделение фрагментов алгоритма с известным
+результатом (контекстов);</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>определение соглашений – инвариантов,
+соблюдаемых программой;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>выстраивание программы из полученных
+«запчастей».</p>
+
+<p class=a>С ростом объема программного кода становится все труднее собрать
+воедино все, что касается программы. Единственный известный пока нам прием –
+модульное программирование (см. <b style='mso-bidi-font-weight:normal'><a name="m1">3.4</b>)
+предполагает разбиение алгоритмической компоненты – функций на независимые
+части – модули. Далее нам придется выйти на следующий уровень программирования,
+где рассматривается не столько содержание отдельных компонентов программы, а их
+выделение из общей «массы» программы и определение правил взаимодействия с
+другими компонентами. Здесь имеют место общие принципы, используемые при
+проектировании сложных систем:</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b style='mso-bidi-font-weight:normal'><a name="m2">модульность</b>
+– система состоит из независимых компонент – модулей, для которых определены
+программные интерфейсы их взаимодействие, а сами они построены по принципу
+«черного ящика» - их внутреннее содержание скрыто от внешнего пользователя;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b style='mso-bidi-font-weight:normal'><a name="m3">иерархия
+– </b>одни из компонент системы могут быть использованы как составные части для
+построения более сложных компонент. В иерархических системах используется также
+принцип <b style='mso-bidi-font-weight:normal'><a name="m4">рекурсии – в </b>компоненту
+могут входить в качестве составных частей компоненты такого же типа (а в нее –
+аналогичные, и т.д. до бесконечности);</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b style='mso-bidi-font-weight:normal'><a name="m5">абстрагирование
+(обобщение) –</b> множество компонент различных видов получают в программе единого
+«представителя» - абстракцию (обобщение), наличие которого в любом месте
+программы может обозначать включение на это место любого их них.
+Абстрагирование обеспечивает <b style='mso-bidi-font-weight:normal'><a name="m6">универсальность
+</b>программы, ее наличие дает программе «свободу выбора».<b style='mso-bidi-font-weight:
+normal'><a name="m7"> </b>В большинстве случаев абстрагирование реализуется <b
+style='mso-bidi-font-weight:normal'>динамически, </b>т.е. позволяет связывать
+абстракцию с конкретной компонентой и изменять эту связь во время работы
+программы.</p>
+
+<p class=a>Здесь мы просто перечислим, где мы уже сталкивались с подобными
+приемами, а где их еще предстоит встретить.</p>
+
+<p class=a4><b style='mso-bidi-font-weight:normal'><a name="m8">Модульность программы –
+функции. </b>Функция является основным элементом модульности (<b
+style='mso-bidi-font-weight:normal'>1.6, 3.4</b>).<span
+style='mso-spacerun:yes'>  </span>В классической технологии программирования
+программа выглядит как набор функций, вызывающих друг друга, каждая из которых
+представляет собой относительно независимую часть алгоритма с собственными
+локальными данными и программным интерфейсом.</p>
+
+<p class=a4><b><a name="m9">Абстрагирование – значение, переменная, формальный параметр. </b><span
+style='mso-bidi-font-weight:bold'>Функция является также и элементом
+абстрагирования в том смысле, что она каждый ее формальный параметр обозначает
+произвольную переменную или выражение, подставляемое при вызове (<b><a name="m10">1.6</b>). В
+этом смысле функция представляет собой абстрактный алгоритм «на все случаи
+жизни».<o:p></o:p></span></p>
+
+<p class=a4><b><a name="m11">Иерархия алгоритмов – библиотека функций. </b><span
+style='mso-bidi-font-weight:bold'>Функция в программе является также и
+элементом иерархии, поскольку последовательность вызовов функций сверху-вниз
+обычно соответствует иерархии решаемых в системе задач. <span
+style='mso-spacerun:yes'> </span>Набор функция одного уровня, предназначенный
+для решения одного типа задач или работающих с данными одного типа,
+объединяются в библиотеки.<o:p></o:p></span></p>
+
+<p class=a4><b><a name="m12">Иерархия данных – производный тип данных. </b><span
+style='mso-bidi-font-weight:bold'>По аналогии с алгоритмической компонентой
+программы данные также допускают иерархическое описание (<b><a name="m13">5.4</b>), оно
+касается форм представления – типов данных. Производные типы данных
+конструируются из уже известных. Иерархия типов данных существует в программе
+параллельно с иерархией функций, их обрабатывающих.<o:p></o:p></span></p>
+
+<p class=a4><b><a name="m14">Абстрагирование - указуемая переменная, указатель. </b><span
+style='mso-bidi-font-weight:bold'>Переменная – указатель (<b><a name="m15">5.2</b>) дает
+возможность программе обрабатывать произвольные данные, не привязываясь к
+именам указуемых переменных (разыменование). Это является дополнительной
+«степенью свободы» алгоритма.<o:p></o:p></span></p>
+
+<p class=a>В технологии объектно-ориентированного программирования указанные
+принципы получают свое дальнейшее развитие. Как правило, оно закрепляется в
+виде новых понятий технологии и элементов синтаксиса языка программирования.</p>
+
+<p class=a4><b><a name="m16">Модульность программы – класс. </b><span style='mso-bidi-font-weight:
+bold'>Синтаксической и технологической единицей в программе является класс –
+набор<span style='mso-spacerun:yes'>  </span>данных (свойств) и работающих с
+ними функций (методов) (<b><a name="m17">10.1</b>). Объектно-ориентированная программа
+представляет собой систему взаимодействующих объектов различных классов.<o:p></o:p></span></p>
+
+<p class=a4><b><a name="m18">Иерархия классов – наследование. </b><span style='mso-bidi-font-weight:
+bold'>Наследование (<b><a name="m19">11.2</b>) – механизм, позволяющий включать некоторый (базовый)
+класс<span style='mso-spacerun:yes'>  </span>в качестве составной части в
+другой (производный) класс. Таким образом, система классов обеспечивает
+представление сущностей от самой общей (абстрактной) до частных (конкретных).<o:p></o:p></span></p>
+
+<p class=a4><b><a name="m20">Абстрагирование - шаблон класса. </b><span style='mso-bidi-font-weight:
+bold'>Средство статической подстановки – шаблон класса, дает возможность
+обозначать абстрактного «представителя» типа данных (или класса) в виде
+текстового параметра, заменяемого при трансляции (<b><a name="m21">10.5</b>). Получается
+достаточно простое, хотя и не очень эффективное средство, обеспечивающее
+универсальность разрабатываемых на его основе программ. <o:p></o:p></span></p>
+
+<p class=a4><b style='mso-bidi-font-weight:normal'><a name="m22">Абстрагирование -
+виртуальные функции и абстрактные базовые классы. </b>В отличие от шаблона
+виртуальные функции (<b style='mso-bidi-font-weight:normal'><a name="m23">11.4</b>) позволяют
+производить связывание абстрактного «представителя» с конкретным методом (а
+через него – с классом)<span style='mso-spacerun:yes'>  </span>во время
+исполнения программы, т.е. динамически. На их основе создаются абстрактные
+представления (интерфейсы), через которые объекты различных классов включаются
+в единый процесс обработки.</p>
+
+<p class=a4><span style='mso-bidi-font-weight:bold'><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

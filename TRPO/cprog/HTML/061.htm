@@ -1,0 +1,1082 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=Edit-Time-Data href="061.files/editdata.mso">
+<title>6.1. Переменные и стуктуры данных</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>www.PHILka.RU</o:Author>
+  <o:LastAuthor>www.PHILka.RU</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>237</o:TotalTime>
+  <o:Created>2008-06-14T23:58:00Z</o:Created>
+  <o:LastSaved>2008-06-14T23:58:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>2028</o:Words>
+  <o:Characters>11561</o:Characters>
+  <o:Company>NSTU_VT</o:Company>
+  <o:Bytes>11776</o:Bytes>
+  <o:Lines>96</o:Lines>
+  <o:Paragraphs>27</o:Paragraphs>
+  <o:CharactersWithSpaces>13562</o:CharactersWithSpaces>
+  <o:Version>11.6360</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DoNotHyphenateCaps/>
+  <w:DrawingGridHorizontalSpacing>0,55 пт</w:DrawingGridHorizontalSpacing>
+  <w:DrawingGridVerticalSpacing>0,55 пт</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:UseMarginsForDrawingGridOrigin/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DrawingGridVerticalOrigin>99,25 пт</w:DrawingGridVerticalOrigin>
+  <w:Compatibility>
+   <w:WW6BorderRules/>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+   <w:UseWord97LineBreakingRules/>
+   <w:SelectEntireFieldWithStartOrEnd/>
+   <w:UseWord2002TableStyleRules/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:"Times New Roman CYR";
+	panose-1:2 2 6 3 5 4 5 2 3 4;
+	mso-font-charset:204;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+@font-face
+	{font-family:"Arial CYR";
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+h1
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:14.0pt;
+	mso-bidi-font-weight:normal;}
+h2
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-font-weight:normal;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+h3
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	font-weight:normal;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";}
+p.a, li.a, div.a
+	{mso-style-name:текст;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a0, li.a0, div.a0
+	{mso-style-name:программа;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a1, li.a1, div.a1
+	{mso-style-name:список;
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:18.45pt;
+	margin-bottom:0cm;
+	margin-left:64.35pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-18.0pt;
+	mso-pagination:widow-orphan;
+	mso-list:l0 level1 lfo1;
+	tab-stops:42.55pt list 64.35pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a2, li.a2, div.a2
+	{mso-style-name:определение;
+	mso-style-parent:текст;
+	margin-top:12.0pt;
+	margin-right:32.9pt;
+	margin-bottom:12.0pt;
+	margin-left:35.45pt;
+	text-align:justify;
+	text-indent:.55pt;
+	mso-pagination:widow-orphan;
+	border:none;
+	mso-border-alt:solid windowtext 1.5pt;
+	padding:0cm;
+	mso-padding-alt:1.0pt 1.0pt 1.0pt 1.0pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a3, li.a3, div.a3
+	{mso-style-name:эпиграф;
+	margin-top:0cm;
+	margin-right:32.9pt;
+	margin-bottom:0cm;
+	margin-left:5.0cm;
+	margin-bottom:.0001pt;
+	text-align:right;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.a4, li.a4, div.a4
+	{mso-style-name:"от края";
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a5, li.a5, div.a5
+	{mso-style-name:Формула;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.a6, li.a6, div.a6
+	{mso-style-name:"без формата";
+	mso-style-parent:программа;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a7, li.a7, div.a7
+	{mso-style-name:стихи;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.1, li.1, div.1
+	{mso-style-name:эпиграф1;
+	mso-style-parent:эпиграф;
+	margin-top:0cm;
+	margin-right:9.35pt;
+	margin-bottom:0cm;
+	margin-left:9.0cm;
+	margin-bottom:.0001pt;
+	text-align:right;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.2, li.2, div.2
+	{mso-style-name:"заголовок 2";
+	mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;
+	font-style:italic;}
+p.3, li.3, div.3
+	{mso-style-name:"заголовок 3";
+	mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";}
+ /* Page Definitions */
+ @page
+	{mso-footnote-separator:url("061.files/header.htm") fs;
+	mso-footnote-continuation-separator:url("061.files/header.htm") fcs;
+	mso-endnote-separator:url("061.files/header.htm") es;
+	mso-endnote-continuation-separator:url("061.files/header.htm") ecs;}
+@page Section1
+	{size:21.0cm 842.0pt;
+	margin:33.45pt 42.55pt 72.0pt 89.85pt;
+	mso-header-margin:14.2pt;
+	mso-footer-margin:31.75pt;
+	mso-even-header:url("061.files/header.htm") eh1;
+	mso-header:url("061.files/header.htm") h1;
+	mso-even-footer:url("061.files/header.htm") ef1;
+	mso-footer:url("061.files/header.htm") f1;
+	mso-first-header:url("061.files/header.htm") fh1;
+	mso-first-footer:url("061.files/header.htm") ff1;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:1628194852;
+	mso-list-type:hybrid;
+	mso-list-template-ids:933559242 -1450833310 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-style-link:список;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:64.35pt;
+	mso-level-number-position:left;
+	margin-left:64.35pt;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Обычная таблица";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+table.MsoTableGrid
+	{mso-style-name:"Сетка таблицы";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+  <o:regrouptable v:ext="edit">
+   <o:entry new="1" old="0"/>
+   <o:entry new="2" old="1"/>
+   <o:entry new="3" old="0"/>
+  </o:regrouptable>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=RU style='tab-interval:36.0pt' background="back.gif">
+
+<div class=Section1>
+
+<h2>6.1. Переменные. Структуры данных<span lang=EN-US style='mso-ansi-language:
+EN-US'><o:p></o:p></span></h2>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m1">Структура данных – </b>одно
+из первичных понятий программирования, и как любое первичное понятие достаточно
+трудно определимое. Например, можно сказать так: «Структура данных –
+систематизированный способ организации данных и доступа к ним». Попробуем
+сделать это более конструктивно: через перечисление их свойств и взаимосвязи с
+другими понятиями программирования и языков:</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b style='mso-bidi-font-weight:normal'><a name="m2">Структура
+данных и переменная. </b>Переменная – элемент языка программирования, структура
+данных – внеязыковая единица, технологический элемент программирования.
+Структура данных – совокупность переменных, взаимосвязанных через свои значения
+в единое целое.</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b style='mso-bidi-font-weight:normal'><a name="m3">Структура
+данных и внешняя реальность. </b>Не все внешние объекты (сущности), отображаемые
+в программе, могут быть представлены переменными. Некоторым из них
+соответствуют структуры данных – множество взаимосвязанных переменных.<b
+style='mso-bidi-font-weight:normal'><o:p></o:p></b></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b style='mso-bidi-font-weight:normal'><a name="m4">Структура
+данных и алгоритм. </b>Взаимосвязь значений переменных не может быть только
+статичной. Алгоритмы, работающие со структурой данных, связывают между собой
+значения переменных динамически, соблюдая установленные для них соглашения.<b
+style='mso-bidi-font-weight:normal'><o:p></o:p></b></p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m5">Структура данных – множество
+взаимосвязанных переменных.</b> Программа заключает в себе единство алгоритма
+(процедур, функций) и обрабатываемых ими данных. Единицами описания данных и
+манипулирования ими в любом языке программирования являются переменные. Переменные
+– это «непосредственно представленные в языке» данные.</p>
+
+<p class=a>Между переменными в программе существуют неявные, непосредственно
+ненаблюдаемые связи. Они могут заключаться в том, что несколько переменных
+могут использоваться алгоритмом для достижения определенной цели, решения
+частной задачи, причем значения этих переменных будут взаимозависимы. </p>
+
+<div style='mso-element:para-border-div;border:solid windowtext 1.5pt;
+padding:1.0pt 1.0pt 1.0pt 1.0pt;margin-left:35.45pt;margin-right:32.9pt'>
+
+<p class=a2 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:0cm'><b style='mso-bidi-font-weight:normal'><a name="m6">Структура данных</b> -
+совокупность взаимосвязанных переменных и их значений</p>
+
+</div>
+
+<p class=a>Любая структура данных имеет две стороны. <b style='mso-bidi-font-weight:
+normal'><a name="m7">Физическая структура данных – </b>это ее представление в памяти в том
+виде, как она выглядит «на самом деле». <b style='mso-bidi-font-weight:normal'><a name="m8">Логическая
+структура данных – </b>это созданная программными средствами образное,
+абстрактное ее представление. При этом оба представления могут сосуществовать при
+самых разных сочетаниях их свойств: одномерная – двумерная, линейная –
+нелинейная и т.п.. Характерные примеры:<span lang=EN-US style='mso-ansi-language:
+EN-US'><o:p></o:p></span></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>стек как логическая структура может быть
+реализован на основе массива с индексом – указателем стека и односвязного
+списка (физическое представление);</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>пирамидальная сортировка использует массив на
+уровне физического представления для логической структуры – дерева с двумя
+потомками, упорядоченного по вертикали (<b style='mso-bidi-font-weight:normal'><a name="m9">8.4</b>);</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>наиболее близкое представление дерева на
+физическом уровне – вершина с массивом указателей на потомков может быть
+использована для представления линейной структуры данных – логической последовательности
+(<b style='mso-bidi-font-weight:normal'><a name="m10">8.3</b>).</p>
+
+<p class=3>Последовательность как структура данных</p>
+
+<p class=a>Последовательностью будем называть логическое представление данных в
+виде линейно упорядоченного множества переменных одного типа произвольной
+(переменной) размерности. Порядковый номер элемента в последовательности – его <b
+style='mso-bidi-font-weight:normal'>логический номер (ЛН). </b>Обратите
+внимание – логический номер – это не свойство элемента, а характеристика его
+размещения, при различных действиях над последовательностью он может меняться.
+Традиционный «джентльменский» набор операций над последовательностью зависит от
+ее упорядоченности. </p>
+<p align="center">
+<img border="0" src="Images/061-01.gif" width="518" height="276"></p>
+</p>
+
+<p class=a align=center style='text-align:center;text-indent:0cm'><b
+style='mso-bidi-font-weight:normal'>рис. 61.3. </b><b style='mso-bidi-font-weight:
+normal'><a name="m11"><span lang=EN-US style='mso-ansi-language:EN-US'>Операции над
+последовательностью</span><o:p></o:p></b></p>
+
+<p class=a>Физическое представление последовательности может быть самым разным,
+например, список или дерево с заданной последовательностью обхода. Рассмотрим
+самый простой способ представления последовательности – ее элементы занимают
+первые <b style='mso-bidi-font-weight:normal'><a name="m12"><span lang=EN-US
+style='mso-ansi-language:EN-US'>n</span><span lang=EN-US> </span></b>элементов массива
+(без «дырок»). Для того, чтобы определить текущее количество элементов
+последовательности,<span style='mso-spacerun:yes'>  </span>можно поступить
+двумя способами<span style='font-family:"Times New Roman"'>:</span></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>использовать дополнительную переменную - <b
+style='mso-bidi-font-weight:normal'>счетчик числа элементов</b><span
+style='font-family:"Times New Roman"'>;<o:p></o:p></span></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>добавлять каждый раз в качестве обозначения конца
+последовательности дополнительный элемент с особым значением - признак конца
+последовательности, например нулевой <b style='mso-bidi-font-weight:normal'><a name="m13">ограничитель
+последовательности</b>.</p>
+
+<p class=a>Массив, как переменная, является здесь необходимым, но не
+достаточным для отношения к нему как к структуре данных – последовательности.
+Для этого необходимы еще и правила хранения в нем значений: они могут
+определяться и начальным его наполнением, и функциями, которые работают с
+массивом именно как с последовательностью. У массива, таким образом, возникает дополнительный
+«смысл», который позволяет по-особому интерпретировать работающие с ним
+фрагменты.<span style='font-family:Arial;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//------------------------------------------------------61-01.cpp<o:p></o:p></span></p>
+
+<p class=a0>// Последовательность со счетчиком</p>
+
+<p class=a0>#<span lang=EN-US style='mso-ansi-language:EN-US'>define</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>SZ</span>
+1000</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int A[SZ];<o:p></o:p></span></p>
+
+<p class=a0>int n=0;</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void add(int vv){
+if (n!=SZ-1) A[n++]=vv; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int get(int k){
+return k&gt;=n ? 0 : A[k]; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int remove(int k){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if (k&gt;=n) return 0;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int vv=A[k];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>for (int j=k;j&lt;n-1;j++)
+A[j]=A[j+1];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>n--;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>return vv;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int insert(int vv,
+int k){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if (n==SZ-1 || k&gt;=n) return 0;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>for (int j=n-1;j&lt;=k;j--)
+A[j+1]=A[j];<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>A[k]=vv;</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>n++;</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>}</p>
+
+<p class=a>Чтобы исключить ограничения по размерности массива, нужно
+воспользоваться динамическими массивами (см. <b style='mso-bidi-font-weight:
+normal'><a name="m14">5.6</b>) и технологическим приемами перераспределения памяти при их
+переполении.</p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m15">Текстовая строка как
+последовательность. </b>По определению строка – последовательность символов,
+ограниченная символом с кодом 0 (конец строки), представляет собой структуру
+данных, а массив, в котором она находится, является переменной.</p>
+
+<h3>Стек</h3>
+
+<p class=a3>«Хороший Сагиб у Сами и умный, </p>
+
+<p class=a3>Только больно дерется стеком».</p>
+
+<p class=a3>Н.С.Тихонов. Сами. </p>
+
+<p class=a>Операции вставки и извлечения элементов из обычной
+последовательности являются адресными – они используют логический (порядковый)
+номер элемента. Если ограничить возможности изменения последовательности только
+ее концами, получим структуры данных, называемые <b style='mso-bidi-font-weight:
+normal'><a name="m16">стеком </b>и <b style='mso-bidi-font-weight:normal'><a name="m17">очередью.<o:p></o:p></b></p>
+
+<div style='mso-element:para-border-div;border:solid windowtext 1.5pt;
+padding:1.0pt 1.0pt 1.0pt 1.0pt;margin-left:35.45pt;margin-right:32.9pt'>
+
+<p class=a2 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:0cm'><b style='mso-bidi-font-weight:normal'><a name="m18">Стек</b> <span
+style='font-family:Arial;mso-bidi-font-family:"Times New Roman"'>-</span>
+последовательность, включение и исключение элементов в которую производится
+только с одного<span style='mso-spacerun:yes'>  </span>конца</p>
+
+</div>
+
+<p class=a>Начало последовательности называется дном стека, конец
+последовательности, в который производится добавление элементов и их исключение
+-<span style='font-family:"Times New Roman"'> </span>вершиной стека. Операция
+добавления нового элемента (запись в стек) имеет общепринятое название <b
+style='mso-bidi-font-weight:normal'>Push</b> (погрузить), операция исключения -<span
+style='font-family:"Times New Roman"'> </span><b style='mso-bidi-font-weight:
+normal'><a name="m19">Pop</b> (звук выстрела). Операции <b style='mso-bidi-font-weight:normal'><a name="m20">Push</b>
+и <b style='mso-bidi-font-weight:normal'><a name="m21">Pop</b> являются безадресными в том
+смысле, что для их выполнения никакой дополнительной информации о месте
+размещения элементов не требуется </p>
+
+<p class=a align=center style='text-align:center;text-indent:0cm'>
+<p align="center">
+<b style='mso-bidi-font-weight:normal'><a name="m22">
+<img border="0" src="Images/061-02.gif" width="409" height="135"></b></p>
+<p align="center"><b style='mso-bidi-font-weight:normal'><a name="m23">рис. 61.3. Представление стека в массиве<o:p></o:p></b></p>
+</p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m24">Представление стека в
+массиве. </b>Стек обычно представляется массивом с дополнительной переменной,
+которая указывает на последний элемент последовательности в вершине стека -<span
+style='font-family:"Times New Roman"'> </span>указатель стека – <b
+style='mso-bidi-font-weight:normal'>SP</b> – <b style='mso-bidi-font-weight:
+normal'><a name="m25"><span lang=EN-US style='mso-ansi-language:EN-US'>stack</span><span
+lang=EN-US> </span></b><b style='mso-bidi-font-weight:normal'><a name="m26"><span lang=EN-US
+style='mso-ansi-language:EN-US'>pointer</span></b>. </p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//------------------------------------------------------61-01.<span
+lang=EN-US style='mso-ansi-language:EN-US'>cpp</span></p>
+
+<p class=a0>// Стек в массиве</p>
+
+<p class=a0>int sp=-1;</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void push(int vv){
+if (sp!=SZ-1) A[++sp]=vv; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int pop(){ return
+sp==-1 ? 0 : A[sp--]; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int get(int k){ return
+sp-k&lt;0 ? </span>0 : A[sp-k]; }</p>
+
+<p class=a>Другим важным свойством стека является относительная адресация его
+элементов. На самом деле для элемента, сохраненного в стеке, важно не его
+абсолютное положение в последовательности, а положение относительно вершины
+стека или его указателя, которое отражает «историю» его заполнения. Поэтому
+адресация элементов стека происходит относительно текущего значения указателя
+стека (функция<span style='mso-spacerun:yes'>  </span><b style='mso-bidi-font-weight:
+normal'><a name="m27">get</b>).</p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m28">Использование свойств стека в
+программировании. </b>Исключительная популярность стека в программировании
+объясняется тем, что при заданной последовательности записи элементов в стек
+(например, <b style='mso-bidi-font-weight:normal'><a name="m29">A-B-C</b>) извлечение их
+происходит в обратном порядке (<b style='mso-bidi-font-weight:normal'><a name="m30">C-B-A</b>).
+А именно такая последовательность действий соответствует таким понятиям, как
+вложенность вызовов функций, вложенность определений конструкций языка,
+прерываний<span style='mso-spacerun:yes'>  </span>и т.п.. Следовательно, там,
+где речь идет о вложенности процессов, структур, определений, везде механизмом
+ее реализации является стек: </p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='mso-spacerun:yes'> </span>при
+вызове функции адрес возврата (адрес следующей за вызовом команды) запоминается
+в стеке, таким образом, создается «история» вызовов функций, которая может быть
+восстановлена в обратном порядке; </p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='mso-spacerun:yes'> </span>при
+синтаксическом анализе вложенных друг в друга конструкций языка трансляторы
+используют магазинные (стековые) автоматы, стек при этом содержит не до конца
+проанализированные конструкции языка. </p>
+
+<p class=a>Для способа хранения данных в стеке имеется общепринятый термин - <b
+style='mso-bidi-font-weight:normal'>LIFO (last in -first out</b> - последний
+пришел, первый ушел). </p>
+
+<p class=a>В архитектуре практически всех компьютеров используется аппаратный
+стек. Он представляет из себя обычную область внутренней (оперативной) памяти
+компьютера, с которой работает специальный регистр -<span style='font-family:
+"Times New Roman"'> </span>указатель стека. С его помощью процессор может
+выполнять операции <b style='mso-bidi-font-weight:normal'><a name="m31">Push</b> и <b
+style='mso-bidi-font-weight:normal'>Pop</b> по сохранению и восстановлению из
+стека байтов и машинных слов различной размерности. </p>
+
+<p class=a4>Единственным
+отличием аппаратного стека от рассмотренной модели является его расположение
+буквально «в<img border="0" src="Images/story.jpg" width="44" height="27" align="left">верх дном», то есть его заполнение от старших адресов к младшим, первоначально
+указатель стека ссылается на «верхнюю часть» выделенной области памяти.
+Исторические обстоятельства таковы: в простейших вариантах распределения памяти
+в программе сегменты команд, статических данных размещались, начиная «от
+начала» памяти, а над ними «рос вверх» сегмент динамической памяти, поэтому
+стек приходилось размещать, начиная с другого конца, т.е. «вверх дном».</p>
+
+<p class=a4>
+<img border="0" src="Images/smile.jpg" width="40" height="41" align="left">Загадка
+для программистов: «Кто над нами вверх ногами».<span
+style='mso-spacerun:yes'>   </span>Варианты отгадок:<span
+style='mso-spacerun:yes'>      </span>а). муха б). стек.</p>
+
+<p class=a>&nbsp;</p>
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m32">Использование стека при вызове
+функции. </b>Поскольку вызов функций выполняется согласно принципа вложенности,
+все, что касается текущего состояния (<b style='mso-bidi-font-weight:normal'><a name="m33">контекста</b>)
+функции можно разместить в стеке. Функция и стек взаимодействуют при вызове
+следующим образом:</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>программный код вызова записывает в стек значения
+фактических параметров;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>команда вызова функции записывает в стек адрес
+возврата (текушее значение указателя текущей команды в сегменте команд <b
+style='mso-bidi-font-weight:normal'>CS:IP</b>) и выполняет переход к началу
+тела функции;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>программный код тела функции резервирует в стеке
+место для локальных переменных;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>во время исполнения тела функции ей доступна
+текущая область стека (<b style='mso-bidi-font-weight:normal'><a name="m34">фрейм стека</b>),
+содержащая формальные (фактические) параметры и локальные переменные. Формальные
+параметры представляют собой «ожидаемое состояние стека», т.е. области, заданные
+смещениями относительно текущего положения указателя стека, где «ожидаются»
+фактические параметры;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>перед возвратом из функции из стека удаляются
+локальные переменные, затем из него же извлекается адрес возврата и по нему
+производится переход;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>после возврата программным кодом вызова из стека
+удаляются фактические параметры.</p>
+
+<h3>Очередь</h3>
+
+<p class=a>Объяснять, что такое очередь как способ организации данных, излишне,
+потому что здесь полностью применим житейский смысл этого понятия.<b
+style='mso-bidi-font-weight:normal'><o:p></o:p></b></p>
+
+<div style='mso-element:para-border-div;border:solid windowtext 1.5pt;
+padding:1.0pt 1.0pt 1.0pt 1.0pt;margin-left:35.45pt;margin-right:32.9pt'>
+
+<p class=a2 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:0cm'><b style='mso-bidi-font-weight:normal'><a name="m35">Очередь</b><span
+style='mso-spacerun:yes'>  </span>- последовательность элементов, включение в
+которую производится с одного, а исключение - с другого конца<span
+style='mso-tab-count:2'>              </span></p>
+
+</div>
+
+<p class=a>Для способа хранения данных в очереди имеется общепринятый термин -<span
+style='font-family:"Times New Roman"'> </span><b style='mso-bidi-font-weight:
+normal'><a name="m36">FIFO (first in -first out</b> - первый пришел, первый ушел). </p>
+
+<p class=a>Простейший способ представление очереди последовательностью,
+размещенной от начала массива, не совсем удобен, поскольку при извлечении из
+очереди первого элемента все последующие придется постоянно передвигать к
+началу. </p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//------------------------------------------------------61-01.<span
+lang=EN-US style='mso-ansi-language:EN-US'>cpp</span></p>
+
+<p class=a0>// Очередь в массиве (от начала, со сдвигом)</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void in(int vv){
+if (n!=SZ-1) A[n++]=vv;}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int out(){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if (n==0) return 0;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int vv=A[0];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>for (int i=0;i&lt;n-1;i++)
+A[i]=A[i+1];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>n--;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>return vv;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int get(int k){
+return k&gt;=n ? 0 : A[k]; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a>Альтернативный вариант - у очереди должно быть два указателя - на ее
+начало в массиве и на ее конец (точнее, индекс первого элемента и индекс
+следующего за последним, т.е. первого свободного). По мере постановки и
+извлечения из очередт оба они будут продвигаться к концу массива. Выход из
+создавшегося положения – «зациклить» очередь, то есть считать, что за последним
+элементом массива следует опять первый. Подобный способ организации очереди в
+массиве называют циклическим буфером. </p>
+
+<p class=a0><span style='mso-tab-count:4'>                                                </span><span
+style='mso-spacerun:yes'>   </span></p>
+
+<p class=MsoNormal style='text-align:justify'>
+<p align="center">
+<img border="0" src="Images/061-03.gif" width="479" height="186"><br
+style='mso-ignore:vglayout' clear=ALL>
+</p>
+</p>
+
+<p class=a align=center style='text-align:center;text-indent:0cm'><b
+style='mso-bidi-font-weight:normal'>рис. 61.4.<span style='mso-spacerun:yes'> 
+</span>Циклическая очередь в массиве<o:p></o:p></b></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//------------------------------------------------------61-01.<span
+lang=EN-US style='mso-ansi-language:EN-US'>cpp</span></p>
+
+<p class=a0>// Циклическая очередь в массиве</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int fst=0,lst=0;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void in(int vv){ <o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if ((lst+1)%SZ==fst) return;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>A[lst++]=vv;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if (lst==SZ) lst=0;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int out(){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if (fst==lst) return 0;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int vv=A[fst++];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if (fst==SZ) fst=0;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>return vv;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int get(int m){
+return A[(fst+m)%SZ]; }<o:p></o:p></span></p>
+
+<p class=a4>В отличие от стека указатель на конец очереди (<b style='mso-bidi-font-weight:
+normal'><a name="m37">lst</b>) ссылается не на последний занятый, а на первый свободный
+элемент массива. Условие <b style='mso-bidi-font-weight:normal'><a name="m38">fst==lst </b>означает,
+что очередь пуста, а выражение <b style='mso-bidi-font-weight:normal'><a name="m39">(<span lang=EN-US style='mso-ansi-language:
+EN-US'>lst</span>+1)%<span
+lang=EN-US style='mso-ansi-language:EN-US'>SZ</span>==</b><b style='mso-bidi-font-weight:
+normal'><a name="m40"><span lang=EN-US style='mso-ansi-language:EN-US'>fst</span> – </b>что
+очередь заполнена (при перемещений индекс конца очереди попадает на начало).</p>
+
+<h3>Вопросы без ответов</h3>
+
+<p class=a><span style='mso-spacerun:yes'> </span>Дайте содержательное
+определение нестандартным операциям с последовательностью, стеком и очередью.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//------------------------------------------------------61-02.cpp<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//---------------------------------------------------<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>#define SZ 1000<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int A[SZ],
+sp=-1,lst=0,fst=0;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//-------------------------------------------------
+1<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void F1(){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int c; if (sp &lt; 1) return;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>c = A[sp]; A[sp]=A[sp-1]; A[sp-1]=c;
+}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//-------------------------------------------------
+2<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void F2(){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int c; if (sp &lt; 1) return;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>A[sp-1]+=A[sp]; sp--; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//-------------------------------------------------
+3<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int F3(int n){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int v,i;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if (sp &lt; n) return 0;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>v = A[sp-n];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>for (i=sp-n; i&lt;sp; i++)
+A[i]=A[i+1];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>sp--; return v;}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//-------------------------------------------------
+4<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void F4(){
+A[sp+1]=A[sp]; sp++; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//-------------------------------------------------
+5<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int F5(int n){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int v,i1,i2;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>i1 = (fst+n)%SZ;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>v = A[i1];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>    </span>for (; i1!=lst; i1=i2){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>i2 = (i1+1) % SZ;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>A[i1]=A[i2]; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>lst = (lst==0 ? SZ-1 : lst-1); <o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>return v;}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//-------------------------------------------------
+6<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void F6(){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int n;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if (fst==lst) return;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>n = (lst==0 ? SZ-1 : lst-1);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>A[lst++]=A[n];<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>if (lst==SZ) lst = 0;}</p>
+
+<p class=MsoPlainText><span style='mso-spacerun:yes'> </span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,1314 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=Generator content="Microsoft Word 11 (filtered)">
+<title>Романов Е.Л. Беседы о программировании</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Times New Roman CYR";
+	panose-1:2 2 6 3 5 4 5 2 3 4;}
+@font-face
+	{font-family:"Arial CYR";
+	panose-1:2 11 6 4 2 2 2 2 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";}
+h1
+	{margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Arial CYR";
+	font-weight:bold;}
+h2
+	{margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Arial CYR";
+	font-weight:bold;
+	font-style:italic;}
+h3
+	{margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Arial CYR";
+	font-weight:normal;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+p
+	{margin-right:0cm;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+p.a, li.a, div.a
+	{margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman CYR";}
+p.a0, li.a0, div.a0
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.a1, li.a1, div.a1
+	{margin-top:6.0pt;
+	margin-right:18.45pt;
+	margin-bottom:0cm;
+	margin-left:35.45pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:12.0pt;
+	font-family:"Times New Roman CYR";}
+p.a2, li.a2, div.a2
+	{margin-top:12.0pt;
+	margin-right:32.9pt;
+	margin-bottom:12.0pt;
+	margin-left:35.45pt;
+	text-align:justify;
+	text-indent:.55pt;
+	border:none;
+	padding:0cm;
+	font-size:10.0pt;
+	font-family:"Arial CYR";}
+p.a3, li.a3, div.a3
+	{margin-top:0cm;
+	margin-right:32.9pt;
+	margin-bottom:0cm;
+	margin-left:5.0cm;
+	margin-bottom:.0001pt;
+	text-align:right;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	font-style:italic;}
+p.a4, li.a4, div.a4
+	{margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:12.0pt;
+	font-family:"Times New Roman CYR";}
+p.a5, li.a5, div.a5
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:14.0pt;
+	font-family:"Courier New";
+	layout-grid-mode:line;
+	font-weight:bold;}
+p.a6, li.a6, div.a6
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.a7, li.a7, div.a7
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	layout-grid-mode:line;}
+ /* Page Definitions */
+ @page Section1
+	{size:21.0cm 842.0pt;
+	margin:33.45pt 42.55pt 72.0pt 89.85pt;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=RU background="back.gif">
+
+<div class=Section1>
+
+<h2><font face="Arial"><span lang=EN-US>7</span>.3. Технология проектирования рекурсивных
+алгоритмов</font></h2>
+
+<p class=a4 style='text-indent:36.0pt'>Специфика рекурсивных алгоритмов состоит
+в том, что они полностью исключают «исторический» подход к проектированию
+программы. Попытки логически проследить последовательность рекурсивных вызовов
+заранее обречены на провал. Их можно прокомментировать примерно такой фразой:
+«Функция <span lang=EN-US>F</span> выполняет … и вызывает <span lang=EN-US>F</span>,
+которая выполняет … и вызывает <span lang=EN-US>F</span>…». Ясно, что для
+логического анализа программы в этом мало пользы. Более того, при ветвящейся
+рекурсии имеют место «откаты» этого процесса на предыдущие уровни рекурсии, то
+есть «исторически» следует рассуждать: «Функция <span lang=EN-US>F</span>
+выполняет … и вызывает <span lang=EN-US>F</span>, которая выполняет … и
+вызывает <span lang=EN-US>F</span>…, после возврата из которой на предыдущий
+шаг снова вызывается <span lang=EN-US>F</span>, которая выполняет …». Видимо,
+что здесь должно использовать рассуждения другого вида, более того, попытки
+«заглянуть» внутрь рекурсивного вызова должны пресекаться, ибо они
+автоматически приводят к вышеприведенным рассуждениям. </p>
+
+<p class=a4><b><a name="m1">Инварианты рекурсивного алгоритма. </b>Приведенный пример смутно
+напоминает нам попытки «исторического» анализа циклических программ. Там для
+того, чтобы объяснить результат выполнения цикла, предлагался некоторый <b><a name="m2">инвариант
+</b>(условие, соотношение)<b><a name="m3">, </b>сохраняемое шагом цикла. Наличие такого
+инварианта позволяет «не заглядывать вперед» к последующим и «не оборачиваться
+назад»<b><a name="m4"> </b>к предыдущим шагам цикла, ибо на них делается то же самое.
+Аналогичная ситуация имеет место в рекурсии. Только она усугубляется тем, что
+при ветвящейся рекурсии «исторический» подход вообще неприменим.</p>
+
+<p class=a4><b><a name="m5">Рекурсивный алгоритм как процесс. </b>Очевидно, что здесь
+придется «мыслить по-новому». Прежде всего, оставить традиционные подходы к
+достижению цели за один шаг и перейти от формулировок алгоритма в терминах
+«цели и средства» к формулировкам «возможные направления движения», приводящие
+к ней. Рекурсивный вызов, «экземпляр» рекурсивной функции является в этом
+случае одним из идентичных повторяющихся шагов некоторого процесса, который в
+целом и решает поставленную задачу. В терминах процесса и его шагов основные
+параметры рекурсивной функции получают дополнительный смысл<span
+style='font-family:"Times New Roman"'>:</span> </p>
+
+<p class=a1>- формальные параметры рекурсивной функции представляют начальное
+состояние для текущего шага процесса; </p>
+
+<p class=a1> - фактические параметры рекурсивного вызова представляют начальное
+состояние для следующего шага, в который производится переход из текущего при
+рекурсивном вызове; </p>
+
+<p class=a1> - локальные (автоматические) переменные представляют внутренние
+характеристики процесса на текущем шаге его выполнения; </p>
+
+<p class=a1> - глобальные (внешние, статические)  переменные представляют
+глобальное состояние всей системы, через которое отдельные шаги в
+последовательности могут взаимодействовать между собой. </p>
+
+<p class=a>Это значит, что формальные параметры рекурсивной функции, глобальные
+и локальные переменные не могут быть взаимозаменяемы, как это иногда делается в
+обычных функциях. Особо следует быть внимательным при работе с глобальными
+переменными, т.к. множество экземпляров рекурсивных вызовов фактически их
+разделяют. Если речь идет о поисковых алгоритмах, и в последовательности вызовов
+рекурсивных функций производятся изменения в глобальных переменных, то по
+возвращении из рекурсивного вызова необходимо возвратить значения этих
+переменных в исходное состояние, в котором они находились на этом шаге
+рекурсии, т.е. произвести <b><a name="m6">«откат».</b>  Это объясняется тем, что смежные
+шаги рекурсивного алгоритма должны быть «прозрачны» по отношению друг к другу.</p>
+
+<p class=a>Первая заповедь рекурсивного программирования: алгоритм должен
+разрабатываться, не выходя за рамки текущего рекурсивного вызова. Остальные принципы
+уже упоминались:</p>
+
+<p class=a1>- рекурсивная функция разрабатывается как обобщенный шаг процесса,
+который вызывается в произвольных начальных условиях и который приводит к
+следующему шагу в некоторых новых условиях<span style='font-family:"Times New Roman"'>;</span></p>
+
+<p class=a1><span style='font-family:"Times New Roman"'>- для шага процесса –
+рекурсивного вызова, необходимо определить инварианты – сохраняемые в процессе
+выполнения алгоритма условия и соотношения;</span></p>
+
+<p class=a1>- начальные условия очередного шага должны быть формальными
+параметрами функции<span style='font-family:"Times New Roman"'>;</span></p>
+
+<p class=a1>- начальные условия следующего шага должны быть сформированы в
+виде  фактических параметров рекурсивного вызова<span style='font-family:"Times New Roman"'>;</span></p>
+
+<p class=a1>- локальными переменными функции должны быть объявлены все
+переменные, которые имеют отношение к протеканию текущего шага процесса и к его
+состоянию;</p>
+
+<p class=a1>- в рекурсивной функции обязательно должна быть проверка условий
+завершения рекурсии, при которых следующий шаг процесса не выполняется<span
+style='font-family:"Times New Roman"'>.</span></p>
+
+<p class=a4><b><a name="m7">Этапы разработки рекурсивной функции. </b>Сознательное
+ограничение процесса проектирования рекурсивной функции текущим шагом сильно
+меняет и технологию проектирования программы. Прежде всего – классический
+принцип последовательного приближения к цели, последовательной детализации
+алгоритма – здесь очень сильно ограничен, поскольку цель достигается всем
+процессом, а не отдельным шагом. Отсюда следует рекомендация, сильно
+смахивающая на фокус: необходимо  разработать ряд самостоятельных фрагментов
+рекурсивной функции, которые в совокупности должны автоматически привести к
+заветной цели. Попутно нужно заметить, что если попытки отследить рекурсию
+непродуктивны, то столь же ограничены и возможности отладки уже написанных
+программ.</p>
+
+<p class=a>Итак, перечислим последовательность и содержание шагов в
+проектировании и «сведении вместе» фрагментов рекурсивной функции.</p>
+
+<p class=a4 style='margin-left:18.0pt;text-indent:-18.0pt'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>«Зацепить
+рекурсию» - определить, что составляет шаг рекурсивного алгоритма;</p>
+
+<p class=a4 style='margin-left:18.0pt;text-indent:-18.0pt'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Инварианты
+рекурсивного алгоритма. Основные свойства, соотношения, которые присутствуют на
+входе рекурсивной функции и которые сохраняются до следующего рекурсивного
+вызова, но уже в состоянии, более близком к цели;</p>
+
+<p class=a4 style='margin-left:18.0pt;text-indent:-18.0pt'>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Глобальные
+переменные – общие данные процесса в целом;</p>
+
+<p class=a4 style='margin-left:18.0pt;text-indent:-18.0pt'>4.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Начальное
+состояние шага рекурсивного алгоритма – формальные параметры рекурсивной
+функции;</p>
+
+<p class=a4 style='margin-left:18.0pt;text-indent:-18.0pt'>5.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Ограничения
+рекурсии – обнаружение «успеха» - достижения цели на текущем шаге рекурсии и
+отсечение «неудач» - заведомо неприемлемых вариантов;</p>
+
+<p class=a4 style='margin-left:18.0pt;text-indent:-18.0pt'>6.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Правила
+перебора возможных вариантов – способы формирования рекурсивного вызова;</p>
+
+<p class=a4 style='margin-left:18.0pt;text-indent:-18.0pt'>7.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Начальное
+состояние следующего шага – фактические параметры рекурсивного вызова;</p>
+
+<p class=a4 style='margin-left:18.0pt;text-indent:-18.0pt'>8.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Содержание
+и способ обработки результата – полный перебор с сохранением всех допустимых
+вариантов, первый возможный, оптимальный;</p>
+
+<p class=a4 style='margin-left:18.0pt;text-indent:-18.0pt'>9.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Условия
+первоначального вызова рекурсивной функции в <span lang=EN-US>main</span>.</p>
+
+<p class=a4><b><a name="m8">Результат рекурсивного алгоритма.</b><span style='font-family:
+"Times New Roman"'> Особенность рекурсивного программирования состоит в том,
+что цель рекурсивного алгоритма не определяется явным образом. Наоборот,
+задаются только возможные направления движения к ней («цель – ничто, движение -
+все»). Поэтому на каждом шаге рекурсивного алгоритма возможны три варианта:</span></p>
+
+<p class=a1 style='margin-left:36.0pt;text-indent:-18.0pt'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>цель
+достигнута (положительный результат) - завершение цепочки (но только именно
+этой) рекурсивных вызовов;</p>
+
+<p class=a1 style='margin-left:36.0pt;text-indent:-18.0pt'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>в
+данном направлении движение к цели невозможно (отрицательный результат) -
+завершение цепочки рекурсивных вызовов;</p>
+
+<p class=a1 style='margin-left:36.0pt;text-indent:-18.0pt'>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>движение
+может быть продолжено – рекурсивные вызовы для следующего шага.</p>
+
+<p class=a4>В общем случае рекурсивный алгоритм может давать несколько
+положительных решений. Возможны три варианта сохранения этих результативных
+решений, каждый из которых влияет на «внешний вид» рекурсивной функции:</p>
+
+<p class=a1>1. Используется полный перебор возможных вариантов и вывод
+(сохранение) всех вариантов, достигающих цели. В этом случае рекурсивная функция
+не возвращает явного результата и, следовательно, она не может повлиять на
+характер последующего протекания процесса поиска. Если в процессе поиска
+обнаруживаются подходящие варианты (успешное завершение рекурсии), то они могут
+<span lang=EN-US>c</span>охраняться в глобальной структуре данных, с которой
+работают все шаги рекурсивного алгоритма.</p>
+
+<p class=a0><span lang=EN-US>&nbsp;</span></p>
+
+<p class=a0 style='text-indent:35.45pt'>//--------------------полный перебор
+возможных решений</p>
+
+<p class=a0 style='text-indent:35.45pt'><span lang=EN-US>void F</span>()  {</p>
+
+<p class=a0><span lang=EN-US>            </span>            <span lang=EN-US>if
+(</span>тупик<span lang=EN-US>) return;</span></p>
+
+<p class=a0><span lang=EN-US>            </span>            <span lang=EN-US>if
+(</span>успех<span lang=EN-US>) {</span></p>
+
+<p class=a0><span lang=EN-US>                        </span>            вывести
+решение или сохранить</p>
+
+<p class=a0>                                    <span lang=EN-US>return;</span></p>
+
+<p class=a0 style='margin-left:72.0pt;text-indent:36.0pt'><span lang=EN-US>}           </span></p>
+
+<p class=a0><span lang=EN-US>            </span>            <span lang=EN-US>for
+(i=0;i&lt;n;i++) if (…) F();</span></p>
+
+<p class=a0><span lang=EN-US>            </span>            }</p>
+
+<p class=a1>2. Рекурсивная функция выполняет поиск первого попавшегося
+успешного варианта. Ее результатом обычно является логическое значение. При
+этом <b><a name="m9">истина</b> соответствует успешному завершению поиска, а<b><a name="m10"> ложь</b> -
+неудачному. Общая для всех алгоритмов схема<span style='font-family:"Times New Roman"'>:</span>
+если рекурсивный вызов возвращает <b><a name="m11">истину</b>, то она должна быть немедленно
+«передана наверх», то есть текущий вызов также должен быть завершен со
+значением <b><a name="m12">истина</b>. Если рекурсивный вызов возвращает <b><a name="m13">ложь</b>, по
+поиск должен быть продолжен. При завершении полного перебора всех вариантов
+рекурсивная функция также должна возвратить <b><a name="m14">ложь. </b>Характеристики
+оптимального варианта могут быть возвращены в глобальных данных, либо по
+ссылке. В Си++ аналогичный результат можно возвратить при помощи исключения,
+которое приводит к цепочке возвратов из функции до обработчика (см. последующие
+примеры).</p>
+
+<p class=a0 style='text-indent:35.45pt'>&nbsp;</p>
+
+<p class=a0 style='text-indent:35.45pt'>//--------------------поиск первого
+подходящего решения</p>
+
+<p class=a0 style='text-indent:35.45pt'><span lang=EN-US>int F()    {</span></p>
+
+<p class=a0><span lang=EN-US>                        if (</span>тупик<span
+lang=EN-US>) return 0;</span></p>
+
+<p class=a0><span lang=EN-US>                        if</span> (успех) {         вывести
+решение или сохранить</p>
+
+<p class=a0>                                    <span lang=EN-US>return</span>
+1<span lang=EN-US>;</span></p>
+
+<p class=a0 style='margin-left:72.0pt;text-indent:36.0pt'><span lang=EN-US>}           </span></p>
+
+<p class=a0><span lang=EN-US>                        for (i=0;i&lt;n;i++) if
+(…) </span></p>
+
+<p class=a0 style='margin-left:72.0pt;text-indent:36.0pt'>{ <span lang=EN-US>if</span>
+(<span lang=EN-US>F</span>()==1) <span lang=EN-US>return</span> 1;       //
+трансляция предыдущего «успеха»</p>
+
+<p class=a0>                        <span lang=EN-US>return</span> 0;</p>
+
+<p class=a0>                        }</p>
+
+<p class=a1>3. В процессе поиска производится выбор между имеющимися решениями
+наиболее оптимального. Обычно для этого используется минимум или максимум
+какой-либо характеристики выбираемого варианта. В этом случае алгоритм
+производит полный перебор возможных вариантов, а стандартный программный
+контекст выбора минимума (максимума) будет обязательно присутствовать в теле
+рекурсивной функции.</p>
+
+<p class=a4><b><a name="m15">Способы и направление накопления результата рекурсивного
+алгоритма. </b>С процессом движения по цепочке рекурсивных вызовов могут быть
+связаны определенные характеристики рекурсивного процесса в целом (например,
+длина пройденного пути, количество выбранных элементов и т.п.). Их можно
+естественным образом «накапливать» в формальных параметрах рекурсивной функции:</p>
+
+<p class=a0 style='text-indent:35.45pt'><span lang=EN-US>&nbsp;</span></p>
+
+<p class=a0 style='text-indent:35.45pt'>//--------------------Накопление
+характеристик рекурсивного процесса</p>
+
+<p class=a0 style='text-indent:35.45pt'>// <span lang=EN-US>n</span>–
+количество пройденных «городов», <span lang=EN-US>lnt</span> – длина пути, <span
+lang=EN-US>k</span>-текущий «город»</p>
+
+<p class=a0 style='text-indent:35.45pt'><span lang=EN-US>void F(int n, int lnt,
+int k){            </span></p>
+
+<p class=a0><span lang=EN-US>                        if (</span>уже были<span
+lang=EN-US>) return;</span></p>
+
+<p class=a0><span lang=EN-US>                        if</span> (<span
+lang=EN-US>n</span>==<span lang=EN-US>N</span>) {                                              //
+обошли все «города»</p>
+
+<p class=a0>                                    вывести <span lang=EN-US>lnt</span>
+или сохранить</p>
+
+<p class=a0>                                    <span lang=EN-US>return;</span></p>
+
+<p class=a0 style='margin-left:72.0pt;text-indent:36.0pt'><span lang=EN-US>}                                               //
+</span>рекурсия для соседних</p>
+
+<p class=a0><span lang=EN-US>                        for (i=0;i&lt;N;i++) if
+(…) F(n+1,lnt+S[k][i],i);</span></p>
+
+<p class=a0><span lang=EN-US>                        }</span></p>
+
+<p class=a4>В этом фрагменте длина пройденного пути накапливается в формальном
+параметре <b><a name="m16"><span lang=EN-US>lnt</span></b>, фактический параметр следующего
+рекурсивного вызова увеличивается на расстояние до «соседа» - <b><a name="m17"><span
+lang=EN-US>lnt</span>+<span lang=EN-US>S</span>[<span lang=EN-US>k</span>][<span
+lang=EN-US>i</span>].</b></p>
+
+<p class=a>Рассмотренный пример иллюстрирует принцип <b><a name="m18">прямого накопления
+результата </b>в цепочке рекурсивных вызовов. Если на каком-то шаге обнаружено
+положительное решение, то накопленный результат может быть сохранен в
+глобальной структуре данных. Если речь идет об оптимальном решении, то там же
+сохраняется оптимальное решение, а текущее корректирует его в сторону минимума
+или максимума.</p>
+
+<p class=a0 style='text-indent:35.45pt'>&nbsp;</p>
+
+<p class=a0 style='text-indent:35.45pt'>//--------------------Сохранение
+оптимального варианта в глобальных данных </p>
+
+<p class=a0 style='text-indent:35.45pt'>// <span lang=EN-US>n</span>–
+количество пройденных «городов», <span lang=EN-US>lnt</span> – длина пути, <span
+lang=EN-US>k</span>-текущий «город»</p>
+
+<p class=a0 style='text-indent:35.45pt'><span lang=EN-US>int</span>         <span
+lang=EN-US>lntmin</span>=-1;                      // начальное значение
+минимального пути</p>
+
+<p class=a0 style='text-indent:35.45pt'><span lang=EN-US>void F</span>(<span lang=EN-US>int n</span>, <span lang=EN-US>int lnt</span>, <span lang=EN-US>int k</span>){            // -1 – поиск первого
+решения</p>
+
+<p class=a0>                        <span lang=EN-US>if</span> (уже были) <span
+lang=EN-US>return</span>;</p>
+
+<p class=a0>                        <span lang=EN-US>if</span> (<span
+lang=EN-US>n</span>==<span lang=EN-US>N</span>) {                                              //
+обошли все «города»</p>
+
+<p class=a0>                                    <span lang=EN-US>if</span> (<span
+lang=EN-US>lntmin</span>==-1 || <span lang=EN-US>lnt</span>&lt;<span
+lang=EN-US>lntmin</span>){         // первое или более </p>
+
+<p class=a0 style='margin-left:108.0pt;text-indent:36.0pt'><span lang=EN-US>lntmin</span>=<span
+lang=EN-US>lnt</span>;                     // оптимальное решение</p>
+
+<p class=a0 style='margin-left:108.0pt;text-indent:36.0pt'><span lang=EN-US>return</span>;</p>
+
+<p class=a0 style='margin-left:72.0pt;text-indent:36.0pt'>}                                               //
+рекурсия для соседних</p>
+
+<p class=a0>                        <span lang=EN-US>for (i=0;i&lt;N;i++) if
+(…) F(n+1,lnt+S[k][i],i);</span></p>
+
+<p class=a0><span lang=EN-US>                        </span>}</p>
+
+<p class=a4>Прямое накопление результат можно производить и в глобальных
+данных. В нашем примере это может быть последовательность «пройденных городов».
+Но здесь нужно помнить о необходимости <b><a name="m19">«отката» </b>- возвращении глобальных
+данных в исходное состояние при завершении шага рекурсии. </p>
+
+<p class=a4>Возможно и <b><a name="m20">обратное накопление результата</b>, когда данные
+передаются от последующего вызова к предыдущему в виде явного результата
+рекурсивной функции. Таким результатом может быть как базовый тип, так и объект
+определенного вида. Вызывающая функция в этом случае объединяет результаты,
+полученные от последующих шагов, в собственный результат с учетом текущего
+шага. </p>
+
+<p class=a0 style='text-indent:35.45pt'>&nbsp;</p>
+
+<p class=a0 style='text-indent:35.45pt'>//--------------------Обратное
+накопление результата рекурсивной функцией</p>
+
+<p class=a0 style='text-indent:35.45pt'>// <span lang=EN-US>n</span>–
+количество пройденных «городов», <span lang=EN-US>k</span>-текущий «город»</p>
+
+<p class=a0 style='text-indent:35.45pt'>// Функция возвращает длину пройденного
+пути от текущего «города» до цели</p>
+
+<p class=a0 style='text-indent:35.45pt'><span lang=EN-US>int F</span>(<span lang=EN-US>int n</span>, <span lang=EN-US>int k</span>){                                                //
+-1 – цель не достигнута, путь не найден </p>
+
+<p class=a0>                        <span lang=EN-US>if</span> (уже были) <span
+lang=EN-US>return</span> -1;</p>
+
+<p class=a0>                        <span lang=EN-US>if</span> (<span
+lang=EN-US>n</span>==<span lang=EN-US>N</span>)  <span lang=EN-US>return</span>
+0;                      // обошли все «города» - начало накопления</p>
+
+<p class=a0><span lang=EN-US>                        int vmin</span>=-1;                               //
+минимальный путь с учетом себя</p>
+
+<p class=a0>                        <span lang=EN-US>for (i=0;i&lt;N;i++) {</span></p>
+
+<p class=a0 style='margin-left:72.0pt;text-indent:36.0pt'><span lang=EN-US>int v</span>=<span lang=EN-US>F</span>(<span
+lang=EN-US>n</span>+1, <span lang=EN-US>i</span>);               // получен
+путь от соседнего до цели</p>
+
+<p class=a0 style='margin-left:72.0pt;text-indent:36.0pt'><span lang=EN-US>if</span>
+(<span lang=EN-US>v</span>==-1) <span lang=EN-US>continue</span>;         //
+нет пути – пропустить</p>
+
+<p class=a0 style='margin-left:72.0pt;text-indent:36.0pt'><span lang=EN-US>v</span>=<span
+lang=EN-US>v</span>+<span lang=EN-US>S</span>[<span lang=EN-US>k</span>][<span
+lang=EN-US>i</span>];                    // скорректировать с учетом пути до
+соседа</p>
+
+<p class=a0 style='margin-left:72.0pt;text-indent:36.0pt'><span lang=EN-US>if</span>
+(<span lang=EN-US>vmin</span>==-1 || <span lang=EN-US>v</span>&lt;<span
+lang=EN-US>vmin</span>)     // запомнитьминимальный</p>
+
+<p class=a0 style='margin-left:72.0pt;text-indent:36.0pt'>            <span
+lang=EN-US>vmin=v;</span></p>
+
+<p class=a0 style='margin-left:72.0pt;text-indent:36.0pt'><span lang=EN-US>}</span></p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US>return vmin;}</span></p>
+
+<p class=a4>Судя по внешнему виду, обратное накопление результат более
+громоздко, но оно позволяет реализовать более сложные стратегии накопления и
+оценки результата, полученного от нескольких рекурсивных вызовов, нежели просто
+выбор глобального минимума или максимума.</p>
+
+<p class=a4><b><a name="m21"><img border="0" src="Images/science.jpg" width="43" height="33">Рекурсия и математическая индукция. </b>Принцип программирования
+рекурсивных функций имеет много общего с методом математической индукции.
+Напомним, что этот метод используется для доказательства корректности
+утверждений для бесконечной последовательности состояний, а именно<span
+style='font-family:"Times New Roman"'>: </span>если утверждение верно в
+начальном состоянии, а из его справедливости в <b><a name="m22"><span lang=EN-US
+style='font-family:"Times New Roman"'>n</span></b> состоянии можно доказать его
+справедливость в <b><a name="m23"><span lang=EN-US style='font-family:"Times New Roman"'>n</span><span
+style='font-family:"Times New Roman"'>+1</span></b>, то такое утверждение будет
+справедливым всегда. Этот принцип и применяется при разработке рекурсивных
+функций: сама рекурсивная функция представляет собой переход из <b><a name="m24"><span
+lang=EN-US style='font-family:"Times New Roman"'>n</span></b> в <b><a name="m25"><span
+lang=EN-US style='font-family:"Times New Roman"'>n</span><span
+style='font-family:"Times New Roman"'>+1</span></b> состояние некоторого
+процесса. Если этот переход корректен, то есть соблюдение некоторых условий на
+входе функции приводит к их соблюдению на выходе (то есть в рекурсивном
+вызове), то эти условия будут соблюдаться во всей цепочке состояний (при
+безусловной корректности начального). Отсюда следует, что самое важное в
+определении рекурсии - выделить те условия (инварианты), которые соблюдаются
+(сохраняются) во всех точках процесса и обеспечить их справедливость от входа в
+рекурсивную функцию до ее рекурсивного вызова. При этом «категорически не
+приветствуется» заглядывать в следующий шаг рекурсии или интересоваться
+состоянием процесса на предыдущем шаге. Да и в этом нет необходимости с точки
+зрения приведенного здесь метода доказательства.</p>
+
+<p class=a4><b><a name="m26"><img border="0" src="Images/yan-in.jpg" width="34" height="31">Проектирование рекурсивных алгоритмов и заповеди христианства. </b>В
+Нагорной проповеди Нового Завета Иисус высказал одну из заповедей блаженства<span
+style='font-family:"Times New Roman"'>: «</span>будьте как птицы небесные, не
+заботьтесь о завтрашнем дне, пусть он заботится сам о себе». Сама по себе эта
+фраза, вырванная из контекста и принятая без должного размышления, сильно
+смахивает на обыкновенный «пофигизм»: живите сегодняшним днем, а после нас -
+хоть потоп. На самом же деле смысл ее, как руководства к действию, прямо
+противоположен: если хочешь в жизни достичь благодати, будь достоин
+сегодняшнего для, не объясняй своих слабостей прошлым, не уповай на исправление
+сегодняшних ошибок в будущем. Сосредоточься на сегодняшнем дне, и тогда цель в
+будущем будет достигнута сама собой. То же самое - и в проектировании
+рекурсивной функции<span style='font-family:"Times New Roman"'>: </span>следует
+сосредоточить внимание на текущем шаге рекурсии, не заботясь о том, когда она
+была вызвана и что будет делать следующий ее шаг: на самом деле они будут
+делать то же самое, что и текущий (хотя и не написанный). Если  «сегодняшний»
+вызов функции корректен и все ее действия приводят к такому же корректному
+вызову ее «завтра», то цель рано или поздно будет достигнута.</p>
+
+<p class=a style='text-indent:0cm'><b><a name="m27">
+<img border="0" src="Images/smile.jpg" width="23" height="24">Рекурсия и «буржуазный
+ревизионизм». </b>Если довести до абсолюта принципы проектирования  рекурсивных 
+алгоритмов, то  получим известный лозунг буржуазных экономистов, так беспощадно
+раскритикованных в свое время В.И. Лениным: «Цель – ничто, движение все»
+(Бернштейн). Все-таки в этом лозунге есть разумное зерно, хотя бы для
+программистов. </p>
+
+<p style='text-align:justify'><b><a name="m28"><span style='font-size:10.0pt'>Бернштейн</span></b><span
+style='font-size:10.0pt'> Эдуард (1850— 1932 гг.) — один из лидеров германской
+социал-демократии, идеолог реформизма. Во 2-й половине 1890-х гг. выступил с
+критикой теоретических основ марксизма. Бернштейн отвергал научное обоснование
+социализма, который считал этическим идеалом; выдвинул программу реформ
+капитализма и компромиссов с буржуазией («Конечная цель — ничто, движение —
+всё»). </span></p>
+
+<p class=a>Технологию программирования рекурсивных алгоритмов для начала
+рассмотрим на задачах, допускающих образное представление процесса поиска решения.
+Способ представления данных, используемые в них, выбирается из тех же
+соображений.</p>
+
+<p class=a4><b><a name="m29"><img border="0" src="Images/labs.jpg" width="41" height="40">Генерация вложенных описаний. </b>Естественным выглядит
+использование рекурсии при обработке и интерпретации описаний, допускающих
+вложенность. Здесь просто на каждую единицу описания необходимо вызывать
+функцию, которая рекурсивно вызывает сама себя при обнаружении вложенного
+фрагмента. </p>
+
+<p class=a>Пусть требуется «развернуть» текстовую строку, в которой
+повторяющиеся фрагменты заключены в скобки, а после открывающейся скобки может
+находиться целая константа, задающая число повторений этого фрагмента в
+выходной строке. Например: «<b><a name="m30"><span lang=EN-US>aaa</span>(3<span
+lang=EN-US>bc</span>(4<span lang=EN-US>d</span>)<span lang=EN-US>a</span>(2<span
+lang=EN-US>e</span>))<span lang=EN-US>aaa</span></b>» разворачивается в
+«<b><a name="m31"><span lang=EN-US>aaabcddddaeebcddddaeebcddddaeeaaa</span></b>».</p>
+
+<p class=a4>1. Шаг рекурсии – отработка заключенного в скобках фрагмента.
+Инвариант рекурсии – функция получает указатель на первый за скобкой символ
+фрагмента и должна при рекурсивном вызове передать такой же указатель на
+вложенный фрагмент.</p>
+
+<p class=a0>&nbsp;</p>
+
+<p class=a0><span lang=EN-US>void step(char *p){</span></p>
+
+<p class=a0><span lang=EN-US>… if (*p==’(‘){</span></p>
+
+<p class=a0><span lang=EN-US>            p++; step(p);</span></p>
+
+<p class=a0 style='text-indent:36.0pt'>}}</p>
+
+<p class=a4>2. Результат работы – сгенерированная строка – может быть
+глобальным массивом. В процессе ее заполнения необходим также глобальный
+указатель, которым будут пользоваться все рекурсивные  вызовы. Более
+естественно передать его всем через ссылку. Отсюда имеем окончательный список
+параметров.</p>
+
+<p class=a0>&nbsp;</p>
+
+<p class=a0><span lang=EN-US>void step(char *p, char *&amp;out){</span></p>
+
+<p class=a0><span lang=EN-US>… if (*p==’(‘){</span></p>
+
+<p class=a0><span lang=EN-US>            p++; step(p,out);</span></p>
+
+<p class=a0 style='text-indent:36.0pt'>}}</p>
+
+<p class=a4>3. Шаг рекурсии состоит в извлечении целой константы – счетчика
+повторений. Затем внешний цикл производит заданное количество повторений, а
+внутренний – переписывает символы текущего фрагмента из входной строки в
+выходную, пока не встретит конца фрагмента (символ ‘)’ или конец строки –
+«защита от дурака» и первоначальный вызов).</p>
+
+<p class=a0>&nbsp;</p>
+
+<p class=a0><span lang=EN-US>void step(char *p, char *&amp;out){</span></p>
+
+<p class=a0><span lang=EN-US>for (int n=0; while(*p&gt;=’0’ &amp;&amp;
+*p&lt;=’9’)      </span>            <span lang=EN-US>// </span>Накопление константы</p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US>n=n*10+*p++ - ‘0’;</span></p>
+
+<p class=a0><span lang=EN-US>if (n==0) n=1;                                                     //
+</span>При отсутствии<span lang=EN-US> – n=1</span></p>
+
+<p class=a0><span lang=EN-US>while</span>(<span lang=EN-US>n</span>--!=0){                                                      //
+Цикл повтора фрагмента</p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US>for(char *q=p; *q!=0
+&amp;&amp; *q!=’)’; q++){        </span></p>
+
+<p class=a0 style='margin-left:36.0pt;text-indent:36.0pt'><span lang=EN-US>if
+(*q!=’)’)                                   </span>// Цикл посимвольного
+копирования</p>
+
+<p class=a0 style='margin-left:36.0pt;text-indent:36.0pt'>            *<span
+lang=EN-US>out</span>++ = *<span lang=EN-US>q</span>;                  // Все,
+кроме ‘(‘ – копировать</p>
+
+<p class=a0 style='margin-left:36.0pt;text-indent:36.0pt'><span lang=EN-US>else</span>      {</p>
+
+<p class=a0 style='margin-left:36.0pt;text-indent:36.0pt'>            <span
+lang=EN-US>q</span>++;                             // Пропустить ‘( ‘</p>
+
+<p class=a0 style='margin-left:36.0pt;text-indent:36.0pt'>            <span
+lang=EN-US>step</span>(<span lang=EN-US>q</span>,<span lang=EN-US>out</span>);                    //
+Рекурсия для вложенного фрагмента</p>
+
+<p class=a0 style='margin-left:36.0pt;text-indent:36.0pt'>            }}}}</p>
+
+<p class=a4>4. Необходимо еще раз обратить внимание на инвариант процесса –
+каждый шаг должен «брать на себя» текущий фрагмент и, соответственно,
+передавать рекурсивным вызовам вложенные фрагменты. Но отсюда следует, что сам
+он должен «пропускать» эти фрагменты при своем выполнении. Между вызываемой и
+вызывающей функцией должна быть «обратная связь» по результату: каждый
+рекурсивный вызов должен возвращать указатель, продвинутый по входной строке на
+просмотренный фрагмент. С учетом тонкостей пропуска закрывающихся скобок
+получим окончательный вариант.</p>
+
+<p class=a0>&nbsp;</p>
+
+<p class=a0>//------------------------------------------------------<span
+lang=EN-US>7</span>3-01.<span lang=EN-US>cpp</span></p>
+
+<p class=a0>//---- Генерация вложенных повторяющихся фрагментов</p>
+
+<p class=a0> <span lang=EN-US>char *step(char *p, char *&amp;out){</span></p>
+
+<p class=a0><span lang=EN-US> int n=0; char *q;</span></p>
+
+<p class=a0><span lang=EN-US> while</span>(*<span lang=EN-US>p</span>&gt;= '0'
+&amp;&amp; *<span lang=EN-US>p</span>&lt;= '9')                      //
+Накопление константы</p>
+
+<p class=a0>             <span lang=EN-US>n=n*10+ *p++ - '0' ;</span></p>
+
+<p class=a0><span lang=EN-US> if</span> (<span lang=EN-US>n</span>==0) <span
+lang=EN-US>n</span>=1;                                        // При отсутствии
+<span lang=EN-US>n</span>=1</p>
+
+<p class=a0> <span lang=EN-US>while</span>(<span lang=EN-US>n</span>--!=0){                        
+                // Цикл повтора фрагмента</p>
+
+<p class=a0>               <span lang=EN-US>for(q=p; *q!=0 &amp;&amp; *q!=')'; q++){</span></p>
+
+<p class=a0><span lang=EN-US>                           if</span> (*<span
+lang=EN-US>q</span>!= '(' )                   // Цикл посимвольного копирования</p>
+
+<p class=a0>                           *<span lang=EN-US>out</span>++ = *<span
+lang=EN-US>q</span>;               // Все, кроме ( копировать</p>
+
+<p class=a0>                           <span lang=EN-US>else</span> {</p>
+
+<p class=a0>                                    <span lang=EN-US>q</span>++;                 
+// Пропустить (</p>
+
+<p class=a0>                                    <span lang=EN-US>q</span>=<span
+lang=EN-US>step</span>(<span lang=EN-US>q</span>,<span lang=EN-US>out</span>);  
+// Рекурсия для вложенного фрагмента</p>
+
+<p class=a0>                                    <span lang=EN-US>}</span></p>
+
+<p class=a0><span lang=EN-US>                           }}</span></p>
+
+<p class=a0><span lang=EN-US> if (*q== ')' ) q++; return q;}</span></p>
+
+<p class=a0><span lang=EN-US>&nbsp;</span></p>
+
+<p class=a4>5. В заключение необходимо проверить условия первоначального
+вызова. Если передать на вход функции любую строку, не начинающуюся с целой
+константы, то она будет считать всю ее повторяющимся фрагментом с числом
+повторов, равным 1. Это обеспечат сделанные нами добавления  - <b><a name="m32"><span
+lang=EN-US>n</span>=1 </b>при отсутствии константы и завершение по концу
+строки.</p>
+
+<p class=a0>&nbsp;</p>
+
+<p class=a0> <span lang=EN-US>void main(){</span></p>
+
+<p class=a0><span lang=EN-US> char s[80],*ps=s;
+step(&quot;aaa(2b(3cd)b)aaa&quot;,ps); *ps=0; puts(s); }</span></p>
+
+<p class=a4><b><a name="m33"><img border="0" src="Images/labs.jpg" width="41" height="40">Задача о восьми ферзях. </b>Расположить 8 ферзей на шахматной
+доске так, чтобы они не находились друг у друга «под боем».</p>
+
+<p class=a4>1. Поскольку ферзи «бьют» друг друга по вертикали (то есть на
+каждой вертикали их не более одного), то шаг рекурсии может состоять в
+выставлении ферзя на очередную вертикаль. Инвариант процесса – первые <b><a name="m34"><span
+lang=EN-US>i</span>-1 </b>ферзей уже корректно выставлены, шаг добавляет еще
+одного ферзя, сохраняя корректность. Формальный параметр шага – номер вертикали
+(<b><a name="m35"><span lang=EN-US>i</span></b>), фактический параметр рекурсивного вызова –
+номер следующей вертикали (<b><a name="m36"><span lang=EN-US>i</span>+1</b>). Алгоритм ищет
+первую подходящую расстановку и возвращает логическое значение – расстановка
+найдена (1) или не найдена (0). Общие данные представляют собой доску с уже
+выставленными ферзями: для этого достаточно иметь одномерный массив, индекс в
+котором обозначает позицию ферзя по вертикали, а значение – позицию по
+горизонтали.</p>
+
+<p class=a0>&nbsp;</p>
+
+<p class=a0><span lang=EN-US>int R[8];</span></p>
+
+<p class=a0><span lang=EN-US>int step(int i){ … step(i+1);…}</span></p>
+
+<p class=a4>2. Перебор вариантов заключается в последовательном выставлении
+очередного ферзя на все 8 клеток вертикали. Если после выставления он находится
+под боем, клетка пропускается. Если нет, то производится попытка выставить
+следующего за ним и т.д. до конца путем вызова рекурсивной функции. Схема поиск
+первого подходящего говорит о том, что при положительном результате
+рекурсивного вызова (цепочка достроена до конца), необходимо прервать цикл
+поиска и возвратить этот вариант «наверх также и от себя». В противном случае –
+перебор продолжается. По окончании просмотра – возвратить 0.</p>
+
+<p class=a0>&nbsp;</p>
+
+<p class=a0><span lang=EN-US>int R[8];</span></p>
+
+<p class=a0><span lang=EN-US>int step(int i){</span></p>
+
+<p class=a0><span lang=EN-US>for (int j=0; j&lt;8; j++){</span></p>
+
+<p class=a0><span lang=EN-US>            R[i]=j;</span></p>
+
+<p class=a0><span lang=EN-US>            if (!TEST(i)) continue;                  //
+</span>Под боем<span lang=EN-US> - </span>пропустить</p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US>if</span> (<span
+lang=EN-US>step</span>(<span lang=EN-US>i</span>+1)) <span lang=EN-US>return</span>
+1;                  // Цепочка достроена последующими шагами - выйти</p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US>}</span></p>
+
+<p class=a0><span lang=EN-US>return</span> 0;}                                               //
+Цикл завершен нормальным образом - неудача</p>
+
+<p class=a4>3. Поскольку каждый ферзь «выставляется» в глобальном массиве, то
+по завершении цепочки «успешных» выходов из рекурсивных вызовов в нем и будет
+находиться первый подходящий вариант. И, наконец, последние штрихи. В
+рекурсивной функции, «ретранслирующей успех» от вызываемой функции к вызывающей
+нет первопричины этого «успеха». Ферзи считаются успешно выставленными, если рекурсивная
+функция достигает несуществующей вертикали. Эта проверка должны быть сделана в
+самом начале тела функции. Функция <b><a name="m37"><span lang=EN-US>TEST </span></b>проверяет нахождение <b><a name="m38"><span lang=EN-US>i</span>-го </b>со
+всеми предыдущими ферзями на одной горизонтали и диагонали. Первоначально
+функция вызывается для <b><a name="m39"><span lang=EN-US>i</span>=0.</b></p>
+
+<p class=a0>&nbsp;</p>
+
+<p class=a0>//------------------------------------------------------<span
+lang=EN-US>7</span>3-02.<span lang=EN-US>cpp</span></p>
+
+<p class=a0>//------- Задача о восьми ферзях</p>
+
+<p class=a0> <span lang=EN-US>int R[8];</span></p>
+
+<p class=a0><span lang=EN-US> int TEST(int i){</span></p>
+
+<p class=a0><span lang=EN-US>     for (int j=i-1; j&gt;=0; j--){</span></p>
+
+<p class=a0><span lang=EN-US>              if(R[i]==R[j]) return
+0;                            // По горизонтали</span></p>
+
+<p class=a0><span lang=EN-US>     if(abs(R[i]-R[j])==i-j) return
+0;                          // По диагонали</span></p>
+
+<p class=a0><span lang=EN-US>     }</span></p>
+
+<p class=a0><span lang=EN-US> return 1; }</span></p>
+
+<p class=a0><span lang=EN-US> int step(int i){</span></p>
+
+<p class=a0><span lang=EN-US> if (i==8) return 1;</span></p>
+
+<p class=a0><span lang=EN-US> for</span> (<span
+lang=EN-US>int j</span>=0; <span
+lang=EN-US>j</span>&lt;8; <span lang=EN-US>j</span>++){                                         //
+Перебор по вертикали</p>
+
+<p class=a0>      <span lang=EN-US>R[i]=j;</span></p>
+
+<p class=a0><span lang=EN-US>      if (!TEST(i)) continue;                                    //
+Под боем - пропустить</span></p>
+
+<p class=a0><span lang=EN-US>      if (step(i+1)) return 1;                                                //
+Цепочка достроена - выйти</span></p>
+
+<p class=a0><span lang=EN-US>      }</span></p>
+
+<p class=a0><span lang=EN-US> return</span>
+0;}                                                                      //
+Цикл завершен - неудача </p>
+
+<p class=a0>&nbsp;</p>
+
+<p class=a0><span lang=EN-US>void main(){ step(0); for (int i=0; i&lt;8; i++)
+printf(&quot;%d  &quot;,R[i]); printf(&quot;\n&quot;); }</span></p>
+
+<p class=a4><b><a name="m40"><img border="0" src="Images/labs.jpg" width="41" height="40">Поиск выхода в лабиринте. </b>С точки зрения математики лабиринт
+представляет собой граф, а алгоритм поиска выхода из него - производит поиск
+пути, соединяющего заданные вершины. Чтобы более наглядно продемонстрировать
+особенности рекурсивного программирования, будем использовать более «образное»
+представление лабиринта в виде двумерного символьного массива.</p>
+
+<p class=a0 style='margin-top:6.0pt'><span lang=EN-US style='font-family:"Courier New"'>x</span><span
+style='font-family:"Courier New"'>xxxxxxxxxxxxxxxxx      </span><span
+lang=EN-US style='font-family:"Courier New"'>xxxxxxxxxxxxxxxxxx</span></p>
+
+<p class=a0><span style='font-family:"Courier New"'>x x              x      </span><span
+lang=EN-US style='font-family:"Courier New"'>x </span><span lang=EN-US style='font-family:
+"Courier New"'>x</span><span style='font-family:"Courier New"'>              </span><span
+lang=EN-US style='font-family:"Courier New"'>x</span></p>
+
+<p class=a0><span style='font-family:"Courier New"'>x x xxxxxxxxxxx  x      </span><span
+lang=EN-US style='font-family:"Courier New"'>x </span><span lang=EN-US style='font-family:
+"Courier New"'>x</span><span lang=EN-US style='font-family:"Courier New"'> xxxxxxxxxxx</span><span
+style='font-family:"Courier New"'>  </span><span lang=EN-US style='font-family:
+"Courier New"'>x</span></p>
+
+<p class=a0><span style='font-family:"Courier New"'>x x   x          x      </span><span
+lang=EN-US style='font-family:"Courier New"'>x </span><span lang=EN-US style='font-family:
+"Courier New"'>x</span><span style='font-family:"Courier New"'>   </span><span
+lang=EN-US style='font-family:"Courier New"'>x</span><span style='font-family:
+"Courier New"'>          </span><span lang=EN-US style='font-family:"Courier New"'>x</span></p>
+
+<p class=a0><span style='font-family:"Courier New"'>x     x  xxx x xxx      </span><span
+lang=EN-US style='font-family:"Courier New"'>x</span><span style='font-family:
+"Courier New"'>     </span><span lang=EN-US style='font-family:"Courier New"'>x</span><span
+style='font-family:"Courier New"'>  </span><span lang=EN-US style='font-family:
+"Courier New"'>xxx</span><span lang=EN-US style='font-family:"Courier New"'> x </span><span lang=EN-US style='font-family:
+"Courier New"'>xxx</span></p>
+
+<p class=a0><span style='font-family:"Courier New"'>x xxxxxx x   x   O      </span><span
+lang=EN-US style='font-family:"Courier New"'>x </span><span lang=EN-US style='font-family:
+"Courier New"'>xxxxxx</span><span lang=EN-US style='font-family:"Courier New"'>
+x</span><span
+style='font-family:"Courier New"'>...</span><span lang=EN-US style='font-family:
+"Courier New"'>x</span><span style='font-family:"Courier New"'>...</span><span
+lang=EN-US style='font-family:"Courier New"'>O</span></p>
+
+<p class=a0><span style='font-family:"Courier New"'>x          x   x x      </span><span
+lang=EN-US style='font-family:"Courier New"'>x</span><span style='font-family:
+"Courier New"'>..........</span><span lang=EN-US style='font-family:"Courier New"'>x</span><span
+style='font-family:"Courier New"'>...</span><span lang=EN-US style='font-family:
+"Courier New"'>x</span><span lang=EN-US style='font-family:"Courier New"'> x</span></p>
+
+<p class=a0><span style='font-family:"Courier New"'>x xxxxxxxxxx xxx x      </span><span
+lang=EN-US style='font-family:"Courier New"'>x</span><span style='font-family:
+"Courier New"'>.</span><span lang=EN-US style='font-family:"Courier New"'>xxxxxxxxxx xxx</span><span lang=EN-US style='font-family:
+"Courier New"'> </span><span lang=EN-US style='font-family:"Courier New"'>x</span></p>
+
+<p class=a0><span style='font-family:"Courier New"'>x   x   x    x   x      </span><span
+lang=EN-US style='font-family:"Courier New"'>x</span><span style='font-family:
+"Courier New"'>...</span><span lang=EN-US style='font-family:"Courier New"'>x</span><span
+style='font-family:"Courier New"'>   </span><span lang=EN-US style='font-family:
+"Courier New"'>x</span><span style='font-family:"Courier New"'>    </span><span
+lang=EN-US style='font-family:"Courier New"'>x</span><span style='font-family:
+"Courier New"'>   </span><span lang=EN-US style='font-family:"Courier New"'>x</span><span
+style='font-family:"Courier New"'>      </span></p>
+
+<p class=a0><span style='font-family:"Courier New"'>xxx xxx xxx xxx xx      </span><span
+lang=EN-US style='font-family:"Courier New"'>xxx</span><span style='font-family:
+"Courier New"'>.</span><span lang=EN-US style='font-family:"Courier New"'>xxx xxx</span><span lang=EN-US style='font-family:
+"Courier New"'> </span><span lang=EN-US style='font-family:"Courier New"'>xxx xx</span><span style='font-family:"Courier New"'>      </span></p>
+
+<p class=a0><span style='font-family:"Courier New"'>x    x  x   x x xx      </span><span
+lang=EN-US style='font-family:"Courier New"'>x</span><span style='font-family:
+"Courier New"'>  . </span><span lang=EN-US style='font-family:"Courier New"'>x</span><span
+style='font-family:"Courier New"'>  </span><span lang=EN-US style='font-family:
+"Courier New"'>x</span><span style='font-family:"Courier New"'>   </span><span
+lang=EN-US style='font-family:"Courier New"'>x </span><span lang=EN-US style='font-family:
+"Courier New"'>x</span><span lang=EN-US style='font-family:"Courier New"'> xx</span></p>
+
+<p class=a0><span lang=EN-US style='font-family:"Courier New"'>xxx xxx x xxx x
+xx      xxx.xxx x xxx x xx</span></p>
+
+<p class=a0><span lang=EN-US style='font-family:"Courier New"'>x    I  x   x  
+xx      x  ...  x   x   xx</span></p>
+
+<p class=a0><span lang=EN-US style='font-family:"Courier New"'>xxxxxxxxxxxxxxxxxx</span><span
+style='font-family:"Courier New"'>      </span><span lang=EN-US
+style='font-family:"Courier New"'>xxxxxxxxxxxxxxxxxx</span></p>
+
+<p class=a>Рекурсивная функция пытается сделать «шаг в лабиринте» в одном из
+четырех направлений из точки, в которой «она сейчас находится». Инвариант
+процесса состоит в корректном сохранении этого свойства: отсекаются «стенки» и
+уже пройденные точки. Рекурсивный характер алгоритма состоит в том, что в
+каждой соседней точке реализуется тот же самый алгоритм поиска. Формальными
+параметрами рекурсивной функции в данном случае являются координаты точки, из
+которой в данный момент осуществляется поиск. Фактические параметры -
+координаты соседней точки.<span style='font-family:"Times New Roman"'> </span></p>
+
+<p class=a>Поиск производится по принципу «первого подходящего», вид результата
+и способ его формирования аналогичен предыдущему примеру. Определение
+первоначального «успешного варианта» - достижение границы лабиринта. Отсечение
+недопустимых вариантов – текущая точка является «стеной».</p>
+
+<p class=a>Сами параметры успешного варианта – путь к выходу из лабиринта,
+могут быть сохранены в глобальных данных – в виде отметок пройденных точек.
+Тогда при входе в очередную точку ее нужно отмечать (символом «точка»), а если
+поиск не привел к цели – снимать отметку перед возвратом из рекурсивной
+функции. Отметка пройденных точек позволяет «убить второго зайца» - исключить
+зацикливания алгоритма. Для этого нужно просто добавить еще одно ограничение –
+при входе в очередную точку сразу же возвращается отрицательный результат, если
+это «стенка» и если она уже отмечена.</p>
+
+<p class=a>&nbsp;</p>
+
+<p class=a0><span lang=EN-US>//------------------------------------------------------73-03.cpp</span></p>
+
+<p class=a0>// Поиск выхода из лабиринта</p>
+
+<p class=a0><span lang=EN-US>char LB[N][N];</span></p>
+
+<p class=a0><span lang=EN-US>&nbsp;</span></p>
+
+<p class=a0><span lang=EN-US>int step(int y,int x){</span></p>
+
+<p class=a0><span lang=EN-US>if (LB[y][x]=='O') return 1;                        //
+</span>выход найден</p>
+
+<p class=a0><span lang=EN-US>if (LB[y][x]!=' </span>')    return 0;                       //
+стенки и циклы</p>
+
+<p class=a0>LB[y][x]='.';                                                        //
+отметить точку</p>
+
+<p class=a0><span lang=EN-US>if</span> (<span lang=EN-US>step</span>(<span
+lang=EN-US>y</span>+1,<span lang=EN-US>x</span>))   <span lang=EN-US>return</span>
+1;                        // четыре возможных направления движения</p>
+
+<p class=a0><span lang=EN-US>if (step(y,x+1))   return 1;</span></p>
+
+<p class=a0><span lang=EN-US>if (step(y-1,x))    return 1;</span></p>
+
+<p class=a0><span lang=EN-US>if (step(y,x-1))    return 1;</span></p>
+
+<p class=a0>LB[y][x]=' ';                                            // снять
+отметку</p>
+
+<p class=a0>return 0;}</p>
+
+<p class=a4><b><a name="m41"><img border="0" src="Images/labs.jpg" width="41" height="40">Задача о зеркалах. </b>В комнату через одно «окно» попадает луч
+света, который, последовательно отражаясь от нескольких зеркал,  выходит через
+другое. Зеркала могут быть повернуты под углом +45 или –45 градусов.
+Местоположение зеркал известно, необходимо «повернуть» их должным образом. </p>
+
+<p class=a4>Программа моделирует движение луча, используя естественное
+представление данных в двумерном символьном массиве. Пока моделируется движение
+луча без отражения (в том числе пересечение его со «стеной»), явная
+необходимость в рекурсии не возникает. В момент пересечения с еще не
+сориентированным зеркалом возникает необходимость проверить два возможных
+варианта его отражения – в этом случае используется ветвящаяся рекурсия. В
+остальных случаях линейная рекурсия поддерживает принятый стиль
+программирования:</p>
+
+<p class=a1>- шаг рекурсии – распространение луча с заданными координатами (<b><a name="m42"><span
+lang=EN-US>x</span>,<span lang=EN-US>y</span></b>) и направлением
+распространения (<b><a name="m43"><span lang=EN-US>dx</span>,<span lang=EN-US>dy</span></b>);</p>
+
+<p class=a1>- при отсутствии препятствий движение луча моделируется через
+приращение координат в заданном направлении <b><a name="m44"><span lang=EN-US>x</span>+<span
+lang=EN-US>dx</span>, <span lang=EN-US>y</span>+<span lang=EN-US>dy</span>,
+</b>пройденные позиции отмечаются символом «точка» - таким образом луч
+«оставляет» след, который стирается по возвращении из цепочки рекурсивных
+вызовов;</p>
+
+<p class=a1>- достижение «выхода» приводит к принудительному завершению
+последовательности вызовов через исключение, пройденный путь естественным
+образом сохраняется;</p>
+
+<p class=a1>- при обнаружении в текущей точке зеркала рекурсивный вызов
+происходит дважды: для каждого из возможных поворотов, изменение направления
+движения луча моделируются достаточно просто – обменом приращений <b><a name="m45"><span
+lang=EN-US>dx</span></b> и <b><a name="m46"><span lang=EN-US>dy </span></b>и
+сменой их знаков;</p>
+
+<p class=a1>- сама постановка задачи исключает «зацикливание» луча, однако он
+может отразиться от уже сориентированного зеркала с обратной стороны, при этом
+уже установленная ориентация зеркала не меняется. </p>
+
+<p class=a0>&nbsp;</p>
+
+<p class=a6><span lang=EN-US style='font-family:"Courier New"'>xxxxIxxxxxxxxxxxxxxx</span><span
+style='font-family:"Courier New"'>    </span><span lang=EN-US style='font-family:
+"Courier New"'>xxxx</span><span style='font-family:"Courier New"'>.</span><span
+lang=EN-US style='font-family:"Courier New"'>xxxxxxxxxxxxxxx</span></p>
+
+<p class=a6><span lang=EN-US style='font-family:"Courier New"'>x                 
+x    x   .              x</span></p>
+
+<p class=a6><span lang=EN-US style='font-family:"Courier New"'>x   *     *  
+*    x    x   \.....\   *    x</span></p>
+
+<p class=a6><span lang=EN-US style='font-family:"Courier New"'>x                 
+x    x         .        x</span></p>
+
+<p class=a6><span lang=EN-US style='font-family:"Courier New"'>x                 
+x    x         .        x</span></p>
+
+<p class=a6><span lang=EN-US style='font-family:"Courier New"'>x   *     *  
+*    x    x   *     \...\    x</span></p>
+
+<p class=a6><span lang=EN-US style='font-family:"Courier New"'>x                 
+x    x             .    x</span></p>
+
+<p class=a6><span lang=EN-US style='font-family:"Courier New"'>x                 
+x    x             .    x</span></p>
+
+<p class=a6><span lang=EN-US style='font-family:"Courier New"'>x   *        
+*    O    x   *         \....O</span></p>
+
+<p class=a6><span lang=EN-US style='font-family:"Courier New"'>x                 
+x    x                  x</span></p>
+
+<p class=a6><span lang=EN-US style='font-family:"Courier New"'>xxxxxxxxxxxxxxxxxxxx    xxxxxxxxxxxxxxxxxxxx</span></p>
+
+<p class=a6><span lang=EN-US style='font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=a0><span lang=EN-US>&nbsp;</span></p>
+
+<p class=a0>//------------------------------------------------------<span
+lang=EN-US>7</span>4-04.cpp</p>
+
+<p class=a0>//------ Комната с зеркалами (&quot;луч света в темном царстве&quot;)</p>
+
+<p class=a0><span lang=EN-US>#define N 100</span></p>
+
+<p class=a0><span lang=EN-US>char LB[N][N];</span></p>
+
+<p class=a0>// Рекурсивная функция - текущие координаты (x,y) и приращения
+(dx,dy)</p>
+
+<p class=a0><span lang=EN-US>int step(int y,int x, int dy, int dx){</span></p>
+
+<p class=a0>int c;</p>
+
+<p class=a0>switch(LB[y][x]){                                                //
+поиск первого подходящего варианта</p>
+
+<p class=a0>case 'O':throw 1;                                                //
+найден выход - прервать обход (исключение)</p>
+
+<p class=a0>case ' ': LB[y][x]='.';                                // свободное
+пространство - двигаться в прежнем</p>
+
+<p class=a0>            step(y+dy,x+dx,dy,dx);              // направлении с
+отметкой пройденного пути</p>
+
+<p class=a0>            LB[y][x]=' ';                                // если
+вернулись - очистить отмеченный путь</p>
+
+<p class=a0>            break;</p>
+
+<p class=a0>case '.': LB[y][x]='+';                               //
+пересечение с лучом (в перепендикулярном</p>
+
+<p class=a0>            step(y+dy,x+dx,dy,dx);              // направлении -
+аналогично предыдущему</p>
+
+<p class=a0>            <span lang=EN-US>LB[y][x]='.';</span></p>
+
+<p class=a0><span lang=EN-US>            </span>break;</p>
+
+<p class=a0>case '*': LB[y][x]='\\';                               //
+неориентированное зеркало - </p>
+
+<p class=a0>            c=dx; dx=dy; dy=c;                    // два варианта
+ориентации с</p>
+
+<p class=a0>            step(y+dy,x+dx,dy,dx);              // соответствующей
+сменой направления</p>
+
+<p class=a0 style='text-indent:36.0pt'>dx=-dx; dy=-dy;                         //
+движения луча.</p>
+
+<p class=a0>            <span lang=EN-US>LB[y][x]='/';</span></p>
+
+<p class=a0><span lang=EN-US>            </span>step(y+dy,x+dx,dy,dx);              //
+если вернулись - восстановить </p>
+
+<p class=a0>            LB[y][x]='*';                               //
+&quot;неориентированное зеркало&quot;</p>
+
+<p class=a0>            break;</p>
+
+<p class=a0>case '\\':c=dx; dx=dy; dy=c;                    // отражение от
+ориентированного зеркала</p>
+
+<p class=a0>            step(y+dy,x+dx,dy,dx);              // (с обратной
+стороны)</p>
+
+<p class=a0>            break;                                       // - один
+вариант распространения луча</p>
+
+<p class=a0><span lang=EN-US>case '/': c=dx; dx=dy; dy=c;</span></p>
+
+<p class=a0><span lang=EN-US>            dx=-dx; dy=-dy;</span></p>
+
+<p class=a0><span lang=EN-US>            step(y+dy,x+dx,dy,dx);</span></p>
+
+<p class=a0><span lang=EN-US>            break;</span></p>
+
+<p class=a0><span lang=EN-US>            } return 0; }</span></p>
+
+<p class=a4><b><a name="m47"><img border="0" src="Images/labs.jpg" width="41" height="40">Обход конем шахматной доски.</b>  Приведенных выше примеров вполне
+достаточно, чтобы проиллюстрировать следующим формальным перечислением принятых
+решений:</p>
+
+<p class=a1>- шаг процесса – выставление коня на очередную клетку доски с
+заданными координатами;</p>
+
+<p class=a1>- рекурсивная функция делает 8 попыток движения конем на соседние
+клетки, используется массив относительных смещений;</p>
+
+<p class=a1>- формальным параметром функции является номер шага: он
+используется для определения условий достижения «успеха» - пройдены все клетки
+доски;</p>
+
+<p class=a1>- доска – глобальный двумерный массив, при «прохождении» коня
+клетка заполняется номером шага алгоритма, этим сохраняется последовательность
+ходов при достижении успеха, это же является защитой от повторных прохождений
+той же самой клетки;</p>
+
+<p class=a1>- реализован алгоритм поиска первого подходящего варианта;</p>
+
+<p class=a1>- ограничения рекурсии – выход за пределы доски, повторный обход
+отмеченной (пройденной) клетки.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal><span style='font-family:Arial'>//------------------------------------------------------</span><span
+lang=EN-US style='font-family:Arial'>7</span><span style='font-family:Arial'>3-05.cpp</span></p>
+
+<p class=MsoNormal><span style='font-family:Arial'>//------Обход шахматной
+доски конем</span></p>
+
+<p class=MsoNormal><span style='font-family:Arial'> </span><span lang=EN-US
+style='font-family:Arial'>#define N 5</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:Arial'> int desk[N][N]
+;                               </span><span style='font-family:Arial'>      </span><span
+lang=EN-US style='font-family:Arial'>// </span><span style='font-family:Arial'>поля доски</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:Arial'> int step(int x0,
+int y0,int nstep){              // nstep - </span><span style='font-family:
+Arial'>номер</span><span style='font-family:Arial'> шага</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:Arial'> static int
+xy[8][2] = {{ 1,-2},{ 1, 2},{-1,-2},{-1, 2},{ 2,-1},{ 2, 1},{-2, 1},{-2,-1}};</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:Arial'> </span><span
+style='font-family:Arial'>if (nstep == N*N) return 1;                      //
+все поля отмечены - успех</span></p>
+
+<p class=MsoNormal><span style='font-family:Arial'> </span><span lang=EN-US
+style='font-family:Arial'>if (x0 &lt; 0 || x0 &gt;= N || y0 &lt; 0 || y0 &gt;=
+N )</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:Arial'>              </span><span
+style='font-family:Arial'>return 0;                                  // выход
+за пределы доски</span></p>
+
+<p class=MsoNormal><span style='font-family:Arial'> </span><span lang=EN-US
+style='font-family:Arial'>if (desk[x0][y0] !=0)</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:Arial'>              </span><span
+style='font-family:Arial'>return 0;                                  // поле
+уже пройдено</span></p>
+
+<p class=MsoNormal><span style='font-family:Arial'> desk[x0][y0] = nstep+1;                                    //
+отметить свободное поле</span></p>
+
+<p class=MsoNormal><span style='font-family:Arial'> for ( int i=0; i&lt;8; i++)                             //
+локальный параметр - номер хода</span></p>
+
+<p class=MsoNormal><span style='font-family:Arial'> if (step(x0+xy[i][0],
+y0+xy[i][1],nstep+1)) // рекурсивный вызов для следующего хода</span></p>
+
+<p class=MsoNormal><span style='font-family:Arial'>              return 1;                                  //
+поиск успешного хода</span></p>
+
+<p class=MsoNormal><span style='font-family:Arial'> desk[x0][y0] = 0;                                  //
+стереть отметку поля</span></p>
+
+<p class=MsoNormal><span style='font-family:Arial'> return 0; }                                             //
+последовательность не найдена</span></p>
+
+<p class=MsoNormal><span style='font-family:Arial'> </span><span lang=EN-US
+style='font-family:Arial'>void main</span><span
+style='font-family:Arial'>(){ step(0,0,0);}                        // вызвать
+функцию для исходной позиции</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>

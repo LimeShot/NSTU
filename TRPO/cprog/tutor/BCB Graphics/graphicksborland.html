@@ -1,0 +1,521 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1251"><script type="text/javascript">var y5_pageId = 6259; var y5_statId = 0; document.write('<sc' + 'ript type="text/javascript" src="http://bs.yandex.ru/resource/narod_init.js?rnd=' + Math.round(Math.random() * 100000) + '"></sc' + 'ript>');</script><script type="text/javascript" src="graphicksborland_files/narod_init.gif"></script>
+</head><body><div style="background:url(http://www.tns-counter.ru/V13a****yandex_ru/ru/CP1251/tmsec=narod_total/)"></div>
+
+
+ <title>Работа с графикой и рисунками средствами Borland C++ Builder</title>
+ <link type="text/css" rel="stylesheet" href="graphicksborland_files/style.css"> 
+
+
+<a name="top"></a>
+<table border="0" width="98%"><tbody><tr><td>
+<h1>2 Работа с графикой с использованием классов, свойств и функций компонент Borland C++ Builder</h1>
+<ul>
+<li><p><a href="#1">Основные понятия</a>
+</p></li><li><p><a href="#2">Объектный класс канвы</a>
+</p></li><li><p><a href="#3">Примеры использования функций канвы для рисования приметивов</a>
+</p></li><li><p><a href="#4">Вывод текста на канву</a>
+</p></li><li><p><a href="http://wladm.narod.ru/Borland/graphicksborlandbmp.html">
+Работа с графикой и рисунками средствами Borland C++ Builder</a>
+</p></li></ul>
+<p><a name="1"></a><a href="#top">В начало</a>
+</p><h2>Основные понятия</h2>
+<p>В среде C++Builder существует три рода объектов, которые имеют отношение 
+к графике:
+</p><ul>
+<li><p>Канва - предоставляет битовую карту поверхности окна приложения, 
+компоненты, принтера и т.п., которая может быть использована  
+для вывода  графики. Канва не самостоятельный объект, она всегда 
+является свойством какого-то другого графического объекта.
+</p></li><li><p>Графика -  представляет растровое изображение некоторого файла или 
+ресурса (битового образа, пиктограммы или метафайла). 
+</p><p>C++Builder определяет производные от базового класса TGraphic объектные 
+классы:
+</p><ul>
+<li><p>TBitmap, 
+</p></li><li><p>Ticon,
+</p></li><li><p>TMetafile. 
+</p></li></ul>
+</li><li><p>Рисунок (TPicture) представляет собой контейнер для графики, который 
+может содержать любые классы графических объектов. Таким образом, 
+контейнерный класс TPicture может содержать битовый образ, пиктограмму, 
+метафайл или некоторый другой графический тип, определенный пользователем, 
+а приложение может стандартно обращаться ко всем объектам контейнера 
+посредством объекта TPicture.
+</p></li></ul>
+<p>Отметим, что графические объекты Windows взаимосвязаны. Так - объект 
+TPicture всегда содержит некоторую графику, которой в свою очередь, может 
+потребоваться для отображения канва, а единственный стандартный 
+графический класс канвы - это TBitmap. 
+</p><p>Как отмечалось выше, Borland С++ Builder инкапсулирует функции Windows 
+GDI на разных уровнях. Наиболее завершенным является интерфейс, предоставляемый 
+свойством Canvas (канва), объектного класса канвы, его графических компонент. 
+Использование канвы снимает с программиста заботу при выводе изображений об 
+инициализации контекста устройства и его освобождении. Наличия вложенных 
+свойств (характеристик пера, кисти, шрифтов, растровых изображений) также 
+не требует слежения за состояниями ресурсов - основная задача - это 
+определение характеристик для этих графических объектов и грамотное их 
+использование. Речь об этом в следующем параграфе.
+</p><p><a name="2"></a><a href="#top">В начало</a>
+</p><h2>Объектный класс канвы</h2>
+<p>Инкапсулированные и перегруженные функции GDI и WinApi объектного класса 
+канвы многие авторы относят к трем различным уровням. В этой условной 
+классификации функции высокого уровня обеспечивают возможность рисования 
+линий, фигур и текста. Определение свойств и методов манипулирования 
+графическими примитивами канвы отнесены к среднему уровню. Нижний уровень 
+обеспечивается доступ к самим функциям Windows GDI. Классификация не 
+бесспорна, но она позволяет ориентироваться в достаточно 
+большом колличестве свойств и методов канвы и, поэтому, приведем эту 
+классификацию.
+<table border="1" width="99%">
+<tbody>
+<tr>
+ <td align="center" valign="top" width="12%"><b>Уровень</b></td>
+ <td align="center" valign="top" width="25%"><b>Метод (Функция)</b></td>
+ <td align="center" valign="top" width="20%"><b>Свойства</b></td>
+ <td align="center" valign="top" width="43%"><b>Действие</b></td>
+</tr>
+<tr>
+ <td rowspan="17" align="left" valign="top"><b>&nbsp;&nbsp;&nbsp;Высокий</b></td>
+ <td align="left" valign="top"><b>&nbsp;MoveTo</b></td>
+ <td align="left" valign="top"><b>&nbsp;PenPos</b></td>
+ <td align="left" valign="top"><b>&nbsp;Определяет текущую позицию пера</b></td>
+</tr>
+<tr>
+ <td align="left" valign="top"><b>&nbsp;LineTo</b></td>
+ <td align="left" valign="top"><b>&nbsp;PenPos</b></td>
+ <td align="left" valign="top"><b>&nbsp;Рисует прямую до заданной точки</b></td>
+</tr>
+<tr>
+ <td align="left" valign="top"><b>&nbsp;Rectangle</b></td>
+ <td align="left" valign="top"><b>&nbsp;</b></td>
+ <td align="left" valign="top"><b>&nbsp;Рисует прямоугольник</b></td>
+</tr>
+<tr>
+ <td align="left" valign="top"><b>&nbsp;Ellipse</b></td>
+ <td align="left" valign="top"><b>&nbsp;</b></td>
+ <td align="left" valign="top"><b>&nbsp;Рисует эллипс</b></td>
+</tr>
+<tr>
+ <td align="left" valign="top"><b>&nbsp;Arc</b></td>
+ <td align="left" valign="top"><b>&nbsp;</b></td>
+ <td align="left" valign="top"><b>&nbsp;Рисует дугу</b></td>
+</tr>
+<tr>
+ <td align="left" valign="top"><b>&nbsp;Polyline</b></td>
+ <td align="left" valign="top"><b>&nbsp;</b></td>
+ <td align="left" valign="top"><b>&nbsp;Рисует ломаную линию</b></td>
+</tr>
+<tr>
+ <td align="left" valign="top"><b>&nbsp;PolyBezier</b></td>
+ <td align="left" valign="top"><b>&nbsp;</b></td>
+ <td align="left" valign="top"><b>&nbsp;Рисует кривую Блейзера</b></td>
+</tr>
+<tr>
+ <td align="left" valign="top"><b>&nbsp;Chord</b></td>
+ <td align="left" valign="top"><b>&nbsp;</b></td>
+ <td align="left" valign="top"><b>&nbsp;Рисует сектор</b></td>
+</tr>
+<tr>
+ <td align="left" valign="top"><b>&nbsp;DrawFocusRect</b></td>
+ <td align="left" valign="top"><b>&nbsp;</b></td>
+ <td align="left" valign="top"><b>&nbsp;Рисует прямоугольник</b></td>
+</tr>
+<tr>
+ <td align="left" valign="top"><b>&nbsp;FrameRect</b></td>
+ <td align="left" valign="top"><b>&nbsp;</b></td>
+ <td align="left" valign="top"><b>&nbsp;Выводит рамку вокруг прямоугольника</b></td>
+</tr>
+<tr>
+ <td align="left" valign="top"><b>&nbsp;Pie</b></td>
+ <td align="left" valign="top"><b>&nbsp;</b></td>
+ <td align="left" valign="top"><b>&nbsp;Выводит сектор круга</b></td>
+</tr>
+<tr>
+ <td align="left" valign="top"><b>&nbsp;TextOut</b></td>
+ <td align="left" valign="top"><b>&nbsp;</b></td>
+ <td align="left" valign="top"><b>&nbsp;Выводит текстовую строку</b></td>
+</tr>
+<tr>
+ <td align="left" valign="top"><b>&nbsp;TextHeight</b></td>
+ <td align="left" valign="top"><b>&nbsp;</b></td>
+ <td align="left" valign="top"><b>&nbsp;Задает высоту текстовой строки</b></td>
+</tr>
+<tr>
+ <td align="left" valign="top"><b>&nbsp;TextWidth</b></td>
+ <td align="left" valign="top"><b>&nbsp;</b></td>
+ <td align="left" valign="top"><b>&nbsp;Задает ширину для вывода текстовой строки</b></td>
+</tr>
+<tr>
+ <td align="left" valign="top"><b>&nbsp;TextRect</b></td>
+ <td align="left" valign="top"><b>&nbsp;</b></td>
+ <td align="left" valign="top"><b>&nbsp;Вывод текста внутри прямоугольника</b></td>
+</tr>
+<tr>
+ <td align="left" valign="top"><b>&nbsp;FillRect</b></td>
+ <td align="left" valign="top"><b>&nbsp;</b></td>
+ <td align="left" valign="top"><b>&nbsp;Заливка указанного прямоугольника цветом и текстурой текущей кисти</b></td>
+</tr>
+<tr>
+ <td align="left" valign="top"><b>&nbsp;FloodFill</b></td>
+ <td align="left" valign="top"><b>&nbsp;</b></td>
+ <td align="left" valign="top"><b>&nbsp;Заливка области канвы (произвольной формы) заданным цветом</b></td>
+</tr>
+<tr>
+ <td rowspan="8" align="left" valign="top"><b>&nbsp;&nbsp;&nbsp;Средний</b></td>
+ <td align="left" valign="top"><b>&nbsp;</b></td>
+ <td align="left" valign="top"><b>&nbsp;Pen</b></td>
+ <td align="left" valign="top"><b>&nbsp;Используется для установки цвета, стиля, ширины и режима пера</b></td>
+</tr>
+<tr>
+ <td align="left" valign="top"><b>&nbsp;</b></td>
+ <td align="left" valign="top"><b>&nbsp;Brush</b></td>
+ <td align="left" valign="top"><b>&nbsp;Используется для установки цвета и текстуры при заливке 
+     графических фигур и фона канвы.</b></td>
+</tr>
+<tr>
+ <td align="left" valign="top"><b>&nbsp;</b></td>
+ <td align="left" valign="top"><b>&nbsp;Font</b></td>
+ <td align="left" valign="top"><b>&nbsp;Используется для установки шрифта заданного цвета, размера и стиля</b></td>
+</tr>
+<tr>
+ <td align="left" valign="top"><b>&nbsp;</b></td>
+ <td align="left" valign="top"><b>&nbsp;Pixels</b></td>
+ <td align="left" valign="top"><b>&nbsp;Используется для чтение и записи цвета заданного пикселя канвы</b></td>
+</tr>
+<tr>
+ <td align="left" valign="top"><b>&nbsp;CopyRect</b></td>
+ <td align="left" valign="top"><b>&nbsp;CopyMode</b></td>
+ <td align="left" valign="top"><b>&nbsp;Копирует прямоугольную область канвы в режиме CopyMode</b></td>
+</tr>
+<tr>
+ <td align="left" valign="top"><b>&nbsp;BrushCopy</b></td>
+ <td align="left" valign="top"><b>&nbsp;</b></td>
+ <td align="left" valign="top"><b>&nbsp;Копирует прямоугольную область канвы с заменой цвета</b></td>
+</tr>
+<tr>
+ <td align="left" valign="top"><b>&nbsp;Draw</b></td>
+ <td align="left" valign="top"><b>&nbsp;</b></td>
+ <td align="left" valign="top"><b>&nbsp;Рисует битовый образ, пиктограмму, метафайл в заданном месте канвы</b></td>
+</tr>
+<tr>
+ <td align="left" valign="top"><b>&nbsp;StretchDraw</b></td>
+ <td align="left" valign="top"><b>&nbsp;</b></td>
+ <td align="left" valign="top"><b>&nbsp;Рисует битовый образ, пиктограмму или метафайл так, чтобы целиком 
+            заполнить заданный прямоугольник</b></td>
+</tr>
+<tr>
+ <td align="left" valign="top"><b>&nbsp;&nbsp;&nbsp;Низкий</b></td>
+ <td align="left" valign="top"><b>&nbsp;</b></td>
+ <td align="left" valign="top"><b>&nbsp;Handle</b></td>
+ <td align="left" valign="top"><b>&nbsp;Используется как параметр при вызове функций Windows GDI</b></td>
+</tr>
+</tbody>
+</table>
+</p><p><a name="3"></a><a href="#top">В начало</a>
+</p><h2>Примеры использования функций канвы для рисования приметивов</h2>
+<p>Основы рисования примитивов рассмотрены выше при рассмотрении 
+функций GDI, здесь, на примерах, не повторяя уже описанные ранее приемы вывода 
+примитивов, показаны лишь некоторые особенности их отображения с использованием
+функций канвы.
+</p><p>Прстейший пример относится к рисованию линий, кроме того показано как 
+можно задавать параметры пера:
+</p><pre>void __fastcall
+TForm1::Button1Click(TObject *Sender)
+{
+ //Задаем цвет пера
+ Canvas-&gt;Pen-&gt;Color=(TColor)RGB(255,0,0);
+ //Задаем ширину  пера
+ Canvas-&gt;Pen-&gt;Width=5;
+ //Можно переместить перо в исходную точку так
+ Canvas-&gt;MoveTo(100,200);
+ //Или тпереместить перо так
+ TPoint tPoint;
+ tPoint.x=100;
+ tPoint.y=200;
+ Canvas-&gt;PenPos=tPoint;
+ //И рисуем линию от исходной точки 100,200 до конкечной 0,50
+ Canvas-&gt;LineTo(0,50);
+ //Освобождать и восстанавливать ничего не надо
+ //однако канва запоминает установленные параметры
+}
+</pre>
+<p>Пример рисования дуги и секторов: 
+</p><pre>void __fastcall
+TForm1::Button1Click(TObject *Sender)
+{
+ //Стиль кисти
+ Canvas-&gt;Brush-&gt;Style=bsHorizontal;
+ //Цвет кисти
+ Canvas-&gt;Pen-&gt;Color = clBlue;
+ //Рисуем дугу
+ Canvas-&gt;Arc(0,0,500,500,250,0,50,0);
+ //Рисуем сектор изменяя стиль взаимодействия цвета пера и холста
+ Canvas-&gt;Pen-&gt;Mode=pmWhite;
+ Canvas-&gt;Chord(0,0,250,250,250,125,0,0);
+ //Освобождать и восстанавливать ничего не надо 
+ //Но помним, что канва запомнила установленные параметры
+}
+</pre>
+<p>Пример рисования ломаных линий (перо, при желании, можно задать как и ранее):
+</p><pre>void __fastcall 
+TForm1::Button1Click(TObject *Sender)
+{
+ TPoint tPoints[6];
+ Canvas-&gt;Pen-&gt;Color = clRed;
+  Canvas-&gt;Pen-&gt;Width=3;
+ tPoints[0].x = 40;
+ tPoints[0].y = 10;
+ tPoints[1].x = 20;
+ tPoints[1].y = 60;
+ tPoints[2].x = 70;
+ tPoints[2].y = 30;
+ tPoints[3].x = 10;
+ tPoints[3].y = 30;
+ tPoints[4].x = 60;
+ tPoints[4].y = 60;
+ tPoints[5].x = 40;
+ tPoints[5].y = 10;
+ Canvas-&gt;Polyline(tPoints,5);
+}
+</pre>
+<p>Пример рисования кривых Блейзера:
+</p><pre>void __fastcall 
+TForm1::Button1Click(TObject *Sender)
+{ 
+ TPoint tPoints[7];
+ tPoints[0]=TPoint(0,0);
+ tPoints[1]=TPoint(800,30);
+ tPoints[2]=TPoint(0,40);
+ tPoints[3]=TPoint(550,400);
+ tPoints[4]=TPoint(350,200);
+ tPoints[5]=TPoint(550,400);
+ tPoints[6]=TPoint(0,500);
+ Canvas-&gt;PolyBezier(tPoints,6);
+}
+</pre>
+<p>Пример отображения прямоугольников и эллипсов различными способами и 
+использования кистей:
+</p><pre>void __fastcall
+TForm1::Button1Click(TObject *Sender)
+{
+ //Задаем цвет пера
+ Canvas-&gt;Pen-&gt;Color=(TColor)RGB(0,255,0);
+ //Задаем щирину  пера
+ Canvas-&gt;Pen-&gt;Width=1;
+ //Стиль пера - пунктир
+ Canvas-&gt;Pen-&gt;Style=psDot;
+ //Стиль вывода замкнутой фигуры, зависяший от цвета пера
+ //и канвы ( заменяет своими возможностями) функцию SetBkMode()
+ //Эдесь прозрачный фон
+ Canvas-&gt;Pen-&gt;Mode=pmCopy;
+ //Рисуем прямоугольник по точкам
+ Canvas-&gt;Rectangle(0,0,100,100);
+ //Здесь, аналог GDI непрозрачного фона
+ Canvas-&gt;Pen-&gt;Mode=pmWhite;
+ //Рисуем элипс вписанный в прямоугольник
+ Canvas-&gt;Ellipse(250,250,350,550);
+ //Создаем перо функцией CreatePen() 1 - толщина пера
+ HPEN hPen=CreatePen(PS_DASHDOTDOT,1,RGB(255,0,0));
+ //Устанавливаем это перо как текущее
+ Canvas-&gt;Pen-&gt;Handle=hPen;
+ //Изменяем стиль вывода
+ Canvas-&gt;Pen-&gt;Mode=pmCopy;
+ //Стиль кисти - вертикальная штриховка
+ Canvas-&gt;Brush-&gt;Style=bsVertical;
+ //Можно переопределить прозрачность и так
+ SetBkMode(Canvas-&gt;Handle,OPAQUE);
+ //Рисуем прямоугольник с закругленными краями
+ Canvas-&gt;RoundRect(100,100,200,200,50,50);
+ //Координаты можно задать и так
+ TRect tRect;        //Координаты точек
+ tRect.Left=100;     //Левыя
+ tRect.Right=500;    //Правая
+ tRect.Top=250;      //Верхняя
+ tRect.Bottom=450;   //Нижняя
+ //Используем кисть для закрашивания объекта
+ Canvas-&gt;Brush-&gt;Color=(TColor)RGB(0,0,255);
+ Canvas-&gt;Rectangle(tRect);
+ Canvas-&gt;Brush-&gt;Color=(TColor)RGB(0,255,255);
+ //Стиль кисти
+ Canvas-&gt;Brush-&gt;Style=bsCross;
+ //Или по  координатам
+ Canvas-&gt;RoundRect(100,300,250,450,50,50);
+}
+</pre>
+<p>Использование кисти для заливки фигур:
+</p><pre>void __fastcall 
+TForm1::Button1Click(TObject *Sender)
+{
+ Canvas-&gt;Brush-&gt;Color=(TColor)RGB(0,255,255);
+ TRect tRect(0,0,100,100);
+ Canvas-&gt;FillRect(tRect);
+ //Рисуем прямоугольник по точкам
+ Canvas-&gt;Rectangle(0,0,100,100);
+ //Освобождать и восстанавливать ничего не надо
+}
+</pre>
+<p>И интересный эффект заполнения канвы цветом кисти:
+</p><pre>void __fastcall
+TForm1::Button1Click(TObject *Sender)
+{
+ //Параметр fsBorder -  заполнить всю область 
+ //цветом кисти, до края канвы
+ Canvas-&gt;Brush-&gt;Color=(TColor)RGB(255,0,255);
+ //Исходная точка в центре канвы, в данном случае 
+ //окна приложения
+ Canvas-&gt;FloodFill(Width/2,Height/2, NULL, fsBorder);
+ //Меняем цвет и повторяем
+ Canvas-&gt;Brush-&gt;Color=(TColor)RGB(255,0,0);
+ Canvas-&gt;FloodFill(Width/2,Height/2,NULL, fsBorder);
+}
+</pre>
+<p>Рисование рамки вокруг прямоугольника:
+</p><pre>void __fastcall 
+TForm1::Button1Click(TObject *Sender)
+{
+ Canvas-&gt;Brush-&gt;Color=(TColor)RGB(125,0,255);
+ TRect tRect;          //Координаты точек
+ tRect.Left=100;       //Левыя
+ tRect.Right=500;      //Правая
+ tRect.Top=250;        //Верхняя
+ tRect.Bottom=450;     //Нижняя
+ Canvas-&gt;FrameRect(tRect);
+}
+</pre>
+<p>Из примеров видно, что (с учетом некоторой модификации параметров 
+функций) рисование графических примитивов аналогично интерфейсу GDI.
+Однако, так как не требуется  следить за состоянием контекста и 
+его графических объектов, написание кода значительно упрощается.
+</p><p><a name="4"></a><a href="#top">В начало</a>
+</p><h2>Вывод текста на канву</h2>
+<p>Вывод текста на канву предельно прост. Требуется только задать 
+характеристики шрифта (свойство Font канвы), текст в формате AnsiString
+и использовать метод  TextOutA() канвы. Следующий пример показывает
+как это делается и, также, демонстрирует то, что канва 
+сохраняет заданные свойства - нажатие кнопки  Button2, в обработчике 
+нажатия которой изменен лишь цвет, не изменяет остальных свойств 
+шрифта, заданных в обработчике нажатия кнопки Button1.
+</p><pre>void __fastcall
+TForm1::Button1Click(TObject *Sender)
+{
+ AnsiString vasS="Пример текста";
+ //Цвет текста
+ Canvas-&gt;Font-&gt;Color=clRed;
+ //Размер шрифта в точках
+ Canvas-&gt;Font-&gt;Size=20;
+ //Стиль шрифта
+ TFontStyles tFontStyle;
+ //Зачеркнутый, наклонный, жирный, подчепкнутый
+ tFontStyle &lt;&lt; fsStrikeOut &lt;&lt; fsItalic &lt;&lt; fsBold &lt;&lt; fsUnderline;
+ Canvas-&gt;Font-&gt;Style =tFontStyle;
+ //Имя шрифта
+ Canvas-&gt;Font-&gt;Name="Times";
+ //Вывод текста
+ Canvas-&gt;TextOutA(10,10,vasS);
+}
+void __fastcall TForm1::Button2Click(TObject *Sender)
+{
+ AnsiString vasS="Пример текста";
+ Canvas-&gt;Font-&gt;Color=clBlue;
+ Canvas-&gt;TextOutA(50,50,vasS);
+}
+</pre>
+<p align="center"><img src="graphicksborland_files/graphics_2.jpg" alt="graphics_2.jpg">
+</p><p align="center">Рис 1. Пример работы со шрифтами.
+</p><p>Полезные функции для работы с текстом:
+</p><ul>
+<li><p>TextWidth(AnsiString vasS); - возвращает ширину текста в пикселях,
+необходимую для отображения строки vasS заданным шрифтом канвы;
+</p></li><li><p>TextHeight(AnsiString vasS); - возвращает высоту текста в пикселях,
+необходимую для отображения строки vasS заданным шрифтом канвы.
+
+</p><p>Эти функции полезны когда надо быть уверенным, что при езменении размера
+шрифта текст не выдет за грани компонента.
+</p><p>В следующем примере  показано  изменение ширины компонента TListBox, при
+выводе на его канву текста у которого заранее изменен шпифт. В 
+обработчик нажатия кнопки  Button1 поместить функцию TextWidth() и за 
+ней  функцию TextOutA() нельзя, так как перирисовка компонента происходит
+после завершения обработчика и часть текста будет утеряна. В примере,
+кроме того, показано задание цвета в виде 16ти ричного числа и 
+высоты шрифта в пикселях.
+</p><pre>void __fastcall
+TForm1::Button1Click(TObject *Sender)
+{
+ //Цвет текста
+ ListBox1-&gt;Canvas-&gt;Font-&gt;Color=(TColor)0x00FF7D7D;
+ //Высота текста в пикселях
+ ListBox1-&gt;Canvas-&gt;Font-&gt;Height=25;
+ AnsiString vasS="Пример текста";
+ ListBox1-&gt;Width=ListBox1-&gt;Canvas-&gt;TextWidth(vasS)+20;
+}
+void __fastcall 
+TForm1::Button3Click(TObject *Sender)
+{
+ AnsiString vasS="Пример текста";
+ ListBox1-&gt;Canvas-&gt;TextOutA(2,10,vasS);
+}
+</pre>
+<p>Каждый шрифт поддерживает один или больше наборов символов, которые 
+и определяют их написание. Следующий пример хотя и выводит абракадабру 
+первые две строки, но показывает как, используя свойство Charset,
+сменить набор символов шрифта установленный по умолчанию. Кроме того
+можно отметить разницу набора символов RUSSIAN_CHARSET и DEFAULT_CHARSET -
+как правило они разные. Пятая функция показывает использование еще одного
+свойства - Pitch.  Символы в шрифтах с  переменным шагом отличаются по 
+ширине (значения fpDefault, fpVariable), но если установить значение свойства
+равным fpFixed, ширина символов будет одинаковой.
+</p><pre>AnsiString vasS="Пример текста";
+ListBox1-&gt;Canvas-&gt;Font-&gt;Name="ArialBlack";
+ListBox1-&gt;Canvas-&gt;Font-&gt;Charset = TURKISH_CHARSET;
+ListBox1-&gt;Canvas-&gt;TextOutA(2,10,vasS);
+ListBox1-&gt;Canvas-&gt;Font-&gt;Charset = SYMBOL_CHARSET;
+ListBox1-&gt;Canvas-&gt;TextOutA(2,30,vasS);
+ListBox1-&gt;Canvas-&gt;Font-&gt;Charset = RUSSIAN_CHARSET;
+ListBox1-&gt;Canvas-&gt;TextOutA(2,50,vasS);
+ListBox1-&gt;Canvas-&gt;Font-&gt;Charset =  DEFAULT_CHARSET;
+ListBox1-&gt;Canvas-&gt;TextOutA(2,70,vasS);
+ListBox1-&gt;Canvas-&gt;Font-&gt;Pitch=fpFixed;
+ListBox1-&gt;Canvas-&gt;TextOutA(2,90,vasS);
+</pre>
+<p>Следущее свойство шрифта PixelsPerInch относится к отображению текста и 
+графики при печати, о чем речь будет вестись отдельно, но кратко рассмотрено 
+здесь, чтобы позже при возврате к свойствам шрифтов вновь не повторяться. 
+Принтер, о чем уже говорилось, также имеет канву. Вывод на печать в Borland 
+C++ Builder - это вывод на канву принтера. При смене принтера, размер шрифтов 
+может отмасштабироваться не правильно. Чтобы сделать правильное масштабирование,
+необходимо установить свойство PixelsPerInch шрифта. Свойство PixelsPerInch 
+определяет количество пикселей в 1 дюйме. Для его установки можно 
+воспользоваться следующим кодом:
+</p><pre>TPrinter *ptPrint = Printer();
+ptPrint-&gt;Canvas-&gt;Font-&gt;PixelsPerInch=
+   GetDeviceCaps(ptPrint-&gt;Canvas-&gt;Handle,LOGPIXELSY);
+</pre>
+<p>Отметим также, что свойство PixelsPerInch имеют не только шрифты, но 
+и, например Экран (Screen) и может быть исрользовано при установке 
+фиксированных размеров компонент (1 сантиметр равен 1 * (Screen-&gt;PixelsPerInch/2.54, 
+1 дюйм = 25.4 мм).
+</p><p>И песледнее - шрифт также имеет свойство Handle, которое может быть 
+использовано для быстрого восстановления характеристик шрифта канвы по 
+умолчанию (за исключением цвета). 
+</p><p>Далее рассмотрим работу с изображения в Borland C++ Builder.
+<br>
+</p><p><a href="#top">В начало</a>
+<br>
+</p><p><a href="http://wladm.narod.ru/Borland/graphicksborlandbmp.html">
+Продолжение. Работа с графикой и рисунками средствами Borland C++ Builder</a>
+<br>
+</p><p><a href="http://wladm.narod.ru/Borland/graphicksborland..html">В начало главы</a>
+<br>
+</p><p><a href="http://wladm.narod.ru/Borland/graphicks.html">В начало раздела</a>
+<br>
+</p><p><a href="http://wladm.narod.ru/">Домой</a>
+</p></li></ul></td></tr></tbody></table>
+<br>
+<p><img src="graphicksborland_files/counter.gif">
+
+
+
+
+
+</p></body></html>

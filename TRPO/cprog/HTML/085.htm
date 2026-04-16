@@ -1,0 +1,1520 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=Edit-Time-Data href="085.files/editdata.mso">
+<title>8.5. Двоичное дерево</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>romanow</o:Author>
+  <o:Template>Форматер.dot</o:Template>
+  <o:LastAuthor>www.PHILka.RU</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>224</o:TotalTime>
+  <o:LastPrinted>2004-12-25T10:56:00Z</o:LastPrinted>
+  <o:Created>2008-03-24T11:27:00Z</o:Created>
+  <o:LastSaved>2008-03-24T11:27:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>1485</o:Words>
+  <o:Characters>8467</o:Characters>
+  <o:Company>NSTU_VT</o:Company>
+  <o:Bytes>11776</o:Bytes>
+  <o:Lines>70</o:Lines>
+  <o:Paragraphs>19</o:Paragraphs>
+  <o:CharactersWithSpaces>9933</o:CharactersWithSpaces>
+  <o:Version>11.6360</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DoNotHyphenateCaps/>
+  <w:DrawingGridHorizontalSpacing>0,55 пт</w:DrawingGridHorizontalSpacing>
+  <w:DrawingGridVerticalSpacing>0,55 пт</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:UseMarginsForDrawingGridOrigin/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DrawingGridVerticalOrigin>99,25 пт</w:DrawingGridVerticalOrigin>
+  <w:Compatibility>
+   <w:WW6BorderRules/>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+   <w:UseWord97LineBreakingRules/>
+   <w:SelectEntireFieldWithStartOrEnd/>
+   <w:UseWord2002TableStyleRules/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Courier;
+	panose-1:2 7 4 9 2 2 5 2 4 4;
+	mso-font-charset:0;
+	mso-generic-font-family:modern;
+	mso-font-format:other;
+	mso-font-pitch:fixed;
+	mso-font-signature:3 0 0 0 1 0;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:"Times New Roman CYR";
+	panose-1:2 2 6 3 5 4 5 2 3 4;
+	mso-font-charset:204;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+@font-face
+	{font-family:"Arial CYR";
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+@font-face
+	{font-family:"Arial Narrow";
+	panose-1:2 11 5 6 2 2 2 3 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:647 0 0 0 159 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+h1
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:14.0pt;
+	mso-bidi-font-weight:normal;}
+h2
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-font-weight:normal;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+h3
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	font-weight:normal;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{margin-top:0cm;
+	margin-right:4.2pt;
+	margin-bottom:0cm;
+	margin-left:7.1pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:21.25pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a, li.a, div.a
+	{mso-style-name:текст;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a0, li.a0, div.a0
+	{mso-style-name:программа;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a1, li.a1, div.a1
+	{mso-style-name:список;
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:18.45pt;
+	margin-bottom:0cm;
+	margin-left:35.45pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	mso-pagination:widow-orphan;
+	tab-stops:42.55pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a2, li.a2, div.a2
+	{mso-style-name:определение;
+	mso-style-parent:текст;
+	margin-top:12.0pt;
+	margin-right:32.9pt;
+	margin-bottom:12.0pt;
+	margin-left:35.45pt;
+	text-align:justify;
+	text-indent:.55pt;
+	mso-pagination:widow-orphan;
+	border:none;
+	mso-border-alt:solid windowtext 1.5pt;
+	padding:0cm;
+	mso-padding-alt:1.0pt 1.0pt 1.0pt 1.0pt;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a3, li.a3, div.a3
+	{mso-style-name:эпиграф;
+	margin-top:12.0pt;
+	margin-right:32.9pt;
+	margin-bottom:12.0pt;
+	margin-left:5.0cm;
+	text-align:justify;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.a4, li.a4, div.a4
+	{mso-style-name:"от края";
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a5, li.a5, div.a5
+	{mso-style-name:Формула;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.a6, li.a6, div.a6
+	{mso-style-name:"без формата";
+	mso-style-parent:программа;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a7, li.a7, div.a7
+	{mso-style-name:Готовый;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:0cm 47.95pt 95.9pt 143.85pt 191.8pt 239.75pt 287.7pt 335.65pt 383.6pt 431.55pt 479.5pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	layout-grid-mode:line;}
+ /* Page Definitions */
+ @page
+	{mso-footnote-separator:url("085.files/header.htm") fs;
+	mso-footnote-continuation-separator:url("085.files/header.htm") fcs;
+	mso-endnote-separator:url("085.files/header.htm") es;
+	mso-endnote-continuation-separator:url("085.files/header.htm") ecs;}
+@page Section1
+	{size:21.0cm 842.0pt;
+	margin:33.45pt 42.55pt 72.0pt 89.85pt;
+	mso-header-margin:14.2pt;
+	mso-footer-margin:31.75pt;
+	mso-header:url("085.files/header.htm") h1;
+	mso-even-footer:url("085.files/header.htm") ef1;
+	mso-footer:url("085.files/header.htm") f1;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:327908262;
+	mso-list-type:simple;
+	mso-list-template-ids:68747279;}
+@list l0:level1
+	{mso-level-tab-stop:18.0pt;
+	mso-level-number-position:left;
+	margin-left:18.0pt;
+	text-indent:-18.0pt;}
+@list l1
+	{mso-list-id:848062089;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-758979780 68747265 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:71.45pt;
+	mso-level-number-position:left;
+	margin-left:71.45pt;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l2
+	{mso-list-id:1674842426;
+	mso-list-template-ids:631377446;}
+@list l2:level1
+	{mso-level-start-at:11;
+	mso-level-number-format:bullet;
+	mso-level-text:-;
+	mso-level-tab-stop:53.45pt;
+	mso-level-number-position:left;
+	margin-left:53.45pt;
+	text-indent:-18.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Обычная таблица";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+  <o:regrouptable v:ext="edit">
+   <o:entry new="1" old="0"/>
+  </o:regrouptable>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=RU style='tab-interval:36.0pt' background="back.gif">
+
+<div class=Section1>
+
+<h2><font face="Arial">8.5. Двоичное дерево</font></h2>
+<p class="a6" align="right" style="text-align: right; margin-left: 5.0cm; margin-right: 2.25pt; margin-top: 0cm; margin-bottom: .0001pt">
+<i>«Идет направо - песнь заводит, </i></p>
+<p class="a6" align="right" style="text-align: right; margin-left: 5.0cm; margin-right: 2.25pt; margin-top: 0cm; margin-bottom: .0001pt">
+<i>налево – сказку говорит»</i></p>
+<p class="a6" align="right" style="margin-top:0cm;margin-right:2.25pt;margin-bottom:
+0cm;margin-left:6.0cm;margin-bottom:.0001pt;text-align:right"><i><b>А.С. Пушкин 
+«Лукоморье»</b></i></p>
+
+<h3><font face="Arial">Упорядочение справа налево</font></h3>
+
+<p class=a4>В дереве с двумя потомками возможен еще один порядок обхода,
+который условно можно назвать «слева-направо»: сначала нумеруются вершины
+правого поддерева, затем корневая, а потом уже – левого. В принципе, алгоритмы,
+приведенные в 8.3 для дерева с упорядочением «сверху-вниз», можно использовать
+с небольшими изменениями: в рекурсивных алгоритмах меняются местами ветви,
+относящиеся к корневой вершине и левому поддереву. Поэтому здесь можно
+ограничиться лишь фрагментарными иллюстрациями</p>
+
+<h3><img border="0" src="Images/085-01.gif" width="554" height="272"></h3>
+
+<p class=a4 align=center style='text-align:center'><b style='mso-bidi-font-weight:
+normal'><a name="m1">рис. 85.1. Дерево с нумерацией вершин «справа-налево»<o:p></o:p></b></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//--------------------------------------------------------------------85-01.cpp</p>
+
+<p class=a0>// Линейная СД на основе дерева с двумя потомками</p>
+
+<p class=a0>// Обход дерева слева - направо (левое - текущая - правое)</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void scan(tree2
+*p, int level, int &amp;ln){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if (p==NULL) return;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>scan(p-&gt;l, level+1,ln);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>printf(&quot;l=%d n=%d cnt=%d
+:%s\n&quot;, level, ln, p-&gt;cnt, p-&gt;s);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>ln++;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>scan(p-&gt;r, level+1,ln); }<o:p></o:p></span></p>
+
+<p class=a0>// Поиск вершины по логическому номеру</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>tree2 *get_n(tree2
+*p, int n){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if (p==NULL) return NULL;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if (n &gt;= p-&gt;cnt) return NULL;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if</span> (<span lang=EN-US
+style='mso-ansi-language:EN-US'>p</span>-&gt;<span lang=EN-US style='mso-ansi-language:
+EN-US'>l</span>!=<span lang=EN-US style='mso-ansi-language:EN-US'>NULL</span>){<span
+style='mso-tab-count:4'>                                      </span>// Сначала
+– левое поддерево</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>int ll=p-&gt;l-&gt;cnt;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>if (n&lt;ll) return
+get_n(p-&gt;l,n);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>n-=ll;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if (n-- ==0) return p;<span
+style='mso-tab-count:3'>                                </span>// Корневая
+вершина<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>return get_n(p-&gt;r,n);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>}<span
+style='mso-tab-count:3'>                                   </span>// Остаток –
+правом </span>поддереве<span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a4>При включении по логическом номеру замещение данных в текущей
+вершине производится с учетом изменившегося способа нумерации: если левое
+поддерево пустое, то новая вершина включается туда (логически – перед текущей),
+иначе содержимое текущей вершины сносится в правое поддерево с логическим
+номером 0 (логически – после текущей).</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//--------------------------------------------------------------------85-01.cpp<img border="0" src="Images/085-02.gif" width="263" height="87" align="right"></p>
+
+<p class=a0>// Включение по логическому номеру</p>
+
+<p class=a0>void insert(tree2 *&amp;p, int n, char *ss){</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>if (p == NULL) { p=create(ss); return; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if (n &gt;= p-&gt;cnt) return;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>p</span>-&gt;<span lang=EN-US
+style='mso-ansi-language:EN-US'>cnt</span>++;</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>if</span> (<span lang=EN-US style='mso-ansi-language:
+EN-US'>p</span>-&gt;<span lang=EN-US style='mso-ansi-language:EN-US'>l</span>!=<span
+lang=EN-US style='mso-ansi-language:EN-US'>NULL</span>){ <span
+style='mso-tab-count:4'>                                     </span>// Сначала
+– левое поддерево </p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>int ll=p-&gt;l-&gt;cnt;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>if (n&lt;ll) {
+insert(p-&gt;l,n,ss); return; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>n-=ll;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if</span> (<span lang=EN-US
+style='mso-ansi-language:EN-US'>n</span>-- ==0) {<span style='mso-tab-count:
+4'>                                           </span>// Затем – корневая вершина<span
+style='mso-tab-count:2'>                </span></p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>if</span> (<span lang=EN-US
+style='mso-ansi-language:EN-US'>p</span>-&gt;<span lang=EN-US style='mso-ansi-language:
+EN-US'>l</span>==<span lang=EN-US style='mso-ansi-language:EN-US'>NULL</span>) <span
+lang=EN-US style='mso-ansi-language:EN-US'>p</span>-&gt;<span lang=EN-US
+style='mso-ansi-language:EN-US'>l</span>=<span lang=EN-US style='mso-ansi-language:
+EN-US'>create</span>(<span lang=EN-US style='mso-ansi-language:EN-US'>ss</span>);<span
+style='mso-tab-count:1'>  </span>// Левое поддерево пустое – новая вершина там </p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>else<span style='mso-tab-count:1'>      </span>{
+insert(p-&gt;r,0,p-&gt;s); </span></p>
+
+<p class=a0 style='margin-left:72.0pt;text-indent:36.0pt'><span lang=EN-US
+style='mso-ansi-language:EN-US'>p</span>-&gt;<span lang=EN-US style='mso-ansi-language:
+EN-US'>s</span>=<span lang=EN-US style='mso-ansi-language:EN-US'>ss</span>; }<span
+style='mso-tab-count:2'>                     </span>// Иначе - вытеснить
+текущее в правое поддерево </p>
+
+<p class=a0 style='margin-left:72.0pt;text-indent:36.0pt'>}<span
+style='mso-tab-count:3'>                                   </span>// с ЛН=0 </p>
+
+<p class=a0 style='margin-left:72.0pt;text-indent:36.0pt'></p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>else</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>insert</span>(<span lang=EN-US
+style='mso-ansi-language:EN-US'>p</span>-&gt;<span lang=EN-US style='mso-ansi-language:
+EN-US'>r</span>,<span lang=EN-US style='mso-ansi-language:EN-US'>n</span>,<span
+lang=EN-US style='mso-ansi-language:EN-US'>ss</span>); }<span style='mso-tab-count:
+3'>                           </span>// Остаток – в правое поддерево</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//--------------------------------------------------------------------85-01.cpp</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>// </span>Балансировка<span
+style='mso-ansi-language:EN-US'> </span>дерева<span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>tree2
+*balance(tree2 *pp[], int a, int b){</span><span style='mso-tab-count:2'>                 </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>// Создание дерева</span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if (a&gt;b) return NULL;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>tree2 *q;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if (a==b) { q=pp[a]; q-&gt;l=q-&gt;r=NULL;
+q-&gt;cnt=1; return q; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int m=(a+b)/2;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>q</span>=<span lang=EN-US
+style='mso-ansi-language:EN-US'>pp</span>[<span lang=EN-US style='mso-ansi-language:
+EN-US'>m</span>];<span style='mso-tab-count:4'>                                               </span>//
+Корневая вершина – середина интервала</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>q</span>-&gt;<span lang=EN-US style='mso-ansi-language:
+EN-US'>l</span>=<span lang=EN-US style='mso-ansi-language:EN-US'>balance</span>(<span
+lang=EN-US style='mso-ansi-language:EN-US'>pp</span>,<span lang=EN-US
+style='mso-ansi-language:EN-US'>a</span>,<span lang=EN-US style='mso-ansi-language:
+EN-US'>m</span>-1);<span style='mso-tab-count:3'>                          </span>//
+Создание поддеревьев на правом и левом</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>q-&gt;r=balance(pp,m+1,b);<span
+style='mso-tab-count:2'>                        </span>// интервалах<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>q-&gt;cnt=b-a+1;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>return q;<span style='mso-tab-count:
+1'>            </span><o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>}</p>
+
+<p class=a0>// Обход дерева с заполнением массива указателей на вершины</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void set(tree2
+*pp[], tree2 *p, int &amp;ln){<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>if (p==NULL) return;<span
+style='mso-tab-count:2'>                    </span>// ln - порядковый
+(логический) номер</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>set(pp,p-&gt;l,ln);<span
+style='mso-tab-count:3'>                           </span>// рекурсивно
+выполнить для левого поддерева</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>pp[ln++]=p;<span
+style='mso-tab-count:3'>                               </span>// запомнить
+указатель на текущую вершину </p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>set</span>(<span lang=EN-US style='mso-ansi-language:
+EN-US'>pp</span>,<span lang=EN-US style='mso-ansi-language:EN-US'>p</span>-&gt;<span
+lang=EN-US style='mso-ansi-language:EN-US'>r</span>,<span lang=EN-US
+style='mso-ansi-language:EN-US'>ln</span>); }<span style='mso-tab-count:3'>                         </span>//
+рекурсивно выполнить для правого поддерева</p>
+
+<p class=a0></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void balance(tree2
+*&amp;ph){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int sz=ph-&gt;cnt;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>tree2 **pp=new tree2*[sz];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int ln=0; set(pp,ph,ln);<o:p></o:p></span></p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>ph=balance(pp,0,sz-1); } <o:p></o:p></span></p>
+
+<h3><font face="Arial">Двоичное<span style='mso-ansi-language:EN-US'> </span>дерево</font><span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></h3>
+
+<p class=a>Нумерация «слева-направо» дает нам основу для <span
+style='mso-spacerun:yes'> </span>создания другого вида деревьев, включение в
+которые производится не по логическому номеру, а с учетом естественного
+упорядочения значений. Такое дерево называется <b style='mso-bidi-font-weight:
+normal'><a name="m2">деревом двоичного поиска </b>или просто <b style='mso-bidi-font-weight:
+normal'><a name="m3">двоичным деревом. </b>Основное свойство, рекурсивно соблюдаемое для
+всех поддеревьев,<span style='mso-spacerun:yes'>  </span>звучит так: в левом
+поддереве каждой вершины содержатся значения, меньшие чем в корневой, а в
+правом – большие. Отсюда следуют все прочие свойства такового дерева:</p>
+
+<span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:"Times New Roman CYR";
+mso-fareast-font-family:"Times New Roman";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:RU;mso-fareast-language:RU;mso-bidi-language:AR-SA'><br
+clear=all style='page-break-before:always'>
+<img border="0" src="Images/085-03.gif" width="554" height="272"></span><p class=a4 align=center style='text-align:center'>
+<p align="center"><br
+style='mso-ignore:vglayout' clear=ALL>
+<b style='mso-bidi-font-weight:normal'><a name="m4">рис. 85.2. </b><b style='mso-bidi-font-weight:
+normal'><a name="m5"><span lang=EN-US style='mso-ansi-language:EN-US'>Двоичное дерево</span><o:p></o:p></b></p>
+</p>
+
+<p class=a1 style='margin-left:71.45pt;text-indent:-18.0pt;mso-list:l1 level1 lfo3;
+tab-stops:42.55pt list 71.45pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>обход двоичного дерева «слева-направо»
+соответствует порядку возрастания значений, хранящихся в нем;</p>
+
+<p class=a1 style='margin-left:71.45pt;text-indent:-18.0pt;mso-list:l1 level1 lfo3;
+tab-stops:42.55pt list 71.45pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>поиск заданного значения в двоичном дереве
+использует линейно рекурсивный (или циклический) алгоритм. В каждой вершине
+производится сравнение с искомым значением (ключом). Если содержимое вершины
+совпадает и искомым, то вершина найдена. Если искомое значение меньше, то оно
+ищется в левом поддереве, иначе – в правом. Данный алгоритм очень сильно
+напоминает нам алгоритм <b style='mso-bidi-font-weight:normal'><a name="m6">двоичного поиска
+в массиве </b>(см.4.6). Там одно сравнение выбирает половину интервала, здесь –
+поддерево;</p>
+
+<p class=a1 style='margin-left:71.45pt;text-indent:-18.0pt;mso-list:l1 level1 lfo3;
+tab-stops:42.55pt list 71.45pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>включение нового значения в двоичного дерево
+также базируется на ветвлении: при сравнении включаемого значения со значением
+в текущей вершине выбирается правая или левая ветвь до тех пор, пока не
+встретится свободная.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//-------------------------------------------------------------------------------------------------85-02.cpp</p>
+
+<p class=a0>// Двоичное дерево</p>
+
+<p class=a0>// Обход дерева слева - направо (левое - текущая - правое)</p>
+
+<p class=a0>struct btree{</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>int cnt;<span
+style='mso-tab-count:2'>              </span>// Количество вершин в дереве</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>char *s;</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>btree *l,*r;<span
+style='mso-tab-count:1'>          </span>// Левый и правый потомки</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>};<span
+style='mso-tab-count:2'>                      </span></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>// Поиск вершины с заданным значением -<span
+style='mso-spacerun:yes'>  </span>рекурсия</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>btree
+*search(btree *p, char *key){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if (p==NULL) return NULL;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int k=strcmp(key,p-&gt;s);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if (k==0) return p;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if (k&lt;0) return
+search(p-&gt;l,key);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>return search(p-&gt;r,key);<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>}</p>
+
+<p class=a0>// Поиск вершины с заданным значением -<span
+style='mso-spacerun:yes'>  </span>цикл</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>btree
+*search1(btree *p, char *key){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>while(p!=NULL){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>int
+k=strcmp(key,p-&gt;s);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>if (k==0) return p;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>if (k&lt;0) p=p-&gt;l;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>else p=p-&gt;r;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>} <o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>return NULL; }</span></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>// Включение двоичное дерево (с сохранием порядка)</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void insert(btree
+*&amp;p, char *ss){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if (p == NULL) { p=create(ss);
+return; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>p-&gt;cnt++;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if (strcmp(ss,p-&gt;s)&lt;0) <o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>insert(p-&gt;l,ss);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>else<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:2; mso-ansi-language:EN-US' lang="EN-US">                        </span>insert(p-&gt;r,ss);</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>}</p>
+
+<p class=a>Все остальные процедуры (извлечение и удаление по логическому
+номеру, обход, балансировка) идентичны предыдущему варианту – дереву с обходом
+«справа-налево». Но по своей природе двоичное дерево соответствует идее <b
+style='mso-bidi-font-weight:normal'>структурной упорядоченности данных. </b>Эта
+упорядоченность присутствует с самом определении дерева. Поэтому простое включение
+последовательности значение в двоичное дерево уже является их сортировкой: для
+этого нужно просто сделать обход полученного дерева. Что же касается
+трудоемкости такого процесса, то она зависит от вида полученного дерева: если
+оно сбалансировано, то получаем <b style='mso-bidi-font-weight:normal'><a name="m7"><span
+lang=EN-US style='mso-ansi-language:EN-US'>T</span>=</b><b style='mso-bidi-font-weight:
+normal'><a name="m8"><span lang=EN-US style='mso-ansi-language:EN-US'>Nlog</span><sub>2</sub></b><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>N</span>, </b>если вырождается в линейный список, то <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>T</span>=<span lang=EN-US
+style='mso-ansi-language:EN-US'>N</span><sup>2</sup>/2. </b></p>
+
+<p class=a>Вид полученного двоичного дерева в каждом случае будет различен. Это
+зависит от последовательности значений включаемых данных. Если в них будет
+цепочка одинаковых или возрастающих значений, то они создадут линейную цепочку
+правых потомков, которая уменьшает сбалансированность. Если данные исходно
+упорядочены, то при включении их в двоичное дерево последнее вырождается в
+правосторонний список.</p>
+
+<p class=a4><img border="0" src="Images/smile.jpg" width="23" height="24">Короче,
+хорошая идея на идеальных данных дает отвратительный результат (плюс на плюс
+дает минус).</p>
+
+<h3><font face="Arial">Двоичное дерево в массиве</font><span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></h3>
+
+<p class=a>Аналогично пирамиде, построенной в массиве для дерева,
+упорядоченного в глубину (см.8.4), двоичное дерево также можно спроецировать на
+линейный массив по принципу: корневая вершина с индексом <b style='mso-bidi-font-weight:
+normal'><a name="m9"><span lang=EN-US style='mso-ansi-language:EN-US'>n</span><span
+lang=EN-US> </span></b>имеет левого и правого потомков с индексами <b
+style='mso-bidi-font-weight:normal'>2<span
+lang=EN-US style='mso-ansi-language:EN-US'>n</span><span lang=EN-US> </span></b>и
+<b style='mso-bidi-font-weight:normal'> </b>
+<b style='mso-bidi-font-weight:normal'><a name="m10">2n+1.
+</b><a name="lr13">При использовании
+динамического массива в процедуре включения данных в дерево необходимо
+перераспределять память при выходе алгоритма за его пределы.</a></p>
+
+<p class=a><a name="lr13">В данном примере для хранения упорядоченной последовательности строк
+используется массив указателей. Отсутствующие вершины обозначаются
+NULL-указателями. Аналогично, выход алгоритма за пределы массива обозначает
+отсутствие вершины.</a></p>
+
+<p class=a0><o:p><a name="lr13">&nbsp;</a></o:p></p>
+
+<p class=a0><a name="lr13">//------------------------------------------------------85-03.cpp</a></p>
+
+<p class=a0><a name="lr13">// Двоичное дерево в массиве (массив указателей на строки)</a></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><a name="lr13">struct btree{</a><o:p></o:p></span></p>
+
+<p class=a0><a name="lr13"><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>char</span> **<span lang=EN-US
+style='mso-ansi-language:EN-US'>p</span>;<span style='mso-tab-count:4'>                                                </span>//
+дерево в массиве указателей на строки</a></p>
+
+<p class=a0><a name="lr13"><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>int</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>sz</span>;<span style='mso-tab-count:
+5'>                                                   </span>// текущая
+размерность массива</a></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><a name="lr13">//------------------------------------------------------</a><o:p></o:p></span></p>
+
+<p class=a0><a name="lr13"><span lang=EN-US style='mso-ansi-language:EN-US'>void</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>init</span>(){
+<span lang=EN-US style='mso-ansi-language:EN-US'>sz</span>=10; <span
+lang=EN-US style='mso-ansi-language:EN-US'>p</span>=<span lang=EN-US
+style='mso-ansi-language:EN-US'>new</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>char</span>*[<span lang=EN-US
+style='mso-ansi-language:EN-US'>sz</span>];<span style='mso-tab-count:2'>                      </span>//
+<span lang=EN-US style='mso-ansi-language:EN-US'>NULL</span>-указатель для
+свободной вершины</a></p>
+
+<p class=a0><a name="lr13"><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>for (int i=0;i&lt;sz;i++) p[i]=NULL;</span></a><o:p></o:p></p>
+
+<p class=a0>
+<a name="lr13">
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>}</a></p>
+
+<p class=a0><a name="lr13">//-- <span lang=EN-US style='mso-ansi-language:EN-US'>Ч</span>исло
+вершин в поддереве</a></p>
+
+<p class=a0><a name="lr13">int<span style='mso-tab-count:1'>         </span>size(int n){</a></p>
+
+<p class=a0><a name="lr13"><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>if (n&gt;=sz || p[n]==NULL) return 0;</span></a><o:p></o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><a name="lr13"><span
+style='mso-tab-count:1'>            </span>return 1+size(2*n)+size(2*n+1); }</a><o:p></o:p></span></p>
+
+<p class=a0><a name="lr13"><span lang=EN-US style='mso-ansi-language:EN-US'>//-- </span>Обход<span
+style='mso-ansi-language:EN-US'> </span>дерева</a><span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><a name="lr13">void scan(int n,
+int level, int &amp;ln){</a><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><a name="lr13"><span
+style='mso-tab-count:1'>            </span>if (n&gt;=sz || p[n]==NULL) return;</a><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><a name="lr13"><span
+style='mso-tab-count:1'>            </span>scan(2*n,level+1,ln);</a><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><a name="lr13"><span
+style='mso-tab-count:1'>            </span>printf(&quot;l=%d n=%d :%s\n&quot;,
+level, ln, p[n]);</a><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><a name="lr13"><span
+style='mso-tab-count:1'>            </span>ln++;</a><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><a name="lr13"><span
+style='mso-tab-count:1'>            </span>scan(2*n+1,level+1,ln);}</a><o:p></o:p></span></p>
+
+<p class=a0><a name="lr13">//-- Поиск вершины по логическому номеру</a></p>
+
+<p class=a0><a name="lr13"><span lang=EN-US style='mso-ansi-language:EN-US'>char *get_n(int m,
+int n){</span><span style='mso-tab-count:4'>                                     </span>
+</a></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><a name="lr13"><span
+style='mso-tab-count:1'>            </span>if (m&gt;=sz || m&gt;=size(n))
+return NULL;</a><o:p></o:p></span></p>
+
+<p class=a0><a name="lr13"><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>ll</span>=<span lang=EN-US
+style='mso-ansi-language:EN-US'>size</span>(2*<span lang=EN-US
+style='mso-ansi-language:EN-US'>n</span>);<span style='mso-tab-count:4'>                                      </span>//
+число вершин в левом поддереве</a></p>
+
+<p class=a0><a name="lr13"><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>if</span> (<span lang=EN-US style='mso-ansi-language:
+EN-US'>m</span>&lt;<span lang=EN-US style='mso-ansi-language:EN-US'>ll</span>) <span
+lang=EN-US style='mso-ansi-language:EN-US'>return</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>get</span>_<span lang=EN-US
+style='mso-ansi-language:EN-US'>n</span>(<span lang=EN-US style='mso-ansi-language:
+EN-US'>m</span>,2*<span lang=EN-US style='mso-ansi-language:EN-US'>n</span>);<span
+style='mso-tab-count:2'>                    </span>// ЛН в левом поддереве</a></p>
+
+<p class=a0><a name="lr13"><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>m</span>-=<span lang=EN-US style='mso-ansi-language:
+EN-US'>ll</span>;<span style='mso-tab-count:5'>                                                    </span>//
+отбросить вершины левого поддерева</a></p>
+
+<p class=a0><a name="lr13"><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>if</span> (<span lang=EN-US style='mso-ansi-language:
+EN-US'>m</span>-- ==0) <span lang=EN-US style='mso-ansi-language:EN-US'>return</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>p</span>[<span
+lang=EN-US style='mso-ansi-language:EN-US'>n</span>];<span style='mso-tab-count:
+3'>                           </span>// ЛН – номер текущей вершины</a></p>
+
+<p class=a0><a name="lr13"><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>return</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>get</span>_<span lang=EN-US
+style='mso-ansi-language:EN-US'>n</span>(<span lang=EN-US style='mso-ansi-language:
+EN-US'>m</span>,2*<span lang=EN-US style='mso-ansi-language:EN-US'>n</span>+1);<span
+style='mso-tab-count:3'>                            </span>// в правое
+поддерево с остатком ЛН</a></p>
+
+<p class=a0><a name="lr13"><span style='mso-tab-count:1'>            </span>}</a></p>
+
+<p class=a0><a name="lr13">// Включение с сохранением порядка</a></p>
+
+<p class=a0><a name="lr13">void insert(int n, char *ss){</a></p>
+
+<p class=a0><a name="lr13"><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>if</span> (<span lang=EN-US style='mso-ansi-language:
+EN-US'>n</span>&gt;=<span lang=EN-US style='mso-ansi-language:EN-US'>sz</span>){<span
+style='mso-tab-count:4'>                                             </span>//
+увеличение размерности при выходе</a></p>
+
+<p class=a0><a name="lr13"><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>sz*=2;</span><span style='mso-tab-count:
+4'>                                       </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>// за пределы массива</span></a></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><a name="lr13"><span
+style='mso-tab-count:2'>                        </span>p=(char**)realloc(p,sz*sizeof(char*));</a><o:p></o:p></span></p>
+
+<p class=a0><a name="lr13"><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>for (int
+i=sz/2;i&lt;sz;i++) p[i]=NULL; // </span>с<span style='mso-ansi-language:EN-US'>
+</span>обнулением<span style='mso-ansi-language:EN-US'> </span>новой<span
+style='mso-ansi-language:EN-US'> </span>части</a><span lang=EN-US style='mso-ansi-language:
+EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><a name="lr13"><span
+style='mso-tab-count:2'>                        </span>}</a><o:p></o:p></span></p>
+
+<p class=a0><a name="lr13"><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if</span> (<span lang=EN-US
+style='mso-ansi-language:EN-US'>p</span>[<span lang=EN-US style='mso-ansi-language:
+EN-US'>n</span>] == <span lang=EN-US style='mso-ansi-language:EN-US'>NULL</span>)
+{ <span lang=EN-US style='mso-ansi-language:EN-US'>p</span>[<span lang=EN-US
+style='mso-ansi-language:EN-US'>n</span>]=<span lang=EN-US style='mso-ansi-language:
+EN-US'>ss</span>; <span lang=EN-US style='mso-ansi-language:EN-US'>return</span>;
+}<span style='mso-tab-count:1'>         </span>// свободная вершина - включение</a></p>
+
+<p class=a0><a name="lr13"><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>if (strcmp(ss,p[n])&lt;0) </span></a> <o:p></o:p></p>
+
+<p class=a0><a name="lr13"><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>insert</span>(2*<span
+lang=EN-US style='mso-ansi-language:EN-US'>n</span>, <span lang=EN-US
+style='mso-ansi-language:EN-US'>ss</span>);<span style='mso-tab-count:3'>                           </span>//
+выбор левого или правого поддерева</a></p>
+
+<p class=a0><a name="lr13"><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>else</span><span style='mso-tab-count:5'>                                                      </span>//
+в зависимости от результата сравнения</a></p>
+
+<p class=a0><a name="lr13"><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>insert(2*n+1, ss);}</span></a><o:p></o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>
+<a name="lr13">&nbsp;</a></o:p></span></p>
+
+<p class=a><a name="lr13">Для балансировки двоичного дерева используется обход с сохранением
+упорядоченной последовательности в линейном массиве (массиве указателей). Затем
+массив рекурсивно делится пополам, а значение из середины интервала включается
+в новое дерево, которое получается сбалансированным.</a></p>
+
+<p class=a0><o:p><a name="lr13">&nbsp;</a></o:p></p>
+
+<p class=a0><a name="lr13">//------------------------------------------------------85-03.cpp</a></p>
+
+<p class=a0><a name="lr13">//-- обход дерева с сохранением строк в линейном массиве</a></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><a name="lr13">void set(char
+*pp[], int n, int &amp;ln){</a><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><a name="lr13"><span
+style='mso-tab-count:1'>            </span>if (n&gt;=sz || p[n]==NULL) return;</a><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><a name="lr13"><span
+style='mso-tab-count:1'>            </span>set(pp,2*n,ln);</a><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><a name="lr13"><span
+style='mso-tab-count:1'>            </span>pp[ln++]=p[n];</a><o:p></o:p></span></p>
+
+<p class=a0><a name="lr13"><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>set</span>(<span lang=EN-US
+style='mso-ansi-language:EN-US'>pp</span>,2*<span lang=EN-US style='mso-ansi-language:
+EN-US'>n</span>+1,<span lang=EN-US style='mso-ansi-language:EN-US'>ln</span>);}</a></p>
+
+<p class=a0><a name="lr13"><span lang=EN-US style='mso-ansi-language:EN-US'>// Построение
+сбаланс</span>и<span lang=EN-US style='mso-ansi-language:EN-US'>рованного
+дерева</span></a></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><a name="lr13">void balance(char
+*p[], int a, int b){</a><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><a name="lr13"><span
+style='mso-tab-count:1'>            </span>if (a&gt;b) return;</a><o:p></o:p></span></p>
+
+<p class=a0><a name="lr13"><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>m</span>=(<span lang=EN-US
+style='mso-ansi-language:EN-US'>a</span>+<span lang=EN-US style='mso-ansi-language:
+EN-US'>b</span>)/2;<span style='mso-tab-count:4'>                                        </span>//
+взять строку из середины интервала</a></p>
+
+<p class=a0><a name="lr13"><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>insert</span>(1,<span lang=EN-US
+style='mso-ansi-language:EN-US'>p</span>[<span lang=EN-US style='mso-ansi-language:
+EN-US'>m</span>]);<span style='mso-tab-count:4'>                                        </span>//
+и включить в двоичное дерево</a></p>
+
+<p class=a0><a name="lr13"><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>balance</span>(<span lang=EN-US
+style='mso-ansi-language:EN-US'>p</span>,<span lang=EN-US style='mso-ansi-language:
+EN-US'>a</span>,<span lang=EN-US style='mso-ansi-language:EN-US'>m</span>-1);<span
+style='mso-tab-count:3'>                                   </span>// рекурсивно
+выполнить для левой и</a></p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>balance(p,m+1,b);<span
+style='mso-tab-count:3'>                                  </span>// правой
+частей</a></p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>}</a></p>
+
+<p class=a0>// Балансировка дерева</a></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><a name="lr13">void balance(){</a><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><a name="lr13"><span
+style='mso-tab-count:1'>            </span>int sz1=size(1),ln=0;</a><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><a name="lr13"><span
+style='mso-tab-count:1'>            </span>char **pp=new char*[sz1];</a><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><a name="lr13"><span
+style='mso-tab-count:1'>            </span>set(pp,1,ln);</a><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><a name="lr13"><span
+style='mso-tab-count:1'>            </span>delete p;</a><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><a name="lr13"><span
+style='mso-tab-count:1'>            </span>init();</a><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><a name="lr13"><span
+style='mso-tab-count:1'>            </span>balance(pp,0,sz1-1);</a><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><a name="lr13"><span
+style='mso-tab-count:1'>            </span>}};</a><o:p></o:p></span></p>
+
+<p class=a style='text-indent:0cm'><o:p><a name="lr13">&nbsp;</a></o:p></p>
+<h3><a name="lr12">Лабораторный практикум</a></h3>
+<p class="a"><a name="lr13">Программа должна содержать функцию&nbsp; обхода дерева с 
+выводом&nbsp; его&nbsp; содержимого,&nbsp; функцию&nbsp; добавления&nbsp; вершины дерева&nbsp; (ввод),&nbsp; а&nbsp; 
+также&nbsp; указанную&nbsp; в&nbsp; варианте&nbsp; функцию.</a></p>
+<p class="a1" style="text-indent: -18.0pt; margin-left: 36.0pt"><a name="lr13">
+1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Вершина 
+двоичного дерева содержит&nbsp; массив&nbsp; целых&nbsp; и&nbsp; два указателя на правое&nbsp; и&nbsp; левое&nbsp; 
+поддерево.&nbsp; Массив&nbsp; целых&nbsp; в каждом элементе упорядочен, дерево&nbsp; в&nbsp; целом&nbsp; 
+также&nbsp; упорядочено.&nbsp; Функция&nbsp; включает&nbsp; в&nbsp; дерево&nbsp; целую&nbsp; переменную&nbsp; с 
+сохранением упорядоченности.</a></p>
+<p class="a1" style="text-indent: -18.0pt; text-align: center; margin-left: 36.0pt">
+<img border="0" src="Images/085-06.gif" width="367" height="103"></p>
+<a name="m10">
+<p class="a1" style="text-indent: -18.0pt; margin-left: 36.0pt">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Элемент дерева содержит либо данные (строка текста), либо указатели на 
+правое и левое поддеревья. Строки в дереве упорядочены в порядке обхода концевых 
+вершин. Написать функцию включения новой строки. (Обратить внимание на то,&nbsp; что&nbsp; 
+элемент&nbsp; с&nbsp; указателями&nbsp; не содержит данных, и при включении новой вершины 
+вершину с данными следует заменить на вершину с указателями).</p>
+</a>
+<p class="a1" style="text-align: center">
+<img border="0" src="Images/085-07.gif" width="374" height="229"></p>
+<a name="m10">
+<p class="a1" style="text-indent: -18.0pt; margin-left: 36.0pt">3.Вершина дерева 
+содержит два целых числа и три&nbsp; указателя на&nbsp; поддеревья.&nbsp; Данные&nbsp; в&nbsp; дереве&nbsp; 
+упорядочены.&nbsp;&nbsp; Написать функцию включения нового значения в&nbsp; дерево&nbsp; с&nbsp; 
+сохранением упорядоченности.</p>
+</a>
+<p align="center">
+<img border="0" src="Images/085-04.gif" width="253" height="110"></p>
+
+<a name="m10">
+<p class="a1">&nbsp;</p>
+<p class="a1" style="text-indent: -18.0pt; margin-left: 36.0pt">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Вершина дерева содержит указатель на строку и
+<span lang="EN-US" style="font-family: Times New Roman">N</span><span lang="EN-US" style="font-family:&quot;Times New Roman&quot;">
+</span>указателей на потомков. Функция помещает строки в дерево так, что строки 
+с меньшей длиной располагаются ближе к корню. Если новая строка «проходит» через 
+вершину, в которой находится более длинная строка, то новая занимает место 
+старой, а алгоритм включения продолжается для старой строки. Функция включения 
+выбирает потомка минимальным количеством вершин в поддереве.</p>
+<p class="a1" style="text-indent: -18.0pt; margin-left: 36.0pt">5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Вершина дерева содержит либо 4 целых значения, либо 2 указателя на 
+потомков, причем концевые вершины содержат данные, а промежуточные - указатели 
+на потомков. Естественная нумерация значений производится при обходе концевых 
+вершин слева направо. Разработать функции получения и включения значения в 
+дерево по логическому номеру.</p>
+<p class="a1" style="text-indent: 36.0pt; text-align: center">
+<span style="font-family: Arial">&nbsp;</span><img border="0" src="Images/085-05.gif" width="413" height="127"></p>
+<p class="a1" style="text-indent: -18.0pt; margin-left: 36.0pt">6.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Вершина дерева содержит
+<span lang="EN-US" style="font-family: Times New Roman">N</span><span lang="EN-US" style="font-family:&quot;Times New Roman&quot;">
+</span>целых значений и два указателя на потомков. Запись значений производится 
+таким образом, что меньшие значения оказываются ближе к корню дерева (то есть 
+все значения в поддеревьях больше самого большого значения у предка).&nbsp; 
+Разработать функции включения и поиска данных в таком дереве. Если новое 
+значение «проходит» через вершину, в которой находится большее, то оно замещает 
+большее значение, а для последнего алгоритм включения. Функция включения 
+выбирает потомка максимальным значением в поддереве.</p>
+<p class="a1" style="text-indent: -18.0pt; margin-left: 36.0pt">7.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Выражение, содержащее целые константы, арифметические операции и скобки, 
+может быть представлено в виде двоичного дерева. Концевая вершина дерева должна 
+содержать значение константы. Промежуточная - код операции и указатели на правый 
+и левый&nbsp; операнды - вершины дерева. Функция получает строку, содержащую 
+выражение, и строит по ней дерево. Другая функция производит вычисления по 
+полученному дереву.</p>
+<p class="a1" style="text-indent: -18.0pt; margin-left: 36.0pt">8.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Вершина дерева содержит&nbsp; указатель на строку и динамический массив<span style="font-family:&quot;Times New Roman&quot;">
+</span>указателей на потомков. Размерность динамического массива в корневой 
+вершине - <span lang="EN-US" style="font-family: Times New Roman">N</span><span style="font-family:&quot;Times New Roman&quot;">,
+</span>на каждом следующем уровне - в 2 раза больше. Функция при включении 
+строки создает&nbsp; вершину, наиболее близкую к корню.</p>
+<p class="a1" style="text-indent: -18.0pt; margin-left: 36.0pt">9 .<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;
+</span>Вершина дерева содержит&nbsp; указатель на строку и список<span style="font-family:&quot;Times New Roman&quot;">
+</span>указателей на потомков. Размерность списка в корневой вершине -
+<span lang="EN-US" style="font-family: Times New Roman">N</span><span style="font-family:&quot;Times New Roman&quot;">,
+</span>на каждом следующем уровне - в 2 раза больше. Функция при включении 
+строки создает&nbsp; вершину, наиболее близкую к корню.</p>
+<p class="a1" style="text-indent: -18.0pt; margin-left: 36.0pt">10.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;
+</span>Вершина дерева содержит динамический массив<span style="font-family:&quot;Times New Roman&quot;">
+</span>целых значений и два указателя на потомков. Значения в дереве не 
+упорядочены. Размерность динамического массива в корневой вершине -
+<span lang="EN-US" style="font-family: Times New Roman">N</span><span style="font-family:&quot;Times New Roman&quot;">,
+</span>на каждом следующем уровне - в 2 раза больше. Функция включает новое 
+значение в свободное место в массиве ближайшей к корню вершины.</p>
+<p class="a1" style="text-indent: -18.0pt; margin-left: 36.0pt">11.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;
+</span>Вершина&nbsp; дерева содержит&nbsp; массив&nbsp; целых&nbsp; и&nbsp; два указателя на правое&nbsp; и&nbsp; 
+левое&nbsp; поддерево. Значения в дереве не упорядочены. Естественная нумерация 
+значений производится путем обхода дерева по принципу «левое поддерево - вершина 
+- правое поддерево». Разработать функции включения и получения значения элемента 
+по заданному логическому номеру.</p>
+<p class="a1" style="text-indent: -18.0pt; margin-left: 36.0pt">12.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;
+</span>Код Хаффмана, учитывающий частоты появления символов, строится следующим 
+образом. Для каждого символа подсчитывается частота его появления и создается 
+вершина двоичного дерева. Затем из множества вершин выбираются две с 
+минимальными частотами появления и создается новая - с суммарной частотой, к 
+которой выбранные подключаются как правое и левое поддерево. Созданная вершина 
+включается в исходное множество, а выбранные - удаляются. Затем процесс 
+повторяется до тех пор, пока не останется единственная вершина. Код каждого 
+символа - это последовательность движения к его вершине от корня (левое 
+поддерево - 0, правое - 1). Функция строит код Хаффмана для символов заданной 
+строки.</p>
+<p class=a style='text-indent:0cm'>&nbsp;</p>
+
+<h3>Вопросы без ответов</h3>
+<p class="a">Определить по тесту способ представления дерева (массив с индексами 
+потомков,&nbsp; массив с вычисляемыми индексами потомков, ветвящийся список, вершина 
+с массивом указателей на потомков). Определить дерево в виде статической 
+структуры данных (инициализированные переменные) и написать для нее вызов 
+функции, заданной в тесте. Содержательно сформулировать результат ее выполнения 
+и обосновать полученное при вызове функции значение.</p>
+<p class="a">&nbsp;</p>
+<p class="a0"><span lang="EN-US">
+//------------------------------------------------------85-xx.cpp</span></p>
+<p class="a0">struct ltree{</p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int val;</p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span lang="EN-US">ltree *child,*next; 
+};&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></p>
+<p class="a0">&nbsp;</p>
+<p class="a0"><span lang="EN-US">struct tree{</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int val;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tree *ch[4]; };&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;</span></p>
+<p class="a0"><span lang="EN-US">struct tree1{</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int val;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int n;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tree1 *ch[10]; };&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;</span></p>
+<p class="a0"><span lang="EN-US">struct btree{</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int val;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; btree *l,*r; };&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></p>
+<p class="a0">//----------------------------------------------------------1</p>
+<p class="a0"><span lang="EN-US">int F1(ltree *p){</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int n=1;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (ltree *q=p-&gt;child; q!=NULL; 
+q=q-&gt;next)</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; n+=F1(q);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return n; }</span></p>
+<p class="a0"><span lang="EN-US">
+//----------------------------------------------------------2</span></p>
+<p class="a0"><span lang="EN-US">int F2(ltree *p){</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int n=p-&gt;val;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (ltree *q=p-&gt;child; q!=NULL; 
+q=q-&gt;next)</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; n+=F2(q);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return n; </span>}</p>
+<p class="a0"><span lang="EN-US">
+//----------------------------------------------------------3</span></p>
+<p class="a0"><span lang="EN-US">int F3(ltree *p){</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int n=p-&gt;val;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (ltree *q=p-&gt;child; q!=NULL; 
+q=q-&gt;next)</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { int vv=F3(q);&nbsp;&nbsp;&nbsp; if 
+(vv &gt; n)&nbsp; n=vv; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return n; }</span></p>
+<p class="a0"><span lang="EN-US">
+//----------------------------------------------------------4</span></p>
+<p class="a0"><span lang="EN-US">int F4(ltree *p){</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>int n=0;</p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span lang="EN-US">for (ltree *q=p-&gt;child; q!=NULL; 
+q=q-&gt;next)</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { int vv=F4(q);&nbsp;&nbsp;&nbsp; if 
+(vv &gt; n)&nbsp; n=vv; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>return n+1;
+<span lang="EN-US">}</span></p>
+<p class="a0"><span lang="EN-US">
+//----------------------------------------------------------5</span></p>
+<p class="a0"><span lang="EN-US">void F5(ltree *p, int l, int &amp;m){</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (l &gt; m) m=l;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (ltree *q=p-&gt;child; q!=NULL; 
+q=q-&gt;next)</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>F5(q,l+1,m);
+<span lang="EN-US">}</span></p>
+<p class="a0"><span lang="EN-US">
+//----------------------------------------------------------6</span></p>
+<p class="a0"><span lang="EN-US">int F6(ltree *p, int l){</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int n=l;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (ltree *q=p-&gt;child; q!=NULL; 
+q=q-&gt;next)</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; n+=F6(q,l+1);&nbsp;&nbsp;&nbsp; </span>
+</p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return n; }</span></p>
+<p class="a0"><span lang="EN-US">double main6(ltree *p){</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return ((double)F6(p,1))/F1(p);</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</p>
+<p class="a0">//----------------------------------------------------------7</p>
+<p class="a0">int F7(ltree *p){</p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span lang="EN-US">if (p-&gt;val &gt; 6) return p-&gt;val;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (ltree *q=p-&gt;child; q!=NULL; 
+q=q-&gt;next)</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { int vv=F7(q); if 
+(vv!=-1) return vv; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>return -1; }</p>
+<p class="a0">//----------------------------------------------------------8</p>
+<p class="a0"><span lang="EN-US">int F8(btree *p) {</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (p==NULL) return 0;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return (1 + F8(p-&gt;r) + F8(p-&gt;l)); }</span></p>
+<p class="a0"><span lang="EN-US">
+//----------------------------------------------------------9</span></p>
+<p class="a0"><span lang="EN-US">int F9(btree *p) {</span></p>
+<p class="a0"><span lang="EN-US">if (p==NULL) return 0;</span></p>
+<p class="a0"><span lang="EN-US">int nr=F9(p-&gt;r);</span></p>
+<p class="a0"><span lang="EN-US">int nl=F9(p-&gt;l);</span></p>
+<p class="a0"><span lang="EN-US">return 1 + (nr&gt;nl ? nr : nl); }</span></p>
+<p class="a0"><span lang="EN-US">
+//----------------------------------------------------------10</span></p>
+<p class="a0"><span lang="EN-US">int F10(btree *p) {</span></p>
+<p class="a0"><span lang="EN-US">if (p==NULL) return 0;</span></p>
+<p class="a0"><span lang="EN-US">int m,n=p-&gt;val;</span></p>
+<p class="a0">if ((m=F10(p-&gt;r))&gt;n) n=m;</p>
+<p class="a0"><span lang="EN-US">if ((m=F10(p-&gt;l))&gt;n) n=m;</span></p>
+<p class="a0"><span lang="EN-US">return n; }</span></p>
+<p class="a0">//----------------------------------------------------------11</p>
+<p class="a0">int F11(tree1 *p){</p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span lang="EN-US">int s=1;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (int i=0;i &lt; p-&gt;n; i++)</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+s+=F11(p-&gt;ch[i]);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return s; }</span></p>
+<p class="a0"><span lang="EN-US">
+//----------------------------------------------------------12</span></p>
+<p class="a0"><span lang="EN-US">int F12(tree1 *p){</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int s=p-&gt;val;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (int i=0;i &lt; p-&gt;n; i++)</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+s+=F12(p-&gt;ch[i]);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return s; }</span></p>
+<p class="a0"><span lang="EN-US">
+//----------------------------------------------------------13</span></p>
+<p class="a0"><span lang="EN-US">int F13(tree1 *p){</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int s=p-&gt;val;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (int i=0;i &lt; p-&gt;n; i++)</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { int vv=F13(p-&gt;ch[i]);&nbsp;&nbsp;&nbsp;&nbsp; 
+if (vv &gt; s)&nbsp; s=vv; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return s; }</span></p>
+<p class="a0"><span lang="EN-US">
+//----------------------------------------------------------14</span></p>
+<p class="a0"><span lang="EN-US">int F14(tree1 *p){</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int s=0;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (int i=0;i &lt; p-&gt;n; i++)</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { int vv=F14(p-&gt;ch[i]);&nbsp;&nbsp;&nbsp;&nbsp; 
+if (vv &gt; s)&nbsp; s=vv; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>return s+1;
+<span lang="EN-US">}</span></p>
+<p class="a0"><span lang="EN-US">
+//----------------------------------------------------------15</span></p>
+<p class="a0"><span lang="EN-US">void F15(tree1 *p, int l, int &amp;m){</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (l &gt; m) m=l;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (int i=0;i &lt; p-&gt;n; i++)</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; F15(p-&gt;ch[i],l+1,m); }</span></p>
+<p class="a0"><span lang="EN-US">
+//----------------------------------------------------------16</span></p>
+<p class="a0"><span lang="EN-US">int F16(tree1 *p, int l){</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int s=l;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (int i=0;i &lt; p-&gt;n; i++)</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+s+=F16(p-&gt;ch[i],l+1);&nbsp;&nbsp;&nbsp;&nbsp; </span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return s; }</span></p>
+<p class="a0"><span lang="EN-US">double main16(tree1 *p){</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return ((double)F16(p,1))/F11(p); }</span></p>
+<p class="a0"><span lang="EN-US">
+//----------------------------------------------------------17</span></p>
+<p class="a0"><span lang="EN-US">int F17(tree1 *p){</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (p-&gt;val &gt; 6) return p-&gt;val;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (int i=0;i &lt; p-&gt;n; i++)</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { int vv=F17(p-&gt;ch[i]); 
+if (vv!=-1) return vv; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return -1; }</span></p>
+<p class="a0"><span lang="EN-US">
+//----------------------------------------------------------21</span></p>
+<p class="a0"><span lang="EN-US">int F21(tree *p){</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (p==NULL) return 0;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int s=1;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (int i=0; i&lt;4; i++)</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+s+=F21(p-&gt;ch[i]);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>return s; }</p>
+<p class="a0">//----------------------------------------------------------22</p>
+<p class="a0"><span lang="EN-US">int F22(tree *p){</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (p==NULL) return 0;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int s=p-&gt;val;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (int i=0; i&lt;4; i++)</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+s+=F22(p-&gt;ch[i]);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return s; </span>}</p>
+<p class="a0">//----------------------------------------------------------23</p>
+<p class="a0"><span lang="EN-US">int F23(tree *p){</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (p==NULL) return 0;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>int s=p-&gt;val;</p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span lang="EN-US">for (int i=0; i&lt;4; i++)</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { int vv=F23(p-&gt;ch[i]);&nbsp;&nbsp;&nbsp;&nbsp; 
+if (vv &gt; s)&nbsp; s=vv; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return s; }</span></p>
+<p class="a0"><span lang="EN-US">
+//----------------------------------------------------------24</span></p>
+<p class="a0"><span lang="EN-US">int F24(tree *p){</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (p==NULL) return 0;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int s=0;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>for (int i=0; i&lt;4; i++)</p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span lang="EN-US">{ int vv=F24(p-&gt;ch[i]);&nbsp;&nbsp;&nbsp;&nbsp; 
+if (vv &gt; s)&nbsp; s=vv; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return s+1; }</span></p>
+<p class="a0"><span lang="EN-US">
+//----------------------------------------------------------25</span></p>
+<p class="a0"><span lang="EN-US">void F25(tree *p, int l, int &amp;m){</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (p==NULL) return;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (l &gt; m) m=l;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (int i=0; i&lt;4; i++)</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; F25(p-&gt;ch[i],l+1,m);
+</span>}</p>
+<p class="a0"><span lang="EN-US">
+//----------------------------------------------------------26</span></p>
+<p class="a0"><span lang="EN-US">int F26(tree *p, int l){</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>if (p==NULL) return 0;</p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span lang="EN-US">int s=l;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (int i=0; i&lt;4; i++)</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; s+=F26(p-&gt;ch[i],l+1);&nbsp;&nbsp;&nbsp;&nbsp;
+</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return s; }</span></p>
+<p class="a0"><span lang="EN-US">double main26(tree *p){</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return ((double)F26(p,1))/F21(p); }</span></p>
+<p class="a0"><span lang="EN-US">
+//----------------------------------------------------------27</span></p>
+<p class="a0"><span lang="EN-US">int F27(tree *p){</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (p-&gt;val &gt; 6) return p-&gt;val;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (int i=0; i&lt;4; i++)</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { int vv=F27(p-&gt;ch[i]); 
+if (vv!=-1) return vv; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>return -1; }</p>
+<p class="a0">//----------------------------------------------------------30</p>
+<p class="a0"><span lang="EN-US">int F30(int A[],int sz, int n){</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (n&gt;=sz || A[n]==-1) return 0;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return 
+1+F30(A,sz,2*n)+F30(A,sz,2*n+1); }</span></p>
+<p class="a0"><span lang="EN-US">
+//----------------------------------------------------------31</span></p>
+<p class="a0"><span lang="EN-US">int F31(int A[],int sz, int n){</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (n&gt;=sz || A[n]==-1) return 0;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return 
+A[n]+F31(A,sz,2*n)+F31(A,sz,2*n+1); }</span></p>
+<p class="a0"><span lang="EN-US">
+//----------------------------------------------------------32</span></p>
+<p class="a0"><span lang="EN-US">int F32(int A[],int sz, int n){</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (n&gt;=sz || A[n]==-1) return 0;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>int xx,vv=A[n];</p>
+<p class="a0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span lang="EN-US">if ((xx=F32(A,sz,2*n))&gt;vv) vv=xx;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if ((xx=F32(A,sz,2*n+1))&gt;vv) vv=xx;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>return vv;
+<span lang="EN-US">}</span></p>
+<p class="a0"><span lang="EN-US">
+//----------------------------------------------------------33</span></p>
+<p class="a0"><span lang="EN-US">int F33(int A[],int sz, int n){</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (n&gt;=sz || A[n]==-1) return 0;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int x1=F33(A,sz,2*n);</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int x2=F33(A,sz,2*n+1);</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return x1&gt;x2 ? x1+1 : x2+1; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;</span></div>
+
+</body>
+
+</html>

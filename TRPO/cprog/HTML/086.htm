@@ -1,0 +1,1240 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=Edit-Time-Data href="086.files/editdata.mso">
+<title>8.6. Графы</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>www.PHILka.RU</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>vtpc112</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>669</o:TotalTime>
+  <o:Created>2008-11-06T12:27:00Z</o:Created>
+  <o:LastSaved>2008-11-06T12:27:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>1935</o:Words>
+  <o:Characters>11033</o:Characters>
+  <o:Company>NSTU_VT</o:Company>
+  <o:Bytes>11776</o:Bytes>
+  <o:Lines>91</o:Lines>
+  <o:Paragraphs>25</o:Paragraphs>
+  <o:CharactersWithSpaces>12943</o:CharactersWithSpaces>
+  <o:Version>11.6360</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DoNotHyphenateCaps/>
+  <w:DrawingGridHorizontalSpacing>0,55 пт</w:DrawingGridHorizontalSpacing>
+  <w:DrawingGridVerticalSpacing>0,55 пт</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:UseMarginsForDrawingGridOrigin/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DrawingGridVerticalOrigin>99,25 пт</w:DrawingGridVerticalOrigin>
+  <w:Compatibility>
+   <w:WW6BorderRules/>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+   <w:UseWord97LineBreakingRules/>
+   <w:SelectEntireFieldWithStartOrEnd/>
+   <w:UseWord2002TableStyleRules/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:1627421319 -2147483648 8 0 66047 0;}
+@font-face
+	{font-family:"Times New Roman CYR";
+	panose-1:2 2 6 3 5 4 5 2 3 4;
+	mso-font-charset:204;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+@font-face
+	{font-family:"Arial CYR";
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+h1
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:14.0pt;
+	mso-bidi-font-weight:normal;}
+h2
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-font-weight:normal;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+h3
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	font-weight:normal;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-noshow:yes;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:8.0pt;
+	font-family:Tahoma;
+	mso-fareast-font-family:"Times New Roman";}
+p.a, li.a, div.a
+	{mso-style-name:текст;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a0, li.a0, div.a0
+	{mso-style-name:программа;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a1, li.a1, div.a1
+	{mso-style-name:список;
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:18.45pt;
+	margin-bottom:0cm;
+	margin-left:64.35pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-18.0pt;
+	mso-pagination:widow-orphan;
+	mso-list:l1 level1 lfo1;
+	tab-stops:42.55pt list 64.35pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a2, li.a2, div.a2
+	{mso-style-name:определение;
+	mso-style-parent:текст;
+	margin-top:12.0pt;
+	margin-right:32.9pt;
+	margin-bottom:12.0pt;
+	margin-left:35.45pt;
+	text-align:justify;
+	text-indent:.55pt;
+	mso-pagination:widow-orphan;
+	border:none;
+	mso-border-alt:solid windowtext 1.5pt;
+	padding:0cm;
+	mso-padding-alt:1.0pt 1.0pt 1.0pt 1.0pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a3, li.a3, div.a3
+	{mso-style-name:эпиграф;
+	margin-top:0cm;
+	margin-right:32.9pt;
+	margin-bottom:0cm;
+	margin-left:5.0cm;
+	margin-bottom:.0001pt;
+	text-align:right;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.a4, li.a4, div.a4
+	{mso-style-name:"от края";
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a5, li.a5, div.a5
+	{mso-style-name:Формула;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.a6, li.a6, div.a6
+	{mso-style-name:"без формата";
+	mso-style-parent:программа;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a7, li.a7, div.a7
+	{mso-style-name:стихи;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.1, li.1, div.1
+	{mso-style-name:эпиграф1;
+	mso-style-parent:эпиграф;
+	margin-top:0cm;
+	margin-right:9.35pt;
+	margin-bottom:0cm;
+	margin-left:9.0cm;
+	margin-bottom:.0001pt;
+	text-align:right;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+ /* Page Definitions */
+ @page
+	{mso-footnote-separator:url("086.files/header.htm") fs;
+	mso-footnote-continuation-separator:url("086.files/header.htm") fcs;
+	mso-endnote-separator:url("086.files/header.htm") es;
+	mso-endnote-continuation-separator:url("086.files/header.htm") ecs;}
+@page Section1
+	{size:21.0cm 842.0pt;
+	margin:33.45pt 42.55pt 72.0pt 89.85pt;
+	mso-header-margin:14.2pt;
+	mso-footer-margin:31.75pt;
+	mso-even-header:url("086.files/header.htm") eh1;
+	mso-header:url("086.files/header.htm") h1;
+	mso-even-footer:url("086.files/header.htm") ef1;
+	mso-footer:url("086.files/header.htm") f1;
+	mso-first-header:url("086.files/header.htm") fh1;
+	mso-first-footer:url("086.files/header.htm") ff1;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:1523009089;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1333658084 -730683514 1681323274 758954380 -1024839424 1118354266 -426726934 -514682888 -1947047342 1233827628;}
+@list l0:level1
+	{mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level2
+	{mso-level-start-at:0;
+	mso-level-number-format:none;
+	mso-level-text:"";
+	mso-level-tab-stop:18.0pt;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l0:level3
+	{mso-level-start-at:0;
+	mso-level-number-format:none;
+	mso-level-text:"";
+	mso-level-tab-stop:18.0pt;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l0:level4
+	{mso-level-start-at:0;
+	mso-level-number-format:none;
+	mso-level-text:"";
+	mso-level-tab-stop:18.0pt;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l0:level5
+	{mso-level-start-at:0;
+	mso-level-number-format:none;
+	mso-level-text:"";
+	mso-level-tab-stop:18.0pt;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l0:level6
+	{mso-level-start-at:0;
+	mso-level-number-format:none;
+	mso-level-text:"";
+	mso-level-tab-stop:18.0pt;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l0:level7
+	{mso-level-start-at:0;
+	mso-level-number-format:none;
+	mso-level-text:"";
+	mso-level-tab-stop:18.0pt;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l0:level8
+	{mso-level-start-at:0;
+	mso-level-number-format:none;
+	mso-level-text:"";
+	mso-level-tab-stop:18.0pt;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l0:level9
+	{mso-level-start-at:0;
+	mso-level-number-format:none;
+	mso-level-text:"";
+	mso-level-tab-stop:18.0pt;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l1
+	{mso-list-id:1628194852;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-964799380 -1450833310 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-style-link:список;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:64.35pt;
+	mso-level-number-position:left;
+	margin-left:64.35pt;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Обычная таблица";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+table.MsoTableGrid
+	{mso-style-name:"Сетка таблицы";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+  <o:regrouptable v:ext="edit">
+   <o:entry new="1" old="0"/>
+   <o:entry new="2" old="1"/>
+   <o:entry new="3" old="0"/>
+  </o:regrouptable>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=RU style='tab-interval:36.0pt' background="back.gif">
+
+<div class=Section1>
+
+<h2>8.6. Графы. Отношения</h2>
+
+<p class=a>&nbsp;<p><br
+style='mso-ignore:vglayout' clear=ALL>
+До сих пор мы рассматривали структуры данных, в которых связи между элементами
+имеют регулярный характер (определенный линейно или рекурсивно). <b
+style='mso-bidi-font-weight:normal'>Граф</b> можно определить как произвольную
+систему связей (ветвей), установленную на множестве вершин. Ветви в графе
+называются <b style='mso-bidi-font-weight:normal'><a name="m1">ребрами</b>. Ребра могут быть
+однонаправленными (<b style='mso-bidi-font-weight:normal'><a name="m2">ориентированный</b> <b
+style='mso-bidi-font-weight:normal'>граф</b>) и двунаправленными (<b
+style='mso-bidi-font-weight:normal'>неориентированный граф</b>), а также могут
+иметь дополнительные (например, числовые) характеристики (<b style='mso-bidi-font-weight:
+normal'><a name="m3">нагруженные ребра</b>). Ориентация ребер и их нагрузка имеют отношение
+к задачам, которые решаются при помощи алгоритмов, работающих на графах
+(например, нагруженные ребра могут обозначать пропускную способность,
+расстояния и т.п.). Нас же, прежде всего, интересуют способы представления
+графов и общие принципы программирования для них. Конкретные алгоритмы будут
+приводиться здесь как иллюстрация общего подхода.</p>
+<p align="center">
+<img border="0" src="Images/086-01.gif" width="261" height="222"></p>
+</p>
+
+<p class=a4 align=center style='text-align:center'><b><a name="m4">рис. 86-1. Нагруженный
+неориентированный граф<o:p></o:p></b></p>
+
+<h3>Способы представления графов</h3>
+
+<p class=a>Для представления графов можно использовать различные табличные и
+списковые структуры. Самой простой и «близкой к математике» является <b
+style='mso-bidi-font-weight:normal'>матрица смежности. </b>Это квадратная
+матрица, индексами в которой являются номера вершин. При наличии между
+вершинами с номерами <b style='mso-bidi-font-weight:normal'><a name="m5"><span lang=EN-US
+style='mso-ansi-language:EN-US'>i</span>,</b><b style='mso-bidi-font-weight:
+normal'><a name="m6"><span lang=EN-US style='mso-ansi-language:EN-US'>j</span><span
+lang=EN-US> </span></b>ребра с весом <b style='mso-bidi-font-weight:normal'><a name="m7"><span
+lang=EN-US style='mso-ansi-language:EN-US'>m</span><span lang=EN-US> </span></b>значение
+элемента <b style='mso-bidi-font-weight:normal'><a name="m8"><span lang=EN-US
+style='mso-ansi-language:EN-US'>A<sub>ij</sub></span>=</b><b style='mso-bidi-font-weight:
+normal'><a name="m9"><span lang=EN-US style='mso-ansi-language:EN-US'>m</span>, </b>при
+отсутствии ребра значение элемента нулевое. В неориентированном графе матрица
+симметрична относительно главной диагонали, которая также является нулевой. Для
+приведенного на рисунке графа матрица смежности определяется в массиве таким
+образом:</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>A</span>[7][7]={</p>
+
+<p class=a0>{ 0, 5, 8, 0,<span style='mso-spacerun:yes'>  </span>0, 0, 0},</p>
+
+<p class=a0>{ 5, 0, 0,12, 0, 9, 0},</p>
+
+<p class=a0>{ 8, 0, 0,<span style='mso-spacerun:yes'>  </span>0, 8, 4, 2},</p>
+
+<p class=a0>{ 0,12, 0, 0, 3, 6, 0},</p>
+
+<p class=a0>{ 0, <span style='mso-spacerun:yes'> </span>0, 8, 3, 0, 0, 7},<span
+style='mso-spacerun:yes'>  </span></p>
+
+<p class=a0>{ 0,<span style='mso-spacerun:yes'>  </span>9, 4, 6, 0, 0, 0},</p>
+
+<p class=a0>{ 0,<span style='mso-spacerun:yes'>  </span>0, 2, 0, 7, 0, 0}};</p>
+
+<p class=a>Для задания переменной размерности используется массив указателей на
+строки матрицы. Другой более компактный способ – это таблица ребер. Однако он
+повышает трудоемкость алгоритмов за счет перебора всей таблицы при поиске ребер
+для заданной вершины.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>struct link2 { int
+v1,v2,lnt; }<o:p></o:p></span></p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>A</span>[]={{0,1,5},{0,2,8},{1,3,12},{1,5,9},{3,5,6},</p>
+
+<p class=a0 style='text-indent:36.0pt'>{2,5,4},{3,4,3},{2,4,8},{2,6,2},{4,6,7}
+,{-1,-1,0}}; </p>
+
+<p class=a>Обеспечить прямой доступ к множеству ребер любой вершины и при этом
+эффективно использовать память можно на основе структур данных, использующих
+указатели. Это может быть, например, массив указателей на массивы или на списки
+описателей ребер.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>struct link4{ int
+v2; lnt;};<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>link4
+a0[]={{1,5},{2,8},{-1,-1}}; <o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>link4
+a1[]={{0,5},{3,12},{5,9},{-1,-1}};<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>link4 a2[]={{0,8},{4,8},{5,4},{6,2},{-1,-1}};<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>link4
+a3[]={{1,12},{4,3},{5,6},{-1,-1}};<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>link4
+a4[]={{2,8},{3,3},{6,7},{-1,-1}};<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>link4
+a5[]={{1,9},{2,4},{3,6},{-1,-1}};<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>link4
+a5[]={{2,2},{4,7},{-1,-1}};<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>link
+*pp[]={a0,a1,a2,a3,a4,a5,a6};<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>struct link3{ <o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int v2,lnt; <o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>link3 *next; <span
+lang=EN-US style='mso-ansi-language:EN-US'>};<o:p></o:p></span></p>
+
+<p class=a0>//--------------------------------------------------------------------------86-01.<span
+lang=EN-US style='mso-ansi-language:EN-US'>cpp</span></p>
+
+<p class=a0>// Создание массива указателей на списки из матрицы смежности</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>link3 **create(int
+*pp[],int N){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int i,j;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>link3 **M=new link3*[N];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>for (i=0;i&lt;N;i++) M[i]=NULL;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>for (i=0;i&lt;N;i++)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>for (j=0;j&lt;N;j++)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>if (pp[i][j]!=0){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:3'>                                    </span>int vv2,l2;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:3'>                                    </span>link3 *q=new
+link3(j,pp[i][j]);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:3'>                                    </span>q-&gt;next=M[i];
+M[i]=q;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:3'>                                    </span>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>return M;}<o:p></o:p></span></p>
+
+<h3>Поисковые задачи на графах</h3>
+
+<p class=a>С помощью графов решаются различные поисковые и оптимизационные
+задачи. Образная модель (см. <b style='mso-bidi-font-weight:normal'><a name="m10">3.4</b>) их
+решения включает в себя различные варианты «движения» по ребрам графа. Здесь
+можно выделить две основных идеи<span lang=EN-US style='mso-ansi-language:EN-US'>:<o:p></o:p></span></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>если алгоритм решает задачу путем присоединения
+на каждом шаге еще одной вершины к множеству просмотренных, то он является
+«жадным» и имеет трудоемкость вида <b style='mso-bidi-font-weight:normal'><a name="m11"><span
+lang=EN-US style='mso-ansi-language:EN-US'>T</span>=</b><b style='mso-bidi-font-weight:
+normal'><a name="m12"><span lang=EN-US style='mso-ansi-language:EN-US'>O</span>(</b><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>N</span><sup>2</sup>), </b>поскольку состоит из <b style='mso-bidi-font-weight:
+normal'><a name="m13"><span lang=EN-US style='mso-ansi-language:EN-US'>N</span><span
+lang=EN-US> </span></b>шагов по присоединению вершин, на каждом из которых
+выбирается одна из еще не просмотренных. Такие алгоритмы являются эффективными,
+но требуют обоснования «жадности»;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>если алгоритм рассматривает все возможные
+последовательности присоединения вершин, то он имеет экспоненциальную
+трудоемкость, поскольку содержит в своей основе полный комбинаторный перебор.
+Так, если вершина имеет в среднем <b style='mso-bidi-font-weight:normal'><a name="m14"><span
+lang=EN-US style='mso-ansi-language:EN-US'>m</span><span lang=EN-US> </span></b>ветвей,
+то она может быть оценена как <b style='mso-bidi-font-weight:normal'><a name="m15"><span
+lang=EN-US style='mso-ansi-language:EN-US'>T</span>=</b><b style='mso-bidi-font-weight:
+normal'><a name="m16"><span lang=EN-US style='mso-ansi-language:EN-US'>O</span>((</b><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>m</span>-1)<sup><span
+lang=EN-US style='mso-ansi-language:EN-US'>N</span></sup>).</b></p>
+
+<p class=a4><b style='mso-bidi-font-weight:normal'><a name="m17">Полный рекурсивный обход
+графа. </b>Задачи, в которых рассматриваются все возможные последовательности
+вершин графа (пути), могут быть реализованы с помощью рекурсивного алгоритма
+полного обхода графа. Инвариантом рекурсии здесь является текущая вершина и
+последовательность пройденных вершин (путь).<span style='mso-spacerun:yes'> 
+</span>Как минимум, нужно просто отмечать пройденные вершины. Это исключает их повторное
+посещение и «зацикливание» рекурсии. По возвращении из рекурсивного вызова
+отметка снимается, что позволяет выполнять обход всех путей независимо друг от
+друга.</p>
+
+<p class=a0>//--------------------------------------------------------------------------86-01.<span
+lang=EN-US style='mso-ansi-language:EN-US'>cpp</span></p>
+
+<p class=a0>//--- Полный рекурсивный обход графа, матрица смежности</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void scan_1(int
+i,int **M, int n, int D[]){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>D[i]=1;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>for (int j=0;j&lt;n;j++)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>if (M[i][j]!=0
+&amp;&amp; D[j]==0) scan_1(j,M,n,D);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>D[i]=0;}<o:p></o:p></span></p>
+
+<p class=a0>//--- Полный рекурсивный обход графа, таблица пар</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void scan_2(int
+i,link2 M[], int D[]){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>D[i]=1;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>for (int j=0; M[j].v1!=-1;j++){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>if (M[j].v1==i
+&amp;&amp; D[M[j].v2]==0) scan_2(M[j].v2,M,D);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>if (M[j].v2==i
+&amp;&amp; D[M[j].v1]==0) scan_2(M[j].v1,M,D);<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:2; mso-ansi-language:EN-US' lang="EN-US">                        </span>}</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>D[i]=0;}</p>
+
+<p class=a0>//--- Полный рекурсивный обход графа, таблица списков смежных
+вершин</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void scan_3(int
+i,link3 *M[], int n, int D[]){<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>D[i]=1;</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>link3 *q;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>for (q=M[i];q!=NULL;q=q-&gt;next)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>if (D[q-&gt;v2]==0)
+scan_3(q-&gt;v2,M,n,D);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>D</span>[<span lang=EN-US
+style='mso-ansi-language:EN-US'>i</span>]=0;}<span lang=EN-US style='mso-ansi-language:
+EN-US'><o:p></o:p></span></p>
+
+<p class=a0>//--- Полный рекурсивный обход графа, массив указателей на массивы
+ребер</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void scan_4(int
+i,link4 *M[], int n, int D[]){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>D[i]=1;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>for (int j=0;M[i][j].v2!=-1;j++)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>if (D[M[i][j].v2]==0)
+scan_4(M[i][j].v2,M,n,D);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>D[i]=0;}<o:p></o:p></span></p>
+
+<p class=a>При представлении графа различными структурами данных сущность
+алгоритма обхода не меняется. Рекурсивная функция получает индекс текущей
+вершины и отмечает ее в глобальном массиве <b style='mso-bidi-font-weight:normal'><a name="m18"><span
+lang=EN-US style='mso-ansi-language:EN-US'>D</span>, </b>через который
+различные шаги рекурсии взаимодействуют между собой. Затем просматривается
+множество соседей, и для неотмеченных вершин функция вызывается рекурсивно. По
+окончании текущего вызова отметка текущей вершины снимается.</p>
+
+<p class=a>Такой алгоритм уже использовался нами для решения «задачи
+коммивояжера» (см. <b style='mso-bidi-font-weight:normal'><a name="m19">7.4</b><a name="m19">). Там он был
+дополнен необходимыми деталями: прямым накоплением пройденного пути (с
+передачей через формальный параметр) и сохранением последовательности
+пройденных вершин (городов) в глобальном массиве.<span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a>Что касается эффективных «жадных» алгоритмов, то все они имеют
+соответствующее «образное» представление. Оно используется не только для
+проектирования алгоритма, но и является частью обоснования его «жадности», т.е.
+однозначности выбора. В качестве примеров рассмотрим наиболее простые и образно
+очевидные алгоритмы.</p>
+
+<p class=a4><a name="m20"><b>Поиск кратчайших путей. Алгоритм Дейкстры. </b><span
+style='mso-bidi-font-weight:bold'>Алгоритм поиска кратчайших путей вычисляет
+минимальные расстояния вершин графа от его начальной вершины - </span></a><a name="m21"><b><span
+lang=EN-US style='mso-ansi-language:EN-US'>D<sub>i</sub></span></b><span
+style='mso-bidi-font-weight:bold'>. «Жадность» его состоит в том, что на каждом
+шаге он включает в множество вершин с вычисленными путями (в терминах алгоритма
+– «облако») еще одну вершину:<o:p></o:p></span></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>первоначально в каждой вершине устанавливается «бесконечная»
+длина пути (больше большего) – <b style='mso-bidi-font-weight:normal'><a name="m22"><span
+lang=EN-US style='mso-ansi-language:EN-US'>D<sub>i</sub></span>=<span style='font-family:"Times New Roman"'>&#8734;</span></b>,
+начальная вершина получает нулевое расстояние <b style='mso-bidi-font-weight:
+normal'><a name="m23"><span lang=EN-US style='mso-ansi-language:EN-US'>D</span><sub>0</sub>=0</b>,
+«облако» не содержит вершин;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>на каждом шаге в «облако» включается одна
+вершина <span style='mso-spacerun:yes'> </span><b style='mso-bidi-font-weight:
+normal'><a name="m24"><span lang=EN-US style='mso-ansi-language:EN-US'>k</span></b><span
+lang=EN-US> </span>с минимальным <b style='mso-bidi-font-weight:normal'><a name="m25"><span
+lang=EN-US style='mso-ansi-language:EN-US'>S<sub>k</sub></span></b>, вычисленным
+ранее;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>после включения вершины корректируются
+расстояния всех ее соседей, если они находятся вне «облака», и новые
+вычисленные длины путей <b style='mso-bidi-font-weight:normal'><a name="m26"><span
+lang=EN-US style='mso-ansi-language:EN-US'>D<sub>i</sub></span>=<span lang=EN-US style='mso-ansi-language:
+EN-US'>D<sub>k</sub></span>+<span
+lang=EN-US style='mso-ansi-language:EN-US'>M<sub>k</sub></span><sub>,<span lang=EN-US style='mso-ansi-language:
+EN-US'>i</span><span lang=EN-US> </span></sub></b>, просчитанные от включенной
+вершины, уменьшают ранее вычисленное значение <b style='mso-bidi-font-weight:
+normal'><a name="m27"><span lang=EN-US style='mso-ansi-language:EN-US'>D<sub>i</sub></span>.</b></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//-------------------------------------------------------------------86-02.cpp</p>
+
+<p class=a0>// Поиск кратчайшего пути - алгоритм Дейкстры</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void min_way(int
+N, int **M){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int i,k,j;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int *P=new int[N],*D=new int[N];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>for (i=0;i&lt;N;i++)
+P[i]=0,D[i]=100000;<span style='mso-tab-count:1'>        </span>// </span>Облако<span
+style='mso-ansi-language:EN-US'> </span>пустое<span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>D[0]=0;</span><span
+style='mso-tab-count:5'>                                                 </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>// </span>Расстояния – бескончность,
+начальная - 0</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>while(1){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>for (k=-1,i=0;i&lt;N;i++){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:3'>                                    </span>if (P[i]==1)
+continue;<span style='mso-tab-count:1'>       </span>// </span>В<span
+style='mso-ansi-language:EN-US'> </span>облаке<span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:3; mso-ansi-language:EN-US' lang="EN-US">                                    </span>if
+(k==-1 || D[i] &lt; D[k]) </p>
+
+<p class=a0><span style='mso-tab-count:4'>                                                </span>k=i;
+}<span style='mso-tab-count:2'>                 </span>// Ближайшая вне облака </p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>if</span> (<span lang=EN-US
+style='mso-ansi-language:EN-US'>k</span>==-1) <span lang=EN-US
+style='mso-ansi-language:EN-US'>break</span>;<span style='mso-tab-count:3'>                         </span>//
+Нет вершин – все в облаке</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>P</span>[<span lang=EN-US
+style='mso-ansi-language:EN-US'>k</span>]=1;<span style='mso-tab-count:4'>                                     </span>//
+Включить в облако</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>for (i=0;i&lt;N;i++){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:3'>                                    </span>if
+(M[k][i]==0) continue;<span style='mso-tab-count:1'>  </span>// </span>Коррекция<span
+style='mso-ansi-language:EN-US'> </span>путей<span style='mso-ansi-language:
+EN-US'> </span>к<span style='mso-ansi-language:EN-US'> </span>соседям<span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:3; mso-ansi-language:EN-US' lang="EN-US">                                    </span>if
+(D[k] + M[k][i] &lt; D[i])<span style='mso-tab-count:1'>   </span>// - если
+расстояние уменьшается</p>
+
+<p class=a0><span style='mso-tab-count:4'>                                                </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>D[i] = D[k] + M[k][i];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:3'>                                    </span>}}</span></p>
+
+<p class=a4>А теперь несколько слов к обоснованию «жадности». Алгоритм имеет ярко
+выраженный индуктивный характер и содержит следующий инвариант:</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>«облако» состоит из подмножества вершин с
+минимальными расстояниями , на каждом шаге <b style='mso-bidi-font-weight:normal'><a name="m28"><span
+lang=EN-US style='mso-ansi-language:EN-US'>D<sub>i</sub></span></b> для вершин
+в «облаке» будет меньше, чем у вершин вне его;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>смежные вершины, не включенные в «облако», также
+содержат <b style='mso-bidi-font-weight:normal'><a name="m29"><span lang=EN-US
+style='mso-ansi-language:EN-US'>D<sub>i</sub></span><sub>, </sub></b>соответствующие
+минимальным расстояниям при достижении их из текущего «облака»;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>инвариантное свойство «облака» сохраняется путем
+выбора смежной вершины вне «облака» с минимальным <b style='mso-bidi-font-weight:
+normal'><a name="m30"><span lang=EN-US style='mso-ansi-language:EN-US'>D<sub>i</sub></span></b>;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>инвариантное свойство смежных вершин сохраняется
+путем коррекции расстояний до них.</p>
+
+<p class=a4 style='tab-stops:2.0cm'><b><a name="m31">Построение минимального остового дерева.
+Алгоритм Прима-Ярвика. </b><span style='mso-bidi-font-weight:bold'>Удалив из
+графа некоторые ребра, можно превратить его в дерево. Если оно включает в себя
+все вершины исходного графа, то оно называется остовым. Кстати, в качестве его корня
+можно принять любую вершину, и в любом графе существует множество различных
+остовых деревьев. Задача состоит в построении дерева с минимальной суммой весов
+(значений нагруженных ребер). Идея «жадного» алгоритма состоит в присоединении
+на каждом шаге к минимальному дереву очередной вершины (само собой, находящейся
+вне дерева) с использованием ребра минимального веса. Обоснование алгоритма
+элементарно проводится<span style='mso-spacerun:yes'>  </span>методом
+математической индукции: при присоединении очередной вершины алгоритм
+сохраняется свойства «древовидности» (соединяя пару вершин в дереве и вне его)
+и «минимальности» - используя возможное ребро с минимальным весом. По аналогии
+с предыдущим алгоритмом множество вершин строящегося дерева называется
+«облаком».<o:p></o:p></span></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//------------------------------------------------------86-03.cpp</p>
+
+<p class=a0>// Построение остового дерева<span style='mso-spacerun:yes'> 
+</span>- алгоритм Прима-Ярвика</p>
+
+<p class=a0>// Выбор минимального ребра &quot;в облаке&quot;-&quot;вне
+облака&quot;</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>#include
+&quot;86-00.cpp&quot;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void main(){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int N,**M,*P,i,k,j;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int sum=0,sum0=0;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if
+((M=load_1(&quot;86-011.txt&quot;,N))==NULL) return;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>P</span>=<span lang=EN-US
+style='mso-ansi-language:EN-US'>new</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>int</span>[<span lang=EN-US
+style='mso-ansi-language:EN-US'>N</span>];<span style='mso-tab-count:3'>                            </span>//
+Массив отметок – в облаке</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>for (i=0;i&lt;N;i++) P[i]=0;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>P[0]=1;<span style='mso-tab-count:
+4'>                                     </span>// </span>Первая – в облаке</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>while(1){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>int</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>i</span>1=-1,<span
+lang=EN-US style='mso-ansi-language:EN-US'>j</span>1=-1;<span style='mso-tab-count:
+2'>               </span>// Поиск кратчайшего ребра</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>for</span> (<span lang=EN-US
+style='mso-ansi-language:EN-US'>i</span>=0;<span lang=EN-US style='mso-ansi-language:
+EN-US'>i</span>&lt;<span lang=EN-US style='mso-ansi-language:EN-US'>N</span>;<span
+lang=EN-US style='mso-ansi-language:EN-US'>i</span>++)<span style='mso-tab-count:
+2'>             </span>// Пропуск отмеченных, пустых</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>for</span> (<span lang=EN-US
+style='mso-ansi-language:EN-US'>j</span>=<span lang=EN-US style='mso-ansi-language:
+EN-US'>i</span>+1;<span lang=EN-US style='mso-ansi-language:EN-US'>j</span>&lt;<span
+lang=EN-US style='mso-ansi-language:EN-US'>N</span>;<span lang=EN-US
+style='mso-ansi-language:EN-US'>j</span>++){<span style='mso-tab-count:1'>          </span>//
+и связывающих однотипные вершины </p>
+
+<p class=a0><span style='mso-tab-count:3'>                                    </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>if (M[i][j]&lt;=0 || P[i]==P[j]) continue;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:3'>                                    </span>if (j1==-1
+|| M[i][j]&lt;M[i1][j1])<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:4'>                                                </span>{
+i1=i; j1=j; }<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:4; mso-ansi-language:EN-US' lang="EN-US">                                                </span>}<span
+style='mso-tab-count:1'>           </span>// Запомнить индексы ребра</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>if</span> (<span lang=EN-US
+style='mso-ansi-language:EN-US'>j</span>1==-1) <span lang=EN-US
+style='mso-ansi-language:EN-US'>break</span>;<span style='mso-tab-count:1'>            </span>//
+Не найдено – дерево построено</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>sum</span>+=<span lang=EN-US
+style='mso-ansi-language:EN-US'>M</span>[<span lang=EN-US style='mso-ansi-language:
+EN-US'>i</span>1][<span lang=EN-US style='mso-ansi-language:EN-US'>j</span>1];<span
+style='mso-tab-count:2'>             </span>// Новая сумма весов дерева</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span>M[i1][j1]=-M[i1][j1];<span
+style='mso-tab-count:1'>         </span>// Отметить ребро – инвертировать вес</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>M</span>[<span lang=EN-US
+style='mso-ansi-language:EN-US'>j</span>1][<span lang=EN-US style='mso-ansi-language:
+EN-US'>i</span>1]=-<span lang=EN-US style='mso-ansi-language:EN-US'>M</span>[<span
+lang=EN-US style='mso-ansi-language:EN-US'>j</span>1][<span lang=EN-US
+style='mso-ansi-language:EN-US'>i</span>1];<span style='mso-tab-count:1'>         </span>//
+Внести вершину «в облако»</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>if (P[i1]==1) P[j1]=1; else P[i1]=1;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>}</span>}<span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a4><b><a name="m32">Построение минимального остового дерева. Алгоритм Крускала. </b><span
+style='mso-bidi-font-weight:bold'>Другая индуктивно доказываемая идея – при
+объединении двух минимальных остовых поддеревьев через минимальное ребро
+получается минимальное остовое дерево на том же множестве вершин. Каждое
+поддерево называется кластером и первоначально все вершины исходного графа
+«сами себе поддеревья - кластеры». Затем в цикле ищется ребро с
+минимальным<span style='mso-spacerun:yes'>  </span>весом, соединяющее вершины
+разных кластеров, после чего два кластера сливаются в один, а ребро включается
+в остовое дерево, связанное с этим кластером. В результате получается
+единственный кластер – минимальное остовое дерево.<o:p></o:p></span></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//--------------------------------------------------------86-04.cpp</p>
+
+<p class=a0>// Построение остового дерева<span style='mso-spacerun:yes'> 
+</span>- алгоритм Крускала</p>
+
+<p class=a0>// Слияние кластеров через минимальное ребро</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void main(){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int N,**M,*D;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int i,k,j;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int sum=0;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if
+((M=load_1(&quot;86-011.txt&quot;,N))==NULL) return;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>D=new int[N];<span style='mso-tab-count:
+1'>    </span><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>for</span> (<span lang=EN-US
+style='mso-ansi-language:EN-US'>i</span>=0;<span lang=EN-US style='mso-ansi-language:
+EN-US'>i</span>&lt;<span lang=EN-US style='mso-ansi-language:EN-US'>N</span>;<span
+lang=EN-US style='mso-ansi-language:EN-US'>i</span>++) <span lang=EN-US
+style='mso-ansi-language:EN-US'>D</span>[<span lang=EN-US style='mso-ansi-language:
+EN-US'>i</span>]=<span lang=EN-US style='mso-ansi-language:EN-US'>i</span>;<span
+style='mso-tab-count:1'>                </span>//
+Каждый сам себе кластер</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>while(1){</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span>int
+i1=-1,j1=-1;<span style='mso-tab-count:2'>               </span>// Поиск
+минимального ребра в разных кластерах</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>for</span> (<span lang=EN-US
+style='mso-ansi-language:EN-US'>i</span>=0;<span lang=EN-US style='mso-ansi-language:
+EN-US'>i</span>&lt;<span lang=EN-US style='mso-ansi-language:EN-US'>N</span>;<span
+lang=EN-US style='mso-ansi-language:EN-US'>i</span>++)<span style='mso-tab-count:
+2'>             </span>// Пропуск отмеченных, пустых </p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>for</span> (<span lang=EN-US
+style='mso-ansi-language:EN-US'>j</span>=<span lang=EN-US style='mso-ansi-language:
+EN-US'>i</span>+1;<span lang=EN-US style='mso-ansi-language:EN-US'>j</span>&lt;<span
+lang=EN-US style='mso-ansi-language:EN-US'>N</span>;<span lang=EN-US
+style='mso-ansi-language:EN-US'>j</span>++){<span style='mso-tab-count:1'>          </span>//
+и связывающих вершины в кластере</p>
+
+<p class=a0><span style='mso-tab-count:3'>                                    </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>if (M[i][j]&lt;=0 || D[i]==D[j])
+continue;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:3'>                                    </span>if (j1==-1
+|| M[i][j]&lt;M[i1][j1])<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:4'>                                                </span>{
+i1=i; j1=j; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:4'>                                                </span>}<span
+style='mso-tab-count:1'>           </span>// </span>Запомнить<span
+style='mso-ansi-language:EN-US'> </span>индексы<span style='mso-ansi-language:
+EN-US'> </span>ребра<span style='mso-ansi-language:EN-US'> <span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>if</span> (<span
+lang=EN-US style='mso-ansi-language:EN-US'>j</span>1==-1) <span lang=EN-US
+style='mso-ansi-language:EN-US'>break</span>; <span style='mso-tab-count:1'>           </span>//
+Не найдено – дерево построено </p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>sum</span>+=<span lang=EN-US
+style='mso-ansi-language:EN-US'>M</span>[<span lang=EN-US style='mso-ansi-language:
+EN-US'>i</span>1][<span lang=EN-US style='mso-ansi-language:EN-US'>j</span>1]; <span
+style='mso-tab-count:2'>                        </span>// Новая сумма весов
+дерева </p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>M[i1][j1]=-M[i1][j1];<span
+style='mso-tab-count:1'>         </span>// </span>Отметить<span
+style='mso-ansi-language:EN-US'> </span>ребро<span lang=EN-US style='mso-ansi-language:
+EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>M[j1][i1]=-M[j1][i1];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>int</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>P</span>=<span
+lang=EN-US style='mso-ansi-language:EN-US'>D</span>[<span lang=EN-US
+style='mso-ansi-language:EN-US'>j</span>1];<span style='mso-tab-count:2'>                    </span>//
+Слить кластеры</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>for (j=0;j&lt;N;j++) if (D[j]==P)
+D[j]=D[i1];<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:2; mso-ansi-language:EN-US' lang="EN-US">                        </span>}}</p>
+
+<p class=a>Между двумя крайностями – полным рекурсивным перебором
+последовательностей вершин и «жадным» их присоединением – находятся алгоритмы,
+использующие промежуточные решения. К ним относится рассмотренный в <b
+style='mso-bidi-font-weight:normal'>7.5</b> «волновой» алгоритм построения
+кратчайших путей. На основе явной очереди вершин алгоритм моделирует «волну»,
+которая распространяется из исходной вершины. Когда она достигает некоторой
+вершины, то для вершины устанавливается значение пройденного «волной» пути и
+делаются попытки скорректировать <span style='mso-spacerun:yes'> </span>этот же
+параметр у соседей. Если он корректируется в сторону уменьшения, то соседняя
+вершина также становится источником вторичной «волны» (т.е. помещается в очередь).
+Такой алгоритм не является «жадным», поскольку допускает повторную коррекцию
+расстояний у вершин, но он также далек от полного перебора. Оценку трудоемкости
+здесь проводить не будем.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+</div>
+
+</body>
+
+</html>

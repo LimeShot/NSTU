@@ -1,0 +1,868 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=Edit-Time-Data href="072.files/editdata.mso">
+<title>Романов Е.Л. Беседы о программировании</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Романов</o:Author>
+  <o:Template>Книга.dot</o:Template>
+  <o:LastAuthor>www.PHILka.RU</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>539</o:TotalTime>
+  <o:LastPrinted>2004-11-22T17:57:00Z</o:LastPrinted>
+  <o:Created>2008-02-13T19:44:00Z</o:Created>
+  <o:LastSaved>2008-02-13T19:44:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>1535</o:Words>
+  <o:Characters>8753</o:Characters>
+  <o:Company>NSTU_VT</o:Company>
+  <o:Bytes>11776</o:Bytes>
+  <o:Lines>72</o:Lines>
+  <o:Paragraphs>20</o:Paragraphs>
+  <o:CharactersWithSpaces>10268</o:CharactersWithSpaces>
+  <o:Version>11.6360</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DoNotHyphenateCaps/>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:UseMarginsForDrawingGridOrigin/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:Compatibility>
+   <w:WW6BorderRules/>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+   <w:UseWord97LineBreakingRules/>
+   <w:SelectEntireFieldWithStartOrEnd/>
+   <w:UseWord2002TableStyleRules/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Times New Roman CYR";
+	panose-1:2 2 6 3 5 4 5 2 3 4;
+	mso-font-charset:204;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+@font-face
+	{font-family:"Arial CYR";
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+h1
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:14.0pt;
+	mso-bidi-font-weight:normal;}
+h2
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-font-weight:normal;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+h3
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	font-weight:normal;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.a, li.a, div.a
+	{mso-style-name:текст;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a0, li.a0, div.a0
+	{mso-style-name:программа;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a1, li.a1, div.a1
+	{mso-style-name:список;
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:18.45pt;
+	margin-bottom:0cm;
+	margin-left:35.45pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	mso-pagination:widow-orphan;
+	tab-stops:42.55pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a2, li.a2, div.a2
+	{mso-style-name:определение;
+	mso-style-parent:текст;
+	margin-top:12.0pt;
+	margin-right:32.9pt;
+	margin-bottom:12.0pt;
+	margin-left:35.45pt;
+	text-align:justify;
+	text-indent:.55pt;
+	mso-pagination:widow-orphan;
+	border:none;
+	mso-border-alt:solid windowtext 1.5pt;
+	padding:0cm;
+	mso-padding-alt:1.0pt 1.0pt 1.0pt 1.0pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a3, li.a3, div.a3
+	{mso-style-name:эпиграф;
+	margin-top:12.0pt;
+	margin-right:32.9pt;
+	margin-bottom:12.0pt;
+	margin-left:5.0cm;
+	text-align:justify;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.a4, li.a4, div.a4
+	{mso-style-name:"от края";
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a5, li.a5, div.a5
+	{mso-style-name:Формула;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.a6, li.a6, div.a6
+	{mso-style-name:"без формата";
+	mso-style-parent:программа;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+ /* Page Definitions */
+ @page
+	{mso-footnote-separator:url("072.files/header.htm") fs;
+	mso-footnote-continuation-separator:url("072.files/header.htm") fcs;
+	mso-endnote-separator:url("072.files/header.htm") es;
+	mso-endnote-continuation-separator:url("072.files/header.htm") ecs;}
+@page Section1
+	{size:21.0cm 842.0pt;
+	margin:33.45pt 42.55pt 72.0pt 89.85pt;
+	mso-header-margin:14.2pt;
+	mso-footer-margin:31.75pt;
+	mso-header:url("072.files/header.htm") h1;
+	mso-even-footer:url("072.files/header.htm") ef1;
+	mso-footer:url("072.files/header.htm") f1;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Обычная таблица";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=RU style='tab-interval:36.0pt' background="back.gif">
+
+<div class=Section1>
+
+<h2><font face="Arial"><span lang=EN-US style='mso-ansi-language:EN-US'>7</span>.2. Рекурсивные
+алгоритмы сортировки</font></h2>
+
+<p class=a>Рекурсия естественным образом «всплывает» в сортировках, основанных
+на перераспределении элементов исходной последовательности: их <b><a name="m1">разделении </b>на
+части и обратном <b><a name="m2">слиянии.</b> В процессе разделения к полученным частям
+применяется тот же самый алгоритм до тех пор, пока не получатся части единичной
+(или нулевой) размерности, «сборка» (слияние) частей осуществляется в обратном
+порядке – после возвращения из рекурсивного вызова. </p>
+
+<p class=a4>(рисунок).</p>
+
+<p class=a>Аналогично тому, как сортировки <b><a name="m3">выбором </b>и <b><a name="m4">вставкой </b>основаны
+на одной идее (перенос на каждом шаге по одному элементу из неупорядоченной
+последовательности в упорядоченную), но противоположны по способу его
+реализации, сортировки рекурсивным разделением и рекурсивным слиянием
+противоположны по тому, на какой стадии реализуется идея упорядоченности и
+происходит перестановка элементов. В <b><a name="m5">рекурсивном разделении</b> частичная
+упорядоченность устанавливается в процессе разделения путем разбиения исходной
+последовательности (массива, списка) на две части по принципу «меньше-больше»
+некоторого срединного значения, называемого <b><a name="m6">медианой. </b>Способ получения
+такого значения и соразмерность полученных частей не имеют принципиального
+значения (среднее арифметическое, просто значение любого из элементов
+последовательности). Обратное объединение разделенных частей уже не связано с
+перестановкой элементов и происходит по принципу «левая-медиана-правая».</p>
+
+<p class=a4><b><a name="m7">Рекурсивное разделение массива. </b>В процессе разделения
+массива должно происходить физическое перемещение элементов, чтобы они заняли
+соответствующее положение относительно медианы. Если в результате такого
+перемещения на исходном интервале мы получим новое размещение элементов по
+принципу «меньшие-медиана-большие», то необходимость в слиянии отпадет,
+поскольку после рекурсивного вызова упорядоченные части «будут занимать свои
+места». </p>
+
+<p class=a>Наиболее очевидный способ разделения состоит в просмотре
+разделяемого интервала с двух концов таким образом, чтобы в процессе движения
+слева и справа от текущих индексов оставались разделенные части. Для этого оба
+индекса должны продвигаться к центру, если под ними находятся элементы,
+соответственно, меньшие и большие медианы. Это продолжается, пока они оба не
+остановятся. В этом случае нужно поменять местами оба «неправильно»
+расположенных элемента и продолжить разделение. В приведенном примере в
+качестве медианы используется значение среднего арифметического на разделяемом
+интервале <b><a name="m8">(<span lang=EN-US style='mso-ansi-language:EN-US'>a</span>,<span
+lang=EN-US style='mso-ansi-language:EN-US'>b</span>)</b>, причем значения,
+равные среднему, попадают в правую часть. Рекурсия завершается, когда
+размерность интервала будет равна 1 или 0, а также, если все значения на
+интервале равны.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//------------------------------------------------------<span
+lang=EN-US style='mso-ansi-language:EN-US'>7</span>2-01.cpp</p>
+
+<p class=a0>//------- Сортировка массива рекурсивным разделением</p>
+
+<p class=a0>// В качестве медианы - среднее арифметическое</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>void sort(int in[], int a, int b){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>int i,j,mode;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>double sr=0;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>if (a&gt;=b) return;<span style='mso-tab-count:
+4'>                                     </span>// </span>Размер<span
+style='mso-ansi-language:EN-US'> </span>части<span lang=EN-US style='mso-ansi-language:
+EN-US'> =0<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>for (i=a; i&lt;=b; i++) sr+=in[i];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>sr=sr/(b-a+1);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>for (i=a, j=b; i &lt;= j;)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>{<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if (in[i]&lt; sr) { i++; continue; }<span
+style='mso-tab-count:1'>        </span>// </span>Слева<span lang=EN-US
+style='mso-ansi-language:EN-US'> - </span>меньше<span lang=EN-US
+style='mso-ansi-language:EN-US'>, </span>пропустить<span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>if (in[j]&gt;=sr) { j--; continue;
+}<span style='mso-tab-count:1'>         </span>// Справа - больше, пропустить</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>int c = in[i]; in[i] = in[j]; in[j]=c;<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>i++,j--;<span
+style='mso-tab-count:4'>                                       </span>//
+Поменять местами и пропустить</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>}</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>if (i==a) return;<span
+style='mso-tab-count:4'>                                      </span>// все
+равны и в правой части</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>sort(in,a,j); sort(in,i,b);}<span
+style='mso-tab-count:3'>                          </span>// рекурсивный вызов
+для двух частей</p>
+
+<p class=a4><b style='mso-bidi-font-weight:normal'><a name="m9"><o:p>&nbsp;</o:p></b></p>
+
+<p class=a4><b style='mso-bidi-font-weight:normal'><a name="m10">«Быстрая» сортировка </b>использует
+в качестве медианы первый элемент на разделяемом интервале (<b><a name="m11"><span
+lang=EN-US style='mso-ansi-language:EN-US'>in</span>[<span lang=EN-US
+style='mso-ansi-language:EN-US'>a</span>]</b>). Сравнение медианы производится
+с элементом в противоположном конце массива (<b style='mso-bidi-font-weight:
+normal'><a name="m12">i=a, j=b</b>).Если они больше медианы, то они пропускаются (<b
+style='mso-bidi-font-weight:normal'>j--</b>), иначе производится обмен медианы
+с «неправильно» размещенным элементом, и аналогичное «действо» производится с
+другого конца. Элегантность алгоритма проявляется в том, что в обоих случаях
+расположения медианы работает одно и то же тело цикла, в котором текущее
+местоположение медианы (справа или слева) и направление сокращения интервала
+обозначается признаком<span style='mso-spacerun:yes'>   </span><b><a name="m13"><span
+lang=EN-US style='mso-ansi-language:EN-US'>mode</span>.</b> В результате
+разделения медиана занимает в массиву позицию <b style='mso-bidi-font-weight:
+normal'><a name="m14">in[i]</b>. </p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//------------------------------------------------------72-02.cpp<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//-------&quot;</span>Быстрая<span
+lang=EN-US style='mso-ansi-language:EN-US'>&quot; </span>сортировка<span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>void sort(int in[], int a, int b){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>int i,j,mode;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>if (a&gt;=b) return;<span
+style='mso-spacerun:yes'>                                 </span><span
+style='mso-tab-count:2'>                </span>// </span>Размер<span
+style='mso-ansi-language:EN-US'> </span>части<span lang=EN-US style='mso-ansi-language:
+EN-US'> =0<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>for (i=a, j=b, mode=1; i &lt; j; mode &gt;0 ?
+j-- : i++)<span style='mso-tab-count:1'>   </span>// </span>Сокращение<span
+style='mso-ansi-language:EN-US'> </span>слева<span lang=EN-US style='mso-ansi-language:
+EN-US'> или </span>справа<span lang=EN-US style='mso-ansi-language:EN-US'> <o:p></o:p></span></p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>if</span> (<span lang=EN-US style='mso-ansi-language:EN-US'>in</span>[<span
+lang=EN-US style='mso-ansi-language:EN-US'>i</span>] &gt; <span lang=EN-US
+style='mso-ansi-language:EN-US'>in</span>[<span lang=EN-US style='mso-ansi-language:
+EN-US'>j</span>]) {<span style='mso-spacerun:yes'>           </span><span
+style='mso-tab-count:3'>                            </span>// Очередной не на
+своем месте</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>int</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>c</span> = <span lang=EN-US
+style='mso-ansi-language:EN-US'>in</span>[<span lang=EN-US style='mso-ansi-language:
+EN-US'>i</span>]; <span lang=EN-US style='mso-ansi-language:EN-US'>in</span>[<span
+lang=EN-US style='mso-ansi-language:EN-US'>i</span>] = <span lang=EN-US
+style='mso-ansi-language:EN-US'>in</span>[<span lang=EN-US style='mso-ansi-language:
+EN-US'>j</span>]; <span lang=EN-US style='mso-ansi-language:EN-US'>in</span>[<span
+lang=EN-US style='mso-ansi-language:EN-US'>j</span>]=<span lang=EN-US
+style='mso-ansi-language:EN-US'>c</span>;<span style='mso-tab-count:1'>    </span>//
+Перестановка медианы с концевым </p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span>mode =
+-mode;<span style='mso-spacerun:yes'>                    </span><span
+style='mso-tab-count:1'>      </span>// элементом со сменой сокращаемого конца</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>sort(in,a,i-1); sort(in,i+1,b); }<span
+style='mso-tab-count:3'>                               </span>// </span>рекурсия<span
+style='mso-ansi-language:EN-US'> </span>для<span style='mso-ansi-language:EN-US'>
+</span>частей<span style='mso-ansi-language:EN-US'> </span>БЕЗ<span
+style='mso-ansi-language:EN-US'> </span>медианы<span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a>
+<span
+style='mso-spacerun:yes; mso-ansi-language:EN-US' lang="EN-US"> </span>Очевидно, что медиана делит массив на
+две неравные части. Алгоритм разделения можно выполнить итерационно, применяя
+его к той части массива, которая содержит его середину (по аналогии с двоичным
+поиском). Тогда в каждом шаге итерации медиана будет сдвигаться к середине
+массива.</p>
+
+<p class=a4><b><a name="m15">Рекурсивное разделение односвязного списка. </b>Рекурсивное
+разделение элегантно выглядит в односвязном списке, поскольку изменение
+логического порядка следования элементов в нем можно достигнуть переустановкой
+указателей. Тем более, что в процессе разделения порядок помещения элементов в
+разделяемые части не является важным, то есть очередной элемент разделяемого
+списка можно поместить в начало одного из двух выходных с использованием всего
+двух операций присваивания указателей. В качестве медианы берется значение
+первого элемента разделяемого списка.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//---------------------------------------------------------<span
+lang=EN-US style='mso-ansi-language:EN-US'>7</span>2-03.cpp</p>
+
+<p class=a0>//<span style='mso-spacerun:yes'>  </span>сортировка односвязного
+списка рекурсивным разделением</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>list *sort(list
+*p){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>list
+*m,*p1,*p2,*q;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>if (p==NULL ||
+p-&gt;next==NULL)<o:p></o:p></span></p>
+
+<p class=a0>return p;<span style='mso-tab-count:4'>                                                </span>//
+не более одного - конец разделения</p>
+
+<p class=a0>m=p; p=p-&gt;next;<span style='mso-tab-count:3'>                                    </span>//
+m-медиана - первый элемент</p>
+
+<p class=a0>p1=p2=NULL;<span style='mso-tab-count:4'>                                        </span>//
+p1,p2 - разделенные списки</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>while(p!=NULL){<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-spacerun:yes; mso-ansi-language:EN-US' lang="EN-US">   </span>q=p; p=p-&gt;next;<span
+style='mso-tab-count:3'>                                  </span>// извлечь
+очередной из входного</p>
+
+<p class=a0><span style='mso-spacerun:yes'>   </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>if</span> (<span lang=EN-US style='mso-ansi-language:
+EN-US'>q</span>-&gt;<span lang=EN-US style='mso-ansi-language:EN-US'>val</span>
+&lt; <span lang=EN-US style='mso-ansi-language:EN-US'>m</span>-&gt;<span
+lang=EN-US style='mso-ansi-language:EN-US'>val</span>)<span style='mso-tab-count:
+3'>                               </span>// <span lang=EN-US style='mso-ansi-language:
+EN-US'>q</span> – очередной, <span lang=EN-US style='mso-ansi-language:EN-US'>p</span>
+– остаток списка</p>
+
+<p class=a0 style='text-indent:36.0pt'>q-&gt;next=p1, p1=q;<span
+style='mso-tab-count:2'>                     </span>// меньше медианы - в
+начало первого</p>
+
+<p class=a0><span style='mso-spacerun:yes'>   </span>else</p>
+
+<p class=a0><span style='mso-spacerun:yes'>   </span><span style='mso-tab-count:
+1'>         </span>q-&gt;next=p2, p2=q;<span style='mso-tab-count:2'>                     </span>//
+иначе - в начало второго</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>}</p>
+
+<p class=a0>p1=sort(p1);<span style='mso-tab-count:4'>                                           </span>//
+рекурсивная сортировка частей</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>p2=sort(p2);<o:p></o:p></span></p>
+
+<p class=a0>m-&gt;next=p2;<span style='mso-tab-count:4'>                                          </span>//
+&quot;склеить&quot; медиану и второй список</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>if (p1==NULL)
+return m;<span style='mso-tab-count:3'>                          </span>// </span>первый<span
+lang=EN-US style='mso-ansi-language:EN-US'> - </span>пустой<span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>for
+(q=p1;q-&gt;next!=NULL; q=q-&gt;next);<o:p></o:p></span></p>
+
+<p class=a0>q-&gt;next = m;<span style='mso-spacerun:yes'>              
+</span><span style='mso-tab-count:3'>                          </span>// иначе,
+дойти до конца первого,</p>
+
+<p class=a0>return p1;<span style='mso-spacerun:yes'>                 </span><span
+style='mso-tab-count:3'>                             </span>// присоединить к
+нему медиану</p>
+
+<p class=a0>}<span style='mso-spacerun:yes'>                          </span><span
+style='mso-tab-count:3'>                                 </span>// со вторым
+списком и вернуть</p>
+
+<p class=a4>Технологический момент: при «склеивании» полученных упорядоченных
+односвязных списков приходится «бежать» до конца первого. Это можно исключить,
+например, используя циклические списки.</p>
+
+<p class=a4><b><a name="m16">Сортировка рекурсивным слиянием. </b>Если перенести «центр тяжести»
+на процесс слияния, то разделение последовательности станет простой
+формальностью: она просто «режется» на две части строго посередине. Это будет
+происходить до тех пор, пока не получатся части единичной или нулевой
+размерности. Содержательная сторона алгоритма будет заключаться в слиянии,
+которое будет выполняться в обратном порядке в процессе возвратов из
+рекурсивных функций (Если в тексте функции рекурсивного разделения вызов
+функции находится в конце текста, то в рекурсивном слиянии – в начале). Сама
+процедура слияния описана в 4.6: для получения одной упорядоченной
+последовательности из двух достаточно одного цикла, на каждом шаге которого
+выбирается (сливается) один элемент из пары «верхних».</p>
+
+<p class=a4><b><a name="m17">Рекурсивное слияние массива.<o:p></o:p></b></p>
+
+<p class=a0>//---------------------------------------------------------<span
+lang=EN-US style='mso-ansi-language:EN-US'>7</span>2-04.<span lang=EN-US
+style='mso-ansi-language:EN-US'>cpp</span></p>
+
+<p class=a0>// Сортировка массива рекурсивным слиянием</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void sort(int A[],
+int a, int b){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>if</span> (<span
+lang=EN-US style='mso-ansi-language:EN-US'>a</span>&gt;=<span lang=EN-US
+style='mso-ansi-language:EN-US'>b</span>) <span lang=EN-US style='mso-ansi-language:
+EN-US'>return</span>;<span style='mso-tab-count:4'>                                      </span>//
+Разделение закончилось</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>m</span>=(<span
+lang=EN-US style='mso-ansi-language:EN-US'>a</span>+<span lang=EN-US
+style='mso-ansi-language:EN-US'>b</span>+1)/2,<span lang=EN-US
+style='mso-ansi-language:EN-US'>i</span>,<span lang=EN-US style='mso-ansi-language:
+EN-US'>j</span>,<span lang=EN-US style='mso-ansi-language:EN-US'>k</span>;<span
+style='mso-tab-count:3'>                              </span>// Нет - взять
+середину интервала</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>sort</span>(<span
+lang=EN-US style='mso-ansi-language:EN-US'>A</span>,<span lang=EN-US
+style='mso-ansi-language:EN-US'>a</span>,<span lang=EN-US style='mso-ansi-language:
+EN-US'>m</span>-1);<span style='mso-tab-count:4'>                                        </span>//
+Рекурсивный вызов для частей</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>sort(A,m,b);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int</span> *<span
+lang=EN-US style='mso-ansi-language:EN-US'>tmp</span>=<span lang=EN-US
+style='mso-ansi-language:EN-US'>new</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>int</span>[<span lang=EN-US
+style='mso-ansi-language:EN-US'>b</span>-<span lang=EN-US style='mso-ansi-language:
+EN-US'>a</span>+1];<span style='mso-tab-count:3'>                         </span>//
+Слияние частей во временный массив</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>for (i=a,j=m,k=0;
+k&lt;=b-a; k++)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if (i==m || j!=b+1 &amp;&amp;
+A[j]&lt;A[i])<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span><span style='mso-tab-count:2'>                     </span>tmp</span>[<span
+lang=EN-US style='mso-ansi-language:EN-US'>k</span>]=<span lang=EN-US
+style='mso-ansi-language:EN-US'>A</span>[<span lang=EN-US style='mso-ansi-language:
+EN-US'>j</span>++];<span style='mso-tab-count:2'>               </span>// слить
+из второй части, если</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>else</span><span style='mso-tab-count:4'>                                          </span>//
+первая кончилась или во второй меньше</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>tmp</span>[<span lang=EN-US
+style='mso-ansi-language:EN-US'>k</span>]=<span lang=EN-US style='mso-ansi-language:
+EN-US'>A</span>[<span lang=EN-US style='mso-ansi-language:EN-US'>i</span>++];<span
+style='mso-tab-count:2'>               </span>// слить из первой части</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>for (i=a,j=0;
+i&lt;=b; i++,j++) <o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>A</span>[<span lang=EN-US
+style='mso-ansi-language:EN-US'>i</span>]=<span lang=EN-US style='mso-ansi-language:
+EN-US'>tmp</span>[<span lang=EN-US style='mso-ansi-language:EN-US'>j</span>];<span
+style='mso-tab-count:3'>                                </span>// вернуть
+слитые части обратно в <span lang=EN-US style='mso-ansi-language:EN-US'>A</span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>delete</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>tmp</span>;<span
+style='mso-tab-count:1'>        </span>}<span style='mso-tab-count:3'>                                   </span>//
+удалить временный массив</p>
+
+<p class=a4><b><a name="m18">Рекурсивное слияние односвязного списка. </b>Рекурсивное слияние
+списка выглядит не так изящно, поскольку «разрезание» списка на две части
+требует лишнего цикла его просмотра с использованием указателей, движущихся с
+«одинарной» и «двойной» скоростью.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//---------------------------------------------------------82-05.cpp</p>
+
+<p class=a0>//<span style='mso-spacerun:yes'>  </span>сортировка односвязного
+списка рекурсивным слиянием</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>list *sort(list
+*p){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>list
+*out,*p1,*p2,*q;<o:p></o:p></span></p>
+
+<p class=a0>if (p==NULL || p-&gt;next==NULL)<span style='mso-tab-count:2'>               </span>//
+не более одного - конец разделения</p>
+
+<p class=a0>return p;<span style='mso-tab-count:4'>                                                </span>//
+найти середину, p2 движется в 2 раза</p>
+
+<p class=a0>p1=p2=p;<span style='mso-tab-count:4'>                                              </span>//
+&quot;быстрее&quot; p1<span style='mso-tab-count:9'>                                                                                                  </span><span
+style='mso-tab-count:1'>            </span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>while (p2-&gt;next!=NULL
+&amp;&amp; p2-&gt;next-&gt;next!=NULL)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>{<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>p1=p1-&gt;next; <span
+style='mso-tab-count:3'>                            </span>// 1-2-3-4-5-6-7
+==&gt; 1-2-3-4 || 5-6-7<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>p2=p2-&gt;next;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>p2=p2-&gt;next;<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>}</p>
+
+<p class=a0>q=p1-&gt;next;<span style='mso-tab-count:4'>                                           </span>//
+разделение списка на две части</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>p1-&gt;next=NULL;<o:p></o:p></span></p>
+
+<p class=a0>p=sort(p);<span style='mso-spacerun:yes'>               </span><span
+style='mso-tab-count:3'>                               </span>// рекурсивная
+сортировка частей</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>q=sort(q);<o:p></o:p></span></p>
+
+<p class=a0>list OUT;<span style='mso-tab-count:4'>                                               </span>//
+для выходного списка - фиктивный</p>
+
+<p class=a0>p1=&amp;OUT;<span style='mso-tab-count:4'>                                             </span>//
+&quot;последний&quot; элемент</p>
+
+<p class=a0>while(p!=NULL || q!=NULL)<span style='mso-tab-count:2'>                      </span>//
+пока оба списка не пусты</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>{<span
+style='mso-tab-count:4'>                                               </span>//
+второй пуст или в первом меньше, чем во втором</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>if (q==NULL || p!=NULL &amp;&amp; p-&gt;val
+&lt; q-&gt;val)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span><span style='mso-tab-count:2'>                     </span></span>p1-&gt;next=p,<span
+style='mso-tab-count:2'>                   </span>// перенести из первый из
+первого списка</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span>p1=p1-&gt;next,<span
+style='mso-tab-count:2'>                 </span>// в конец выходного</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>p=p-&gt;next;<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>else</p>
+
+<p class=a0><span style='mso-spacerun:yes'>   </span><span style='mso-tab-count:
+2'>                     </span>p1-&gt;next=q,<span style='mso-tab-count:2'>                   </span>//
+перенести из первый из второго списка</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span>p1=p1-&gt;next,<span
+style='mso-tab-count:2'>                 </span>// в конец выходного</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>q=q-&gt;next;<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>}</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>return OUT.next;}</span></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a4><b><a name="m19">Трудоемкость рекурсивных сортировок. </b>При сортировке
+рекурсивным разделением в идеальном случае, когда каждое разделение будет
+производиться строго на две равные части, мы получим две задачи половинной
+размерности (<b><a name="m20"><span lang=EN-US style='mso-ansi-language:EN-US'>N</span>/2</b>),
+причем количество операций будет пропорционально <b><a name="m21"><span lang=EN-US
+style='mso-ansi-language:EN-US'>N</span></b><b style='mso-bidi-font-weight:
+normal'><a name="m22">: </b><span lang=EN-US style='mso-ansi-language:EN-US;mso-bidi-font-weight:
+bold'>N</span><span style='mso-bidi-font-weight:bold'>-1 сравнений или максимум
+</span><span lang=EN-US style='mso-ansi-language:EN-US;mso-bidi-font-weight:
+bold'>N</span><span style='mso-bidi-font-weight:bold'>/2 обменов (в среднем </span><span
+lang=EN-US style='mso-ansi-language:EN-US;mso-bidi-font-weight:bold'>N</span><span
+style='mso-bidi-font-weight:bold'>/4). Тогда для </span><b style='mso-bidi-font-weight:
+normal'><a name="m23"><span lang=EN-US style='mso-ansi-language:EN-US'>T<sub>N</sub></span>=2</b><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>T<sub>N</sub></span><sub>/2</sub>+</b><b style='mso-bidi-font-weight:
+normal'><a name="m24"><span lang=EN-US style='mso-ansi-language:EN-US'>N</span><span
+lang=EN-US> </span></b><span style='mso-bidi-font-weight:bold'>получим </span><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>T</span>=<span lang=EN-US
+style='mso-ansi-language:EN-US'>N</span><span lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:
+EN-US'>log</span><sub>2</sub><span
+lang=EN-US style='mso-ansi-language:EN-US'>N</span><span lang=EN-US> </span></b><span
+style='mso-bidi-font-weight:bold'>(см.8.1).</span><b style='mso-bidi-font-weight:
+normal'><a name="m25"> </b><span style='mso-bidi-font-weight:bold'>В наихудшем случае, когда
+все элементы будут попадать в один интервал, а другой будет оставаться пустым,
+размерность будет уменьшаться всего на 1, тогда для </span><b style='mso-bidi-font-weight:
+normal'><a name="m26"><span lang=EN-US style='mso-ansi-language:EN-US'>T<sub>N</sub></span>=</b><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>T<sub>N</sub></span><sub>-1 </sub>+ </b><b style='mso-bidi-font-weight:
+normal'><a name="m27"><span lang=EN-US style='mso-ansi-language:EN-US'>N</span><span
+style='mso-spacerun:yes'>  </span></b><span style='mso-bidi-font-weight:bold'>получим
+</span><b style='mso-bidi-font-weight:normal'><a name="m28"><span lang=EN-US
+style='mso-ansi-language:EN-US'>T</span>=</b><b style='mso-bidi-font-weight:
+normal'><a name="m29"><span lang=EN-US style='mso-ansi-language:EN-US'>N</span><sup>2</sup>/2.
+</b><span style='mso-bidi-font-weight:bold'>Самое парадоксальное, что такое
+разделение будет происходить на уже упорядоченном массиве (плюс на плюс дает
+минус </span><b><a name="m30"><span style='font-size:16.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial'>&#9786;</span></b><span style='mso-bidi-font-weight:bold'>).<span
+style='mso-spacerun:yes'>  </span>Сортировка рекурсивным слиянием ввиду
+равномерности разделяемых частей близка к идеалу </span><b style='mso-bidi-font-weight:
+normal'><a name="m31"><span lang=EN-US style='mso-ansi-language:EN-US'>T</span>=</b><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>N</span><span lang=EN-US> </span></b><b style='mso-bidi-font-weight:
+normal'><a name="m32"><span lang=EN-US style='mso-ansi-language:EN-US'>log</span><sub>2</sub></b><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>N</span>, </b><span style='mso-bidi-font-weight:bold'>однако требует
+дополнительной памяти для сливаемых частей.<o:p></o:p></span></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+</div>
+
+</body>
+
+</html>

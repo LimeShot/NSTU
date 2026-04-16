@@ -1,0 +1,2003 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:st1="urn:schemas-microsoft-com:office:smarttags"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=Edit-Time-Data
+href="013%20Описание%20данных.%20Типы%20данных%20и%20переменные.files/editdata.mso">
+<title>1.3. Описание данных. Типы данных и переменные</title>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="metricconverter"/>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>www.PHILka.RU</o:Author>
+  <o:Template>Книга.dot</o:Template>
+  <o:LastAuthor>www.PHILka.RU</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>1239</o:TotalTime>
+  <o:Created>2008-05-13T14:46:00Z</o:Created>
+  <o:LastSaved>2008-05-13T14:46:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>4520</o:Words>
+  <o:Characters>25769</o:Characters>
+  <o:Company>NSTU_VT</o:Company>
+  <o:Bytes>11776</o:Bytes>
+  <o:Lines>214</o:Lines>
+  <o:Paragraphs>60</o:Paragraphs>
+  <o:CharactersWithSpaces>30229</o:CharactersWithSpaces>
+  <o:Version>11.6360</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DoNotHyphenateCaps/>
+  <w:DrawingGridHorizontalSpacing>0,55 пт</w:DrawingGridHorizontalSpacing>
+  <w:DrawingGridVerticalSpacing>0,55 пт</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:UseMarginsForDrawingGridOrigin/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DrawingGridVerticalOrigin>99,25 пт</w:DrawingGridVerticalOrigin>
+  <w:Compatibility>
+   <w:WW6BorderRules/>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+   <w:UseWord97LineBreakingRules/>
+   <w:SelectEntireFieldWithStartOrEnd/>
+   <w:UseWord2002TableStyleRules/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:"Times New Roman CYR";
+	panose-1:2 2 6 3 5 4 5 2 3 4;
+	mso-font-charset:204;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+@font-face
+	{font-family:"Arial CYR";
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+@font-face
+	{font-family:"Courier New CYR";
+	panose-1:2 7 3 9 2 2 5 2 4 4;
+	mso-font-charset:204;
+	mso-generic-font-family:modern;
+	mso-font-pitch:fixed;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+h1
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:14.0pt;
+	mso-bidi-font-weight:normal;}
+h2
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-font-weight:normal;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+h3
+	{mso-style-link:"Заголовок 3 Знак";
+	mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	font-weight:normal;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.a, li.a, div.a
+	{mso-style-name:текст;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a0, li.a0, div.a0
+	{mso-style-name:программа;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a1, li.a1, div.a1
+	{mso-style-name:список;
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:18.45pt;
+	margin-bottom:0cm;
+	margin-left:35.45pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	mso-pagination:widow-orphan;
+	tab-stops:42.55pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a2, li.a2, div.a2
+	{mso-style-name:определение;
+	mso-style-parent:текст;
+	margin-top:12.0pt;
+	margin-right:32.9pt;
+	margin-bottom:12.0pt;
+	margin-left:35.45pt;
+	text-align:justify;
+	text-indent:.55pt;
+	mso-pagination:widow-orphan;
+	border:none;
+	mso-border-alt:solid windowtext 1.5pt;
+	padding:0cm;
+	mso-padding-alt:1.0pt 1.0pt 1.0pt 1.0pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a3, li.a3, div.a3
+	{mso-style-name:эпиграф;
+	margin-top:12.0pt;
+	margin-right:32.9pt;
+	margin-bottom:12.0pt;
+	margin-left:5.0cm;
+	text-align:justify;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.a4, li.a4, div.a4
+	{mso-style-name:"от края";
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a5, li.a5, div.a5
+	{mso-style-name:Формула;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.a6, li.a6, div.a6
+	{mso-style-name:"без формата";
+	mso-style-parent:программа;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a7, li.a7, div.a7
+	{mso-style-name:стихи;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.1, li.1, div.1
+	{mso-style-name:эпиграф1;
+	mso-style-parent:эпиграф;
+	margin-top:0cm;
+	margin-right:9.35pt;
+	margin-bottom:0cm;
+	margin-left:9.0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.2, li.2, div.2
+	{mso-style-name:"заголовок 2";
+	mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;
+	font-style:italic;}
+p.3, li.3, div.3
+	{mso-style-name:"заголовок 3";
+	mso-style-link:"заголовок 3 Знак";
+	mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";}
+p.a8, li.a8, div.a8
+	{mso-style-name:Формула2;
+	mso-style-parent:Формула;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:18.0pt;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial";
+	mso-fareast-font-family:"Arial";
+	mso-bidi-font-family:"Arial";
+	letter-spacing:1.0pt;
+	mso-ansi-language:EN-US;
+	layout-grid-mode:line;
+	font-weight:bold;}
+span.30
+	{mso-style-name:"Заголовок 3 Знак";
+	mso-style-locked:yes;
+	mso-style-link:"Заголовок 3";
+	mso-ansi-font-size:12.0pt;
+	font-family:"Arial CYR";
+	mso-ascii-font-family:"Arial CYR";
+	mso-hansi-font-family:"Arial CYR";
+	mso-ansi-language:RU;
+	mso-fareast-language:RU;
+	mso-bidi-language:AR-SA;}
+span.31
+	{mso-style-name:"заголовок 3 Знак";
+	mso-style-locked:yes;
+	mso-style-link:"заголовок 3";
+	mso-ansi-font-size:12.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Arial CYR";
+	mso-ascii-font-family:"Arial CYR";
+	mso-hansi-font-family:"Arial CYR";
+	mso-bidi-font-family:"Arial CYR";
+	mso-ansi-language:RU;
+	mso-fareast-language:RU;
+	mso-bidi-language:AR-SA;}
+ /* Page Definitions */
+ @page
+	{mso-footnote-separator:url("013%20Описание%20данных.%20Типы%20данных%20и%20переменные.files/header.htm") fs;
+	mso-footnote-continuation-separator:url("013%20Описание%20данных.%20Типы%20данных%20и%20переменные.files/header.htm") fcs;
+	mso-endnote-separator:url("013%20Описание%20данных.%20Типы%20данных%20и%20переменные.files/header.htm") es;
+	mso-endnote-continuation-separator:url("013%20Описание%20данных.%20Типы%20данных%20и%20переменные.files/header.htm") ecs;}
+@page Section1
+	{size:21.0cm 842.0pt;
+	margin:33.45pt 42.55pt 72.0pt 89.85pt;
+	mso-header-margin:14.2pt;
+	mso-footer-margin:31.75pt;
+	mso-header:url("013%20Описание%20данных.%20Типы%20данных%20и%20переменные.files/header.htm") h1;
+	mso-even-footer:url("013%20Описание%20данных.%20Типы%20данных%20и%20переменные.files/header.htm") ef1;
+	mso-footer:url("013%20Описание%20данных.%20Типы%20данных%20и%20переменные.files/header.htm") f1;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:202787431;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1134070048 68747265 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:74.25pt;
+	mso-level-number-position:left;
+	margin-left:74.25pt;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l1
+	{mso-list-id:445656774;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1612337098 68747265 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:71.45pt;
+	mso-level-number-position:left;
+	margin-left:71.45pt;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l2
+	{mso-list-id:744302953;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1598230686 68747265 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l2:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:71.45pt;
+	mso-level-number-position:left;
+	margin-left:71.45pt;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l3
+	{mso-list-id:1298293421;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1520301078 68747265 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l3:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:74.25pt;
+	mso-level-number-position:left;
+	margin-left:74.25pt;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l4
+	{mso-list-id:1889107437;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1785935466 68747265 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l4:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:71.45pt;
+	mso-level-number-position:left;
+	margin-left:71.45pt;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l5
+	{mso-list-id:2085757923;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1620429760 207772344 68747289 68747291 68747279 68747289 68747291 68747279 68747289 68747291;}
+@list l5:level1
+	{mso-level-start-at:0;
+	mso-level-number-format:arabic-leading-zero;
+	mso-level-text:%1;
+	mso-level-tab-stop:126.0pt;
+	mso-level-number-position:left;
+	margin-left:126.0pt;
+	text-indent:-108.0pt;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Обычная таблица";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+table.MsoTableGrid
+	{mso-style-name:"Сетка таблицы";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+  <o:regrouptable v:ext="edit">
+   <o:entry new="1" old="0"/>
+   <o:entry new="2" old="1"/>
+   <o:entry new="3" old="0"/>
+  </o:regrouptable>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=RU style='tab-interval:36.0pt' background="back.gif">
+
+<div class=Section1>
+
+<h2>1.<span lang=EN-US style='mso-ansi-language:EN-US'>3</span>. Описание
+данных. Типы данных и переменные<br>
+&nbsp;</h2>
+
+<p class="a3" align="right" style="margin-top:0cm;margin-right:32.9pt;margin-bottom:
+0cm;margin-left:5.0cm;margin-bottom:.0001pt;text-align:right">«Но дружбы нет и 
+той меж нами. </p>
+<p class="a3" align="right" style="margin-top:0cm;margin-right:32.9pt;margin-bottom:
+0cm;margin-left:5.0cm;margin-bottom:.0001pt;text-align:right">Все предрассудки 
+истребя,&nbsp; </p>
+<p class="a3" align="right" style="margin-top:0cm;margin-right:32.9pt;margin-bottom:
+0cm;margin-left:5.0cm;margin-bottom:.0001pt;text-align:right">Мы почитаем всех 
+нулями, </p>
+<p class="a3" align="right" style="margin-top:0cm;margin-right:32.9pt;margin-bottom:
+0cm;margin-left:5.0cm;margin-bottom:.0001pt;text-align:right">А единицами себя».
+</p>
+<p class="a3" align="right" style="margin-top:0cm;margin-right:32.9pt;margin-bottom:
+0cm;margin-left:5.0cm;margin-bottom:.0001pt;text-align:right"><b>А.С.Пушкин 
+«Евгений Онегин»</b></p>
+
+<p class=a>Изучение языка программирования резонно начать со средств описания
+данных. Для этого сначала необходимо ввести понятия, касающиеся данных. При
+изучении<span style='mso-spacerun:yes'>  </span>Си нам периодически придется
+опускаться на уровень их машинного представления. Но при первоначальном
+знакомстве это материал можно пропустить (кроме п. <b style='mso-bidi-font-weight:
+normal'><a name="m1">«Типы данных и переменные».</b>), довольствуясь общими представлениями
+– целое, вещественное, символ, массив.<b style='mso-bidi-font-weight:normal'><a name="m2"><o:p></o:p></b></p>
+
+<h3><font face="Arial">Системы счисления</font></h3>
+
+<p class=a>Начнем издалека и посмотрим свежим взглядом на то, к чему давно
+привыкли. Вот число 1256. Что такое цифры?<b style='mso-bidi-font-weight:normal'><a name="m3">
+</b>Можно сказать, что это числа, из которых строится это число. Но, кроме
+значения самой цифры еще важным является положение (позиция), которая
+определяет ее вес, отчего системы счисления называются позиционными. Величина,
+на которую следующая цифра тяжелее предыдущей, называется основанием системы
+счисления <b style='mso-bidi-font-weight:normal'><a name="m4">P. </b>В системе с основанием <b
+style='mso-bidi-font-weight:normal'>P </b>должны быть цифры от 0 до <b
+style='mso-bidi-font-weight:normal'>P-1</b>. В общем виде значение числа
+вычисляется как <b style='mso-bidi-font-weight:normal'><a name="m5">W= <span lang=EN-US style='mso-bidi-font-family:
+"Times New Roman CYR";mso-ansi-language:EN-US'>&#931;</span><span lang=EN-US style='mso-ansi-language:
+EN-US'>R</span><sub>i</sub> p<sup>i</sup></b>. <span style='mso-bidi-font-size:
+12.0pt'>Например, то же самое <b style='mso-bidi-font-weight:normal'><a name="m6">1256 = 1<sup>.</sup>
+10<sup>3 </sup>+ 2<sup>.</sup> 10<sup>2 + </sup>5<sup>.</sup> 10<sup>1</sup> + 6
+<sup>.</sup> 10</b>. Кстати, от арабов нам достались не только цифры, но и
+порядок их нумерации, места (позиции) разрядов считаются справа налево.</span><span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a4><![if !mso]>
+<img border="0" src="Images/013-01.gif" width="612" height="92"><![endif]><p class="a"><![if !mso & !vml]>&nbsp;<![endif]>Младший разряд – это своего рода начало координат, от которого
+начинается выполнение всех операций (например, сложение идет от младших цифр,
+аналогично распространяется и перенос). Поэтому естественно, что в памяти
+компьютера числовые данные хранятся, начиная с младших разрядов. Точнее, <b
+style='mso-bidi-font-weight:normal'><span
+style='mso-spacerun:yes'> </span>младшими байтами вперед </b>(хотя история
+знает и противоположные примеры)<b style='mso-bidi-font-weight:normal'><a name="m7">. </b>Точно
+так же хранятся и элементы массивов, но в отличие от чисел мы их изображаем
+по-европейски, т.е. слева направо.</p>
+
+<p class=a>Но это еще цветочки. В шестнадцатеричном дампе памяти цифры в байте
+читаются справа налево, а сами байты целого числа – наоборот. Налицо конфликт
+цивилизаций. </p>
+
+<p class=a>В понимании взаимоотношения систем счисления важно то, что когда мы
+говорим о представлении числа в виде цифр, число воспринимается как <b
+style='mso-bidi-font-weight:normal'>величина, </b>над которой можно делать
+какие-то операции, например, складывать с другими. И эта величина не зависит от
+формы ее представления. Например, мешок сахара остается таковым, независимо от
+того, как считать его содержимое, в килограммах, пудах или фунтах. Значение
+сохраняется, а его представление будет разным. Как говорил удав в известном
+мультике «А в попугаях я значительно длиннее». То же самое касается и операций.
+Семь спичек плюс семь спичек равно четырнадцати, потому что четырнадцать это
+десяток и еще четыре (вспомните себя в<span style='mso-spacerun:yes'> 
+</span>первом классе).</p>
+
+<h3><font face="Arial">Преобразование чисел <sup>/</sup>из одной системы счисления в другую</font></h3>
+
+<p class=a>На самом деле алгоритмы, используемые для перевода чисел из одной
+системы счисления в другую, применяются для преобразования данных из внешней
+формы представления во внутреннюю (см. <b style='mso-bidi-font-weight:normal'><a name="m8">4.5</b>).
+«Родная» десятичная система счисления, в которой производятся преобразования,
+играет роль внутреннего представления, в ней мы оперируем числом как величиной
+или значением, а «посторонняя» система счисления рассматривается нами как
+состоящая из отдельных цифр.</p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m9">Преобразование целого в
+десятичную систему счисления. </b>Для перевода целого числа, представленного в
+системе счисления с основанием <b style='mso-bidi-font-weight:normal'><a name="m10"><span
+lang=EN-US style='mso-ansi-language:EN-US'>P</span>, </b>нужно воспользоваться
+формулой определения значения числа в этой системе счисления, выполнив соответствующие
+действия над цифрами (в родной десятичной системе) - <b style='mso-bidi-font-weight:
+normal'><a name="m11">W= </b><b style='mso-bidi-font-weight:normal'><a name="m12"><span lang=EN-US
+style='mso-bidi-font-family:"Times New Roman CYR";mso-ansi-language:EN-US'>&#931;</span><span lang=EN-US style='mso-ansi-language:
+EN-US'>R</span><sub>i</sub> p<sup>i</sup></b>.</p>
+
+</a>
+
+<p class=a8><span lang=EN-US><br>
+<a name="m12">2C5<sub>16</sub><sup> = </sup>2 <sup>. </sup>16<sup>2
+</sup>+ <sup><span style='mso-spacerun:yes'> </span></sup>12(C) <sup>. </sup>16<sup>1
+</sup>+ 5 = 512 + 192 + 5 = 709<sub>10</sub></a></span><br>
+<a name="m12"><span lang=EN-US>4375<sub>8 </sub>= 4 <sup>. </sup>8<sup>3</sup> + 3
+<sup>. </sup>8<sup>2</sup> + 7 <sup>. </sup>8 + 5 = 2048 + 192 + 56<span
+style='mso-spacerun:yes'>  </span>+ 5 = 2301<sub>10<o:p></o:p></sub></span></p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m13">Преобразования дробной части
+числа в десятичную систему счисления. </b>Для дробной части числа нужно
+использовать ту же самую формулу с учетом отрицательных степеней основания для
+разрядов дробной части - <b style='mso-bidi-font-weight:normal'><a name="m14">W= <span lang=EN-US style='mso-bidi-font-family:
+"Times New Roman CYR";mso-ansi-language:EN-US'>&#931;</span><span lang=EN-US style='mso-ansi-language:
+EN-US'>R</span><sub>i</sub> p<sup>-i</sup></b><a name="m14">.</a><br>
+&nbsp;</p>
+
+<a name="m14">
+
+<p class=a8><span style='mso-ansi-language:RU'>0.3F5<sub>16 </sub>= 3/16 + 15(</span><span
+lang=EN-US>F</span><span style='mso-ansi-language:RU'>)/16<sup>2</sup> + 5/16<sup>3</sup>
+= 0.1875</span><span lang=EN-US>0 + </span><span style='mso-ansi-language:RU'>0.0585</span><span
+lang=EN-US>9 </span><span style='mso-ansi-language:RU'>+ 0.0012</span><span lang=EN-US>2 </span><span
+style='mso-ansi-language:RU'>=</span> <span style='mso-ansi-language:RU'>0.247</span><span
+lang=EN-US>31</span><sub><span style='mso-ansi-language:RU'>10</span><span
+lang=EN-US><o:p>&nbsp;</o:p></span></sub></p>
+
+<p class=a8><span style='mso-ansi-language:RU'>0.524<sub>8 </sub>= 5/8 + 2/8<sup>2</sup>
++ 4/8<sup>3</sup> = 0.6250 + 0.0312 + 0.0078 = 0.6640<sub>10<o:p></o:p></sub></span></p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m15">Преобразование целого из
+десятичной системы счисления в систему с основанием </b><b style='mso-bidi-font-weight:
+normal'><a name="m16"><span lang=EN-US style='mso-ansi-language:EN-US'>P</span>. </b>Идея
+алгоритма заключается в том, что остаток от деления исходного числа на <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>P</span><span lang=EN-US> </span></b>дает нам младшую цифру числа в этой
+системе счисления. Последовательность остатков от деления исходного числа на
+основание системы счисления образует цифры числа, но в обратном порядке, начиная
+с младшей.</p>
+
+<p class=a8>&nbsp;</p>
+
+<p class=a8><span style='mso-ansi-language:RU'>2301 / 8 = 287 (5)<span
+style='mso-tab-count:1'>                                   </span>709
+<span style='mso-spacerun:yes'> </span>/ 16 = 44 (5)<o:p></o:p></span></p>
+
+<p class=a8><span style='mso-ansi-language:RU'><span style='mso-spacerun:yes'> 
+</span>287 / 8 = 35 <span style='mso-spacerun:yes'> </span>(7)<span
+style='mso-tab-count:1'>                                    </span><span
+style='mso-spacerun:yes'>  </span>44 /<span style='mso-spacerun:yes'> 
+</span>16 = 2<span style='mso-spacerun:yes'>  </span>(12=</span><span
+lang=EN-US>C</span><span style='mso-ansi-language:RU'>)<o:p></o:p></span></p>
+
+<p class=a8><span style='mso-ansi-language:RU'><span
+style='mso-spacerun:yes'>    </span>35 / 8 =<span style='mso-spacerun:yes'> 
+</span>4<span style='mso-spacerun:yes'>   </span>(3) <span style='mso-tab-count:
+1'>     </span><span style='mso-tab-count:1'>                              </span><span
+style='mso-spacerun:yes'>    </span>2 / <span
+style='mso-spacerun:yes'> </span>16 = 0<span style='mso-spacerun:yes'>  </span>(2)
+= 2</span><span lang=EN-US>C</span><span style='mso-ansi-language:RU'>5<sub>16<o:p></o:p></sub></span></p>
+
+<p class=a8><span style='mso-ansi-language:RU'><span
+style='mso-spacerun:yes'>      </span>4 / 8 =<span style='mso-spacerun:yes'> 
+</span>0<span style='mso-spacerun:yes'>   </span>(4)<span
+style='mso-spacerun:yes'>  </span>= 4375<sub>8<o:p></o:p></sub></span></p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m17">Преобразование дробной части из
+десятичной системы счисления в систему с основанием </b><b style='mso-bidi-font-weight:
+normal'><a name="m18"><span lang=EN-US style='mso-ansi-language:EN-US'>P</span>. </b>При
+умножении дробной части на основание системы счисления <b style='mso-bidi-font-weight:
+normal'><a name="m19"><span lang=EN-US style='mso-ansi-language:EN-US'>P</span><span
+lang=EN-US> </span></b>очередная цифра дробной части «выдвигается» в целую
+часть числа. Если ее отбросить и повторить процесс, то получим
+последовательность цифр дробной части (в прямом порядке).</p>
+
+<p class=a8><span style='mso-ansi-language:RU'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a8><span style='mso-ansi-language:RU'>0.24731 * 16 = 3.95696 </span>
+<span style='mso-spacerun:yes' lang="EN-US">  </span><span
+style='mso-ansi-language:RU'>(3)<o:p></o:p></span></p>
+
+<p class=a8><span style='mso-ansi-language:RU'>0.95696 * 16 = 15.31136 (15(F))<o:p></o:p></span></p>
+
+<p class=a8><span style='mso-ansi-language:RU'>0.31136 * 16 = 4.</span><span
+lang=EN-US>98176</span><span lang=EN-US style='mso-ansi-language:RU'> </span>
+<span style='mso-spacerun:yes' lang="EN-US">  </span><span
+style='mso-ansi-language:RU'>(4) </span></p>
+
+<p class=a8><span style='mso-ansi-language:RU'>0.98176 * 16 = 15.70816<span
+style='mso-spacerun:yes'>  </span>(15(</span><span lang=EN-US>F</span><span
+style='mso-ansi-language:RU'>)) = 0.3</span><span lang=EN-US>F</span><span
+style='mso-ansi-language:RU'>4</span><span lang=EN-US>F<sub>16</sub></span><span
+lang=EN-US style='mso-ansi-language:RU'> </span><span style='mso-bidi-font-family:
+Arial;mso-ansi-language:RU'>&#8776;</span><span lang=EN-US> 0.3F5<sub>16<o:p></o:p></sub></span></p>
+
+<p class=a8><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=a8><span lang=EN-US>0.6640 * 8 = 5.312 (5)</span></p>
+
+<p class=a8><span lang=EN-US>0.312<span style='mso-spacerun:yes'>   </span>* 8
+= 2.496 (2)</span></p>
+
+<p class=a8><span lang=EN-US>0.496<span style='mso-spacerun:yes'>   </span>* 8
+= 3.968 (3)</span></p>
+
+<p class=a8><span lang=EN-US>0.968<span style='mso-spacerun:yes'>   </span>* 8
+= 7.744 (7) = 0.5237<sub>8 </sub></span><span style='mso-bidi-font-family:Arial;
+mso-ansi-language:RU'>&#8776;</span><span lang=EN-US style='mso-bidi-font-family:
+Arial'> 0.524<sub>8<o:p></o:p></sub></span></p>
+
+<p class=a>Обратите внимание, что при преобразовании дробной части сначала в десятичную
+систему а затем обратно в исходную получаем значение, меньшее исходного,
+которое только при округлении становится «правильным». Это связано с тем, что
+при первом преобразовании мы оставили только четыре десятичных цифры, отбросив «хвост».</p>
+
+<span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:"Arial CYR";
+mso-fareast-font-family:"Times New Roman";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:RU;mso-fareast-language:RU;mso-bidi-language:AR-SA'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<h3><font face="Arial">Двоичная система счисления. Бит, байт, машинное слово</font></h3>
+
+<p class=a3 style='margin-top:0cm;margin-right:9.35pt;margin-bottom:0cm;
+margin-left:9.0cm;margin-bottom:.0001pt'>«Но дружбы нет и той меж нами. </p>
+
+<p class=a3 style='margin-top:0cm;margin-right:9.35pt;margin-bottom:0cm;
+margin-left:9.0cm;margin-bottom:.0001pt'>Все предрассудки истребя,<span
+style='mso-spacerun:yes'>  </span></p>
+
+<p class=a3 style='margin-top:0cm;margin-right:9.35pt;margin-bottom:0cm;
+margin-left:9.0cm;margin-bottom:.0001pt'>Мы почитаем всех <b style='mso-bidi-font-weight:
+normal'><a name="m20">нулями</b>, </p>
+
+<p class=a3 style='margin-top:0cm;margin-right:9.35pt;margin-bottom:0cm;
+margin-left:9.0cm;margin-bottom:.0001pt'>А <b style='mso-bidi-font-weight:normal'><a name="m21">единицами</b>
+себя». </p>
+
+<p class=a3 style='margin-top:0cm;margin-right:9.35pt;margin-bottom:0cm;
+margin-left:9.0cm;margin-bottom:.0001pt'>А.С.Пушкин «Евгений Онегин»</p>
+
+<p class=a>Общеизвестно, что компьютеры используют двоичную систему. А что это
+значит, и почему именно ее? Давайте подробнее уточним все «за». Во-первых, она
+самая технологичная, поскольку элементы с двумя устойчивыми состояниями
+(да-нет, включено-выключено) самые простые и самые надежные. Во-вторых,
+алгоритмы выполнения операций в этой системе тоже самые простые. Например,
+таблица умножения в десятичной системе имеет размерность 10х10, т.е. содержит
+100 произведений всех пар цифр, а в двоичной системе всего 4. </p>
+
+<p class=a>Посмотрим, например, что происходит при переводе двоичного числа в
+десятичную систему счисления. Для этого берется формула определения его
+значения <b style='mso-bidi-font-weight:normal'><a name="m22">W= </b><b style='mso-bidi-font-weight:
+normal'><a name="m23"><span lang=EN-US style='mso-bidi-font-family:"Times New Roman CYR";
+mso-ansi-language:EN-US'>&#931;</span></b><b style='mso-bidi-font-weight:normal'><a name="m24"><span
+lang=EN-US style='mso-ansi-language:EN-US'>R</span><sub>i</sub> 2<sup>i</sup>.</b>
+<span style='mso-bidi-font-size:12.0pt'>При наличии 1 в двоичном разряде
+соответствующая степень двойки добавляется к сумме, при наличии 0 –
+пропускается.<o:p></o:p></span></p>
+
+<p class=a><sub><span style='font-family:Arial'>8 7 6 5 4 3 2 1 0<o:p></o:p></span></sub></p>
+
+<p class=a><span style='font-family:Arial'>100101101 = 2<sup>8</sup> + 2<sup>5 </sup>+
+2<sup>3 </sup>+ 2<sup>2 </sup>+ 2<sup>0 </sup>= 256 + 32 + 8 + 4 + 1 = 301<sub>10</sub><sup>
+</sup><o:p></o:p></span></p>
+
+<p class=a>Естественно, что за простоту эту приходится платить. Как мы уже
+выяснили, чем меньше основание системы счисления, тем больше цифр требуется для
+представления заданной величины. Поэтому в двоичной системе число будет иметь
+максимальную разрядность.</p>
+
+<p class=a>Но двоичная система интересует нас не сама по себе, а как основа
+внутреннего представления данных в компьютере. Поэтому и появляется
+соответствующая терминология.</p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m25">Бит – </b>количество
+информации, содержащееся в одном разряде двоичной системы счисления. Здесь мы
+сознательно отступим от теории информации, где это понятие введено строго и
+формально. Для нас достаточно, что один бит – это данные, передаваемые
+значением 1 или 0.</p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m26">Двоичный разряд</b> – элемент
+архитектуры, хранящий один бит данных (двоичный разряд). Заметим, что речь идет
+о различных понятиях. Двоичный разряд и бит соотносятся между собой так же как
+стакан и его содержимое.</p>
+
+<p class=a>К сожалению, узкотехнический термин «информация» в настоящее время
+настолько размыт как научными интерпретациями, так и псевдонаучными
+спекуляциями (типа «ля-ля, тополя, торсионные поля»), поэтому отныне мы будем
+использовать термин <b style='mso-bidi-font-weight:normal'><a name="m27">данные. Данные – это
+такая информация, которую можно представить в компьютере. <o:p></o:p></b></p>
+
+<p class=a4>
+<img border="0" src="Images/smile.jpg"  align="left">«Информация – это такие
+данные, которые нельзя представить в компьютере». (Утверждение, обратное
+предыдущему).</p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m28">Машинное слово – </b>упорядоченное
+множество двоичных разрядов. Количество разрядов в машинном слове называется
+его <b style='mso-bidi-font-weight:normal'><a name="m29">размерностью. </b>Разряды нумеруются
+справа налево, начиная с 0. Самый правый разряд называется младшим, самый левый
+– старшим.</p>
+
+<p class=a><img border="0" src="Images/013-02.gif" width="327" height="69"><p class=a><b style='mso-bidi-font-weight:normal'><a name="m30">Байт – </b>машинное слово
+минимальной размерности, используемое для хранения, передачи и обработки
+данных. В настоящее время размерность байта равна 8 двоичных разрядов. Как
+правило, размерности всех других машинных слов кратны байту.</p>
+
+<p class=a>Размерность байта - 8 бит - принята не только для представления
+данных в большинстве компьютеров, но и в качестве стандарта для хранения данных
+на внешних носителях, для передачи данных по каналам связи, для представления
+текстовой информации. Кроме того, байт является универсальным
+&quot;измерительным инструментом&quot; - размерность всех форм представления
+данных устанавливается кратной байту. При этом машинное слово считается разбитым
+на байты, которые нумеруются, начиная с младших разрядов.</p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m31">Стандартное машинное слово</b>
+- машинное слово, размерность которого совпадает с разрядностью процессора.
+Большинство команд процессора использует его для обработки данных. Кроме того,
+используется укороченного машинное слово и двойное машинное слово (обозначаемое
+в языках программирования терминами <b style='mso-bidi-font-weight:normal'><a name="m32"><span
+lang=EN-US style='mso-ansi-language:EN-US'>short</span><span lang=EN-US> </span></b>и
+<b style='mso-bidi-font-weight:normal'><a name="m33"><span lang=EN-US style='mso-ansi-language:
+EN-US'>long</span></b>).</p>
+
+<p class=a>Далее уместно ввести понятие <b style='mso-bidi-font-weight:normal'><a name="m34">информационной
+емкости</b> машинного слова. Т.к. каждый двоичный разряд может принимать два
+значения, два разряда – четыре и т.д., то для n-разрядного слова получим <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>W</span>=2<sup>n</sup></b> <span style='mso-bidi-font-size:12.0pt'>сочетаний
+(или возможных значений). Причем это не зависит от формы представления данных,
+будь то символы текста,</span> цветовая палитра или диапазон целого числа.
+Например, кодовая таблица представления символов текстового файла в формате
+один символ – один байт содержит 2<sup>8</sup><span style='mso-bidi-font-size:
+12.0pt'>=256 значений, 32-разрядное машинное слово представляет целое без знака
+в диапазоне 0…</span> 232<span style='mso-bidi-font-size:12.0pt'>-1, т.е. </span>232
+<span style='mso-bidi-font-size:12.0pt'>значений. Кстати «сколько это будет в
+граммах»? Точнее в десятичной системе.<o:p></o:p></span></p>
+
+<p class=a><span style='mso-bidi-font-size:12.0pt;mso-bidi-font-weight:bold'>Совсем
+необязательно для этого считать степени двойки. Информационная емкость трех десятичных цифр (разрядов) примерно
+соответствует аналогичной емкости десяти двоичных разрядов. Это можно
+использовать для оценки информационной емкости машинных слов. Например, для
+32-разрядного слова <b><a name="m35">W=2</b></span><b style='mso-bidi-font-weight:normal'><a name="m36"><sup>32</sup></b><b><a name="m37"><span
+lang=EN-US style='mso-bidi-font-size:12.0pt;mso-ansi-language:EN-US'>=2</span></b><b
+style='mso-bidi-font-weight:normal'><sup>2</sup></b><b style='mso-bidi-font-weight:
+normal'><a name="m38"><sup><span style='mso-bidi-font-size:12.0pt'>.</span></sup></b><b><a name="m39"><span
+lang=EN-US style='mso-bidi-font-size:12.0pt;mso-ansi-language:EN-US'>2</span></b><b
+style='mso-bidi-font-weight:normal'><sup>10</sup></b><b style='mso-bidi-font-weight:
+normal'><a name="m40"><sup><span style='mso-bidi-font-size:12.0pt'>.</span></sup></b><b><a name="m41"><span
+lang=EN-US style='mso-bidi-font-size:12.0pt;mso-ansi-language:EN-US'>2</span></b><b
+style='mso-bidi-font-weight:normal'><sup>10</sup></b><b style='mso-bidi-font-weight:
+normal'><a name="m42"><sup><span style='mso-bidi-font-size:12.0pt'>.</span></sup></b><b><a name="m43"><span
+lang=EN-US style='mso-bidi-font-size:12.0pt;mso-ansi-language:EN-US'>2</span></b><b
+style='mso-bidi-font-weight:normal'><sup>10</sup> </b><b style='mso-bidi-font-weight:
+normal'><a name="m44"><span style='mso-bidi-font-family:"Arial CYR"'>&#8776;</span></b><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-bidi-font-family:
+"Arial CYR";mso-ansi-language:EN-US'> 4</span></b><b style='mso-bidi-font-weight:
+normal'><a name="m45"><sup><span style='mso-bidi-font-size:12.0pt'>.</span></sup></b><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-bidi-font-size:
+12.0pt;mso-ansi-language:EN-US'>10</span><sup>3</sup></b><b style='mso-bidi-font-weight:
+normal'><a name="m46"><sup><span style='mso-bidi-font-size:12.0pt'>.</span></sup></b><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-bidi-font-size:
+12.0pt;mso-ansi-language:EN-US'>10</span><sup>3</sup></b><b style='mso-bidi-font-weight:
+normal'><a name="m47"><sup><span style='mso-bidi-font-size:12.0pt'>.</span></sup></b><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-bidi-font-size:
+12.0pt;mso-ansi-language:EN-US'>10</span><sup>3</sup></b><b style='mso-bidi-font-weight:
+normal'><a name="m48"><span lang=EN-US style='mso-bidi-font-size:12.0pt;mso-ansi-language:
+EN-US'>=</span></b><b style='mso-bidi-font-weight:normal'><a name="m49"><span lang=EN-US
+style='mso-bidi-font-family:"Arial CYR";mso-ansi-language:EN-US'>4</span><sup><span style='mso-bidi-font-size:12.0pt'>.</span></sup><span lang=EN-US style='mso-bidi-font-size:
+12.0pt;mso-ansi-language:EN-US'>10</span><sup>9</sup></b></p>
+<p class=a>&nbsp;</p>
+
+<div style='mso-element:para-border-div;border:solid windowtext 1.5pt;
+padding:1.0pt 0cm 1.0pt 1.0pt;margin-left:35.45pt;margin-right:285.75pt'>
+
+<p class=a2 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:0cm;border:none;mso-border-alt:solid windowtext 1.5pt;padding:0cm;
+mso-padding-alt:1.0pt 0cm 1.0pt 1.0pt'>2<sup>10 </sup>= 1024 <span
+style='mso-bidi-font-family:"Arial CYR"'>&#8776;</span> 1000 = 10<sup>3</sup></p>
+
+</div>
+
+<p class="a4" style="margin-left:1.0cm">
+<img border="0" src="Images/smile.jpg" width="40" height="41" align="left">«Чайник 
+– это тот, кто думает, что в килобайте 1000 байтов, а программист – это тот, кто 
+считает, что в килограмме 1024 грамма». <b><a name="m50">Анекдот (Здесь на самом деле больше 
+смысла, чем юмора</b>).</p>
+
+<h3>&nbsp;</h3>
+<h3><font face="Arial">Эквиваленты двоичной системы</font></h3>
+
+<p class=a>До сих пор мы говорили о системах счисления применительно к
+представлению и преобразованию в них целых чисел. Поскольку двоичная система –
+родная для компьютера, как для нас – десятичная, то такие преобразования
+происходят при вводе и выводе числовых данных.<b style='mso-bidi-font-weight:
+normal'><a name="m51"> </b>Когда же речь идет о компьютерной архитектуре, внутреннем
+представлении команд, данных и адресов, десятичная система в общем-то не нужна.
+<span style='mso-bidi-font-weight:bold'>Более того, она вредна, потому что
+размерности данных все равно остаются двоичными. Например, приложение,
+выполняясь на 32-разрядном процессоре, обращается к памяти, используя адрес –
+такое же 32-разрядное машинное слово. Кстати, примерно оценить значение адреса
+можно, подсчитав количество значащих разрядов (отбросив незначащие нули слева).
+<o:p></o:p></span></p>
+
+<p class=a>Например, примерное значение адреса 00000001101010001100110000111101
+можно оценить, отбросив 7 нулей слева. Для оставшихся 25 значащих цифр, а <b
+style='mso-bidi-font-weight:normal'>2<sup>25</sup></b><b style='mso-bidi-font-weight:
+normal'><a name="m52"><span style='mso-bidi-font-size:12.0pt'> = 2</span><sup>5</sup></b><b
+style='mso-bidi-font-weight:normal'><sup><span style='mso-bidi-font-size:12.0pt'>.</span></sup><span style='mso-bidi-font-size:12.0pt'>2</span><sup>20<span style='mso-bidi-font-size:12.0pt'>
+</span></sup><span style='mso-bidi-font-size:
+12.0pt'>= 64<sup>.</sup>10<sup>6</sup></span></b><span style='mso-bidi-font-size:
+12.0pt'> – примерно в районе 64 мегабайт, если речь идет об адресации к байтам.<o:p></o:p></span></p>
+
+<p class=a><span style='mso-bidi-font-size:12.0pt;mso-bidi-font-weight:bold'>Не
+правда ли, напоминает современные банковские реквизиты. К счастью, программисты
+избавлены от муторной процедуры записи нулей и единичек. Восьмеричная и
+шестнадцатеричная системы счисления хороши как раз тем, что кратны двоичной.
+Одна восьмеричная цифра кодирует три двоичных разряда, одна шестнадцатеричная –
+четыре (тетрада). При этом сама цифра раскладывается как число в двоичное
+представление по степеням двойки:</span></p>
+
+<p class=a4><span style='mso-bidi-font-size:12.0pt;mso-bidi-font-weight:bold'><o:p>&nbsp;</o:p></span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='margin-left:62.1pt;border-collapse:collapse;border:none;mso-border-alt:
+ solid windowtext .5pt;mso-yfti-tbllook:480;mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+ mso-border-insideh:.5pt solid windowtext;mso-border-insidev:.5pt solid windowtext'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;height:26.1pt'>
+  <td width=66 valign=top style='width:49.6pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:26.1pt'>
+  <h3 style='margin-left:7.1pt'><span style='font-size:14.0pt'><o:p>&nbsp;</o:p></span></h3>
+  </td>
+  <td width=66 valign=top style='width:49.65pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:26.1pt'>
+  <h3 align=center style='margin-left:7.1pt;text-align:center'><span
+  style='font-size:14.0pt'>8421<o:p></o:p></span></h3>
+  </td>
+  <td width=57 valign=top style='width:42.5pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:26.1pt'>
+  <h3 align=center style='margin-left:7.1pt;text-align:center'><span
+  style='font-size:14.0pt'><o:p>&nbsp;</o:p></span></h3>
+  </td>
+  <td width=66 valign=top style='width:49.6pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:26.1pt'>
+  <h3 align=center style='margin-left:7.1pt;text-align:center'><span
+  style='font-size:14.0pt'>8421<o:p></o:p></span></h3>
+  </td>
+  <td width=57 valign=top style='width:42.55pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:26.1pt'>
+  <h3 align=center style='margin-left:7.1pt;text-align:center'><span
+  style='font-size:14.0pt'><o:p>&nbsp;</o:p></span></h3>
+  </td>
+  <td width=66 valign=top style='width:49.6pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:26.1pt'>
+  <h3 align=center style='margin-left:7.1pt;text-align:center'><span
+  style='font-size:14.0pt'>8421<o:p></o:p></span></h3>
+  </td>
+  <td width=47 valign=top style='width:35.45pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:26.1pt'>
+  <h3 align=center style='margin-left:7.1pt;text-align:center'><span
+  style='font-size:14.0pt'><o:p>&nbsp;</o:p></span></h3>
+  </td>
+  <td width=65 valign=top style='width:49.05pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:26.1pt'>
+  <h3 align=center style='margin-left:7.1pt;text-align:center'><span
+  style='font-size:14.0pt'>8421<o:p></o:p></span></h3>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;height:23.4pt'>
+  <td width=66 valign=top style='width:49.6pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:23.4pt'>
+  <h3 align=center style='margin-left:7.1pt;text-align:center'><span
+  style='font-size:14.0pt'>0<o:p></o:p></span></h3>
+  </td>
+  <td width=66 valign=top style='width:49.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:23.4pt'>
+  <h3 align=center style='margin-left:7.1pt;text-align:center'><span
+  lang=EN-US style='font-size:14.0pt;mso-ansi-language:EN-US'>0000<o:p></o:p></span></h3>
+  </td>
+  <td width=57 valign=top style='width:42.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:23.4pt'>
+  <h3 align=center style='margin-left:7.1pt;text-align:center'><span
+  style='font-size:14.0pt'>4<o:p></o:p></span></h3>
+  </td>
+  <td width=66 valign=top style='width:49.6pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:23.4pt'>
+  <h3 align=center style='margin-left:7.1pt;text-align:center'><span
+  lang=EN-US style='font-size:14.0pt;mso-ansi-language:EN-US'>0100<o:p></o:p></span></h3>
+  </td>
+  <td width=57 valign=top style='width:42.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:23.4pt'>
+  <h3 align=center style='margin-left:7.1pt;text-align:center'><span
+  style='font-size:14.0pt'>8<o:p></o:p></span></h3>
+  </td>
+  <td width=66 valign=top style='width:49.6pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:23.4pt'>
+  <h3 align=center style='margin-left:7.1pt;text-align:center'><span
+  lang=EN-US style='font-size:14.0pt;mso-ansi-language:EN-US'>1000<o:p></o:p></span></h3>
+  </td>
+  <td width=47 valign=top style='width:35.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:23.4pt'>
+  <h3 align=center style='margin-left:7.1pt;text-align:center'><span
+  lang=EN-US style='font-size:14.0pt;mso-ansi-language:EN-US'>C<o:p></o:p></span></h3>
+  </td>
+  <td width=65 valign=top style='width:49.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:23.4pt'>
+  <h3 align=center style='margin-left:7.1pt;text-align:center'><span
+  lang=EN-US style='font-size:14.0pt;mso-ansi-language:EN-US'>1100<o:p></o:p></span></h3>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td width=66 valign=top style='width:49.6pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <h3 align=center style='margin-left:7.1pt;text-align:center'><span
+  style='font-size:14.0pt'>1<o:p></o:p></span></h3>
+  </td>
+  <td width=66 valign=top style='width:49.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <h3 align=center style='margin-left:7.1pt;text-align:center'><span
+  lang=EN-US style='font-size:14.0pt;mso-ansi-language:EN-US'>0001<o:p></o:p></span></h3>
+  </td>
+  <td width=57 valign=top style='width:42.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <h3 align=center style='margin-left:7.1pt;text-align:center'><span
+  style='font-size:14.0pt'>5<o:p></o:p></span></h3>
+  </td>
+  <td width=66 valign=top style='width:49.6pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <h3 align=center style='margin-left:7.1pt;text-align:center'><span
+  lang=EN-US style='font-size:14.0pt;mso-ansi-language:EN-US'>0101<o:p></o:p></span></h3>
+  </td>
+  <td width=57 valign=top style='width:42.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <h3 align=center style='margin-left:7.1pt;text-align:center'><span
+  style='font-size:14.0pt'>9<o:p></o:p></span></h3>
+  </td>
+  <td width=66 valign=top style='width:49.6pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <h3 align=center style='margin-left:7.1pt;text-align:center'><span
+  lang=EN-US style='font-size:14.0pt;mso-ansi-language:EN-US'>1001<o:p></o:p></span></h3>
+  </td>
+  <td width=47 valign=top style='width:35.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <h3 align=center style='margin-left:7.1pt;text-align:center'><span
+  lang=EN-US style='font-size:14.0pt;mso-ansi-language:EN-US'>D<o:p></o:p></span></h3>
+  </td>
+  <td width=65 valign=top style='width:49.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <h3 align=center style='margin-left:7.1pt;text-align:center'><span
+  lang=EN-US style='font-size:14.0pt;mso-ansi-language:EN-US'>1101<o:p></o:p></span></h3>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td width=66 valign=top style='width:49.6pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <h3 align=center style='margin-left:7.1pt;text-align:center'><span
+  style='font-size:14.0pt'>2<o:p></o:p></span></h3>
+  </td>
+  <td width=66 valign=top style='width:49.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <h3 align=center style='margin-left:7.1pt;text-align:center'><span
+  lang=EN-US style='font-size:14.0pt;mso-ansi-language:EN-US'>0010<o:p></o:p></span></h3>
+  </td>
+  <td width=57 valign=top style='width:42.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <h3 align=center style='margin-left:7.1pt;text-align:center'><span
+  style='font-size:14.0pt'>6<o:p></o:p></span></h3>
+  </td>
+  <td width=66 valign=top style='width:49.6pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <h3 align=center style='margin-left:7.1pt;text-align:center'><span
+  lang=EN-US style='font-size:14.0pt;mso-ansi-language:EN-US'>0110<o:p></o:p></span></h3>
+  </td>
+  <td width=57 valign=top style='width:42.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <h3 align=center style='margin-left:7.1pt;text-align:center'><span
+  style='font-size:14.0pt'>A</span><span lang=EN-US style='font-size:14.0pt;
+  mso-ansi-language:EN-US'><o:p></o:p></span></h3>
+  </td>
+  <td width=66 valign=top style='width:49.6pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <h3 align=center style='margin-left:7.1pt;text-align:center'><span
+  lang=EN-US style='font-size:14.0pt;mso-ansi-language:EN-US'>1010<o:p></o:p></span></h3>
+  </td>
+  <td width=47 valign=top style='width:35.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <h3 align=center style='margin-left:7.1pt;text-align:center'><span
+  lang=EN-US style='font-size:14.0pt;mso-ansi-language:EN-US'>E<o:p></o:p></span></h3>
+  </td>
+  <td width=65 valign=top style='width:49.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <h3 align=center style='margin-left:7.1pt;text-align:center'><span
+  lang=EN-US style='font-size:14.0pt;mso-ansi-language:EN-US'>1110<o:p></o:p></span></h3>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4;mso-yfti-lastrow:yes'>
+  <td width=66 valign=top style='width:49.6pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <h3 align=center style='margin-left:7.1pt;text-align:center'><span
+  style='font-size:14.0pt'>3<o:p></o:p></span></h3>
+  </td>
+  <td width=66 valign=top style='width:49.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <h3 align=center style='margin-left:7.1pt;text-align:center'><span
+  lang=EN-US style='font-size:14.0pt;mso-ansi-language:EN-US'>0011<o:p></o:p></span></h3>
+  </td>
+  <td width=57 valign=top style='width:42.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <h3 align=center style='margin-left:7.1pt;text-align:center'><span
+  style='font-size:14.0pt'>7<o:p></o:p></span></h3>
+  </td>
+  <td width=66 valign=top style='width:49.6pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <h3 align=center style='margin-left:7.1pt;text-align:center'><span
+  lang=EN-US style='font-size:14.0pt;mso-ansi-language:EN-US'>0111<o:p></o:p></span></h3>
+  </td>
+  <td width=57 valign=top style='width:42.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <h3 align=center style='margin-left:7.1pt;text-align:center'><span
+  lang=EN-US style='font-size:14.0pt;mso-ansi-language:EN-US'>B<o:p></o:p></span></h3>
+  </td>
+  <td width=66 valign=top style='width:49.6pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <h3 align=center style='margin-left:7.1pt;text-align:center'><span
+  lang=EN-US style='font-size:14.0pt;mso-ansi-language:EN-US'>1011<o:p></o:p></span></h3>
+  </td>
+  <td width=47 valign=top style='width:35.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <h3 align=center style='margin-left:7.1pt;text-align:center'><span
+  lang=EN-US style='font-size:14.0pt;mso-ansi-language:EN-US'>F<o:p></o:p></span></h3>
+  </td>
+  <td width=65 valign=top style='width:49.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <h3 align=center style='margin-left:7.1pt;text-align:center'><span
+  lang=EN-US style='font-size:14.0pt;mso-ansi-language:EN-US'>1111<o:p></o:p></span></h3>
+  </td>
+ </tr>
+</table>
+
+<p class=a>Попробуем преобразовать к шестнадцатеричному виду приведенное выше
+число. В синтаксисе Си шестнадцатеричные числа имеют префикс «0х».</p>
+
+<p class=a8><span style='mso-ansi-language:RU'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a8><span lang=EN-US>0000<span style='mso-spacerun:yes'>  </span>0001<span
+style='mso-spacerun:yes'>  </span>1010<span style='mso-spacerun:yes'>  </span>1000<span
+style='mso-spacerun:yes'>  </span>1100<span style='mso-spacerun:yes'>  </span>1100<span
+style='mso-spacerun:yes'>  </span>0011 <span style='mso-spacerun:yes'> </span>1101</span></p>
+
+<p class=a8 style='margin-left:0cm'>
+<span
+style='mso-spacerun:yes; mso-bidi-font-size:12.0pt; mso-bidi-font-family:Arial; mso-ansi-language:RU'>       </span><span lang=EN-US
+style='mso-bidi-font-size:12.0pt;mso-bidi-font-family:Arial'>0 <span
+style='mso-spacerun:yes'>      </span>1<span style='mso-spacerun:yes'>      
+</span>A<span style='mso-spacerun:yes'>        </span>8<span style='mso-spacerun:yes'>      
+</span>C<span style='mso-spacerun:yes'>       </span>C<span
+style='mso-spacerun:yes'>       </span>3<span style='mso-spacerun:yes'>     
+</span></span>
+<span style='mso-spacerun:yes; mso-bidi-font-size:12.0pt; mso-bidi-font-family:Arial; mso-ansi-language:RU' lang="EN-US"> </span><span
+lang=EN-US style='mso-bidi-font-size:12.0pt;mso-bidi-font-family:Arial'>D<span
+style='mso-tab-count:1'>  </span><span style='mso-spacerun:yes'>    </span>= 0x01A8CC3D<o:p></o:p></span></p>
+
+<p class=a>А теперь попробуем разобраться еще и с байтным представлением.
+Кстати, сколь цифр необходимо для представления байта. Видимо две, два по
+четыре разряда – всего восемь. Тогда получится, что в памяти это машинное слово
+разместится побайтно так <span style='mso-bidi-font-size:12.0pt;font-family:
+Arial'>01_</span><span lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:
+Arial;mso-ansi-language:EN-US'>A</span><span style='mso-bidi-font-size:12.0pt;
+font-family:Arial'>8_</span><span lang=EN-US style='mso-bidi-font-size:12.0pt;
+font-family:Arial;mso-ansi-language:EN-US'>CC</span><span style='mso-bidi-font-size:
+12.0pt;font-family:Arial'>_3</span><span lang=EN-US style='mso-bidi-font-size:
+12.0pt;font-family:Arial;mso-ansi-language:EN-US'>D</span><span
+style='mso-bidi-font-size:12.0pt;font-family:Arial'>.<o:p></o:p></span></p>
+
+<p class=a><span style='mso-bidi-font-size:12.0pt'>На самом деле не совсем так.</span>
+Мы забыли, что размещение производится младшими байтами вперед, поэтому в любом
+дампе (<b style='mso-bidi-font-weight:normal'><a name="m53"><span lang=EN-US
+style='mso-ansi-language:EN-US'>dump</span></b> – вывод содержимого памяти во
+внутреннем представлении) Вы увидите все в обратном порядке <span
+style='font-family:Arial'>3D_CC_A8_01<o:p></o:p></span></p>
+
+<p class=a>Получается, что нужно перевернуть не весь дамп, <span
+style='mso-spacerun:yes'> </span>а по отдельности каждую часть, относящуюся к
+машинному слову. Тут то мы и подходим к фундаментальному свойству памяти: по
+формальному ее содержимому нельзя определись, что там находится. Все зависит
+от<span style='mso-spacerun:yes'>  </span>формата – последовательности
+размещения данных и их интерпретации. Грубо говоря, на байте или машинном слове
+не написано, чем они являются.</p>
+
+<p class=a>Например, байт <span style='font-family:Arial'>0хF8 </span><span
+style='font-family:"Times New Roman"'>интерпретируется <span
+style='mso-spacerun:yes'> </span>в формате целого числа со знаком как значение
+-8, без знака – как 248, как символ текстового файла «ш» в кодировке
+Windows-1251, или просто как машинное слово, в котором 5 старших разрядов –
+единичные, а три младших – нулевые. Кстати, машинное<span
+style='mso-spacerun:yes'>  </span>слово с заданным размещением нулевых и
+единичных разрядов называется маской. Также это может быть частью машинной
+команды, элементом битового растра, да мало ли еще чем.<o:p></o:p></span></p>
+
+<p class=3><font face="Arial">Форматы базовых типов данных</font></p>
+
+<p class=a><span class=MsoPageNumber><span style='font-family:"Times New Roman CYR";
+mso-bidi-font-family:"Times New Roman"'>Возникает резонный вопрос: зачем при
+программировании на языке высокого уровня и работе с переменными знать их
+форматы представления в памяти. При программировании на Си/Си++ для этого
+имеются определенные основания:<o:p></o:p></span></span></p>
+
+<p class=a1 style='margin-left:71.45pt;text-indent:-18.0pt;mso-list:l2 level1 lfo1;
+tab-stops:42.55pt list 71.45pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>для понимания <span
+style='mso-spacerun:yes'> </span>сущности преобразовании целого со знаком в
+беззнаковое (и наоборот) требуется иметь представление об их форматах;</p>
+
+<p class=a1 style='margin-left:71.45pt;text-indent:-18.0pt;mso-list:l2 level1 lfo1;
+tab-stops:42.55pt list 71.45pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>при управлении памятью на низком (физическом)
+уровне возможен доступ к «составным частям» формата представляемых данных, а
+также переход от одного типа данных к другому при сохранении содержимого
+памяти;</p>
+
+<p class=a1 style='margin-left:71.45pt;text-indent:-18.0pt;mso-list:l2 level1 lfo1;
+tab-stops:42.55pt list 71.45pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>при отладке программ, работающих с двоичными
+файлами, требуется просматривать двоичные файлы на физическом уровне,<span
+style='mso-spacerun:yes'>  </span>при<span style='mso-spacerun:yes'> 
+</span>этом форматы представляемых данных в нем идентичны внутренним.</p>
+
+<p class=a>Максимально, что при этом может потребоваться, - это умение «видеть»
+граничные значения формата (0,1,-1, максимально возможное и т.п.), а также
+переводить эти значения в ограниченном диапазоне в «естественный» вид.</p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m54">Целое без знака. </b>Форма
+представления целого числа без знака использует естественную интерпретацию
+разрядов машинного слова как цифр числа в двоичной системе счисления (см. выше).
+Все разряды являются значащими, вес каждого определяется соответствующей
+степенью 2. Диапазон значений <b style='mso-bidi-font-weight:normal'><a name="m55">n-</b>разрядного
+числа<span style='mso-spacerun:yes'>   </span><b style='mso-bidi-font-weight:normal'><a name="m56">0..2<sup>n</sup>-1.
+</b>При использовании шестнадцатеричного эквивалента</p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m57">Целое со знаком. Прямой и
+дополнительный код. </b>Для представления данных половина информационной емкости
+отводится под отрицательные значения. Поэтому общий диапазон выглядит -<b
+style='mso-bidi-font-weight:normal'>2<sup>n-1</sup>-1…2<sup>n-1</sup>-1 </b>при
+любом формате их представления. <b style='mso-bidi-font-weight:normal'><a name="m58">В прямом
+коде </b>абсолютное значение числа представлено в той же форме, что в целом без
+знака, в <b style='mso-bidi-font-weight:normal'><a name="m59">n-1 </b><a name="m59">разрядах, а старший
+разряд содержит знак числа: 0 – для положительного, 1 – для отрицательного.
+Рассмотрим, как выглядит представление граничных значений диапазона в
+шестнадцатеричной системе:</a><br>
+&nbsp;</p>
+
+<a name="m59">
+
+<p class=a8><font size="3"><st1:metricconverter ProductID="0000003F" w:st="on"><span
+ lang=EN-US>0000003F</span></st1:metricconverter><span style='mso-tab-count:
+1'>        </span><span style='mso-tab-count:
+1; mso-ansi-language:RU'>          </span><span lang=EN-US>63</span></font></p>
+
+<p class=a8><font size="3"><span lang=EN-US>…</span></font></p>
+
+<p class=a8><span style='mso-ansi-language:RU'><font size="3">7</font></span><font size="3"><span lang=EN-US>FFFFFFF</span><span
+style='mso-ansi-language:RU'><span style='mso-tab-count:1'>                 </span>2</span><sup><span lang=EN-US>n</span><span
+style='mso-ansi-language:RU'>-1</span></sup></font><span style='mso-ansi-language:
+RU'><font size="3">-1</font><o:p></o:p></span></p>
+
+<p class=a8><span style='mso-ansi-language:RU'><font size="3">80000000<span style='mso-tab-count:
+2'>                  </span>-0 (минус 0)</font><o:p></o:p></span></p>
+
+<p class=a8><span style='mso-ansi-language:RU'><font size="3">80000001<span style='mso-tab-count:
+2'>                  </span>-1</font><o:p></o:p></span></p>
+
+<p class=a8><span style='mso-ansi-language:RU'><font size="3">80000002<span style='mso-tab-count:
+2'>                  </span>-2</font><o:p></o:p></span></p>
+
+<p class=a8><span style='mso-ansi-language:RU'><font size="3">…</font><o:p></o:p></span></p>
+
+<p class=a8><span lang=EN-US><font size="3">FFFFFFFF</font></span><font size="3"><span style='mso-ansi-language:
+RU'><span style='mso-tab-count:1'>                </span>-(2</span><sup><span
+lang=EN-US>n</span><span style='mso-ansi-language:RU'>-1</span></sup></font><span
+style='mso-ansi-language:RU'><font size="3">-1)</font><o:p></o:p></span></p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m60">Дополнительный код </b>не
+столь «прямолинеен». Его основное свойство – применение операции обычного
+беззнакового сложения к числам, представленным в этом формате, дает корректный
+результат (причем также в дополнительном коде). Если же быть более точным, то
+отрицательные числа определенным образом отображаются на диапазон положительных
+(беззнаковых) так, что для всего диапазона начинает выполняться указанное
+свойство.</p>
+
+<p class=a>Дополнительный код может быть введен в любой системе счисления.
+Рассмотрим его работу на привычной нам десятичной:</p>
+
+<p class=a1 style='margin-left:71.45pt;text-indent:-18.0pt;mso-list:l1 level1 lfo3;
+tab-stops:42.55pt list 71.45pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>вместо знака вводится еще одна цифра слева со
+значением 0;</p>
+
+<p class=a1 style='margin-left:71.45pt;text-indent:-18.0pt;mso-list:l1 level1 lfo3;
+tab-stops:42.55pt list 71.45pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>положительные числа представляются обычным
+образом;</p>
+
+<p class=a1 style='margin-left:71.45pt;text-indent:-18.0pt;mso-list:l1 level1 lfo3;
+tab-stops:42.55pt list 71.45pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>каждая цифра <b style='mso-bidi-font-weight:
+normal'><a name="m61"><span lang=EN-US style='mso-ansi-language:EN-US'>v</span></b><span
+lang=EN-US> </span>отрицательного числа заменяется на дополнение ее до <b
+style='mso-bidi-font-weight:normal'>n-1</b>, т.е. <b style='mso-bidi-font-weight:
+normal'><a name="m62">n-1-</b><b style='mso-bidi-font-weight:normal'><a name="m63"><span lang=EN-US
+style='mso-ansi-language:EN-US'>v</span></b>, где <b style='mso-bidi-font-weight:
+normal'><a name="m64">n</b> -основание системы счисления. Для десятичной системы - это
+дополнение до 9, то есть цифра, которая в сумме с исходной дает 9;</p>
+
+<p class=a1 style='margin-left:71.45pt;text-indent:-18.0pt;mso-list:l1 level1 lfo3;
+tab-stops:42.55pt list 71.45pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>к полученному значению добавляется 1.</p>
+
+<p class=a>Обратный перевод числа в дополнительном коде происходит тем же самым
+образом: если старшая цифра – 0, то число положительное и перевод не требуется,
+иначе число считается отрицательным и для него выполняются два последних пункта
+процедуры перевода. Рассмотрим пример:<span lang=EN-US style='mso-ansi-language:
+EN-US'><o:p></o:p></span></p>
+
+<p class=a5 style='margin-left:18.0pt'><span lang=EN-US style='font-size:12.0pt;
+mso-bidi-font-size:10.0pt;font-family:Arial;mso-bidi-font-family:"Times New Roman";
+font-weight:normal;mso-bidi-font-weight:bold'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a8><span lang=EN-US><span style='mso-spacerun:yes'> </span>-386<span
+style='mso-tab-count:1'>      </span>- отрицательное число</span></p>
+
+<p class=a8><span lang=EN-US><span style='mso-spacerun:yes'> </span>0386<span
+style='mso-tab-count:1'>     </span>- абсолютное значение с лишним 0</span></p>
+
+<p class=a8><span lang=EN-US><span style='mso-spacerun:yes'> </span>9613<span
+style='mso-tab-count:1'>     </span>- дополнение каждой цифры до 9</span></p>
+
+<p class=a8><span lang=EN-US><span style='mso-spacerun:yes'> </span>9614<span
+style='mso-tab-count:1'>     </span>- добавление 1</span></p>
+
+<p class=a8><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=a8><span lang=EN-US>512 - 386 = 0512 + 9614 = (1)0126<span
+style='mso-tab-count:1'>       </span>= +126</span></p>
+
+<p class=a8><span lang=EN-US>119 - 386 = 0119 + 9614 = 9733 = 0266+1 = -267</span></p>
+
+<p class=a>Если внимательно присмотреться, то дополнение каждой цифры до 9
+имеет некоторую аналогию с вычитанием. Но как бы там ни было, получаем
+следующий результат: вычитание или же сложение чисел со знаком заменяется
+операцией сложения, выполненной для беззнаковых чисел. </p>
+
+<div style='mso-element:para-border-div;border:solid windowtext 1.5pt;
+padding:1.0pt 1.0pt 1.0pt 1.0pt;margin-left:35.45pt;margin-right:32.9pt'>
+
+<p class=a2 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:0cm'><font size="2" face="Arial"><b>Дополнительный код </b>- беззнаковая форма представления чисел со
+знаком.</font><span style='mso-spacerun:yes'><font size="2" face="Arial">       </font>                                 
+</span></p>
+
+</div>
+
+<p class=a>В двоичной системе счисления дополнение каждой цифры выглядит как
+инвертирование двоичного разряда, то есть замена 0 на 1 и наоборот. Тогда получается
+простой способ представления отрицательного числа: </p>
+
+<p class=a1 style='margin-left:74.25pt;text-indent:-18.0pt;mso-list:l3 level1 lfo4;
+tab-stops:42.55pt list 74.25pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>абсолютное значение числа в двоичной системе
+должно занимать все разряды, кроме старшего, последний должен быть 0; </p>
+
+<p class=a1 style='margin-left:74.25pt;text-indent:-18.0pt;mso-list:l3 level1 lfo4;
+tab-stops:42.55pt list 74.25pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>инвертировать все разряды, включая знаковый;</p>
+
+<p class=a1 style='margin-left:74.25pt;text-indent:-18.0pt;mso-list:l3 level1 lfo4;
+tab-stops:42.55pt list 74.25pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>добавить 1. </p>
+
+<p class=a>Ту же самую последовательность операций нужно выполнить, чтобы
+получить из дополнительного кода абсолютное значение отрицательного числа. В Си
+это можно сделать и при помощи поразрядных (машинно-ориентированных) операций:</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>int<span style='mso-spacerun:yes'>  </span>a=5;<span
+style='mso-spacerun:yes'>  </span>a = (~a)++;<span style='mso-tab-count:2'>                  </span>//
+получим -5<o:p></o:p></span></p>
+
+<p class=a>Старший разряд в таком представлении также играет роль знакового.
+Для отрицательных чисел он равен 1. Рассмотрим, как выглядит представление
+граничных значений диапазона в шестнадцатеричной системе:</p>
+
+<p class=a5><span style='mso-ansi-language:RU'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a8><span lang=EN-US>00000000<span style='mso-tab-count:2'>                  </span>0</span></p>
+
+<p class=a8><span lang=EN-US>00000001<span style='mso-tab-count:2'>                  </span>1</span></p>
+
+<p class=a8><span lang=EN-US>00000002<span style='mso-tab-count:2'>                  </span>2</span></p>
+
+<p class=a8><span lang=EN-US>…</span></p>
+
+<p class=a8><st1:metricconverter ProductID="0000003F" w:st="on"><span
+ lang=EN-US>0000003F</span></st1:metricconverter><span style='mso-tab-count:
+2'>                 </span><span lang=EN-US>63</span></p>
+
+<p class=a8><span lang=EN-US>…</span></p>
+
+<p class=a8><span lang=EN-US>7FFFFFFF<span style='mso-tab-count:2'>                </span>2<sup>n-1</sup>-1</span></p>
+
+<p class=a8><span lang=EN-US>80000000<span style='mso-tab-count:2'>                  </span>-0
+(минус 0)</span></p>
+
+<p class=a8><span lang=EN-US>80000001<span style='mso-tab-count:2'>                  </span>-(2<sup>n-1</sup>-1)</span></p>
+
+<p class=a8><span lang=EN-US>80000002<span style='mso-tab-count:2'>                  </span>-(2<sup>n-1</sup>-2)</span></p>
+
+<p class=a8><span lang=EN-US>…</span></p>
+
+<p class=a8><span lang=EN-US>FFFFFFF0<span style='mso-tab-count:2'>                </span>-
+16</span></p>
+
+<p class=a8><span lang=EN-US>FFFFFFF</span><span style='mso-ansi-language:RU'>1<span
+style='mso-tab-count:1'>                 </span>-
+15<o:p></o:p></span></p>
+
+<p class=a8><span style='mso-ansi-language:RU'>…<o:p></o:p></span></p>
+
+<p class=a8><span lang=EN-US>FFFFFFFF</span><span style='mso-ansi-language:
+RU'><span style='mso-tab-count:2'>                </span> -1<o:p></o:p></span></p>
+
+<p class=a>Особенным является значение <b style='mso-bidi-font-weight:normal'><a name="m65">80000000.
+</b>Оно называется «минус 0», поскольку является дополнительным кодом самого
+себя (как и обычный 0). Оно используется для специальных целей, например, для
+обозначения неинициализированных переменных или недопустимых результатов.</p>
+<p class="a">Все эти нюансы вообще-то не важны для программиста, поскольку ему 
+нет нужды вручную выполнять сложение или вычитание ни в двоичной ни в 
+шестнадцатеричной системах, за него это сделает компьютер. На самом деле от 
+программиста даже при работе на уровне внутреннего представления данных 
+достаточно знать правила отображения диапазонов положительных и отрицательных 
+значений знаковых чисел на диапазон беззнаковых. Используемая форма 
+преобразования приводит к тому, что отрицательные числа отображаются на вторую 
+половину диапазона беззнаковых целых, причем таким образом, что значение –1 
+соответствует максимальному беззнаковому (т.е. <b><a name="m66">0<span lang="EN-US">xFFFF</span>FFFF</b> 
+во внутреннем представлении), а минимальное отрицательное – середине интервала 
+(т.е. <b><a name="m67">0<span lang="EN-US">x</span>80000001</b>). Значение <b><a name="m68">0<span lang="EN-US">x</span>80000000</b> 
+является «водоразделом» положительных и отрицательных и называется «минус 0». 
+Все отрицательные числа имеют старший (знаковый) бит, установленный в 1.</p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m69">Вещественное число. </b>Вещественное
+число (число в формате с плавающей запятой или с плавающей точкой) <span
+style='mso-spacerun:yes'> </span>при его внешнем представлении может состоять
+из двух компонент: мантиссы – и порядка: <b style='mso-bidi-font-weight:normal'><a name="m70"><span
+lang=EN-US style='mso-ansi-language:EN-US'>bbbb</span>.b<span lang=EN-US style='mso-ansi-language:
+EN-US'>bbb</span><span lang=EN-US> </span><sup>. </sup>10<sup><span lang=EN-US style='mso-ansi-language:
+EN-US'>p</span></sup>. </b>Одно и то же значение может быть представлено в
+разных видах, представление называется нормализованным, если мантисса не имеет
+целой части и все ее цифры в дробной части – значащие, например, <b
+style='mso-bidi-font-weight:normal'>35.76 = 0.3576 <sup>. </sup>10<sup>2</sup>.
+<o:p></o:p></b></p>
+
+<p class=a>Во внутренним представлении дело обстоит аналогичным образом, но
+только с учетом двоичного представления всех данных:</p>
+
+<p class=a1 style='margin-left:74.25pt;text-indent:-18.0pt;mso-list:l0 level1 lfo5;
+tab-stops:42.55pt list 74.25pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>внутренний порядок основывается на степени 2, а
+не на степени 10, т.е. число выглядит как <b style='mso-bidi-font-weight:normal'><a name="m71">0.b<sub>1</sub><span lang=EN-US style='mso-ansi-language:
+EN-US'>b</span><sub>2</sub><span
+lang=EN-US style='mso-ansi-language:EN-US'>b</span><sub>3</sub><span lang=EN-US style='mso-ansi-language:
+EN-US'>b</span><sub>4</sub>…b<sub>n-1</sub> <sup>. </sup>2<sup><span lang=EN-US style='mso-ansi-language:
+EN-US'>p</span></sup>. </b>Порядок <b style='mso-bidi-font-weight:normal'><a name="m72">p </b>является
+обычным целым числом со знаком.</p>
+
+<p class=a1 style='margin-left:74.25pt;text-indent:-18.0pt;mso-list:l0 level1 lfo5;
+tab-stops:42.55pt list 74.25pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>мантисса представляет собой дробное
+нормализованное двоичное число. <span style='mso-spacerun:yes'> </span>Разряды
+машинного слова, которые его содержат, нумеруются слева направо (от старшего к
+младшему). Значение мантиссы в таком представлении <b style='mso-bidi-font-weight:
+normal'><a name="m73">W= <span style='mso-spacerun:yes'> </span><span lang=EN-US style='mso-bidi-font-family:"Times New Roman CYR";
+mso-ansi-language:EN-US'>&#931;</span></b><b style='mso-bidi-font-weight:normal'><a name="m74"><span
+lang=EN-US style='mso-ansi-language:EN-US'>b</span><sub>i</sub> 2<sup>-i</sup></b>.
+Точка находится перед старшим разрядом, а сами разряды имею веса 1/2 , 1/4,
+1/8, 1/16 и т д. слева направо.</p>
+
+<p class=a>На самом деле реальный формат вещественного числа типа double имеет
+несущественные отличия:<span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a1 style='margin-left:71.45pt;text-indent:-18.0pt;mso-list:l4 level1 lfo6;
+tab-stops:42.55pt list 71.45pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>вместо порядка в формате 11-разрядного
+беззнакового целого хранится значение <b style='mso-bidi-font-weight:normal'><a name="m75">p+1023</b>
+(всегда положительное);</p>
+
+<p class=a1 style='margin-left:71.45pt;text-indent:-18.0pt;mso-list:l4 level1 lfo6;
+tab-stops:42.55pt list 71.45pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>в нормализованной мантиссе отбрасываются не
+только незначащие 0, но и первая значащая 1 (например: 0.0000001<b
+style='mso-bidi-font-weight:normal'>011011</b>… ). Мантисса имеет 52 разряда;</p>
+
+<p class=a1 style='margin-left:71.45pt;text-indent:-18.0pt;mso-list:l4 level1 lfo6;
+tab-stops:42.55pt list 71.45pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>знак мантиссы представлен отдельным разрядом.</p>
+
+<p class=a>Из формата вещественного числа следует, что <b style='mso-bidi-font-weight:
+normal'><a name="m76">вещественное число по своей природе не всегда представлено точным
+значением. </b>То есть оно имеет ограниченное количество точных значащих цифр,
+но при этом не всякое точное десятичное число имеет соответствующее точное
+внутреннее представление (условно говоря, значение 0.1 окажется представленным
+ближайшими к нему 0.099999997… или 0.100000001…), имеющими точное внутреннее
+представление.</p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m77">Представление символьных
+данных. </b>Представление и обработка символьных данных в Си, как и в других
+языках программирования, основаны на исторически сложившихся стандартных
+представления текста, известных как <b style='mso-bidi-font-weight:normal'><a name="m78">текстовый
+файл </b>(подробнее см. 4.5)<b style='mso-bidi-font-weight:normal'><a name="m79">.</b> Каждый
+символ текста представляется отдельным байтом. Как известно, информационная
+емкость байта равна <b style='mso-bidi-font-weight:normal'><a name="m80">2<sup>8</sup>=256, </b>каждому
+значению байта как целого числа (<b style='mso-bidi-font-weight:normal'><a name="m81">коду
+символа в диапазоне 0..255 или 00..<span
+lang=EN-US style='mso-ansi-language:EN-US'>FF</span>) </b>ставится в
+соответствие символ текста. Кроме того, имеются различные <b style='mso-bidi-font-weight:
+normal'><a name="m82">кодовые таблицы, </b>работа с которыми не поддерживается языками
+программирования.</p>
+
+<p class=a>Для работы с текстом используется базовый тип данных <b><a name="m83">char, </b><span
+style='mso-bidi-font-weight:bold'>размерность которого всегда равна байту</span>.
+Соответственно, его можно интерпретировать либо как целое число, либо как
+символ текста. Обработка символьной информации в Си основана на том, что над
+переменной типа <b><a name="m84">char</b>, хранящей код символа, можно выполнять любые
+операции как над целой переменной, начиная от сравнения и присваивания и кончая
+арифметическими операциями и операциями над отдельными разрядами. Обычно <span
+style='mso-spacerun:yes'> </span>знание кодов отдельных символов не требуется,
+так как можно использовать соответствующие символьные константы. </p>
+
+<h3><font face="Arial">Тип данных и переменная</font><sup><o:p></o:p></sup></h3>
+
+<p class=a>В языках программирования такие свойства данных, как форма их
+представления и занимаемая ими память сознательно отделены друг от друга и
+представлены в виде понятий <b style='mso-bidi-font-weight:normal'><a name="m85">тип данных </b><span
+style='mso-spacerun:yes'> </span>и <b style='mso-bidi-font-weight:normal'><a name="m86">переменная.
+<o:p></o:p></b></p>
+
+<p class=a>Под <b style='mso-bidi-font-weight:normal'><a name="m87">типом данных </b>(<b
+style='mso-bidi-font-weight:normal'>ТД</b>) понимается описание данных
+определенного вида, для которых известен их способ представления в памяти
+(формат), следующие из него размерность и диапазон значений, а также определен
+набор операций. Т.е. тип данных<span style='mso-spacerun:yes'>  </span>– это
+«идеи» о представлении переменных определенного вида, и они должны быть
+известны транслятору (для генерации необходимого кода) и программисту.</p>
+
+<div style='mso-element:para-border-div;border:solid windowtext 1.5pt;
+padding:1.0pt 16.0pt 1.0pt 1.0pt;margin-left:35.45pt;margin-right:32.9pt'>
+
+<p class=a2 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:0cm;border:none;mso-border-alt:solid windowtext 1.5pt;padding:0cm;
+mso-padding-alt:1.0pt 16.0pt 1.0pt 1.0pt'><font face="Arial" size="2"><b>Тип 
+данных</b> = формат + размерность, диапазон
+значений + операции</font></p>
+
+</div>
+
+<p class=a>Типы данных бывают двух видов – базовые и производные. <b
+style='mso-bidi-font-weight:normal'>Базовые типы данных (БТД) – </b>это типы
+данных, заложенные в транслятор «от рождения». Они обычно ориентированы на
+область применения языка. В Си с его «архитектурной зависимостью» - <b
+style='mso-bidi-font-weight:normal'>БТД совпадают с основными форматами
+представления данных в компьютерных архитектурах, </b>т.е. операции над ними
+«один в один» транслируются в соответствующие машинные команды. Естественно,
+что БТД обозначаются в любом языке <b style='mso-bidi-font-weight:normal'><a name="m88">ключевыми
+словами.<o:p></o:p></b></p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m89">Производные типы данных (ПТД)
+</b>конструируются программистом из уже известных в программе базовых и
+производных типов. В результате в программе возникает иерархия типов, некоторые
+из них могут обозначаться дополнительными именами, которые можно использовать
+синтаксически как базовые. В объектно-ориентированном программировании (Си++) таковыми
+являются имена классов. Дальнейшее изложение идей <b style='mso-bidi-font-weight:
+normal'><a name="m90">проектирования данных </b>– в гл.<b style='mso-bidi-font-weight:normal'><a name="m91">5,11.<o:p></o:p></b></p>
+
+<p class=a>Переменная в ее первичном архитектурном понимании – это область
+памяти, в которой содержатся данные определенного типа. Имя переменной напрямую
+ассоциируется с ее адресом, содержимое памяти – со значением переменной.</p>
+
+<div style='mso-element:para-border-div;border:solid windowtext 1.5pt;
+padding:1.0pt 1.0pt 1.0pt 1.0pt;margin-left:35.45pt;margin-right:32.9pt'>
+
+<p class=a2 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:0cm'><font face="Arial" size="2"><b>Переменная</b> = память (имя, адрес,ссылка) + ТД + значение<span
+style='mso-tab-count:1'>            </span></font></p>
+
+</div>
+
+<p class=a>В Си используется <b style='mso-bidi-font-weight:normal'><a name="m92">статическое</b>
+связывание переменной<span style='mso-spacerun:yes'>  </span>с ее типом. Это
+значит, что тип данных назначается переменной при трансляции единожды и не может
+быть впоследствии изменен. Строка в программе, где содержится описание
+переменной, по которой транслятор создает ее внутреннее (компьютерное)
+представление, называется <b style='mso-bidi-font-weight:normal'><a name="m93">определением
+переменной.<o:p></o:p></b></p>
+
+<p class=a>Си является языком строго типизированным. Это означает, что
+использование предварительно не определенных программных объектов, в том числе
+переменных, не допускается (т.е. невозможна привязка типа автоматически, по
+умолчанию и т.п).</p>
+
+<p class=a>Имеется дуализм (двойственность) в использовании имени переменной
+(кстати, во всех языках программирования): в одних случаях имя обозначает
+хранимое <b style='mso-bidi-font-weight:normal'><a name="m94">значение, </b>а в других –
+память, его хранящее (адрес, <b style='mso-bidi-font-weight:normal'><a name="m95">ссылка, </b>место
+размещения). Наиболее яркий пример – присваивание. Выражение <b
+style='mso-bidi-font-weight:normal'>a=b </b>в правой части подразумевает
+значение переменной <b style='mso-bidi-font-weight:normal'><a name="m96">b</b>, а в левой
+части – ссылку на <b style='mso-bidi-font-weight:normal'><a name="m97">a. </b>В
+программировании на Си/Си++ имеется большая свобода выбора при передаче
+переменных в процессе их обработки между модулями программы как по ссылке, так
+и по значению, поэтому понимание двойственности, заложенной в имени переменной,
+здесь крайне важно.</p>
+
+<p class=a4><img border="0" src="Images/smile.jpg">Разница между ссылкой и
+значением переменной такая же, как между стаканом и его содержимым.</p>
+
+<p class=a4><o:p>&nbsp;</o:p></p>
+
+<p class=a4>
+<img border="0" src="Images/yan-in.jpg" width="34" height="31" align="left">Некоторые аналогии для
+пары тип данных - переменная можно найти, как ни странно, в философии
+объективного идеализма (Платон, Гегель). Согласно ей существует мир идеальный -
+совершенных идей и мир материальный - несовершенных предметов. Кроме того, есть
+косная материя, проецируясь (отражаясь) в которую, идея порождает предмет. В
+качестве «косной материи» выступает в данном случае память, лишенная
+соответствующей интерпретации. Тип данных играет роль «идеи» переменных
+определенного вида, отображение которой на эту память порождает переменную.</p>
+
+<p class=3 style='mso-outline-level:3'>Базовые типы данных целых чисел</p>
+
+<p class=a><span style='mso-spacerun:yes'> </span>В Си имеется возможность
+использовать машинные слова различной размерности для определения целых
+переменных как в знаковой, так и в беззнаковой форме. Для этого используются
+следующие служебные слова: </p>
+
+<p class=a1><span style='mso-spacerun:yes'> </span><b><a name="m98">-char</b><span
+style='mso-tab-count:1'>              </span> -
+размерность переменной - байт; </p>
+
+<p class=a1><b><a name="m99"><span style='mso-spacerun:yes'> </span>-int</b> <span
+style='mso-tab-count:2'>                 </span>- размерность переменной - стандартное
+машинное слово; </p>
+
+<p class=a1><b><a name="m100"><span style='mso-spacerun:yes'> </span>-short</b> - укороченная размерность, меньшая либо равная
+int; </p>
+
+<p class=a1><b><a name="m101"><span style='mso-spacerun:yes'> </span>-long <span
+style='mso-tab-count:1'>  </span></b><span style='mso-tab-count:1'>            </span>-
+размерность переменной - двойное слово; </p>
+
+<p class=a1><b><a name="m102"><span style='mso-spacerun:yes'> </span>-signed <span
+style='mso-tab-count:1'>          </span></b>- форма представления целого со
+знаком;</p>
+
+<p class=a1><b><a name="m103"><span style='mso-spacerun:yes'> </span>-unsigned</b> <span
+style='mso-tab-count:1'>      </span>- беззнаковая форма представления целого. </p>
+
+<p class=a>Из этих служебных слов можно составить определение типа данных целой
+переменной. При этом <b><a name="m104">signed</b> считается заданным по умолчанию, а <b><a name="m105">unsigned
+int</b> сокращается до <b><a name="m106">int</b>: </p>
+
+<p class=a><b><a name="m107"><span style='font-family:"Courier New CYR"'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=a0 style='text-indent:36.0pt'>int<span style='mso-tab-count:2'>                     </span>i;<span
+style='mso-tab-count:1'>          </span>// целое со знаком, слово </p>
+
+<p class=a0 style='text-indent:36.0pt'>char<span style='mso-tab-count:2'>                  </span>c;<span
+style='mso-tab-count:1'>         </span>// целое со знаком, байт</p>
+
+<p class=a0 style='text-indent:36.0pt'>unsigned char uc;<span style='mso-tab-count:
+1'>          </span>// целое без знака, байт</p>
+
+<p class=a0 style='text-indent:36.0pt'>unsigned <span style='mso-tab-count:
+1'>          </span>u;<span style='mso-tab-count:1'>         </span>// целое
+без знака, слово</p>
+
+<p class=a0 style='text-indent:36.0pt'>long<span style='mso-tab-count:2'>                  </span>l;<span
+style='mso-tab-count:1'>          </span>// целое со знаком, двойное слово</p>
+
+<p class=a0 style='text-indent:36.0pt'>unsigned long ul;<span style='mso-tab-count:
+1'>            </span>// целое без знака, двойное слово</p>
+
+<p class=a0 style='text-indent:36.0pt'>short<span style='mso-tab-count:2'>                 </span>s;<span
+style='mso-tab-count:1'>         </span>// целое со знаком, короткое слово</p>
+
+<p class=a0><span style='mso-tab-count:4'>                                                </span>/<span
+style='mso-bidi-font-family:Arial'>/</span> (слово или байт)<span
+style='font-family:"Courier New"'><o:p></o:p></span></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a><span style='mso-spacerun:yes'> </span>Для определения размерности
+различных переменных и типов в Си имеется специальная операция, которая
+возвращает размерность типа данных, переменной и значения выражения,
+подсчитанную в байтах: </p>
+
+<p class=a><o:p>&nbsp;</o:p></p>
+
+<p class=a0 style='text-indent:36.0pt'>sizeof (int)<span
+style='mso-spacerun:yes'>  </span><span style='mso-tab-count:1'>       </span>//
+размерность типа данных int<span style='mso-spacerun:yes'>  </span>- 4</p>
+
+<p class=a0 style='text-indent:36.0pt'>sizeof l<span style='mso-tab-count:1'>  </span><span
+style='mso-spacerun:yes'>  </span><span style='mso-tab-count:1'>          </span>//
+размерность переменной типа long - 4</p>
+
+<p class=a0 style='text-indent:36.0pt'>sizeof(i+2.0) <span style='mso-tab-count:
+1'>     </span>// размерность значения выражения типа double - 8<span
+style='mso-tab-count:1'>       </span><span lang=EN-US style='mso-ansi-language:
+EN-US'><o:p></o:p></span></p>
+
+<p class=a>По умолчанию константы считаются десятичными целыми со знаком.
+Восьмеричные константы начинаются с <b style='mso-bidi-font-weight:normal'><a name="m108">0</b>.
+Шестнадцатеричные константы имеют префикс <b style='mso-bidi-font-weight:normal'><a name="m109">0x</b>.
+Для длинных целых и беззнаковых целых используются модификаторы констант – <b
+style='mso-bidi-font-weight:normal'>L(<span
+lang=EN-US style='mso-ansi-language:EN-US'>l</span>)</b> и <b style='mso-bidi-font-weight:
+normal'><a name="m110"><span lang=EN-US style='mso-ansi-language:EN-US'>U</span>(</b><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>u</span>)</b>.</p>
+
+<p class=a><span style='mso-spacerun:yes'> </span>В заключение еще раз вернемся
+к знаковой и беззнаковой форме представления и к взаимоотношениям между ними и
+транслятором. Для транслятора обе они - суть машинные слова одинаковой или
+разной длины. Поэтому когда речь идет о записи (присваивании) значения
+беззнаковой переменной в переменную со знаком (или наоборот), транслятор просто
+рассматривает это как копирование машинных слов без каких-либо преобразований.
+Например, знаковое <b style='mso-bidi-font-weight:normal'><a name="m111">-1</b> превращается в
+беззнаковое <b style='mso-bidi-font-weight:normal'><a name="m112">0xFFFFFFFF</b>. Поэтому
+когда в программе меняется форма представления целого со знаком в беззнаковую
+(и наоборот), то это не сопровождается абсолютно никакими действиями (машинными
+командами). </p>
+
+<p class=a><span style='mso-spacerun:yes'> </span>Одной из форм представления
+целого является также <b><a name="m113">перечислимый тип</b> <b style='mso-bidi-font-weight:
+normal'><a name="m114">enum</b>. Переменная такого типа принимает ряд значений, которые
+перечислены в отдельном определении типа <b style='mso-bidi-font-weight:normal'><a name="m115">enum</b>
+в виде идентификаторов (имен). Каждому идентификатору соответствует явно
+заданное или неявно полученное при перечислении значение: </p>
+
+<p class=a><o:p>&nbsp;</o:p></p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>enum</span><span style='mso-tab-count:1'>    </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>BOOL</span><span style='mso-spacerun:yes'> 
+</span>{ <span lang=EN-US style='mso-ansi-language:EN-US'>FALSE</span>, <span
+lang=EN-US style='mso-ansi-language:EN-US'>TRUE</span>};<span style='mso-tab-count:
+1'>            </span><span style='mso-tab-count:1'>            </span>// 0,1<span
+style='mso-tab-count:1'>     </span></p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>enum</span><span style='mso-tab-count:1'>    </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>digit</span> { <span lang=EN-US
+style='mso-ansi-language:EN-US'>four</span>=4,<span lang=EN-US
+style='mso-ansi-language:EN-US'>one</span>=1,<span lang=EN-US style='mso-ansi-language:
+EN-US'>two</span>,<span lang=EN-US style='mso-ansi-language:EN-US'>three</span>
+};<span style='mso-spacerun:yes'>   </span><span style='mso-tab-count:1'>            </span>//
+4,1,2,3.</p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>BOOL</span><span style='mso-tab-count:1'>   </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>x</span>;<span style='mso-tab-count:1'>         </span>...
+<span lang=EN-US style='mso-ansi-language:EN-US'>if</span> (<span lang=EN-US
+style='mso-ansi-language:EN-US'>x</span>==<span lang=EN-US style='mso-ansi-language:
+EN-US'>FALSE</span>) ...</p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>digit</span><span style='mso-tab-count:1'>      </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>D</span>;<span style='mso-tab-count:1'>         </span>...
+<span lang=EN-US style='mso-ansi-language:EN-US'>D</span> = <span lang=EN-US
+style='mso-ansi-language:EN-US'>t</span>en; ...</p>
+
+<p class=a0 style='text-indent:36.0pt'><o:p>&nbsp;</o:p></p>
+
+<p class=a>В данном примере перечислимый тип BOOL имеет два значения - 0 и 1,
+которые обозначаются соответственно как FALSE и TRUE. Имя BOOL затем
+используется для определения переменной этого типа с именем x, которая может
+принимать указанные значения. То же самое производится в типом digit и
+переменной D. Как видим, перечислимый тип не выходит за рамки обычного целого.
+Более того, любая переменная такого типа в трансляторе реализуется как обычное
+целое и в процессе выполнения программы не проверяется на допустимость тех или
+иных значений. Например, можно написать: </p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0 style='text-indent:36.0pt'>x = 3;<span style='mso-spacerun:yes'>   
+</span>// Присвоить 3 переменной типа digit</p>
+
+<p class=a>Тогда зачем же они нужны? Для придания большей ясности программе:
+обозначения ограниченного количества вариантов, признаков и т.д.. </p>
+
+<p class=a>В Си имеется три типа данных для чисел с плавающей точкой: обычной (<b><a name="m116">float</b>),
+двойной (<b><a name="m117">double</b>) и повышенной (<b><a name="m118">long double</b>) точности. Тип <b><a name="m119">float</b>
+используется, в основном, при вводе-выводе. Тип <b><a name="m120">double</b> обеспечивает
+стандартную точность вычислений в арифметических выражениях. Поэтому любая
+переменная типа <b><a name="m121">float</b> перед использованием в выражении автоматически
+преобразуется к <b><a name="m122">double</b>. Кроме того, если в операции присутствует одна
+переменная типа <b><a name="m123">double</b>, а вторая является целым числом, то последняя
+также преобразуется (приводится) к <b><a name="m124">double</b>. </p>
+
+<p class=a><span style='mso-spacerun:yes'> </span>Вещественные константы могут
+содержать как дробную часть с десятичной точкой, так и показатель степени.
+Символ перед показателем степени определяет точность константы <b><a name="m125">(E,e</b> -для
+<b><a name="m126">double, F,f</b> -для <b><a name="m127">float, L,l</b> -для <b><a name="m128">long double</b>). </p>
+
+<p class=a4><o:p>&nbsp;</o:p></p>
+
+<p class=a0 style='text-indent:36.0pt'>0.4<span style='mso-spacerun:yes'> 
+</span>.665<span style='mso-spacerun:yes'>  </span>3.1415926<span
+style='mso-spacerun:yes'>  </span>1.17e2<span style='mso-spacerun:yes'> 
+</span>-176E-3<span style='mso-spacerun:yes'>   </span>1.1F5<span
+style='mso-spacerun:yes'>  </span>3.33L<span lang=EN-US style='mso-ansi-language:
+EN-US'><span style='mso-spacerun:yes'>  </span>15L<span
+style='mso-spacerun:yes'>   </span><o:p></o:p></span></p>
+
+<p class=3 style='mso-outline-level:3'><font face="Arial">Массив как производный тип данных</font></p>
+
+<div style='mso-element:para-border-div;border:solid windowtext 1.5pt;
+padding:1.0pt 1.0pt 1.0pt 1.0pt;margin-left:35.45pt;margin-right:32.9pt'>
+
+<p class=a2 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:0cm'>Массив <span style='font-family:Arial'>-</span><span
+style='mso-spacerun:yes'>  </span>последовательность переменных одного<span
+style='mso-spacerun:yes'>  </span>и<span style='mso-spacerun:yes'> 
+</span>того<span style='mso-spacerun:yes'>  </span>же<span
+style='mso-spacerun:yes'>  </span>типа, имеющая общее имя.<span
+style='mso-tab-count:2'>                </span></p>
+
+</div>
+
+<p class=a>Номер элемента в последовательности называется <b><a name="m129">индексом</b>. В
+языке Си количество элементов в массиве должно быть определено во время
+трансляции (задано константой) и не может быть изменено в процессе выполнения
+программы. Элементы массива размещаются в памяти последовательно и нумеруются
+от <b style='mso-bidi-font-weight:normal'><a name="m130">0</b> до <b style='mso-bidi-font-weight:
+normal'><a name="m131">n-1</b>, где <b style='mso-bidi-font-weight:normal'><a name="m132">n</b> - их
+количество в массиве. Пример<span style='mso-spacerun:yes'>  </span>определения
+массива : </p>
+
+<p class=a4><o:p>&nbsp;</o:p></p>
+
+<p class=a0>int а[20] = {1,5,4,7}; <span style='mso-tab-count:1'>      </span>где</p>
+
+<p class=a0>int<span style='mso-tab-count:1'>         </span>- тип данных
+элементов массива</p>
+
+<p class=a0>a<span style='mso-tab-count:1'>          </span>- имя массива</p>
+
+<p class=a0>20<span style='mso-tab-count:1'>         </span>- количество
+элементов массива</p>
+
+<p class=a0>1,5,4,7 - инициализация (начальные значения первых 4 элементов,
+остальные 0)</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a>Важная особенность массивов в Си: во время работы программы контроль
+за нахождением индексов в пределах размерности массива не производится. В
+случае выхода за пределы массива будут использованы значения переменных в
+соседних областях памяти и результат работы программы будет непредсказуем. </p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+</div>
+
+</body>
+
+</html>

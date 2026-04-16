@@ -1,0 +1,2941 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=Generator content="Microsoft Word 11 (filtered)">
+<title>Образец курсовой работы</title>
+
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:"Arial CYR";
+	panose-1:2 11 6 4 2 2 2 2 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:Calibri;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:Calibri;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:Calibri;}
+strong
+	{font-family:"Times New Roman";}
+em
+	{font-family:"Times New Roman";}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:Tahoma;}
+p.1, li.1, div.1
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:36.0pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:Calibri;}
+p.1CxSpFirst, li.1CxSpFirst, div.1CxSpFirst
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:Calibri;}
+p.1CxSpMiddle, li.1CxSpMiddle, div.1CxSpMiddle
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:Calibri;}
+p.1CxSpLast, li.1CxSpLast, div.1CxSpLast
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:36.0pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:Calibri;}
+span.BalloonTextChar
+	{font-family:Tahoma;}
+span.HeaderChar
+	{font-family:"Times New Roman";}
+span.FooterChar
+	{font-family:"Times New Roman";}
+p.ListParagraph, li.ListParagraph, div.ListParagraph
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:36.0pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:Calibri;}
+p.ListParagraphCxSpFirst, li.ListParagraphCxSpFirst, div.ListParagraphCxSpFirst
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:Calibri;}
+p.ListParagraphCxSpMiddle, li.ListParagraphCxSpMiddle, div.ListParagraphCxSpMiddle
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:Calibri;}
+p.ListParagraphCxSpLast, li.ListParagraphCxSpLast, div.ListParagraphCxSpLast
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:36.0pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:Calibri;}
+ /* Page Definitions */
+ @page Section1
+	{size:595.3pt 841.9pt;
+	margin:2.0cm 42.5pt 2.0cm 3.0cm;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=RU background="back.gif">
+
+<div class=Section1>
+
+<p class=MsoNormal align=center style='text-align:left;line-height:normal'><span
+style='font-size:14.0pt'><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b><font face="Arial"> 
+1. Задание</font></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:35.45pt;line-height:
+normal'><font size="3"><span style="font-family: Times New Roman">Вариант 6.1.
+</span></font><span style='font-size:12.0pt;font-family:"Times New Roman"'>Написать
+алгоритм создания дерева, концевая вершина которого содержит внешний
+(динамический) массив указателей постоянной размерности, а промежуточная - 2
+указателя на потомков и счетчик вершин в поддереве. При переполнении концевой
+вершины она становится промежуточной и порождает два концевых потомка.
+Предусмотреть вывод характеристик сбалансированности дерева (средняя длина
+ветви) и процедуру выравнивания (балансировки). При выполнении работы
+произвести измерение зависимости «грязного» времени работы программы и ее
+трудоемкости (количества базовых операций). Оценить вид полученной зависимости
+(линейно-логарифмическая, квадратичная).</span><span style='font-family:"Times New Roman"'>
+</span></p>
+
+<p class=MsoNormal style='text-indent:35.45pt;
+line-height:normal'><font face="Arial"><span style='font-size:14.0pt'>2. Описание структур 
+данных</span></font></p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:35.45pt;line-height:
+normal'><span style='font-size:12.0pt;font-family:"Times New Roman"'>В данной
+работе была реализована структура данных - дерево с двумя потомками, концевая вершина
+которого содержит динамический массив указателей на строки. </span></p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:35.45pt;line-height:
+normal'><span style='font-size:12.0pt;font-family:"Times New Roman"'>В самом
+общем смысле деревом называется набор элементов одного типа с нециклическими
+однонаправленными непересекающимися связями. В дереве реализована иерархическая
+структура представления данных: чтобы попасть на какой-то нужный уровень, нужно
+пройти все предыдущие. Элемент дерева называется вершиной. Связь между двумя
+вершинами называется ветвью. Вершина, которая ссылается на текущую вершину,
+называется предком. Вершины, на которые ссылается текущая вершина, называются
+потомками. Вершина, у которой нет предка, называется корнем. Вершина, у которой
+нет потомков, называются конечной. Каждый потомок образует свое поддерево,
+являясь в нем корнем. Каждая вершина двоичного дерева имеет только 2 потомка
+левый и правый. </span></p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:35.45pt;line-height:
+normal'><span style='font-size:12.0pt;font-family:"Times New Roman"'>
+<img
+width=466 height=249 id="Рисунок 3" src="Images/kr2-1.jpg"></span><b><span style='font-size:14.0pt'>&nbsp;&nbsp;</span></b></p>
+
+<p class=1CxSpMiddle align=center style='margin-left:0cm;text-align:left;
+text-indent:35.45pt;line-height:normal'><font face="Arial"><span style='font-size:14.0pt'>3. Функциональное
+описание</span></font></p>
+
+<p class=1CxSpMiddle align=center style='margin-left:0cm;text-align:center;
+text-indent:35.45pt;line-height:normal'><b><span style='font-size:14.0pt'>&nbsp;</span></b></p>
+
+<p class=1CxSpMiddle style='margin-left:0cm;text-align:justify;text-indent:
+35.45pt;line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman"'>В
+данной работе использовалась структура </span><span style='font-size:10.0pt;
+font-family:"Courier New";color:blue'>struct</span><span style='font-size:10.0pt;
+font-family:"Courier New"'> tree{}</span><span style='font-size:12.0pt;
+font-family:"Times New Roman"'>, которая представляет собой вершину дерева. В
+вершине дерева содержатся: счетчик вершин в поддереве, МУ, и указатели на
+потомков.  Так же в структуру «вшиты» функции добавления новых вершин.</span></p>
+
+<p class=1CxSpLast style='margin-left:0cm;text-align:justify;text-indent:35.45pt;
+line-height:normal'>&nbsp;</p>
+<p class=1CxSpLast style='margin-left:0cm;text-align:justify;text-indent:35.45pt;
+line-height:normal'>
+<span style='font-size:10.0pt;font-family:"Courier New";
+color:blue'>struct</span><span style='font-size:10.0pt;font-family:"Courier New"'>
+tree{</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+35.4pt;line-height:normal;text-autospace:none'><span style='font-size:10.0pt;
+font-family:"Courier New";color:blue'>int</span><span style='font-size:10.0pt;
+font-family:"Courier New"'> n;<span style='color:green'>//Количество
+строк-значений в поддереве</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'>      <span
+style='color:blue'>char</span> **s; <span style='color:green'>//МУ</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'>      tree
+*l,*r;<span style='color:green'>//Указатели: левый потомок и правый</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'>      </span><span
+lang=EN-US style='font-size:10.0pt;font-family:"Courier New";color:blue'>void</span><span
+lang=EN-US style='font-size:10.0pt;font-family:"Courier New"'> creat</span><span
+style='font-size:10.0pt;font-family:"Courier New"'>()<span style='color:green'>//создание
+пустой вершины</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'>      {</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+35.4pt;line-height:normal;text-autospace:none'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Courier New"'>r=l=NULL;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+35.4pt;line-height:normal;text-autospace:none'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Courier New"'>n=NULL; s=<span
+style='color:blue'>new</span> <span style='color:blue'>char</span>*[N];</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+35.4pt;line-height:normal;text-autospace:none'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Courier New";color:blue'>for</span><span
+lang=EN-US style='font-size:10.0pt;font-family:"Courier New"'>(<span
+style='color:blue'>int</span> i=0;i&lt;N;i++) s[i]=<span style='color:#A31515'>&quot;null&quot;</span>;
+</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:"Courier New"'>      </span><span style='font-size:10.0pt;
+font-family:"Courier New"'>} </span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+35.4pt;line-height:normal;text-autospace:none'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Courier New";color:blue'>void</span><span
+lang=EN-US style='font-size:10.0pt;font-family:"Courier New"'> create</span><span
+style='font-size:10.0pt;font-family:"Courier New"'>(</span><span lang=EN-US
+style='font-size:10.0pt;font-family:"Courier New";color:blue'>char</span><span
+style='font-size:10.0pt;font-family:"Courier New"'>** </span><span lang=EN-US
+style='font-size:10.0pt;font-family:"Courier New"'>s</span><span
+style='font-size:10.0pt;font-family:"Courier New"'>0,</span><span lang=EN-US
+style='font-size:10.0pt;font-family:"Courier New";color:blue'>int</span><span
+lang=EN-US style='font-size:10.0pt;font-family:"Courier New"'> n</span><span
+style='font-size:10.0pt;font-family:"Courier New"'>0)<span style='color:green'>
+//создание вершины со значением</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:"Courier New"'>{ </span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:"Courier New"'>      r=l=NULL;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:"Courier New"'>      n=n0;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:"Courier New"'>      s=s0;</span></p>
+
+<p class=1CxSpFirst style='margin-left:0cm;text-align:justify;line-height:normal'><span
+style='font-size:10.0pt;font-family:"Courier New"'>}}; </span></p>
+
+<p class=1CxSpMiddle style='margin-left:0cm;text-align:justify;text-indent:
+35.45pt;line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman"'>Дерево
+будет строиться путем создания связей (ветвей) между вершинами. Указатели на
+левый и правый потомков будут хранить в себе адрес на этих потомков и, если нам
+нужно будет перейти к какой-то вершине, мы на неё ссылаемся через указатель.</span></p>
+
+<p class=1 style='margin-left:0cm;text-align:justify;text-indent:35.45pt;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman"'>Движение
+по дереву носит в себе рекурсивный характер. Каждый раз, когда мы делаем
+рекурсивный вызов, мы идем вглубь дерева, а когда происходит </span><span
+style='font-size:10.0pt;font-family:"Courier New";color:blue'>return </span><span
+style='font-size:12.0pt;font-family:"Times New Roman"'>– возвращаемся.</span></p>
+<p class=1 style='margin-left:0cm;text-align:justify;text-indent:35.45pt;
+line-height:normal'><font size="3"><span style="font-family: Times New Roman">
+Список основных функций:</span></font></p>
+
+<p class=1 style='margin-left:0cm;text-align:justify;text-indent:35.45pt;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman"'>&nbsp;</span><span style='font-size:12.0pt;font-family:"Courier New";
+color:blue'>void</span><span style='font-size:12.0pt;font-family:"Courier New"'>
+MENU()</span><span style='font-size:10.0pt;font-family:"Courier New"'> </span><span
+style='font-size:12.0pt;font-family:"Times New Roman"'>– функция вызова меню
+для удобного пользования</span></p>
+
+<p class=1 style='margin-left:0cm;text-align:justify;text-indent:35.45pt;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Courier New";
+color:blue'>void</span><span style='font-size:12.0pt;font-family:"Courier New"'>
+exteud()</span><span style='font-size:10.0pt;font-family:"Courier New"'> </span><span
+style='font-size:12.0pt;font-family:"Times New Roman"'>– функция создания новых
+вершин при переполнении МУ</span></p>
+
+<p class=1 style='margin-left:0cm;text-align:justify;text-indent:35.45pt;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Courier New";
+color:blue'>void</span><span style='font-size:12.0pt;font-family:"Courier New"'>
+clearl()</span><span style='font-size:10.0pt;font-family:"Courier New"'> </span><span
+style='font-size:12.0pt;font-family:"Times New Roman"'>– функция удаления
+пустой левой вершины</span></p>
+
+<p class=1 style='margin-left:0cm;text-align:justify;text-indent:35.45pt;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Courier New";
+color:blue'>void</span><span style='font-size:12.0pt;font-family:"Courier New"'>
+clearr()</span><span style='font-size:10.0pt;font-family:"Courier New"'> </span><span
+style='font-size:12.0pt;font-family:"Times New Roman"'>– функция удаления
+пустой правой вершины</span></p>
+
+<p class=1 style='margin-left:0cm;text-align:justify;text-indent:35.45pt;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Courier New";
+color:blue'>void</span><span style='font-size:12.0pt;font-family:"Courier New"'>
+insert()</span><span style='font-size:10.0pt;font-family:"Courier New"'> </span><span
+style='font-size:12.0pt;font-family:"Times New Roman"'>– функция вставки строки
+по логическому номеру</span></p>
+
+<p class=1 style='margin-left:0cm;text-align:justify;text-indent:35.45pt;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Courier New";
+color:blue'>int</span><span style='font-size:12.0pt;font-family:"Courier New"'>
+delete0m()</span><span style='font-size:10.0pt;font-family:"Courier New"'> </span><span
+style='font-size:12.0pt;font-family:"Times New Roman"'>– функция удаления
+строки по логическому номеру </span></p>
+
+<p class=1 style='margin-left:0cm;text-align:justify;text-indent:35.45pt;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Courier New";
+color:blue'>void</span><span style='font-size:12.0pt;font-family:"Courier New"'>
+show()</span><span style='font-size:10.0pt;font-family:"Courier New"'> </span><span
+style='font-size:12.0pt;font-family:"Times New Roman"'>– </span><span
+style='font-size:10.0pt;font-family:"Courier New"'> </span><span
+style='font-size:12.0pt;font-family:"Times New Roman"'>функция вывода дерева с
+указанием глубины</span></p>
+
+<p class=1 style='margin-left:0cm;text-align:justify;text-indent:35.45pt;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Courier New";
+color:blue'>void</span><span style='font-size:12.0pt;font-family:"Courier New"'>
+show2()</span><span style='font-size:10.0pt;font-family:"Courier New"'> </span><span
+style='font-size:12.0pt;font-family:"Times New Roman"'>–</span><span
+style='font-size:10.0pt;font-family:"Courier New"'> </span><span
+style='font-size:12.0pt;font-family:"Times New Roman"'> функция вывода всех
+значений дерева с указанием их логического номера</span></p>
+
+<p class=1 style='margin-left:0cm;text-align:justify;text-indent:35.45pt;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Courier New";
+color:blue'>void</span><span style='font-size:12.0pt;font-family:"Courier New"'>
+add()</span><span style='font-size:10.0pt;font-family:"Courier New"'> </span><span
+style='font-size:12.0pt;font-family:"Times New Roman"'>– функция добавления
+строки в самый конец дерева</span></p>
+
+<p class=1 style='margin-left:0cm;text-align:justify;text-indent:35.45pt;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Courier New";
+color:blue'>void</span><span style='font-size:12.0pt;font-family:"Courier New"'>
+scan()</span><span style='font-size:10.0pt;font-family:"Courier New"'> </span><span
+style='font-size:12.0pt;font-family:"Times New Roman"'>– функция обхода дерева
+и перепись значений всех вершин в МУ</span></p>
+
+<p class=1 style='margin-left:0cm;text-align:justify;text-indent:35.45pt;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Courier New";
+color:blue'>void</span><span style='font-size:12.0pt;font-family:"Courier New"'>
+destroy()</span><span style='font-size:10.0pt;font-family:"Courier New"'> </span><span
+style='font-size:12.0pt;font-family:"Times New Roman"'>– функция удаления
+дерева</span></p>
+
+<p class=1 style='margin-left:0cm;text-align:justify;text-indent:35.45pt;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Courier New"'>tree
+*create()</span><span style='font-size:10.0pt;font-family:"Courier New"'> </span><span
+style='font-size:12.0pt;font-family:"Times New Roman"'>– функция создания
+сбалансированного дерева из значений, хранящихся в МУ</span></p>
+<p class=MsoNormal style='text-align:justify;text-indent:35.45pt;line-height:
+normal'><span style='font-size:12.0pt;font-family:"Times New Roman"'>Дерево можно «пополнить» дополнительной строкой, указав перед этим номер для
+вставки. Пользователь вводит строку с клавиатуры и номер места, куда она должна
+попасть. Данные передаются функции </span><span style='font-size:12.0pt;
+font-family:"Courier New";color:blue'>void</span><span style='font-size:12.0pt;
+font-family:"Courier New"'> insert(tree *p,<span style='color:blue'>char</span>
+*c,<span style='color:blue'>int</span> m)</span><span style='font-size:10.0pt;
+font-family:"Courier New"'>. </span><span style='font-size:12.0pt;font-family:
+"Times New Roman"'>Функция, цепью рекурсивных вызовов, находит концевую
+вершину, в которой содержится ячейка с нужным номером, после чего туда
+помещается введенная строка.</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:35.45pt;line-height:
+150%'><span style='font-size:12.0pt;line-height:150%;font-family:"Times New Roman"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:center;text-indent:35.45pt;line-height:
+150%'><span style='font-size:12.0pt;line-height:150%;font-family:"Times New Roman"'>
+&nbsp;</span><span
+style='font-size:10.0pt;line-height:150%;font-family:"Courier New"'>&nbsp;&nbsp;<img
+width=386 height=147 src="Images/kr2-5.jpg"></span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue">
+void</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New"> 
+insert(tree *p,<span style="color:blue">char</span> *c,<span style="color:blue">int</span> 
+m){ <span style="color:green">//</span></span><span style="font-size: 10.0pt; font-family: Courier New; color: green">включение 
+по лог номеру</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">if</span> (m&lt;0 || m&gt;p-&gt;n) <span style="color:blue">
+return</span>;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-size: 10.0pt; font-family: Courier New; color: blue">if</span><span style="font-size: 10.0pt; font-family: Courier New">(p-&gt;l==NULL)
+<span style="color:green">//конечная</span></span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue">for</span>(<span style="color:blue">int</span> 
+j=p-&gt;n-1;j&gt;=m;j--) <span style="color:green">//освобождаем место для включения</span></span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+p-&gt;s[j+1]=p-&gt;s[j];</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p-&gt;s[m]=c;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: 10.0pt; font-family: Courier New">p-&gt;n++;<span style="color:green">//увеличиваем 
+кол-во значений</span></span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue">if</span>(p-&gt;n==N)<span style="color:green">//если 
+заполнено</span></span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exteud(p);
+<span style="color:green">//создание 2 потомка и перепись ДМУ строк в них</span></span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue">return</span>; 
+}</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">else&nbsp; </span>{</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p-&gt;n++;
+<span style="color:green">//увеличиваем кол-во значений в поддереве</span></span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">if</span>(m&lt;p-&gt;l-&gt;n) <span style="color:green">//если 
+лог номер попадает в нумерацию значений в лев. поддереве</span></span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+insert(p-&gt;l,c,m);<span style="color:green">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+//то идем в левое</span></span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">else</span><span style="color:green">//если нет</span></span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+insert(p-&gt;r,c,m-p-&gt;l-&gt;n);<span style="color:green">//то в правое</span></span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">}</span><span style="font-size: 10.0pt; font-family: Courier New">}</span></p>
+<p class=MsoNormal style='text-align:center;text-indent:35.45pt;line-height:
+150%'>&nbsp;</p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:35.45pt;line-height:
+normal'><span style='font-size:12.0pt;font-family:"Times New Roman"'> Алгоритм
+отыскания нужной вершины из двух потомков выбирает одного, поэтому он «жадный».
+Его трудоемкость будет равна количеству пройденных вершин (длине выбранной
+ветви). Для сбалансированного дерева зависимость будет логарифмической<b> T = L
+&lt;  log</b></span><b><sub><span lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman"'>m</span></sub><span
+style='font-size:12.0pt;font-family:"Times New Roman"'>N.</span></b></p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:35.45pt;line-height:
+normal'><span style='font-size:12.0pt;font-family:"Times New Roman"'>Так как
+массивы указателей имеют ограниченную размерность, то может случиться
+переполнение. Что бы этого не произошло, была создана функция</span><span
+style='font-size:12.0pt'> </span><span style='font-size:10.0pt;font-family:
+"Courier New";color:blue'>void</span><span style='font-size:10.0pt;font-family:
+"Courier New"'> exteud(tree *p) </span><span style='font-size:12.0pt;
+font-family:"Times New Roman"'>При заполнении МУ, создается 2 новые вершины с
+пустыми МУ. Заполненый МУ&nbsp; «делится» на 2 части и эти части записываются в новые
+МУ.</span><span style='font-size:10.0pt;font-family:"Courier New"'> </span></p>
+
+<p class=MsoNormal style='text-align:center;line-height:150%'><span
+style='font-size:10.0pt;line-height:150%;font-family:"Courier New"'>
+<img
+width=441 height=196 id="Рисунок 4" src="Images/kr2-6.jpg"></span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue">
+void</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New"> 
+exteud(tree *p){</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+p-&gt;l=<span style="color:blue">new</span> tree;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-size: 10.0pt; font-family: Courier New">p-&gt;l-&gt;create(p-&gt;s,p-&gt;n);<span style="color:green">//перенос 
+значений вершины в потомка</span></span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p-&gt;r=<span style="color:blue">new</span> 
+tree;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p-&gt;r-&gt;creat();<span style="color:green">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+//создание пустого правого потомка</span></span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p-&gt;l-&gt;n=p-&gt;r-&gt;n=N/2;<span style="color:green">&nbsp;&nbsp;&nbsp; 
+//разделить на 2 части </span></span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue">
+for</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">(<span style="color:blue">int</span> 
+i=0;i&lt;N/2;i++)</span><span style="font-size: 10.0pt; font-family: Courier New">{</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cnt++;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p-&gt;r-&gt;s[i]=p-&gt;l-&gt;s[i+N/2];
+<span style="color:green">&nbsp;&nbsp; //переписывание половины в правую 
+концевую</span></span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; p-&gt;l-&gt;s[i+N/2]=<span style="color:#A31515">&quot;null&quot;</span>;
+<span style="color:green">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //зануляем 
+значения</span></span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">}}</span></p>
+<p class=MsoNormal style='text-align:center;line-height:150%'>&nbsp;</p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:35.45pt;line-height:
+normal'><span style='font-size:12.0pt;font-family:"Times New Roman"'>Функция
+удаления по логическому номеру схожа с функцией вставки. Функции </span><span
+style='font-size:12.0pt;font-family:"Courier New";color:blue'>int</span><span
+style='font-size:12.0pt;font-family:"Courier New"'> delete0m(tree *p, <span
+style='color:blue'>int</span> m</span><span style='font-size:12.0pt;font-family:
+"Courier New"'>)</span><span style='font-size:12.0pt;font-family:"Times New Roman"'>
+передается логический номер строки, которую нужно удалить. Цепью рекурсивных
+вызовов находится вершина, в которой присутствует нужное значение, после чего
+производится удаление.</span></p>
+<p class=MsoNormal style='text-align:center;text-indent:35.45pt;line-height:
+normal'><span style='font-size:12.0pt;font-family:"Times New Roman"'>
+&nbsp;<img
+width=393 height=192 id="Рисунок 1" src="Images/kr2-7.jpg"></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:35.45pt;line-height:
+normal'><span style='font-size:12.0pt;font-family:"Times New Roman"'>Алгоритм
+отыскания нужной вершины так же из двух потомков выбирает одного, поэтому он
+тоже «жадный» и его трудоемкость будет зависеть от количества пройденных
+вершин. Для сбалансированного дерева зависимость будет логарифмической <b>T =
+L&lt;log</b></span><b><sub><span lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman"'>m</span></sub><span
+style='font-size:12.0pt;font-family:"Times New Roman"'>N.</span></b></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;<span lang="EN-US" style="color:blue">int</span><span lang="EN-US"> 
+delete0m(tree *p, <span style="color:blue">int</span> m)</span></span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">{</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;<span style="color:blue">if</span> 
+(m&lt;0 || m&gt;p-&gt;n) <span style="color:blue">return</span> 0;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-size: 10.0pt; font-family: Courier New; color: blue">if</span><span style="font-size: 10.0pt; font-family: Courier New">(p-&gt;l==NULL)
+<span style="color:green">//конечная</span></span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue">delete</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New"> 
+p-&gt;s[m];<span style="color:green">//</span></span><span style="font-size: 10.0pt; font-family: Courier New; color: green">удаляем</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<span style="color:blue">for</span>(<span style="color:blue">int</span> 
+j=m;j&lt;p-&gt;n-1;j++) <span style="color:green">//</span></span><span style="font-size: 10.0pt; font-family: Courier New; color: green">сдвигаем</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;</span><span style="font-size: 10.0pt; font-family: Courier New">p-&gt;s[j]=p-&gt;s[j+1];</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;p-&gt;n--;<span style="color:green">//уменьшаем 
+кол-во значений</span></span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue">if</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">(p-&gt;n==0)
+<span style="color:blue">return</span> 1;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<span style="color:blue">else</span></span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<span style="color:blue">return</span> 0; </span>
+<span style="font-size: 10.0pt; font-family: Courier New">}</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">else&nbsp; </span>{</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p-&gt;n--;
+<span style="color:green">//увеличиваем кол-во значений в поддереве</span></span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">if</span>(m&lt;p-&gt;l-&gt;n) <span style="color:green">//если 
+лог номер попадает в нумерацию значений в лев. поддереве</span></span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<span style="color:blue">if</span>(delete0m(p-&gt;l,m)) 
+clearl(p);}<span style="color:green">//то идем в левое</span></span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">else</span><span style="color:green">//если нет</span></span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<span style="color:blue">if</span>(delete0m(p-&gt;r,m-p-&gt;l-&gt;n)) 
+clearr(p);}<span style="color:green">//то в правое</span></span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">}<span style="color:blue"> 
+return</span> 0; }</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:35.45pt;line-height:
+normal'>&nbsp;</p>
+<p class=MsoNormal style='text-align:justify;text-indent:35.45pt;line-height:
+normal'><span style='font-size:12.0pt;font-family:"Times New Roman"'>После
+очереди удалений может образоваться пустая вершина. Эту вершину нужно удалить,
+но при этом должна остаться прежняя структура в виде двоичного дерева, для
+этого мы сдвигаем на 1 уровень вверх «брата» удаляемой вершины.</span></p>
+
+<p class=MsoNormal style='text-align:center;text-indent:35.45pt;line-height:
+normal'><span style='font-size:12.0pt;font-family:"Times New Roman"'>
+<img
+width=441 height=303 src="Images/kr2-8.jpg">  </span></p>
+
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue">
+void</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New"> 
+clearl(tree *p)</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">{</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">delete</span> p-&gt;l-&gt;s; <span style="color:green">//</span></span><span style="font-size: 10.0pt; font-family: Courier New; color: green">Удаляем 
+пустой МУ</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-size: 10.0pt; font-family: Courier New; color: blue">
+delete</span><span style="font-size: 10.0pt; font-family: Courier New"> p-&gt;l;<span style="color:green">//Удаляем 
+пустую вершину</span></span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tree *q=p-&gt;r;<span style="color:green">//делаем 
+копию вершины-брата</span></span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p-&gt;l=p-&gt;r-&gt;l;<span style="color:green">//Присваеваем 
+месту удаляемой вершины адрес потомка брата</span></span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p-&gt;s=p-&gt;r-&gt;s;<span style="color:green">//Сдвигаем 
+вверх вершину</span></span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p-&gt;r=q-&gt;r;<span style="color:green">//Сдвигаем 
+потомков</span></span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue">
+delete</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New"> 
+q; }</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+&nbsp;</p>
+<p class=1 style='margin-left:0cm;text-align:justify;text-indent:35.45pt;
+line-height:normal'><font face="Arial"><span style='font-size:14.0pt'>4. Измерение производительности 
+программы и трудоемкости алгоритмов</span></font></p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:35.45pt;line-height:
+normal'><span style='font-size:12.0pt;font-family:"Times New Roman"'>Дерево
+заполняется строками из файла. Из текстового файла читается слово и передается
+в функцию  </span><span style='font-size:12.0pt;font-family:"Courier New";
+color:blue'>void</span><span style='font-size:12.0pt;font-family:"Courier New"'>
+add(tree *p,<span style='color:blue'>char</span> *c)</span><span
+style='font-size:12.0pt;font-family:"Times New Roman"'> которая «запихивает»
+слово в самый конец (в самую правую вершину на самое последнее место). Таким
+образом получается, что мы создаем дерево с одной длинной веткой, что делает
+более трудоемким процесс обхода дерева.</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:35.45pt;line-height:
+150%'><span style='font-size:12.0pt;line-height:150%;font-family:"Times New Roman"'>
+<img
+width=332 height=252 id="Рисунок 7" src="Images/kr2-2.jpg"></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:35.45pt;line-height:
+normal'><span style='font-size:12.0pt;font-family:"Times New Roman"'>Теоретическая
+трудоемкость данного процесса </span><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman"'>T</span><span style='font-size:12.0pt;
+font-family:"Times New Roman"'>(</span><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman"'>N</span><span style='font-size:12.0pt;
+font-family:"Times New Roman"'>)=</span><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman"'>N</span><sup><span style='font-size:12.0pt;
+font-family:"Times New Roman"'>2</span></sup><span style='font-size:12.0pt;
+font-family:"Times New Roman"'>. Эксперимент для нахождения трудоемкости
+показал, что:</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:35.45pt;line-height:
+normal'><span style='font-size:12.0pt;font-family:"Times New Roman"'>1)Грязное»
+время работы программы подчиняется степенной зависимости с показателем P=1.6,
+т.е. лучше чем квадратичная. Отклонение сначала достигает 8% в лучшую сторону,
+а затем постепенно ухудшается с увеличением длины файла.</span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=493
+ style='width:369.45pt;margin-left:5.15pt;border-collapse:collapse'>
+ <tr style='height:12.75pt'>
+  <td width=52 nowrap valign=bottom style='width:38.65pt;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>N</span></p>
+  </td>
+  <td width=85 nowrap valign=bottom style='width:64.0pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>T1(эскп)</span></p>
+  </td>
+  <td width=83 nowrap valign=bottom style='width:62.5pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>T1*(матем)</span></p>
+  </td>
+  <td width=86 nowrap valign=bottom style='width:64.5pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>отклонение</span></p>
+  </td>
+  <td width=100 nowrap valign=bottom style='width:74.8pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>коэф по N1</span></p>
+  </td>
+  <td width=87 nowrap valign=bottom style='width:65.0pt;border:none;border-right:
+  solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>Степень</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td width=52 nowrap valign=bottom style='width:38.65pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>1000</span></p>
+  </td>
+  <td width=85 nowrap valign=bottom style='width:64.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>5</span></p>
+  </td>
+  <td width=83 nowrap valign=bottom style='width:62.5pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>5,0</span></p>
+  </td>
+  <td width=86 nowrap valign=bottom style='width:64.5pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>0%</span></p>
+  </td>
+  <td width=100 nowrap valign=bottom style='width:74.8pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><a name="RANGE!E2"></a><span
+  style='font-size:10.0pt;font-family:"Arial CYR"'>0,0000792447</span></p>
+  </td>
+  <td width=87 nowrap valign=bottom style='width:65.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><u><span style='font-size:10.0pt;
+  font-family:"Arial CYR";color:blue'>1,6</span></u></p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td width=52 nowrap valign=bottom style='width:38.65pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>2000</span></p>
+  </td>
+  <td width=85 nowrap valign=bottom style='width:64.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>14</span></p>
+  </td>
+  <td width=83 nowrap valign=bottom style='width:62.5pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>15,2</span></p>
+  </td>
+  <td width=86 nowrap valign=bottom style='width:64.5pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>-8%</span></p>
+  </td>
+  <td width=100 nowrap valign=bottom style='width:74.8pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+  <td width=87 nowrap valign=bottom style='width:65.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td width=52 nowrap valign=bottom style='width:38.65pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>3000</span></p>
+  </td>
+  <td width=85 nowrap valign=bottom style='width:64.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>28</span></p>
+  </td>
+  <td width=83 nowrap valign=bottom style='width:62.5pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>29,0</span></p>
+  </td>
+  <td width=86 nowrap valign=bottom style='width:64.5pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>-3%</span></p>
+  </td>
+  <td width=100 nowrap valign=bottom style='width:74.8pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+  <td width=87 nowrap valign=bottom style='width:65.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td width=52 nowrap valign=bottom style='width:38.65pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>4000</span></p>
+  </td>
+  <td width=85 nowrap valign=bottom style='width:64.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>46</span></p>
+  </td>
+  <td width=83 nowrap valign=bottom style='width:62.5pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>45,9</span></p>
+  </td>
+  <td width=86 nowrap valign=bottom style='width:64.5pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>0%</span></p>
+  </td>
+  <td width=100 nowrap valign=bottom style='width:74.8pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+  <td width=87 nowrap valign=bottom style='width:65.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td width=52 nowrap valign=bottom style='width:38.65pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>5000</span></p>
+  </td>
+  <td width=85 nowrap valign=bottom style='width:64.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>66</span></p>
+  </td>
+  <td width=83 nowrap valign=bottom style='width:62.5pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>65,7</span></p>
+  </td>
+  <td width=86 nowrap valign=bottom style='width:64.5pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>1%</span></p>
+  </td>
+  <td width=100 nowrap valign=bottom style='width:74.8pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+  <td width=87 nowrap valign=bottom style='width:65.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td width=52 nowrap valign=bottom style='width:38.65pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>6000</span></p>
+  </td>
+  <td width=85 nowrap valign=bottom style='width:64.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>87</span></p>
+  </td>
+  <td width=83 nowrap valign=bottom style='width:62.5pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>87,9</span></p>
+  </td>
+  <td width=86 nowrap valign=bottom style='width:64.5pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>-1%</span></p>
+  </td>
+  <td width=100 nowrap valign=bottom style='width:74.8pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+  <td width=87 nowrap valign=bottom style='width:65.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td width=52 nowrap valign=bottom style='width:38.65pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>7000</span></p>
+  </td>
+  <td width=85 nowrap valign=bottom style='width:64.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>114</span></p>
+  </td>
+  <td width=83 nowrap valign=bottom style='width:62.5pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>112,5</span></p>
+  </td>
+  <td width=86 nowrap valign=bottom style='width:64.5pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>1%</span></p>
+  </td>
+  <td width=100 nowrap valign=bottom style='width:74.8pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+  <td width=87 nowrap valign=bottom style='width:65.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td width=52 nowrap valign=bottom style='width:38.65pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>8000</span></p>
+  </td>
+  <td width=85 nowrap valign=bottom style='width:64.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>143</span></p>
+  </td>
+  <td width=83 nowrap valign=bottom style='width:62.5pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>139,3</span></p>
+  </td>
+  <td width=86 nowrap valign=bottom style='width:64.5pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>3%</span></p>
+  </td>
+  <td width=100 nowrap valign=bottom style='width:74.8pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+  <td width=87 nowrap valign=bottom style='width:65.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td width=52 nowrap valign=bottom style='width:38.65pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>9000</span></p>
+  </td>
+  <td width=85 nowrap valign=bottom style='width:64.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>178</span></p>
+  </td>
+  <td width=83 nowrap valign=bottom style='width:62.5pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>168,2</span></p>
+  </td>
+  <td width=86 nowrap valign=bottom style='width:64.5pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>6%</span></p>
+  </td>
+  <td width=100 nowrap valign=bottom style='width:74.8pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+  <td width=87 nowrap valign=bottom style='width:65.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td width=52 nowrap valign=bottom style='width:38.65pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>10000</span></p>
+  </td>
+  <td width=85 nowrap valign=bottom style='width:64.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>215</span></p>
+  </td>
+  <td width=83 nowrap valign=bottom style='width:62.5pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>199,1</span></p>
+  </td>
+  <td width=86 nowrap valign=bottom style='width:64.5pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>8%</span></p>
+  </td>
+  <td width=100 nowrap valign=bottom style='width:74.8pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+  <td width=87 nowrap valign=bottom style='width:65.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td width=52 nowrap valign=bottom style='width:38.65pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>11000</span></p>
+  </td>
+  <td width=85 nowrap valign=bottom style='width:64.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>255</span></p>
+  </td>
+  <td width=83 nowrap valign=bottom style='width:62.5pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>231,8</span></p>
+  </td>
+  <td width=86 nowrap valign=bottom style='width:64.5pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>10%</span></p>
+  </td>
+  <td width=100 nowrap valign=bottom style='width:74.8pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+  <td width=87 nowrap valign=bottom style='width:65.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td width=52 nowrap valign=bottom style='width:38.65pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>11493</span></p>
+  </td>
+  <td width=85 nowrap valign=bottom style='width:64.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>277</span></p>
+  </td>
+  <td width=83 nowrap valign=bottom style='width:62.5pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>248,7</span></p>
+  </td>
+  <td width=86 nowrap valign=bottom style='width:64.5pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>11%</span></p>
+  </td>
+  <td width=100 nowrap valign=bottom style='width:74.8pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+  <td width=87 nowrap valign=bottom style='width:65.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">&nbsp;</p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:35.45pt;line-height:
+150%'><span style='font-size:12.0pt;line-height:150%;font-family:"Times New Roman"'>
+<img
+width=449 height=282 id="Диаграмма 1" src="Images/kr2-3.gif"></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:35.45pt;line-height:
+normal'><span style='font-size:12.0pt;font-family:"Times New Roman"'>2)</span> <span
+style='font-size:12.0pt;font-family:"Times New Roman"'>Количество операций
+сравнения практически точно имеет зависимость T(N)=N<sup>2</sup>/6 (K=0.16),
+что соответствует нашим предварительным теоретическим оценкам;</span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=498
+ style='width:373.85pt;margin-left:5.15pt;border-collapse:collapse'>
+ <tr style='height:12.75pt'>
+  <td width=52 nowrap valign=bottom style='width:38.65pt;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>N</span></p>
+  </td>
+  <td width=85 nowrap valign=bottom style='width:64.0pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>cmp(эскп)</span></p>
+  </td>
+  <td width=93 nowrap valign=bottom style='width:69.7pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>cmp*(матем)</span></p>
+  </td>
+  <td width=86 nowrap valign=bottom style='width:64.5pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>отклонение</span></p>
+  </td>
+  <td width=96 nowrap valign=bottom style='width:72.0pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>коэф по N1</span></p>
+  </td>
+  <td width=87 nowrap valign=bottom style='width:65.0pt;border:none;border-right:
+  solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>Степень</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td width=52 nowrap valign=bottom style='width:38.65pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>1000</span></p>
+  </td>
+  <td width=85 nowrap valign=bottom style='width:64.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>166166</span></p>
+  </td>
+  <td width=93 nowrap valign=bottom style='width:69.7pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>166166</span></p>
+  </td>
+  <td width=86 nowrap valign=bottom style='width:64.5pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>0%</span></p>
+  </td>
+  <td width=96 nowrap valign=bottom style='width:72.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>0,166166</span></p>
+  </td>
+  <td width=87 nowrap valign=bottom style='width:65.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><u><span style='font-size:10.0pt;
+  font-family:"Arial CYR";color:blue'>2</span></u></p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td width=52 nowrap valign=bottom style='width:38.65pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>2000</span></p>
+  </td>
+  <td width=85 nowrap valign=bottom style='width:64.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>665665</span></p>
+  </td>
+  <td width=93 nowrap valign=bottom style='width:69.7pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>664664</span></p>
+  </td>
+  <td width=86 nowrap valign=bottom style='width:64.5pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>0%</span></p>
+  </td>
+  <td width=96 nowrap valign=bottom style='width:72.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+  <td width=87 nowrap valign=bottom style='width:65.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td width=52 nowrap valign=bottom style='width:38.65pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>3000</span></p>
+  </td>
+  <td width=85 nowrap valign=bottom style='width:64.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>1498500</span></p>
+  </td>
+  <td width=93 nowrap valign=bottom style='width:69.7pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>1495494</span></p>
+  </td>
+  <td width=86 nowrap valign=bottom style='width:64.5pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>0%</span></p>
+  </td>
+  <td width=96 nowrap valign=bottom style='width:72.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+  <td width=87 nowrap valign=bottom style='width:65.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal' align="center"><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td width=52 nowrap valign=bottom style='width:38.65pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>4000</span></p>
+  </td>
+  <td width=85 nowrap valign=bottom style='width:64.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>2664666</span></p>
+  </td>
+  <td width=93 nowrap valign=bottom style='width:69.7pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>2658656</span></p>
+  </td>
+  <td width=86 nowrap valign=bottom style='width:64.5pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>0%</span></p>
+  </td>
+  <td width=96 nowrap valign=bottom style='width:72.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+  <td width=87 nowrap valign=bottom style='width:65.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td width=52 nowrap valign=bottom style='width:38.65pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>5000</span></p>
+  </td>
+  <td width=85 nowrap valign=bottom style='width:64.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>4164165</span></p>
+  </td>
+  <td width=93 nowrap valign=bottom style='width:69.7pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>4154150</span></p>
+  </td>
+  <td width=86 nowrap valign=bottom style='width:64.5pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>0%</span></p>
+  </td>
+  <td width=96 nowrap valign=bottom style='width:72.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+  <td width=87 nowrap valign=bottom style='width:65.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td width=52 nowrap valign=bottom style='width:38.65pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>6000</span></p>
+  </td>
+  <td width=85 nowrap valign=bottom style='width:64.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>5997000</span></p>
+  </td>
+  <td width=93 nowrap valign=bottom style='width:69.7pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>5981976</span></p>
+  </td>
+  <td width=86 nowrap valign=bottom style='width:64.5pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>0%</span></p>
+  </td>
+  <td width=96 nowrap valign=bottom style='width:72.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+  <td width=87 nowrap valign=bottom style='width:65.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td width=52 nowrap valign=bottom style='width:38.65pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>7000</span></p>
+  </td>
+  <td width=85 nowrap valign=bottom style='width:64.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>8163166</span></p>
+  </td>
+  <td width=93 nowrap valign=bottom style='width:69.7pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>8142134</span></p>
+  </td>
+  <td width=86 nowrap valign=bottom style='width:64.5pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>0%</span></p>
+  </td>
+  <td width=96 nowrap valign=bottom style='width:72.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+  <td width=87 nowrap valign=bottom style='width:65.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td width=52 nowrap valign=bottom style='width:38.65pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>8000</span></p>
+  </td>
+  <td width=85 nowrap valign=bottom style='width:64.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>10662665</span></p>
+  </td>
+  <td width=93 nowrap valign=bottom style='width:69.7pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>10634624</span></p>
+  </td>
+  <td width=86 nowrap valign=bottom style='width:64.5pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>0%</span></p>
+  </td>
+  <td width=96 nowrap valign=bottom style='width:72.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+  <td width=87 nowrap valign=bottom style='width:65.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td width=52 nowrap valign=bottom style='width:38.65pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>9000</span></p>
+  </td>
+  <td width=85 nowrap valign=bottom style='width:64.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>13495500</span></p>
+  </td>
+  <td width=93 nowrap valign=bottom style='width:69.7pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>13459446</span></p>
+  </td>
+  <td width=86 nowrap valign=bottom style='width:64.5pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>0%</span></p>
+  </td>
+  <td width=96 nowrap valign=bottom style='width:72.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+  <td width=87 nowrap valign=bottom style='width:65.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td width=52 nowrap valign=bottom style='width:38.65pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>10000</span></p>
+  </td>
+  <td width=85 nowrap valign=bottom style='width:64.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>16661666</span></p>
+  </td>
+  <td width=93 nowrap valign=bottom style='width:69.7pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>16616600</span></p>
+  </td>
+  <td width=86 nowrap valign=bottom style='width:64.5pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>0%</span></p>
+  </td>
+  <td width=96 nowrap valign=bottom style='width:72.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+  <td width=87 nowrap valign=bottom style='width:65.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td width=52 nowrap valign=bottom style='width:38.65pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>11000</span></p>
+  </td>
+  <td width=85 nowrap valign=bottom style='width:64.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>20161165</span></p>
+  </td>
+  <td width=93 nowrap valign=bottom style='width:69.7pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>20106086</span></p>
+  </td>
+  <td width=86 nowrap valign=bottom style='width:64.5pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>0%</span></p>
+  </td>
+  <td width=96 nowrap valign=bottom style='width:72.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+  <td width=87 nowrap valign=bottom style='width:65.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td width=52 nowrap valign=bottom style='width:38.65pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>11493</span></p>
+  </td>
+  <td width=85 nowrap valign=bottom style='width:64.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>22009095</span></p>
+  </td>
+  <td width=93 nowrap valign=bottom style='width:69.7pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>21948709</span></p>
+  </td>
+  <td width=86 nowrap valign=bottom style='width:64.5pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>0%</span></p>
+  </td>
+  <td width=96 nowrap valign=bottom style='width:72.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+  <td width=87 nowrap valign=bottom style='width:65.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">&nbsp;</p>
+
+<p class=MsoNormal style='text-align:center;text-indent:35.45pt;line-height:
+150%'><span style='font-size:12.0pt;line-height:150%;font-family:"Times New Roman"'>
+<img
+width=452 height=297 id="Диаграмма 2" src="Images/kr2-4.gif" align="left"></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:35.45pt;line-height:
+150%'><span style='font-size:12.0pt;line-height:150%;font-family:"Times New Roman"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:35.45pt;line-height:
+normal'>&nbsp;</p>
+<p class=MsoNormal style='text-align:justify;text-indent:35.45pt;line-height:
+normal'>&nbsp;</p>
+<p class=MsoNormal style='text-align:justify;text-indent:35.45pt;line-height:
+normal'>&nbsp;</p>
+<p class=MsoNormal style='text-align:justify;text-indent:35.45pt;line-height:
+normal'>&nbsp;</p>
+<p class=MsoNormal style='text-align:justify;text-indent:35.45pt;line-height:
+normal'>&nbsp;</p>
+<p class=MsoNormal style='text-align:justify;text-indent:35.45pt;line-height:
+normal'>&nbsp;</p>
+<p class=MsoNormal style='text-align:justify;text-indent:35.45pt;line-height:
+normal'>&nbsp;</p>
+<p class=MsoNormal style='text-align:justify;text-indent:35.45pt;line-height:
+normal'>&nbsp;</p>
+<p class=MsoNormal style='text-align:justify;text-indent:35.45pt;line-height:
+normal'>&nbsp;</p>
+<p class=MsoNormal style='text-align:justify;text-indent:35.45pt;line-height:
+normal'><span style='font-size:12.0pt;font-family:"Times New Roman"'>Функция
+балансировки дерева создана для уменьшения трудоемкости поиска в дереве. Дерево
+называется сбалансированным, если длина максимальной и минимальной ветви
+отличается не более чем на 1. После балансировки все алгоритмы будут иметь
+меньшую трудоемкость, нежели чем в несбалансированном дереве. Балансировка
+дерева делится на 3 этапа: </span></p>
+<p class=MsoNormal style='text-align:justify;text-indent:35.45pt;line-height:
+normal'><span style='font-size:12.0pt;font-family:"Times New Roman"'>1) Сбор данных с вершин дерева и их запись в
+специально созданный МУ; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2) Разрушение дерева; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3)Создание нового
+сбалансированного дерева. </span></p>
+<p class=MsoNormal style='text-align:justify;text-indent:35.45pt;line-height:
+normal'><span style='font-size:12.0pt;font-family:"Times New Roman"'>Для</span><span style='font-size:12.0pt;font-family:
+"Times New Roman"'> </span><span style='font-size:12.0pt;font-family:"Times New Roman"'>этого были созданы функции</span><span
+lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman"'>: </span><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New";color:blue'>void</span><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New"'> scan(tree *p, <span
+style='color:blue'>char</span> **dd, <span style='color:blue'>int</span>&amp;m),
+<span style='color:blue'>void</span> destroy(tree *p), tree *create(<span
+style='color:blue'>char</span> **dd, <span style='color:blue'>int</span> a, <span
+style='color:blue'>int</span> nn)</span><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman"'> . </span><span style='font-size:12.0pt;
+font-family:"Times New Roman"'>Трудоемкость балансировки найдем
+экспериментальным путем. Из файла загружаем строки в программу, после каждой
+1000-ой строки делаем балансировку. Замеряем время и кол-во
+операций (кол-во пройденных вершин):</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:35.45pt;line-height:
+normal'><span style='font-size:12.0pt;font-family:"Times New Roman"'>1) «Грязное» время работы
+программы&nbsp; (производительность) подчиняется экспериментально полученной 
+линейно-логарифмической зависимости . Отклонение сначала
+достигает 19% в лучшую сторону, а затем постепенно ухудшается с увеличением
+длины файла и в конце достигает 11%.</span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=384
+ style='width:288.0pt;margin-left:5.15pt;border-collapse:collapse'>
+ <tr style='height:12.75pt'>
+  <td width=43 nowrap valign=bottom style='width:32.0pt;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>N</span></p>
+  </td>
+  <td width=85 nowrap valign=bottom style='width:64.0pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>T1(эскп)</span></p>
+  </td>
+  <td width=79 nowrap valign=bottom style='width:59.0pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>T1*(матем)</span></p>
+  </td>
+  <td width=81 nowrap valign=bottom style='width:61.0pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>отклонение</span></p>
+  </td>
+  <td width=96 nowrap valign=bottom style='width:72.0pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>коэф по N1</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td width=43 nowrap valign=bottom style='width:32.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>1000</span></p>
+  </td>
+  <td width=85 nowrap valign=bottom style='width:64.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>14</span></p>
+  </td>
+  <td width=79 nowrap valign=bottom style='width:59.0pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>14,0</span></p>
+  </td>
+  <td width=81 nowrap valign=bottom style='width:61.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>0%</span></p>
+  </td>
+  <td width=96 nowrap valign=bottom style='width:72.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>0,0014048066</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td width=43 nowrap valign=bottom style='width:32.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>2000</span></p>
+  </td>
+  <td width=85 nowrap valign=bottom style='width:64.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>25</span></p>
+  </td>
+  <td width=79 nowrap valign=bottom style='width:59.0pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>30,8</span></p>
+  </td>
+  <td width=81 nowrap valign=bottom style='width:61.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>-19%</span></p>
+  </td>
+  <td width=96 nowrap valign=bottom style='width:72.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td width=43 nowrap valign=bottom style='width:32.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>3000</span></p>
+  </td>
+  <td width=85 nowrap valign=bottom style='width:64.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>41</span></p>
+  </td>
+  <td width=79 nowrap valign=bottom style='width:59.0pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>48,7</span></p>
+  </td>
+  <td width=81 nowrap valign=bottom style='width:61.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>-16%</span></p>
+  </td>
+  <td width=96 nowrap valign=bottom style='width:72.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td width=43 nowrap valign=bottom style='width:32.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>4000</span></p>
+  </td>
+  <td width=85 nowrap valign=bottom style='width:64.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>57</span></p>
+  </td>
+  <td width=79 nowrap valign=bottom style='width:59.0pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>67,2</span></p>
+  </td>
+  <td width=81 nowrap valign=bottom style='width:61.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>-15%</span></p>
+  </td>
+  <td width=96 nowrap valign=bottom style='width:72.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td width=43 nowrap valign=bottom style='width:32.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>5000</span></p>
+  </td>
+  <td width=85 nowrap valign=bottom style='width:64.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>71</span></p>
+  </td>
+  <td width=79 nowrap valign=bottom style='width:59.0pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>86,3</span></p>
+  </td>
+  <td width=81 nowrap valign=bottom style='width:61.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>-18%</span></p>
+  </td>
+  <td width=96 nowrap valign=bottom style='width:72.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td width=43 nowrap valign=bottom style='width:32.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>6000</span></p>
+  </td>
+  <td width=85 nowrap valign=bottom style='width:64.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>95</span></p>
+  </td>
+  <td width=79 nowrap valign=bottom style='width:59.0pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>105,8</span></p>
+  </td>
+  <td width=81 nowrap valign=bottom style='width:61.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>-10%</span></p>
+  </td>
+  <td width=96 nowrap valign=bottom style='width:72.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td width=43 nowrap valign=bottom style='width:32.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>7000</span></p>
+  </td>
+  <td width=85 nowrap valign=bottom style='width:64.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>117</span></p>
+  </td>
+  <td width=79 nowrap valign=bottom style='width:59.0pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>125,6</span></p>
+  </td>
+  <td width=81 nowrap valign=bottom style='width:61.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>-7%</span></p>
+  </td>
+  <td width=96 nowrap valign=bottom style='width:72.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td width=43 nowrap valign=bottom style='width:32.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>8000</span></p>
+  </td>
+  <td width=85 nowrap valign=bottom style='width:64.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>141</span></p>
+  </td>
+  <td width=79 nowrap valign=bottom style='width:59.0pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>145,7</span></p>
+  </td>
+  <td width=81 nowrap valign=bottom style='width:61.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>-3%</span></p>
+  </td>
+  <td width=96 nowrap valign=bottom style='width:72.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td width=43 nowrap valign=bottom style='width:32.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>9000</span></p>
+  </td>
+  <td width=85 nowrap valign=bottom style='width:64.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>162</span></p>
+  </td>
+  <td width=79 nowrap valign=bottom style='width:59.0pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>166,1</span></p>
+  </td>
+  <td width=81 nowrap valign=bottom style='width:61.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>-2%</span></p>
+  </td>
+  <td width=96 nowrap valign=bottom style='width:72.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td width=43 nowrap valign=bottom style='width:32.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>10000</span></p>
+  </td>
+  <td width=85 nowrap valign=bottom style='width:64.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>186</span></p>
+  </td>
+  <td width=79 nowrap valign=bottom style='width:59.0pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>186,7</span></p>
+  </td>
+  <td width=81 nowrap valign=bottom style='width:61.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>0%</span></p>
+  </td>
+  <td width=96 nowrap valign=bottom style='width:72.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td width=43 nowrap valign=bottom style='width:32.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>11000</span></p>
+  </td>
+  <td width=85 nowrap valign=bottom style='width:64.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>215</span></p>
+  </td>
+  <td width=79 nowrap valign=bottom style='width:59.0pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>207,5</span></p>
+  </td>
+  <td width=81 nowrap valign=bottom style='width:61.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>4%</span></p>
+  </td>
+  <td width=96 nowrap valign=bottom style='width:72.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td width=43 nowrap valign=bottom style='width:32.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>11493</span></p>
+  </td>
+  <td width=85 nowrap valign=bottom style='width:64.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>242</span></p>
+  </td>
+  <td width=79 nowrap valign=bottom style='width:59.0pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>217,8</span></p>
+  </td>
+  <td width=81 nowrap valign=bottom style='width:61.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>11%</span></p>
+  </td>
+  <td width=96 nowrap valign=bottom style='width:72.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">&nbsp;</p>
+<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:35.4pt;text-align:justify;line-height:
+normal'><span style='font-size:12.0pt;font-family:"Times New Roman"'>
+<img
+width=455 height=300 src="Images/kr2-9.gif"></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:35.45pt;line-height:
+normal'><span style='font-size:12.0pt;font-family:"Times New Roman"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:35.45pt;line-height:
+normal'><span style='font-size:12.0pt;font-family:"Times New Roman"'>2) 
+Количество операций обхода вершин подчиняется экспериментально полученной зависимости T(N)=N<sup>3/2</sup>/12 (K=0.08). </span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=498
+ style='width:373.85pt;margin-left:5.15pt;border-collapse:collapse'>
+ <tr style='height:12.75pt'>
+  <td width=52 nowrap valign=bottom style='width:38.65pt;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>N</span></p>
+  </td>
+  <td width=85 nowrap valign=bottom style='width:64.0pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>cmp(эскп)</span></p>
+  </td>
+  <td width=93 nowrap valign=bottom style='width:69.7pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>cmp*(матем)</span></p>
+  </td>
+  <td width=86 nowrap valign=bottom style='width:64.5pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>отклонение</span></p>
+  </td>
+  <td width=96 nowrap valign=bottom style='width:72.0pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>коэф по N1</span></p>
+  </td>
+  <td width=87 nowrap valign=bottom style='width:65.0pt;border:none;border-right:
+  solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>Степень</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td width=52 nowrap valign=bottom style='width:38.65pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>1000</span></p>
+  </td>
+  <td width=85 nowrap valign=bottom style='width:64.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>1918</span></p>
+  </td>
+  <td width=93 nowrap valign=bottom style='width:69.7pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>1918</span></p>
+  </td>
+  <td width=86 nowrap valign=bottom style='width:64.5pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>0%</span></p>
+  </td>
+  <td width=96 nowrap valign=bottom style='width:72.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>0,085674</span></p>
+  </td>
+  <td width=87 nowrap valign=bottom style='width:65.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><u><span style='font-size:10.0pt;
+  font-family:"Arial CYR";color:blue'>1,45</span></u></p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td width=52 nowrap valign=bottom style='width:38.65pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>2000</span></p>
+  </td>
+  <td width=85 nowrap valign=bottom style='width:64.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>4607</span></p>
+  </td>
+  <td width=93 nowrap valign=bottom style='width:69.7pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>5240</span></p>
+  </td>
+  <td width=86 nowrap valign=bottom style='width:64.5pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>-12%</span></p>
+  </td>
+  <td width=96 nowrap valign=bottom style='width:72.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+  <td width=87 nowrap valign=bottom style='width:65.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td width=52 nowrap valign=bottom style='width:38.65pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>3000</span></p>
+  </td>
+  <td width=85 nowrap valign=bottom style='width:64.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>8248</span></p>
+  </td>
+  <td width=93 nowrap valign=bottom style='width:69.7pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>9434</span></p>
+  </td>
+  <td width=86 nowrap valign=bottom style='width:64.5pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>-13%</span></p>
+  </td>
+  <td width=96 nowrap valign=bottom style='width:72.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+  <td width=87 nowrap valign=bottom style='width:65.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td width=52 nowrap valign=bottom style='width:38.65pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>4000</span></p>
+  </td>
+  <td width=85 nowrap valign=bottom style='width:64.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>12841</span></p>
+  </td>
+  <td width=93 nowrap valign=bottom style='width:69.7pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>14316</span></p>
+  </td>
+  <td width=86 nowrap valign=bottom style='width:64.5pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>-10%</span></p>
+  </td>
+  <td width=96 nowrap valign=bottom style='width:72.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+  <td width=87 nowrap valign=bottom style='width:65.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td width=52 nowrap valign=bottom style='width:38.65pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>5000</span></p>
+  </td>
+  <td width=85 nowrap valign=bottom style='width:64.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>17578</span></p>
+  </td>
+  <td width=93 nowrap valign=bottom style='width:69.7pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>19786</span></p>
+  </td>
+  <td width=86 nowrap valign=bottom style='width:64.5pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>-11%</span></p>
+  </td>
+  <td width=96 nowrap valign=bottom style='width:72.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+  <td width=87 nowrap valign=bottom style='width:65.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td width=52 nowrap valign=bottom style='width:38.65pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>6000</span></p>
+  </td>
+  <td width=85 nowrap valign=bottom style='width:64.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>23200</span></p>
+  </td>
+  <td width=93 nowrap valign=bottom style='width:69.7pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>25773</span></p>
+  </td>
+  <td width=86 nowrap valign=bottom style='width:64.5pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>-10%</span></p>
+  </td>
+  <td width=96 nowrap valign=bottom style='width:72.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+  <td width=87 nowrap valign=bottom style='width:65.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td width=52 nowrap valign=bottom style='width:38.65pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>7000</span></p>
+  </td>
+  <td width=85 nowrap valign=bottom style='width:64.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>30721</span></p>
+  </td>
+  <td width=93 nowrap valign=bottom style='width:69.7pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>32229</span></p>
+  </td>
+  <td width=86 nowrap valign=bottom style='width:64.5pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>-5%</span></p>
+  </td>
+  <td width=96 nowrap valign=bottom style='width:72.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+  <td width=87 nowrap valign=bottom style='width:65.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td width=52 nowrap valign=bottom style='width:38.65pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>8000</span></p>
+  </td>
+  <td width=85 nowrap valign=bottom style='width:64.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>38530</span></p>
+  </td>
+  <td width=93 nowrap valign=bottom style='width:69.7pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>39114</span></p>
+  </td>
+  <td width=86 nowrap valign=bottom style='width:64.5pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>-1%</span></p>
+  </td>
+  <td width=96 nowrap valign=bottom style='width:72.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+  <td width=87 nowrap valign=bottom style='width:65.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td width=52 nowrap valign=bottom style='width:38.65pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>9000</span></p>
+  </td>
+  <td width=85 nowrap valign=bottom style='width:64.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>46339</span></p>
+  </td>
+  <td width=93 nowrap valign=bottom style='width:69.7pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>46398</span></p>
+  </td>
+  <td width=86 nowrap valign=bottom style='width:64.5pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>0%</span></p>
+  </td>
+  <td width=96 nowrap valign=bottom style='width:72.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+  <td width=87 nowrap valign=bottom style='width:65.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td width=52 nowrap valign=bottom style='width:38.65pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>10000</span></p>
+  </td>
+  <td width=85 nowrap valign=bottom style='width:64.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>54153</span></p>
+  </td>
+  <td width=93 nowrap valign=bottom style='width:69.7pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>54057</span></p>
+  </td>
+  <td width=86 nowrap valign=bottom style='width:64.5pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>0%</span></p>
+  </td>
+  <td width=96 nowrap valign=bottom style='width:72.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+  <td width=87 nowrap valign=bottom style='width:65.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td width=52 nowrap valign=bottom style='width:38.65pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>11000</span></p>
+  </td>
+  <td width=85 nowrap valign=bottom style='width:64.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>62727</span></p>
+  </td>
+  <td width=93 nowrap valign=bottom style='width:69.7pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>62068</span></p>
+  </td>
+  <td width=86 nowrap valign=bottom style='width:64.5pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>1%</span></p>
+  </td>
+  <td width=96 nowrap valign=bottom style='width:72.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+  <td width=87 nowrap valign=bottom style='width:65.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td width=52 nowrap valign=bottom style='width:38.65pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>11493</span></p>
+  </td>
+  <td width=85 nowrap valign=bottom style='width:64.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>72464</span></p>
+  </td>
+  <td width=93 nowrap valign=bottom style='width:69.7pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>66142</span></p>
+  </td>
+  <td width=86 nowrap valign=bottom style='width:64.5pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial CYR"'>10%</span></p>
+  </td>
+  <td width=96 nowrap valign=bottom style='width:72.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+  <td width=87 nowrap valign=bottom style='width:65.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial CYR"'>&nbsp;</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">&nbsp;</p>
+<p class=MsoNormal style='text-align:justify;text-indent:35.45pt;line-height:
+normal'><span style='font-size:12.0pt;font-family:"Times New Roman"'>
+<img
+width=452 height=297 id="Диаграмма 4" src="Images/kr2-10.gif"></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:35.45pt;line-height:
+normal'><span style='font-family:"Arial"'><font size="4">5. Выводы</font></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:35.45pt;line-height:
+normal'><font size="3"><span style="font-family: Times New Roman">Дерево 
+является структурой данных, в которой характеристики доступа к отдельному 
+элементу могут меняться от логарифмических до линейных. Сложность оценки 
+зависимостей производительности и трудоемкости при чтении файла с балансировкой 
+состоит в том, что при чтении имеет место квадратичная зависимость, при обходе и 
+балансировке - линейная (в самом грубом приближении).</span></font></p>
+
+<p class=MsoNormal align=center style='text-align:left;text-indent:35.45pt;
+line-height:normal'><span style='font-size:14.0pt;font-family:"Arial"'>6. Приложение. 
+Исходный текст программы с комментариями </span><font size="2">
+<span style='font-family:"Arial"'>(в пояснительной записке не распечатывается)</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:blue'>#</span><span lang=EN-US style='font-size:10.0pt;font-family:"Courier New";
+color:blue'>include</span><span lang=EN-US style='font-size:10.0pt;font-family:
+"Courier New"'> </span><span style='font-size:10.0pt;font-family:"Courier New";
+color:#A31515'>&lt;</span><span lang=EN-US style='font-size:10.0pt;font-family:
+"Courier New";color:#A31515'>stdio</span><span style='font-size:10.0pt;
+font-family:"Courier New";color:#A31515'>.</span><span lang=EN-US
+style='font-size:10.0pt;font-family:"Courier New";color:#A31515'>h</span><span
+style='font-size:10.0pt;font-family:"Courier New";color:#A31515'>&gt;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:"Courier New";color:blue'>#include</span><span lang=EN-US
+style='font-size:10.0pt;font-family:"Courier New"'> <span style='color:#A31515'>&lt;string.h&gt;</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:"Courier New";color:blue'>#include</span><span lang=EN-US
+style='font-size:10.0pt;font-family:"Courier New"'> <span style='color:#A31515'>&lt;iostream&gt;</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:"Courier New";color:blue'>#include</span><span lang=EN-US
+style='font-size:10.0pt;font-family:"Courier New"'> <span style='color:#A31515'>&lt;conio.h&gt;</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:"Courier New";color:blue'>#include</span><span lang=EN-US
+style='font-size:10.0pt;font-family:"Courier New"'> <span style='color:#A31515'>&lt;time.h&gt;</span>                 
+<span style='color:green'>// </span></span><span style='font-size:10.0pt;
+font-family:"Courier New";color:green'>Для функции</span><span lang=EN-US
+style='font-size:10.0pt;font-family:"Courier New";color:green'> clock</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:"Courier New";color:blue'>#include</span><span lang=EN-US
+style='font-size:10.0pt;font-family:"Courier New"'> <span style='color:#A31515'>&lt;windows.h&gt;</span>              
+<span style='color:green'>// </span></span><span style='font-size:10.0pt;
+font-family:"Courier New";color:green'>Для функции</span><span lang=EN-US
+style='font-size:10.0pt;font-family:"Courier New";color:green'> CharToOemA</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:"Courier New";color:blue'>#include</span><span lang=EN-US
+style='font-size:10.0pt;font-family:"Courier New"'> <span style='color:#A31515'>&lt;dos.h&gt;</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:"Courier New";color:blue'>using</span><span lang=EN-US
+style='font-size:10.0pt;font-family:"Courier New"'> <span style='color:blue'>namespace</span>
+std;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:blue'>int</span><span style='font-size:10.0pt;font-family:"Courier New"'>
+N=100;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:blue'>int</span><span style='font-size:10.0pt;font-family:"Courier New"'>
+cnt=0;<span style='color:green'>// Счетчик сравнений</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:"Courier New";color:blue'>int</span><span lang=EN-US
+style='font-size:10.0pt;font-family:"Courier New"'> nn;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:"Courier New";color:blue'>long</span><span lang=EN-US
+style='font-size:10.0pt;font-family:"Courier New"'> T0=0;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:"Courier New";color:blue'>void</span><span lang=EN-US
+style='font-size:10.0pt;font-family:"Courier New"'> MENU()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span
+style='color:green'>// </span></span><span style='font-size:10.0pt;font-family:
+"Courier New";color:green'>Меню</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:"Courier New"'>{</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:"Courier New"'>      printf(<span style='color:#A31515'>&quot;\nAdd
+file-1\n&quot;</span>);</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:"Courier New"'>      printf(<span style='color:#A31515'>&quot;Include-2\n&quot;</span>);</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:"Courier New"'>      printf(<span style='color:#A31515'>&quot;Delete-3\n&quot;</span>);</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:"Courier New"'>      printf(<span style='color:#A31515'>&quot;Balans-4\n&quot;</span>);</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:"Courier New"'>      printf(<span style='color:#A31515'>&quot;Exit-0\n&quot;</span>);</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:"Courier New"'>}</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:"Courier New";color:blue'>struct</span><span lang=EN-US
+style='font-size:10.0pt;font-family:"Courier New"'> tree</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:"Courier New"'>{</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:"Courier New"'>      </span><span style='font-size:10.0pt;
+font-family:"Courier New";color:blue'>int</span><span style='font-size:10.0pt;
+font-family:"Courier New"'> n;            <span style='color:green'>&nbsp;&nbsp;&nbsp; // Значений
+в поддереве</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'>      <span
+style='color:blue'>char</span> **s; <span style='color:green'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //МУ</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'>      tree
+*l,*r;<span style='color:green'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //Левый потомок и правый</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'>      </span><span
+lang=EN-US style='font-size:10.0pt;font-family:"Courier New";color:blue'>void</span><span
+lang=EN-US style='font-size:10.0pt;font-family:"Courier New"'>
+creat(){r=l=NULL; n=NULL; s=<span style='color:blue'>new</span> <span
+style='color:blue'>char</span>*[N]; <span style='color:blue'>for</span>(<span
+style='color:blue'>int</span> i=0;i&lt;N;i++) s[i]=<span style='color:#A31515'>&quot;null&quot;</span>;
+</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:"Courier New"'>      </span><span style='font-size:10.0pt;
+font-family:"Courier New"'>} <span style='color:green'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //создание пустой
+вершины</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:blue'>void</span><span style='font-size:10.0pt;font-family:"Courier New"'>
+create(<span style='color:blue'>char</span>** s0,<span style='color:blue'>int</span>
+n0){ <span style='color:green'>//создание вершины со значением </span></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'>      </span><span
+lang=EN-US style='font-size:10.0pt;font-family:"Courier New"'>r=l=NULL;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:"Courier New"'>      n=n0;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:"Courier New"'>      s=s0;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:"Courier New"'>}};</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:"Courier New";color:blue'>void</span><span lang=EN-US
+style='font-size:10.0pt;font-family:"Courier New"'> exteud(tree *p){</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:"Courier New"'>      p-&gt;l=<span style='color:blue'>new</span>
+tree;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:"Courier New"'>      </span><span style='font-size:10.0pt;
+font-family:"Courier New"'>p-&gt;l-&gt;create(p-&gt;s,p-&gt;n); <span
+style='color:green'>//перенос значений вершины в потомка</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'>      p-&gt;r=<span
+style='color:blue'>new</span> tree;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'>      p-&gt;r-&gt;creat();<span
+style='color:green'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //создание пустого правого потомка</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'>      p-&gt;l-&gt;n=p-&gt;r-&gt;n=N/2;<span
+style='color:green'>&nbsp;&nbsp;&nbsp; //разделить на 2 части </span></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'>      </span><span
+lang=EN-US style='font-size:10.0pt;font-family:"Courier New";color:blue'>for</span><span
+lang=EN-US style='font-size:10.0pt;font-family:"Courier New"'>(<span
+style='color:blue'>int</span> i=0;i&lt;N/2;i++)</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:"Courier New"'>      </span><span style='font-size:10.0pt;
+font-family:"Courier New"'>{</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'>            cnt++;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'>            p-&gt;r-&gt;s[i]=p-&gt;l-&gt;s[i+N/2];
+<span style='color:green'>//переписывание половины в правую концевую</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'>         
+p-&gt;l-&gt;s[i+N/2]=<span style='color:#A31515'>&quot;null&quot;</span>; <span
+style='color:green'>//зануляем значения</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'>      </span><span
+lang=EN-US style='font-size:10.0pt;font-family:"Courier New"'>}</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;
+font-family:"Courier New"'>      }</span><span style='font-size:10.0pt;
+font-family:"Courier New"'>_________________________________________________ и 
+т.д.</span></p>
+
+</div>
+
+</body>
+
+</html>

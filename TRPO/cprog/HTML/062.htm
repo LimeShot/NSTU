@@ -1,0 +1,1836 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=Edit-Time-Data href="062.files/editdata.mso">
+<title>Массив указателей</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>www.PHILka.RU</o:Author>
+  <o:Template>Книга(шаблон).dot</o:Template>
+  <o:LastAuthor>www.PHILka.RU</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>189</o:TotalTime>
+  <o:Created>2008-05-22T18:18:00Z</o:Created>
+  <o:LastSaved>2008-05-22T18:18:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>3611</o:Words>
+  <o:Characters>20585</o:Characters>
+  <o:Company>NSTU_VT</o:Company>
+  <o:Bytes>11776</o:Bytes>
+  <o:Lines>171</o:Lines>
+  <o:Paragraphs>48</o:Paragraphs>
+  <o:CharactersWithSpaces>24148</o:CharactersWithSpaces>
+  <o:Version>11.6360</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:AttachedTemplate HRef="../Книга(шаблон).dot"></w:AttachedTemplate>
+  <w:DoNotHyphenateCaps/>
+  <w:DrawingGridHorizontalSpacing>0,55 пт</w:DrawingGridHorizontalSpacing>
+  <w:DrawingGridVerticalSpacing>0,55 пт</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:UseMarginsForDrawingGridOrigin/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DrawingGridVerticalOrigin>99,25 пт</w:DrawingGridVerticalOrigin>
+  <w:Compatibility>
+   <w:WW6BorderRules/>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+   <w:UseWord97LineBreakingRules/>
+   <w:SelectEntireFieldWithStartOrEnd/>
+   <w:UseWord2002TableStyleRules/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:"Times New Roman CYR";
+	panose-1:2 2 6 3 5 4 5 2 3 4;
+	mso-font-charset:204;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+@font-face
+	{font-family:"Arial CYR";
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+@font-face
+	{font-family:Rockwell;
+	mso-font-alt:"Twentieth Century Poster1";
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:3 0 0 0 1 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+h1
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:14.0pt;
+	mso-bidi-font-weight:normal;}
+h2
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-font-weight:normal;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+h3
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	font-weight:normal;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";}
+p.a, li.a, div.a
+	{mso-style-name:текст;
+	mso-style-link:"текст Знак";
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a0, li.a0, div.a0
+	{mso-style-name:программа;
+	mso-style-link:"программа Знак";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a1, li.a1, div.a1
+	{mso-style-name:список;
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:18.45pt;
+	margin-bottom:0cm;
+	margin-left:35.45pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	mso-pagination:widow-orphan;
+	tab-stops:42.55pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a2, li.a2, div.a2
+	{mso-style-name:определение;
+	mso-style-parent:текст;
+	margin-top:12.0pt;
+	margin-right:32.9pt;
+	margin-bottom:12.0pt;
+	margin-left:35.45pt;
+	text-align:justify;
+	text-indent:.55pt;
+	mso-pagination:widow-orphan;
+	border:none;
+	mso-border-alt:solid windowtext 1.5pt;
+	padding:0cm;
+	mso-padding-alt:1.0pt 1.0pt 1.0pt 1.0pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a3, li.a3, div.a3
+	{mso-style-name:эпиграф;
+	margin-top:12.0pt;
+	margin-right:32.9pt;
+	margin-bottom:12.0pt;
+	margin-left:5.0cm;
+	text-align:justify;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.a4, li.a4, div.a4
+	{mso-style-name:"от края";
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a5, li.a5, div.a5
+	{mso-style-name:Формула;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.a6, li.a6, div.a6
+	{mso-style-name:"без формата";
+	mso-style-parent:программа;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a7, li.a7, div.a7
+	{mso-style-name:стихи;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.1, li.1, div.1
+	{mso-style-name:эпиграф1;
+	mso-style-parent:эпиграф;
+	margin-top:0cm;
+	margin-right:9.35pt;
+	margin-bottom:0cm;
+	margin-left:9.0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.Normal, li.Normal, div.Normal
+	{mso-style-name:Normal;
+	mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+span.a8
+	{mso-style-name:"текст Знак";
+	mso-style-locked:yes;
+	mso-style-link:текст;
+	mso-ansi-font-size:12.0pt;
+	font-family:"Times New Roman CYR";
+	mso-ascii-font-family:"Times New Roman CYR";
+	mso-hansi-font-family:"Times New Roman CYR";
+	mso-ansi-language:RU;
+	mso-fareast-language:RU;
+	mso-bidi-language:AR-SA;}
+span.a9
+	{mso-style-name:"программа Знак";
+	mso-style-locked:yes;
+	mso-style-link:программа;
+	font-family:Arial;
+	mso-ascii-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	mso-ansi-language:RU;
+	mso-fareast-language:RU;
+	mso-bidi-language:AR-SA;}
+ /* Page Definitions */
+ @page
+	{mso-footnote-separator:url("062.files/header.htm") fs;
+	mso-footnote-continuation-separator:url("062.files/header.htm") fcs;
+	mso-endnote-separator:url("062.files/header.htm") es;
+	mso-endnote-continuation-separator:url("062.files/header.htm") ecs;}
+@page Section1
+	{size:21.0cm 842.0pt;
+	margin:33.45pt 42.55pt 72.0pt 89.85pt;
+	mso-header-margin:14.2pt;
+	mso-footer-margin:31.75pt;
+	mso-even-header:url("062.files/header.htm") eh1;
+	mso-header:url("062.files/header.htm") h1;
+	mso-even-footer:url("062.files/header.htm") ef1;
+	mso-footer:url("062.files/header.htm") f1;
+	mso-first-header:url("062.files/header.htm") fh1;
+	mso-first-footer:url("062.files/header.htm") ff1;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:257298236;
+	mso-list-type:hybrid;
+	mso-list-template-ids:614496608 68747265 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:71.45pt;
+	mso-level-number-position:left;
+	margin-left:71.45pt;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l1
+	{mso-list-id:299841974;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1699456524 68747265 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:71.45pt;
+	mso-level-number-position:left;
+	margin-left:71.45pt;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Обычная таблица";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+table.MsoTableGrid
+	{mso-style-name:"Сетка таблицы";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+  <o:regrouptable v:ext="edit">
+   <o:entry new="1" old="0"/>
+   <o:entry new="2" old="1"/>
+   <o:entry new="3" old="0"/>
+  </o:regrouptable>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=RU style='tab-interval:36.0pt' background="back.gif">
+
+<div class=Section1>
+
+<h2>6.<span lang=EN-US style='mso-ansi-language:EN-US'>2</span>. Структуры
+данных. Массив указателей</h2>
+
+<p class=a3 style="text-align: right">«Не в совокупности ищи единства, но в единообразии разделения». <b
+style='mso-bidi-font-weight:normal'><br>
+Козьма Прутков.<o:p></o:p></b></p>
+
+<h3>Массив указателей как тип данных и как структура данных</h3>
+
+<p class=a>
+<p class=a>
+<p><br
+style='mso-ignore:vglayout' clear=ALL>
+Массив указателей (МУ) – простейшая структура данных, в которой проявляется различие
+между <b style='mso-bidi-font-weight:normal'><a name="m1">физическим и логическим порядком </b>следования
+элементов. Способ организации данных ясен уже из самого определения: это
+массив, каждый элемент которого содержит указатель на переменную (объект).</p>
+</p>
+
+<p class=a4 align=center style='text-align:center'>
+<img border="0" src="Images/062-01.jpg" width="400" height="228"></p>
+<p class=a4 align=center style='text-align:center'>
+<b style='mso-bidi-font-weight:
+normal'><a name="m2">Рис. 62.1. Различие между массивом указателей – типом и структурой
+данных<o:p></o:p></b></p>
+
+<p class=a>Если это записать в терминах контекстного определения переменных, то
+получим, например</p>
+
+<p class=Normal><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>double<span
+style='mso-tab-count:1'>   </span>*p[20];</p>
+
+<p class=Normal><o:p>&nbsp;</o:p></p>
+
+<p class=a4>Переменную <b style='mso-bidi-font-weight:normal'><a name="m3">p</b> следует
+понимать как массив (операция []), каждым элементом которого является указатель
+на переменную типа <b style='mso-bidi-font-weight:normal'><a name="m4">double </b>(операция
+*). Переменная <b style='mso-bidi-font-weight:normal'><a name="m5"><span lang=EN-US
+style='mso-ansi-language:EN-US'>p</span><span lang=EN-US> </span></b>является
+массивом указателей как тип данных, но не является таковой как структура
+данных. Чтобы превратиться в структуру данных, она быть дополнена указуемыми
+переменными и указателями (связями). </p>
+
+<p class=a>Многообразие вариантов реализации массивов указателей возникает по
+нескольким причинам:</p>
+
+<p class=a1 style='margin-left:71.45pt;text-indent:-18.0pt;mso-list:l1 level1 lfo1;
+tab-stops:42.55pt list 71.45pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span lang=EN-US style='mso-ansi-language:EN-US'>c</span>ам
+массив указателей, указуемые переменные и ссылки (указатели) могут быть заданы
+статически (в тексте программы), либо динамически созданы во время ее
+выполнения;</p>
+
+<p class=a1 style='margin-left:71.45pt;text-indent:-18.0pt;mso-list:l1 level1 lfo1;
+tab-stops:42.55pt list 71.45pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>двоякая интерпретация указателя как указателя на
+отдельную переменную и на массив переменных (строку), позволяет создавать
+одномерные СД – массивы указателей на переменные и двумерные – массивы
+указателей на массивы (строки) таких переменных;</p>
+
+<p class=a1 style='margin-left:71.45pt;text-indent:-18.0pt;mso-list:l1 level1 lfo1;
+tab-stops:42.55pt list 71.45pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>указуемые переменные могут быть «собственностью»
+структуры данных, однако массив указателей может ссылаться и на переменные
+(объекты), являющиеся составными частями других структур данных.</p>
+
+<p class=a>Основная сложность заключается в том, что во всех случаях
+используются одни и те же типы данных, а конкретный вид структуры данных
+определяется контекстом их использования в тексте программы. </p>
+
+<h3>Типы данных, используемые при работе с массивами указателей</h3>
+
+<p class=a>
+<p><br
+style='mso-ignore:vglayout' clear=ALL>
+Один тип данных уже был нами упомянут – это массив указателей, переменная вида <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>int</span> *<span lang=EN-US
+style='mso-ansi-language:EN-US'>p</span>[]. </b>Кроме нее используется еще одни
+тип вида <b style='mso-bidi-font-weight:normal'><a name="m6"><span lang=EN-US
+style='mso-ansi-language:EN-US'>int</span> **</b><b style='mso-bidi-font-weight:
+normal'><a name="m7"><span lang=EN-US style='mso-ansi-language:EN-US'>pp</span></b>, который
+можно определить в общем виде как <b style='mso-bidi-font-weight:normal'><a name="m8">указатель
+на указатель</b>. </p>
+</p>
+
+<p class=a4 align=center style='text-align:center'>
+<img border="0" src="Images/062-03.gif" width="466" height="282"></p>
+<p class=a4 align=center style='text-align:center'><b><a name="m9">Рис. 6<span
+lang=EN-US style='mso-ansi-language:EN-US'>2</span>.2. Многообразие
+интерпретаций типа данных <span lang=EN-US style='mso-ansi-language:
+EN-US'>int</span> **<span lang=EN-US style='mso-ansi-language:EN-US'>pp</span><o:p></o:p></b></p>
+
+<p class=a><span class=a9><span style='font-family:"Times New Roman CYR";
+mso-bidi-font-family:"Times New Roman"'>Напомним, что в Си имеют место две
+интерпретации указателя, различить</span></span> которые в тексте программы
+можно только по виду применяемых к указателю операций (т.е. только в контексте
+его использования):</p>
+
+<p class=a1 style='margin-left:71.45pt;text-indent:-18.0pt;mso-list:l0 level1 lfo2;
+tab-stops:42.55pt list 71.45pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>традиционной интерпретации указателя как ссылки
+на отдельную переменную соответствует операция косвенного обращения по
+указателю <b style='mso-bidi-font-weight:normal'><a name="m10">*</b><b style='mso-bidi-font-weight:
+normal'><a name="m11"><span lang=EN-US style='mso-ansi-language:EN-US'>pp</span></b><span
+lang=EN-US style='mso-ansi-language:EN-US'>;</span></p>
+
+<p class=a1 style='margin-left:71.45pt;text-indent:-18.0pt;mso-list:l0 level1 lfo2;
+tab-stops:42.55pt list 71.45pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>согласно концепции адресной арифметики любой
+указатель может ссылаться на неограниченный массив (память) с относительной
+адресацией от текущего положения указателя, что поддерживается операциями
+индексации <b style='mso-bidi-font-weight:normal'><a name="m12"><span lang=EN-US
+style='mso-ansi-language:EN-US'>pp</span>[</b><b style='mso-bidi-font-weight:
+normal'><a name="m13"><span lang=EN-US style='mso-ansi-language:EN-US'>i</span>] </b>и
+добавления целого к указателю – <b style='mso-bidi-font-weight:normal'><a name="m14"><span
+lang=EN-US style='mso-ansi-language:EN-US'>p</span>++, </b><b style='mso-bidi-font-weight:
+normal'><a name="m15"><span lang=EN-US style='mso-ansi-language:EN-US'>p</span>+=</b><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>n</span>.</b></p>
+
+<p class=a>Указатель на указатель таким образом допускает целых четыре
+интерпретации. При этом для каждой из них должна быть создана
+(инициализирована) своя структура данных. Положение усугубляется еще и тем, что
+за соответствием структуры данных и операциями над ней должен следить
+программист (компилятор этого не делает).</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int a=5,
+b=10;<span style='mso-spacerun:yes'>  </span>int *p=&amp;a; int **pp=&amp;p;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>(**pp)++;<span
+style='mso-spacerun:yes'>  </span>*pp=&amp;b; **pp=0;<o:p></o:p></span></p>
+
+<p class=a0>&nbsp;<p>
+<img border="0" src="Images/062-04.gif" width="468" height="122"><br
+style='mso-ignore:vglayout' clear=ALL>
+</p>
+
+<p class=a>Первый вариант – указатель на указатель на отдельную переменную,
+имеет довольно специфическое применение. Обычно от используется для передачи <b
+style='mso-bidi-font-weight:normal'>адреса заголовка </b>какой-либо структуры
+данных при необходимости его изменения. В формальных параметрах для этой цели
+предпочтительнее использование <b style='mso-bidi-font-weight:normal'><a name="m16">ссылки на
+указатель (см. 6.3).<o:p></o:p></b></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int a[10]=5, b[10]=10;<span
+style='mso-spacerun:yes'>  </span>int *p=a; int **pp=&amp;p;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>for (int
+i=0;i&lt;10;i++) (*pp)[i]=0;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>*pp=b;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>for (int
+i=0;i&lt;10;i++) { (*pp)++; **pp=i; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a><img border="0" src="Images/062-05.gif" width="466" height="217"><br
+style='mso-ignore:vglayout' clear=ALL>
+Второй вариант также довольно экзотичен – указатель на указатель на линейный
+массив переменных. В выражениях, которые используются в такой структуре данных
+присутствуют приоритетные скобки, поскольку операция косвенного обращения на
+первом уровне предшествует операции индексации на втором.<p></p>
+
+<p class=a>В остальных вариантах тип данных <b style='mso-bidi-font-weight:
+normal'><a name="m17">int** </b>применяется для работы с массивами указателей. Классическая
+интерпретация - указатель на массив указателей на отдельные объекты использует
+естественный порядок операций <b style='mso-bidi-font-weight:normal'><a name="m18">*p[i]</b> для
+доступа к указуемым объектам. </p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><img border="0" src="Images/062-06.gif" width="466" height="158"></p>
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int a=5, b=10, </span>с<span
+lang=EN-US style='mso-ansi-language:EN-US'>=15;<span style='mso-spacerun:yes'> 
+</span>int *p[]={&amp;a,&amp;b,&amp;c,NULL}; int **pp=p;<o:p></o:p></span></p>
+
+<p class=a0>
+<p class="a0"><span lang=EN-US style='mso-ansi-language:EN-US'>for (int
+s=0,i=0;i&lt;10;i++)<span style='mso-spacerun:yes'>  </span>s=s+*pp[i];</span></p>
+<p class="a0">&nbsp;</p>
+</p>
+
+<p class=a>Массив указателей на линейные массивы переменных является двумерной
+структурой данных и использует двойную индексацию. Функционально она является
+эквивалентом двумерного массива.</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int a[]={5,6,7,8},
+b[]={1,2,3,4}, </span>с<span lang=EN-US style='mso-ansi-language:EN-US'>[]={5,2,4,8};<span
+style='mso-spacerun:yes'>  </span>int *p[]={a,b,c}; int **pp=p;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>for (int
+s=0,i=0;i&lt;3;i++)<span style='mso-spacerun:yes'>  </span><o:p></o:p></span></p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>for (int j=0;j&lt;4;j++)<span style='mso-spacerun:yes'>  </span>s=s+pp[i][j];<o:p></o:p></span></p>
+
+<span lang=EN-US style='font-size:10.0pt;font-family:Arial;mso-fareast-font-family:
+"Times New Roman";mso-bidi-font-family:"Times New Roman";mso-ansi-language:
+EN-US;mso-fareast-language:RU;mso-bidi-language:AR-SA'><br clear=all
+style='mso-special-character:line-break;page-break-before:always'>
+<img border="0" src="Images/062-07.gif" width="466" height="200"></span><p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'><o:p>&nbsp;</o:p></span></p>
+<h3>Статические и динамические массивы указателей</h3>
+</h3>
+
+<p class=a>Другой источник разнообразия – способ формирования перечисленных
+структур данных. <b style='mso-bidi-font-weight:normal'><a name="m19">Статический массив
+указателей </b>формируется при трансляции: переменные (сам массив указателей и
+указуемые переменные) определяются статически, как обычные именованные
+переменные, а указатели инициализируются. Структура данных включена
+непосредственно в программный код и «готова к работе». </p>
+
+<p class=Normal><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int a1,a2,a3,
+*pd[] = { &amp;a1, &amp;a2, &amp;a3, NULL};<o:p></o:p></span></p>
+
+<p class=a>Промежуточные варианты массива указателей могут содержать как статические,
+так и динамические компоненты. В следующем примере статический массив
+указателей программно заполняется адресами элементов статического же массива
+(динамически формируются только сами указатели).</p>
+
+<p class=Normal><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int d[19],
+*pd[20];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>for (i=0; i&lt;19;
+i++) pd[i] = &amp;d[i];<o:p></o:p></span></p>
+
+<p class=a0>pd[i] = NULL;</p>
+
+<p class=a>Указуемые переменные могут создаваться динамически, их адреса
+заполняют статический массив указателей. </p>
+
+<p class=Normal><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int *p, *pd[20];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>for (i=0; i&lt;19;
+i++){ p = new int;</span><span lang=EN-US style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>*p = i;<span
+style='mso-spacerun:yes'>  </span>pd[i] = p; }<o:p></o:p></span></p>
+
+<p class=a0>pd[i] = NULL;</p>
+
+<p class=a>Наконец, если массив указателей формируется как динамическая
+структура данных, то <b style='mso-bidi-font-weight:normal'><a name="m20">динамический массив
+указателей </b>создается в процессе работы программы. Операция <b
+style='mso-bidi-font-weight:normal'>new </b>в качестве результата возвращает
+указатель на область памяти, содержащую указатели, т.е. тип <b
+style='mso-bidi-font-weight:normal'>int**</b>, который запоминается в переменной
+того же типа.</p>
+
+<p class=Normal><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int</span> **<span
+lang=EN-US style='mso-ansi-language:EN-US'>pp</span>, *<span lang=EN-US
+style='mso-ansi-language:EN-US'>p</span>;</p>
+
+<p class=a0><b style='mso-bidi-font-weight:normal'><a name="m21"><span lang=EN-US
+style='mso-ansi-language:EN-US'>pp</span> = </b><b style='mso-bidi-font-weight:
+normal'><a name="m22"><span lang=EN-US style='mso-ansi-language:EN-US'>new</span><span
+lang=EN-US> </span></b><b style='mso-bidi-font-weight:normal'><a name="m23"><span lang=EN-US
+style='mso-ansi-language:EN-US'>int</span> *[20];</b><span style='mso-tab-count:
+1'>        </span>// память под массив указателей</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>for (i=0; i&lt;19;
+i++){<span style='mso-tab-count:1'>         </span>// </span>из<span
+lang=EN-US style='mso-ansi-language:EN-US'> 20 </span>указателей<span
+style='mso-ansi-language:EN-US'> </span>типа<span lang=EN-US style='mso-ansi-language:
+EN-US'> int*<span style='mso-tab-count:4'>                                           </span><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>p = new int;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>*p = i; <o:p></o:p></span></p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>pp[i] = p;<span style='mso-tab-count:1'>           </span>// можно
+pp[i]=new int; *pp[i]=i;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>pp[i] = NULL;<o:p></o:p></span></p>
+
+<span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:"Arial CYR";
+mso-fareast-font-family:"Times New Roman";mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:RU;mso-fareast-language:RU;mso-bidi-language:AR-SA'><br
+clear=all style='page-break-before:always'>
+</span>Массив указателей. Физический и логический порядок<p class=a>При работе с массивом указателей используются два контекста:</p>
+
+<p class=a1><span style='mso-spacerun:yes'> </span>- <span
+style='mso-spacerun:yes'> </span><b style='mso-bidi-font-weight:normal'><a name="m24">pp[i]</b>
+-i-й указатель в массиве; </p>
+
+<p class=a1><span style='mso-spacerun:yes'> </span>- <b style='mso-bidi-font-weight:
+normal'><a name="m25">*p</b><b style='mso-bidi-font-weight:normal'><a name="m26"><span lang=EN-US
+style='mso-ansi-language:EN-US'>p</span>[i] </b>-значение <span lang=EN-US
+style='mso-ansi-language:EN-US'>i</span>-ой указуемой переменной. <b
+style='mso-bidi-font-weight:normal'><o:p></o:p></b></p>
+
+<p class=a>Алгоритмы работы с массивом указателей и обычным массивом внешне
+очень похожи. Разница же состоит в том, что размещение данных в обычном массиве
+соответствует их <b style='mso-bidi-font-weight:normal'><a name="m27">физическому </b>порядку
+следования в памяти, а массив указателей позволяет сформировать <b
+style='mso-bidi-font-weight:normal'>логический порядок </b>следования элементов
+в соответствии с размещением указателей на них.<span style='mso-spacerun:yes'> 
+</span>Тогда изменение порядка следования (включение, исключение, упорядочение,
+перестановка), которое в обычном массиве заключается в перемещении самих
+элементов, в массиве указателей должно сопровождаться операциями над
+указателями на них. Очевидные преимущества возникают, когда сами указуемые
+переменные являются достаточно большими, либо перемещение их невозможно по
+каким-либо причинам (например, на них ссылаются другие части программы). Для
+сравнения приведем функции сортировки массива и массива указателей. </p>
+
+<p class=Normal><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//------------------------------------------------------<span
+lang=EN-US style='mso-ansi-language:EN-US'>62</span>-01.<span lang=EN-US
+style='mso-ansi-language:EN-US'>cpp</span></p>
+
+<p class=a0>//--- Сортировка массива и массива указателей</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void sort1 (double
+d[],int sz){<o:p></o:p></span></p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>int i,k;<o:p></o:p></span></p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>do {<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>for ( k=0, i=0; i&lt;sz-1; i++)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span><span
+style='mso-spacerun:yes'>   </span>if (d[i] &gt; d[i+1])<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span><span
+style='mso-spacerun:yes'>   </span>{ double c; c = d[i]; d[i] = d[i+1]; d[i+1]
+= c; k=1;}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span><span style='mso-spacerun:yes'> 
+</span>} while (k); }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>void sort2 (double *pd[]){ <o:p></o:p></span></p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>int i,k;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>do {<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>for ( k=0, i=0; pd[i+1]!=NULL;i++)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span><span
+style='mso-spacerun:yes'>   </span>if</span> (*<span lang=EN-US
+style='mso-ansi-language:EN-US'>pd</span>[<span lang=EN-US style='mso-ansi-language:
+EN-US'>i</span>] &gt; *<span lang=EN-US style='mso-ansi-language:EN-US'>pd</span>[<span
+lang=EN-US style='mso-ansi-language:EN-US'>i</span>+1]) <span style='mso-tab-count:
+1'>     </span><span style='mso-tab-count:1'>            </span>// Сравнение
+указуемых переменных</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+style='mso-spacerun:yes'>   </span>{<span lang=EN-US style='mso-ansi-language:
+EN-US'>double</span> *<span lang=EN-US style='mso-ansi-language:EN-US'>c</span>;<span
+style='mso-spacerun:yes'>               </span><span style='mso-tab-count:2'>               </span>//
+Перестановка указателей</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>  
+</span>c = pd[i]; pd[i] = pd[i+1];pd[i+1] = c; k = 1; }<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span><span
+style='mso-spacerun:yes'>  </span>} <span lang=EN-US style='mso-ansi-language:
+EN-US'>while</span> (<span lang=EN-US style='mso-ansi-language:EN-US'>k</span>);}</p>
+
+<h3>Динамический массив указателей на переменные (объекты)</h3>
+
+<p class=a>Если динамический массив указателей ссылается на множество «уже
+известных», т.е. не им созданных и не ему принадлежащих переменных (объектов),
+то его уместно рассматривать как коллекцию, имеющую собственный логический
+порядок. В качестве примера рассмотрим функцию, которая создает массив
+указателей на упорядоченные по возрастанию положительные значения, взятые из
+массива. Как и для любого динамического массива, для массива указателей
+справедливы все выводы о его размерности: в данном случае она может быть
+вычислена заранее. Результат функции имеет тип <b style='mso-bidi-font-weight:
+normal'><a name="m28">double ** - </b>указатель на динамический массив указателей, созданный
+внутри функции.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>//------------------------------------------------------62-02.cpp</p>
+
+<p class=MsoPlainText>//-------- Динамический массив указателей </p>
+
+<p class=MsoPlainText>// на упорядоченные положительные элементы исходного
+массива</p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-ansi-language:EN-US'>double
+**create( double in[], int n){<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-ansi-language:EN-US'>int</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>i</span>,<span
+lang=EN-US style='mso-ansi-language:EN-US'>j</span>,<span lang=EN-US
+style='mso-ansi-language:EN-US'>m</span>;<span style='mso-tab-count:1'>                          </span>//
+Вычислить размерность</p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-ansi-language:EN-US'>for
+(i=0,m=0; i&lt;n; i++) if (in[i]&gt;0) m++;<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-ansi-language:EN-US'>double
+**pp = new double *[m+1];<span style='mso-tab-count:1'>    </span>// </span>Создать<span
+style='mso-ansi-language:EN-US'> </span>ДМУ<span lang=EN-US style='mso-ansi-language:
+EN-US'><o:p></o:p></span></p>
+
+<p class=MsoPlainText>pp[m]=NULL;</p>
+
+<p class=MsoPlainText>for (i=0,j=0; i&lt;n; i++)<span style='mso-tab-count:
+3'>             </span>// Запомнить указатель на </p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>if (in[i]&gt;0) pp[j++]=&amp;in[i];<span
+style='mso-tab-count:1'>  </span>// </span>положительный<span style='mso-ansi-language:
+EN-US'> </span>элемент<span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-ansi-language:EN-US'>sort2(pp);<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-ansi-language:EN-US'>return
+pp;} <o:p></o:p></span></p>
+
+<h3>Динамический массив указателей на массивы переменных</h3>
+
+<p class=a>Указуемым объектом в массиве указателей может быть как отдельная
+переменная, так и массив таких переменных. В последнем случае мы имеем
+функциональный аналог <b style='mso-bidi-font-weight:normal'><a name="m29">двумерного массива</b>:
+первый индекс выбирает указатель на массив, второй – элемент этого массива.
+Более того, аналогия здесь даже синтаксическая: выражение <b style='mso-bidi-font-weight:
+normal'><a name="m30"><span lang=EN-US style='mso-ansi-language:EN-US'>p</span>[</b><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>i</span>][<span lang=EN-US
+style='mso-ansi-language:EN-US'>j</span>] </b>приемлемо в обоих случаях и с
+точки зрения логической организации данных обозначает одно и то же – <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>j</span>-ый<span style='mso-spacerun:yes'>  </span></b>элемент<span
+style='mso-spacerun:yes'>  </span><b style='mso-bidi-font-weight:normal'><a name="m31">i-</b>ой
+строки. Преимущество массива указателей проявляется, если речь идет о
+переменной размерности. Двумерный массив в Си всегда должен иметь фиксированную
+вторую размерность (для вычисления адресов транслятор должен знать длину строки
+матрицы). Для массива указателей – это излишне. </p>
+
+<p class=a4 align=center style='text-align:center'><b><a name="m32"><span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p>&nbsp;<img border="0" src="Images/062-08.jpg" width="400" height="295"></o:p></span></b></p>
+
+<p class=a4 align=center style='text-align:center'>
+<p align="center"><br
+style='mso-ignore:vglayout' clear=ALL>
+<b><a name="m33">Рис. 6<span lang=EN-US style='mso-ansi-language:EN-US'>2</span>.3.
+Представление матрицы переменной размерности в виде ДМУ на строки<o:p></o:p></b></p>
+</p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0>//---------------<span lang=EN-US style='mso-ansi-language:EN-US'>--------------------------------</span>--------------------------------------62-03.cpp</p>
+
+<p class=a0>//--- Матрица произвольной<span style='mso-spacerun:yes'> 
+</span>размерности - массив указателей на массивы</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>double</span> **<span
+lang=EN-US style='mso-ansi-language:EN-US'>load</span>(<span lang=EN-US
+style='mso-ansi-language:EN-US'>char</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>nm</span>[], <span lang=EN-US
+style='mso-ansi-language:EN-US'>int</span> &amp;<span lang=EN-US
+style='mso-ansi-language:EN-US'>n</span>, <span lang=EN-US style='mso-ansi-language:
+EN-US'>int</span> &amp;<span lang=EN-US style='mso-ansi-language:EN-US'>m</span>){<span
+style='mso-tab-count:2'>              </span>// Размерности матрицы – по ссылке</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>FILE *fd=fopen(nm,&quot;r&quot;);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if (fd==NULL) return NULL;<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>fscanf(fd,&quot;%d%d&quot;,&amp;n,&amp;m);<span
+style='mso-tab-count:2'>                      </span>// Чтение размерностей</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>double **pp=new
+double*[n];<span style='mso-tab-count:2'>                   </span>// Создание
+ДМУ по первой размерности</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>for(int i=0;i&lt;n;i++){<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:2; mso-ansi-language:EN-US' lang="EN-US">                        </span>pp[i]=new
+double[m];<span style='mso-tab-count:2'>                  </span>// Создание
+линейных ДМ (строк)</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>for(int j=0;j&lt;m;j++)
+fscanf(fd,&quot;%lf&quot;,&amp;pp[i][j]);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>fclose(fd);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>return pp;}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>double sum(double
+**p , int n, int m ){ <span style='mso-tab-count:2'>                 </span><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>double s=0 ;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>for (int i=0;
+i&lt;n; i++)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>for (int j=0; j&lt;m; j++)
+s+=p[i][j];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>return s; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void main(){ int
+n1,m1;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>double
+**pp=load(&quot;62-03.txt&quot;,n1,m1);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>if (pp!=NULL) </span>{</p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>printf(&quot;sum(%d,%d)=%2.0lf\n&quot;,n1,m1,sum(pp,n1,m1)); <o:p></o:p></span></p>
+
+<p class=a0 style='text-indent:36.0pt'>destroy(pp,n1);}</p>
+
+<p class=a>В данном представлении указуемые объекты – строки матрицы являются
+«собственностью» структуры данных. Процедура освобождения памяти из-под такой
+полностью динамической структуры данных происходит в два этапа: сначала в цикле
+уничтожаются динамические массивы – строки, а затем – сам массив указателей.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//------------------------------------------------------------------62-03.cpp<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void
+destroy(double **pp,int n){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>for (int i=0;i&lt;n;i++) delete
+[]pp[i];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>delete []pp; }<o:p></o:p></span></p>
+
+<p class=a>В следующем примере динамический массив указателей ссылается на
+компоненты уже существующей структуры данных. С его помощью мы получаем
+логическое представление структуры данных, отличное от ее исходного физического
+представления.</p>
+
+<p class=a><img border="0" src="Images/062-10.gif" width="563" height="275"></p>
+
+<p class=a4 align=center style='text-align:center'><b><a name="m34">Рис. 6<span
+lang=EN-US style='mso-ansi-language:EN-US'>2</span>.4. Двумерная массив на
+основе линейного (однократное слияние)<o:p></o:p></b></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//------------------------------------------------------62-04.cpp</p>
+
+<p class=a0>// Простое однократное слияние - массив указателей</p>
+
+<p class=a0>// на линейные массивы (части линейного массива)</p>
+
+<p class=a0>void sort(int a[], int n);<span style='mso-tab-count:2'>                 </span><span
+style='mso-tab-count:1'>            </span>// любая сортировка одномерного
+массива</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void big_sort(int
+A[], int N){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int
+max=A[0],i,j,k,n=sqrt(N)+1;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int **B=new
+int*[n];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int *L=new
+int[n],*C=new int[N];<span style='mso-tab-count:1'>               </span>// </span>массив<span
+style='mso-ansi-language:EN-US'> </span>размерностей<span style='mso-ansi-language:
+EN-US'> </span>частей<span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>for (i=0; i&lt;n;
+i++) B[i]=&amp;A[i*n];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>for (i=0;
+i&lt;n-1; i++) L[i]=n;<o:p></o:p></span></p>
+
+<p class=a0>L[n-1]=N-n*(n-1);<span style='mso-tab-count:3'>                                    </span>//
+Размерность последнего массива</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>for (i=0; i&lt;n;
+i++) sort(B[i],L[i]);<span style='mso-tab-count:2'>                </span>// </span>Сортировка<span
+style='mso-ansi-language:EN-US'> </span>частей<span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>for (i=0; i&lt;N;
+i++){<span style='mso-spacerun:yes'>                </span><span
+style='mso-tab-count:2'>                  </span>// </span>Слияние<span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>for (k=-1, j=0; j&lt;n; j++){<span
+style='mso-tab-count:1'>              </span>//
+k - индекс строки с минимальным<span style='mso-tab-count:2'>                  </span><span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0 style='margin-left:36.0pt;text-indent:36.0pt'>if (L[j]==0)
+continue;<span style='mso-tab-count:1'>       </span>// Пропуск слитых строк</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span>if
+(k==-1 || *B[j] &lt; *B[k]) </p>
+
+<p class=a0><span style='mso-tab-count:3'>                                    </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>k=j; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>C[i] = *B[k];<span style='mso-tab-count:
+3'>                               </span>// </span>Перенос<span
+style='mso-ansi-language:EN-US'> </span>элемента<span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>B[k]++;<span style='mso-tab-count:
+4'>                                     </span>// </span>Сдвиг<span lang=EN-US
+style='mso-ansi-language:EN-US'> k-</span>го<span style='mso-ansi-language:
+EN-US'> </span>указателя<span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>L[k]--;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>for (i=0; i&lt;N; i++)
+A[i]=C[i];<span style='mso-tab-count:1'>         </span><span style='mso-tab-count:
+1'>            </span>// </span>Возвратить<span style='mso-ansi-language:EN-US'>
+</span>обратно<span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>delete</span> []<span
+lang=EN-US style='mso-ansi-language:EN-US'>B</span>;</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>delete</span> []<span
+lang=EN-US style='mso-ansi-language:EN-US'>C</span>;}</p>
+
+<p class=a>Динамический массив указателей создает эффект двумерности над обычным
+линейным массивом, не меняя его физической структуры. Сортировка однократным
+слиянием (см. 4.6) разбивает линейный массив на части, которые сортируются
+независимо. Для создания такого представления достаточно заполнить динамический
+массив указателей <b style='mso-bidi-font-weight:normal'><a name="m35"><span lang=EN-US
+style='mso-ansi-language:EN-US'>B</span></b><span lang=EN-US> </span>адресами
+групп по <b style='mso-bidi-font-weight:normal'><a name="m36">n </b>элементов (<b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>B</span>[<span lang=EN-US
+style='mso-ansi-language:EN-US'>i</span>]=&amp;</b><b style='mso-bidi-font-weight:
+normal'><a name="m37"><span lang=EN-US style='mso-ansi-language:EN-US'>A</span>[</b><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>i</span>*<span lang=EN-US
+style='mso-ansi-language:EN-US'>n</span>]</b>) исходного линейного массива. Для
+последующего слияния частей дополнительно создается массив счетчиков длин этих
+частей <b style='mso-bidi-font-weight:normal'><a name="m38">L. </b>В процессе слияния
+полученных упорядоченных последовательностей после чтения выбранного элемента
+указатель на него смещается на следующий за ним, а счетчик уменьшается (<b
+style='mso-bidi-font-weight:normal'>C[i]=*B[k]; B[k]++; L[k]--; </b>).</p>
+
+<h3>Представление текста. Динамический<span style='mso-tab-count:1'>   </span>
+массив указателей на строки</h3>
+
+<p class=a4>Массив указателей вида <b style='mso-bidi-font-weight:normal'><a name="m39">char*p[]
+</b>можно интерпретировать как массив указателей на строки символов, т.е. строчный
+текст. Варианты его создания в программе могут быть различными. В полностью
+статической структуре данных массив указателей создается статически и
+инициализируются строковыми константами - вся структура данных включается в
+программный код. Напомним, что строковая константа во всех контекстах
+понимается как указатель на сформированный транслятором массив,
+инициализированный символами строки. </p>
+
+<p class=Normal><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>char<span
+style='mso-tab-count:1'>      </span>*pc[] = { &quot;aaa&quot;,
+&quot;bbb&quot;, &quot;ccc&quot;, NULL};<o:p></o:p></span></p>
+
+<p class=a>Массив указателей может ссылаться на строки, для размещения которых
+используется двумерный массив символов (массив строк). </p>
+
+<p class=Normal><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>char<span
+style='mso-tab-count:1'>      </span>**pc, cc[100][80];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>pc</span>=<span
+lang=EN-US style='mso-ansi-language:EN-US'>new</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>char</span>*[101];<span
+style='mso-tab-count:3'>                                </span>// Динамический
+массив указателей</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>for</span> (<span
+lang=EN-US style='mso-ansi-language:EN-US'>i</span>=0; <span lang=EN-US
+style='mso-ansi-language:EN-US'>i</span>&lt;19; <span lang=EN-US
+style='mso-ansi-language:EN-US'>i</span>++) <span lang=EN-US style='mso-ansi-language:
+EN-US'>pc</span>[<span lang=EN-US style='mso-ansi-language:EN-US'>i</span>] = <span
+lang=EN-US style='mso-ansi-language:EN-US'>cc</span>[<span lang=EN-US
+style='mso-ansi-language:EN-US'>i</span>];<span style='mso-tab-count:1'>                </span>// на строки статического массива</p>
+
+<p class=a0>pc[i] = NULL;</p>
+
+<p class=a>Здесь используются две особенности организации двумерных массивов.
+Во-первых, двумерный массив интерпретируется как массив элементов первого
+индекса, состоящих из элементов второго индекса, в данном случае -100 массивов
+символов по 80 символов в каждом. Во-вторых, идентификатор двумерного массива с
+одним индексом интерпретируется как указатель на начало соответствующего
+массива элементов второго индекса, в данном случае - указатель на i-й массив из
+80 символов (строку). </p>
+
+<p class=Normal><o:p>&nbsp;</o:p></p>
+
+<p class=a>Синтаксис операции извлечения символа из массива указателей на
+строки идентичен синтаксису двумерного массива символов, т.е. имеет место
+отмеченный выше функциональная идентичность массива указателей и двумерного
+массива. Первая индексация извлекает из массива <span lang=EN-US
+style='mso-ansi-language:EN-US'>i</span>-ый указатель, вторая извлекает <span
+lang=EN-US style='mso-ansi-language:EN-US'>j</span>-ый символ из строки,
+адресуемой указателем.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>char<span
+style='mso-tab-count:1'>      </span>*p[]={“aaa”,“bbb”,“ccc”,NULL};<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>char<span
+style='mso-tab-count:1'>      </span>A[][20]={“aaa”,“bbb”,“ccc”};<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0>p[i]<span style='mso-tab-count:2'>                    </span>//
+указатель на i-ю строку в массиве указателей</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>A</span>[<span
+lang=EN-US style='mso-ansi-language:EN-US'>i</span>]<span style='mso-tab-count:
+2'>                   </span>// указатель на начало <span lang=EN-US
+style='mso-ansi-language:EN-US'>i</span>-ой строки в двумерном массиве</p>
+
+<p class=a0>p[i][j] <span style='mso-tab-count:2'>                </span>// j-й
+символ в i-ой строке массива указателей</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>A</span>[i][j] <span
+style='mso-tab-count:2'>               </span>// j-й символ в i-ой строке
+двумерного массива</p>
+
+<p class=Normal><o:p>&nbsp;</o:p></p>
+
+<p class=a>Отмеченное свойство означает единство логической организации двух
+структур данных. Но при этом не следует забывать, что на самом деле физическая
+их реализация различна. Вообще-то массив указателей на строки не обязательно
+может ссылаться на независимые текстовые строки. Это могут быть и указатели на
+начала некоторых фрагментов в одной (или нескольких) строках, например слова. В
+следующем примере функция возвращает динамический массив указателей на
+упорядоченные по длине слова исходной строки.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//------------------------------------------------------62-05.cpp</p>
+
+<p class=a0>//--- Массив указателей на отсортированные по длине слова</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int
+my_strlen(char *p){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>for (int i=0; *p!=0 &amp;&amp; *p!=' ';
+p++,i++);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>return i;}<o:p></o:p></span></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span><span lang=EN-US>char **SortedWords(char *p){<o:p></o:p></span></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>int nw=0,k; char *q;<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-spacerun:yes; mso-ansi-language:EN-US' lang="EN-US"> </span>for (q=p; *q!=0; q++)<span
+style='mso-tab-count:2'>        </span>// Подсчет количества слов по концам
+слов</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>if (q[0]!=' ' &amp;&amp; (q[1]== ' '||
+q[1]==0)) nw++;<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-spacerun:yes; mso-ansi-language:EN-US' lang="EN-US"> </span>char **qq=new char*[nw+1];<span
+style='mso-tab-count:1'>   </span>// Создать ДМУ на строки (символы строки)</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>nw=0;</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>if (*p!= ' ')
+qq[nw++]=p;<span style='mso-tab-count:1'>    </span>// Строка начинается со
+слова</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>for (p++; *p!=0;
+p++)<span style='mso-tab-count:2'>        </span>// Если начало слова - </p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>if (p[0]!=' '
+&amp;&amp; p[-1]==' ')<span style='mso-tab-count:1'> </span>// запомнить
+текущий указатель в строке</p>
+
+<p class=a0><span style='mso-tab-count:1'>      </span><span
+style='mso-spacerun:yes'>  </span><span lang=EN-US style='mso-ansi-language:
+EN-US'>qq[nw++]=p;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>qq[nw]=NULL;<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-spacerun:yes; mso-ansi-language:EN-US' lang="EN-US"> </span>do {<span style='mso-tab-count:5'>                         </span>//
+Сортировка массива указателей</p>
+
+<p class=a0><span style='mso-tab-count:1'>      </span><span
+style='mso-spacerun:yes'> </span>k=0;<span style='mso-tab-count:4'>                   </span>//
+с использование собственной функции</p>
+
+<p class=a0><span style='mso-tab-count:1'>      </span><span
+style='mso-spacerun:yes'> </span>for (int i=0; i&lt;nw-1; i++)<span
+style='mso-tab-count:1'>   </span>// сравнения слов (до пробела)</p>
+
+<p class=a0><span style='mso-tab-count:2'>            </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>if
+(my_strlen(qq[i])&gt;my_strlen(qq[i+1])){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>            </span><span style='mso-spacerun:yes'>  
+</span>k++;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>            </span><span style='mso-spacerun:yes'>  
+</span>char *g=qq[i]; qq[i]=qq[i+1]; qq[i+1]=g;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>            </span><span style='mso-spacerun:yes'>  
+</span>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>      </span><span style='mso-spacerun:yes'>  </span>}
+while(k);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>return qq; }<o:p></o:p></span></p>
+
+<h3>Проблема размерности динамического массива указателей</h3>
+
+<p class=a>Для динамических массивов указателей существуют те же самые проблемы
+размерности, что и для обычных динамических массивов, и решаются они аналогично
+(см.<b style='mso-bidi-font-weight:normal'><a name="m40">5.6</b>). При заранее неизвестной
+его размерности можно периодически перераспределять память под массив
+указателей функцией низкого уровня <b style='mso-bidi-font-weight:normal'><a name="m41">realloc,
+</b>удваивая каждый раз его размерность. Если же сами строки загружать в достаточно
+большой статический буфер, <span style='mso-spacerun:yes'> </span>а затем
+снимать с них динамические копии (функция <b style='mso-bidi-font-weight:normal'><a name="m42">strdup</b>),
+то получил наиболее экономичное построчное представление текста в памяти в виде
+полностью динамической структуры данных.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//------------------------------------------------------62-06.cpp</p>
+
+<p class=a0>//------- Создание ДМУ из строк файла</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>char</span>*<span lang=EN-US style='mso-ansi-language:
+EN-US'>*loadfile(FILE *fd){<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-spacerun:yes; mso-ansi-language:EN-US' lang="EN-US"> </span>char str[1000];</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>int n,sz=SIZE0;<span
+style='mso-tab-count:4'>                    </span>// Кол-во строк и
+размерность ДМУ</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>char **pp = new char*[sz];<span
+style='mso-tab-count:2'>         </span>// </span>Создать<span
+style='mso-ansi-language:EN-US'> </span>ДМУ<span lang=EN-US style='mso-ansi-language:
+EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>for (n=0;fgets(str,1000,fd)!=NULL; n++){<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">      </span>pp[n]=strdup(str);<span
+style='mso-tab-count:2'>            </span>// Копия строки в ДМ</p>
+
+<p class=a0><span style='mso-tab-count:1'>      </span>if (n+1==sz){<span
+style='mso-tab-count:3'>                 </span>// Будет переполнение - </p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>sz*=2;<span style='mso-tab-count:3'>                  </span>//
+удвоить размерность</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>pp=(char**)realloc(pp,<b style='mso-bidi-font-weight:
+normal'><a name="m43">sizeof(char*)</b>*sz);</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>}}</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>pp[n] = NULL;<span
+style='mso-spacerun:yes'>                      </span>// Ограничитель массива
+указателей</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>return pp; }<o:p></o:p></span></p>
+
+<p class=a>При вычислении размерности нового массива указателей в функции <b
+style='mso-bidi-font-weight:normal'>realloc </b>используется размерность типа
+хранимого элемента – указателя <b style='mso-bidi-font-weight:normal'><a name="m44"><span
+style='mso-bidi-font-size:12.0pt;font-family:"Times New Roman"'>sizeof(char*)</span></b><span
+style='mso-bidi-font-size:12.0pt;font-family:"Times New Roman"'>, а
+возвращаемый адрес приводится к типу – указатель на указатель </span><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-bidi-font-size:
+12.0pt;font-family:"Times New Roman";mso-ansi-language:EN-US'>char</span><span style='mso-bidi-font-size:12.0pt;
+font-family:"Times New Roman"'>**.</span><o:p></o:p></b></p>
+
+<a name="lr9"><h3>Лабораторный практикум</h3>
+
+<p class="a" style="text-indent: -18.0pt; margin-left: 36.0pt">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Функция получает линейный массив целых, находит в нем последовательности 
+подряд возрастающих значений и возвращает их в динамическом массиве указателей 
+на линейные массивы (аналог двумерного массива). В каждом из линейных 
+динамических массивов содержится копия возрастающей последовательности, начиная 
+с индекса 1, а под индексом 0 содержится его длина. Невозрастающие значения 
+включаются в отдельный массив, добавляемый в конец (или начало) массива 
+указателей.</p>
+<p class="a" style="text-indent: -18.0pt; margin-left: 36.0pt">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Функция получает строку текста и возвращает динамический массив 
+указателей на слова. Каждое слово копируется в отдельный массив в динамической 
+памяти.</p>
+<p class="a" style="text-indent: -18.0pt; margin-left: 36.0pt">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Функция получает строку, находит самый внутренний фрагмент в скобках и 
+вырезает его. Операция повторяется до тех пор, пока не останется скобок. 
+Полученные фрагменты и остаток строки вернуть в динамическом массиве указателей.</p>
+<p class="a" style="text-indent: -18.0pt; margin-left: 36.0pt">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Функция находит в строке фрагменты, симметричные относительно 
+центрального символа, длиной 7 и более символов (например, &quot;<span lang="EN-US">abcdcba</span>&quot;) 
+и возвращает динамический массив указателей на копии таких фрагментов.</p>
+<p class="a" style="text-indent: -18.0pt; margin-left: 36.0pt">5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Функция находит в строке пары фрагментов, содержащих последовательность 
+одинаковых символов длиной более 3 (кроме пробела) и возвращает динамический 
+массив указателей на копии таких фрагментов.</p>
+<p class="a" style="text-indent: -18.0pt; margin-left: 36.0pt">6.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Стек моделируется при помощи динамического массива указателей на линейные 
+массивы размерности <span lang="EN-US">N </span>целых. Указатель стека – два 
+индекса – в массиве указателей и линейном массиве. В операции <span lang="EN-US">
+push </span>при переполнении текущего линейного массива в массив указателей 
+добавляется новый, если операция <span lang="EN-US">pop </span>переходит к 
+предыдущему массиву, то текущий утилизуется.</p>
+<p class="a" style="text-indent: -18.0pt; margin-left: 36.0pt">7.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Очередь моделируется при помощи динамического массива указателей на 
+линейные массивы размерности <span lang="EN-US">N </span>целых. Указатели на 
+первый и последний&nbsp; элементы очереди – два индекса – в массиве указателей и 
+линейном массиве. В операции добавления при переполнении текущего линейного 
+массива в массив указателей добавляется новый, в операции извлечения – при 
+переходе к следующему линейному массиву текущий утилизуется (указатели в массиве 
+указателей смещаются к началу).</p>
+</a>
+<p align="center">
+<img border="0" src="Images/062-09.jpg" width="288" height="185"><a name="lr9"><br clear="ALL">
+&nbsp;</p>
+<p class="a" style="text-indent: -18.0pt; margin-left: 36.0pt">8.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Функция читает из файла текст по словам и возвращает двухуровневый 
+динамический массив указателей на строки, содержащие слова из исходного файла 
+(тип данных <span lang="EN-US">char</span> *** - см. 87. иерархические структуры 
+данных). Размерность массива указателей нижнего уровня задана, каждый массив 
+указателей ограничен <span lang="EN-US">NULL</span>. Затем сортирует массивы 
+указателей нижнего уровня, затем производит окончательную сортировкупутем 
+однократного слияния (см. 4.6 Сортировка и поиск).</p>
+<p class="a" style="text-indent: -18.0pt; margin-left: 36.0pt">9.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Функция читает из файла текст по словам и возвращает двухуровневый 
+динамический массив указателей на строки&nbsp; на строки, содержащие слова из 
+исходного файла, <b>упорядоченные по алфавиту </b>(тип данных <span lang="EN-US">
+char</span> *** - см. 87. иерархические структуры данных). Размерность массива 
+указателей нижнего уровня задана, каждый массив указателей ограничен
+<span lang="EN-US">NULL</span>. Очередная строка вставляется с сохранением 
+порядка, в первом цикле просматривается массив указателей первого уровня и в 
+каждом – элемент с индексом 0 второго уровня. Если его значение больше нового, 
+то выполянется вставка <b>в предыдущий </b>массив указателей нижнего уровня<b>.
+</b>Если при вставке происходит переполнение, массив создается новый массив 
+указателей, в который копируется половина указателей текущего.</p>
+
+<h3>Вопросы без ответов</h3>
+
+<p class=a4>Содержательно сформулируйте действие, производимое функцией над
+массивом указателей. Напишите вызов функции для статических данных.</p>
+
+<p class=a4><b style='mso-bidi-font-weight:normal'><a name="m45">Пример выполнения задания.<o:p></o:p></b></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//------------------------------------------------------</span>62<span
+lang=EN-US style='mso-ansi-language:EN-US'>-0</span>7<span lang=EN-US
+style='mso-ansi-language:EN-US'>.cpp<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>double * F(double
+*p[], int k) { <o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-spacerun:yes; mso-ansi-language:EN-US' lang="EN-US"> </span>for ( int i=0; p[i]!=0; i++) ; <span
+style='mso-tab-count:1'>                      </span>//
+Текущая размерность массива указателей</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>if (k&gt;=i) return
+NULL;<span style='mso-spacerun:yes'>        </span><span style='mso-tab-count:
+1'>         </span><span style='mso-tab-count:1'>            </span>// Больше
+текущей размерности - неудача</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>double *q=p[k];<span
+style='mso-spacerun:yes'>                 </span><span style='mso-tab-count:
+1'>        </span><span style='mso-tab-count:1'>            </span>// Запомнить
+k- ый указатель</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>for (; k &lt; i; k++)p[k] =
+p[k+1]; <span style='mso-tab-count:1'>    </span><span style='mso-tab-count:
+1'>            </span>// Сдвинуть &quot; хвост&quot; на 1 к началу - удалить</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>return q;}<span
+style='mso-spacerun:yes'>                             </span><span
+style='mso-tab-count:1'>                 </span>//
+k-ый и вернуть его</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>double
+a1=4,a2=7,a3=5,a4=1,*pp[]={&amp;a1,&amp;a2,&amp;a3,&amp;a4,NULL};<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>void main() { printf(&quot;\n</span>Удален<span
+style='mso-ansi-language:EN-US'> </span>по<span lang=EN-US style='mso-ansi-language:
+EN-US'> n=2 ...%2.0lf\n&quot;,*F(pp,2));<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>for (int i=0; pp[i]!=NULL;i++) printf(&quot;
+%2.0lf&quot;,*pp[i]);<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-spacerun:yes; mso-ansi-language:EN-US' lang="EN-US"> </span>}<span
+style='mso-spacerun:yes'>               </span><span style='mso-tab-count:3'>                               </span><span
+style='mso-tab-count:1'>            </span>// Выведет 5 ... 4,7,1.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a4>Функция возвращает указатель на <span lang=EN-US style='mso-ansi-language:
+EN-US'>double</span>. Поскольку она получает массив указателей, можно
+предположить, что он берется оттуда. Действительно, из массива копируется
+указатель, номер которого задан формальным параметром. То есть функция
+возвращает указатель по заданному логическому номеру.<span
+style='mso-spacerun:yes'>  </span>Первоначально подсчитывается текущая
+размерность структуры данных – количество указателей в массиве. Если логический
+номер его превышает, возвращается <span lang=EN-US style='mso-ansi-language:
+EN-US'>NULL</span>. И последнее. После запоминания <span lang=EN-US
+style='mso-ansi-language:EN-US'>k</span>-го указателя все последующие указатели
+сдвигаются на 1 к началу, таким образом, выделенный указатель «затирается». То
+есть функция исключает указатель по логическому номеру и возвращает его в качестве
+результата. Для задания статической структуры данных сначала определяются
+указуемые переменные типа <span lang=EN-US style='mso-ansi-language:EN-US'>double</span>,
+а замет массив указателей инициализируется их адресами.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//------------------------------------------------------62-08.cpp<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//-------------------------------------------------------
+1<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int F1(double
+*p[]){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int n;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>for (n=0;
+p[n]!=NULL; n++);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>return n; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//-------------------------------------------------------
+2<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void F2(double
+*p[]){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int i,k;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>for (k=1;
+pd[k]!=NULL;k++)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>for (i=k; i&gt;0
+&amp;&amp; *pd[i]&lt;*pd[i-1];i--){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>double *q=pd[i]; pd[i]=pd[i-1];
+pd[i-1]=q;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>}}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//------------------------------------------------------
+3<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void F3(double
+*p[], double *q){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int i,n;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>for (i=0; p[i]!=0;
+i++)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if (*p[i] &gt; *q) break;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>for (n=i;
+p[n]!=NULL; n++);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>for (; n &gt;=i;
+n--) p[n+1] = p[n];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>p[i] = q;}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//------------------------------------------------------
+4<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int F4(char *p[]){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int k,i,j;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>for (k=i=0;
+p[i]!=NULL; i++)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>for (j=0; p[i][j]!=0; j++, k++);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>return k;}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//------------------------------------------------------
+5<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>char **F5(char
+a[][80], int n){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int i; char **p;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>p = new
+char*[n+1];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>for (i=0; i&lt;n;
+i++) p[i]=a[i];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>p[n]=NULL;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>return p;}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//------------------------------------------------------
+6<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>char *F6(char
+*p[]){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int i,sz,l,k;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>for (i=sz=k=0;
+p[i]!=NULL; i++)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if ((l=strlen(p[i])) &gt;sz) { sz=l;
+k=i; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>return(p[k]); }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//------------------------------------------------------
+7<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>char **F7(char
+c[]){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>char **p; int i,n,
+cnt;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>p = new char*[20];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>for (i=n=cnt=0;
+c[n]!=0; n++){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if (c[n]==' ')<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>{ c[n]='\0'; cnt=0; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>    </span>else<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>{ cnt++;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>        </span>if (cnt==1) p[i++]=&amp;c[n];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>        </span>if (i==19) break;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>        </span>}}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>p[i]=NULL;
+return(p);}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//------------------------------------------------------
+8<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>char *F8(char
+*p[], int m){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int n; char *q;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>for (n=0;
+p[n]!=NULL; n++);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>if (m &gt;=n)
+return (NULL);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>q = p[m];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>for (n=m;
+p[n]!=NULL; n++) p[n]=p[n+1];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>return q;}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//------------------------------------------------------
+9<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int F9(char *p[],
+char *str){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int h,l,m;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>for (h=0;
+p[h]!=NULL; h++);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>for (h--,l=0; h &gt;= l;){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>m = (l+h) / 2;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>int k= strcmp(p[m],str);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>if (k&lt;0) l = m+1;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>else h = m-1; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>return -1;}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//-----------------------------------------------------
+10<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>char **F10(){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int n; char **p,
+s[80];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>p = new char*[100
+];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>for (n=0; n&lt;99
+&amp;&amp; (gets(s),s[0]!='\0'); n++ )<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>p[n]=strdup(s);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>p[n]=NULL;
+return(p);}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//-----------------------------------------------------
+11<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void F11(char
+*p[], int m){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int n; char *q;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>for (n=0; p[n]!=0;
+n++);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>if (m &gt;= n)
+return;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>for (; n&gt;m;
+n--) p[n+1] = p[n];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>p[m+1] =
+strdup(p[m]); }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//-----------------------------------------------------
+12<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>double F12(double
+*p[],int n){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>double s=0 ;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>for (int i=0;
+p[i]!=NULL; i++)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>for (int j=0;j&lt;n;j++) s+=p[i][j];<o:p></o:p></span></p>
+
+<p class=a0>return s; } </p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span></p>
+
+<p class=Normal><o:p>&nbsp;</o:p></p>
+
+</div>
+
+</body>
+
+</html>

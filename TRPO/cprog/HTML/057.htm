@@ -1,0 +1,990 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=Edit-Time-Data href="057.files/editdata.mso">
+<title>&nbsp;5.7. Модульная организация программы</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>www.PHILka.RU</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>vtpc112</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>150</o:TotalTime>
+  <o:Created>2008-07-05T06:34:00Z</o:Created>
+  <o:LastSaved>2008-07-05T06:34:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>2040</o:Words>
+  <o:Characters>11630</o:Characters>
+  <o:Company>NSTU_VT</o:Company>
+  <o:Bytes>11776</o:Bytes>
+  <o:Lines>96</o:Lines>
+  <o:Paragraphs>27</o:Paragraphs>
+  <o:CharactersWithSpaces>13643</o:CharactersWithSpaces>
+  <o:Version>11.6360</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DoNotHyphenateCaps/>
+  <w:DrawingGridHorizontalSpacing>0,55 пт</w:DrawingGridHorizontalSpacing>
+  <w:DrawingGridVerticalSpacing>0,55 пт</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:UseMarginsForDrawingGridOrigin/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DrawingGridVerticalOrigin>99,25 пт</w:DrawingGridVerticalOrigin>
+  <w:Compatibility>
+   <w:WW6BorderRules/>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+   <w:UseWord97LineBreakingRules/>
+   <w:SelectEntireFieldWithStartOrEnd/>
+   <w:UseWord2002TableStyleRules/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:"Times New Roman CYR";
+	panose-1:2 2 6 3 5 4 5 2 3 4;
+	mso-font-charset:204;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+@font-face
+	{font-family:"Arial CYR";
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+h1
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:14.0pt;
+	mso-bidi-font-weight:normal;}
+h2
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-font-weight:normal;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+h3
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	font-weight:normal;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.a, li.a, div.a
+	{mso-style-name:текст;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a0, li.a0, div.a0
+	{mso-style-name:программа;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a1, li.a1, div.a1
+	{mso-style-name:список;
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:18.45pt;
+	margin-bottom:0cm;
+	margin-left:64.35pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-18.0pt;
+	mso-pagination:widow-orphan;
+	mso-list:l2 level1 lfo1;
+	tab-stops:42.55pt list 64.35pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a2, li.a2, div.a2
+	{mso-style-name:определение;
+	mso-style-parent:текст;
+	margin-top:12.0pt;
+	margin-right:32.9pt;
+	margin-bottom:12.0pt;
+	margin-left:35.45pt;
+	text-align:justify;
+	text-indent:.55pt;
+	mso-pagination:widow-orphan;
+	border:none;
+	mso-border-alt:solid windowtext 1.5pt;
+	padding:0cm;
+	mso-padding-alt:1.0pt 1.0pt 1.0pt 1.0pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a3, li.a3, div.a3
+	{mso-style-name:эпиграф;
+	margin-top:0cm;
+	margin-right:32.9pt;
+	margin-bottom:0cm;
+	margin-left:5.0cm;
+	margin-bottom:.0001pt;
+	text-align:right;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.a4, li.a4, div.a4
+	{mso-style-name:"от края";
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a5, li.a5, div.a5
+	{mso-style-name:Формула;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.a6, li.a6, div.a6
+	{mso-style-name:"без формата";
+	mso-style-parent:программа;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a7, li.a7, div.a7
+	{mso-style-name:стихи;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.1, li.1, div.1
+	{mso-style-name:эпиграф1;
+	mso-style-parent:эпиграф;
+	margin-top:0cm;
+	margin-right:9.35pt;
+	margin-bottom:0cm;
+	margin-left:9.0cm;
+	margin-bottom:.0001pt;
+	text-align:right;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+ /* Page Definitions */
+ @page
+	{mso-footnote-separator:url("057.files/header.htm") fs;
+	mso-footnote-continuation-separator:url("057.files/header.htm") fcs;
+	mso-endnote-separator:url("057.files/header.htm") es;
+	mso-endnote-continuation-separator:url("057.files/header.htm") ecs;}
+@page Section1
+	{size:21.0cm 842.0pt;
+	margin:33.45pt 42.55pt 72.0pt 89.85pt;
+	mso-header-margin:14.2pt;
+	mso-footer-margin:31.75pt;
+	mso-even-header:url("057.files/header.htm") eh1;
+	mso-header:url("057.files/header.htm") h1;
+	mso-even-footer:url("057.files/header.htm") ef1;
+	mso-footer:url("057.files/header.htm") f1;
+	mso-first-header:url("057.files/header.htm") fh1;
+	mso-first-footer:url("057.files/header.htm") ff1;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:741366994;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1194346916 68747279 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l0:level1
+	{mso-level-tab-stop:64.35pt;
+	mso-level-number-position:left;
+	margin-left:64.35pt;
+	text-indent:-18.0pt;}
+@list l1
+	{mso-list-id:904952833;
+	mso-list-type:hybrid;
+	mso-list-template-ids:534706148 68747279 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l1:level1
+	{mso-level-tab-stop:64.35pt;
+	mso-level-number-position:left;
+	margin-left:64.35pt;
+	text-indent:-18.0pt;}
+@list l2
+	{mso-list-id:1628194852;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-964799380 -1450833310 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l2:level1
+	{mso-level-number-format:bullet;
+	mso-level-style-link:список;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:64.35pt;
+	mso-level-number-position:left;
+	margin-left:64.35pt;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Обычная таблица";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+table.MsoTableGrid
+	{mso-style-name:"Сетка таблицы";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+  <o:regrouptable v:ext="edit">
+   <o:entry new="1" old="0"/>
+   <o:entry new="2" old="1"/>
+   <o:entry new="3" old="0"/>
+  </o:regrouptable>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=RU style='tab-interval:36.0pt' background="back.gif">
+
+<div class=Section1>
+
+<h2>5.7. Модульная организация программы</h2>
+
+<p class=a>По окончании этой главы должно сложиться более-менее цельное
+представление о программе, написанной в традиционной технологии
+программирования: это иерархия типов данных, порожденных ими переменных и набор
+вызывающих друг друга функций. При небольшом объеме проекта все это можно
+«свалить в кучу». Однако имеющиеся средства организации процесса трансляции в
+Си (см.<b style='mso-bidi-font-weight:normal'><a name="m1">1.7</b>) позволяют навести здесь
+элементарный порядок. Посмотрим, как в традиционной технологии приживается
+принцип модульной организации программы – разделение исходного текста на
+отдельные файлы с независимой трансляцией и последующей сборкой (компоновкой).
+Но для начала необходимо разобраться со свойствами переменных и функций,
+имеющих отношение к модульности.</p>
+
+<p class=a>Прежде всего, в модульном проектировании программист сталкивается с
+двумя принципиально различными по назначению конструкциями, которые в Си
+синтаксически похожи: <b style='mso-bidi-font-weight:normal'><a name="m2">определение </b>и <b
+style='mso-bidi-font-weight:normal'>объявление.<o:p></o:p></b></p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m3">Определение<span
+style='mso-spacerun:yes'>  </span>– </b>это текстовое описание объекта
+программы (переменной, функции, класса), по которому транслятор создает его
+внутреннее (двоичное) представление (размещает в памяти). </p>
+
+<p class=a>Определение объекта должно производиться в программе только один
+раз, а соответствующий ему внутренний программный код размещается в создаваемом
+при трансляции объектом модуле.</p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m4">Объявление – </b>сообщение
+транслятору об имени и свойствах объекта программы (переменной, функции),
+который в данной точке недоступен (неизвестен транслятору), но который
+используется программой. </p>
+
+<p class=a>Объявлений одного и того же объекта в программе может быть сколько
+угодно, сами они не порождают внутреннего программного кода, а только помогают
+сформировать корректное обращение к объявляемому объекту.</p>
+
+<p class=a>Понятие доступности (известности, видимости) опять-таки относит нас
+к организации процесса трансляции. Поэтому можно указать, как минимум,<span
+style='mso-spacerun:yes'>  </span>две причины, по которым возникает
+необходимость в объявлениях:</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>определение переменной или функции находится в
+другом модуле (файле);</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>определение переменной или функции находится
+«вниз по тексту». Большинство трансляторов «не заглядывает вперед» в поисках
+определений, поэтому<span style='mso-spacerun:yes'>  </span>если обращение
+производится до определения объекта, то он нуждается в дополнительном
+объявлении.</p>
+
+<h3>Время жизни и область действия переменных</h3>
+
+<p class=a>В зависимости от способа и места своего определения переменные
+обладают рядом свойств, от которых зависит функциональное назначение переменной
+в программе. Это <b style='mso-bidi-font-weight:normal'><a name="m5">время жизни </b>и <b
+style='mso-bidi-font-weight:normal'>область действия.<o:p></o:p></b></p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m6">Время жизни переменной</b> -
+интервал времени работы программы, в течение которого переменная существует,
+для нее отведена память, и она может быть использована. При этом время
+существования переменной тесно связано с местом ее размещения в одном из
+сегментов программы (см.<b style='mso-bidi-font-weight:normal'><a name="m7">1.2</b>). Возможны
+три случая: </p>
+
+<p class=a1 style='mso-list:l0 level1 lfo2'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>переменная создается функцией в стеке в момент
+начала выполнения функции и уничтожается при выходе из нее, переменная существует
+«от скобки до скобки». Местом размещения таких переменных является стек программы
+(сегмент стека) ; </p>
+
+<p class=a1 style='mso-list:l0 level1 lfo2'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>переменная создается транслятором при трансляции
+программы и размещается в программном модуле - такая переменная существует в
+течение всего времени работы программы, то есть «всегда». Местом размещения
+служит сегмент статических (глобальных) данных; </p>
+
+<p class=a1 style='mso-list:l0 level1 lfo2'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>переменная создается и уничтожается работающей
+программой в те моменты, когда она «считает это необходимым» - динамические
+переменные (см.<b style='mso-bidi-font-weight:normal'><a name="m8">5.6</b>). Строго говоря,
+динамические переменные в Си не управляются транслятором: этим занимается
+библиотека динамического распределения памяти (в классическом Си она вообще
+вынесена за пределы языка). Тем не менее, с точки зрения использования в
+программе они являются вполне «настоящими». Местом их размещения служат сегменты
+динамических данных, в которых организуется «куча».</p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m9">Область действия (видимости) переменной</b>
+- та часть программы, в которой эта переменная может быть использована, то есть
+является доступной. Областью действия переменной могут быть: </p>
+
+<p class=a1 style='mso-list:l1 level1 lfo3'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>тело функции или блока, то есть «от скобки до
+скобки»; </p>
+
+<p class=a1 style='mso-list:l1 level1 lfo3'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>текущий модуль от места определения или
+объявления переменной до конца модуля, то есть в текущем файле; </p>
+
+<p class=a1 style='mso-list:l1 level1 lfo3'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>все модули программы, проект в целом. </p>
+
+<p class=a><span style='mso-spacerun:yes'> </span>Прежде чем перечислить виды
+переменных (классы памяти), имеющиеся в Си, отметим синтаксическую разницу
+между определением и объявлением переменной.</p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m10">Определение переменной – </b>обычное
+контекстное определение, задающее тип, имя переменной, производящее
+инициализацию. При трансляции определения вычисляется размерность и
+резервируется память. Размерность массивов в определении обязательно<span
+style='mso-spacerun:yes'>  </span>должна быть задана. </p>
+
+<p class=a0><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;font-family:
+"Times New Roman CYR";mso-bidi-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0>int<span style='mso-tab-count:1'>         </span>a = 5 , B[10]={
+1,6,3,6,4,6,47,55,44,77 };</p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m11">Объявление переменной </b>имеет
+синтаксис определения переменной, предваренный словом <b style='mso-bidi-font-weight:
+normal'><a name="m12"><span lang=EN-US style='mso-ansi-language:EN-US'>extern</span></b>. В
+нем задается тип и имя переменной, запоминается факт наличия переменной с
+указанным<span style='mso-spacerun:yes'>  </span>именем и типом. Размерность
+массивов в объявлении<span style='mso-spacerun:yes'>  </span>может отсутствовать.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>extern<span style='mso-tab-count:1'>   </span>int<span
+style='mso-tab-count:1'>         </span>a,B[];</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a>Итак, в зависимости от сочетания основных свойств – <span
+style='mso-spacerun:yes'> </span>времени жизни и области действия – имеют место
+переменные различных видов (различных <b style='mso-bidi-font-weight:normal'><a name="m13">классов
+памяти</b>).</p>
+
+<p class=a><u>Автоматические переменные (свойства 1,1)</u>. Создаются при входе
+в функцию или блок и имеют областью действия тело той же функции или блока. При
+выходе - уничтожаются. Место хранения - стек программы. Инициализация таких
+переменных заменяется обычным присваиванием значений при их создании. Если
+функция рекурсивна, то на каждый вызов создается свой набор таких переменных. Общепринятый
+термин для таких переменных - <b style='mso-bidi-font-weight:normal'><a name="m14">локальные</b>.
+Термин «автоматические» характеризует особенность их создания при входе в
+функцию, то есть время жизни. </p>
+
+<p class=a><i style='mso-bidi-font-style:normal'>Синтаксис определения</i>:
+любая переменная, определенная в начале тела функции или блока, по умолчанию
+является автоматической. </p>
+
+<p class=a><u>Внешние переменные (свойства 2,3)</u>. Создаются транслятором и
+имеют областью действия все модули программы. Размещаются транслятором в
+объектном модуле, а затем компоновщиком в программном файле (сегменте данных) и
+инициализируются там же. Термин «внешние» характеризует доступность этих
+переменных из других модулей, или область действия. Общепринятый термин для таких
+переменных - <b style='mso-bidi-font-weight:normal'><a name="m15">глобальные</b>. </p>
+
+<p class=a><i style='mso-bidi-font-style:normal'>Синтаксис определения</i>:
+любая переменная, определенная вне тела функции, по умолчанию является внешней.
+</p>
+
+<p class=a><span style='mso-spacerun:yes'> </span>Несмотря на то, что внешняя
+переменная потенциально доступна из любого модуля, сам факт ее существования
+должен быть известен транслятору. Если переменная определена в модуле, то она доступна
+от точки определения до конца файла. В других модулях требуется произвести
+объявление внешней переменной. </p>
+
+<p class=a style='text-indent:0cm'><span lang=EN-US style='mso-ansi-language:
+EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//-------------------------------------------------------------------------<o:p></o:p></span></p>
+
+<p class=a0>//<span style='mso-spacerun:yes'>  </span>Файл a.c<span lang=EN-US
+style='mso-ansi-language:EN-US'>pp</span><span style='mso-spacerun:yes'> 
+</span>- определение переменных<span style='mso-spacerun:yes'>       </span></p>
+
+<p class=a0>int<span style='mso-tab-count:1'>         </span>a,B[20]={1,5,4,7};</p>
+
+<p class=a0>... область действия ...</p>
+
+<p class=a0>//-------------------------------------------------------------------------</p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span>//<span
+style='mso-spacerun:yes'>  </span>Файл b.c<span lang=EN-US style='mso-ansi-language:
+EN-US'>pp</span> - объявление внешних переменных</p>
+
+<p class=a0>extern int a,B[];<span style='mso-spacerun:yes'>     </span></p>
+
+<p class=a0>... область действия ...</p>
+
+<p class=a>Определение переменной должно производиться только в одном модуле,
+при трансляции которого она создается и в котором размещается. Соответствие
+типов переменных в определении и объявлениях транслятором не может быть
+проверено. Ответственность за это соответствие ложится целиком на программиста.
+</p>
+
+<p class=a><u>Статические переменные</u>. Имеют сходные с внешними переменными
+характеристики времени жизни («всегда») и размещения в памяти (сегмент данных),
+но ограниченную область действия. </p>
+
+<p class=a><i style='mso-bidi-font-style:normal'>Синтаксис определения: </i>аналогичен
+внешним или автоматическим переменным, но предваряется словом <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>static</span>.<o:p></o:p></b></p>
+
+<p class=a><u>Собственные статические переменные функции (свойства 2,1)</u> определяются
+аналогично автоматическим переменным внутри блока. Область действия также аналогична
+- тело функции или блок. При рекурсивном вызове функции не дублируются.
+Назначение собственных статических переменных - сохранение значений,
+используемых функцией, между ее вызовами. </p>
+
+<p class=a><u>Статические переменные, определенные вне функции (свойства 2,2)</u>
+имеют область действия, ограниченную текущим модулем. Они предназначены для
+создания собственных переменных модуля, которые не должны быть «видны» извне,
+чтобы не вступать в конфликт с одноименными внешними переменными в других
+модулях. </p>
+
+<h3>Определение и объявление функций</h3>
+
+<p class=a>Функция обладает только одним свойством, да и то в ограниченных
+вариациях. С точки зрения области действия все <b style='mso-bidi-font-weight:
+normal'><a name="m16">функции по умолчанию являются внешними</b> (т.е. глобальными). Это
+значит, что определенная в одном месте функция может вызываться во всем
+проекте. Однако, если она «не видна» из текущей точки, то дополнительно
+требуется задать ее объявление.</p>
+
+<p class=a>Указанное свойство приводит к тому, что любая функция, даже
+созданная «для внутреннего употребления» попадает в пространство имен проекта,
+поэтому в других модулях определить функции с таким именем уже нельзя. Чтобы не
+засорять проект лишними именами, рекомендуется определять функции как
+статические. Это делается добавлением слова <b style='mso-bidi-font-weight:
+normal'><a name="m17"><span lang=EN-US style='mso-ansi-language:EN-US'>static</span><span
+lang=EN-US> </span></b>перед заголовком функции. В результате чего область
+действия <span style='mso-spacerun:yes'> </span>функции сужается и она
+становится доступной (видимой) только в текущем модуле (файле).</p>
+
+<p class=a>Синтаксис определения и объявления функций отличается значительным разнообразием,
+поэтому требует отдельного рассмотрения.</p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m18">Определение функции – </b>обычное
+задание функции в программе в виде заголовка и тела, по которому она
+транслируется во внутреннее представление в том модуле, где встречается.</p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m19">Объявление функции – </b>информация
+транслятору о наличии функции с заданным заголовком (прототипом) либо в другом
+модуле, либо далее по тексту текущего модуля<span style='mso-spacerun:yes'> 
+</span>- «вниз по течению». Объявление функции состоит из прототипа,
+предваренного словом <b style='mso-bidi-font-weight:normal'><a name="m20"><span lang=EN-US
+style='mso-ansi-language:EN-US'>extern</span>, </b>либо просто из прототипа
+функции.</p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m21">Прототип функции – </b>заголовок
+функции со списком формальных параметров, заданных в виде <b style='mso-bidi-font-weight:
+normal'><a name="m22">абстрактных типов данных.</b></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>int<span style='mso-tab-count:1'>         </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>clrscr</span>();<span style='mso-tab-count:
+1'> </span><span style='mso-tab-count:1'>                                    </span>//
+без контроля соответствия (анахронизм)</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int</span><span
+style='mso-tab-count:1'>         </span><span lang=EN-US style='mso-ansi-language:
+EN-US'>clrscr</span>(<span lang=EN-US style='mso-ansi-language:EN-US'>void</span>);<span
+style='mso-tab-count:1'>                                </span>// без параметров</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int<span
+style='mso-tab-count:1'>         </span>strcmp(char*, char*);<o:p></o:p></span></p>
+
+<p class=a0>extern int strcmp();<span style='mso-tab-count:1'>                                 </span>//
+без контроля соответствия (анахронизм)</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>extern int strcmp(char*,
+char*);<o:p></o:p></span></p>
+
+<h3>Организация проекта в классической технологии</h3>
+
+<p class=a>Возможность объявлений переменных и функций позволяют любым способом
+разбить программу на модули (файлы), используя взаимные объявления. Но все-таки
+желательно, чтобы структура проекта отражала логическую организацию программы.
+На этот счет имеются следующие рекомендации<span lang=EN-US style='mso-ansi-language:
+EN-US'>:<o:p></o:p></span></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>модуль (файл) должен содержать определения
+внешних (глобальных) переменных и функций, имеющих общее назначение, работающих
+с одинаковыми структурами (и типами) данных. Под такое определение подходит
+понятие <b style='mso-bidi-font-weight:normal'><a name="m23">библиотека функций. </b>Возможны
+и другие основания для объединения<span lang=EN-US style='mso-ansi-language:
+EN-US'>;</span></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>определения типов данных, используемых
+переменными и функциями, локализованными в данном модуле, выделяются в
+одноименный заголовочный файл, который размещается в каталогах проекта там же,
+где основной <span lang=EN-US style='mso-ansi-language:EN-US'>cpp</span>-модуль.
+Основное требование к заголовочному файлу – он не должен содержать конструкций,
+порождающих программный код (определений переменных и функций);</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>для того, чтобы обратиться к объекту (например,
+вызвать функцию) из другого модуля, необходимо директивой <b style='mso-bidi-font-weight:
+normal'><a name="m24"><span lang=EN-US style='mso-ansi-language:EN-US'>include</span><span
+lang=EN-US> </span></b>подключить из текущего каталога заголовочный файл того
+модуля, где локализован объект.</p>
+
+<p class=a>В результате получим примерно такую картину. Сразу же заметим, что
+использование глобального динамического массива «не есть хорошо»: он приведен
+здесь в иллюстративных целях. На практике лучше «скрывать» собственные данные
+модуля, определяя их как <b style='mso-bidi-font-weight:normal'><a name="m25"><span
+lang=EN-US style='mso-ansi-language:EN-US'>static</span></b>. Отдельные,
+несистематизированные объявления можно делать вне заголовочных файлов.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//----------------------------------------------------------------------------------<b
+style='mso-bidi-font-weight:normal'> <span
+lang=EN-US style='mso-ansi-language:EN-US'>MyLib</span>.<span lang=EN-US style='mso-ansi-language:
+EN-US'>h</span></b></p>
+
+<p class=a0>// Заголовочный файл библиотеки </p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>struct</span><span
+style='mso-tab-count:1'>    </span><span lang=EN-US style='mso-ansi-language:
+EN-US'>MyData</span>{<span style='mso-tab-count:3'>                                    </span>//
+Определение типов данных</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>…</p>
+
+<p class=a0 style='text-indent:36.0pt'>};</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>typedef MyData
+*PData, MData[];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>extern</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>PData</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>DM</span>;<span
+style='mso-tab-count:3'>                                  </span>// Объявление
+собственных переменных</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>extern</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>int</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>n</span>,<span
+lang=EN-US style='mso-ansi-language:EN-US'>sz</span>;<span style='mso-tab-count:
+4'>                                      </span>// - динамический массив</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>extern</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>void</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>add</span>(<span
+lang=EN-US style='mso-ansi-language:EN-US'>PData</span>);<span
+style='mso-tab-count:3'>                          </span>// Объявление функций
+модуля</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>extern PData
+remove();<span style='mso-tab-count:2'>               </span><o:p></o:p></span></p>
+
+<p class=a0>//----------------------------------------------------------------------------------<b
+style='mso-bidi-font-weight:normal'> <span
+lang=EN-US style='mso-ansi-language:EN-US'>MyLib</span>.<span lang=EN-US style='mso-ansi-language:
+EN-US'>cpp</span></b></p>
+
+<p class=a0>// Модуль исходного текста библиотеки </p>
+
+<p class=a0>#<span lang=EN-US style='mso-ansi-language:EN-US'>include</span> “<span
+lang=EN-US style='mso-ansi-language:EN-US'>MyLib</span>.<span lang=EN-US
+style='mso-ansi-language:EN-US'>h</span>”<span style='mso-tab-count:3'>                                  </span>//
+Подключение собственного заголовочника</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>PData</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>DM</span>;<span
+style='mso-tab-count:3'>                                </span><span
+style='mso-tab-count:1'>            </span>// Определение собственных
+переменных</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>n</span>,<span
+lang=EN-US style='mso-ansi-language:EN-US'>sz</span>;<span style='mso-tab-count:
+4'>                                                </span><span
+style='mso-tab-count:1'>            </span>// - размерности динамического
+массива</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void add(PData pp){…</span>тело<span
+lang=EN-US style='mso-ansi-language:EN-US'>…}<span style='mso-tab-count:2'>                  </span></span>//
+Определение функций</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>PData remove()<span
+style='mso-tab-count:1'>  </span>{…</span>тело<span lang=EN-US
+style='mso-ansi-language:EN-US'>…}<span style='mso-tab-count:2'>                     </span><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//----------------------------------------------------------------------------------<b
+style='mso-bidi-font-weight:normal'> foo.cpp<o:p></o:p></b></span></p>
+
+<p class=a0>// Набор разнородных функций</p>
+
+<p class=a0>#<span lang=EN-US style='mso-ansi-language:EN-US'>include</span> “<span
+lang=EN-US style='mso-ansi-language:EN-US'>MyLib</span>.<span lang=EN-US
+style='mso-ansi-language:EN-US'>h</span>”<span style='mso-tab-count:3'>                                  </span>//
+Подключение заголовочника</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>fufu</span>(){<span
+style='mso-tab-count:4'>                                              </span>//
+для определения ТД <span lang=EN-US style='mso-ansi-language:EN-US'>PData</span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>PData</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>q</span>=<span
+lang=EN-US style='mso-ansi-language:EN-US'>new</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>MyData</span>;<span
+style='mso-tab-count:3'>                           </span>// и вызова
+библиотечных функций</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>add(q); }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void gogo(){…fufu();
+}<o:p></o:p></span></p>
+
+<p class=a0>//----------------------------------------------------------------------------------<b
+style='mso-bidi-font-weight:normal'> <span
+lang=EN-US style='mso-ansi-language:EN-US'>main</span>.</b><b style='mso-bidi-font-weight:
+normal'><a name="m26"><span lang=EN-US style='mso-ansi-language:EN-US'>cpp</span><o:p></o:p></b></p>
+
+<p class=a0>// Основной модуль</p>
+
+<p class=a0>#<span lang=EN-US style='mso-ansi-language:EN-US'>include</span> “<span
+lang=EN-US style='mso-ansi-language:EN-US'>MyLib</span>.<span lang=EN-US
+style='mso-ansi-language:EN-US'>h</span>”<span style='mso-tab-count:3'>                                  </span>//
+Подключение заголовочника</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>main</span>(){<span
+style='mso-tab-count:4'>                                            </span>// для
+вызова библиотечных функций</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>extern</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>void</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>gogo</span>();<span
+style='mso-tab-count:3'>                                  </span>// Отдельное
+объявление для внешней функции</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>where</span>_<span
+lang=EN-US style='mso-ansi-language:EN-US'>you</span>();<span style='mso-tab-count:
+3'>                                   </span>// Объявление для ссылки вперед</p>
+
+<p class=a0>…</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>gogo</span>();<span
+style='mso-tab-count:5'>                                                  </span>//
+Вызов внешней функции</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>where</span>_<span
+lang=EN-US style='mso-ansi-language:EN-US'>you</span>();<span style='mso-tab-count:
+4'>                                          </span>// Вызов функции «вниз по
+течению»</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>}<o:p></o:p></span></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void where_you(){}<o:p></o:p></span></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<h3>Вопросы без ответов</h3>
+
+<p class=a style='text-indent:0cm'>Определите, где задано определение,
+объявление и вызов функции.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//------------------------------------------------------</span>57<span
+lang=EN-US style='mso-ansi-language:EN-US'>-0</span>1<span lang=EN-US
+style='mso-ansi-language:EN-US'>.cpp<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//------------------------------------------------------1<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>void F(void) { puts(&quot;Hello, Dolly&quot;);
+}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>//------------------------------------------------------2
+<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>void F(void) { puts(&quot;Hello, Dolly&quot;);
+}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>void G(void){ F(); }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>//------------------------------------------------------3
+<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>void F(void);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>void G(void){ F(); }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>//------------------------------------------------------4
+<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>void G(void){ <o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>void F(void);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>F(); }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>void F(void) { puts(&quot;Hello, Dolly&quot;);
+}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>//------------------------------------------------------5
+<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>void F(void);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>void G(void){ F(); }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>void F(void) { puts(&quot;Hello, Dolly&quot;);
+}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>//------------------------------------------------------6
+<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>extern void F(void);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>void G(void){ F(); }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman";mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

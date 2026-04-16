@@ -1,0 +1,1971 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=Edit-Time-Data href="124.files/editdata.mso">
+<title>12.4. Полиморфизм</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>www.PHILka.RU</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>vtpc112</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>404</o:TotalTime>
+  <o:Created>2008-07-12T07:22:00Z</o:Created>
+  <o:LastSaved>2008-07-12T07:22:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>3308</o:Words>
+  <o:Characters>18860</o:Characters>
+  <o:Company>NSTU_VT</o:Company>
+  <o:Bytes>11776</o:Bytes>
+  <o:Lines>157</o:Lines>
+  <o:Paragraphs>44</o:Paragraphs>
+  <o:CharactersWithSpaces>22124</o:CharactersWithSpaces>
+  <o:Version>11.6360</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DoNotHyphenateCaps/>
+  <w:DrawingGridHorizontalSpacing>0,55 пт</w:DrawingGridHorizontalSpacing>
+  <w:DrawingGridVerticalSpacing>0,55 пт</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:UseMarginsForDrawingGridOrigin/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DrawingGridVerticalOrigin>99,25 пт</w:DrawingGridVerticalOrigin>
+  <w:Compatibility>
+   <w:WW6BorderRules/>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+   <w:UseWord97LineBreakingRules/>
+   <w:SelectEntireFieldWithStartOrEnd/>
+   <w:UseWord2002TableStyleRules/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:"Times New Roman CYR";
+	panose-1:2 2 6 3 5 4 5 2 3 4;
+	mso-font-charset:204;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+@font-face
+	{font-family:"Arial CYR";
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+h1
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:14.0pt;
+	mso-bidi-font-weight:normal;}
+h2
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-font-weight:normal;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+h3
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	font-weight:normal;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";}
+p.a, li.a, div.a
+	{mso-style-name:текст;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a0, li.a0, div.a0
+	{mso-style-name:программа;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a1, li.a1, div.a1
+	{mso-style-name:список;
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:18.45pt;
+	margin-bottom:0cm;
+	margin-left:64.35pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-18.0pt;
+	mso-pagination:widow-orphan;
+	mso-list:l0 level1 lfo1;
+	tab-stops:42.55pt list 64.35pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a2, li.a2, div.a2
+	{mso-style-name:определение;
+	mso-style-parent:текст;
+	margin-top:12.0pt;
+	margin-right:32.9pt;
+	margin-bottom:12.0pt;
+	margin-left:35.45pt;
+	text-align:justify;
+	text-indent:.55pt;
+	mso-pagination:widow-orphan;
+	border:none;
+	mso-border-alt:solid windowtext 1.5pt;
+	padding:0cm;
+	mso-padding-alt:1.0pt 1.0pt 1.0pt 1.0pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a3, li.a3, div.a3
+	{mso-style-name:эпиграф;
+	margin-top:0cm;
+	margin-right:32.9pt;
+	margin-bottom:0cm;
+	margin-left:5.0cm;
+	margin-bottom:.0001pt;
+	text-align:right;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.a4, li.a4, div.a4
+	{mso-style-name:"от края";
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a5, li.a5, div.a5
+	{mso-style-name:Формула;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.a6, li.a6, div.a6
+	{mso-style-name:"без формата";
+	mso-style-parent:программа;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a7, li.a7, div.a7
+	{mso-style-name:стихи;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.1, li.1, div.1
+	{mso-style-name:эпиграф1;
+	mso-style-parent:эпиграф;
+	margin-top:0cm;
+	margin-right:9.35pt;
+	margin-bottom:0cm;
+	margin-left:9.0cm;
+	margin-bottom:.0001pt;
+	text-align:right;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+ /* Page Definitions */
+ @page
+	{mso-footnote-separator:url("124.files/header.htm") fs;
+	mso-footnote-continuation-separator:url("124.files/header.htm") fcs;
+	mso-endnote-separator:url("124.files/header.htm") es;
+	mso-endnote-continuation-separator:url("124.files/header.htm") ecs;}
+@page Section1
+	{size:21.0cm 842.0pt;
+	margin:33.45pt 42.55pt 72.0pt 89.85pt;
+	mso-header-margin:14.2pt;
+	mso-footer-margin:31.75pt;
+	mso-even-header:url("124.files/header.htm") eh1;
+	mso-header:url("124.files/header.htm") h1;
+	mso-even-footer:url("124.files/header.htm") ef1;
+	mso-footer:url("124.files/header.htm") f1;
+	mso-first-header:url("124.files/header.htm") fh1;
+	mso-first-footer:url("124.files/header.htm") ff1;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:1628194852;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-964799380 -1450833310 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-style-link:список;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:64.35pt;
+	mso-level-number-position:left;
+	margin-left:64.35pt;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Обычная таблица";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+table.MsoTableGrid
+	{mso-style-name:"Сетка таблицы";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+  <o:regrouptable v:ext="edit">
+   <o:entry new="1" old="0"/>
+   <o:entry new="2" old="1"/>
+   <o:entry new="3" old="0"/>
+   <o:entry new="4" old="0"/>
+   <o:entry new="5" old="0"/>
+   <o:entry new="6" old="5"/>
+   <o:entry new="7" old="0"/>
+   <o:entry new="8" old="0"/>
+  </o:regrouptable>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=RU style='tab-interval:36.0pt' background="back.gif">
+
+<div class=Section1>
+
+<h2>11.4. Полиморфизм. Виртуальные <span
+style='mso-spacerun:yes'> </span>функции</h2>
+
+<p class=1><o:p>&nbsp;</o:p></p>
+
+<p class=a3 style='margin-left:5.0cm'>«Мадмуазель Собак&nbsp; слыла&nbsp;
+культурной&nbsp; девушкой: <br>
+в ее словаре было около ста восьмидесяти слов. <br>
+При
+этом ей было известно одно такое&nbsp; слово, <br>
+которое&nbsp; Эллочке&nbsp;
+даже&nbsp; не&nbsp; могло&nbsp; присниться. <br>
+Это было богатое слово:<b
+style='mso-bidi-font-weight:normal'> полиморфизм»<o:p></o:p></b></p>
+
+<p class=a3 style='margin-left:5.0cm'><b style='mso-bidi-font-weight:normal'><a name="m1">Вариации
+на тему Эллочки Людоедки. <o:p></o:p></b></p>
+
+<h3>Полиморфизм</h3>
+
+<p class=a4>
+<img border="0" src="Images/yan-in.jpg" width="34" height="31" align="left">Полиморфизм
+– действительно богатое понятие, хотя бы потому, что это свойство является
+динамическим, т.е. связанным со временем выполнения программы, а таковых
+механизмов в Си не так уж много. Слово <b style='mso-bidi-font-weight:normal'><a name="m2">полиморфный</b><i
+style='mso-bidi-font-style:normal'> </i>наиболее удачно переводится как <b
+style='mso-bidi-font-weight:normal'>многоликий</b>, обычно, говоря о
+полиморфных методах (виртуальных функциях) обращают внимание на множественность
+методов с общим именем в системе классов (метод един во многих лицах). Но
+все-таки основная сущность полиморфизма состоит не в этом, а в возможности
+одновременно рассматривать один и тот же объект и как <b style='mso-bidi-font-weight:
+normal'><a name="m3">абстрактную сущность, </b>на уровне которой он совместим с объектами
+других классов, и как сущность <b style='mso-bidi-font-weight:normal'><a name="m4">конкретную.
+</b>Сам же механизм полиморфных методов обеспечивает <b style='mso-bidi-font-weight:
+normal'><a name="m5">автоматическое преобразование </b>первого представления во второе во
+время работы программы.</p>
+
+<p class=a>Свойство полиморфности заключается в том, что при отсутствии полной
+информации о том, к какому из классов относится объект, функция (метод) в
+состоянии идентифицировать его класс и корректно выполниться в нем Этим самым
+создается иллюзия функции «единой во многих лицах» - в каждом из родственных
+классов. </p>
+
+<p class=a>Перенесем теперь общие рассуждений на уровень терминологии ООП.
+Прежде всего, полиморфизм имеет дело с системой <b style='mso-bidi-font-weight:
+normal'><a name="m6">родовых </b>классов, в которой базовый класс порождает множество
+производных (непосредственно, либо путем цепочки наследований). В этой системе
+возможны переходы, связанные со сменой представлений. Если взять объект
+производного класса, то при переходе от него к внутреннему объекту базового
+класса происходит <b style='mso-bidi-font-weight:normal'><a name="m7">абстрагирование </b>его
+сущности, а также потеря его конкретных свойств. Такой переход (в терминологии
+J<span lang=EN-US style='mso-ansi-language:EN-US'>a</span>va) удачно назван <b
+style='mso-bidi-font-weight:normal'>расширением. </b>Обратный переход от
+объекта базового класса к объемлющему его объекту производного назвается <b
+style='mso-bidi-font-weight:normal'>сужением </b>и сопровождается <b
+style='mso-bidi-font-weight:normal'>конкретизацией </b>его свойств.</p>
+
+<p class=a>В Си единственным способом смены интерпретации содержимого памяти
+(фактически преобразованием формы представления переменной или объекта при
+сохранении содержимого памяти) является <b style='mso-bidi-font-weight:normal'><a name="m8">преобразование
+типа указателя </b>(см. <b><a name="m9">9</b><b style='mso-bidi-font-weight:normal'><a name="m10">.2</b>)<b
+style='mso-bidi-font-weight:normal'>.<span style='mso-spacerun:yes'>  </span></b>Если
+речь идет о несвязанных типах данных, то такое преобразование является
+машинно-ориентированным, поскольку снисходит на физический<span
+style='mso-tab-count:1'>            </span> уровень представления данных в
+памяти. Если же речь идет о базовом и производном классах, то оно получает
+дополнительную интерпретацию.</p>
+
+<p class=a>Преобразуя указатель на объект производного класса к указателю на
+объект базового, мы получаем доступ к вложенному объекту базового класса. Такое
+преобразование еще называют <b style='mso-bidi-font-weight:normal'><a name="m11">расширением.
+</b>Оно всегда корректно и именно поэтому может производиться без явного
+использования операции преобразования типа указателя. (остальные преобразования
+типов указателей должны быть явными). Побочный эффект такого преобразования
+состоит в том, что транслятор «забывает» об объекте производного класса и
+вместо переопределенных в нем методов вызывает методы базового: </p>
+
+<p class=a0><span style='mso-spacerun:yes'> </span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>class</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>A</span> {</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>public</span>: <span
+style='mso-tab-count:1'>  </span><span lang=EN-US style='mso-ansi-language:
+EN-US'>void</span><span style='mso-spacerun:yes'>    </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>f</span>1(){}<span lang=EN-US style='mso-ansi-language:
+EN-US'><o:p></o:p></span></p>
+
+<p class=a0 style='text-indent:36.0pt'>};</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>class</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>B</span> : <span
+lang=EN-US style='mso-ansi-language:EN-US'>A</span> {</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>public</span>: <span
+style='mso-tab-count:1'>  </span><span lang=EN-US style='mso-ansi-language:
+EN-US'>void</span><span style='mso-spacerun:yes'>    </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>f</span>1(){}<span style='mso-spacerun:yes'> 
+</span><span style='mso-tab-count:1'>      </span>// Переопределена в класс<span
+lang=EN-US style='mso-ansi-language:EN-US'>e</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>B</span></p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>void</span><span style='mso-spacerun:yes'>    </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>f</span>2()<span lang=EN-US style='mso-ansi-language:
+EN-US'>{}</span><span style='mso-spacerun:yes'>   </span></p>
+
+<p class=a0 style='text-indent:36.0pt'>};</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>main</span>(){</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>B</span><span
+style='mso-spacerun:yes'>     </span><span lang=EN-US style='mso-ansi-language:
+EN-US'>x</span>;</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>A</span><span
+style='mso-spacerun:yes'>  </span>*pa = &amp;x;<span style='mso-tab-count:1'>                  </span>// Прямое преобразование
+(расширение) - неявное<span style='mso-tab-count:1'>        </span></p>
+
+<p class=a0>pa-&gt;f1(); <span style='mso-tab-count:2'>                       </span>//
+Вызов <span lang=EN-US style='mso-ansi-language:EN-US'>A</span>::<span
+lang=EN-US style='mso-ansi-language:EN-US'>f</span>1(), хотя внутри<span
+style='mso-spacerun:yes'>  </span>объекта класса <span lang=EN-US
+style='mso-ansi-language:EN-US'>B</span></p>
+
+<p class=a0>pb = (B*) pa;<span style='mso-spacerun:yes'>  </span>
+<span
+style='mso-tab-count:1; font-family:Courier New; mso-bidi-font-family:Times New Roman'>        </span>//
+Обратное преобразование (сужение) - явное</p>
+
+<p class=a0>pb -&gt;f2(); }<span style='mso-spacerun:yes'>      </span><span
+style='mso-tab-count:1'>               </span>//
+Корректно, если под pa был объект класса B</p>
+
+<p class=a>После преобразования указателя на объект класса <b style='mso-bidi-font-weight:
+normal'><a name="m12">B</b> в указатель на объект класса <b style='mso-bidi-font-weight:normal'><a name="m13">A</b>
+происходит вызов функции из вложенного объекта базового класса <b
+style='mso-bidi-font-weight:normal'>A::f1()</b>, хотя реально под указателем
+находится объект класса <b style='mso-bidi-font-weight:normal'><a name="m14"><span
+lang=EN-US style='mso-ansi-language:EN-US'>B</span>.</b></p>
+
+<p class=a><span style='mso-spacerun:yes'> </span>Обратное преобразование от
+указателя на базовый класс к указателю на производный может быть сделано только
+явно. Преобразование будет корректно, если данный объект базового класса
+действительно содержится в объекте того производного класса, к типу которого
+производится преобразование указателя. В противном случае возникает <b
+style='mso-bidi-font-weight:normal'>динамическая ошибка </b>приведения типов.
+Это ошибка времени выполнения, она <span style='mso-spacerun:yes'> </span>может
+возникать или не возникать в зависимости от<span style='mso-spacerun:yes'> 
+</span>«истории» выполнения программы.</p>
+
+<p class=a>Идея преобразования типа указателя заключается в сохранении
+указателем адреса памяти и изменении ее интерпретации. При переходе от базового
+класса к производному это свойство может нарушаться, если объект базового
+класса находится «не в начале» объекта производного (например, при
+множественном наследовании). Понятно, что это проблема<span
+style='mso-spacerun:yes'>  </span>транслятора, но то, что она возникает,
+свидетельствует об особой интерпретации в языке преобразований такого вида.</p>
+
+<h3>Виртуальные функции</h3>
+
+<p class=a>В Си++ полиморфизм является исключением, а не правилом в том смысле,
+что полиморфный метод (в терминах Си++ - виртуальная функция) должен быть
+предварен в объявлении в базовом классе ключевым словом <b style='mso-bidi-font-weight:
+normal'><a name="m15"><span lang=EN-US style='mso-ansi-language:EN-US'>virtual</span><span
+lang=EN-US> </span></b>(в <span lang=EN-US style='mso-ansi-language:EN-US'>Java</span>,
+например, полиморфизм является тотальным и реализован по умолчанию). <span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a>Если говорить кратко, то при вызове виртуальной функции происходит <b
+style='mso-bidi-font-weight:normal'>автоматическое сужение </b>до того производного
+класса, которому принадлежит объект (точнее, в котором последний раз она была
+переопределена). Развернутое определение виртуальной функции выглядит так<span
+lang=EN-US style='mso-ansi-language:EN-US'>:<o:p></o:p></span></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>виртуальная функция определена в базовом и
+переопределена (унаследована) в множестве производных классов;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>вызов функции осуществляется через указатель на
+объект базового класса, который по правилам приведения может ссылаться на
+объект любого из производных классов;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>вызов виртуальной функции сопровождается
+переходом от объекта базового класса к «окружающему» его объекту производного и
+вызов функции происходит именно в нем.</p>
+
+<p class=a>Пусть имеется базовый класс <b style='mso-bidi-font-weight:normal'><a name="m16">A</b>
+и производные классы <b style='mso-bidi-font-weight:normal'><a name="m17">B,C</b>. В классе <b
+style='mso-bidi-font-weight:normal'>А</b> определена функция <b
+style='mso-bidi-font-weight:normal'>f(),</b> в классах <b style='mso-bidi-font-weight:
+normal'><a name="m18">B,C</b> - унаследована и, возможно, переопределена. Пусть теперь
+имеется массив указателей на объекты базового класса - <b style='mso-bidi-font-weight:
+normal'><a name="m19">p</b>. Он инициализирован как указателями на объекты класса <b
+style='mso-bidi-font-weight:normal'>A</b>, так и на объекты производных классов
+<b style='mso-bidi-font-weight:normal'><a name="m20">B,C</b> (точнее, на вложенные в них
+объекты базового класса <b style='mso-bidi-font-weight:normal'><a name="m21">A</b>): </p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>        </span>class a<span style='mso-tab-count:1'>      </span>
+<span style='mso-tab-count:2'>                       </span>{ <b
+style='mso-bidi-font-weight:normal'>virtual</b><span style='mso-spacerun:yes'> 
+</span>void f(){} };<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>        </span>class b : public a<span
+style='mso-tab-count:2'>               </span>{ ...<span
+style='mso-spacerun:yes'>   </span>void f(){} <span style='mso-tab-count:1'>    </span>};<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>        </span>class c : public a<span
+style='mso-spacerun:yes'>         </span><span style='mso-tab-count:1'>      </span>{
+...<span style='mso-spacerun:yes'>   </span>void f(){} <span style='mso-tab-count:
+1'>    </span>};<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>        </span>a<span style='mso-spacerun:yes'> 
+</span>A1;<span style='mso-tab-count:1'>       </span>b<span
+style='mso-spacerun:yes'>  </span>B1;<span style='mso-tab-count:1'>   </span>c
+C1;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>        </span>a<span style='mso-spacerun:yes'> 
+</span>*p[3] = { &amp;B1, &amp;C1, &amp;A1 };<span
+style='mso-spacerun:yes'>                   </span><o:p></o:p></span></p>
+
+<p class=a0 align="center"><br
+style='mso-ignore:vglayout' clear=ALL>
+<span lang=EN-US style='mso-ansi-language:EN-US'><o:p>
+<img border="0" src="Images/114-01.gif" width="427" height="215"></o:p></span></p>
+
+<p class=a4 align=center style='text-align:center'><b><a name="m22">рис. 114.1. Виртуальная
+функция<o:p></o:p></b></p>
+
+<p class=a>Как будет происходить вызов обычной невиртуальной функции при
+использовании указателей из этого массива? Очевидно, что транслятор, располагая
+исключительно информацией о том, что указуемыми переменными являются объекты
+базового класса <b style='mso-bidi-font-weight:normal'><a name="m23">A</b> (что следует из
+определения массива), вызовет во всех случаях функцию <b style='mso-bidi-font-weight:
+normal'><a name="m24">a::f().</b> То же самое произойдет, если обрабатывать массив указателей
+в цикле: </p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0 style='text-indent:36.0pt'>p[0]-&gt;f();<span
+style='mso-spacerun:yes'>    </span><span style='mso-tab-count:1'>        </span>//
+Вызов a::f()во всех трех случаях</p>
+
+<p class=a0 style='text-indent:36.0pt'>p[1]-&gt;f();<span style='mso-tab-count:
+1'>            </span>// по указателю на объект базового класса</p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>p[2]-&gt;f();<o:p></o:p></span></p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>for (i=0; i&lt;=2; i++) </span>
+<span
+style='mso-spacerun:yes; font-family:Courier New; mso-bidi-font-family:Times New Roman; mso-ansi-language:EN-US' lang="EN-US"> </span><span lang=EN-US style='mso-ansi-language:
+EN-US'>p[i]-&gt;f();<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a>
+<span
+style='mso-spacerun:yes; mso-ansi-language:EN-US' lang="EN-US"> </span>Наличие указателя на объект базового
+класса<b style='mso-bidi-font-weight:normal'><a name="m25"> A</b> свидетельствует о том, что
+в данной точке программы транслятор не располагает информацией о том, объект
+какого из производных классов расположен под указателем. Тем не менее, если
+функция является виртуальной, то при вызове ее по указателю на объект базового
+класса она должна идентифицировать его производный класс и вызвать
+переопределенную функцию именно для этого класса: </p>
+
+<p class=a0 style='text-indent:36.0pt'><o:p>&nbsp;</o:p></p>
+
+<p class=a0>p[0]-&gt;f();<span style='mso-spacerun:yes'>      </span><span
+style='mso-tab-count:2'>                  </span>// вызов b::f() для B1</p>
+
+<p class=a0>p[1]-&gt;f();<span style='mso-spacerun:yes'>      </span><span
+style='mso-tab-count:2'>                  </span>// вызов c::f() для C1</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>p[2]-&gt;f();<span
+style='mso-spacerun:yes'>      </span><span style='mso-tab-count:2'>                  </span>//
+</span>вызов<span style='mso-ansi-language:EN-US'> <span lang=EN-US>a::f() </span></span>для<span
+lang=EN-US style='mso-ansi-language:EN-US'> A1<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>for (i=0; i&lt;2;
+i++) <span style='mso-tab-count:1'>           </span>// </span>вызов<span
+lang=EN-US style='mso-ansi-language:EN-US'> b::f(),c::f(),a::f(<o:p></o:p></span></p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>p[i]-&gt;f();<span
+style='mso-tab-count:2'>             </span>// в зависимости от типа объекта<span
+style='mso-tab-count:1'>           </span></p>
+
+<p class=a>Таким образом, при преобразовании типа «указатель на производный
+класс» к типу «указатель на базовый класс» происходит потеря информации о типе
+объекта производного класса, а при вызове виртуальной функции - обратный
+процесс неявного восстановления типа объекта. Объект базового класса должен
+быть доступен через указатель только по той причине, что это единственный в Си
+механизм, позволяющий ссылаться на объекты неопределенного вида.</p>
+
+<h3>Механизм реализации виртуальных функций. Динамическое связывание</h3>
+
+<p class=a>Реализовать механизм виртуальных функций можно только на основе
+динамического связывания (см. <b style='mso-bidi-font-weight:normal'><a name="m26">9.3</b>).
+Синтаксически неизменный вызов виртуальной функции с одним и тем же именем в
+зависимости от типа указуемого объекта приводит вызову одноименной функции, но
+в разных классах. Действительно, механизм виртуальных функций реализуется через
+указатели на функции, которые связываются с объектом базового класса в момент
+его создания (то есть динамически, во время работы программы):</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>для каждой пары производный класс - базовый
+класс транслятором создается массив указателей на функции (таблица функций),
+каждой виртуальной функции соответствует в нем свое значение индекса (смещение);
+</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>в объекте базового класса имеется указатель на массив
+указателей на функции, куда при конструировании объекта производного класса записывается
+адрес таблицы его виртуальных функций;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>если объект базового класса <span
+style='mso-spacerun:yes'> </span>расположен не в начале объекта производного
+класса, то перед вызовом виртуальной функции транслятор должен предусмотреть
+преобразование указателя с объекта базового класса на объект производного
+(например, использовать дополнительную таблицу смещений);</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>вызов виртуальной функции транслируется в вызов
+функции по указателю, извлеченному по фиксированному смещению из таблицы,
+связанной с объектом базового класса.<span style='font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a4 align=center style='text-align:center'>
+<img border="0" src="Images/114-02.gif" width="417" height="209"><p align="center">
+<b><a name="m27">рис.114-2 Механизм вызова виртуальных функций</b></p>
+</p>
+
+<p class=a>Сказанное можно проиллюстрировать средствами того же Си.
+Естественно, что модель не отражает всех свойств оригинала, например, различия
+интерфейсов виртуальных функций.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>// Выделены компоненты, создаваемые транслятором</p>
+
+<p class=a0>class<span style='mso-spacerun:yes'>   </span>A {</p>
+
+<p class=a0><b style='mso-bidi-font-weight:normal'><a name="m28">void<span
+style='mso-spacerun:yes'>    </span>(**ftable)();</b> <span style='mso-tab-count:
+1'>        </span>// Указатель на массив указателей </p>
+
+<p class=a0>public:<span style='mso-spacerun:yes'>                      
+</span><span style='mso-tab-count:1'>    </span>// на виртуальные функции
+(таблицу функций)</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>virtual void<span
+style='mso-spacerun:yes'>  </span>x();<span style='mso-tab-count:2'>               </span><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>virtual void<span
+style='mso-spacerun:yes'>  </span>y();<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>virtual void<span
+style='mso-spacerun:yes'>  </span>z();<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>        </span>A();<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>        </span>~A(); };<o:p></o:p></span></p>
+
+<p class=a0><b style='mso-bidi-font-weight:normal'><a name="m29">#define<span
+style='mso-tab-count:1'>            </span>vx<span style='mso-tab-count:1'>        </span>0</b><span
+style='mso-tab-count:1'>          </span>// Индексы в массиве</p>
+
+<p class=a0><b style='mso-bidi-font-weight:normal'><a name="m30">#define<span
+style='mso-tab-count:1'>            </span>vy<span style='mso-tab-count:1'>         </span>1</b><span
+style='mso-tab-count:1'>          </span>// указателей на виртуальные функции</p>
+
+<p class=a0><b style='mso-bidi-font-weight:normal'><a name="m31">#define<span
+style='mso-tab-count:1'>            </span>vz<span style='mso-tab-count:1'>         </span>2</b><span
+style='mso-tab-count:1'>          </span></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>// Таблица адресов функций класса А</p>
+
+<p class=a0><b style='mso-bidi-font-weight:normal'><a name="m32"><span lang=EN-US
+style='mso-ansi-language:EN-US'>void<span style='mso-tab-count:1'>     </span>(*TableA[])()
+= { A::x, A::y, A::z };<span style='mso-tab-count:1'>          </span><o:p></o:p></span></b></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0>A::A()</p>
+
+<p class=a0>{ <b style='mso-bidi-font-weight:normal'><a name="m33">ftable = TableA;</b> …}<span
+style='mso-tab-count:1'>    </span>// Назначение таблицы для класса А</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>class<span
+style='mso-spacerun:yes'>   </span>B : public A {<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>public:<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>        </span>void<span style='mso-spacerun:yes'>   
+</span>x();<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>        </span>void<span style='mso-spacerun:yes'>   
+</span>z();<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>        </span>B();<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-spacerun:yes; mso-ansi-language:EN-US' lang="EN-US">        </span>~B(); };</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>// Таблица адресов функций класса <span
+style='mso-spacerun:yes'> </span>B</p>
+
+<p class=a0>// A::y - наследуется из А, B::x - переопределяется в B </p>
+
+<p class=a0><b style='mso-bidi-font-weight:normal'><a name="m34"><o:p>&nbsp;</o:p></b></p>
+
+<p class=a0><b style='mso-bidi-font-weight:normal'><a name="m35"><span lang=EN-US
+style='mso-ansi-language:EN-US'>void<span style='mso-spacerun:yes'>   
+</span>(*TableB[])() = { B::x, A::y, B::z };<o:p></o:p></span></b></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>B::B()<span
+style='mso-tab-count:2'>                </span>{ <b style='mso-bidi-font-weight:
+normal'><a name="m36">A::ftable = TableB;</b> …} <span style='mso-tab-count:1'>          </span></span></p>
+
+<p class=a0><span style='mso-tab-count:3'>                                    </span>//<span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'> </span>Назначение
+таблицы для класса B</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>void<span style='mso-spacerun:yes'>    </span>main(){<span
+style='mso-tab-count:1'>     </span></p>
+
+<p class=a0>B<span style='mso-spacerun:yes'>     </span>nnn;<span
+style='mso-tab-count:2'>                       </span>// ссылается на объект
+производного класса B </p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>A</span> *p<span
+lang=EN-US style='mso-ansi-language:EN-US'>a</span> = &amp;nnn; <span
+style='mso-tab-count:1'>               </span>//
+Указатель p базового класса A</p>
+
+<p class=a0>p<span lang=EN-US style='mso-ansi-language:EN-US'>a</span>-&gt;<span
+lang=EN-US style='mso-ansi-language:EN-US'>x</span>(); }<span style='mso-tab-count:
+2'>                       </span>//<span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'> </span>реализация - <b
+style='mso-bidi-font-weight:normal'>(*p<span
+lang=EN-US style='mso-ansi-language:EN-US'>a</span>-&gt;ftable[v<span lang=EN-US style='mso-ansi-language:
+EN-US'>x</span>])();</b> <span style='font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<p class=a4>
+<img border="0" src="Images/yan-in.jpg" width="34" height="31" align="left">Механизм
+реализации виртуальных функций как нельзя лучше реализует единство алгоритма и
+данных. При «обычном» программировании необходимо всегда следить за
+соответствием алгоритм (вызов функции) – данные (фактические параметры). Есть
+всегда возможность ошибиться и «подсунуть» функции данные не того формата. Если
+же все функции в классе являются виртуальными, то возникает ситуация, когда <b
+style='mso-bidi-font-weight:normal'>объект содержит в себе информацию о методах
+его обработки. </b>В этом случае он становится «самодостаточным», имеет
+единственный параметр для доступа – указатель на него, а если к тому же это
+указатель на базовый класс, то мы можем даже не знать о его конкретной природе.</p>
+
+<h3>Внешний полиморфизм как средство объединения классов</h3>
+
+<p class=a>Наличие общего базового класса позволяет объединить в общую
+структуру данных объекты различной природы, приведя указатели на них к этому
+классу. Наличие в нем виртуальной функции позволяет организовать <b
+style='mso-bidi-font-weight:normal'>регулярный</b> процесс обработки данных,
+между которыми, в принципе, может и не быть ничего общего, кроме самого факта
+объединения и наличия общей функции обработки.</p>
+
+<p class=a>Наполнение общего базового класса может быть различным в зависимости
+от наличия у производных классов общего функционального наполнения:</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>производные классы представляют собой вариации
+одной общей сущности, их общее функциональное наполнение может быть вынесено в
+базовый класс. </p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol; mso-ansi-language:EN-US' lang="EN-US">·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>производные классы не имеют никакой общей основы
+в виде данных и алгоритмов. Тогда виртуальные функции в базовом классе играют
+роль <b style='mso-bidi-font-weight:normal'><a name="m37">интерфейса </b>(в терминах <span
+lang=EN-US style='mso-ansi-language:EN-US'>Java</span>), позволяющего
+подключать объекты этого класса к общей системе обработки, требующей от них
+поддержки определенного обобщенного свойства. <span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a>Рассмотрим пример базового класса, имеющего общее наполнение. Базовый
+класс абстрактного графического объекта содержит данные – координаты центра и
+размеры охватывающего прямоугольника, а также ряд методов, оперирующих с этими
+данными: сохранение и загрузка из потока, определение пересечений и вложенности
+и т.п.. Некоторые объекты производных классов (например, точка или окружность)
+могут быть «вписаны» в эти данные (т.е. не иметь собственных) и частично использовать
+функции базового класса. <span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0>//-----------------------------------------------114-01.<span
+lang=EN-US style='mso-ansi-language:EN-US'>cpp</span></p>
+
+<p class=a0>// Базовый класс графических объектов</p>
+
+<p class=a0>class GR{</p>
+
+<p class=a0>protected:</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>int x,y,dx,dy;<span
+style='mso-tab-count:1'>                 </span>//
+Координаты центра и прямоугольник</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>public:<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>GR(int x0,int y0, int dx0, int dy0){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>x=x0; y=y0;dx=dx0;
+dy=dy0;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>}<o:p></o:p></span></p>
+
+<p class=a0><b style='mso-bidi-font-weight:normal'><a name="m38"><span lang=EN-US
+style='mso-ansi-language:EN-US'>virtual ~GR</span></b><span lang=EN-US
+style='mso-ansi-language:EN-US'>(){}</span><span style='mso-tab-count:3'>                          </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>// </span><b style='mso-bidi-font-weight:
+normal'><a name="m39">Виртуальный деструктор !!!!!</b></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>virtual</span><span
+style='mso-tab-count:1'>    </span><span lang=EN-US style='mso-ansi-language:
+EN-US'>int</span><span lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:
+EN-US'>inside</span>(<span lang=EN-US style='mso-ansi-language:EN-US'>GR</span><span
+lang=EN-US> </span>&amp;<span lang=EN-US style='mso-ansi-language:EN-US'>T</span>){<span
+style='mso-tab-count:1'>          </span>// Проверка – находится внутри</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>return x-dx&lt;=T.x-T.dx <o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:3'>                                    </span>&amp;&amp;
+x+dx&gt;=T.x+T.dx<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:3'>                                    </span>&amp;&amp;
+y-dy&lt;=T.y-T.dy<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:3'>                                    </span>&amp;&amp;
+y+dy&gt;=T.y+T.dy;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>virtual void
+paint(){};<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>virtual int
+save(ostream &amp;O){<span style='mso-tab-count:1'>       </span>// </span>Вывод<span
+style='mso-ansi-language:EN-US'> </span>в<span style='mso-ansi-language:EN-US'>
+</span>поток<span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>O &lt;&lt; x &lt;&lt;
+&quot; &quot; &lt;&lt; y &lt;&lt; &quot; &quot; &lt;&lt; dx &lt;&lt; &quot;
+&quot; &lt;&lt; dy &lt;&lt; endl;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>return O.good();</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>virtual int
+load(istream &amp;O){<span style='mso-tab-count:1'>         </span>// </span>Ввод<span
+style='mso-ansi-language:EN-US'> </span>из<span style='mso-ansi-language:EN-US'>
+</span>потока<span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>O &gt;&gt; x &gt;&gt; y
+&gt;&gt; dx &gt;&gt; dy;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>return</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>O</span>.<span
+lang=EN-US style='mso-ansi-language:EN-US'>good</span>(); }</p>
+
+<p class=a0>};</p>
+
+<p class=a0>// Классы точки и окружности «вписываются» в базовый класс</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>class point :
+public GR{<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>public:<span
+style='mso-tab-count:1'>   </span>point(int x0,int y0):GR(x0,y0,0,0){}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>void paint(){</span>…<span
+lang=EN-US style='mso-ansi-language:EN-US'>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>};<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>class circle :
+public GR{<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>public:<span
+style='mso-tab-count:1'>   </span>circle(int x0,int y0, int r):GR(x0,y0,r,r){}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>void paint(){</span>…<span
+lang=EN-US style='mso-ansi-language:EN-US'>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>};</span></p>
+
+<p class=a>В базовых классах, используемых в качестве интерфейсных, часто
+объявляется <b style='mso-bidi-font-weight:normal'><a name="m40">виртуальный деструктор. </b>Он
+необходим, если в программе создаются динамические объекты производных классов,
+указатели на которые затем приводятся к базовому. Тогда при разрушении объекта
+операцией <b style='mso-bidi-font-weight:normal'><a name="m41"><span lang=EN-US
+style='mso-ansi-language:EN-US'>delete</span><span style='display:none;
+mso-hide:all'> базовых классах, используемых в качестве интерфейсных, необходим
+</span><span style='mso-spacerun:yes'> </span></b>через указатель на базовый
+класс необходимо вызывать деструктор в производном классе, т.е. он должен быть
+полиморфным.</p>
+
+<p class=a>Классы, которые используют собственные данные, должны обеспечивать
+корректность данных базового класса. Например, класс полигона, имея собственные
+динамические массивы координат, должен пересчитывать координаты центра и
+размеры охватывающего прямоугольника в базовом классе (<b style='mso-bidi-font-weight:
+normal'><a name="m42"><span lang=EN-US style='mso-ansi-language:EN-US'>SetGR</span></b>).</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>class polygon :
+public GR{<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int *xx,*yy,n;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>void</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>SetGR</span>(){<span
+style='mso-tab-count:1'>     </span>// Установка параметров базового класса</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>int
+xmin=xx[0],ymin=yy[0],xmax=xx[0],ymax=yy[0];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>for (int
+i=0;i&lt;n;i++){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:3'>                                    </span>if
+(xx[i]&gt;xmax) xmax=xx[i];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:3'>                                    </span>if
+(xx[i]&lt;xmin) xmin=xx[i];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:3'>                                    </span>if
+(yy[i]&gt;ymax) ymax=yy[i];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:3'>                                    </span>if
+(yy[i]&lt;ymin) ymin=yy[i];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:3'>                                    </span>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>x=(xmax+xmin)/2;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>dx=(xmax-xmin)/2;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>y=(ymax+ymin)/2;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>dy=(ymax-ymin)/2;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>public:<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>polygon(int x0[],int y0[],int
+nn):GR(0,0,0,0){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>n=nn;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>xx=new int[n];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>yy=new int[n];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>for (int i=0;i&lt;n;i++)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:3'>                                    </span>{
+xx[i]=x0[i]; yy[i]=y0[i]; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span><b style='mso-bidi-font-weight:
+normal'><a name="m43">SetGR();<span style='mso-tab-count:2'>                       </span>//</b>
+</span>Конструктор – <span style='mso-spacerun:yes'> </span>параметры БК<b
+style='mso-bidi-font-weight:normal'><o:p></o:p></b></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>~polygon(){ delete []xx; delete
+[]yy; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>void paint(){</span>…<span
+lang=EN-US style='mso-ansi-language:EN-US'>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int save(ostream &amp;O){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>O &lt;&lt; n &lt;&lt;
+endl;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>for (int i=0;i&lt;n;i++)
+<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:3'>                                    </span>O &lt;&lt;
+xx[i] &lt;&lt; &quot; &quot; &lt;&lt; yy[i] &lt;&lt; endl;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>return O.good();<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int load(istream &amp;I){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>delete []xx;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>delete []yy;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>I &gt;&gt; n;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>xx=new int[n];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>yy=new int[n];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>                        </span>for
+(int i=0;i&lt;n;i++) <o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:3'>                                    </span>I &gt;&gt;
+xx[i] &gt;&gt; yy[i];<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span><b style='mso-bidi-font-weight:
+normal'><a name="m44">SetGR();<span style='mso-tab-count:2'>                       </span>// </b></span>Ввод<span
+lang=EN-US style='mso-ansi-language:EN-US'> – </span>параметры<span
+style='mso-ansi-language:EN-US'> </span>БК<span lang=EN-US style='mso-ansi-language:
+EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>return I.good();<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>}<o:p></o:p></span></p>
+
+<p class=a0 style='text-indent:36.0pt'>};</p>
+
+<p class=a>Если базовый класс используется только для порождения производных
+классов, то виртуальные функции в базовом классе могут быть «пустыми»,
+поскольку никогда не будут вызваны для объекта базового класса. Определять тела
+этих функций не требуется. Базовый класс, в котором есть хотя бы одна такая
+функция, называется <b style='mso-bidi-font-weight:normal'><a name="m45">абстрактным</b>. </p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>class base {<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>public:<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>virtual void
+set(){}<span style='mso-tab-count:1'>            </span>// </span>Непустая<span
+style='mso-ansi-language:EN-US'> </span>функция<span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>virtual</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>print</span>()<b
+style='mso-bidi-font-weight:normal'>=0;</b><span style='mso-tab-count:2'>              </span>//
+<b style='mso-bidi-font-weight:normal'><a name="m46">Пустая</b> функция – класс абстрактный</p>
+
+<p class=a0>virtual get() <b style='mso-bidi-font-weight:normal'><a name="m47">=0;</b> <span
+style='mso-tab-count:2'>              </span>// <b style='mso-bidi-font-weight:
+normal'><a name="m48">Пустая</b> функция</p>
+
+<p class=a0>};</p>
+
+<p class=a>В таблице виртуальных функций для абстрактного класса пустой функции
+соответствует <span lang=EN-US style='mso-ansi-language:EN-US'>NULL</span>-указатель.
+Транслятор запрещает создавать в программе объекты такого класса.</p>
+
+<p class=a>В следующий примере речь идет о «пустом» абстрактном базовом классе,
+состоящим исключительно из объявлений пустых виртуальных методов.<span
+style='mso-spacerun:yes'>  </span>Если мы хотим создать упорядоченную структуру
+данных для хранения объектов произвольного типа, то нам потребуется «пустой» базовый
+класс, как минимум, содержащий виртуальную функцию сравнения. Структура данных,
+содержащая ссылки на объекты базового класса, получит возможность упорядочивать
+объекты, не зная их природы.<span style='mso-spacerun:yes'>  </span>Развернутый
+пример интерфейсного класса для представления в памяти объектов произвольного
+типа см. в <b style='mso-bidi-font-weight:normal'><a name="m49">12.6</b>.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//-----------------------------------------------114-02.<span
+lang=EN-US style='mso-ansi-language:EN-US'>cpp</span></p>
+
+<p class=a0>// Интерфейсный абстрактный класс упорядоченных данных</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>class Data{<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>public</span>:<span
+style='mso-tab-count:4'>                                       </span>// Набор
+«пустых» виртуальных функций</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>virtual</span><span
+style='mso-tab-count:1'>    </span><span lang=EN-US style='mso-ansi-language:
+EN-US'>int</span><span lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:
+EN-US'>cmp</span>(<span lang=EN-US style='mso-ansi-language:EN-US'>Data</span>
+*)=0;<span style='mso-tab-count:1'>          </span>// Сравнение объектов</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>virtual<span
+style='mso-tab-count:1'>    </span>void in(istream &amp;)=0;<span
+style='mso-tab-count:1'>      </span>// </span>Ввод<span style='mso-ansi-language:
+EN-US'> </span>из<span style='mso-ansi-language:EN-US'> </span>потока<span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>virtual<span
+style='mso-tab-count:1'>    </span>void out(ostream &amp;)=0;<span
+style='mso-tab-count:1'>   </span>// </span>Вывод<span style='mso-ansi-language:
+EN-US'> </span>в<span style='mso-ansi-language:EN-US'> </span>поток<span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0>};</p>
+
+<p class=a0>// Класс целых с интерфейсом ввода/вывода/сравнения</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>class INT : public
+Data{<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int val;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>public:<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>INT(int v=0){ val=v; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>virtual<span
+style='mso-tab-count:1'>    </span>int cmp(Data *p){ return val -
+((INT*)p)-&gt;val;<span style='mso-spacerun:yes'>  </span>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>virtual<span
+style='mso-tab-count:1'>    </span>void in(istream &amp;I){ I &gt;&gt; val; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>virtual<span
+style='mso-tab-count:1'>    </span>void out(ostream &amp;O){ O &lt;&lt; val; }<o:p></o:p></span></p>
+
+<p class=a0>};</p>
+
+<p class=a0>// Класс списка упорядоченных данных</p>
+
+<p class=a0>class list{</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>struct</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>elem</span>{<span style='mso-tab-count:
+2'>                   </span>// Элемент списка содержит</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>Data</span> *<span lang=EN-US
+style='mso-ansi-language:EN-US'>pd</span>;<span style='mso-tab-count:1'>           </span>//
+<b style='mso-bidi-font-weight:normal'><a name="m50">указатель </b>на объект «пустого»
+базового класса</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>elem *next;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>elem(Data *p){
+next=NULL; pd=p; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>};<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>elem *hd;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>public:<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>list(){ hd=NULL; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>void</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>out</span>(<span lang=EN-US
+style='mso-ansi-language:EN-US'>ostream</span> &amp;<span lang=EN-US
+style='mso-ansi-language:EN-US'>O</span>){<span style='mso-tab-count:1'>     </span>//
+Вывод с использованием полиморфного метода</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>for (elem *p=hd; p!=NULL;
+p=p-&gt;next)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:3'>                                    </span>{ p-&gt;<b
+style='mso-bidi-font-weight:normal'>pd-&gt;out</b>(O); O &lt;&lt; endl; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>void</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>inssort</span>(<span lang=EN-US
+style='mso-ansi-language:EN-US'>Data</span> *<span lang=EN-US style='mso-ansi-language:
+EN-US'>p</span>){<span style='mso-tab-count:1'>      </span>// Сравнение с
+использованием полиморфного метода</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>elem *q=new elem(p);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>if (hd==NULL) { hd=q;
+return; }<span style='mso-tab-count:2'>                 </span>// </span>Пустой<span
+style='mso-ansi-language:EN-US'> </span>список<span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>if</span> (<b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>p</span>-&gt;<span
+lang=EN-US style='mso-ansi-language:EN-US'>cmp</span></b>(<span lang=EN-US
+style='mso-ansi-language:EN-US'>hd</span>-&gt;<span lang=EN-US
+style='mso-ansi-language:EN-US'>pd</span>)&lt;0){<span style='mso-tab-count:
+3'>                           </span>// Вставка перед первым</p>
+
+<p class=a0><span style='mso-tab-count:3'>                                    </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>q-&gt;next=hd; hd=q; return;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:3'>                                    </span>}</span><span
+style='mso-tab-count:4'>                                               </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>// </span>Вставка перед большим</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>for (elem *s=hd;
+s-&gt;next!=NULL; s=s-&gt;next)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:3'>                                    </span>if (<b
+style='mso-bidi-font-weight:normal'>p-&gt;cmp</b>(s-&gt;next-&gt;pd)&lt;0)
+break;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>q-&gt;next=s-&gt;next;<span
+style='mso-tab-count:3'>                                   </span>// </span>Вставка<span
+style='mso-ansi-language:EN-US'> </span>после<span style='mso-ansi-language:
+EN-US'> <span lang=EN-US>s<o:p></o:p></span></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>s-&gt;next=q;<span
+style='mso-tab-count:4'>                                            </span>// </span>перед<span
+style='mso-ansi-language:EN-US'> <span lang=EN-US>s-&gt;next<o:p></o:p></span></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>};<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a>Для вставки в односвязный список используется технологический прием
+– уаазатель <b style='mso-bidi-font-weight:normal'><a name="m51"><span lang=EN-US
+style='mso-ansi-language:EN-US'>s</span><span lang=EN-US> </span></b>ссылается
+на элемент списка перед проверяемым (сравнивается <span lang=EN-US
+style='mso-ansi-language:EN-US'>c</span><span lang=EN-US> </span><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>s</span>-&gt;<span
+lang=EN-US style='mso-ansi-language:EN-US'>next</span></b>). Тогда вставка
+осуществляется после элемента, на который ссылается <b style='mso-bidi-font-weight:
+normal'><a name="m52"><span lang=EN-US style='mso-ansi-language:EN-US'>s.</span></b></p>
+
+<h3>Внутренний полиморфизм как элемент «отложенного» программирования</h3>
+
+<p class=a>Второй вариант полиморфизма касается внутреннего программирования
+базового и производного класса, т.е. вызова полиморфного метода в программном
+коде базового класса. Пусть в базовом классе определена виртуальная функция <b
+style='mso-bidi-font-weight:normal'>G. </b>Тогда в программном коде базового
+класса ее вызов <b style='mso-bidi-font-weight:normal'><a name="m53"><span lang=EN-US
+style='mso-ansi-language:EN-US'>G</span>() </b>по «короткому» имени в неявном
+виде происходит через указатель на объект этого класса, т.е. <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>this</span>-&gt;<span
+lang=EN-US style='mso-ansi-language:EN-US'>G</span>()</b>, что является в Си
+необходимым условием полиморфного вызова. Если же объект базового класса будет являться
+частью объекта производного класса, в котором будет переопределен одноименный
+метод, то вызов этого метода должен произойти в производном классе.</p>
+
+<p class=a4 align=center style='text-align:center'>
+<img border="0" src="Images/114-03.gif" width="451" height="240"><p align="center"><br
+style='mso-ignore:vglayout' clear=ALL>
+<b style='mso-bidi-font-weight:normal'><a name="m54">Рис. 114.3. «Отложенное»
+программирование класса B в классе A<o:p></o:p></b></p>
+</p>
+
+<p class=a>Технологически этот эффект можно интерпретировать как «отложенное»
+программирование класса <b style='mso-bidi-font-weight:normal'><a name="m55">A </b>в классе <b
+style='mso-bidi-font-weight:normal'>B. </b>Предположим, что мы разрабатываем
+базовый класс, в котором программируем некоторое действие. Оно в целом касается
+внутреннего программирования класса и инициируется событиями, происходящими в
+этом классе. Однако мы хотим вынести часть программного кода, относящегося к
+выполнению этого метода, в производный класс, что мы и делаем, вызывая
+полиморфный метод <b style='mso-bidi-font-weight:normal'><a name="m56">G. </b>Таким образом,
+мы откладываем реализацию части действий, предусмотренных в базовом классе, на
+более поздний срок, т.е. в производный класс.</p>
+
+<p class=a>«Отложенное» программирование действительно имеет дело не только с
+разным временем написания кода, но и с разным временем его трансляции. К
+моменту реализации производного программный код базового класса может
+присутствовать в проекте<span style='mso-spacerun:yes'>  </span>во внутреннем
+представлении (в виде объектного модуля). Приведем примеры «отложенного»
+программирования:<span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>нейтрализация ошибок, происходящих при
+выполнении кода базового класса. Элементом отложенного программирования
+является принятие решения о способе обработки возникшей ошибки: игнорирование,
+завершения программы, исправление данных и т.п.;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>дополнительные условия, касающиеся возможности
+выполнения заданных действий в базовом классе. Производный класс сообщает
+базовому классу в наследуемом полиморфном методе о возможности выполнить
+указанное действие;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>обработка событий в производном классе, которые «отлавливаются»
+внутренними механизмами базового класса. Этот прием является основой для
+реализации в Си++ библиотек классов оконных приложений, построенных на
+принципах событийного программирования. Когда программист создает собственное
+оконное приложение, он разрабатывает производный класс от базового класса окна.
+При этом в базовом классе имеются внутренние механизмы, «отлавливающие» и
+обрабатывающие все события, которые касаются этого оконного приложения. При их появлении
+базовый класс вызывает соответствующие полиморфные методы в производном классе.
+Таким образом, программирование производного класса заключается в написании
+набора обработчиков событий, естественно, в контексте производного класса.</p>
+
+<p class=a><o:p>&nbsp;</o:p></p>
+
+<p class=a>В качестве примера рассмотрим производный класс, принимающий решение
+о выполнении операции деления на 0 в базовом классе, в котором для этого случая
+предусмотрен метод <b style='mso-bidi-font-weight:normal'><a name="m57">on_error.<o:p></o:p></b></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0>//-----------------------------------------------114-03.<span
+lang=EN-US style='mso-ansi-language:EN-US'>cpp</span></p>
+
+<p class=a0>// Обработка ошибки в производном классе - деление на 0</p>
+
+<p class=a0>class REAL{</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>double val;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>public:<span
+style='mso-tab-count:1'>   </span>REAL(double v=0){ val=v; }<o:p></o:p></span></p>
+
+<p class=a0><b style='mso-bidi-font-weight:normal'><a name="m58"><span lang=EN-US
+style='mso-ansi-language:EN-US'>virtual</span></b><span lang=EN-US
+style='mso-ansi-language:EN-US'> void
+on_error(REAL &amp;TWO){}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>void set(double v){ val=v; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>void div(REAL &amp;R){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>if (R.val==0) <span
+style='mso-spacerun:yes'> </span></span></p>
+
+<p class=a0><span style='mso-tab-count:3'>                                    </span><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>on</span>_<span lang=EN-US
+style='mso-ansi-language:EN-US'>error</span>(</b><b style='mso-bidi-font-weight:
+normal'><a name="m59"><span lang=EN-US style='mso-ansi-language:EN-US'>R</span>);</b><span
+style='mso-tab-count:1'>     </span>// «Отложенное» действие</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>val/=R.val;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>void show(){
+printf(&quot;%lf\n&quot;,val); }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>};<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>class MY_REAL :
+public REAL{<span style='mso-tab-count:2'>              </span><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>public:<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>MY_REAL(double v=0):REAL(v){}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>void on_error(REAL &amp;TWO)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>{</span><span
+style='mso-tab-count:3'>                                   </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>// </span>Вопрос – что делать???<span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>printf(&quot;0-exit,1-set,default-ignore\n&quot;);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>switch (getch()){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>case '0':<span
+style='mso-tab-count:1'>            </span>exit(0); <o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:2; mso-ansi-language:EN-US' lang="EN-US">                        </span>break;<span
+style='mso-tab-count:3'>                           </span>// Завершить
+программу</p>
+
+<p class=a0>case '1':<span style='mso-tab-count:1'>            </span>TWO.set(0.000000001);
+</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span>break;<span
+style='mso-tab-count:3'>                           </span>// Исправить -
+деление на &quot;очень маленькое&quot;</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>}<span style='mso-tab-count:3'>                                   </span>//
+Иначе - </span>игнорировать<span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>}<o:p></o:p></span></p>
+
+<p class=a0>};</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+</div>
+
+<h3>Вопросы без ответов</h3>
+<p class="a">Содержательно сформулируйте функциональное наполнение базового и 
+производных классов. Определите, где вызываются виртуальные функции, и какой 
+числовой результат они формируют в переменных в соответствии с их «смыслом» в 
+каждом классе.</p>
+<p class="a0">&nbsp;</p>
+<p class="a0"><span lang="EN-US">
+//-------------------------------------------------114-05.cpp</span></p>
+<p class="a0"><span lang="EN-US">
+//---------------------------------------------------1</span></p>
+<p class="a0"><span lang="EN-US">class A{&nbsp;&nbsp; int val;</span></p>
+<p class="a0"><span lang="EN-US">public:</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A(int n=0) { val = n; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; virtual int get() { return val; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; virtual int operator++(){ int t=val++; 
+return t; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; };</span></p>
+<p class="a0"><span lang="EN-US">class INC : public A {</span></p>
+<p class="a0"><span lang="EN-US">public: INC(int n) : A(n+1) {}</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int get() { return A::get()+1; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; };</span></p>
+<p class="a0"><span lang="EN-US">void main(){</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; A a(5),c(6); INC b(7);</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; A *p[]={&amp;a, &amp;b, &amp;c, NULL};</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; int x=0, y=0, i=0;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; for (i=0; p[i]!=NULL; i++) x += p[i]-&gt;get();</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; for (i=0; p[i]!=NULL; i++) y += (*p[i])++;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; }</span></p>
+<p class="a0"><span lang="EN-US">
+//---------------------------------------------------2</span></p>
+<p class="a0"><span lang="EN-US">class A{&nbsp;&nbsp; int val;</span></p>
+<p class="a0"><span lang="EN-US">public:</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A(int n=0) { val = n; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int get() { return val; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;virtual A operator++(){ A t=*this; val++; 
+return t; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; };</span></p>
+<p class="a0"><span lang="EN-US">class INC : public A {</span></p>
+<p class="a0"><span lang="EN-US">public:INC(int n) : A(n+1) {}</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A operator++(){ A::operator++(); return 
+*this; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; };</span></p>
+<p class="a0"><span lang="EN-US">void main(){</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; A a(5),c(6); INC b(7);</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; A *p[]={&amp;a, &amp;b, &amp;c, NULL};</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; int s=0, i=0;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; for (i=0; p[i]!=NULL; i++) s += (*p[i])++.get();</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; A x=a++;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; A y=b++;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; A z=(*(A*)&amp;b)++; }</span></p>
+<p class="a0"><span lang="EN-US">
+//---------------------------------------------------3</span></p>
+<p class="a0"><span lang="EN-US">class A{&nbsp;&nbsp; int val;</span></p>
+<p class="a0"><span lang="EN-US">public:</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A(int n=0) { val = n; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; virtual int get() { return val; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A operator++(){ A t=*this; val++; return 
+t; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; };</span></p>
+<p class="a0"><span lang="EN-US">class INC : public A {</span></p>
+<p class="a0"><span lang="EN-US">public:INC(int n) : A(n+1) {}</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int get() { return A::get()+1; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; };</span></p>
+<p class="a0"><span lang="EN-US">class DEC : public A {</span></p>
+<p class="a0"><span lang="EN-US">public:DEC(int n) : A(n-1) {}</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int get() { return A::get()-1; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; };</span></p>
+<p class="a0"><span lang="EN-US">void main(){</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; A a(5); INC b(7); DEC c(6);</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; A *p[]={&amp;a, &amp;b, &amp;c, NULL};</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; int s=0, i=0;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; for (i=0; p[i]!=NULL; i++) (*p[i])++;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; for (i=0; p[i]!=NULL; i++)&nbsp; s += p[i]-&gt;get();</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; }</span></p>
+<p class="a0"><span lang="EN-US">
+//---------------------------------------------------4</span></p>
+<p class="a0"><span lang="EN-US">class A{</span></p>
+<p class="a0"><span lang="EN-US">protected:</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int val,cnt;</span></p>
+<p class="a0"><span lang="EN-US">public:</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A() { val=cnt=0; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; virtual A &amp;operator+(int n) { cnt++; 
+return *this; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; virtual operator int(){ return cnt; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; };</span></p>
+<p class="a0"><span lang="EN-US">class B : public A {</span></p>
+<p class="a0"><span lang="EN-US">public: A &amp;operator+(int n) { cnt++; val+=n; 
+return *this; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; };</span></p>
+<p class="a0"><span lang="EN-US">class C : public A {</span></p>
+<p class="a0"><span lang="EN-US">public: A &amp;operator+(int n) {</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (cnt++ ==0) val=n;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if (n&gt;val) val=n;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return *this; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; };</span></p>
+<p class="a0"><span lang="EN-US">void main(){</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; A a; B b; C c;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; A *p[]={&amp;a,&amp;b,&amp;c,NULL};</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; for (int i=0; p[i]!=NULL; i++) *p[i]+5+3+7;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; b+2;&nbsp; c+2+1; }</span></p>
+<p class="a0"><span lang="EN-US">
+//---------------------------------------------------5</span></p>
+<p class="a0"><span lang="EN-US">class A{</span></p>
+<p class="a0"><span lang="EN-US">protected:</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int val,cnt;</span></p>
+<p class="a0"><span lang="EN-US">public:</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A() { val=cnt=0; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; virtual A &amp;operator+(int n) { cnt++; 
+return *this; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;virtual operator int(){ return 0; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; };</span></p>
+<p class="a0"><span lang="EN-US">class B : public A {</span></p>
+<p class="a0"><span lang="EN-US">public: virtual A &amp;operator+(int n) { cnt++; 
+val+=n; return *this; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; operator int(){ return val/cnt; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; };</span></p>
+<p class="a0"><span lang="EN-US">class C : public A {</span></p>
+<p class="a0"><span lang="EN-US">public: A &amp;operator+(int n) {</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;if (cnt++ ==0) val=n;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if (n&gt;val) val=n;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return *this; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; operator int(){ return val; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; };</span></p>
+<p class="a0">&nbsp;</p>
+<p class="a0"><span lang="EN-US">void main(){</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; A a; B b; C c;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; A *p[]={&amp;a,&amp;b,&amp;c,NULL};</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; int v[3];</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; for (int i=0; p[i]!=NULL; i++) *p[i]+5+3+8;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; b+1+3; c+2;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; for (int i=0; p[i]!=NULL; i++) v[i]=*p[i];</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; }</span></p>
+<p class="a0"><span lang="EN-US">
+//---------------------------------------------------6</span></p>
+<p class="a0"><span lang="EN-US">class A{</span></p>
+<p class="a0"><span lang="EN-US">public:</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; virtual int operator[](int n) { return n; 
+}</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;virtual operator int(){ return 0; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; };</span></p>
+<p class="a0"><span lang="EN-US">class B : public A {</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int *p;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int sz;</span></p>
+<p class="a0"><span lang="EN-US">public: B(int A[], int n) { p=A; sz=n;}</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int operator[](int n) { return n&gt;=sz ? 0 
+: p[n]; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; operator int(){ return sz; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; };</span></p>
+<p class="a0"><span lang="EN-US">class C : public A {</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char *str;</span></p>
+<p class="a0"><span lang="EN-US">public:</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C(char *s) { str=s; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int operator[](int n) { return str[n]-'0'; 
+}</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; operator int(){ return strlen(str); }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; };</span></p>
+<p class="a0"><span lang="EN-US">void main(){</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; int G[10]={4,2,5,1,7,4,19,3,2,1};</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; A a; B b1(G,10),b2(G,3); C c1(&quot;45&quot;), 
+c2(&quot;12&quot;);</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; A *p[]={&amp;a,&amp;b1,&amp;b2,&amp;c1,&amp;c2,NULL};</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; int x=0, y, j, i;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; for (i=0; p[i]!=NULL; i++){</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int m=*p[i];</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (j=0;j&lt;m;j++){</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; y = (*p[i])[j];</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (y&gt;x) x=y;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }}}</span></p>
+<p class="a0"><span lang="EN-US">
+//---------------------------------------------------7</span></p>
+<p class="a0"><span lang="EN-US">class A{</span></p>
+<p class="a0"><span lang="EN-US">public:</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; virtual int operator[](int n) { return n; 
+}</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; virtual operator int(){ return 0; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; };</span></p>
+<p class="a0"><span lang="EN-US">class B : public A {</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int *p;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int sz;</span></p>
+<p class="a0"><span lang="EN-US">public:</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; B(int A[], int n) { p=A; sz=n;}</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int operator[](int n) { return n&gt;=sz ? 0 
+: p[n]; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; operator int(){ return sz; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; };</span></p>
+<p class="a0"><span lang="EN-US">class C : public A {</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char *str;</span></p>
+<p class="a0"><span lang="EN-US">public:</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C(char *s) { str=s; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int operator[](int n) { return str[n]-'0'; 
+}</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; operator int(){ return strlen(str); }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; };</span></p>
+<p class="a0"><span lang="EN-US">void main(){</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; int G[10]={3,2,1};</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; A a; B b1(G,3),b2(G,2); C c1(&quot;45&quot;), 
+c2(&quot;12&quot;);</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; A *p[]={&amp;a,&amp;c1,&amp;c2,&amp;b1,&amp;b2,NULL};</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; int x=0, j, i;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; for (i=0; p[i]!=NULL; i++){</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int m=*p[i];</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (j=0;j&lt;m;j++)</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x += (*p[i])[j];</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }}</span></p>
+<p class="a0"><span lang="EN-US">
+//---------------------------------------------------8</span></p>
+<p class="a0"><span lang="EN-US">class A{</span></p>
+<p class="a0"><span lang="EN-US">public:</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; virtual int operator[](int n) { return n; 
+}</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; virtual operator int(){ return 0; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; };</span></p>
+<p class="a0"><span lang="EN-US">class B : public A {</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int *p;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int sz;</span></p>
+<p class="a0"><span lang="EN-US">public:</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; B(int A[], int n) { p=A; sz=n;}</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int operator[](int n) { return n&gt;=sz ? 0 
+: p[n]; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; operator int(){ return sz; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; };</span></p>
+<p class="a0"><span lang="EN-US">class C : public A {</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char *str;</span></p>
+<p class="a0"><span lang="EN-US">public:</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C(char *s) { str=s; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int operator[](int n) { return str[n]-'0'; 
+}</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; operator int(){ return strlen(str); }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; };</span></p>
+<p class="a0"><span lang="EN-US">void main(){</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; int G[10]={10,9,8,7,6,5,4,3,2,1};</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; A a; B b1(G,10),b2(G,3); C c1(&quot;4567&quot;), 
+c2(&quot;1234&quot;);</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; A *p[]={&amp;a,&amp;c1,&amp;c2,&amp;b1,&amp;b2,NULL};</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; int x=0, y=0, z=0, i=0;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; for (i=0; p[i]!=NULL; i++){</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; z += (*p[i])[0];</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x += (*p[i])[i];</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; y += *p[i];</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }}</span></p>
+<p class="a0"><span lang="EN-US">
+//---------------------------------------------------9</span></p>
+<p class="a0"><span lang="EN-US">class A{</span></p>
+<p class="a0"><span lang="EN-US">public:</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; virtual int operator[](int n) { return n; 
+}</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; virtual operator int(){ return 0; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; };</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;</span></p>
+<p class="a0"><span lang="EN-US">class B : public A {</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int val;</span></p>
+<p class="a0"><span lang="EN-US">public: B(int n) { val=n; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int operator[](int n) {</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int m=val;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; while (n--!=0) m=m/10;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return m%10;&nbsp;&nbsp; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; operator int(){</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int n=0,m=val;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; while (m!=0) m=m/10,n++;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return n; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; };</span></p>
+<p class="a0"><span lang="EN-US">class C : public A {</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char *str;</span></p>
+<p class="a0"><span lang="EN-US">public: C(char *s) { str=s; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int operator[](int n) { return 
+str[n]-'0'; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; operator int(){ return strlen(str); }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; };</span></p>
+<p class="a0"><span lang="EN-US">void main(){</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; A a; B b1(25),b2(36); C c1(&quot;4567&quot;), 
+c2(&quot;1234&quot;);</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; A *p[]={&amp;a,&amp;b1,&amp;b2,&amp;c1,&amp;c2,NULL};</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; int x=0, y=0, z=0, i=0;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; for (i=0; p[i]!=NULL; i++){</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x += (*p[i])[0];</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; y += *p[i];</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }}</span></p>
+<p class="a0"><span lang="EN-US">
+//---------------------------------------------------10</span></p>
+<p class="a0"><span lang="EN-US">class A{</span></p>
+<p class="a0"><span lang="EN-US">public:</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; virtual int get() { return 1; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; virtual operator int(){ return 0; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; };</span></p>
+<p class="a0"><span lang="EN-US">class B : public A {</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int val;</span></p>
+<p class="a0"><span lang="EN-US">public: B(int n) { val=n; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int get() { return val; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; operator int(){ return 1; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; };</span></p>
+<p class="a0"><span lang="EN-US">class C : public A {</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char *str;</span></p>
+<p class="a0"><span lang="EN-US">public: C(char *s) { str=s; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int get() { return strlen(str); }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; operator int(){ return 2; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; };</span></p>
+<p class="a0"><span lang="EN-US">void main(){</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; A a; B b1(5),b2(6); C c1(&quot;abc&quot;), c2(&quot;1234&quot;);</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; A *p[]={&amp;a,&amp;b1,&amp;b2,&amp;c1,&amp;c2,NULL};</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; int x=0, y=0, i=0;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; for (i=0; p[i]!=NULL; i++){</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x += p[i]-&gt;get();</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; y += *p[i];</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }}</span></p>
+<p class="a0"><span lang="EN-US">
+//---------------------------------------------------11</span></p>
+<p class="a0"><span lang="EN-US">class A{&nbsp;&nbsp; int val;</span></p>
+<p class="a0"><span lang="EN-US">public:</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A(int n=0) { val = n; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; virtual int get() { return val; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; virtual int operator++(){ int t=val++; 
+return t; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; };</span></p>
+<p class="a0"><span lang="EN-US">class INC : public A {</span></p>
+<p class="a0"><span lang="EN-US">public: INC(int n) : A(n+1) {}</span></p>
+<p class="a0"><span lang="EN-US">&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int get() { return A::get()+1; }</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; };</span></p>
+<p class="a0">&nbsp;</p>
+<p class="a0"><span lang="EN-US">A a(5),c(6); INC b(7);</span></p>
+<p class="a0"><span lang="EN-US">struct list {</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; A *pd;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; list *next;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; }&nbsp;&nbsp; c1={&amp;c,NULL}, b1={&amp;b,&amp;c1}, a1={&amp;a,&amp;b1}, 
+*h=&amp;a1;</span></p>
+<p class="a0"><span lang="EN-US">void main(){</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; list *q;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; int x=0, y=0, i=0;</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; for (q=h; q!=NULL; q=q-&gt;next)</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x += q-&gt;pd-&gt;get();</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp; for (q=h; q!=NULL; q=q-&gt;next)</span></p>
+<p class="a0"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>y += (*q-&gt;pd)++;</p>
+<p class="a0">&nbsp;&nbsp; }</p>
+
+</body>
+
+</html>

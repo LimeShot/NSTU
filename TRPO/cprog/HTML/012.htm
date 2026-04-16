@@ -1,0 +1,1052 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=Edit-Time-Data href="012.files/editdata.mso">
+<title>&nbsp;1.2. Внутреннее представление программы</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>www.PHILka.RU</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>FuckYouBill</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>278</o:TotalTime>
+  <o:Created>2008-11-30T06:52:00Z</o:Created>
+  <o:LastSaved>2008-11-30T06:52:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>1757</o:Words>
+  <o:Characters>10018</o:Characters>
+  <o:Company>NSTU_VT</o:Company>
+  <o:Bytes>11776</o:Bytes>
+  <o:Lines>83</o:Lines>
+  <o:Paragraphs>23</o:Paragraphs>
+  <o:CharactersWithSpaces>11752</o:CharactersWithSpaces>
+  <o:Version>11.6360</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DoNotHyphenateCaps/>
+  <w:DrawingGridHorizontalSpacing>0,55 пт</w:DrawingGridHorizontalSpacing>
+  <w:DrawingGridVerticalSpacing>0,55 пт</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:UseMarginsForDrawingGridOrigin/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DrawingGridVerticalOrigin>99,25 пт</w:DrawingGridVerticalOrigin>
+  <w:Compatibility>
+   <w:WW6BorderRules/>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+   <w:UseWord97LineBreakingRules/>
+   <w:SelectEntireFieldWithStartOrEnd/>
+   <w:UseWord2002TableStyleRules/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:"Times New Roman CYR";
+	panose-1:2 2 6 3 5 4 5 2 3 4;
+	mso-font-charset:204;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+@font-face
+	{font-family:"Arial CYR";
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+h1
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:14.0pt;
+	mso-bidi-font-weight:normal;}
+h2
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-font-weight:normal;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+h3
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	font-weight:normal;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.a, li.a, div.a
+	{mso-style-name:текст;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a0, li.a0, div.a0
+	{mso-style-name:программа;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a1, li.a1, div.a1
+	{mso-style-name:список;
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:18.45pt;
+	margin-bottom:0cm;
+	margin-left:64.35pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-18.0pt;
+	mso-pagination:widow-orphan;
+	mso-list:l2 level1 lfo1;
+	tab-stops:42.55pt list 64.35pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a2, li.a2, div.a2
+	{mso-style-name:определение;
+	mso-style-parent:текст;
+	margin-top:12.0pt;
+	margin-right:32.9pt;
+	margin-bottom:12.0pt;
+	margin-left:35.45pt;
+	text-align:justify;
+	text-indent:.55pt;
+	mso-pagination:widow-orphan;
+	border:none;
+	mso-border-alt:solid windowtext 1.5pt;
+	padding:0cm;
+	mso-padding-alt:1.0pt 1.0pt 1.0pt 1.0pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a3, li.a3, div.a3
+	{mso-style-name:эпиграф;
+	margin-top:0cm;
+	margin-right:32.9pt;
+	margin-bottom:0cm;
+	margin-left:5.0cm;
+	margin-bottom:.0001pt;
+	text-align:right;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.a4, li.a4, div.a4
+	{mso-style-name:"от края";
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a5, li.a5, div.a5
+	{mso-style-name:Формула;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.a6, li.a6, div.a6
+	{mso-style-name:"без формата";
+	mso-style-parent:программа;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a7, li.a7, div.a7
+	{mso-style-name:стихи;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.1, li.1, div.1
+	{mso-style-name:эпиграф1;
+	mso-style-parent:эпиграф;
+	margin-top:0cm;
+	margin-right:9.35pt;
+	margin-bottom:0cm;
+	margin-left:9.0cm;
+	margin-bottom:.0001pt;
+	text-align:right;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+ /* Page Definitions */
+ @page
+	{mso-footnote-separator:url("012.files/header.htm") fs;
+	mso-footnote-continuation-separator:url("012.files/header.htm") fcs;
+	mso-endnote-separator:url("012.files/header.htm") es;
+	mso-endnote-continuation-separator:url("012.files/header.htm") ecs;}
+@page Section1
+	{size:21.0cm 842.0pt;
+	margin:33.45pt 42.55pt 72.0pt 89.85pt;
+	mso-header-margin:14.2pt;
+	mso-footer-margin:31.75pt;
+	mso-even-header:url("012.files/header.htm") eh1;
+	mso-header:url("012.files/header.htm") h1;
+	mso-even-footer:url("012.files/header.htm") ef1;
+	mso-footer:url("012.files/header.htm") f1;
+	mso-first-header:url("012.files/header.htm") fh1;
+	mso-first-footer:url("012.files/header.htm") ff1;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:636228079;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-2053057692 68747265 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	margin-left:72.0pt;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l1
+	{mso-list-id:1523009089;
+	mso-list-type:hybrid;
+	mso-list-template-ids:979267916 68747279 68747289 68747291 68747279 68747289 68747291 68747279 68747289 68747291;}
+@list l1:level1
+	{mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1:level2
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.";
+	mso-level-tab-stop:40.5pt;
+	mso-level-number-position:left;
+	margin-left:40.5pt;
+	text-indent:-22.5pt;}
+@list l1:level3
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.";
+	mso-level-tab-stop:54.0pt;
+	mso-level-number-position:left;
+	margin-left:54.0pt;
+	text-indent:-36.0pt;}
+@list l1:level4
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.%4\.";
+	mso-level-tab-stop:54.0pt;
+	mso-level-number-position:left;
+	margin-left:54.0pt;
+	text-indent:-36.0pt;}
+@list l1:level5
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.%4\.%5\.";
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	margin-left:72.0pt;
+	text-indent:-54.0pt;}
+@list l1:level6
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.";
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	margin-left:72.0pt;
+	text-indent:-54.0pt;}
+@list l1:level7
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.%7\.";
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	margin-left:72.0pt;
+	text-indent:-54.0pt;}
+@list l1:level8
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.%7\.%8\.";
+	mso-level-tab-stop:90.0pt;
+	mso-level-number-position:left;
+	margin-left:90.0pt;
+	text-indent:-72.0pt;}
+@list l1:level9
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.%7\.%8\.%9\.";
+	mso-level-tab-stop:90.0pt;
+	mso-level-number-position:left;
+	margin-left:90.0pt;
+	text-indent:-72.0pt;}
+@list l2
+	{mso-list-id:1628194852;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1107954762 -1450833310 -570017426 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l2:level1
+	{mso-level-number-format:bullet;
+	mso-level-style-link:список;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:64.35pt;
+	mso-level-number-position:left;
+	margin-left:64.35pt;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l2:level2
+	{mso-level-tab-stop:100.35pt;
+	mso-level-number-position:left;
+	margin-left:100.35pt;
+	text-indent:-18.0pt;
+	mso-ansi-font-weight:bold;
+	mso-ansi-font-style:normal;}
+@list l3
+	{mso-list-id:1668437887;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-600542526 68747279 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l3:level1
+	{mso-level-tab-stop:64.35pt;
+	mso-level-number-position:left;
+	margin-left:64.35pt;
+	text-indent:-18.0pt;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Обычная таблица";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+table.MsoTableGrid
+	{mso-style-name:"Сетка таблицы";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+  <o:regrouptable v:ext="edit">
+   <o:entry new="1" old="0"/>
+   <o:entry new="2" old="1"/>
+   <o:entry new="3" old="0"/>
+   <o:entry new="4" old="0"/>
+   <o:entry new="5" old="0"/>
+   <o:entry new="6" old="0"/>
+   <o:entry new="7" old="0"/>
+   <o:entry new="8" old="0"/>
+   <o:entry new="9" old="0"/>
+   <o:entry new="10" old="0"/>
+   <o:entry new="11" old="0"/>
+   <o:entry new="12" old="0"/>
+   <o:entry new="13" old="0"/>
+   <o:entry new="14" old="0"/>
+   <o:entry new="15" old="0"/>
+   <o:entry new="16" old="15"/>
+   <o:entry new="17" old="0"/>
+  </o:regrouptable>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=RU style='tab-interval:36.0pt' background="back.gif">
+
+<div class=Section1>
+
+<h2>1.2. Внутреннее представление программы</h2>
+
+<p class=a>Для понимания и осознанного использования многих особенностей языка
+программирования полезны знания о внутреннем представлении программы и
+принципах ее исполнения. Преобразование текста программы и нечто «удобоваримое»
+с точки зрения компьютера включает в себя два процесса:</p>
+
+<p class=a style='margin-left:72.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo3;
+tab-stops:list 72.0pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b style='mso-bidi-font-weight:normal'><a name="m1">компиляция
+– </b>перевод текста программы с исходного формального языка на другой, более
+простой язык;</p>
+
+<p class=a style='margin-left:72.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo3;
+tab-stops:list 72.0pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b style='mso-bidi-font-weight:normal'><a name="m2">интерпретация
+– </b>непосредственное выполнение инструкций (команд, операторов)<span
+style='mso-spacerun:yes'>  </span>формального языка над образами языковых
+объектов программы (обозначенных в программе именами).</p>
+
+<p class=a>Различные языки программирования включают процессы компиляции и
+интерпретации в разных пропорциях и сочетаниях (подробнее см. <b
+style='mso-bidi-font-weight:normal'>1.7</b>). Разберемся, в каких
+взаимоотношениях находятся язык Си и компьютерная архитектура:</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>компьютерная архитектура тоже обеспечивает язык
+программирования, именуемый <b style='mso-bidi-font-weight:normal'><a name="m3">программным</b>
+(<b style='mso-bidi-font-weight:normal'><a name="m4">машинным) кодом. </b>Данные в этом
+языке представлены <b style='mso-bidi-font-weight:normal'><a name="m5">машинными словами, </b>хранящимися
+в памяти и в регистрах процессора, а выполняемые действия – <b
+style='mso-bidi-font-weight:normal'>системой команд;</b></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>язык <b style='mso-bidi-font-weight:normal'><a name="m6">Ассемблера
+</b>представляет собой язык программирования, в котором система команд, способы
+адресации и машинные слова и их адреса обозначаются <b style='mso-bidi-font-weight:
+normal'><a name="m7">символическими именами. </b>Таким образом, Ассемблер работает с
+компьютерной архитектурой, но ее элементы представлены не во внутренней
+(двоичной) форме, а в обычной текстовой;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>язык Си является <b style='mso-bidi-font-weight:
+normal'><a name="m8">«чистым компилятором». </b>Результатом трансляции является программный
+код, в который транслятор не включает никаких «лишних» команд (например,
+проверки установленных ограничений или обнаружения ошибок). Поэтому в Си (по
+крайней мере, без объектно-ориентированных компонент) имеется возможность
+гарантировать эффективность и независимость программного кода, что делает его
+единственных (кроме Ассемблера) языком системного программирования, на котором
+пишутся такие вещи, как ядро операционной системы, драйверы и т.п..;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>язык Си имеет прямой выход на компьютерную
+архитектуру, многие его компоненты напрямую на нее отображаются. Базовые типы
+данных совпадают с основными формами представления данных в процессоре, имеется
+прямое соответствие между переменными и машинными словами (см. <b
+style='mso-bidi-font-weight:normal'>1.3</b>), набор операций соответствует
+общепринятому минимуму для системы команд, указатели интерпретируются как
+адреса (см. <b style='mso-bidi-font-weight:normal'><a name="m9">5.2</b>), имеется возможность
+работы с памятью на низком (архитектурном) уровне (см.<b style='mso-bidi-font-weight:
+normal'><a name="m10">9.2</b>). Поэтому Си можно назвать <b style='mso-bidi-font-weight:normal'><a name="m11">машинно-независимым
+Ассемблером</b>;</p>
+
+<p class=a>Поэтому для программирования на Си необходимы хотя бы минимальные
+представления о компьютерной архитектуре. Попробуем это сделать на самой
+примитивной модели.</p>
+
+<p class=a>Основу компьютерной архитектуры составляет <b style='mso-bidi-font-weight:
+normal'><a name="m12">прямо адресуемая память. </b>Она представляет <i style='mso-bidi-font-style:
+normal'>собой множество элементарных ячеек памяти (массив), номера которых
+называются</i> <b style='mso-bidi-font-weight:normal'><a name="m13">адресами. <o:p></o:p></b></p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m14"><o:p>&nbsp;</o:p></b></p>
+
+<p class=a style='text-indent:0cm; text-align:center'><b
+style='mso-bidi-font-weight:normal'><o:p>
+<img border="0" src="Images/012-01.gif" width="626" height="353"></o:p></b></p>
+
+<p class=a><o:p>&nbsp;</o:p></p>
+
+<p class=a4 align=center style='text-align:center'><b style='mso-bidi-font-weight:
+normal'><a name="m15">Рис. 12-1. Организация памяти компьютера<o:p></o:p></b></p>
+
+<p class=a>Все данные представляются в двоичной системе счисления в виде <b
+style='mso-bidi-font-weight:normal'>машинных слов – </b>наборов двоичных
+разрядов. Минимальный размер машинного слова для хранения, обработки и передачи
+данных – 8 разрядов (1 байт). Все остальные слова кратны ему. <b
+style='mso-bidi-font-weight:normal'>Стандартное машинное слово </b>имеет
+разрядность, соответствующую разрядности процессора (32 разряда или 4 байта).
+Для представления содержимого машинных слов используется эквивалент двоичный
+системы -<span style='mso-spacerun:yes'>  </span>шестнадцатеричная (подробнее
+см. <b style='mso-bidi-font-weight:normal'><a name="m16">1.3</b>). В дальнейшем описании мы
+будем применять более привычные десятичные значения, не забывая, что в
+реальности имеем дело с двоичными (шестнадцатеричными) эквивалентами.</p>
+
+<p class=a>Как адрес памяти, так и ее содержимое представляют собой машинные
+слова. Поэтому на самом низком уровне адрес можно рассматривать как целое
+число. Все формы представления данных (целые со знаком и без него,
+вещественные, символы) так и иначе проецируются в двоичное представление и в
+машинные слова. Еще одна особенность: числовые значения хранятся в памяти,
+начиная с младшего байта (в порядке, обратном к привычному нам при записи
+чисел).</p>
+
+<p class=a>Процессор имеет в своем составе набор машинных слов – <b
+style='mso-bidi-font-weight:normal'>регистров. </b>В зависимости от назначения
+они могут хранить как данные, так и адреса памяти.</p>
+
+<p class=a>Следующий важный принцип организации памяти – сегментация. <b
+style='mso-bidi-font-weight:normal'>Сегментом </b>называется <i
+style='mso-bidi-font-style:normal'>непрерывная область памяти, хранящая данные
+одного вида (назначения) и имеющая собственную систему относительной адресации
+и ограничения доступа</i>. К программированию это имеет отношение потому, что
+при трансляции разные компоненты программы попадают в различные сегменты
+программного кода.</p>
+
+<p class=a>В процессоре сегментация поддерживается при помощи регистров двух
+видов. <b style='mso-bidi-font-weight:normal'><a name="m17">Базовый регистр сегмента </b>содержит
+его начальный адрес. Регистры, работающие с данными сегмента, содержат
+относительный адрес данных от начала сегмента, или <b style='mso-bidi-font-weight:
+normal'><a name="m18">смещение. </b>Результирующий адрес получается путем сложения
+содержимого этих регистров. Таким образом, каждый сегмент имеет собственную
+«систему координат», связанную с его началом. Если программа использует только
+сегментную адресацию, то сегменты можно перемещать по памяти при сохранении
+работоспособности программы: достаточно перенастроить соответствующие им
+базовые регистры.</p>
+
+<p class=a style="text-align: center">
+<img border="0" src="Images/012-02.gif" width="589" height="290"></p>
+
+<p class=a4 align=center style='text-align:center'><b><a name="m19">Рис. 12-2. Сегментация
+программы<span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></b></p>
+
+<p class=a>Выполняемая программа состоит из нескольких сегментов. Некоторые из
+них создаются при трансляции, другие – при загрузке и при работе программы. В
+принципе, программа может иметь несколько сегментов одного вида. </p>
+
+<p class=a><o:p>&nbsp;</o:p></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 width=608
+ style='width:456.2pt;margin-left:19.6pt;border-collapse:collapse;border:none;
+ mso-border-alt:solid windowtext .5pt;mso-yfti-tbllook:480;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt;mso-border-insideh:.5pt solid windowtext;mso-border-insidev:
+ .5pt solid windowtext'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=126 valign=top style='width:94.75pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='text-indent:0cm'>Сегмент</p>
+  </td>
+  <td width=155 valign=top style='width:116.2pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='text-indent:0cm'>Регистры</p>
+  </td>
+  <td width=201 valign=top style='width:150.5pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='text-indent:0cm'>Что содержит</p>
+  </td>
+  <td width=126 valign=top style='width:94.75pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='text-indent:0cm'>Когда создается</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=126 valign=top style='width:94.75pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='text-indent:0cm'>Сегмент команд</p>
+  </td>
+  <td width=155 valign=top style='width:116.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a align=left style='text-align:left;text-indent:0cm'><span
+  lang=EN-US style='mso-ansi-language:EN-US'>CS</span>- сегментный,<span
+  style='mso-spacerun:yes'>    </span><span lang=EN-US style='mso-ansi-language:
+  EN-US'>IP</span>- адрес команды</p>
+  </td>
+  <td width=201 valign=top style='width:150.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a align=left style='text-align:left;text-indent:0cm'>Программный код
+  (операции, операторы)</p>
+  </td>
+  <td width=126 valign=top style='width:94.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='text-indent:0cm'>Трансляция</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td width=126 valign=top style='width:94.75pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='text-indent:0cm'>Сегмент данных</p>
+  </td>
+  <td width=155 valign=top style='width:116.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='text-indent:0cm'><span lang=EN-US style='mso-ansi-language:
+  EN-US'>DS – </span>сегментный</p>
+  </td>
+  <td width=201 valign=top style='width:150.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a align=left style='text-align:left;text-indent:0cm'>Глобальные
+  (статические) данные</p>
+  </td>
+  <td width=126 valign=top style='width:94.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='text-indent:0cm'>Трансляция</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td width=126 valign=top style='width:94.75pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='text-indent:0cm'>Сегмент стека</p>
+  </td>
+  <td width=155 valign=top style='width:116.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a align=left style='text-align:left;text-indent:0cm'><span
+  lang=EN-US style='mso-ansi-language:EN-US'>SS</span> – сегментный, <span
+  lang=EN-US style='mso-ansi-language:EN-US'>SP</span>- указатель стека</p>
+  </td>
+  <td width=201 valign=top style='width:150.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a align=left style='text-align:left;text-indent:0cm'>Локальные
+  данные функций, «история» работы программы</p>
+  </td>
+  <td width=126 valign=top style='width:94.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='text-indent:0cm'>При загрузке</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4'>
+  <td width=126 valign=top style='width:94.75pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='text-indent:0cm'>Динамическая память</p>
+  </td>
+  <td width=155 valign=top style='width:116.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='text-indent:0cm'><span lang=EN-US style='mso-ansi-language:
+  EN-US'>DS – </span>сегментный</p>
+  </td>
+  <td width=201 valign=top style='width:150.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a align=left style='text-align:left;text-indent:0cm'>Динамические
+  переменные, создаваемые при работе программы</p>
+  </td>
+  <td width=126 valign=top style='width:94.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a align=left style='text-align:left;text-indent:0cm'>При загрузке,
+  выполнении</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5;mso-yfti-lastrow:yes'>
+  <td width=126 valign=top style='width:94.75pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='text-indent:0cm'>Динамически связываемые библиотеки (<span
+  lang=EN-US style='mso-ansi-language:EN-US'>DLL</span>)</p>
+  </td>
+  <td width=155 valign=top style='width:116.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a align=left style='text-align:left;text-indent:0cm'><span
+  lang=EN-US style='mso-ansi-language:EN-US'>CS</span>- сегментный,<span
+  style='mso-spacerun:yes'>    </span><span lang=EN-US style='mso-ansi-language:
+  EN-US'>IP</span>- адрес команды</p>
+  </td>
+  <td width=201 valign=top style='width:150.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a align=left style='text-align:left;text-indent:0cm'>Программный код
+  разделяемых библиотек</p>
+  </td>
+  <td width=126 valign=top style='width:94.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=a style='text-indent:0cm'>При загрузке</p>
+  </td>
+ </tr>
+</table>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m20">Принцип хранимой программы </b>заключается
+в том, что программный код хранится в той же самой<span
+style='mso-spacerun:yes'>  </span>памяти, что и обрабатываемые данные, и в свою
+очередь сам представляет собой специфические данные, с которыми работает
+процессор во время выполнения программы. В настоящее время применяется <b
+style='mso-bidi-font-weight:normal'>немодифицируемый программный код. </b>Это,
+в свою очередь, означает, что несколько программ могут его читать и исполнять,
+не мешая друг другу (<span lang=EN-US style='mso-ansi-language:EN-US'>DLL</span>),
+в том числе и на физически параллельных процессорах.</p>
+
+<p class=a>Следующий элемент архитектуры тоже имеет отношение к внутреннему
+представлению программы – <b style='mso-bidi-font-weight:normal'><a name="m21">виртуальное
+адресное пространство (виртуальная память). </b>Его идея состоит в том, что каждая
+программа имеет свое, независимое от других, виртуальное адресное пространство
+(виртуальную память). В нем размещаются сегменты программы, определяются адреса
+и т.п.. В процессоре имеется скрытая от программ система отображения виртуальных
+адресов на архитектурные (физические) адреса. Находясь под управлением
+операционной системы, оно реализует защиту памяти программ, ее разделением (сегменты
+динамически связываемых библиотек), загрузку программы в память «по частям» и
+иллюзию наличия неограниченной памяти. Для нас из всего этого важно то, что
+внутренне представление программы в виртуальной памяти занимает все адресное
+пространство, как будто других программ и операционной системы в памяти нет
+вовсе.</p>
+
+<p class=a>И, наконец, посмотрим, как в общих чертах выглядит процесс исполнения
+программного кода. Действующими лицами этого процесса являются:</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>программный код – последовательность <b
+style='mso-bidi-font-weight:normal'>команд, </b>размещенная в сегменте команд (<b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>CS</span></b>), на начало которого ссылается одноименный регистр
+процессора;</p>
+
+<p class=a style='text-indent:0cm; text-align:center'><o:p>
+<img border="0" src="Images/012-03.gif" width="617" height="370"></o:p></p>
+
+<p class=a4 align=center style='text-align:center'><b><a name="m22">Рис. 12-3. Внутреннее
+представление программы<o:p></o:p></b></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>каждая команд имеет в сегменте свой
+относительный адрес (от его начала), регистр процессора <b style='mso-bidi-font-weight:
+normal'><a name="m23"><span lang=EN-US style='mso-ansi-language:EN-US'>IP</span></b><i
+style='mso-bidi-font-style:normal'><span lang=EN-US> </span></i><b
+style='mso-bidi-font-weight:normal'>(<span
+lang=EN-US style='mso-ansi-language:EN-US'>Instruction</span><span lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:
+EN-US'>Pointer</span>)</b> содержит<i style='mso-bidi-font-style:normal'> адрес
+очередной выполняемой команды</i>. В программировании на языках высокого уровня
+с <b style='mso-bidi-font-weight:normal'><a name="m24"><span lang=EN-US style='mso-ansi-language:
+EN-US'>IP</span></b><span lang=EN-US> </span>ассоциируется очень важное понятие
+– <b style='mso-bidi-font-weight:normal'><a name="m25">текущая точка выполнения программы;</b><i
+style='mso-bidi-font-style:normal'><o:p></o:p></i></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b style='mso-bidi-font-weight:normal'><a name="m26"><span
+style='mso-spacerun:yes'> </span></b>команда представляет собой машинное слово,
+обычно переменной длины, и состоит из нескольких полей. Обязательным полем является
+<b style='mso-bidi-font-weight:normal'><a name="m27">код операции, </b>который указывает на
+выполняемое командой действие. Совокупность команд процессора называется <b
+style='mso-bidi-font-weight:normal'>системой команд. </b>В системе команд
+обязательно присутствуют следующие виды операций<span lang=EN-US
+style='mso-ansi-language:EN-US'>:</span><i style='mso-bidi-font-style:normal'><o:p></o:p></i></p>
+
+<p class=a1 style='margin-left:100.35pt;tab-stops:42.55pt list 100.35pt'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'>
+<span style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></b>
+<![endif]>команды
+<b style='mso-bidi-font-weight:normal'><a name="m28">перемещения и обработки данных </b>выполняют
+перенос данных между ячейками памяти и регистрами данных процессора, а также
+все действия по их обработке (<b style='mso-bidi-font-weight:normal'><a name="m29"><span
+lang=EN-US style='mso-ansi-language:EN-US'>mov</span>,</b><b style='mso-bidi-font-weight:
+normal'><a name="m30"><span lang=EN-US style='mso-ansi-language:EN-US'>add</span>,</b><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>sub</span></b>);<i style='mso-bidi-font-style:normal'><o:p></o:p></i></p>
+
+<p class=a1 style='margin-left:100.35pt;tab-stops:42.55pt list 100.35pt'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'>
+<span style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></b>
+<![endif]>команды<b
+style='mso-bidi-font-weight:normal'> проверки состояний (условий) </b>проверяют
+результат выполнения операций, состояния регистров процессора, устройств ввода-вывода
+и т.п. (<b style='mso-bidi-font-weight:normal'><a name="m31"><span lang=EN-US
+style='mso-ansi-language:EN-US'>test</span></b>);<b style='mso-bidi-font-weight:
+normal'><a name="m32"><i style='mso-bidi-font-style:normal'><o:p></o:p></i></b></p>
+
+<p class=a1 style='margin-left:100.35pt;tab-stops:42.55pt list 100.35pt'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'>
+<span style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></b>
+<![endif]>команды
+<b style='mso-bidi-font-weight:normal'><a name="m33">условного и безусловного переходов </b>определяют
+адрес следующей команды (выполняют переход в программе) в зависимости от результата
+проверки некоторого условия. Если условие выполняется, то происходит переход,
+иначе выполняется следующая за ней команда.<b style='mso-bidi-font-weight:normal'><a name="m34"><i
+style='mso-bidi-font-style:normal'><o:p></o:p></i></b></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Вторым элементом команды являются операнды. Это
+могут быть регистры процессора, содержащие данные и ячейки памяти. В команде в
+явном или неявном виде должны содержаться их адреса. В ряде случаев операнды берутся
+«по умолчанию». Имеются различные <b style='mso-bidi-font-weight:normal'><a name="m35">способы
+адресации операндов, </b>которые позволяют использовать различные способы
+доступа к данным, а также сократить размер поля адреса в команде;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>переменные, используемые в программы, при<span
+style='mso-spacerun:yes'>  </span>трансляции «становятся» областями памяти в
+различных сегментах данных (сегменты данных, стека, динамической памяти), где
+получают свои адреса. В командах, работающих с памятью, в том или ином виде
+имеется информация, позволяющая вычислить (или просто взять) этот адрес;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>в нашем примере большинство команд переноса и
+обработки данных являются двухадресными – результат операции совпадает с первым
+операндом (команду сложения <b style='mso-bidi-font-weight:normal'><a name="m36"><span
+lang=EN-US style='mso-ansi-language:EN-US'>add</span><span lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:
+EN-US'>ax</span>, 454 </b>следует понимать как <b style='mso-bidi-font-weight:
+normal'><a name="m37"><span lang=EN-US style='mso-ansi-language:EN-US'>ax</span>=</b><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>ax</span>+<span lang=EN-US
+style='mso-ansi-language:EN-US'>b</span></b>). В принципе, регистр процессора <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>ax</span><span lang=EN-US> </span></b>можно было бы сделать операндом «по
+умолчанию» и не упоминать его в команде (если бы операция не использовалась с другими
+регистрами);</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>в нашем примере используется <b
+style='mso-bidi-font-weight:normal'>непосредственная адресация</b> для констант
+(их значение находится в самой программе, <b style='mso-bidi-font-weight:normal'><a name="m38"><span
+lang=EN-US style='mso-ansi-language:EN-US'>add</span><span lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:
+EN-US'>ax</span>, #10</b>) и <b style='mso-bidi-font-weight:normal'><a name="m39">прямая
+адресация </b>для ячеек памяти (в команде содержится их адрес, <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>add</span><span lang=EN-US> </span></b><b style='mso-bidi-font-weight:
+normal'><a name="m40"><span lang=EN-US style='mso-ansi-language:EN-US'>ax</span>, 454</b>);</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>в командах безусловного (<b style='mso-bidi-font-weight:
+normal'><a name="m41"><span lang=EN-US style='mso-ansi-language:EN-US'>jmp</span></b>) и
+условного (<b style='mso-bidi-font-weight:normal'><a name="m42"><span lang=EN-US
+style='mso-ansi-language:EN-US'>jmi</span></b><span style='mso-spacerun:yes'> 
+</span>- «переход, если меньше нуля») должен быть определен адрес следующей
+команды. В нашем примере он задан в относительной форме – в виде смещения
+(расстояния) от следующей команды до той, куда производится переход.</p>
+
+<p class=a>Выполнение программы происходит, в общих чертах, таким образом:</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>процессор, используя регистры <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>CS</span>:<span lang=EN-US
+style='mso-ansi-language:EN-US'>IP</span><span lang=EN-US> </span></b>выбирает
+из памяти очередную команду и расшифровывает ее. После этого <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>IP</span><span lang=EN-US> </span></b>увеличивается и ссылается на
+следующую команду (в зависимости от длины текущей, например, <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>IP</span>=<span lang=EN-US
+style='mso-ansi-language:EN-US'>IP</span>+3</b>);</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>если это команда переноса или перемещения
+данных, то процессор формирует адреса операндов в зависимости от способа
+адресации, после чего выполняет действия, указанные в команде;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>если это команда проверки условия, то
+проверяется указанный операнд, и устанавливаются признаки выполнения различных
+условий (равно 0, не равно 0, больше 0 и т.п.);</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>если в команде условного перехода проверяемое условие
+выполняется, то программа «переходит» по адресу, содержащемуся в команде. В нашем
+примере это смещение из команды просто добавляется к <b style='mso-bidi-font-weight:
+normal'><a name="m43"><span lang=EN-US style='mso-ansi-language:EN-US'>IP</span></b> (<b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>IP</span>=<span lang=EN-US
+style='mso-ansi-language:EN-US'>IP</span>+&lt;смещение&gt;</b>). Иначе ничего
+не происходит и выбирается следующая команда.</p>
+
+<p class=a>Сравнивая систему команд компьютера с другими способами представления
+программ в известных технологиях программирования (<b style='mso-bidi-font-weight:
+normal'><a name="m44">3.2, 3.3, 10.1</b>), можно заметить, что внутреннее представление
+программы в большей степени соответствует блок-схеме, имеющей те же самые
+составные элементы – действие, проверка условия и переход. В языках
+программирования используются более абстрактные и более удобные системы представления,
+но в процессе трансляции они все равно превращаются в <b style='mso-bidi-font-weight:
+normal'><a name="m45">линеаризованную блок-схему, </b>элементы которой размещены в линейной
+памяти.</p>
+
+<p class=a><o:p>&nbsp;</o:p></p>
+
+<p class=a1 style='mso-list:none;tab-stops:42.55pt'><o:p>&nbsp;</o:p></p>
+
+<p class=a4 align=center style='text-align:center'><b><a name="m46"><o:p>&nbsp;</o:p></b></p>
+
+<p class=a><o:p>&nbsp;</o:p></p>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,1064 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=Edit-Time-Data href="082.files/editdata.mso">
+<title>8.2. Рекурсивный обход дерева</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>www.PHILka.RU</o:Author>
+  <o:Template>Книга(шаблон).dot</o:Template>
+  <o:LastAuthor>www.PHILka.RU</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>225</o:TotalTime>
+  <o:Created>2008-05-24T05:54:00Z</o:Created>
+  <o:LastSaved>2008-05-24T05:54:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>1477</o:Words>
+  <o:Characters>8421</o:Characters>
+  <o:Company>NSTU_VT</o:Company>
+  <o:Bytes>11776</o:Bytes>
+  <o:Lines>70</o:Lines>
+  <o:Paragraphs>19</o:Paragraphs>
+  <o:CharactersWithSpaces>9879</o:CharactersWithSpaces>
+  <o:Version>11.6360</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:AttachedTemplate HRef="C:\ForAll\Book2008\Книга(шаблон).dot"></w:AttachedTemplate>
+  <w:DoNotHyphenateCaps/>
+  <w:DrawingGridHorizontalSpacing>0,55 пт</w:DrawingGridHorizontalSpacing>
+  <w:DrawingGridVerticalSpacing>0,55 пт</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:UseMarginsForDrawingGridOrigin/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DrawingGridVerticalOrigin>99,25 пт</w:DrawingGridVerticalOrigin>
+  <w:Compatibility>
+   <w:WW6BorderRules/>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+   <w:UseWord97LineBreakingRules/>
+   <w:SelectEntireFieldWithStartOrEnd/>
+   <w:UseWord2002TableStyleRules/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:"Times New Roman CYR";
+	panose-1:2 2 6 3 5 4 5 2 3 4;
+	mso-font-charset:204;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+@font-face
+	{font-family:"Arial CYR";
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+h1
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:14.0pt;
+	mso-bidi-font-weight:normal;}
+h2
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-font-weight:normal;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+h3
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	font-weight:normal;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";}
+p.a, li.a, div.a
+	{mso-style-name:текст;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a0, li.a0, div.a0
+	{mso-style-name:программа;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a1, li.a1, div.a1
+	{mso-style-name:список;
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:18.45pt;
+	margin-bottom:0cm;
+	margin-left:35.45pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	mso-pagination:widow-orphan;
+	tab-stops:42.55pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a2, li.a2, div.a2
+	{mso-style-name:определение;
+	mso-style-parent:текст;
+	margin-top:12.0pt;
+	margin-right:32.9pt;
+	margin-bottom:12.0pt;
+	margin-left:35.45pt;
+	text-align:justify;
+	text-indent:.55pt;
+	mso-pagination:widow-orphan;
+	border:none;
+	mso-border-alt:solid windowtext 1.5pt;
+	padding:0cm;
+	mso-padding-alt:1.0pt 1.0pt 1.0pt 1.0pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a3, li.a3, div.a3
+	{mso-style-name:эпиграф;
+	margin-top:12.0pt;
+	margin-right:32.9pt;
+	margin-bottom:12.0pt;
+	margin-left:5.0cm;
+	text-align:justify;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.a4, li.a4, div.a4
+	{mso-style-name:"от края";
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a5, li.a5, div.a5
+	{mso-style-name:Формула;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.a6, li.a6, div.a6
+	{mso-style-name:"без формата";
+	mso-style-parent:программа;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a7, li.a7, div.a7
+	{mso-style-name:стихи;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.1, li.1, div.1
+	{mso-style-name:эпиграф1;
+	mso-style-parent:эпиграф;
+	margin-top:0cm;
+	margin-right:9.35pt;
+	margin-bottom:0cm;
+	margin-left:9.0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+ /* Page Definitions */
+ @page
+	{mso-footnote-separator:url("082.files/header.htm") fs;
+	mso-footnote-continuation-separator:url("082.files/header.htm") fcs;
+	mso-endnote-separator:url("082.files/header.htm") es;
+	mso-endnote-continuation-separator:url("082.files/header.htm") ecs;}
+@page Section1
+	{size:21.0cm 842.0pt;
+	margin:33.45pt 42.55pt 72.0pt 89.85pt;
+	mso-header-margin:14.2pt;
+	mso-footer-margin:31.75pt;
+	mso-even-header:url("082.files/header.htm") eh1;
+	mso-header:url("082.files/header.htm") h1;
+	mso-even-footer:url("082.files/header.htm") ef1;
+	mso-footer:url("082.files/header.htm") f1;
+	mso-first-header:url("082.files/header.htm") fh1;
+	mso-first-footer:url("082.files/header.htm") ff1;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:460028732;
+	mso-list-type:hybrid;
+	mso-list-template-ids:510576326 68747265 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:71.45pt;
+	mso-level-number-position:left;
+	margin-left:71.45pt;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Обычная таблица";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+table.MsoTableGrid
+	{mso-style-name:"Сетка таблицы";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+  <o:regrouptable v:ext="edit">
+   <o:entry new="1" old="0"/>
+   <o:entry new="2" old="1"/>
+   <o:entry new="3" old="0"/>
+  </o:regrouptable>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=RU style='tab-interval:36.0pt' background="back.gif">
+
+<div class=Section1>
+
+<h2>8.2. Алгоритмы, основанные на полном обходе дерева</h2>
+
+<p class=a>Рекурсивное определение дерева и рекурсивный же алгоритм его обхода
+позволяют выполнить просмотр всех вершин дерева и получить общие характеристики
+всего дерева. Естественным выглядит здесь обратное накопление результата в
+рекурсивной функции: потомки возвращают значения, которые интегрируются с
+результатом текущей вершины и возвращаются к предку.</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0>//------------------------------------------------------82-01.cpp</p>
+
+<p class=a0>// Алгоритмы, основанные на полном обходе дерева</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>struct tree1{<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int val;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int n;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>tree1 *ch[10];};<span
+style='mso-tab-count:2'>               </span><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//-------- </span>Количество<span
+style='mso-ansi-language:EN-US'> </span>вершин<span style='mso-ansi-language:
+EN-US'> </span>в<span style='mso-ansi-language:EN-US'> </span>дереве<span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int F1(tree1 *p){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int <b style='mso-bidi-font-weight:
+normal'><a name="m1">s=1</b>;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>for (int i=0;i &lt; p-&gt;n; i++) <b
+style='mso-bidi-font-weight:normal'>s+=F1</b>(p-&gt;ch[i]);<span
+style='mso-tab-count:1'> </span><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>return s;}<o:p></o:p></span></p>
+
+<p class=a0>//--------- Сумма значений в вершине дерева</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int F2(tree1 *p){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int <b style='mso-bidi-font-weight:
+normal'><a name="m2">s=p-&gt;val</b>;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>for (int i=0;i &lt; p-&gt;n; i++)<span
+style='mso-tab-count:1'>  </span><b style='mso-bidi-font-weight:normal'><a name="m3">s+=F2</b>(p-&gt;ch[i]);<span
+style='mso-tab-count:1'> </span><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>return s;}</span></p>
+
+<p class=a>Из приведенных примеров видно, что обе функции накапливают сумму
+некоторых значений, получаемых от потомков. Ответ на вопрос «Сумму чего?»
+следует искать в другом месте: результат зависит от того, что добавляет в сумму
+текущая вершина. </p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//-------<span style='mso-spacerun:yes'>  </span>Максимальное
+значение в вершине дерева</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int F3(tree1 *p){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int <b style='mso-bidi-font-weight:
+normal'><a name="m4">s=p-&gt;val</b>;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>for (int i=0;i &lt; p-&gt;n; i++)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>{ int vv=F3(p-&gt;ch[i<b
+style='mso-bidi-font-weight:normal'>]); if (vv &gt; s)<span
+style='mso-spacerun:yes'>  </span>s=vv</b>; }<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>return s;}</p>
+
+<p class=a0>//----------- Максимальная длина ветви дерева</p>
+
+<p class=a0>int F4(tree1 *p){</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>int <b style='mso-bidi-font-weight:normal'><a name="m5">s=0</b>;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>for (int i=0;i &lt; p-&gt;n; i++)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>{ int
+vv=F4(p-&gt;ch[i]); <b style='mso-bidi-font-weight:normal'><a name="m6">if (vv &gt; s)<span
+style='mso-spacerun:yes'>  </span>s=vv;</b> }<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>return <b style='mso-bidi-font-weight:
+normal'><a name="m7">s+1</b>;}</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a>Аналогично обстоит дело с контекстом поиска максимума: в первом
+примере более-менее ясно, что в вычислении максимума от потомков участвует
+значение в текущей вершине, что однозначно определяет общий результат. Во
+втором случае не все так очевидно. Логический анализ не позволяет
+сформулировать результат: <span style='mso-spacerun:yes'> </span>Функция
+возвращает максимальное значение «чего-то», полученного от потомков, увеличивая
+его в текущей вершине на 1. Только исторический анализ и непосредственное
+наблюдение за программой позволяют догадаться, что результатом функции (а также
+инвариантом рекурсивного алгоритма) является максимальная длина ветви: текущая
+вершина удлиняет путь на 1.</p>
+
+<p class=a>Рекурсивный обход позволяет получить другие характеристики дерева,
+например, передавая в качестве формального параметра текущую «глубину» вершины,
+можно подсчитать сумму длин ветвей (расстояний до корня), что служит
+характеристикой сбалансированности дерева: в сбалансированном дереве оно близко
+к <b style='mso-bidi-font-weight:normal'><a name="m8">log<sub>2</sub>(N),</b> в вырожденном
+списке – к <b style='mso-bidi-font-weight:normal'><a name="m9">N/2.</b></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><o:p>&nbsp;</o:p><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0>//----- Суммарное расстояние до корня - степень сбалансированности</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int F6(tree1 *p,
+int L){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int s=L;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>for (int i=0;i &lt; p-&gt;n; i++)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>s+=F6(p-&gt;ch[i],L+1);<span
+style='mso-tab-count:1'>      </span><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>return s;}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>double main6(tree1
+*p){ return ((double)F6(p,1))/F1(p); }<o:p></o:p></span></p>
+
+<p class=a>При поиске в дереве вершины, значение в которой удовлетворяет
+заданному условию, кроме непосредственно обнаружения вершины нужно еще оборвать
+процесс рекурсивного обхода у всех вершин – предков, которым передается
+указатель на найденную вершину.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//--------<span style='mso-spacerun:yes'>  </span>Поиск первого
+значения, удовлетворяющего условию</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>tree</span>1 *<span
+lang=EN-US style='mso-ansi-language:EN-US'>F</span>7(<span lang=EN-US
+style='mso-ansi-language:EN-US'>tree</span>1 *<span lang=EN-US
+style='mso-ansi-language:EN-US'>p</span>, <span lang=EN-US style='mso-ansi-language:
+EN-US'>int</span><span lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:
+EN-US'>vv</span>){<span style='mso-tab-count:3'>                                    </span>//
+Действие, выполняемое <b style='mso-bidi-font-weight:normal'><a name="m10">потомком<o:p></o:p></b></p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>if</span> (<span lang=EN-US style='mso-ansi-language:EN-US'>p</span>-&gt;<span
+lang=EN-US style='mso-ansi-language:EN-US'>val</span> ==<span lang=EN-US
+style='mso-ansi-language:EN-US'>vv</span>) <b style='mso-bidi-font-weight:normal'><a name="m11"><span
+lang=EN-US style='mso-ansi-language:EN-US'>return</span><span lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:
+EN-US'>p</span>;</b><span style='mso-tab-count:2'>             </span>// Найдено
+в текущей вершине - вернуть</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>for (int i=0;i &lt; p-&gt;n; i++){ <o:p></o:p></span></p>
+
+<p class=a0 style='margin-left:36.0pt;text-indent:36.0pt'><span lang=EN-US
+style='mso-ansi-language:EN-US'>tree</span>1 *<span lang=EN-US
+style='mso-ansi-language:EN-US'>q</span>=<span lang=EN-US style='mso-ansi-language:
+EN-US'>F</span>7(<span lang=EN-US style='mso-ansi-language:EN-US'>p</span>-&gt;<span
+lang=EN-US style='mso-ansi-language:EN-US'>ch</span>[<span lang=EN-US
+style='mso-ansi-language:EN-US'>i</span>]); <span style='mso-tab-count:1'>                </span>// Найдено у потомка – прекратить обход</p>
+
+<p class=a0 style='margin-left:36.0pt;text-indent:36.0pt'><b style='mso-bidi-font-weight:
+normal'><a name="m12"><span lang=EN-US style='mso-ansi-language:EN-US'>if</span> (</b><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>q</span>!=<span lang=EN-US
+style='mso-ansi-language:EN-US'>NULL</span>) </b><b style='mso-bidi-font-weight:
+normal'><a name="m13"><span lang=EN-US style='mso-ansi-language:EN-US'>return</span><span
+lang=EN-US> </span></b><b style='mso-bidi-font-weight:normal'><a name="m14"><span lang=EN-US
+style='mso-ansi-language:EN-US'>q</span>;</b> }<span style='mso-tab-count:1'>             </span>// Обработка результата <b
+style='mso-bidi-font-weight:normal'>предком</b></p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>return NULL;}</span><span style='mso-tab-count:
+4'>                                         </span></p>
+
+<p class=a>Кажущийся парадокс алгоритма, работающего с деревом. Действие,
+выполняемое в вершине – предке, связанное с получением результата, записано в
+теле функции после действия, вызвавшее его в потомке.</p>
+
+<p class=a>До сих пор мы использовали для сохранения результата явном виде
+результат рекурсивной функции. Даже для вершин, не принимающих участия в его
+формировании, его надо явно передавать от потомков к предку. Иногда бывает
+удобнее использовать в качестве формального параметра ссылку на общую
+переменную – результат, которая играет роль <b style='mso-bidi-font-weight:
+normal'><a name="m15">глобальной для множества экземпляров рекурсивной функции</b>,
+соответствующих вершинам дерева (хотя синтаксически может таковой и не
+являться).</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//----------------------------------------------------------------82-02.cpp<span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0>// Поиск свободной вершины с min глубиной</p>
+
+<p class=a0>// Ссылки на параметры, общие для всех вершин</p>
+
+<p class=a0>// lmin - минимальная глубина</p>
+
+<p class=a0>// pmin - вершина минимальной глубины </p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void find_min(tree
+*p, int level, int &amp;lmin, tree *&amp;pmin){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if (p==NULL) return;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if (lmin!=-1 &amp;&amp; level
+&gt;=lmin) return;<span style='mso-tab-count:2'>                      </span>//
+</span>Заведомо<span style='mso-ansi-language:EN-US'> </span>худший<span
+style='mso-ansi-language:EN-US'> </span>вариант<span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if (p-&gt;n!=N &amp;&amp; (lmin==-1
+|| level&lt;=lmin))<span style='mso-tab-count:1'>               </span>// </span>Вершина<span
+style='mso-ansi-language:EN-US'> </span>ближе<span lang=EN-US style='mso-ansi-language:
+EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>{ lmin=level; pmin=p;
+return; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>for (int i=0; i&lt;p-&gt;n;i++)<span
+style='mso-tab-count:4'>                                        </span>// </span>Количество<span
+style='mso-ansi-language:EN-US'> </span>потомков<span lang=EN-US
+style='mso-ansi-language:EN-US'> = N<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>find_min(p-&gt;ch[i],level,lmin,pmin);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>}}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void main(){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>tree *pp2;…..<span style='mso-tab-count:
+3'>                             </span></span>// Корневая вершина</p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>tree</span> *<span lang=EN-US style='mso-ansi-language:EN-US'>q</span>;<span
+style='mso-tab-count:4'>                                      </span>//
+Результат – указатель на найденную</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>int lm=-1;</span><span style='mso-tab-count:
+3'>                                  </span><span lang=EN-US style='mso-ansi-language:
+EN-US'>// Результат – минимальная </span>глубина </p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>find_min(pp2,0,lm,q);…}<o:p></o:p></span></p>
+
+<p class=a>Обратите внимание на элемент оптимизации: если обнаружена вершина со
+свободной ветвью на некоторой глубине, то обход дерева ограничивается этой
+глубиной: заведомо худшие варианты уже не проматриваются.</p>
+
+<h3>Сохранение дерева в последовательный поток</h3>
+
+<p class=a>До сих пор мы рассматривали сохранение в последовательном текстовом
+потоке данных, хранимых в линейных структурах. Для дерева возможны два
+варианта:</p>
+
+<p class=a1 style='margin-left:71.45pt;text-indent:-18.0pt;mso-list:l0 level1 lfo1;
+tab-stops:42.55pt list 71.45pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>сохранение данных, хранящихся в вершинах дерева.
+В этом случае структура (топология) дерева теряется и при загрузке этих же
+данных в новое дерево его топология будет уже другой. Возможны и парадоксы. При
+сохранении данных сбалансированного двоичного дерева (см.8.5) в файле получится
+упорядоченная последовательность, обратная загрузка которой простейшим
+алгоритмом приведет к вырождению дерева в линейный список;</p>
+
+<p class=a1 style='margin-left:71.45pt;text-indent:-18.0pt;mso-list:l0 level1 lfo1;
+tab-stops:42.55pt list 71.45pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>для сохранения структуры (топологии) дерева
+достаточно использовать рекурсивный последовательный формат, например,
+записывать количество прямых потомков в вершины и вызывать для них рекурсивно
+функцию сохранения.</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0>//-------------Сохранение в последовательный поток</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>save</span>(<span
+lang=EN-US style='mso-ansi-language:EN-US'>tree</span> *<span lang=EN-US
+style='mso-ansi-language:EN-US'>p</span>, <span lang=EN-US style='mso-ansi-language:
+EN-US'>FILE</span> *<span lang=EN-US style='mso-ansi-language:EN-US'>fd</span>){</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>fprintf(fd,&quot;%d %d
+%d\n&quot;,p-&gt;cnt,p-&gt;val,p-&gt;n);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>for (int i=0;i&lt;p-&gt;n;i++)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>save(p-&gt;ch[i],fd);<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>}</p>
+
+<p class=a0>//-------------Загрузка из последовательного потока</p>
+
+<p class=a0>tree *load(FILE *fd){</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>tree *p=new tree;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>fscanf(fd,&quot;%d %d
+%d\n&quot;,&amp;p-&gt;cnt,&amp;p-&gt;val,&amp;p-&gt;n);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>for (int i=0;i&lt;p-&gt;n;i++)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>p-&gt;ch[i]=load(fd);<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>return p;</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>}</p>
+<p class=a0>&nbsp;</p>
+
+<p class=a0><o:p>
+<img border="0" src="Images/082-01.gif" width="617" height="244"></o:p></p>
+
+<p class=a align=center style='text-align:center'><b><a name="m16">Рис. 82.1. Сохранение
+дерева в последовательный поток<o:p></o:p></b></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//----------------------------------------------------------------------
+82-02.cpp</p>
+
+<p class=a0>//-------------Сохранение в последовательный поток</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>save</span>(<span
+lang=EN-US style='mso-ansi-language:EN-US'>tree</span> *<span lang=EN-US
+style='mso-ansi-language:EN-US'>p</span>, <span lang=EN-US style='mso-ansi-language:
+EN-US'>FILE</span> *<span lang=EN-US style='mso-ansi-language:EN-US'>fd</span>){</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>fprintf(fd,&quot;%d %d
+%d\n&quot;,p-&gt;cnt,p-&gt;val,p-&gt;n);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>for (int i=0;i&lt;p-&gt;n;i++)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>save(p-&gt;ch[i],fd);<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>}</p>
+
+<p class=a0>//-------------Загрузка из последовательного потока</p>
+
+<p class=a0>tree *load(FILE *fd){</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>tree *p=new tree;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>fscanf(fd,&quot;%d %d
+%d\n&quot;,&amp;p-&gt;cnt,&amp;p-&gt;val,&amp;p-&gt;n);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>for (int i=0;i&lt;p-&gt;n;i++)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>p-&gt;ch[i]=load(fd);<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>return p;</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>}</p>
+
+<h3>Горизонтальный обход дерева</h3>
+
+<p class=a>Рекурсивный обход дерева связан со стеком, который используется
+рекурсивным алгоритмом для сохранения вызовов. В принципе, стек можно сделать и
+явным, последовательность обхода от этого не изменится. В стек помещаются
+указатели на вершины-потомки, причем в обратном порядке (для их извлечения в
+прямом). Рекурсия превращается в цикл: на каждом шаге из явного стека
+извлекается очередная вершина, при ее обработке стек дополняется указателями на
+потомков.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//------------------------------------------------------------------82-0<span
+lang=EN-US style='mso-ansi-language:EN-US'>2</span>.cpp</p>
+
+<p class=a0>// Полный рекурсивный обход дерева с явным использованием стека</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void scan1(tree
+*p){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>tree **stack=new tree*[1000];<span
+style='mso-tab-count:1'>                  </span>//
+</span>Явный<span style='mso-ansi-language:EN-US'> </span>стек<span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>int sp=-1;<span
+style='mso-tab-count:6'>                                                                      </span></p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>stack[++sp]=p;<span
+style='mso-tab-count:3'>                          </span><span
+style='mso-tab-count:1'>            </span>// В стеке есть вершины</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>while(sp!=-1){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>tree *q=stack[sp--];<span
+style='mso-tab-count:1'>                    </span>//
+</span>Извлечь<span style='mso-ansi-language:EN-US'> </span>очередную<span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>printf(&quot;cnt=%d
+val=%d\n&quot;,q-&gt;cnt,q-&gt;val);<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:2; mso-ansi-language:EN-US' lang="EN-US">                        </span>for (int
+i=q-&gt;n-1; i&gt;=0; i--)<span style='mso-tab-count:1'>            </span>//
+Запись в стек в обратном порядке</p>
+
+<p class=a0><span style='mso-tab-count:3'>                                    </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>stack[++sp]=q-&gt;ch[i];<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:2; mso-ansi-language:EN-US' lang="EN-US">                        </span>}</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>delete</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>stack</span>;}</p>
+
+<p class=a>Если же вместо стека применить очередь, то обход дерева будет происходить
+«по горизонтали» (см. также 7.5). Тогда можно естественным образом реализовать
+алгоритмы, использующие свойство «близости» к корню, например, построить
+сбалансированное дерево, размещая вершины на ближайшие свободные места. С
+практической точки зрения эта задача является чисто умозрительной: на самом
+деле включение вершин в дерево осуществляется по правилам, сохраняющим
+определенные свойства, установленные для дерева (например, упорядочение или
+нумерация в порядке обхода).</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//------------------------------------------------------82-02.cpp</p>
+
+<p class=a0>// Поиск ближайшей к корню вершины со свободной ветвью </p>
+
+<p class=a0>// с использованием очереди <span style='letter-spacing:-1.0pt'>вершин</span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>tree</span> *<span
+lang=EN-US style='mso-ansi-language:EN-US'>find</span>_<span lang=EN-US
+style='mso-ansi-language:EN-US'>first</span>(<span lang=EN-US style='mso-ansi-language:
+EN-US'>tree</span> *<span lang=EN-US style='mso-ansi-language:EN-US'>ph</span>,<span
+lang=EN-US style='mso-ansi-language:EN-US'>int</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>sz</span>){</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int fst=0,lst=0;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>tree</span> **<span
+lang=EN-US style='mso-ansi-language:EN-US'>Q</span>=<span lang=EN-US
+style='mso-ansi-language:EN-US'>new</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>tree</span> *[<span lang=EN-US
+style='mso-ansi-language:EN-US'>sz</span>];<span style='mso-tab-count:1'>  </span>//
+Циклическая очередь</p>
+
+<p class=a0>Q[lst++]=ph;<span style='mso-tab-count:3'>                              </span><span
+style='mso-tab-count:1'>            </span>// Поместить исходную в очередь</p>
+
+<p class=a0>while(fst!=lst){<span style='mso-tab-count:3'>                            </span><span
+style='mso-tab-count:1'>            </span>// Пока очередь не пуста</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>tree *q=Q[fst++];<span
+style='mso-tab-count:2'>                        </span>// Извлечь указатель на
+очередную вершину</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>if (fst==sz) fst=0;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if</span> (<span lang=EN-US
+style='mso-ansi-language:EN-US'>q</span>-&gt;<span lang=EN-US style='mso-ansi-language:
+EN-US'>n</span> !=<span lang=EN-US style='mso-ansi-language:EN-US'>N</span>) {<span
+style='mso-tab-count:2'>                 </span><span style='mso-tab-count:
+1'>            </span>// Найдена первая со свободными ветвями</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>delete Q;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>return q;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>for (int i=0;i&lt;q-&gt;n;i++){ <o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>Q</span>[<span
+lang=EN-US style='mso-ansi-language:EN-US'>lst</span>++]=<span lang=EN-US
+style='mso-ansi-language:EN-US'>q</span>-&gt;<span lang=EN-US style='mso-ansi-language:
+EN-US'>ch</span>[<span lang=EN-US style='mso-ansi-language:EN-US'>i</span>];<span
+style='mso-tab-count:1'>          </span> // Помещение всех потомков в очередь</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>if (lst==sz) lst=0;<o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:2; mso-ansi-language:EN-US' lang="EN-US">                        </span>}</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>}</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>delete</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>Q</span>;<span
+style='mso-tab-count:4'>                                               </span>//
+Очередь пуста – вершина не найдена</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>return</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>NULL</span>;}</p>
+
+<p class=a>Аналогичный алгоритм на основе рекурсивного обхода был рассмотрен
+выше. Забегая вперед, рассмотрим более эффективный (жадный) алгоритм,
+основанный на выборе единственного потомка с минимальным числом (счетчиком)
+вершин в его поддереве. Этот счетчик является элементом избыточности, и его
+необходимо корректировать в процессе движения по всем проходимым вершинам.</p>
+
+<p class=a><span style='mso-spacerun:yes'> </span></p>
+
+<p class=a0>//-------------------------------------------------------------------------82-02.cpp<span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0>// Вставка в поддерево с минимальным количеством вершин</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>tree *create(int
+vv){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>tree *q=new tree;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>q-&gt;val=vv;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>q-&gt;n=0;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>q-&gt;cnt=1;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>return q; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>insert</span>_<span
+lang=EN-US style='mso-ansi-language:EN-US'>min</span>(<span lang=EN-US
+style='mso-ansi-language:EN-US'>tree</span> *&amp;<span lang=EN-US
+style='mso-ansi-language:EN-US'>p</span>, <span lang=EN-US style='mso-ansi-language:
+EN-US'>int</span><span lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:
+EN-US'>vv</span>){<span style='mso-tab-count:1'>               </span>// Ссылка на указатель на текущую
+вершину</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>if (p==NULL) { p=create(vv); return; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>p</span>-&gt;<span lang=EN-US
+style='mso-ansi-language:EN-US'>cnt</span>++;<span style='mso-tab-count:1'>                                  </span>//
+Наращивать счетчик в промежуточных вершинах</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>if</span> (<span lang=EN-US style='mso-ansi-language:
+EN-US'>p</span>-&gt;<span lang=EN-US style='mso-ansi-language:EN-US'>n</span>!=<span
+lang=EN-US style='mso-ansi-language:EN-US'>N</span>) { <span style='mso-tab-count:
+1'>     </span><span style='mso-tab-count:1'>                        </span>// Есть свободная ветка – создать вершину</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>p-&gt;ch[p-&gt;n++]=create(vv);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>return;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>for (int i=1,k=0; i&lt;N;i++)<span
+style='mso-tab-count:2'>             </span>// </span>Количество<span
+style='mso-ansi-language:EN-US'> </span>потомков<span lang=EN-US
+style='mso-ansi-language:EN-US'> = N<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>if (p-&gt;ch[i]-&gt;cnt
+&lt; p-&gt;ch[k]-&gt;cnt)<span style='mso-tab-count:1'>  </span><o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:3; mso-ansi-language:EN-US' lang="EN-US">                                    </span>k=i;<span
+style='mso-tab-count:2'>                   </span>// Искать потомка с min</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>insert_min(p-&gt;ch[k],vv);<span
+style='mso-tab-count:2'>               </span>// числом вершин в поддереве и
+выбрать его</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>}</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+</div>
+
+</body>
+
+</html>

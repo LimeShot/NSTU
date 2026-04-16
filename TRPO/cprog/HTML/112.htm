@@ -1,0 +1,2864 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<title>11.2. Производные классы. Наследование</title>
+<link rel=File-List href="112.files/filelist.xml">
+<link rel=Edit-Time-Data href="112.files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Глава 4</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>www.PHILka.RU</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>FuckYouBill</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>415</o:TotalTime>
+  <o:Created>2008-11-16T07:49:00Z</o:Created>
+  <o:LastSaved>2008-11-16T07:49:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>4849</o:Words>
+  <o:Characters>27645</o:Characters>
+  <o:Company>NSTU_VT</o:Company>
+  <o:Bytes>11776</o:Bytes>
+  <o:Lines>230</o:Lines>
+  <o:Paragraphs>64</o:Paragraphs>
+  <o:CharactersWithSpaces>32430</o:CharactersWithSpaces>
+  <o:Version>11.6360</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DoNotHyphenateCaps/>
+  <w:DrawingGridHorizontalSpacing>0,55 пт</w:DrawingGridHorizontalSpacing>
+  <w:DrawingGridVerticalSpacing>0,55 пт</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:UseMarginsForDrawingGridOrigin/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DrawingGridVerticalOrigin>99,25 пт</w:DrawingGridVerticalOrigin>
+  <w:Compatibility>
+   <w:WW6BorderRules/>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+   <w:UseWord97LineBreakingRules/>
+   <w:SelectEntireFieldWithStartOrEnd/>
+   <w:UseWord2002TableStyleRules/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:"Times New Roman CYR";
+	panose-1:2 2 6 3 5 4 5 2 3 4;
+	mso-font-charset:204;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+@font-face
+	{font-family:"Arial CYR";
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+h1
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:14.0pt;
+	mso-bidi-font-weight:normal;}
+h2
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-font-weight:normal;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+h3
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	font-weight:normal;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";}
+p.a, li.a, div.a
+	{mso-style-name:текст;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a0, li.a0, div.a0
+	{mso-style-name:программа;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a1, li.a1, div.a1
+	{mso-style-name:список;
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:18.45pt;
+	margin-bottom:0cm;
+	margin-left:64.35pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-18.0pt;
+	mso-pagination:widow-orphan;
+	mso-list:l0 level1 lfo1;
+	tab-stops:42.55pt list 64.35pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a2, li.a2, div.a2
+	{mso-style-name:определение;
+	mso-style-parent:текст;
+	margin-top:12.0pt;
+	margin-right:32.9pt;
+	margin-bottom:12.0pt;
+	margin-left:35.45pt;
+	text-align:justify;
+	text-indent:.55pt;
+	mso-pagination:widow-orphan;
+	border:none;
+	mso-border-alt:solid windowtext 1.5pt;
+	padding:0cm;
+	mso-padding-alt:1.0pt 1.0pt 1.0pt 1.0pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a3, li.a3, div.a3
+	{mso-style-name:эпиграф;
+	margin-top:0cm;
+	margin-right:32.9pt;
+	margin-bottom:0cm;
+	margin-left:5.0cm;
+	margin-bottom:.0001pt;
+	text-align:right;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.a4, li.a4, div.a4
+	{mso-style-name:"от края";
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a5, li.a5, div.a5
+	{mso-style-name:Формула;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.a6, li.a6, div.a6
+	{mso-style-name:"без формата";
+	mso-style-parent:программа;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a7, li.a7, div.a7
+	{mso-style-name:стихи;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.1, li.1, div.1
+	{mso-style-name:эпиграф1;
+	mso-style-parent:эпиграф;
+	margin-top:0cm;
+	margin-right:9.35pt;
+	margin-bottom:0cm;
+	margin-left:9.0cm;
+	margin-bottom:.0001pt;
+	text-align:right;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+ /* Page Definitions */
+ @page
+	{mso-footnote-separator:url("112.files/header.htm") fs;
+	mso-footnote-continuation-separator:url("112.files/header.htm") fcs;
+	mso-endnote-separator:url("112.files/header.htm") es;
+	mso-endnote-continuation-separator:url("112.files/header.htm") ecs;}
+@page Section1
+	{size:21.0cm 842.0pt;
+	margin:33.45pt 42.55pt 72.0pt 89.85pt;
+	mso-header-margin:14.2pt;
+	mso-footer-margin:31.75pt;
+	mso-even-header:url("112.files/header.htm") eh1;
+	mso-header:url("112.files/header.htm") h1;
+	mso-even-footer:url("112.files/header.htm") ef1;
+	mso-footer:url("112.files/header.htm") f1;
+	mso-first-header:url("112.files/header.htm") fh1;
+	mso-first-footer:url("112.files/header.htm") ff1;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:1628194852;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-964799380 -1450833310 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-style-link:список;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:64.35pt;
+	mso-level-number-position:left;
+	margin-left:64.35pt;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Обычная таблица";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+table.MsoTableGrid
+	{mso-style-name:"Сетка таблицы";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+  <o:regrouptable v:ext="edit">
+   <o:entry new="1" old="0"/>
+   <o:entry new="2" old="1"/>
+   <o:entry new="3" old="0"/>
+   <o:entry new="4" old="0"/>
+  </o:regrouptable>
+ </o:shapelayout></xml><![endif]-->
+<!--[if gte mso 9]>
+<xml><o:shapedefaults v:ext="edit" spidmax="1027"/>
+</xml><![endif]-->
+</head>
+
+<body lang=RU style='tab-interval:36.0pt'  background="back.gif">
+
+<div class=Section1>
+
+<h2>11.2. Иерархия объектов. Наследование</h2>
+
+<h3>Иерархия объектов</h3>
+
+<p class=a>До сих пор мы рассматривали в качестве содержимого объектов только
+переменные. При использовании на их месте объектов возникает иерархия
+вложенности. В ней самой нет ничего необычного,<span style='mso-spacerun:yes'> 
+</span>вложенные объекты можно применять как обычные данные, вызывать для них
+собственные методы и т.д..</p>
+
+<p class=a>Однако технология ООП требует «распространения» по иерархии объектов
+сверху вниз ряда специфичных для нее действий над объектами, таких как конструирование
+(в т.ч. конструктор копирования), присваивание, ввод и вывод в стандартные
+потоки. За это отвечает внешний класс, включающий в себя объекты: при
+выполнении в нем перечисленных действий он должен инициировать аналогичные
+действия в объектах, определенных внутри него. Рассмотрим эту проблему с общих
+позиций.</p>
+
+<p class=a>Класс <b style='mso-bidi-font-weight:normal'><a name="m1"><span lang=EN-US
+style='mso-ansi-language:EN-US'>user</span><span lang=EN-US> </span></b>в
+качестве элементов данных включает в себя объекты классов <b style='mso-bidi-font-weight:
+normal'><a name="m2"><span lang=EN-US style='mso-ansi-language:EN-US'>string</span><span
+lang=EN-US> </span></b>и <b style='mso-bidi-font-weight:normal'><a name="m3"><span
+lang=EN-US style='mso-ansi-language:EN-US'>date</span>. </b>Если объект не
+содержит других объектов и динамических данных (класс <b style='mso-bidi-font-weight:
+normal'><a name="m4"><span lang=EN-US style='mso-ansi-language:EN-US'>date</span></b>), то
+переопределение присваивания и конструктора копирования не требуется. Для
+класса <b style='mso-bidi-font-weight:normal'><a name="m5"><span lang=EN-US
+style='mso-ansi-language:EN-US'>string</span>, </b>содержащего внешний
+динамический массив символов, требуется корректное определение конструкторов
+(пустого и копирования), деструктора и присваивания.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//-------------------------------------------------112-01.cpp<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>class string{<span
+style='mso-tab-count:1'>      </span>char *str;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>public:<span
+style='mso-tab-count:1'>   </span>string(){ str=strdup(&quot;&quot;);}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>string(char *s){ str=strdup(s); }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>string(string &amp;T){
+str=strdup(T.str); }<span style='mso-tab-count:1'>         </span>// </span>КК<span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>~string(){ delete []str; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>string &amp;operator=(string
+&amp;T){<span style='mso-tab-count:2'>                   </span>// </span>Присваивание<span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>delete []str;<span
+style='mso-tab-count:3'>                                </span>// </span>разрушить<span
+style='mso-ansi-language:EN-US'> </span>старое<span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>str=strdup(T.str);<span
+style='mso-tab-count:2'>                        </span>// </span>копия<span
+style='mso-ansi-language:EN-US'> </span>ДМ<span style='mso-ansi-language:EN-US'>
+</span>источника<span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>return</span> *<span
+lang=EN-US style='mso-ansi-language:EN-US'>this</span>; }<span
+style='mso-tab-count:3'>                             </span>// возврат ссылки
+на текущий</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>friend ostream&amp;operator&lt;&lt;(ostream
+&amp;O, string &amp;D){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>O &lt;&lt; D.str
+&lt;&lt; endl; return O; }<span style='mso-tab-count:1'>    </span>// </span>вывод<span
+style='mso-ansi-language:EN-US'> </span>в<span style='mso-ansi-language:EN-US'>
+</span>поток<span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>};<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>class date{ int
+dd,mm,yy;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>public:<span
+style='mso-tab-count:1'>   </span>date(int d=1,int m=1,int y=2000) { dd=d;
+mm=m; yy=y; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span></span>// КК и = переопределять не
+требуется</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>friend ostream&amp;operator&lt;&lt;(ostream
+&amp;O, date &amp;D){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>O &lt;&lt; D.dd &lt;&lt;
+&quot; &quot; &lt;&lt; D.mm &lt;&lt; &quot; &quot; &lt;&lt; D.yy &lt;&lt; endl;
+return O; }<o:p></o:p></span></p>
+
+<p class=a0>};</p>
+
+<p class=a>В классе <b style='mso-bidi-font-weight:normal'><a name="m6"><span lang=EN-US
+style='mso-ansi-language:EN-US'>user</span><span lang=EN-US> </span></b>первый
+вопрос возникает в связи с конструированием. Здравый смысл подсказывает, что
+если в конструкторе внешнего класса не содержится информации о конструировании вложенных
+объектов, то по умолчанию для них возможен только вызов их собственных
+конструкторов без параметров, причем перед вызовом конструктора нового класса. Поскольку
+он во время своей работы должен получить внутренние объекты «в готовом виде».
+Из тех же соображений транслятор вызывает деструкторы вложенных объектов после
+вызова деструктора для основного класса. </p>
+
+<p class=a>Если все-таки требуется использовать конструкторы внутренних
+объектов с параметрами, то в заголовке конструктора внешнего класса их
+необходимо явно перечислить. Их параметры могут быть любыми выражениями,
+включающими формальные параметры конструктора нового класса. Имена
+конструкторов в этом варианте совпадают с именами внутренних объектов.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>class</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>user</span><span
+lang=EN-US> </span>{</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>string name,addr;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>date birth;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>public</span>:<span
+style='mso-tab-count:1'>   </span><span lang=EN-US style='mso-ansi-language:
+EN-US'>user</span>(){}<span style='mso-tab-count:3'>                          </span>//
+Конструктор без параметров</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>// Явный вызов
+конструкторов для вложенных объектов</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>// с передачей
+параметров от конструктора основного класса</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>user(char nm[], char a[],int d0, int m0, int
+y0):<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span><b style='mso-bidi-font-weight:
+normal'><a name="m7">name(nm), addr(a), birth(d0,m0,y0) </b>{ }<o:p></o:p></span></p>
+
+<p class=a>Далее внешний класс должен «переадресовывать» операции присваивания,
+ввода-вывода и конструктор копирования для всех своих внутренних компонент, в
+надежде на то, что они должным образом в них переопределены.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>class user{<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>string name,addr;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>date birth;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>public:<span
+style='mso-tab-count:1'>   </span>…<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>user(u</span>ser &amp;T){<span
+style='mso-tab-count:2'>                </span>// Конструктор копирования -
+копии всех</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span>name=T.name;<span
+style='mso-tab-count:1'>  </span>// компонент через переопределенное =</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>addr=T.addr;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>birth=T.birth;</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>user &amp;operator=(user &amp;T){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>name=T.name;<span
+style='mso-tab-count:1'>  </span>// </span>Переопределение<span
+style='mso-ansi-language:EN-US'> </span>присваивания<span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span></span>addr=T.addr;<span
+style='mso-tab-count:1'>      </span>// Копирование всех компонент</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span>birth=T.birth;<span
+style='mso-tab-count:1'>      </span>// через переопределенное =</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span></span>return *this;}<span
+style='mso-tab-count:1'>      </span>// Переопределение вывода в поток</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>friend ostream&amp;operator&lt;&lt;(ostream
+&amp;O, user &amp;D){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>O &lt;&lt; D.name
+&lt;&lt; D.addr &lt;&lt; D.birth;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>return O; }};</span></p>
+
+<p class=a4><i style='mso-bidi-font-style:normal'>Замечание:</i> в <b
+style='mso-bidi-font-weight:normal'>10.1 </b>мы уже обсуждали границы
+ответственности транслятора и программы в отношении класса. Здесь ситуация
+аналогичная: транслятор отвечает только за копирование объекта основного класса
+«в целом», т.е. компонента в компоненту, а также конструирует вложенные
+объекты, используя конструктор без параметров. Все остальное должна делать
+программа.<span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a>Принципиальное различие между технологическим и синтаксическим
+объектами распространяется на более сложные формы представления внутренних
+компонент. Например, если речь идет о статических массивах, содержащих объекты,
+то транслятор только вызывает для их элементов конструкторы без параметров и
+деструкторы, все остальное, в том числе и поэлементное копирование (присваивание)
+должна делать программа. Если речь идет о динамических структурах данных,
+доступных через указатели, то «ответственность» за их копирование ложится
+целиком на программу.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//-------------------------------------------------112-01.cpp</p>
+
+<p class=a0>// Иерархия данных - конструирование, присваивание, копирование</p>
+
+<p class=a0>// Статический и динамический массивы внутренних объектов типа <span
+lang=EN-US style='mso-ansi-language:EN-US'>string</span></p>
+
+<p class=a0>#<span lang=EN-US style='mso-ansi-language:EN-US'>define</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>N</span> 10</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>class user{<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>string name,addr;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>date birth;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>int</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>sz</span>,<span lang=EN-US
+style='mso-ansi-language:EN-US'>n</span>,<span lang=EN-US style='mso-ansi-language:
+EN-US'>n</span>2;<span style='mso-tab-count:2'>                    </span>// Размерность
+и текущее кол-во элементов</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>string *P;<span
+style='mso-tab-count:2'>                       </span>// Динамический массив
+string[]</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>string Q[N];<span
+style='mso-tab-count:2'>                   </span>// Статический массив
+string[]</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>public:<span
+style='mso-tab-count:1'>   </span>user(){ <b style='mso-bidi-font-weight:normal'><a name="m8">sz=5;
+n=0; n2=0; P=new string[sz];</b> }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>user(char nm[], char a[],int d0, int
+m0, int y0):<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>name(nm), addr(a),
+birth(d0,m0,y0)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>{ <b style='mso-bidi-font-weight:
+normal'><a name="m9">sz=5; n=0; n2=0; P=new string[sz];</b> }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span></span>user(user &amp;T){<span
+style='mso-tab-count:2'>                </span>// Конструктор копирования -
+копии всех</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span>name=T.name;<span
+style='mso-tab-count:1'>  </span>// компонент через переопределенное =</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>addr=T.addr;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>birth=T.birth;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span><b style='mso-bidi-font-weight:
+normal'><a name="m10">sz=T.sz; n=T.n; n2=T.n2;<o:p></o:p></b></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span></span><b
+style='mso-bidi-font-weight:normal'>P=new string[sz];</b><span
+style='mso-tab-count:1'>         </span>// Копия динамического и статического
+массивов</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>for (int i=0;i&lt;n;i++) P[i]=T.P[i];<o:p></o:p></span></b></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span><b style='mso-bidi-font-weight:
+normal'><a name="m11">for (i=0;i&lt;N;i++) Q[i]=T.Q[i];</b>}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>user &amp;operator=(user &amp;T){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>name</span>=<span
+lang=EN-US style='mso-ansi-language:EN-US'>T</span>.<span lang=EN-US
+style='mso-ansi-language:EN-US'>name</span>;<span style='mso-tab-count:1'>  </span><span
+style='mso-tab-count:1'>            </span>// Переопределение присваивания</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span>addr=T.addr;<span
+style='mso-tab-count:1'>      </span><span style='mso-tab-count:1'>            </span>//
+Копирование всех компонент</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span>birth=T.birth;<span
+style='mso-tab-count:1'>      </span><span style='mso-tab-count:1'>            </span>//
+через переопределенное =</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><b
+style='mso-bidi-font-weight:normal'>delete []P;<span style='mso-tab-count:1'>        </span></b><span
+style='mso-tab-count:1'>            </span>// Копирование динамического</p>
+
+<p class=a0><b style='mso-bidi-font-weight:normal'><a name="m12"><span style='mso-tab-count:
+2'>                        </span>sz=T.sz; n=T.n; n2=T.n2;<o:p></o:p></b></p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><b
+style='mso-bidi-font-weight:normal'>P=new string[sz];</b><span
+style='mso-tab-count:1'>         </span>// и статического массивов</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>for (int i=0;i&lt;n;i++) P[i]=T.P[i];<o:p></o:p></span></b></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span><b style='mso-bidi-font-weight:
+normal'><a name="m13">for (i=0;i&lt;T.n2;i++) Q[i]=T.Q[i];<o:p></o:p></b></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span></span>return *this;</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span>}<span
+style='mso-tab-count:4'>                                               </span>//
+Переопределение вывода в поток</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>friend ostream&amp;operator&lt;&lt;(ostream
+&amp;O, user &amp;D){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>O &lt;&lt; D.name
+&lt;&lt; D.addr &lt;&lt; D.birth;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span><b style='mso-bidi-font-weight:
+normal'><a name="m14">for (int i=0;i&lt;D.n; i++) O &lt;&lt; D.P[i];<o:p></o:p></b></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span><b style='mso-bidi-font-weight:
+normal'><a name="m15">for (i=0;i&lt;D.n2; i++) O &lt;&lt; D.Q[i];<o:p></o:p></b></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>return O; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>void</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>add</span>(<span lang=EN-US
+style='mso-ansi-language:EN-US'>string</span> &amp;<span lang=EN-US
+style='mso-ansi-language:EN-US'>D</span>){ <span lang=EN-US style='mso-ansi-language:
+EN-US'>P</span>[<span lang=EN-US style='mso-ansi-language:EN-US'>n</span>++]=<span
+lang=EN-US style='mso-ansi-language:EN-US'>D</span>; }<span style='mso-tab-count:
+2'>              </span>// Добавление в динамический</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>void</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>add</span>2(<span lang=EN-US
+style='mso-ansi-language:EN-US'>string</span> &amp;<span lang=EN-US
+style='mso-ansi-language:EN-US'>D</span>){ <span lang=EN-US style='mso-ansi-language:
+EN-US'>Q</span>[<span lang=EN-US style='mso-ansi-language:EN-US'>n</span>2++]=<span
+lang=EN-US style='mso-ansi-language:EN-US'>D</span>; }};<span style='mso-tab-count:
+1'>        </span>// и статический массивы</p>
+
+<h3>Наследование<span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></h3>
+
+<p class=a>В принципе, в понятии наследования нет ничего сверхестественного.
+Более того, в отличие, например, от полиморфизма, оно не требует специальных
+скрытых механизмов в исполняемой программе и целиком реализуется транслятором.
+Итак, <i style='mso-bidi-font-style:normal'>наследование – это неявное (по
+умолчанию) включение объекта одного класса в объект другого. </i>Класс
+включаемого объекта называется <b style='mso-bidi-font-weight:normal'><a name="m16">базовым
+классом (БК), </b>класс включающего – <b style='mso-bidi-font-weight:normal'><a name="m17">производным
+классом (ПК). </b>Таким образом, возникает неявная иерархия и вложенность
+объектов, обладающая следующими свойствами:</p>
+
+<p class=a1><![if !supportLists]><span style='font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>в объект производного класса включается неименованный
+объект базового. Это значит, что он не может быть использован в явном виде как
+обычный элемент данных, но с другой стороны, с его данные можно работать в
+контексте текущего объекта как с собственными;</p>
+
+<p class=a1><![if !supportLists]><span style='font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>данные базового класса включаются в объект
+производного класса (как правило, транслятор размещает их в начале объекта
+производного класса). Однако личная часть базового класса закрыта для прямого
+использования в производном классе. Это называется <b style='mso-bidi-font-weight:
+normal'><a name="m18">наследованием данных</b><span lang=EN-US style='mso-ansi-language:EN-US'>;</span></p>
+
+<p class=a1><![if !supportLists]><span style='font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><a name="m19">наследование
+методов</b> заключается в том, что методы базового класса <span
+style='mso-spacerun:yes'> </span>можно вызывать и для объекта производного
+класса, при этом они применяются опять-таки к включенному в него объекту
+базового класса<span style='display:none;mso-hide:all'>пять-таки к влюченному я
+одном, собственныеваный ность объектов, обладающая следующими свойствами</span>.
+</p>
+
+<p class=a>Синтаксис наследования таков. В заголовке класса после имени
+ставится двоеточие, после которого через запятую перечисляются имена базовых
+классов. Затем следует тело класса.</p>
+
+<p class=a>В простом технологическом смысле наследование является еще одним
+средством «экономии синтаксиса». Дополнительно к контексту текущего объекта оно
+создает контекст объекта базового класса: к его данным и методам можно
+обращаться по тем же правилам синтаксиса, что и к данным и методам<span
+style='mso-spacerun:yes'>  </span>производного.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//------- </span>наследование
+как «экономия синтаксиса»</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>class A { <o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>public:<span
+style='mso-tab-count:1'>   </span>int a;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>void F(){ a++; }};<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>class B : A {<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>public:<span
+style='mso-tab-count:1'>   </span>int b;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>void G(){ <b style='mso-bidi-font-weight:
+normal'><a name="m20">a++; b++; F();</b> }};<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void main(){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>B bb;<span style='mso-tab-count:
+1'>    </span><b style='mso-bidi-font-weight:normal'><a name="m21">bb.a++; bb.b++; bb.F();
+bb.G();</b> }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span></span>Предполагается, что при вызове в
+производном классе функций, наследуемых из базового, транслятор производит
+преобразование указателя <b style='mso-bidi-font-weight:normal'><a name="m22">this</b>
+объекта производного класса в указатель на входящий в него объект базового
+класса, учитывая размещение второго в первом. </p>
+
+<p class=a>При наследовании в качестве рабочего инструмента выступает <b
+style='mso-bidi-font-weight:normal'>перекрытие</b>, когда переменная (функция)
+«закрывает собой» (затеняет) переменную с тем же именем. Во всех других случаях
+перекрытие чаще является источником недоразумений и трудно обнаруживаемых
+ошибок. Напомним, что оно работает по цепочке <i style='mso-bidi-font-style:
+normal'>глобальные переменные – данные базового класса – данные объекта –
+формальные параметры - локальные переменные</i>: последующее «закрывает собой»
+предыдущее с тем же именем.</p>
+
+<p class=a>При наследовании активно используется <b style='mso-bidi-font-weight:
+normal'><a name="m23">перекрытие методов, </b>которое получает здесь специфический смысл <b
+style='mso-bidi-font-weight:normal'>перепрограммирования базового класса. </b>Если
+программист определяет в производном классе метод с тем же именем, что и
+базовый, то последний «закрывается» для доступа через производный класс. В
+новом методе он может записать любые действия, в том числе вызвать метод
+базового класса, но уже по полному имени в виде <b style='mso-bidi-font-weight:
+normal'><a name="m24"><span lang=EN-US style='mso-ansi-language:EN-US'>A</span>::</b><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>F</span>().</b></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//------- наследование как «перепрограммирование класса»</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>class A { <o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>public:<span
+style='mso-tab-count:1'>   </span>int a;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>void F(){ a++; }};<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>class B {<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>public</span>:<span
+style='mso-tab-count:1'>   </span><span lang=EN-US style='mso-ansi-language:
+EN-US'>int</span><span lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:
+EN-US'>b</span>;<span style='mso-tab-count:3'>                             </span>//
+Перекрытие метода</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>void</span><span lang=EN-US> </span></b><b style='mso-bidi-font-weight:
+normal'><a name="m25"><span lang=EN-US style='mso-ansi-language:EN-US'>F</span>()</b>{ <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>A</span>::</b><b style='mso-bidi-font-weight:normal'><a name="m26"><span lang=EN-US
+style='mso-ansi-language:EN-US'>F</span>();</b> <span lang=EN-US
+style='mso-ansi-language:EN-US'>b</span>++; }};<span style='mso-tab-count:1'> </span>//
+Явный вызов перекрытого метода</p>
+
+<p class=a>Перекрытие методов дает нам ключ к пониманию технологического смысла
+наследования. Базовый класс реализует <b style='mso-bidi-font-weight:normal'><a name="m27">общую,
+абстрактную сущность, </b>а производный класс ее конкретизирует, т.е. реализует
+сущность <b style='mso-bidi-font-weight:normal'><a name="m28">частную</b>. Например, класс
+«рыба» - базовый, а «селедка» - производный. Конкретизация класса достигается
+его перепрограммированием: путем написания новых методов, наследования и
+перекрытия уже существующих.</p>
+
+<p class=a>Для объекта базового класса применимы те правила конструирования,
+что и для вложенных объектов:</p>
+
+<p class=a1><![if !supportLists]><span style='font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>если конструктор производного класса определен
+обычным образом, то сначала вызывается конструктор базового класса без
+параметров, а затем конструктор производного класса. Деструкторы вызываются в
+обратном порядке - сначала для производного, затем для базового; </p>
+
+<p class=a1><![if !supportLists]><span style='font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>в заголовке конструктора производного класса
+может быть явно указан вызов конструктора базового класса с параметрами. Он
+может быть без имени, а может быть с именем базового класса. Если базовых
+классов несколько, то в вызовы конструкторов базовых классов должны быть
+перечислены через запятую и должны быть поименованы. </p>
+
+<p class=a>Аналогичные обязательства производный класс имеет и при
+переопределении присваивания, ввода-вывода в потоки и копирования. Он должен
+выполнить аналогичные действия в базовом классе. Как это сделать, будет сказано
+ниже (см. «Переход между базовым и производными классами»).</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//-------------------------------------------------112-02.cpp</p>
+
+<p class=a0>// Конструирование, присваивание, копирование при наследовании</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>class</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>string</span>{<span
+style='mso-tab-count:5'>                                                      </span>//
+Обычный класс строк</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>char *str;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>public:<span
+style='mso-tab-count:1'>   </span>string(){ str=strdup(&quot;&quot;);}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>string(char *s){ str=strdup(s); }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>string(string &amp;T){
+str=strdup(T.str); }<span style='mso-tab-count:1'>         </span><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>~string(){ delete []str; }<span
+style='mso-tab-count:2'>                </span></span><span style='mso-tab-count:
+1'>            </span><span lang=EN-US style='mso-ansi-language:EN-US'>// </span>КК<span
+lang=EN-US style='mso-ansi-language:EN-US'> <o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>string &amp;operator=(string
+&amp;T){<span style='mso-tab-count:1'>       </span><span style='mso-tab-count:
+1'>            </span>// </span>Присваивание<span lang=EN-US style='mso-ansi-language:
+EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>delete []str;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>str=strdup(T.str);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>return *this;}<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>friend
+ostream&amp;operator&lt;&lt;(ostream &amp;O, string &amp;D){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>O &lt;&lt; D.str
+&lt;&lt; endl; return O; }};<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>class</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>string</span>2
+: <span lang=EN-US style='mso-ansi-language:EN-US'>string</span>{<span
+style='mso-tab-count:4'>                                          </span>// Строка,
+наследующая строку</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>char *str;<span style='mso-tab-count:1'>           </span><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>public:<span
+style='mso-tab-count:1'>   </span>string2(){ str=strdup(&quot;&quot;);}<span
+style='mso-tab-count:3'>                         </span>// </span>Вызов<span
+style='mso-ansi-language:EN-US'> </span>конструктора<span style='mso-ansi-language:
+EN-US'> </span>БК<span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>string2(char c[], char c2[]): <b
+style='mso-bidi-font-weight:normal'>string(c2)</b><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>{ str=strdup(c); }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>string2(string2 &amp;T){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span><b style='mso-bidi-font-weight:
+normal'><a name="m29">*(string*)this=*(string*)&amp;T</b>;</span><span style='mso-tab-count:
+1'>         </span><span lang=EN-US style='mso-ansi-language:EN-US'>// </span>Присваивание<span
+style='mso-ansi-language:EN-US'> </span>объекта<span style='mso-ansi-language:
+EN-US'> </span>БК<span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>      </span><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>str=strdup(T.str); }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>string2 &amp;operator=(string2
+&amp;T){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span><b style='mso-bidi-font-weight:
+normal'><a name="m30">*(string*)this=*(string*)&amp;T;</b></span><span style='mso-tab-count:
+1'>         </span><span lang=EN-US style='mso-ansi-language:EN-US'>// </span>Присваивание<span
+style='mso-ansi-language:EN-US'> </span>объекта<span style='mso-ansi-language:
+EN-US'> </span>БК<span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>delete []str;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>str=strdup(T.str);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span></span>return *this;}<span
+style='mso-tab-count:3'>                              </span>// Переопределение
+вывода в поток</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>friend ostream&amp;operator&lt;&lt;(ostream
+&amp;O, string2 &amp;D){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>O &lt;&lt; <b
+style='mso-bidi-font-weight:normal'>*(string*)&amp;D</b> &lt;&lt; D.str
+&lt;&lt; endl; return O; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span></span>};<span style='mso-tab-count:
+1'>          </span><span style='mso-tab-count:4'>                                                </span>//
+Вызов операции в БК</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a>В этом примере оба класса – базовый и производный, работают с
+динамическими данными – строками. Конструктор копирования и присваивания
+производят копирование (присваивание) содержимого объектов базовых классов
+путем вызова в классе переопределенной операции. Аналогично дело обстоит с
+выводом в поток.</p>
+
+<h3>Права доступа при наследовании</h3>
+
+<p class=a>С точки зрения прав доступа при наследовании появляется еще одно
+действующее лицо: программист производного класса. Очевидно, что в соответствии
+со своей компетенцией (не пользуется классом, а развивает его) он должен
+обладать правами большими, чем пользователь класса (внешний доступ), но не
+такими большими как разработчик (внутренний доступ).</p>
+
+ <table cellpadding=0 cellspacing=0 align=center>
+  <tr>
+   <td width=18 height=0></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><img width=541 height=169 src="Images/112-01.gif"  align="center"></td>
+  </tr>
+ </table>
+ </span>
+</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=a4 align=center style='text-align:center'><b style='mso-bidi-font-weight:
+normal'><a name="m31">рис. 112-1. Варианты доступа при наследовании.<o:p></o:p></b></p>
+
+<p class=a>Если же говорить совсем точно, ограничения распространяются на
+программный код, написанный в производном классе. Эти ограничения
+устанавливаются в базовом классе путем введения промежуточной зоны,
+обозначаемой меткой <b style='mso-bidi-font-weight:normal'><a name="m32"><span lang=EN-US
+style='mso-ansi-language:EN-US'>protected</span>. </b>То, что находится в ней,
+доступно в производном классе, но недоступно для внешнего пользования (через
+объект вне класса).</p>
+
+<p class=a>Но на этом дело не заканчивается. Полученный производный класс также
+может быть унаследован, поэтому необходимо еще оговорить, какие права базовый
+класс получает в производном с учетом дальнейшего использования. Здесь есть два
+способа, объяснение которых удобнее всего связать с понятием интерфейса. Производный
+класс, наследуя базовый, принимает решение, как он будет относиться к его
+прямому применению:</p>
+
+<p class=a1><![if !supportLists]><span style='font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>производный класс может «закрыть» интерфейс
+базового класса, т.е. сделать его невидимым. В этом случае он берет на себя
+полное перепрограммирование базового класса. Такое наследование называется <b
+style='mso-bidi-font-weight:normal'>обычным, </b>в заголовке при этом слово <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>public</span><span lang=EN-US> </span></b>перед именем базового класса
+не пишется. Фактически в этом случае все три зоны доступа базового класса
+переносятся в личную часть производного (при этом личная часть БК становится
+недоступной и в БК);</p>
+
+<p class=a1><![if !supportLists]><span style='font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>производный класс может полностью сохранить
+интерфейс базового класса (<b style='mso-bidi-font-weight:normal'><a name="m33">публичное
+наследование</b>). В этом случае базовый и производный класс работают
+совместно, причем считается, что вызов методов базового класса не может
+привести к некорректности части того же объекта, относящегося к производному
+классу. Зоны доступа при этом переносятся «один в один».
+<b style='mso-bidi-font-weight:
+normal'><a name="m34"><o:p></o:p></b></p>
+
+
+ <table cellpadding=0 cellspacing=0 align="center">
+  <tr>
+   <td width=87 height=0></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><img width=391 height=237 src="Images/112-02.jpg" align="center"></td>
+  </tr>
+ </table>
+ 
+<p class=a4 align=center style='text-align:center'><b style='mso-bidi-font-weight:
+normal'><a name="m35">
+рис. 112-2. Перенос зон доступа при обычном и публичном наследовании<o:p></o:p></b></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a>Следующий пример иллюстрирует правила переноса зон доступа (Обратите
+внимание, это не программа, а иллюстрация на Си++).</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//<span style='mso-spacerun:yes'>  </span>Обычное и публичное
+наследование</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>class A<span
+style='mso-tab-count:1'> </span>{<span style='mso-tab-count:1'>           </span>int
+n;<span style='mso-tab-count:1'>     </span>// </span>Базовый<span
+style='mso-ansi-language:EN-US'> </span>класс<span lang=EN-US style='mso-ansi-language:
+EN-US'><o:p></o:p></span></p>
+
+<p class=a0 style='margin-left:36.0pt;text-indent:36.0pt'><span lang=EN-US
+style='mso-ansi-language:EN-US'>void</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>f</span>();<span lang=EN-US
+style='mso-ansi-language:EN-US'><span style='mso-tab-count:1'>  </span></span>//
+Личная часть </p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>protected:<span
+style='mso-tab-count:1'>          </span>int m;<span style='mso-tab-count:1'>    </span>//
+</span>Защищенная<span style='mso-ansi-language:EN-US'> </span>часть<span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'><span style='mso-tab-count:1'>            </span>void q();<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>public</span>:<span
+style='mso-tab-count:1'>   </span><span style='mso-tab-count:1'>            </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>int</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>k</span>;<span style='mso-tab-count:
+1'>     </span>// Общая часть</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>void</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>t</span>(); };</p>
+
+<p class=a0>//------ Обычное наследование </p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>class</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>B</span> : <span
+lang=EN-US style='mso-ansi-language:EN-US'>A</span> {<span style='mso-tab-count:
+1'>      </span>// Заголовок класса</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>…</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>public</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>A</span>::<span
+lang=EN-US style='mso-ansi-language:EN-US'>fun</span>;<span style='mso-tab-count:
+1'>     </span>// Явное объявление элемента общей части</p>
+
+<p class=a0>};</p>
+
+<p class=a0>//------ Содержимое производного класса</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>class</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>B</span> <span
+style='mso-tab-count:1'>            </span>{<span style='mso-tab-count:1'>           </span>(-)<span
+lang=EN-US style='mso-ansi-language:EN-US'>int</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>n</span>;<span style='mso-tab-count:
+1'>  </span>// Личная часть класса <span lang=EN-US style='mso-ansi-language:
+EN-US'>A</span><span lang=EN-US> </span>недоступна</p>
+
+<p class=a0 style='margin-left:36.0pt;text-indent:36.0pt'>(-)<span lang=EN-US
+style='mso-ansi-language:EN-US'>void</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>f</span>();</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>privat</span>:<span
+style='mso-tab-count:1'>    </span><span style='mso-tab-count:1'>            </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>int</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>m</span>;<span style='mso-tab-count:
+1'>    </span>// Защищенная часть перенесена в личную</p>
+
+<p class=a0 style='text-indent:36.0pt'><span style='mso-tab-count:1'>            </span>void
+q();</p>
+
+<p class=a0 style='text-indent:36.0pt'><span style='mso-tab-count:1'>            </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>int</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>k</span>;<span style='mso-tab-count:
+1'>     </span>// Общая часть перенесена в личную</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>public</span>:<span
+style='mso-tab-count:1'>   </span>… <span style='mso-tab-count:1'>        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>void</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>t</span>();<span style='mso-tab-count:
+1'>  </span>// Явно перенесенный элемент общей части</p>
+
+<p class=a0 style='margin-left:36.0pt;text-indent:36.0pt'>};<span
+style='mso-tab-count:1'>          </span>// в общую часть</p>
+
+<p class=a0>//------ Публичное наследование</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>class</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>B</span>
+:<span style='mso-spacerun:yes'>  </span><span lang=EN-US style='mso-ansi-language:
+EN-US'>public</span><span lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:
+EN-US'>A</span> {<span style='mso-tab-count:1'>       </span>// Заголовок
+класса</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>};</p>
+
+<p class=a0>//------ Содержимое производного класса</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>class</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>B</span><span
+style='mso-tab-count:1'> </span>{<span style='mso-tab-count:1'>           </span>(-)<span
+lang=EN-US style='mso-ansi-language:EN-US'>int</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>n</span>;<span style='mso-tab-count:
+1'>  </span>// Личная часть класса <span lang=EN-US style='mso-ansi-language:
+EN-US'>A</span><span lang=EN-US> </span>недоступна</p>
+
+<p class=a0 style='margin-left:36.0pt;text-indent:36.0pt'>(-)<span lang=EN-US
+style='mso-ansi-language:EN-US'>void</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>f</span>();</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>protected</span>:<span
+style='mso-tab-count:1'>          </span><span lang=EN-US style='mso-ansi-language:
+EN-US'>int</span><span lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:
+EN-US'>m</span>;<span style='mso-tab-count:1'>    </span>// Защищенная часть перенесена
+в защищенную</p>
+
+<p class=a0 style='text-indent:36.0pt'><span style='mso-tab-count:1'>            </span>void
+q();</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>public</span>:<span
+style='mso-tab-count:1'>   </span><span style='mso-tab-count:1'>            </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>int</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>k</span>;<span style='mso-tab-count:
+1'>     </span>// Общая часть перенесена в общую</p>
+
+<p class=a0 style='text-indent:36.0pt'><span style='mso-tab-count:1'>            </span>void
+t(); };</p>
+
+<h3>Наследование как программирование «от класса к классу»</h3>
+
+<p class=a>Наследование дает нам новый способ программирования, который условно
+можно назвать как «программирование от класса к классу».<span
+style='mso-spacerun:yes'>  </span>При проектировании производного класса
+определяется потенциальное множество объектов с новыми свойствами, отличными от
+свойств базового класса. Внешне наблюдаемые свойства объекта - это его методы.
+Перечисленные варианты наследования методов базового класса в производном нужно
+воспринимать в широком смысле - как способы изменения свойств класса.</p>
+
+<p class=a1 style='margin-left:1.0cm;text-indent:0cm;mso-list:none;tab-stops:
+42.55pt'>1. <u>«<b style='mso-bidi-font-weight:normal'><a name="m36">Новое свойство</b>».</u>
+Имя определяемого в производном классе метода не совпадает ни с одним из
+известных в базовом классе. В этом случае это - «новое свойство» объекта,
+которое объект приобретает в производном классе.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0 style='text-indent:35.45pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>class a {<o:p></o:p></span></p>
+
+<p class=a0 style='text-indent:35.45pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>public: void f() {}};<o:p></o:p></span></p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>class b : public a {<o:p></o:p></span></p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>public: void newb() {…}};<span style='mso-tab-count:1'> </span>// newb()
+- </span>новое<span style='mso-ansi-language:EN-US'> </span>свойство<span
+lang=EN-US style='mso-ansi-language:EN-US'> (</span>метод<span lang=EN-US
+style='mso-ansi-language:EN-US'>)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span><o:p></o:p></span></p>
+
+<p class=a1 style='margin-left:1.0cm;text-indent:0cm;mso-list:none;tab-stops:
+42.55pt'>2.<u> «<b style='mso-bidi-font-weight:normal'><a name="m37">Полное неявное
+наследование</b>». </u>Если в производном классе метод не переопределяется, то
+по умолчанию он наследуется из базового класса. Это значит, что будучи применен
+к объекту производного класса, он будет вызван в базовом. Определенное в
+базовом классе свойство не меняется.</p>
+
+<p class=a0 style='text-indent:36.0pt'><o:p>&nbsp;</o:p></p>
+
+<p class=a0 style='text-indent:35.45pt'>class a {</p>
+
+<p class=a0 style='text-indent:36.0pt'>public: void <span lang=EN-US
+style='mso-ansi-language:EN-US'>f</span>() {}};</p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>class</span><span lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:
+EN-US'>b</span> : <span lang=EN-US style='mso-ansi-language:EN-US'>public</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>a</span>{</p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>public</span>: <span style='mso-tab-count:2'>              </span><span
+style='mso-tab-count:1'>            </span>// <span
+style='mso-spacerun:yes'> </span><span lang=EN-US style='mso-ansi-language:
+EN-US'>f</span>() - унаследованное свойство</p>
+
+<p class=a0><span style='mso-tab-count:3'>                                    </span>};<span
+style='mso-tab-count:1'>          </span>// <span
+style='mso-spacerun:yes'> </span>эквивалентно <span lang=EN-US
+style='mso-ansi-language:EN-US'>void</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>f</span>() { <span lang=EN-US
+style='mso-ansi-language:EN-US'>a</span>::<span lang=EN-US style='mso-ansi-language:
+EN-US'>f</span>(); }</p>
+
+<p class=a1 style='margin-left:1.0cm;text-indent:0cm;mso-list:none;tab-stops:
+42.55pt'>3. <u>«<b style='mso-bidi-font-weight:normal'><a name="m38">Полное перекрытие</b>».</u><span
+style='mso-spacerun:yes'>  </span>Если в производном классе определяется метод,
+совпадающий с именем с методом базового класса, причем в теле метода
+отсутствует вызов одноименного метода в базовом классе, то мы имеем дело с
+полностью переопределенным свойством. В этом случае свойство объекта базового
+класса в производном классе отвергается и перепрограммируется заново.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0 style='text-indent:35.45pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>class a {<o:p></o:p></span></p>
+
+<p class=a0 style='text-indent:35.45pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>public: void f() {} };<o:p></o:p></span></p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>class b : public a{<o:p></o:p></span></p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>public</span>:<span style='mso-tab-count:1'>   </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>void</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>f</span>() {...}<span
+style='mso-tab-count:1'>         </span>// полностью переопределенное свойство</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>};</span></p>
+
+<p class=a1 style='margin-left:1.0cm;text-indent:0cm;mso-list:none;tab-stops:
+42.55pt'>4. <u>«<b style='mso-bidi-font-weight:normal'><a name="m39">Условное наследование</b>».</u>
+Наиболее точно отражает сущность наследования. Но в перекрывающем методе производного
+класса обязательно имеется вызов одноименного метода базового класса - условный
+или безусловный. Этот прием наиболее полно соответствует принципу развития
+свойств объекта, поскольку свойство в производном классе является усложненным
+вариантом аналогичного свойства объекта базового класса.</p>
+
+<p class=a0 style='text-indent:36.0pt'><o:p>&nbsp;</o:p></p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>class a {<o:p></o:p></span></p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>public: void f() {} };<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>class b : public a{<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>public:<span style='mso-tab-count:
+1'>   </span>void f() {... <b style='mso-bidi-font-weight:normal'><a name="m40">a::f();</b>
+.... }};</span></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a1 style='margin-left:1.0cm;text-indent:0cm;mso-list:none;tab-stops:
+42.55pt'>Переопределенное свойство развивает соответствующее свойство объекта
+базового класса. Переопределенный метод в явном виде вызывает метод в базовом
+классе по его полному имени.<span style='font-family:Arial;mso-bidi-font-family:
+"Times New Roman"'><o:p></o:p></span></p>
+
+<p class=a>Представление производного класса как «развития» базового позволяет
+нам дать основную технологическую интерпретацию наследования в технологии ООП:</p>
+
+<p class=a1><![if !supportLists]><span style='font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>базовый класс представляет (моделирует,
+отражает) некоторую общую (абстрактную) сущность;</p>
+
+<p class=a1><![if !supportLists]><span style='font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>производные классы реализуют частные
+(конкретные) сущности, объединенные абстрактным содержанием базового класса.</p>
+
+<p class=a>Таким образом, общий базовый класс дает потенциальную возможность
+объединения нескольких родственных классов посредством выделения в них общей
+абстрактной сущности – базового класса.</p>
+
+<p class=a>Рассмотрим пример наследования – как простого развития сущности
+базового класса в производный. Базовый класс – целое без знака. Производный
+класс использует эту сущность (данные и методы), добавляя еще один компонент –
+знак числа. Все операции базового класса переопределяются с учетом этого нового
+представления. Производный класс не работает напрямую с данными базового, а
+использует только определенные в базовом классе методы.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//------------------------------------------------------------------------------112-03.cpp</p>
+
+<p class=a0>// Класс целого без знака</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>class UNS{<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>protected:</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>unsigned
+val;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>public:<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>UNS(unsigned v0){ val=v0; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>void add(UNS &amp;T){ val+=T.val; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span></span>int<span
+style='mso-spacerun:yes'>  </span>sub(UNS &amp;T){<span style='mso-tab-count:
+2'>                       </span>// Вычитание без знака не всегда корректно</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>if (val&lt;T.val) return 0; <o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span></span><span style='mso-tab-count:
+1'>            </span><span lang=EN-US style='mso-ansi-language:EN-US'>val-=T.val;
+<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>return 1; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>void mul(UNS &amp;T){ val*=T.val; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>void div(UNS &amp;T){ val/=T.val; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>UNS operator+(UNS &amp;T){ UNS
+X=*this; X.add(T); return X; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>UNS operator-(UNS &amp;T){ UNS
+X=*this; X.sub(T); return X; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>UNS operator*(UNS &amp;T){ UNS
+X=*this; X.mul(T); return X; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>UNS operator/(UNS &amp;T){ UNS
+X=*this; X.div(T); return X; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>friend ostream
+&amp;operator&lt;&lt;(ostream &amp;O, UNS &amp;D){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>O &lt;&lt; D.val;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>return O;}</span>};</p>
+
+<p class=a0>// Класс целого со знаком</p>
+
+<p class=a0>class INT : UNS{</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>int sign;<span
+style='mso-tab-count:3'>                         </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>// </span>Знак числа - отдельно</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>public</span>: <span
+style='mso-tab-count:4'>                                      </span>// Конструктор
+- базовый класс = абс.величина</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>INT(int v0):UNS(v0&lt;0 ? -v0 : v0){
+sign=(v0&lt;0); }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span></span>void add(INT &amp;T){<span
+style='mso-tab-count:1'>            </span>// Знаки одинаковые - сложение
+абс.величин</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>if (sign==T.sign) UNS::add(T); <o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span></span>else if
+(!UNS::sub(T)){<span style='mso-tab-count:1'>     </span>// Иначе - вычитание,
+если получается &lt;0</p>
+
+<p class=a0><span style='mso-tab-count:3'>                                    </span>UNS
+X=T;<span style='mso-tab-count:1'>          </span>// надо выполнить наоборот и
+поменять знак</p>
+
+<p class=a0><span style='mso-tab-count:3'>                                    </span>X.sub(*this);<span
+style='mso-tab-count:1'>       </span>// (с использованием дополнительного
+объекта)</p>
+
+<p class=a0><span style='mso-tab-count:3'>                                    </span>*(UNS*)this=X;<span
+style='mso-tab-count:1'>   </span>// Копировать объект базового класса обратно</p>
+
+<p class=a0><span style='mso-tab-count:3'>                                    </span>sign=!sign;<span
+style='mso-tab-count:1'>        </span>// Поменять знак</p>
+
+<p class=a0><span style='mso-tab-count:3'>                                    </span>}}</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>void sub(INT
+&amp;T){<span style='mso-tab-count:2'>                        </span>//
+Вычитание - сложение с обратным знаком</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>T</span>.<span lang=EN-US
+style='mso-ansi-language:EN-US'>sign</span>=!<span lang=EN-US style='mso-ansi-language:
+EN-US'>T</span>.<span lang=EN-US style='mso-ansi-language:EN-US'>sign</span>;<span
+style='mso-tab-count:2'>               </span>// Поменять знак</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>add(T);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>T</span>.<span
+lang=EN-US style='mso-ansi-language:EN-US'>sign</span>=!<span lang=EN-US
+style='mso-ansi-language:EN-US'>T</span>.<span lang=EN-US style='mso-ansi-language:
+EN-US'>sign</span>;} <span style='mso-tab-count:2'>             </span>// Поменять
+знак обратно</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>void mul(INT &amp;T){ sign=(sign!=T.sign);<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span></span>UNS::mul(T);<span
+style='mso-tab-count:2'>                 </span>// Знак '-' при несовпадении
+знаков операндов<span style='mso-tab-count:1'>   </span></p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span>}<span
+style='mso-tab-count:3'>                                   </span>// Умножение
+абс. значений</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>void div(INT
+&amp;T){ sign=(sign!=T.sign);</p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span>UNS::div(T);<span
+style='mso-tab-count:2'>                   </span>// Знак '-' при несовпадении
+знаков операндов<span style='mso-tab-count:1'>   </span></p>
+
+<p class=a0><span style='mso-tab-count:2'>                        </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>}<span style='mso-tab-count:3'>                                   </span>//
+</span>Деление<span style='mso-ansi-language:EN-US'> </span>абс<span
+lang=EN-US style='mso-ansi-language:EN-US'>. </span>значений<span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>INT operator+(INT &amp;T){ INT
+X=*this; X.add(T); return X; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>INT operator-(INT &amp;T){ INT
+X=*this; X.sub(T); return X; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>INT operator*(INT &amp;T){ INT
+X=*this; X.mul(T); return X; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>INT operator/(INT &amp;T){ INT
+X=*this; X.div(T); return X; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>friend ostream
+&amp;operator&lt;&lt;(ostream &amp;O, INT &amp;D){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>O &lt;&lt; (D.sign==0 ?
+'+' : '-') &lt;&lt; D.val;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>return</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>O</span>;}};</p>
+
+<h3>Переходы между базовым и производным классами</h3>
+
+<p class=1>«Каждая селедка – рыба, </p>
+
+<p class=1>но не каждая рыба – селедка»</p>
+
+<p class=1 style='margin-left:6.0cm'><b style='mso-bidi-font-weight:normal'><a name="m41">А.С.
+Некрасов «Приключения капитана Врунгеля».<o:p></o:p></b></p>
+
+<p class=a>Преобразование<span style='mso-spacerun:yes'>  </span>типа данных,
+на который ссылается указатель, для обычных типов (не классов), обсуждалось в <b
+style='mso-bidi-font-weight:normal'>9.2</b>. Наследование вносит сюда свою
+специфику. Преобразуя указатель на объект производного класса к указателю на
+объект базового класса, мы получаем доступ к вложенному объекту базового
+класса, даже если его компоненты были «закрыты» для производного класса. Побочный
+эффект такого преобразования состоит в том, что транслятор «забывает» об
+объекте производного класса. С точки зрения взаимоотношения сущностей
+производного и базового классов такое преобразование представляет собой переход
+от конкретной (частной) сущности к ее абстрактной (общей) составляющей. Оно
+всегда корректно, поэтому может быть выполнено неявно, без использования
+операции явного преобразования типа.<span style='mso-spacerun:yes'> 
+</span>В<span style='mso-spacerun:yes'>  </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>Java</span><span lang=EN-US> </span>оно удачно
+называется <b style='mso-bidi-font-weight:normal'><a name="m42">расширением.</b> </p>
+
+<p class=a><span style='mso-spacerun:yes'> </span>Обратное преобразование от
+указателя на базовый класс к указателю на производный класс может быть сделано
+только явно, с использованием операции преобразования типа. В <span lang=EN-US
+style='mso-ansi-language:EN-US'>Java</span><span lang=EN-US> </span>оно носит
+название <b style='mso-bidi-font-weight:normal'><a name="m43">расширения.</b> Преобразование
+будет корректным, если данный объект базового класса действительно заключен в
+объект того производного класса, к типу указателя которого оно выполняется:
+иначе возникает динамическая ошибка преобразования<span
+style='mso-spacerun:yes'>  </span>типов, которая не обнаруживается транслятором
+(о контроле за преобразованием типов см. также <b style='mso-bidi-font-weight:
+normal'><a name="m44">11.3</b>).</p>
+
+<p class=a0><b style='mso-bidi-font-weight:normal'><a name="m45"><o:p>&nbsp;</o:p></b></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>class</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>A</span> {</p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>public</span>: <span lang=EN-US style='mso-ansi-language:EN-US'>void</span><span
+style='mso-spacerun:yes'>    </span><span lang=EN-US style='mso-ansi-language:
+EN-US'>f</span>1();};</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>class</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>B</span> : <span
+lang=EN-US style='mso-ansi-language:EN-US'>A</span> {</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>public</span>: <span
+style='mso-tab-count:1'>  </span><span lang=EN-US style='mso-ansi-language:
+EN-US'>void</span><span style='mso-spacerun:yes'>    </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>f</span>1();<span style='mso-spacerun:yes'>  
+</span>// Переопределена в класс<span lang=EN-US style='mso-ansi-language:EN-US'>e</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>B</span></p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>void</span><span style='mso-spacerun:yes'>    </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>f</span>2();<span style='mso-spacerun:yes'>  
+</span></p>
+
+<p class=a0 style='text-indent:36.0pt'>};</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>class</span><span
+lang=EN-US> </span>С: <span lang=EN-US style='mso-ansi-language:EN-US'>A</span>
+{</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>public</span>: <span
+style='mso-tab-count:1'>  </span><span lang=EN-US style='mso-ansi-language:
+EN-US'>void</span><span style='mso-spacerun:yes'>    </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>f</span>1();<span style='mso-spacerun:yes'>  
+</span>// Переопределена в класс<span lang=EN-US style='mso-ansi-language:EN-US'>e</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>B</span></p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>void<span style='mso-spacerun:yes'>    </span>f</span>3<span lang=EN-US
+style='mso-ansi-language:EN-US'>();<span style='mso-spacerun:yes'>   </span><o:p></o:p></span></p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>};<o:p></o:p></span></p>
+
+<p class=a0 style='text-indent:36.0pt'><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void main(){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>B<span
+style='mso-spacerun:yes'>     </span>x, *pb;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>C<span
+style='mso-spacerun:yes'>     </span>*pc;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>A</span><span
+style='mso-spacerun:yes'>  </span>*pa = &amp;x;<span style='mso-tab-count:1'>      </span>//
+Прямое преобразование - неявное<span style='mso-tab-count:1'>     </span></p>
+
+<p class=a0>pa-&gt;f1(); <span style='mso-tab-count:1'>           </span>// Вызов
+<span lang=EN-US style='mso-ansi-language:EN-US'>A</span>::<span lang=EN-US
+style='mso-ansi-language:EN-US'>f</span>1(), хотя внутри<span
+style='mso-spacerun:yes'>  </span>объекта класса <span lang=EN-US
+style='mso-ansi-language:EN-US'>B</span></p>
+
+<p class=a0>pb = (B*) pa;<span style='mso-spacerun:yes'>  </span><span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'><span
+style='mso-tab-count:1'>  </span></span>// Обратное преобразование - явное</p>
+
+<p class=a0>pb -&gt;f2(); <span style='mso-spacerun:yes'>      </span><span
+style='mso-tab-count:1'>    </span>// Корректно, под pa был объект класса B</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>pc</span> = (<span
+lang=EN-US style='mso-ansi-language:EN-US'>C</span>*) <span lang=EN-US
+style='mso-ansi-language:EN-US'>pa</span>; <span style='mso-tab-count:1'>     </span>//
+Некорректно, под pa был объект класса B</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>pc</span>-&gt;<span
+lang=EN-US style='mso-ansi-language:EN-US'>f</span>3();<span style='mso-tab-count:
+1'>            </span>// Ошибка времени выполнения</p>
+
+<p class=a0 style='margin-left:36.0pt;text-indent:36.0pt'>// Метод <span
+lang=EN-US style='mso-ansi-language:EN-US'>f</span>3 будет вызван для объекта
+класса <span lang=EN-US style='mso-ansi-language:EN-US'>B</span></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a>После преобразования указателя на объект класса <b style='mso-bidi-font-weight:
+normal'><a name="m46">B</b> в указатель на объект класса <b style='mso-bidi-font-weight:normal'><a name="m47">A</b>
+происходит вызов функции из вложенного объекта базового класса <b
+style='mso-bidi-font-weight:normal'>A::f1()</b>, хотя реально под указателем
+находится объект класса <b style='mso-bidi-font-weight:normal'><a name="m48"><span
+lang=EN-US style='mso-ansi-language:EN-US'>B</span>. </b>Обратно приведение <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>pa</span><span lang=EN-US> </span></b>к <b style='mso-bidi-font-weight:
+normal'><a name="m49"><span lang=EN-US style='mso-ansi-language:EN-US'>pb</span><span
+lang=EN-US> </span></b>будет корректно. А вот с приведением к <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>pc</span><span lang=EN-US> </span></b>имеют место тонкости. То, что оно
+некорректно, ясно сразу. Но эта некорректность «вылезет» только при вызове
+метода <b style='mso-bidi-font-weight:normal'><a name="m50"><span lang=EN-US
+style='mso-ansi-language:EN-US'>f</span>3, </b>который определен только в
+классе <b style='mso-bidi-font-weight:normal'><a name="m51"><span lang=EN-US
+style='mso-ansi-language:EN-US'>C</span>, </b>а в <b style='mso-bidi-font-weight:
+normal'><a name="m52"><span lang=EN-US style='mso-ansi-language:EN-US'>B</span><span
+lang=EN-US> </span></b>отсутствует. Тем не менее, он будет вызван, но программы
+«подсунет» ему в качестве текущего объекта объект класса <b style='mso-bidi-font-weight:
+normal'><a name="m53"><span lang=EN-US style='mso-ansi-language:EN-US'>B</span>. </b></p>
+
+<a name="m53">
+
+<p class=a>При преобразования типа указателя транслятору необходимо учитывать
+размещение объекта базового класса в производном, что он и делает. В результате
+значение указателя (адрес памяти) на объект базового класса иногда может
+оказаться не равным исходному значению указателя на объект производного. Ввиду
+«особости» такого преобразования оно может быть выполнено в Си++ неявно
+(остальные преобразования типов указателей должны быть явными).</p>
+
+<p class=a4><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_s1232" type="#_x0000_t75"
+ href="Images/smile.jpg" style='position:absolute;margin-left:6pt;margin-top:6105pt;
+ width:19.5pt;height:19.5pt;z-index:3;float:left'>
+ <v:imagedata src="" o:title="smile"/>
+</v:shape><![endif]--></a><img border="0" src="Images/smile.jpg" width="40" height="41" align="left"><a name="m53">Если
+«рыба» - это базовый класс, а «селедка» и «камбала» - производные, то
+расширение – это получение указателем на объект класса «рыба» адреса объекта
+класса «селедка», что всегда является корректным. Обратное приведение (сужение)
+именно этого указателя к классу «селедка» будет корректным, а к классу
+«камбала» - ошибочным. Как говорится: «Каждая селедка – рыба, но не каждая рыба
+- селедка».</p>
+
+<p class=a4><i style='mso-bidi-font-style:normal'>Замечание: </i>специфика
+преобразования типа указателя при наследовании состоит еще и в том, что адрес
+объекта производного класса и адрес содержащегося в нем объекта базового могут
+не совпадать (например, при множественном наследовании). Тогда теряется
+основное «смысл» преобразования типа указателя – сохранение адреса памяти при
+изменении интерпретации его содержимого. Естественно, что транслятор включает в
+программный код необходимые корректировки адреса объекта (значения указателя).</p>
+
+<h3>Вопросы без ответов</h3>
+
+<p class=a>Определить, допустимы ли приведенные выражения с точки зрения
+принятых в Си++ ограничений доступа.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>//---------------------------------------------------112-05<span
+lang=EN-US style='mso-ansi-language:EN-US'>.cpp<o:p></o:p></span></p>
+
+<p class=a0>//---------------------------------------------------1<span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>class A {<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>protected:<span
+style='mso-spacerun:yes'>   </span><span style='mso-tab-count:1'>       </span>int
+a1;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>public:<span
+style='mso-spacerun:yes'>   </span><span style='mso-tab-count:1'>            </span>int
+a2;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span><span style='mso-tab-count:2'>                       </span>void
+f();};<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>class B : public A
+{<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span><span style='mso-tab-count:2'>                     </span>int
+b;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>public:<span
+style='mso-tab-count:2'>               </span>void g();};<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>class C : B {<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>public:<span
+style='mso-tab-count:1'>   </span><span style='mso-spacerun:yes'>   </span><span
+style='mso-tab-count:1'>         </span>void h();};<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void main(){ B x;
+x.b++; }<span style='mso-tab-count:1'>            </span>// 1<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void B::g(){ a1++;
+}<span style='mso-tab-count:2'>                     </span>// 2<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void B::g(){ a2++;
+}<span style='mso-tab-count:2'>                     </span>// 3<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void C::h(){ a1++;
+}<span style='mso-tab-count:2'>                     </span>// 4<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void C::h(){ a2++;
+}<span style='mso-tab-count:2'>                     </span>// 5<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//----------------------------------------------------2<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>class A {<span
+style='mso-tab-count:1'>           </span>void f();<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>protected:<span
+style='mso-spacerun:yes'>   </span><span style='mso-tab-count:1'>       </span>int
+a1;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>public:<span
+style='mso-spacerun:yes'>   </span><span style='mso-tab-count:1'>            </span>int
+a2;};<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>class B : public A
+{<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>public:<span
+style='mso-spacerun:yes'>   </span></span><span style='mso-tab-count:1'>            </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>int b;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span></span><span style='mso-tab-count:2'>                     </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>void g();};</span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>class C : public B
+{<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>public:<span
+style='mso-spacerun:yes'>   </span><span style='mso-tab-count:1'>            </span>void
+h();};<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void main(){ B x;
+x.a2++; }<span style='mso-tab-count:1'>          </span>// 1<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void main(){ C x;
+x.a2++; }<span style='mso-tab-count:1'>          </span>// 2<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void main(){ B x;
+x.a1++; }<span style='mso-tab-count:1'>          </span>// 3<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void main(){ C x;
+x.a1++; }<span style='mso-tab-count:1'>          </span>// 4<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void main(){ C x;
+x.b++; }<span style='mso-tab-count:1'>            </span>// 5<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//---------------------------------------------------3<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>class A {<span
+style='mso-spacerun:yes'>   </span><span style='mso-tab-count:1'>        </span>void
+f1();<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>protected:<span
+style='mso-spacerun:yes'>   </span><span style='mso-tab-count:1'>       </span>void
+f2();<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>public:<span
+style='mso-spacerun:yes'>   </span><span style='mso-tab-count:1'>            </span>void
+f3();};<o:p></o:p></span></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>class B : public A
+{<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>public:<span
+style='mso-spacerun:yes'>   </span><span style='mso-tab-count:1'>            </span>void
+g();};</span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>class C : public B
+{<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>public:<span
+style='mso-spacerun:yes'>   </span><span style='mso-tab-count:1'>            </span>void
+h();};<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void A::f2(){
+f1(); }<span style='mso-tab-count:1'>           </span>// 1<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void B::g(){ f1();
+}<span style='mso-tab-count:1'>            </span>// 2<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void B::g(){ f2();
+}<span style='mso-tab-count:1'>            </span>// 3<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void C::h(){ f1();
+}<span style='mso-tab-count:1'>            </span>// 4<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void C::h(){ f2();
+}<span style='mso-tab-count:1'>            </span>// 5<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//---------------------------------------------------4<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>class A {<span
+style='mso-spacerun:yes'>   </span><span style='mso-tab-count:1'>        </span>void
+f1();<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>protected:<span
+style='mso-spacerun:yes'>   </span><span style='mso-tab-count:1'>       </span>void
+f2();<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>public:<span
+style='mso-spacerun:yes'>   </span><span style='mso-tab-count:1'>            </span>void
+f3();};</span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>class B :<span
+style='mso-spacerun:yes'>  </span>A {<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>public:<span
+style='mso-spacerun:yes'>   </span></span><span style='mso-tab-count:1'>            </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>void g();};</span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>class C :<span
+style='mso-spacerun:yes'>  </span>B {<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>public:<span
+style='mso-spacerun:yes'>   </span><span style='mso-tab-count:1'>            </span>void
+h();};<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void B::g(){ f2();
+}<span style='mso-tab-count:1'>            </span>// 1<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void C::h(){ f2();
+}<span style='mso-tab-count:1'>            </span>// 2<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void B::g(){ f3();
+}<span style='mso-tab-count:1'>            </span>// 3<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void C::h(){ f3();
+}<span style='mso-tab-count:1'>            </span>// 4<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void C::h(){
+B::g(); }<span style='mso-tab-count:1'>         </span>// 5<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//---------------------------------------------------5<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>class A {<span
+style='mso-spacerun:yes'>   </span><span style='mso-tab-count:1'>        </span>int
+a1;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>protected:<span
+style='mso-spacerun:yes'>   </span><span style='mso-tab-count:1'>       </span>int
+a2;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>public:<span
+style='mso-spacerun:yes'>   </span><span style='mso-tab-count:1'>            </span>int
+a3;};</span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>class B :<span
+style='mso-spacerun:yes'>  </span>public A {<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>protected:<span
+style='mso-spacerun:yes'>   </span><span style='mso-tab-count:1'>       </span>int
+b;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>public:<span
+style='mso-spacerun:yes'>   </span><span style='mso-tab-count:1'>            </span>void
+g();};</span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>class C :<span
+style='mso-spacerun:yes'>  </span>B {<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>public:<span
+style='mso-spacerun:yes'>   </span><span style='mso-tab-count:1'>            </span>void
+h();};<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void B::g(){ a2++;
+}<span style='mso-tab-count:1'>         </span>// 1<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void C::h(){ a1++;
+}<span style='mso-tab-count:1'>         </span>// 2<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void C::h(){ a2++;
+}<span style='mso-tab-count:1'>         </span>// 3<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void C::h(){ a3++;
+}<span style='mso-tab-count:1'>         </span>// 4<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>C</span>::<span
+lang=EN-US style='mso-ansi-language:EN-US'>h</span>(){ <span lang=EN-US
+style='mso-ansi-language:EN-US'>b</span>++; }<span style='mso-tab-count:1'>           </span>//
+5</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=a>Сформулируйте сущности базового и производного класса, исходя из
+этого,<span style='mso-spacerun:yes'>  </span>объясните форматы данных и
+особенности переопределения операций. Определите значения объектов и переменных
+после выполнения <b style='mso-bidi-font-weight:normal'><a name="m54"><span lang=EN-US
+style='mso-ansi-language:EN-US'>main</span>.<o:p></o:p></b></p>
+
+<p class=MsoPlainText><span class=MsoPageNumber><span lang=EN-US
+style='font-family:"Courier New";mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>//---------------------------------------------------112-</span></span><span
+class=MsoPageNumber><span style='font-family:Arial;mso-bidi-font-family:"Times New Roman"'>06</span></span><span
+class=MsoPageNumber><span lang=EN-US style='font-family:Arial;mso-bidi-font-family:
+"Times New Roman";mso-ansi-language:EN-US'>.cpp<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>//---------------------------------------------------1<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>class A{<span
+style='mso-spacerun:yes'>   </span>int val;<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>public:<span
+style='mso-spacerun:yes'>  </span><span style='mso-tab-count:1'> </span>A(int
+n=0) { val = n; }<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>        </span><span style='mso-tab-count:1'>    </span>int
+get() { return val; }<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span><span style='mso-tab-count:1'>      </span>A
+operator++(){ A t=*this; val++; return t; }};<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>class INC :
+public A {<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>public: <span
+style='mso-tab-count:1'>  </span>INC(int n) : A(n+1) {}<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span><span style='mso-tab-count:1'>      </span>int
+get() { return A::get()+1; }};<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>void main(){ A
+a(10); INC b(12);<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>A x=a++;<span style='mso-spacerun:yes'>  
+</span>A y=b++;<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>int z=(b++).get(); }<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>//---------------------------------------------------2<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>class A{<span
+style='mso-tab-count:1'>            </span> int val;<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>public: <span
+style='mso-tab-count:1'>  </span>A(int n=0) { val = n; }<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span><span style='mso-tab-count:1'>      </span>A
+operator++(){ A t=*this; val++; return t; }};<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>class INC :
+public A {<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>public:<span
+style='mso-tab-count:1'>   </span>INC(int n) : A(n+1) {}<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span><span style='mso-tab-count:1'>      </span>INC
+operator++(){ A::operator++(); return *this; }};<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>void
+main(){<span style='mso-spacerun:yes'>  </span>A a(10); INC b(12);<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>A x=a++;<span style='mso-spacerun:yes'> 
+</span>INC y=b++;<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>A z=(*(A*)&amp;b)++;}<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman"'>//---- Общий код для 3</span></span><span
+class=MsoPageNumber><span lang=EN-US style='font-family:Arial;mso-bidi-font-family:
+"Times New Roman";mso-ansi-language:EN-US'>-5,7,8,10<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>class</span></span><span
+class=MsoPageNumber><span lang=EN-US style='font-family:Arial;mso-bidi-font-family:
+"Times New Roman"'> </span></span><span class=MsoPageNumber><span lang=EN-US
+style='font-family:Arial;mso-bidi-font-family:"Times New Roman";mso-ansi-language:
+EN-US'>A</span></span><span class=MsoPageNumber><span style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman"'>{<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>protected:<span
+style='mso-spacerun:yes'>      </span>int val;<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>public:<span
+style='mso-spacerun:yes'>  </span><span style='mso-tab-count:1'> </span>A(int
+n=0) { val = n; }<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span><span style='mso-tab-count:1'>      </span>A
+operator+(A &amp;two){ A t=*this; t.val+=two.val; return t; }<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span><span style='mso-tab-count:1'>      </span>A
+operator-(A &amp;two){ A t=*this; t.val-=two.val; return t; }<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span><span style='mso-tab-count:1'>      </span>A
+&amp;operator*(A &amp;two){ val*=two.val; return *this; }<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span><span style='mso-tab-count:1'>      </span>A
+&amp;operator/(A &amp;two){ val/=two.val; return *this; }};<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>//---------------------------------------------------3<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>class ABS :
+public A {<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>public:<span
+style='mso-spacerun:yes'>  </span><span style='mso-tab-count:1'> </span>ABS(int
+n=0) : A(n&lt;0 ? -n : n) {}<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span><span style='mso-tab-count:1'>      </span>ABS
+operator-(ABS &amp;two){<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>     </span><span style='mso-spacerun:yes'>    </span><span
+style='mso-tab-count:2'>               </span>ABS t=*this; t.val-=two.val;<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>         </span><span style='mso-tab-count:2'>               </span>if
+(t.val&lt;0) t.val=-t.val;<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>         </span><span style='mso-tab-count:2'>               </span>return
+t; }};<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>void main(){ A
+a1(10),a2(-5),a3,a4; ABS b1(-6),b2(12),b3,b4;<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>a3=a1+a2;<span style='mso-spacerun:yes'> 
+</span>a4=a1-a2;<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>b3=*(ABS*)&amp;(b1+b2);<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>b4=b1-b2;<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>}<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>//---------------------------------------------------4<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>class ABS :
+public A {<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>public:<span
+style='mso-tab-count:1'>   </span>ABS(int n=0) : A(n&lt;0 ? -n : n) {}<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span><span style='mso-tab-count:1'>      </span>ABS
+&amp;operator-(ABS &amp;two){<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>         </span><span style='mso-tab-count:2'>               </span>val-=two.val;<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>         </span><span style='mso-tab-count:2'>               </span>if
+(val&lt;0) val=-val;<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>        </span><span style='mso-tab-count:1'>    </span><span
+style='mso-spacerun:yes'> </span><span style='mso-tab-count:1'>           </span>return
+*this; }};<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>void main(){ <o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>A a1(10),a2(-5),a3,a4,a5; ABS b1(-6),b2(12),b3,b4;<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>a1+a2; a2-a1; b1+b2; b2-b1; }<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>//---------------------------------------------------5<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>class ABS :
+public A {<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>public:<span
+style='mso-tab-count:1'>   </span>ABS(int n=0) : A(n&lt;0 ? -n : n) {}<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span></span></span><span class=MsoPageNumber><span
+style='font-family:Arial;mso-bidi-font-family:"Times New Roman"'><span
+style='mso-tab-count:1'>      </span></span></span><span class=MsoPageNumber><span
+lang=EN-US style='font-family:Arial;mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>ABS &amp;operator+(ABS &amp;two){<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>         </span><span style='mso-tab-count:1'>   </span></span></span><span
+class=MsoPageNumber><span style='font-family:Arial;mso-bidi-font-family:"Times New Roman"'><span
+style='mso-tab-count:1'>            </span></span></span><span
+class=MsoPageNumber><span lang=EN-US style='font-family:Arial;mso-bidi-font-family:
+"Times New Roman";mso-ansi-language:EN-US'>A::operator+(two);<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>         </span><span style='mso-tab-count:1'>   </span></span></span><span
+class=MsoPageNumber><span style='font-family:Arial;mso-bidi-font-family:"Times New Roman"'><span
+style='mso-tab-count:1'>            </span></span></span><span
+class=MsoPageNumber><span lang=EN-US style='font-family:Arial;mso-bidi-font-family:
+"Times New Roman";mso-ansi-language:EN-US'>return *this; }</span></span><span
+class=MsoPageNumber><span style='font-family:Arial;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span></span></span><span class=MsoPageNumber><span
+style='font-family:Arial;mso-bidi-font-family:"Times New Roman"'><span
+style='mso-tab-count:1'>      </span></span></span><span class=MsoPageNumber><span
+lang=EN-US style='font-family:Arial;mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>ABS &amp;operator-(ABS &amp;two){<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>         </span></span></span><span
+class=MsoPageNumber><span style='font-family:Arial;mso-bidi-font-family:"Times New Roman"'><span
+style='mso-tab-count:2'>               </span></span></span><span
+class=MsoPageNumber><span lang=EN-US style='font-family:Arial;mso-bidi-font-family:
+"Times New Roman";mso-ansi-language:EN-US'>A::operator-(two);<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>         </span></span></span><span
+class=MsoPageNumber><span style='font-family:Arial;mso-bidi-font-family:"Times New Roman"'><span
+style='mso-tab-count:2'>               </span></span></span><span
+class=MsoPageNumber><span lang=EN-US style='font-family:Arial;mso-bidi-font-family:
+"Times New Roman";mso-ansi-language:EN-US'>if (val&lt;0) val=-val;<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>         </span></span></span><span
+class=MsoPageNumber><span style='font-family:Arial;mso-bidi-font-family:"Times New Roman"'><span
+style='mso-tab-count:2'>               </span></span></span><span
+class=MsoPageNumber><span lang=EN-US style='font-family:Arial;mso-bidi-font-family:
+"Times New Roman";mso-ansi-language:EN-US'>return *this; }};<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>void
+main(){<span style='mso-spacerun:yes'>  </span>A a1(10),a2(-5),a3,a4; ABS
+b1(-6),b2(12),b3,b4;<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>a1+a2;<span style='mso-spacerun:yes'> 
+</span>a2-a1;<span style='mso-spacerun:yes'>  </span>b1+b2;<span
+style='mso-spacerun:yes'>  </span>b2-b1;<span style='mso-spacerun:yes'> 
+</span>}<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman"'>//---- Общий код для 6,9</span></span><span
+class=MsoPageNumber><span lang=EN-US style='font-family:Arial;mso-bidi-font-family:
+"Times New Roman";mso-ansi-language:EN-US'><o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>class</span></span><span
+class=MsoPageNumber><span lang=EN-US style='font-family:Arial;mso-bidi-font-family:
+"Times New Roman"'> </span></span><span class=MsoPageNumber><span lang=EN-US
+style='font-family:Arial;mso-bidi-font-family:"Times New Roman";mso-ansi-language:
+EN-US'>A</span></span><span class=MsoPageNumber><span style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman"'>{<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>protected: int
+val;<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>public: <span
+style='mso-tab-count:1'>  </span>A(int n=0) { val = n; }<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span><span style='mso-tab-count:1'>      </span>A
+&amp;operator+(A &amp;two){ val+=two.val; return *this; }<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span><span style='mso-tab-count:1'>      </span>A
+&amp;operator-(A &amp;two){ val-=two.val; return *this; }};<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>//---------------------------------------------------6<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>class SIGN :
+public A {<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span><span style='mso-tab-count:1'>      </span>int
+s;<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>public:<span
+style='mso-tab-count:1'>   </span>SIGN(int n=0) : A(n&lt;0 ? -n : n) {
+s=(n&lt;0); }<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span></span></span><span class=MsoPageNumber><span
+style='font-family:Arial;mso-bidi-font-family:"Times New Roman"'><span
+style='mso-tab-count:1'>      </span></span></span><span class=MsoPageNumber><span
+lang=EN-US style='font-family:Arial;mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>SIGN &amp;operator+(SIGN &amp;two){<o:p></o:p></span></span></p>
+
+<p class=a0 style='margin-left:36.0pt;text-indent:36.0pt'><span
+class=MsoPageNumber><span lang=EN-US style='font-family:Arial;mso-bidi-font-family:
+"Times New Roman";mso-ansi-language:EN-US'>if (s==two.s) A::operator+(two);<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>else {<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span></span></span><span
+class=MsoPageNumber><span style='font-family:Arial;mso-bidi-font-family:"Times New Roman"'><span
+style='mso-tab-count:1'>            </span></span></span><span
+class=MsoPageNumber><span lang=EN-US style='font-family:Arial;mso-bidi-font-family:
+"Times New Roman";mso-ansi-language:EN-US'>A::operator-(two);<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-tab-count:3'>                                    </span>if
+(val&lt;0) { val=-val; s=!s; }}<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>         </span></span></span><span
+class=MsoPageNumber><span style='font-family:Arial;mso-bidi-font-family:"Times New Roman"'><span
+style='mso-tab-count:2'>               </span></span></span><span
+class=MsoPageNumber><span lang=EN-US style='font-family:Arial;mso-bidi-font-family:
+"Times New Roman";mso-ansi-language:EN-US'>return *this; }</span></span><span
+class=MsoPageNumber><span style='font-family:Arial;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span></span></span><span class=MsoPageNumber><span
+style='font-family:Arial;mso-bidi-font-family:"Times New Roman"'><span
+style='mso-tab-count:1'>      </span></span></span><span class=MsoPageNumber><span
+lang=EN-US style='font-family:Arial;mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'>SIGN &amp;operator-(SIGN &amp;two){<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>         </span></span></span><span
+class=MsoPageNumber><span style='font-family:Arial;mso-bidi-font-family:"Times New Roman"'><span
+style='mso-tab-count:2'>               </span></span></span><span
+class=MsoPageNumber><span lang=EN-US style='font-family:Arial;mso-bidi-font-family:
+"Times New Roman";mso-ansi-language:EN-US'>two.s=!two.s;<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-tab-count:2'>                        </span>operator-(two);<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>         </span></span></span><span
+class=MsoPageNumber><span style='font-family:Arial;mso-bidi-font-family:"Times New Roman"'><span
+style='mso-tab-count:2'>               </span></span></span><span
+class=MsoPageNumber><span lang=EN-US style='font-family:Arial;mso-bidi-font-family:
+"Times New Roman";mso-ansi-language:EN-US'>two.s=!two.s;<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>         </span></span></span><span
+class=MsoPageNumber><span style='font-family:Arial;mso-bidi-font-family:"Times New Roman"'><span
+style='mso-tab-count:2'>               </span></span></span><span
+class=MsoPageNumber><span lang=EN-US style='font-family:Arial;mso-bidi-font-family:
+"Times New Roman";mso-ansi-language:EN-US'>return *this; }};<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>void
+main(){<span style='mso-spacerun:yes'>   </span>A a1(10),a2(5),a3,a4; SIGN
+b1(-6),b2(12),b3,b4;<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>a1+a2;<span style='mso-spacerun:yes'> 
+</span>a2-a1;<span style='mso-spacerun:yes'>  </span>b1+b2;<span
+style='mso-spacerun:yes'>  </span>b2-b1; }<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>//---------------------------------------------------7<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>class SIGN :
+public A {<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span><span style='mso-tab-count:1'>      </span>int
+s;<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>public:<span
+style='mso-spacerun:yes'>  </span>SIGN(int n=0) : A(n&lt;0 ? -n : n) {
+s=(n&lt;0); }<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span><span style='mso-tab-count:1'>      </span>SIGN
+&amp;operator*(SIGN &amp;two){<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>         </span><span style='mso-tab-count:2'>               </span>s=(s!=two.s);<o:p></o:p></span></span></p>
+
+<p class=a0 style='text-indent:36.0pt'><span class=MsoPageNumber><span
+lang=EN-US style='font-family:Arial;mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>         </span><span
+style='mso-tab-count:1'>   </span>A::operator*(two);<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>         </span><span style='mso-tab-count:2'>               </span>return
+*this; }<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span><span style='mso-tab-count:1'>      </span>SIGN
+&amp;operator/(SIGN &amp;two){<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>        </span><span style='mso-spacerun:yes'> </span><span
+style='mso-tab-count:2'>               </span>s=(s!=two.s);<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>         </span><span style='mso-tab-count:2'>               </span>A::operator/(two);<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>         </span><span style='mso-tab-count:2'>               </span>return
+*this; }};<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>void
+main(){<span style='mso-spacerun:yes'>   </span>A a1(10),a2(5),a3,a4; SIGN
+b1(-6),b2(12),b3,b4;<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>a1*a2;<span style='mso-spacerun:yes'> 
+</span>a2/a1;<span style='mso-spacerun:yes'>  </span>b1*b2;<span
+style='mso-spacerun:yes'>  </span>b2/b1; }<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>//---------------------------------------------------8<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>class SIGN :
+public A {<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>  </span><span style='mso-spacerun:yes'>    </span><span
+style='mso-tab-count:1'>      </span>int s;<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>public:<span
+style='mso-spacerun:yes'>  </span>SIGN(int n=0) : A(n&lt;0 ? -n : n) {
+s=(n&lt;0); }<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span><span style='mso-tab-count:1'>      </span>SIGN
+&amp;operator*(SIGN &amp;two){<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>         </span><span style='mso-tab-count:2'>               </span>s=(s!=two.s);<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>         </span><span style='mso-tab-count:2'>               </span>A::operator*(two);<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>         </span><span style='mso-tab-count:2'>               </span>return
+*this; }<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span><span style='mso-tab-count:1'>      </span>SIGN
+&amp;operator/(SIGN &amp;two){<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>         </span><span style='mso-tab-count:2'>               </span>s=(s!=two.s);<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>         </span><span style='mso-tab-count:2'>               </span>A::operator/(two);<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>         </span><span style='mso-tab-count:2'>               </span>return
+*this; }};<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>void main(){ A
+a1(10),a2(15),a3,a4; SIGN b1(-6),b2(12),b3,b4;<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>a1*A(2); a2/A(-3); b1*SIGN(7); b2/SIGN(-2);
+}<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>//---------------------------------------------------9<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>class MOD :
+public A {<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span><span style='mso-tab-count:1'>      </span>int
+s;<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>public:<span
+style='mso-tab-count:1'>   </span>MOD(int n=0, int m=10) : A(n)<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>         </span><span style='mso-tab-count:2'>               </span>{
+s=m; if (val&gt;=s) val%=s; else while(val&lt;0) val+=s; }<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span><span style='mso-tab-count:1'>      </span>MOD
+&amp;operator+(MOD &amp;two){<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>         </span><span style='mso-tab-count:2'>               </span>A::operator+(two);<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>         </span><span style='mso-tab-count:2'>               </span>if
+(val&gt;=s) val%=s; else while(val&lt;0) val+=s;<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>         </span><span style='mso-tab-count:2'>               </span>return
+*this; }<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span><span style='mso-tab-count:1'>      </span>MOD
+&amp;operator-(MOD &amp;two){<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>         </span><span style='mso-tab-count:2'>               </span>A::operator-(two);<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>         </span><span style='mso-tab-count:2'>               </span>if
+(val&gt;=s) val%=s; else while(val&lt;0) val+=s;<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>         </span><span style='mso-tab-count:2'>               </span>return
+*this; }};<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>void main(){<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>A a1(10),a2(15),a3,a4; MOD
+b1(6,10),b2(12,20),b3(-6,10),b4;<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>a1+A(2); a2-A(-3); b1+MOD(7,10); b2-MOD(15,20);<span
+style='mso-spacerun:yes'>  </span>b3-MOD(6,10);<span style='mso-spacerun:yes'> 
+</span>}<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>//---------------------------------------------------10<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>class MOD :
+public A {<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span><span style='mso-tab-count:1'>      </span>int
+s;<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>public:<span
+style='mso-spacerun:yes'>  </span>MOD(int n=0, int m=10) : A(n)<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>         </span><span style='mso-tab-count:2'>               </span>{
+s=m; if (val&gt;=s) val%=s; else while(val&lt;0) val+=s; }<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>      </span><span style='mso-tab-count:1'>      </span>MOD
+&amp;operator*(MOD &amp;two){<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>         </span><span style='mso-tab-count:2'>               </span>A::operator*(two);<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>         </span><span style='mso-tab-count:2'>               </span>while(val&gt;=s)
+val-=s;<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>         </span><span style='mso-tab-count:2'>               </span>return
+*this; }};<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'>void main(){<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>A a1(10),a2(15),a3,a4; MOD
+b1(6,10),b2(15,20),b3(-6,10),b4;<o:p></o:p></span></span></p>
+
+<p class=a0><span class=MsoPageNumber><span lang=EN-US style='font-family:Arial;
+mso-bidi-font-family:"Times New Roman";mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>   </span>a1*A(2);<span style='mso-spacerun:yes'> 
+</span>a2/A(-3); b1*MOD(7,10)<span style='mso-spacerun:yes'>  
+</span>b2/MOD(25,20); b3/MOD(2,10); }</span></span><span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

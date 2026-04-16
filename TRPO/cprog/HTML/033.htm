@@ -1,0 +1,1106 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=Edit-Time-Data href="033.files/editdata.mso">
+<title>3.3. Структурное программирование</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>www.PHILka.RU</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>romanow</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>99</o:TotalTime>
+  <o:Created>2008-07-17T12:40:00Z</o:Created>
+  <o:LastSaved>2008-07-17T12:40:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>2427</o:Words>
+  <o:Characters>13834</o:Characters>
+  <o:Company>NSTU_VT</o:Company>
+  <o:Bytes>11776</o:Bytes>
+  <o:Lines>115</o:Lines>
+  <o:Paragraphs>32</o:Paragraphs>
+  <o:CharactersWithSpaces>16229</o:CharactersWithSpaces>
+  <o:Version>11.6360</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DoNotHyphenateCaps/>
+  <w:DrawingGridHorizontalSpacing>0,55 пт</w:DrawingGridHorizontalSpacing>
+  <w:DrawingGridVerticalSpacing>0,55 пт</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:UseMarginsForDrawingGridOrigin/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DrawingGridVerticalOrigin>99,25 пт</w:DrawingGridVerticalOrigin>
+  <w:Compatibility>
+   <w:WW6BorderRules/>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+   <w:UseWord97LineBreakingRules/>
+   <w:SelectEntireFieldWithStartOrEnd/>
+   <w:UseWord2002TableStyleRules/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:"Times New Roman CYR";
+	panose-1:2 2 6 3 5 4 5 2 3 4;
+	mso-font-charset:204;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+@font-face
+	{font-family:"Arial CYR";
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+h1
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:14.0pt;
+	mso-bidi-font-weight:normal;}
+h2
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-font-weight:normal;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+h3
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	font-weight:normal;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.a, li.a, div.a
+	{mso-style-name:текст;
+	mso-style-link:"текст Знак";
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a0, li.a0, div.a0
+	{mso-style-name:программа;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a1, li.a1, div.a1
+	{mso-style-name:список;
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:18.45pt;
+	margin-bottom:0cm;
+	margin-left:64.35pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-18.0pt;
+	mso-pagination:widow-orphan;
+	mso-list:l4 level1 lfo1;
+	tab-stops:42.55pt list 64.35pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a2, li.a2, div.a2
+	{mso-style-name:определение;
+	mso-style-parent:текст;
+	margin-top:12.0pt;
+	margin-right:32.9pt;
+	margin-bottom:12.0pt;
+	margin-left:35.45pt;
+	text-align:justify;
+	text-indent:.55pt;
+	mso-pagination:widow-orphan;
+	border:none;
+	mso-border-alt:solid windowtext 1.5pt;
+	padding:0cm;
+	mso-padding-alt:1.0pt 1.0pt 1.0pt 1.0pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a3, li.a3, div.a3
+	{mso-style-name:эпиграф;
+	margin-top:0cm;
+	margin-right:32.9pt;
+	margin-bottom:0cm;
+	margin-left:5.0cm;
+	margin-bottom:.0001pt;
+	text-align:right;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.a4, li.a4, div.a4
+	{mso-style-name:"от края";
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a5, li.a5, div.a5
+	{mso-style-name:Формула;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.a6, li.a6, div.a6
+	{mso-style-name:"без формата";
+	mso-style-parent:программа;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a7, li.a7, div.a7
+	{mso-style-name:стихи;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.1, li.1, div.1
+	{mso-style-name:эпиграф1;
+	mso-style-parent:эпиграф;
+	margin-top:0cm;
+	margin-right:9.35pt;
+	margin-bottom:0cm;
+	margin-left:9.0cm;
+	margin-bottom:.0001pt;
+	text-align:right;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+span.a8
+	{mso-style-name:"текст Знак";
+	mso-style-locked:yes;
+	mso-style-link:текст;
+	mso-ansi-font-size:12.0pt;
+	font-family:"Times New Roman CYR";
+	mso-ascii-font-family:"Times New Roman CYR";
+	mso-hansi-font-family:"Times New Roman CYR";
+	mso-ansi-language:RU;
+	mso-fareast-language:RU;
+	mso-bidi-language:AR-SA;}
+ /* Page Definitions */
+ @page
+	{mso-footnote-separator:url("033.files/header.htm") fs;
+	mso-footnote-continuation-separator:url("033.files/header.htm") fcs;
+	mso-endnote-separator:url("033.files/header.htm") es;
+	mso-endnote-continuation-separator:url("033.files/header.htm") ecs;}
+@page Section1
+	{size:21.0cm 842.0pt;
+	margin:33.45pt 42.55pt 72.0pt 89.85pt;
+	mso-header-margin:14.2pt;
+	mso-footer-margin:31.75pt;
+	mso-even-header:url("033.files/header.htm") eh1;
+	mso-header:url("033.files/header.htm") h1;
+	mso-even-footer:url("033.files/header.htm") ef1;
+	mso-footer:url("033.files/header.htm") f1;
+	mso-first-header:url("033.files/header.htm") fh1;
+	mso-first-footer:url("033.files/header.htm") ff1;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:535123565;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-594533624 68747279 68747289 68747291 68747279 68747289 68747291 68747279 68747289 68747291;}
+@list l0:level1
+	{mso-level-tab-stop:71.45pt;
+	mso-level-number-position:left;
+	margin-left:71.45pt;
+	text-indent:-18.0pt;}
+@list l1
+	{mso-list-id:883492172;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-869211844 68747279 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l1:level1
+	{mso-level-tab-stop:64.35pt;
+	mso-level-number-position:left;
+	margin-left:64.35pt;
+	text-indent:-18.0pt;}
+@list l2
+	{mso-list-id:1072850135;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-855185450 68747279 68747289 68747291 68747279 68747289 68747291 68747279 68747289 68747291;}
+@list l2:level1
+	{mso-level-tab-stop:64.35pt;
+	mso-level-number-position:left;
+	margin-left:64.35pt;
+	text-indent:-18.0pt;}
+@list l3
+	{mso-list-id:1565020001;
+	mso-list-type:simple;
+	mso-list-template-ids:520532044;}
+@list l3:level1
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	mso-level-legacy:yes;
+	mso-level-legacy-indent:14.15pt;
+	mso-level-legacy-space:0cm;
+	margin-left:49.6pt;
+	text-indent:-14.15pt;}
+@list l4
+	{mso-list-id:1628194852;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-964799380 -1450833310 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l4:level1
+	{mso-level-number-format:bullet;
+	mso-level-style-link:список;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:64.35pt;
+	mso-level-number-position:left;
+	margin-left:64.35pt;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l5
+	{mso-list-id:1663392021;
+	mso-list-type:simple;
+	mso-list-template-ids:-1554510178;}
+@list l5:level1
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	mso-level-legacy:yes;
+	mso-level-legacy-indent:14.15pt;
+	mso-level-legacy-space:0cm;
+	margin-left:51.85pt;
+	text-indent:-14.15pt;}
+@list l3:level1 lfo3
+	{mso-level-numbering:continue;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	mso-level-legacy:yes;
+	mso-level-legacy-indent:14.15pt;
+	mso-level-legacy-space:0cm;
+	margin-left:49.6pt;
+	text-indent:-14.15pt;}
+@list l5:level1 lfo5
+	{mso-level-numbering:continue;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	mso-level-legacy:yes;
+	mso-level-legacy-indent:14.15pt;
+	mso-level-legacy-space:0cm;
+	margin-left:51.85pt;
+	text-indent:-14.15pt;}
+@list l5:level1 lfo6
+	{mso-level-numbering:continue;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	mso-level-legacy:yes;
+	mso-level-legacy-indent:14.15pt;
+	mso-level-legacy-space:0cm;
+	margin-left:49.6pt;
+	text-indent:-14.15pt;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Обычная таблица";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+table.MsoTableGrid
+	{mso-style-name:"Сетка таблицы";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+  <o:regrouptable v:ext="edit">
+   <o:entry new="1" old="0"/>
+   <o:entry new="2" old="1"/>
+   <o:entry new="3" old="0"/>
+  </o:regrouptable>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=RU style='tab-interval:36.0pt' background="back.gif">
+
+<div class=Section1>
+
+<h2>3.3. Структурное программирование</h2>
+
+<p class=1><o:p>&nbsp;</o:p></p>
+
+<p class=a3 style='margin-left:6.0cm'>«ГЛАВА I. СУТЬ ДЕДУКТИВНОГО МЕТОДА ХОЛМСА.
+</p>
+<p class=a3 style='margin-left:6.0cm'>Шерлок Холмс взял с камина пузырек и вынул </p>
+<p class=a3 style='margin-left:6.0cm'>из аккуратного сафьянового
+несессера…».</p>
+
+<p class=a3><a name="m1"><b style='mso-bidi-font-weight:normal'>Артур Конан-Дойль. «Знак
+четырех».<o:p></o:p></b></p>
+
+<h3>От общего к частному</h3>
+
+<p class=a>Технология структурного программирования в самой краткой
+формулировке есть <b style='mso-bidi-font-weight:normal'><a name="m2">нисходящее
+проектирование</b>, т.е. выстраивание текста программы, точнее алгоритмической
+компоненты, от общего к частному, от внешней конструкции к внутренней.
+Естественно, что надо знать, из чего выстраивать. В идеале, у опытного
+программиста действительно очередная нужная конструкция появляется «из головы».
+Но это не значит, что он не имеет общего плана действий и обобщенного
+представления процесса, который реализуется проектируемой программой.</p>
+
+<p class=a>Именно поэтому в <b style='mso-bidi-font-weight:normal'><a name="m3">3.1</b>
+технология программирования была обозначена как заключительный этап <b
+style='mso-bidi-font-weight:normal'>выстраивания </b>программы из имеющегося
+набора фрагментов. Перед этим необходимо пройти другие этапы:</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>формулировка целей (результатов) работы
+программы;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>образное представление<span
+style='mso-spacerun:yes'>  </span>процессы ее работы (образная модель);</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>выделение из образной модели фрагментов: определение
+переменных и их смыслового наполнения, стандартных программных контекстов.</p>
+
+<p class=a>
+<p><br
+style='mso-ignore:vglayout' clear=ALL>
+Попробуем теперь встроить в общую схему процесса проектирования самое трудное
+направление «движения» при построении программы – от общего к частному. И тогда
+получим примерно такую картину.</p>
+</p>
+
+<p class=a4 align=center style='text-align:center'>
+<img border="0" src="Images/033-01.jpg" width="344" height="408"></p>
+<p class=a4 align=center style='text-align:center'><b><a name="m4">Рис. 33.1. Этапы
+структурного проектирования<o:p></o:p></b></p>
+
+<p class=a1 style='margin-left:1.0cm;mso-list:l2 level1 lfo9;tab-stops:list 1.0cm'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Исходным состоянием процесса проектирования
+является более или менее точная формулировка цели алгоритма, или результата,
+который должен быть получен при его выполнении. Формулировка, само собой,
+производится на естественном языке.</p>
+
+<p class=a1 style='margin-left:1.0cm;mso-list:l2 level1 lfo9;tab-stops:list 1.0cm'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Создается образная модель происходящего
+процесса, используются графические и какие угодно способы представления,
+образные «картинки», позволяющие лучше понять выполнение алгоритма в динамике;</p>
+
+<p class=a1 style='margin-left:1.0cm;mso-list:l2 level1 lfo9;tab-stops:list 1.0cm'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Выполняется сбор фактов, касающихся любых
+характеристик алгоритма, и попытка их представления средствами языка. Такими
+фактами является наличие определенных переменных и их «смысл», а также
+соответствующих им программных контекстов. Понятно, что не все факты удастся
+сразу выразить в виде фрагментов программы, но они должны быть сформулированы
+хотя бы на естественном языке;</p>
+
+<p class=a1 style='margin-left:1.0cm;mso-list:l2 level1 lfo9;tab-stops:list 1.0cm'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>В образной модели выделяется наиболее
+существенная часть – «главное звено», для которой подбирается наиболее точная
+словесная формулировка;</p>
+
+<p class=a1 style='margin-left:1.0cm;mso-list:l2 level1 lfo9;tab-stops:list 1.0cm'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Производится определение переменных, необходимых
+для формального представления данного шага алгоритма и формулируется их
+«смысл»;</p>
+
+<p class=a1 style='margin-left:1.0cm;mso-list:l2 level1 lfo9;tab-stops:list 1.0cm'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>6.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Выбирается одна из конструкций - <i
+style='mso-bidi-font-style:normal'>простая последовательность действий,
+условная конструкция<span style='mso-spacerun:yes'>  </span></i>или<i
+style='mso-bidi-font-style:normal'> цикл</i>. Составные части выбранной
+формальной конструкции (например, условие, заголовок цикла) должны быть
+переписаны в словесной формулировке в виде цели или результата, которые должны
+давать эти части алгоритма.</p>
+
+<p class=a1 style='margin-left:1.0cm;mso-list:l2 level1 lfo9;tab-stops:list 1.0cm'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>7.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Для оставшихся неформализованных частей
+алгоритма (в словесной формулировке) - перечисленная последовательность
+действий повторяется. Обычно разработка образного представления программы
+опережает ее «выстраивание», поэтому следующим этапом для неформализованной
+части алгоритма может быть п.4 (в лучшем случае, при его проработке в образной
+модели) или п.1-3. В любом случае для вложенных конструкций мы возвращаемся на
+предыдущие этапы проектирования.</p>
+
+<p class=a>Здесь мы видим много непривычного:</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>на любом промежуточном шаге программа состоит из
+смеси конструкций языка, соответствующих пройденным шагам проектирования, и
+словесных формулировок, соответствующих еще не раскрытым вложенным конструкциям
+нижнего уровня;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>процесс заключается в последовательной замене
+словесных формулировок конструкциями языка. На каждом шаге в программу
+добавляется всего одна конструкция, а содержимое ее составных частей снова
+формулируется в терминах «цель» или «результат»;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>«свобода выбора» ограничена тремя управляющими
+конструкциями языка: последовательностью действий, ветвление или цикл. При этом
+даже не принципиален конкретный синтаксис оператора, важен лишь вид
+конструкции, например, что это цикл, а не последовательность действий.</p>
+
+<p class=a>Как и любая технология, структурное проектирование задает лишь
+«правила игры», но не гарантирует получение результата. Основная проблема –
+выбор синтаксической конструкции и замена формулировок -<span
+style='mso-spacerun:yes'>  </span>все равно технологией формально не решается.
+И здесь находится камень преткновения начинающих программистов. «Главное звено»
+- это не столько особенности реализации алгоритма, которые всегда на виду и
+составляют его специфику, а действие, которое включает в себя все остальные. То
+есть все равно программист должен «видеть» в образной модели все элементы,
+отвечающие за поведение программы, и выделять из них главный, в смысле – самый
+внешний или объемлющий. Единственный совет: постараться извлечь из образной
+модели как можно больше фактического материала.</p>
+
+<p class=a>И, наконец, на практике</p>
+
+<h3>Заповеди структурного программирования</h3>
+
+<p class=a>Обычно технология структурного программирования формулируется в виде
+«заповедей», о содержательной интерпретации которых мы уже догадываемся.</p>
+
+<p class=a1 style='margin-left:51.85pt;text-indent:-14.15pt;mso-list:l5 level1 lfo5;
+tab-stops:42.55pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>нисходящее проектирование<span lang=EN-US
+style='mso-ansi-language:EN-US'>;</span></p>
+
+<p class=a1 style='margin-left:51.85pt;text-indent:-14.15pt;mso-list:l5 level1 lfo5;
+tab-stops:42.55pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>пошаговое проектирование<span lang=EN-US
+style='mso-ansi-language:EN-US'>;</span> </p>
+
+<p class=a1 style='margin-left:51.85pt;text-indent:-14.15pt;mso-list:l5 level1 lfo5;
+tab-stops:42.55pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>структурное проектирование (программирование без
+<span lang=EN-US style='mso-ansi-language:EN-US'>goto</span>);</p>
+
+<p class=a1 style='margin-left:51.85pt;text-indent:-14.15pt;mso-list:l5 level1 lfo5;
+tab-stops:42.55pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>одновременное проектирование алгоритма и данных;</p>
+
+<p class=a1 style='margin-left:51.85pt;text-indent:-14.15pt;mso-list:l5 level1 lfo4;
+tab-stops:42.55pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>модульное проектирование<span lang=EN-US
+style='mso-ansi-language:EN-US'>;</span></p>
+
+<p class=a1 style='margin-left:49.6pt;text-indent:-14.15pt;mso-list:l5 level1 lfo6;
+tab-stops:42.55pt'><![if !supportLists]>
+<span
+style='mso-list:Ignore; mso-fareast-font-family:Times New Roman CYR; mso-bidi-font-family:Times New Roman CYR'>6.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>модульное, нисходящее, пошаговое тестирование.</p>
+
+<p class=a>Одним словом, структурное программирование - модульное нисходящее
+пошаговое проектирование и отладка алгоритма и структур данных .</p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m5">Нисходящее пошаговое
+структурное проектирование. </b>В структурном программировании достаточно
+сложно отделить друг от друга принципы нисходящего, пошагового и структурного
+проектирования, поскольку каждый из них по отдельности является достаточно
+тривиальным, а весь эффект состоит в их совместном использовании в рамках
+процесса проектирования<span style='font-family:"Times New Roman"'>:<o:p></o:p></span></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>нисходящее проектирование программы состоит в
+процессе формализации от самой внешней синтаксической конструкции алгоритма к
+самой внутренней, в движении от общей формулировки алгоритма к частной
+формулировке составляющего его действия<span style='font-family:"Times New Roman"'>;<o:p></o:p></span></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>структурное проектирование заключается в замене
+словесной формулировки алгоритма на одну из синтаксических конструкций -
+последовательность, условие или цикл. При этом синтаксическая вложенность
+конструкций соответствует<span style='mso-spacerun:yes'> 
+</span>последовательности их проектирования и выполнения. Использование
+оператора перехода <span lang=EN-US style='font-family:"Times New Roman";
+mso-ansi-language:EN-US'>goto </span>запрещается из принципиальных соображений<span
+lang=EN-US style='font-family:"Times New Roman";mso-ansi-language:EN-US'>;</span></p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>пошаговое проектирование состоит в том, что на
+каждом этапе проектирования в текст программы вносится только одна конструкция
+языка, а составляющие ее компоненты остаются в неформальном, словесном
+описании, что предполагает аналогичные шаги в их проектировании.</p>
+
+<p class=a>Нисходящее пошаговое структурное проектирование алгоритма состоит в
+движении «от общего к частному» в процессе формулировки действий, выполняемых
+программой. В записи алгоритма это соответствует движению от внешней
+(объемлющей) конструкции к внутренней (вложенной). Конкретно в структурном
+программировании это выражается в том, что любая словесная формулировка
+действий (алгоритма) может быть заменена на одну из трех формальных конструкций
+языка программирования: </p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='mso-spacerun:yes'>  </span>простая
+последовательности действий (блок);</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='mso-spacerun:yes'>  </span>конструкция
+выбора (выбора) (условный оператор);</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='mso-spacerun:yes'>  </span>конструкция
+повторения (оператор цикла). </p>
+
+<p class=a><span style='mso-spacerun:yes'> </span>Выбранная формальная
+конструкция представляет собой часть процесса перевода словесного описания
+алгоритма на формальный язык. Естественно, что эта конструкция не определяет
+полностью всего содержания алгоритма. Поэтому составными ее частями остаются
+словесные формулировки более конкретных (вложенных) действий. В результате
+проектирования получается программа, в которой принципиально отсутствует
+оператор перехода goto, поэтому структурное программирование иначе называется
+как <b style='mso-bidi-font-weight:normal'><a name="m6">программирование без <span lang=EN-US style='mso-ansi-language:
+EN-US'>goto</span>. <o:p></o:p> </b></p>
+
+<p class=a>Другое достоинство нисходящего проектирования: при обнаружении
+«тупика», то есть ошибки в логических рассуждениях можно вернуться на несколько
+уровней вверх и продолжить процесс проектирования в другом направлении. </p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m7">Одновременное проектирование
+алгоритма и структур данных</b>. При нисходящей пошаговой детализации программы
+необходимые для работы структуры данных и переменные появляются по мере
+перехода от неформальных определений к конструкциям языка, то есть процессы
+детализации алгоритма и данных идут параллельно. Однако это касается, прежде
+всего, отдельных локальных переменных и внутренних параметров. С самой общей
+точки зрения предмет (в нашем случае - данные) всегда первичен по отношению к
+выполняемым с ним действиям (в нашем случае -алгоритм). Поэтому способ
+организации данных в программе более существенно влияет на ее структуру
+алгоритма, чем что-либо другое, и процесс проектирования структур данных должен
+опережать процесс проектирования алгоритма их обработки. </p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m8">Нисходящее пошаговое
+модульное тестирование. </b>Кажется очевидным, что отлаживать можно только
+написанную программу. Но это далеко не так. Разработка программы по технологии
+структурного программирования может быть произведена не до конца. На нижних
+уровнях можно поставить «заглушки», воспроизводящие один и тот же требуемый
+результат, можно обойти в процессе отладки еще не написанные части, используя
+ограничения во входных данных. То же самое касается модульного
+программирования. Можно проверить уже разработанные функции на тестовых данных.
+Сказанное означает, что отладка программы может производиться в некоторой
+степени параллельно с ее детализацией.</p>
+
+<h3>Одно из трех</h3>
+
+<p class=a>Обратим внимание на некоторые особенности процесса, которые остались
+за пределами «заповедей» и которые касаются содержательной стороны проектирования.
+</p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m9">Цель (результат) = действие +
+цель (результат). </b>Каждый шаг проектирования программы заключается в том,
+что словесная формулировка алгоритма заменяется на одну из трех возможных
+конструкций языка, элементы которой продолжают оставаться в неформальной,
+словесной<span style='mso-spacerun:yes'>  </span>формулировке. Если же с каждым
+фрагментом программы связать результат ее работы (или цель), то каждый шаг
+детализации должен сопровождаться преобразованием формулировок: <b
+style='mso-bidi-font-weight:normal'>цель (результат) <span
+style='mso-spacerun:yes'> </span>= выбранная конструкция + цель (результат) вложенной
+конструкции.<o:p></o:p></b></p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m10">Последовательность
+действий,<span style='mso-spacerun:yes'>  </span>связанных результатом. </b>Многие
+почему–то считают, что основа логики сложной программы – 
+<img border="0" src="Images/033-02.jpg" width="210" height="236" align="left">условные и циклические
+действия. Понятно, что они определяют лицо программы.<span
+style='mso-spacerun:yes'>  </span>Но на самом деле наиболее часто используемой
+программной конструкцией является простая последовательность действий. Поэтому
+первое, что необходимо сделать на очередном шаге детализации алгоритма –
+проверить, нельзя ли его представить в виде последовательности шагов «делай
+раз, делай два…». Во-вторых, между различными шагами существуют связи через
+общие переменные: предыдущий шаг формирует значение переменной, придавая ей
+определенный «смысл», последующие шаги ее используют. Это является обязательным
+элементом проектирования, без него нельзя продвигаться дальше в детализации
+выделенных шагов.</p>
+
+<p class=a>Последовательность
+действий, связанных результатом является предпочтительной конструкцией еще и
+потому, что она обеспечивает синтаксическую независимость (отсутствие
+вложенности) выполняемых действий. Если в алгоритме выполняется проверка
+условий (в виде нетривиального действия), а также действия, являющиеся
+следствием этой проверки, то лучше использовать связующую переменную (например,
+признак). Например, при проверке и сохранении простого числа лучше использовать
+признак, а сохранение вынести за пределы цикла проверки.</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>//------------------------------------------------------------------------------<o:p></o:p></span></p>
+
+<p class=a0>// Запоминание простого числа в виде</p>
+
+<p class=a0>// последовательности действий, связанных признаком</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>int</span><span
+lang=EN-US> </span><span lang=EN-US style='mso-ansi-language:EN-US'>pr</span>=0;</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>for</span> (<span
+lang=EN-US style='mso-ansi-language:EN-US'>int</span><span lang=EN-US> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'>n</span>=2; <span lang=EN-US
+style='mso-ansi-language:EN-US'>n</span>&lt;<span lang=EN-US style='mso-ansi-language:
+EN-US'>v</span>; <span lang=EN-US style='mso-ansi-language:EN-US'>n</span>++)<span
+style='mso-tab-count:1'>                             </span>// Проверка - Установить признак
+делимости</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span><span lang=EN-US
+style='mso-ansi-language:EN-US'>if (v%n==0) { pr=1; break; }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>if</span> (<span
+lang=EN-US style='mso-ansi-language:EN-US'>pr</span>==0) <span lang=EN-US
+style='mso-ansi-language:EN-US'>A</span>[<span lang=EN-US style='mso-ansi-language:
+EN-US'>i</span>++]=<span lang=EN-US style='mso-ansi-language:EN-US'>v</span>;<span
+style='mso-tab-count:1'>                                 </span>// Признак не установлен - запоминание</p>
+
+<p class=a0>//-----------------------------------------------------------------------------</p>
+
+<p class=a0>// Неструктурированный вариант – запись внутри цикла</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>n</span>=2;</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>while (v%n!=0){<o:p></o:p></span></p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>n++;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if (n==v) { A[i++]=v; break; }<o:p></o:p></span></p>
+
+<p class=a0 style='text-indent:36.0pt'><span lang=EN-US style='mso-ansi-language:
+EN-US'>}<o:p></o:p></span></p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a>О том, какая конструкция должна быть выбрана на следующем шаге
+детализации, можно судить и по внешнему виду формулировки. Другое дело, что эта
+формулировка должна как можно точнее отражать сущность алгоритма и, что самое
+главное, «покрывать» его целиком, не оставляя не оговоренных действий:</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>если в формулировке присутствует набор действий,
+объединенных соединительным союзом <b style='mso-bidi-font-weight:normal'><a name="m11">И, </b>то
+речь, скорее всего, идет о последовательности действий. Например, шаг
+сортировки выбором: выбрать минимальный элемент <b style='mso-bidi-font-weight:
+normal'><a name="m12">И </b>перенести его в выходную последовательность <b style='mso-bidi-font-weight:
+normal'><a name="m13">И </b>удалить его из входной путем сдвига «хвоста» последовательности
+влево;</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>когда в формулировке присутствует слово <b
+style='mso-bidi-font-weight:normal'>ЕСЛИ, </b>речь идет о условной конструкции
+(конструкции выбора);</p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>если в формулировке присутствуют обороты типа <b
+style='mso-bidi-font-weight:normal'>«для каждого… выполнить» </b>или <b
+style='mso-bidi-font-weight:normal'>«повторять…пока»</b>, речь идет о
+циклической конструкции.</p>
+
+<p class=a>И последнее достоинство: шаги последовательности действий, после
+того как они определены, могут конкретизироваться в любом порядке, например «по
+линии наименьшего сопротивления» от простых к более сложным.<span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:
+"Arial CYR";mso-fareast-font-family:"Times New Roman";mso-bidi-font-family:
+"Times New Roman";mso-ansi-language:EN-US;mso-fareast-language:RU;mso-bidi-language:
+AR-SA'><br clear=all style='page-break-before:always'>
+</span>
+
+<h3>Программирование без <span lang=EN-US style='mso-ansi-language:EN-US'>goto</span>.</h3>
+
+<p class=a>
+<p><br
+style='mso-ignore:vglayout' clear=ALL>
+<b style='mso-bidi-font-weight:normal'><a name="m14">«Среда обитания» программы. </b>Каждая
+конструкция языка не просто встраивается в программу, а определяет свойства
+используемых ею данных, «смысл» переменных, которые появились в программе
+одновременно с ней. Поэтому при использовании исключительно вложенных
+конструкций мы получим в каждой точке программы определенный набор выполняемых
+условий, своего рода «среду обитания» алгоритма. Эти переменные являются
+исходными данными для очередного шага детализации алгоритма.<b
+style='mso-bidi-font-weight:normal'><o:p></o:p></b></p>
+</p>
+
+<p class=a4 align=center style='text-align:center'>
+<img border="0" src="Images/033-03.jpg" width="455" height="272"></p>
+<p class=a4 align=center style='text-align:center'>
+<b style='mso-bidi-font-weight:
+normal'><a name="m15">Рис. 33.2. «Среда обитания» программы<span style='mso-bidi-font-weight:
+bold'><o:p></o:p></span></b></p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m16">Почему «программирование без <span lang=EN-US style='mso-ansi-language:
+EN-US'>goto</span>»? </b>Нисходящее пошаговое проектирование исключает
+использование оператора <b style='mso-bidi-font-weight:normal'><a name="m17">goto</b>, более
+того, запрещает его применение как нарушающего структуру программы. И дело
+здесь не в том, что «бог любит троицу» и три основных логических конструкции
+являются достаточными. <b style='mso-bidi-font-weight:normal'><a name="m18"><span lang=EN-US
+style='mso-ansi-language:EN-US'>Goto</span></b><span lang=EN-US> </span>страшен
+не тем, что «неправильно» связывает разные части алгоритма, а в том, что
+переводит алгоритм из одних «условий обитания» в другие: в точке перехода
+они<span style='mso-spacerun:yes'>  </span>составлены без учета того, что
+кто-то сюда войдет «не по правилам».</p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m19">Допустимые случай
+использования <span lang=EN-US
+style='mso-ansi-language:EN-US'>goto</span>. </b>Чрезвычайными
+обстоятельствами, вынуждающими прибегнуть к помощи оператора goto, являются
+глобальные нарушения логики выполнения программы, например грубые неисправимые
+ошибки во входных данных. В таких случаях делается переход из нескольких
+вложенных конструкций либо в конец программы, либо к повторению некоторой ее
+части. В других обстоятельствах его использование свидетельствует скорее о
+неправильном проектировании структуры программы - наличии неявных условных или
+циклических конструкций (см. 1.4 «историческое программирование»). Пример
+правильного использования goto. </p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:14.2pt;line-height:
+12.0pt'><o:p>&nbsp;</o:p></p>
+
+<p class=a0>retry: for(...)<span style='mso-spacerun:yes'>   </span>{ for (...)</p>
+
+<p class=a0><span style='mso-spacerun:yes'>     </span><span style='mso-tab-count:
+3'>                               </span>{...<span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:3; font-family:Courier New; mso-bidi-font-family:Times New Roman'>                  </span>if () goto retry;...<span
+style='mso-tab-count:1'> </span>// Попытаться сделать все сначала</p>
+
+<p class=a0><span style='mso-spacerun:yes'>      </span><span style='mso-tab-count:
+2'>                  </span><span style='mso-tab-count:1'>            </span>if
+() goto fatal; }<span style='mso-tab-count:1'>  </span>// Выйти сразу же к
+концу</p>
+
+<p class=a0><span style='mso-spacerun:yes'>  </span><span style='mso-tab-count:
+3'>                                  </span>} </p>
+
+<p class=a0>fatal:</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a4>Все равно при использовании оператора перехода нужно изменить
+условия текущего выполнения программы применительно к точке перехода, например,
+переоткрыть файлы, установить начальное (заключительное) значение переменных.</p>
+
+<p class=a><b style='mso-bidi-font-weight:normal'><a name="m20">Операторы<span lang=EN-US style='mso-ansi-language:
+EN-US'> continue, break </span>и<span
+lang=EN-US style='mso-ansi-language:EN-US'> return. <span
+style='mso-spacerun:yes'> </span></span></b>Чаще встречаются случаи более
+«мягкого» нарушения структурированной логики выполнения программы, не выходящие
+за рамки текущей синтаксической конструкции: цикла или функции. Они реализуются
+операторами continue, break, return, которые рассматриваются как ограниченный
+вариант <b style='mso-bidi-font-weight:normal'><a name="m21">goto</b>: </p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b style='mso-bidi-font-weight:normal'><a name="m22">continue</b>
+- переход завершающую часть цикла; </p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b style='mso-bidi-font-weight:normal'><a name="m23">break</b>
+- выход из внутреннего цикла; </p>
+
+<p class=a1><![if !supportLists]>
+<span style='mso-list:Ignore; font-family:Symbol; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b style='mso-bidi-font-weight:normal'><a name="m24">return</b>
+- выход из текущего модуля (функции). </p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void<span
+style='mso-tab-count:1'>       </span>F(){<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>for (i=0; i&lt;n; m1:
+i++) <o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>{ <o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if (A[i]==0)<span
+style='mso-spacerun:yes'>  </span>continue; <span style='mso-tab-count:1'>     </span>//goto
+m1;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if (A[i]==-1) return;<span
+style='mso-spacerun:yes'>   </span><span style='mso-tab-count:1'>       </span>//goto
+m2;<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>if (A[i] &lt;0)<span
+style='mso-spacerun:yes'>  </span>break;<span style='mso-spacerun:yes'>   
+</span><span style='mso-tab-count:1'>       </span>//goto m3; <o:p></o:p></span></p>
+
+<p class=a0>
+<span
+style='mso-tab-count:1; mso-ansi-language:EN-US' lang="EN-US">            </span>} </p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>m</span>2:<span
+style='mso-tab-count:1'>       </span>... продолжение тела функции</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>m</span>3:<span
+style='mso-spacerun:yes'>   </span>}</p>
+
+<p class=a4><o:p>&nbsp;</o:p></p>
+
+<p class=a>Хотя такие конструкции нарушают чистоту подхода, все они имеют
+простые структурированные эквиваленты <span lang=EN-US style='mso-ansi-language:
+EN-US'>c</span><span lang=EN-US> </span>с использованием дополнительных
+переменных – признаков. </p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>for (i=0; i&lt;n; i++)<span style='mso-tab-count:3'>                                    </span>//
+Выход по <span lang=EN-US style='mso-ansi-language:EN-US'>break</span><span
+lang=EN-US> </span>при обнаружении</p>
+
+<p class=a0><span style='mso-tab-count:1'>            </span>{ if (..a[i]...)
+break; ... }<span style='mso-tab-count:2'>                </span>// элемента с
+заданным свойством</p>
+
+<p class=a0>if (i==n) A else B<span style='mso-tab-count:3'>                                    </span>//
+Косвенное определение причин выхода</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0>int found;<span style='mso-tab-count:2'>                                               </span>// Эквивалент с признаком
+обнаружения элемента</p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>for (found=0, i=0;
+i&lt;n &amp;&amp; !found; i++)<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>            </span>{ if (..a[i]..) found++; ... }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>if (!found) A else
+B<o:p></o:p></span></p>
+
+<p class=a>При отсутствии в массиве элемента с заданным свойством выполняется
+A, в противном случае - B. Во втором фрагменте используется специальный признак
+для имитации оператора <b style='mso-bidi-font-weight:normal'><a name="m25">break</b>. </p>
+
+<h2><o:p>&nbsp;</o:p></h2>
+
+</div>
+
+</body>
+
+</html>

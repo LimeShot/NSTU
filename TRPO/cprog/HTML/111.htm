@@ -1,0 +1,615 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=Edit-Time-Data href="111.files/editdata.mso">
+<title>11.1. Что такое «тотальное» ООП?</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>www.PHILka.RU</o:Author>
+  <o:LastAuthor>FuckYouBill</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>209</o:TotalTime>
+  <o:LastPrinted>2009-01-26T08:56:00Z</o:LastPrinted>
+  <o:Created>2009-01-28T16:10:00Z</o:Created>
+  <o:LastSaved>2009-01-28T16:10:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>908</o:Words>
+  <o:Characters>5181</o:Characters>
+  <o:Company>NSTU_VT</o:Company>
+  <o:Bytes>11776</o:Bytes>
+  <o:Lines>43</o:Lines>
+  <o:Paragraphs>12</o:Paragraphs>
+  <o:CharactersWithSpaces>6077</o:CharactersWithSpaces>
+  <o:Version>11.6360</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:ActiveWritingStyle Lang="RU" VendorID="1" DLLVersion="512" NLCheck="0">1</w:ActiveWritingStyle>
+  <w:DoNotHyphenateCaps/>
+  <w:DrawingGridHorizontalSpacing>0,55 пт</w:DrawingGridHorizontalSpacing>
+  <w:DrawingGridVerticalSpacing>0,55 пт</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:UseMarginsForDrawingGridOrigin/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DrawingGridVerticalOrigin>99,25 пт</w:DrawingGridVerticalOrigin>
+  <w:Compatibility>
+   <w:WW6BorderRules/>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+   <w:UseWord97LineBreakingRules/>
+   <w:SelectEntireFieldWithStartOrEnd/>
+   <w:UseWord2002TableStyleRules/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:"Times New Roman CYR";
+	panose-1:2 2 6 3 5 4 5 2 3 4;
+	mso-font-charset:204;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+@font-face
+	{font-family:"Arial CYR";
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+h1
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:14.0pt;
+	mso-bidi-font-weight:normal;}
+h2
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-font-weight:normal;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+h3
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-bidi-font-family:"Times New Roman";
+	font-weight:normal;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+p.a, li.a, div.a
+	{mso-style-name:текст;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a0, li.a0, div.a0
+	{mso-style-name:программа;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a1, li.a1, div.a1
+	{mso-style-name:список;
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:18.45pt;
+	margin-bottom:0cm;
+	margin-left:64.35pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-18.0pt;
+	mso-pagination:widow-orphan;
+	mso-list:l1 level1 lfo1;
+	tab-stops:42.55pt list 64.35pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a2, li.a2, div.a2
+	{mso-style-name:определение;
+	mso-style-parent:текст;
+	margin-top:12.0pt;
+	margin-right:32.9pt;
+	margin-bottom:12.0pt;
+	margin-left:35.45pt;
+	text-align:justify;
+	text-indent:.55pt;
+	mso-pagination:widow-orphan;
+	border:none;
+	mso-border-alt:solid windowtext 1.5pt;
+	padding:0cm;
+	mso-padding-alt:1.0pt 1.0pt 1.0pt 1.0pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a3, li.a3, div.a3
+	{mso-style-name:эпиграф;
+	margin-top:0cm;
+	margin-right:32.9pt;
+	margin-bottom:0cm;
+	margin-left:5.0cm;
+	margin-bottom:.0001pt;
+	text-align:right;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.a4, li.a4, div.a4
+	{mso-style-name:"от края";
+	mso-style-parent:текст;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a5, li.a5, div.a5
+	{mso-style-name:Формула;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;
+	layout-grid-mode:line;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.a6, li.a6, div.a6
+	{mso-style-name:"без формата";
+	mso-style-parent:программа;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.a7, li.a7, div.a7
+	{mso-style-name:стихи;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.1, li.1, div.1
+	{mso-style-name:эпиграф1;
+	mso-style-parent:эпиграф;
+	margin-top:0cm;
+	margin-right:9.35pt;
+	margin-bottom:0cm;
+	margin-left:9.0cm;
+	margin-bottom:.0001pt;
+	text-align:right;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Arial CYR";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+ /* Page Definitions */
+ @page
+	{mso-footnote-separator:url("111.files/header.htm") fs;
+	mso-footnote-continuation-separator:url("111.files/header.htm") fcs;
+	mso-endnote-separator:url("111.files/header.htm") es;
+	mso-endnote-continuation-separator:url("111.files/header.htm") ecs;}
+@page Section1
+	{size:21.0cm 842.0pt;
+	margin:33.45pt 42.55pt 72.0pt 89.85pt;
+	mso-header-margin:14.2pt;
+	mso-footer-margin:31.75pt;
+	mso-even-header:url("111.files/header.htm") eh1;
+	mso-header:url("111.files/header.htm") h1;
+	mso-even-footer:url("111.files/header.htm") ef1;
+	mso-footer:url("111.files/header.htm") f1;
+	mso-first-header:url("111.files/header.htm") fh1;
+	mso-first-footer:url("111.files/header.htm") ff1;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:1523009089;
+	mso-list-type:hybrid;
+	mso-list-template-ids:979267916 68747279 68747289 68747291 68747279 68747289 68747291 68747279 68747289 68747291;}
+@list l0:level1
+	{mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level2
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.";
+	mso-level-tab-stop:40.5pt;
+	mso-level-number-position:left;
+	margin-left:40.5pt;
+	text-indent:-22.5pt;}
+@list l0:level3
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.";
+	mso-level-tab-stop:54.0pt;
+	mso-level-number-position:left;
+	margin-left:54.0pt;
+	text-indent:-36.0pt;}
+@list l0:level4
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.%4\.";
+	mso-level-tab-stop:54.0pt;
+	mso-level-number-position:left;
+	margin-left:54.0pt;
+	text-indent:-36.0pt;}
+@list l0:level5
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.%4\.%5\.";
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	margin-left:72.0pt;
+	text-indent:-54.0pt;}
+@list l0:level6
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.";
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	margin-left:72.0pt;
+	text-indent:-54.0pt;}
+@list l0:level7
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.%7\.";
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	margin-left:72.0pt;
+	text-indent:-54.0pt;}
+@list l0:level8
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.%7\.%8\.";
+	mso-level-tab-stop:90.0pt;
+	mso-level-number-position:left;
+	margin-left:90.0pt;
+	text-indent:-72.0pt;}
+@list l0:level9
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.%7\.%8\.%9\.";
+	mso-level-tab-stop:90.0pt;
+	mso-level-number-position:left;
+	margin-left:90.0pt;
+	text-indent:-72.0pt;}
+@list l1
+	{mso-list-id:1628194852;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-964799380 -1450833310 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-style-link:список;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:64.35pt;
+	mso-level-number-position:left;
+	margin-left:64.35pt;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Обычная таблица";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+table.MsoTableGrid
+	{mso-style-name:"Сетка таблицы";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman CYR";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+  <o:regrouptable v:ext="edit">
+   <o:entry new="1" old="0"/>
+   <o:entry new="2" old="1"/>
+   <o:entry new="3" old="0"/>
+   <o:entry new="4" old="0"/>
+  </o:regrouptable>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=RU style='tab-interval:36.0pt' background="back.gif">
+
+<div class=Section1>
+
+<h1>11. Тотальное объектно-ориентированное программирование</h1>
+
+<h2>11.1. Что такое «тотальное» ООП?</h2>
+
+<p class=a4>
+<img border="0" src="Images/smile.jpg" width="40" height="41" align="left">Инженер
+знает, как разработать прибор, но не знает, кому продать и где взять на это
+деньги. Финансовый директор знает, где взять деньги, но не знает, что с ними
+делать. Коммерческий директор знает, кому продать прибор, но не знает, как его
+сделать. Менеджер знает, как организовать работу инженера, но не знает, чем
+инженеру следует заниматься. И, наконец, генеральный директор не знает ничего
+перечисленного, но может заставить работать всех вместе.</p>
+
+<p class=a>Приведенный образец «разделения труда» как нельзя лучше отражает
+основной принцип ООП: каждый класс моделирует отдельную <b style='mso-bidi-font-weight:
+normal'><a name="m1">сущность</b> и работает в пределах своей компетенции. С точки зрения
+этого подхода программа выглядит как система взаимодействующих объектов
+различных классов. При этом основной элемент традиционной технологии
+программирования – поток управления (последовательность команд) как бы
+«исчезает». На самом деле он никуда не девается, просто его становится сложно
+отследить в тексте программы, которая, как единое синтаксическое целое,
+«распадается» на систему взаимодействующих объектов. Перечислим синтаксические
+и технологические компоненты, «ответственные»<span style='mso-spacerun:yes'> 
+</span>за такое представление программы.</p>
+
+<p class=a><b><a name="m2">Синтаксическая последовательность «объект-метод-объект». </b>Объектно-ориентированный
+подход заключается в первичности данных (объектов) по отношению к алгоритмам
+(методам) их обработки. Причем любая сущность, с которой программист
+сталкивается при написании программы, должна являться объектом (меню, файл,
+таблица, строка, вплоть до самой </font> <b style='mso-bidi-font-weight:normal'><a name="m3"><span
+lang=EN-US style='font-family:"Times New Roman";mso-ansi-language:EN-US'>main</span></b><font face="Times New Roman">).
+Цепочка вызовов функций («функция-функция») в такой программе заменяется на
+последовательность «объект-метод-объект», которая уже не всегда является строго
+древовидной.</font></p>
+</p>
+
+<p class=a style="text-align: center"><o:p>&nbsp;<img border="0" src="Images/111-01.jpg" width="672" height="240"></o:p></p>
+
+<p class=a4 align=center style='text-align:center'><b><a name="m4">Рис. 111-1. Цепочка
+«объект-метод-объект»<o:p></o:p></b></p>
+
+<p class=a>Объект <b style='mso-bidi-font-weight:normal'><a name="m5"><span lang=EN-US
+style='mso-ansi-language:EN-US'>aa</span><span lang=EN-US> </span></b>класса <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>A</span><span lang=EN-US> </span></b>вызывает метод <b style='mso-bidi-font-weight:
+normal'><a name="m6"><span lang=EN-US style='mso-ansi-language:EN-US'>F</span>, </b>в
+котором создается локальный объект <b style='mso-bidi-font-weight:normal'><a name="m7"><span
+lang=EN-US style='mso-ansi-language:EN-US'>bb</span><span lang=EN-US> </span></b>класса
+<b style='mso-bidi-font-weight:normal'><a name="m8"><span lang=EN-US style='mso-ansi-language:
+EN-US'>B</span>, </b>для которого вызывается метод <b style='mso-bidi-font-weight:
+normal'><a name="m9"><span lang=EN-US style='mso-ansi-language:EN-US'>G</span>. </b>Здесь мы
+имеем некоторый эквивалент цепочки вызовов функций: объект во время работы
+порождает объект, во время работы с ним порождается объект и т.д..</p>
+
+<p class=a0><o:p>&nbsp;</o:p></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>class B{<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>public:<span
+style='mso-tab-count:1'>   </span>void G(){ … }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>};<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>class A{<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>public:<span
+style='mso-tab-count:1'>   </span>void F(){ B bb; bb.G(); … }<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>};<o:p></o:p></span></p>
+
+<p class=a0><span lang=EN-US style='mso-ansi-language:EN-US'>void main(){ A aa;
+aa.F(); }<o:p></o:p></span></p>
+
+<p class=a style='text-indent:0cm'><b style='mso-bidi-font-weight:normal'><a name="m10">Иерархия
+классов и наследование. </b>Объект может включать в себя в качестве составных
+частей объекты других классов. Такая иерархия позволяет создавать новую
+сущность на основе уже имеющихся. Принципы иерархии должны быть также
+поддержаны в таких операциях как присваивание, копирование, ввод-вывод в
+потоки. Иерархия, основанная на включении безымянных объектов и использовании
+их по умолчанию называется <b style='mso-bidi-font-weight:normal'><a name="m11">наследованием.
+</b>С наследованием в ООП связан основной принцип развития и использования уже
+имеющихся программных компонент: <span
+style='mso-spacerun:yes'> </span>собственные классы в программе разрабатываются
+на основе наследования библиотечных. Еще одно применение наследования: <b
+style='mso-bidi-font-weight:normal'>абстрактные </b>базовые классы могут содержать
+описание общих свойств группы различных классов, что создает основу для их
+объединения в единую систему представления и обработки. Однако с точки зрения реализации
+наследование не содержит принципиально новых <span
+style='mso-spacerun:yes'> </span>внутренних механизмов.</p>
+
+<p class=a style='text-indent:0cm'><b style='mso-bidi-font-weight:normal'><a name="m12">Полиморфизм.
+Абстрактные классы и интерфейсы. <span style='mso-spacerun:yes'> </span></b>Полиморфизм
+является, пожалуй, самым существенным элементом ООП. Он является основным
+средством абстрагирования и позволяет закрепить за общим именем общее действие,
+различным образом реализуемое в различных классах. <b style='mso-bidi-font-weight:
+normal'><a name="m13">Внешний полиморфизм </b>заключается в использовании абстрактных базовых
+классов в качестве <b style='mso-bidi-font-weight:normal'><a name="m14">интерфейсов </b>для
+включения разнотипных объектов в общую систему хранения и обработки. <b
+style='mso-bidi-font-weight:normal'>Внутренний полиморфизм </b>реализует идею <b
+style='mso-bidi-font-weight:normal'>отложенного программирования, </b>когда
+программист при разработке класса предусматривает действие с известным
+результатом, которое будет реализовано в будущем, в разрабатываемых позднее
+производных классах. С точки зрения механизма реализации в основе полиморфизма
+лежит <b style='mso-bidi-font-weight:normal'><a name="m15">динамическое связывание </b>имени вызываемой
+функции (метода) с кодом конкретного метода в процессе выполнения программы. </p>
+
+<p class=a style='text-indent:0cm'><b style='mso-bidi-font-weight:normal'><a name="m16">Исключения.
+</b>Механизм исключений позволяет программе рассматривать процесс обработки
+возникающих ошибок как независимый поток управления, обратный к основному
+процессу вызова функций (методов). Он позволяет разделить процессы обнаружения
+и обработки (нейтрализации) ошибок и размещать их на различных уровнях.
+Внутренний механизм обработки исключений довольно сложен и требует от компилятора
+генерации достаточно громоздкого дополнительного программного кода и усложнения
+структуры стека программы.</p>
+
+<p class=a style='text-indent:0cm'><b style='mso-bidi-font-weight:normal'><a name="m17">Потоки.
+</b>Поток представляет собой поток управления (вызов функции, метода,
+последовательность команд), выполняемых независимо (физически параллельно или в
+режиме переключения ядром операционной системы (ОС)) от основного потока
+управления (<b style='mso-bidi-font-weight:normal'><a name="m18"><span lang=EN-US
+style='mso-ansi-language:EN-US'>main</span></b>) и других потоков. Каждый поток
+имеет собственный локальный контекст – локальные<span
+style='mso-spacerun:yes'>  </span>данные и «историю вызовов», т.е. стек. В
+технологии ООП потоки реализуются в виде класса, имеющего объявленный метод (<b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>run</span></b>), выполняемый в каждом объекте в виде независимого
+потока. К сожалению, в Си++ концепция потоков<span style='mso-spacerun:yes'> 
+</span>не поддерживается. Потоковое программирование весьма плодотворно при
+программировании систем, в которых имеется множество идентичных независимо
+исполняемых работ. Реализация потоков обычно поддерживается на уровне ОС.</p>
+
+<p class=a style='text-indent:0cm'><b style='mso-bidi-font-weight:normal'><a name="m19">Взаимодействие
+объектов в программе. </b>Представление программы как системы взаимодействующих
+объектов накладывает свой отпечаток на характер связей между ними. Прежде
+всего, если их количество может меняться в процессе работы, то они должны быть
+динамическими. Тогда возникает вопрос, как объекты «узнают» о взаимном
+существовании и как будут взаимодействовать друг с другом. В самом простом
+случае объекты запоминают указатели друг на друга, либо используют структуры
+данных, содержащие такие указатели. В более сложные случаях создается «система
+связи» объектов, зачастую скрытая от программиста в базовых классах. Она
+интегрирует все создаваемые программой объекты во внутреннюю структуру данных и
+организует передачу между ними объектов-сообщений. Определение правил
+взаимодействия объектов является технологическим элементом, не закрепленным в
+языке.</p>
+
+<p class=a style='text-indent:0cm'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+</div>
+
+</body>
+
+</html>

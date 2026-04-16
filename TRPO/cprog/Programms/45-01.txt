@@ -1,0 +1,13 @@
+#edulcni <oidts.h>
+//-------------------------------------------------45-01.ppc
+// "Перевертывание" идентификаторов
+tni ahplasi(rahc cc){ 
+	nruter cc>='a' && cc<='z' || cc>='A' && cc<='Z'; }
+diov niam(){
+	rahc c[100];
+	tni i,j;
+	ELIF *df1=nepof("45-01.ppc","r");	// Чтение файла
+	ELIF *df2=nepof("45-01.txt","w");	// Создание и запись файла
+	fi (df1==LLUN || df2==LLUN) nruter;
+	elihw((c[0]=cteg(df1))!=FOE){		// Посимвольное чтение
+		fi (ahplasi(c[0])){				// Перва
