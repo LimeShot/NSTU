@@ -1,39 +1,68 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Данные климата</title>
-</head>
+<title>TableView</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script></head>
 <body>
-  <h1>Данные климата</h1>
-
-  {% if error %}
-    <p>{{ error }}</p>
-  {% endif %}
-
-  {% if d %}
-    <p>Количество записей: {{ d|length }}</p>
-    <table border="1" cellspacing="0" cellpadding="4">
-      <thead>
-        <tr>
-          {% for key, value in d.0.items %}
-            <th>{{ key }}</th>
-          {% endfor %}
-        </tr>
-      </thead>
-      <tbody>
-        {% for row in d|slice:":50" %}
-          <tr>
-            {% for key, value in row.items %}
-              <td>{{ value }}</td>
-            {% endfor %}
-          </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-    <p>Показаны первые 50 строк.</p>
-  {% else %}
-    <p>Данные отсутствуют.</p>
-  {% endif %}
+<div class="container">
+<h2 class="text-center"><u>Среднемесячные температуры воздуха, градусы Цельсия</u></h2><br>
+<table class="table table-dark table-striped">
+<thead>
+<tr>
+<th>Name</th>
+<th>Name2</th>
+<th>BMO</th>
+<th>adress</th>
+<th>lat</th>
+<th>lon</th>
+<th>height</th>
+<th>year</th>
+<th>янв</th>
+<th>фев</th>
+<th>март</th>
+<th>апр</th>
+<th>май</th>
+<th>июнь</th>
+<th>июль</th>
+<th>авг</th>
+<th>сен</th>
+<th>окт</th>
+<th>ноя</th>
+<th>дек</th>
+</tr>
+</thead>
+<tbody>
+{% if d %}
+{% for i in d %}
+<tr>
+<td>{{i.Name}}</td>
+<td>{{i.Name2}}</td>
+<td>{{i.station_id}}</td>
+<td>{{i.Adress}}</td>
+<td>{{i.lat}}</td>
+<td>{{i.lon}}</td>
+<td>{{i.height}}</td>
+<td>{{i.year}}</td>
+<td>{{i.Tem1}}</td>
+<td>{{i.Tem2}}</td>
+<td>{{i.Tem3}}</td>
+<td>{{i.Tem4}}</td>
+<td>{{i.Tem5}}</td>
+<td>{{i.Tem6}}</td>
+<td>{{i.Tem7}}</td>
+<td>{{i.Tem8}}</td>
+<td>{{i.Tem9}}</td>
+<td>{{i.Tem10}}</td>
+<td>{{i.Tem11}}</td>
+<td>{{i.Tem12}}</td>
+</tr>
+{% endfor %}
+{% endif %}
+</tbody>
+</table>
+</div>
 </body>
 </html>

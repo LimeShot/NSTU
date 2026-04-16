@@ -5,7 +5,7 @@ from calendar import monthrange
 from pathlib import Path
 
 APP_DIR = Path(__file__).resolve().parent
-DATA_FILE = APP_DIR / 'static' / 'data' / 'climate_wide_all_stations.csv'
+DATA_FILE = APP_DIR / 'static' / 'data' / 'climate_17150.csv'
 # Путь к вашему CSV (замените, если нужно)
 df = pd.read_csv(DATA_FILE)
 
@@ -31,14 +31,9 @@ for month in paired_months:
     temp_col = temp_months[month]
     os_col = osadki_months[month]
 
-    if 1 <= month <= 12 and "year" in df.columns:
-        days = df["year"].astype("Int64").apply(
-            lambda y: monthrange(int(y), month)[1] if pd.notna(y) else pd.NA
-        )
-    elif 1 <= month <= 12:
-        days = monthrange(2021, month)[1]
-    else:
-        days = 30
+    days = df["year"].astype("Int64").apply(
+        lambda y: monthrange(int(y), month)[1] if pd.notna(y) else pd.NA
+    )
 
     valid_pair = df[temp_col].notna() & df[os_col].notna()
     active_period = valid_pair & (df[temp_col] > 10)
