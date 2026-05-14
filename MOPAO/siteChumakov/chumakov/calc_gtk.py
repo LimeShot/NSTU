@@ -6,7 +6,7 @@ from pathlib import Path
 
 APP_DIR = Path(__file__).resolve().parent
 DATA_FILE = APP_DIR / 'static' / 'data' / 'climate_17150.csv'
-# Путь к вашему CSV (замените, если нужно)
+# Путь к CSV
 df = pd.read_csv(DATA_FILE)
 
 # Учитываем только пары "температура + осадки", где температура строго > 10.
@@ -48,5 +48,5 @@ df["GTK"] = gtk_raw.round(2).where(df["tem_active"] > 0)
 # Сохраняем новый файл
 df.to_csv(DATA_FILE.parent / 'climatdata_GTK.csv', encoding='utf-8', index=False)
 
-print("✅ climatdata_GTK.csv создан!")
+print("climatdata_GTK.csv создан!")
 print(df[["year", "tem_active", "sum_osadki", "GTK"]].head())

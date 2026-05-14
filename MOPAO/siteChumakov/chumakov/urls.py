@@ -5,7 +5,9 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('about/', views.about, name='about'),
     path('data/', views.data, name='data'),
-    # Дальше добавите пути для графиков (см. пункт 9)
+    path('modeling/', views.modeling, name='modeling'),
+    path('lab2/', views.modeling, name='lab2'),
+    # Дальше добавьте пути для графиков (см. пункт 9)
     path('graph1/', views.graph_temp_year, name='graph'),
     path('graph2/', views.graph_temp_active, name='graph'),
     path('graph3/', views.graph3, name='graph'),

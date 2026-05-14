@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.py[cod]
+
+django_runserver.log
+django_runserver.err
+~$*.docx
+
+lab2_rendered/
+
+!siteChumakov/chumakov/static/data/
+!siteChumakov/chumakov/static/data/**

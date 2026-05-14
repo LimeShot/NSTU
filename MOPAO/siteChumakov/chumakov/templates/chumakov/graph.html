@@ -2,18 +2,49 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ title }}</title>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     {% load static %}
     <link rel="stylesheet" href="{% static 'chumakov/styles.css' %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 </head>
 <body>
     {% include 'chumakov/includes/header.html' %}
-    <h1>{{ title }}</h1>
-    {% autoescape off %}
-    <p>{{ plot_div }}</p>
-    {% endautoescape %}
-    <!--{% include 'chumakov/includes/footer.html' %}-->
+    <main class="graph-page">
+        <section class="graph-hero">
+            <span class="graph-kicker">Лабораторная 1</span>
+            <h1>{{ title }}</h1>
+            <p>Визуализация климатических показателей по данным метеостанции: температура, осадки, ГТК и активные температуры.</p>
+        </section>
+
+        <nav class="graph-nav" aria-label="Графики лабораторной 1">
+            <a href="/graph1/"{% if request.path == "/graph1/" %} class="active"{% endif %}>1</a>
+            <a href="/graph2/"{% if request.path == "/graph2/" %} class="active"{% endif %}>2</a>
+            <a href="/graph3/"{% if request.path == "/graph3/" %} class="active"{% endif %}>3</a>
+            <a href="/graph4/"{% if request.path == "/graph4/" %} class="active"{% endif %}>4</a>
+            <a href="/graph5/"{% if request.path == "/graph5/" %} class="active"{% endif %}>5</a>
+            <a href="/graph6/"{% if request.path == "/graph6/" %} class="active"{% endif %}>6</a>
+        </nav>
+
+        <section class="plot graph-panel">
+            <div class="graph-frame">
+                {% autoescape off %}{{ plot_div }}{% endautoescape %}
+            </div>
+        </section>
+    </main>
+    <script>
+        function resizeGraphPlots() {
+            if (!window.Plotly) {
+                return;
+            }
+            document.querySelectorAll('.graph-frame .js-plotly-plot').forEach(function (plot) {
+                Plotly.Plots.resize(plot);
+            });
+        }
+
+        window.addEventListener('load', resizeGraphPlots);
+        window.addEventListener('resize', resizeGraphPlots);
+        setTimeout(resizeGraphPlots, 100);
+    </script>
 </body>
 </html>

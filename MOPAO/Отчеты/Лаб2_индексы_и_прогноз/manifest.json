@@ -1,0 +1,146 @@
+﻿[
+    {
+        "path":  "code\\get_data.ipynb",
+        "Length":  36054
+    },
+    {
+        "path":  "code\\lab2_generate_results.py",
+        "Length":  20327
+    },
+    {
+        "path":  "code\\process_rp5_weather_pandas_spei.py",
+        "Length":  13859
+    },
+    {
+        "path":  "code\\requirements.txt",
+        "Length":  24
+    },
+    {
+        "path":  "data\\forecast\\lab2_arima_summary.txt",
+        "Length":  1968
+    },
+    {
+        "path":  "data\\forecast\\lab2_forecasts.csv",
+        "Length":  55870
+    },
+    {
+        "path":  "data\\forecast\\lab2_future_forecasts.csv",
+        "Length":  3771
+    },
+    {
+        "path":  "data\\forecast\\lab2_metrics.csv",
+        "Length":  354
+    },
+    {
+        "path":  "data\\forecast\\lab2_sarima_summary.txt",
+        "Length":  2076
+    },
+    {
+        "path":  "data\\forecast\\lab2_statistics.json",
+        "Length":  7040
+    },
+    {
+        "path":  "data\\indices\\indices_station_17150.csv",
+        "Length":  194758
+    },
+    {
+        "path":  "data\\indices\\spei_all_stations.csv",
+        "Length":  1215638
+    },
+    {
+        "path":  "data\\source\\checks.csv",
+        "Length":  593
+    },
+    {
+        "path":  "data\\source\\climatdata_GTK.csv",
+        "Length":  18089
+    },
+    {
+        "path":  "data\\source\\climate_17150.csv",
+        "Length":  16385
+    },
+    {
+        "path":  "data\\source\\climate_data_rapidapi.csv",
+        "Length":  211690
+    },
+    {
+        "path":  "data\\source\\daily.csv",
+        "Length":  74112
+    },
+    {
+        "path":  "data\\source\\decade.csv",
+        "Length":  8640
+    },
+    {
+        "path":  "data\\source\\missing_intervals.csv",
+        "Length":  90
+    },
+    {
+        "path":  "data\\source\\monthly_spi_spei3.csv",
+        "Length":  3694
+    },
+    {
+        "path":  "data\\source\\rp5_temp_mean_spi_spei3.xlsx",
+        "Length":  91099
+    },
+    {
+        "path":  "figures\\report\\acf_pacf.png",
+        "Length":  39706
+    },
+    {
+        "path":  "figures\\report\\model_forecasts.png",
+        "Length":  393189
+    },
+    {
+        "path":  "figures\\report\\model_residuals.png",
+        "Length":  329053
+    },
+    {
+        "path":  "figures\\report\\spei3_series.png",
+        "Length":  311246
+    },
+    {
+        "path":  "figures\\web_notebook\\arima_diagnostics.png",
+        "Length":  210887
+    },
+    {
+        "path":  "figures\\web_notebook\\arima_forecast.png",
+        "Length":  137646
+    },
+    {
+        "path":  "figures\\web_notebook\\arima_residuals.png",
+        "Length":  137042
+    },
+    {
+        "path":  "figures\\web_notebook\\auto_arima_diagnostics.png",
+        "Length":  90637
+    },
+    {
+        "path":  "figures\\web_notebook\\sarima_diagnostics.png",
+        "Length":  230541
+    },
+    {
+        "path":  "figures\\web_notebook\\sarima_forecast.png",
+        "Length":  141106
+    },
+    {
+        "path":  "figures\\web_notebook\\sarima_residuals.png",
+        "Length":  138718
+    },
+    {
+        "path":  "manifest.json",
+        "Length":  2377
+    },
+    {
+        "path":  "README.md",
+        "Length":  2148
+    },
+    {
+        "path":  "report\\Чумаков АТМ-25 Лаб2.docx",
+        "Length":  2948727
+    },
+    {
+        "path":  "report\\Чумаков АТМ-25 Лаб2.pdf",
+        "Length":  2933108
+    }
+]

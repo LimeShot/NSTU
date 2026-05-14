@@ -1,0 +1,1822 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SAGA_PROJECT VERSION="9.11.1">
+  <DATA>
+    <DATASET dataset_id="17785380120000001" type="SHAPES">
+      <FILE>..\..\метеостанции_Чумаков.shp</FILE>
+      <parameters name="метеостанции_Чумаков">
+        <OPTION type="text" id="OBJECT_NAME" name="Name">метеостанции_Чумаков</OPTION>
+        <OPTION type="long_text" id="OBJECT_DESC" name="Description"/>
+        <OPTION type="double" id="MAX_SAMPLES" name="Sample Size">100</OPTION>
+        <OPTION type="range" id="OBJECT_NODATA" name="Data Exclusion">-99999; -99999</OPTION>
+        <OPTION type="choice" id="TABLE_FLT_STYLE" name="Floating Point Numbers" index="1">compact</OPTION>
+        <OPTION type="integer" id="TABLE_FLT_DECIMALS" name="Decimals">6</OPTION>
+        <OPTION type="choice" id="INFO_FIELD" name="Feature Description" index="15">&lt;none&gt;</OPTION>
+        <OPTION type="boolean" id="LEGEND_SHOW" name="Map Legends">true</OPTION>
+        <OPTION type="choice" id="LEGEND_ORIENTATION" name="Orientation" index="0">vertical</OPTION>
+        <OPTION type="choice" id="LEGEND_TITLE" name="Title" index="0">data set</OPTION>
+        <OPTION type="text" id="LEGEND_TITLE_TEXT" name="User Defined">Title</OPTION>
+        <OPTION type="choice" id="LEGEND_FIELD" name="Field Labeling" index="0">automatic</OPTION>
+        <OPTION type="text" id="LEGEND_FIELD_TEXT" name="User Defined">Label</OPTION>
+        <OPTION type="boolean" id="SHOW_ALWAYS" name="Show at all scales">true</OPTION>
+        <OPTION type="range" id="SHOW_RANGE" name="Scale Range">100; 1000</OPTION>
+        <OPTION type="double" id="DISPLAY_TRANSPARENCY" name="Transparency">0</OPTION>
+        <OPTION type="choice" id="COLORS_TYPE" name="Type" index="0">Single Symbol</OPTION>
+        <OPTION type="color" id="SINGLE_COLOR" name="Color">R204 G050 B050</OPTION>
+        <OPTION type="choice" id="LUT_FIELD" name="Field" index="0">station_id</OPTION>
+        <OPTION type="choice" id="LUT_NORMAL" name="Normalization" index="10">&lt;none&gt;</OPTION>
+        <OPTION type="static_table" id="LUT" name="Table">
+          <FIELDS>
+            <FIELD type="COLOR">Color</FIELD>
+            <FIELD type="STRING">Name</FIELD>
+            <FIELD type="STRING">Description</FIELD>
+            <FIELD type="DOUBLE">Minimum</FIELD>
+            <FIELD type="DOUBLE">Maximum</FIELD>
+          </FIELDS>
+          <RECORDS>
+            <RECORD>
+              <FIELD>8323136</FIELD>
+              <FIELD>Class 1</FIELD>
+              <FIELD>First Class</FIELD>
+              <FIELD>0.000000</FIELD>
+              <FIELD>1.000000</FIELD>
+            </RECORD>
+            <RECORD>
+              <FIELD>57215</FIELD>
+              <FIELD>Class 2</FIELD>
+              <FIELD>Second Class</FIELD>
+              <FIELD>1.000000</FIELD>
+              <FIELD>2.000000</FIELD>
+            </RECORD>
+          </RECORDS>
+        </OPTION>
+        <OPTION type="choice" id="METRIC_FIELD" name="Field" index="0">station_id</OPTION>
+        <OPTION type="choice" id="METRIC_NORMAL" name="Normalization" index="10">&lt;none&gt;</OPTION>
+        <OPTION type="choice" id="METRIC_NORFMT" name="Labeling" index="0">fraction</OPTION>
+        <OPTION type="colors" id="METRIC_COLORS" name="Colors">
+          <COLOR>R000 G001 B128</COLOR>
+          <COLOR>R000 G010 B176</COLOR>
+          <COLOR>R000 G079 B245</COLOR>
+          <COLOR>R001 G127 B255</COLOR>
+          <COLOR>R038 G217 B217</COLOR>
+          <COLOR>R128 G255 B128</COLOR>
+          <COLOR>R176 G245 B079</COLOR>
+          <COLOR>R245 G176 B010</COLOR>
+          <COLOR>R255 G128 B001</COLOR>
+          <COLOR>R217 G038 B000</COLOR>
+          <COLOR>R127 G001 B000</COLOR>
+        </OPTION>
+        <OPTION type="choice" id="STRETCH_DEFAULT" name="Adjustment" index="1">Standard Deviation</OPTION>
+        <OPTION type="range" id="STRETCH_LINEAR" name="Linear Percent Stretch">0; 100</OPTION>
+        <OPTION type="double" id="STRETCH_STDDEV" name="Standard Deviation">2</OPTION>
+        <OPTION type="boolean" id="STRETCH_INRANGE" name="Keep in Range">true</OPTION>
+        <OPTION type="range" id="STRETCH_PCTL" name="Percent Clip">1; 99</OPTION>
+        <OPTION type="range" id="METRIC_ZRANGE" name="Range">0; 0</OPTION>
+        <OPTION type="choice" id="METRIC_SCALE_MODE" name="Scaling" index="0">linear intervals</OPTION>
+        <OPTION type="double" id="METRIC_SCALE_LOG" name="Geometric Interval Factor">1</OPTION>
+        <OPTION type="boolean" id="NODATA_SHOW" name="Show No-Data">true</OPTION>
+        <OPTION type="color" id="NODATA_COLOR" name="Color">R192 G192 B192</OPTION>
+        <OPTION type="choice" id="LABEL_FIELD" name="Field" index="4">Name2</OPTION>
+        <OPTION type="font" id="LABEL_FIELD_FONT" name="Font">
+          <COLOR>R255 G255 B255</COLOR>
+          <FONT>1;9;-12;0;0;0;400;0;0;0;0;3;2;1;34;Arial</FONT>
+        </OPTION>
+        <OPTION type="choice" id="LABEL_FIELD_EFFECT" name="Boundary Effect" index="0">none</OPTION>
+        <OPTION type="color" id="LABEL_FIELD_EFFECT_COLOR" name="Color">R255 G255 B255</OPTION>
+        <OPTION type="integer" id="LABEL_FIELD_EFFECT_SIZE" name="Size">1</OPTION>
+        <OPTION type="choice" id="LABEL_FIELD_PREC" name="Numerical Precision" index="0">fit to value</OPTION>
+        <OPTION type="choice" id="LABEL_FIELD_SIZE_TYPE" name="Size relates to..." index="0">Screen</OPTION>
+        <OPTION type="choice" id="LABEL_FIELD_SIZEBY" name="Size by Attribute" index="10">&lt;none&gt;</OPTION>
+        <OPTION type="double" id="LABEL_FIELD_SIZE" name="Default Size">100</OPTION>
+        <OPTION type="boolean" id="CHART_DISPLAY" name="Show">false</OPTION>
+        <parameters name="Settings" id="CHART_SETTINGS" type="parameters">
+          <OPTION type="choice" id="TYPE" name="Chart Type" parms="CHART_SETTINGS" index="0">bar</OPTION>
+          <OPTION type="boolean" id="OUTLINE" name="Outline" parms="CHART_SETTINGS">false</OPTION>
+          <OPTION type="choice" id="SIZE_FIELD" name="Size Field" parms="CHART_SETTINGS" index="10">&lt;none&gt;</OPTION>
+          <OPTION type="range" id="SIZE_RANGE" name="Size Range" parms="CHART_SETTINGS">5; 25</OPTION>
+          <OPTION type="double" id="SIZE_DEFAULT" name="Default Size" parms="CHART_SETTINGS">15</OPTION>
+          <OPTION type="choice" id="SIZE_TYPE" name="Size relates to..." parms="CHART_SETTINGS" index="0">Screen</OPTION>
+          <OPTION type="boolean" id="FIELD_0" name="station_id" parms="CHART_SETTINGS">false</OPTION>
+          <OPTION type="color" id="COLOR_0" parms="CHART_SETTINGS">R000 G001 B128</OPTION>
+          <OPTION type="boolean" id="FIELD_5" name="lat" parms="CHART_SETTINGS">false</OPTION>
+          <OPTION type="color" id="COLOR_5" parms="CHART_SETTINGS">R000 G010 B176</OPTION>
+          <OPTION type="boolean" id="FIELD_6" name="lon" parms="CHART_SETTINGS">false</OPTION>
+          <OPTION type="color" id="COLOR_6" parms="CHART_SETTINGS">R000 G079 B245</OPTION>
+          <OPTION type="boolean" id="FIELD_7" name="elevation" parms="CHART_SETTINGS">false</OPTION>
+          <OPTION type="color" id="COLOR_7" parms="CHART_SETTINGS">R010 G176 B245</OPTION>
+          <OPTION type="boolean" id="FIELD_9" name="Tem" parms="CHART_SETTINGS">false</OPTION>
+          <OPTION type="color" id="COLOR_9" parms="CHART_SETTINGS">R079 G245 B176</OPTION>
+          <OPTION type="boolean" id="FIELD_10" name="Os" parms="CHART_SETTINGS">false</OPTION>
+          <OPTION type="color" id="COLOR_10" parms="CHART_SETTINGS">R128 G255 B128</OPTION>
+          <OPTION type="boolean" id="FIELD_11" name="SPEI3" parms="CHART_SETTINGS">false</OPTION>
+          <OPTION type="color" id="COLOR_11" parms="CHART_SETTINGS">R217 G217 B038</OPTION>
+          <OPTION type="boolean" id="FIELD_12" name="SPEI6" parms="CHART_SETTINGS">false</OPTION>
+          <OPTION type="color" id="COLOR_12" parms="CHART_SETTINGS">R255 G128 B001</OPTION>
+          <OPTION type="boolean" id="FIELD_13" name="SPEI9" parms="CHART_SETTINGS">false</OPTION>
+          <OPTION type="color" id="COLOR_13" parms="CHART_SETTINGS">R217 G038 B000</OPTION>
+          <OPTION type="boolean" id="FIELD_14" name="SPEI12" parms="CHART_SETTINGS">false</OPTION>
+          <OPTION type="color" id="COLOR_14" parms="CHART_SETTINGS">R127 G001 B000</OPTION>
+        </parameters>
+        <OPTION type="color" id="SEL_COLOR" name="Color">R255 G000 B000</OPTION>
+        <OPTION type="color" id="EDIT_COLOR" name="Color">R000 G000 B000</OPTION>
+        <OPTION type="boolean" id="EDIT_GLEAM" name="Gleam">true</OPTION>
+        <DATA_LIST type="shapes_list" id="EDIT_SNAP_LIST" name="Snap to...">
+          <DATA>I:\NSTU\MOPAO\метеостанции_Чумаков.shp</DATA>
+        </DATA_LIST>
+        <OPTION type="integer" id="EDIT_SNAP_DIST" name="Snap Distance">10</OPTION>
+        <OPTION type="choice" id="DISPLAY_BRUSH" name="Fill Style" index="0">Opaque</OPTION>
+        <OPTION type="boolean" id="OUTLINE" name="Outline">true</OPTION>
+        <OPTION type="color" id="OUTLINE_COLOR" name="Color">R000 G000 B000</OPTION>
+        <OPTION type="integer" id="OUTLINE_SIZE" name="Size">1</OPTION>
+        <OPTION type="choice" id="DISPLAY_SYMBOL_TYPE" name="Symbol Type" index="0">circle</OPTION>
+        <OPTION type="file" id="DISPLAY_SYMBOL_IMAGE" name="Image Symbol File"/>
+        <OPTION type="choice" id="ARROW_DIRECTION" name="Direction" index="0">station_id</OPTION>
+        <OPTION type="integer" id="ARROW_OFFSET" name="Offset">0</OPTION>
+        <OPTION type="choice" id="ARROW_ORIENTATION" name="Orientation" index="0">clockwise</OPTION>
+        <OPTION type="choice" id="ARROW_UNIT" name="Unit" index="0">degree</OPTION>
+        <OPTION type="choice" id="ARROW_STYLE" name="Style" index="0">simple</OPTION>
+        <OPTION type="integer" id="ARROW_WIDTH" name="Line Width">2</OPTION>
+        <OPTION type="choice" id="BEACHBALL_STRIKE" name="Strike" index="0">station_id</OPTION>
+        <OPTION type="choice" id="BEACHBALL_DIP" name="Dip" index="0">station_id</OPTION>
+        <OPTION type="choice" id="BEACHBALL_RAKE" name="Rake" index="0">station_id</OPTION>
+        <OPTION type="choice" id="IMAGE_FIELD" name="Image Field" index="15">&lt;none&gt;</OPTION>
+        <OPTION type="choice" id="IMAGE_ALIGN_X" name="Horizontal Align" index="0">left</OPTION>
+        <OPTION type="choice" id="IMAGE_ALIGN_Y" name="Vertical Align" index="0">top</OPTION>
+        <OPTION type="double" id="IMAGE_OFFSET" name="Offset">1</OPTION>
+        <OPTION type="double" id="IMAGE_SCALE" name="Size Scaling">10</OPTION>
+        <OPTION type="choice" id="IMAGE_FIT" name="Fit Size to..." index="0">overall</OPTION>
+        <OPTION type="choice" id="SIZE_FIELD" name="Field" index="10">&lt;none&gt;</OPTION>
+        <OPTION type="choice" id="SIZE_SCALE" name="Field Values" index="1">scale to size range</OPTION>
+        <OPTION type="range" id="SIZE_RANGE" name="Size Range">2; 10</OPTION>
+        <OPTION type="double" id="SIZE_DEFAULT" name="Size">5</OPTION>
+        <OPTION type="choice" id="SIZE_TYPE" name="Size relates to..." index="0">Screen</OPTION>
+        <OPTION type="choice" id="LABEL_ANGLE_FIELD" name="Rotation Value" index="10">&lt;none&gt;</OPTION>
+        <OPTION type="double" id="LABEL_ANGLE" name="Default Rotation">0</OPTION>
+        <OPTION type="choice" id="LABEL_PLACEMENT_X" name="Horizontal" index="2">right</OPTION>
+        <OPTION type="double" id="LABEL_OFFSET_X" name="Offset">0</OPTION>
+        <OPTION type="choice" id="LABEL_PLACEMENT_Y" name="Vertical" index="2">below</OPTION>
+        <OPTION type="double" id="LABEL_OFFSET_Y" name="Offset">5</OPTION>
+        <OPTION type="color" id="SEL_COLOR_FILL" name="Fill Color">R255 G255 B000</OPTION>
+      </parameters>
+    </DATASET>
+    <DATASET dataset_id="17785380120000002" type="SHAPES">
+      <FILE>..\Tem_iso.shp</FILE>
+      <parameters name="метеостанции_Чумаков.Tem [Inverse Distance Weighted] [Interval 1]">
+        <OPTION type="text" id="OBJECT_NAME" name="Name">метеостанции_Чумаков.Tem [Inverse Distance Weighted] [Interval 1]</OPTION>
+        <OPTION type="long_text" id="OBJECT_DESC" name="Description"/>
+        <OPTION type="double" id="MAX_SAMPLES" name="Sample Size">100</OPTION>
+        <OPTION type="range" id="OBJECT_NODATA" name="Data Exclusion">-99999; -99999</OPTION>
+        <OPTION type="choice" id="TABLE_FLT_STYLE" name="Floating Point Numbers" index="1">compact</OPTION>
+        <OPTION type="integer" id="TABLE_FLT_DECIMALS" name="Decimals">6</OPTION>
+        <OPTION type="choice" id="INFO_FIELD" name="Feature Description" index="2">&lt;none&gt;</OPTION>
+        <OPTION type="boolean" id="LEGEND_SHOW" name="Map Legends">true</OPTION>
+        <OPTION type="choice" id="LEGEND_ORIENTATION" name="Orientation" index="0">vertical</OPTION>
+        <OPTION type="choice" id="LEGEND_TITLE" name="Title" index="0">data set</OPTION>
+        <OPTION type="text" id="LEGEND_TITLE_TEXT" name="User Defined">Title</OPTION>
+        <OPTION type="choice" id="LEGEND_FIELD" name="Field Labeling" index="0">automatic</OPTION>
+        <OPTION type="text" id="LEGEND_FIELD_TEXT" name="User Defined">Label</OPTION>
+        <OPTION type="boolean" id="SHOW_ALWAYS" name="Show at all scales">true</OPTION>
+        <OPTION type="range" id="SHOW_RANGE" name="Scale Range">100; 1000</OPTION>
+        <OPTION type="double" id="DISPLAY_TRANSPARENCY" name="Transparency">0</OPTION>
+        <OPTION type="choice" id="COLORS_TYPE" name="Type" index="0">Single Symbol</OPTION>
+        <OPTION type="color" id="SINGLE_COLOR" name="Color">R000 G000 B128</OPTION>
+        <OPTION type="choice" id="LUT_FIELD" name="Field" index="0">ID</OPTION>
+        <OPTION type="choice" id="LUT_NORMAL" name="Normalization" index="2">&lt;none&gt;</OPTION>
+        <OPTION type="static_table" id="LUT" name="Table">
+          <FIELDS>
+            <FIELD type="COLOR">Color</FIELD>
+            <FIELD type="STRING">Name</FIELD>
+            <FIELD type="STRING">Description</FIELD>
+            <FIELD type="DOUBLE">Minimum</FIELD>
+            <FIELD type="DOUBLE">Maximum</FIELD>
+          </FIELDS>
+          <RECORDS>
+            <RECORD>
+              <FIELD>13055</FIELD>
+              <FIELD>Class 1</FIELD>
+              <FIELD>First Class</FIELD>
+              <FIELD>0.000000</FIELD>
+              <FIELD>1.000000</FIELD>
+            </RECORD>
+            <RECORD>
+              <FIELD>16737536</FIELD>
+              <FIELD>Class 2</FIELD>
+              <FIELD>Second Class</FIELD>
+              <FIELD>1.000000</FIELD>
+              <FIELD>2.000000</FIELD>
+            </RECORD>
+          </RECORDS>
+        </OPTION>
+        <OPTION type="choice" id="METRIC_FIELD" name="Field" index="0">ID</OPTION>
+        <OPTION type="choice" id="METRIC_NORMAL" name="Normalization" index="2">&lt;none&gt;</OPTION>
+        <OPTION type="choice" id="METRIC_NORFMT" name="Labeling" index="0">fraction</OPTION>
+        <OPTION type="colors" id="METRIC_COLORS" name="Colors">
+          <COLOR>R000 G001 B128</COLOR>
+          <COLOR>R000 G010 B176</COLOR>
+          <COLOR>R000 G079 B245</COLOR>
+          <COLOR>R001 G127 B255</COLOR>
+          <COLOR>R038 G217 B217</COLOR>
+          <COLOR>R128 G255 B128</COLOR>
+          <COLOR>R176 G245 B079</COLOR>
+          <COLOR>R245 G176 B010</COLOR>
+          <COLOR>R255 G128 B001</COLOR>
+          <COLOR>R217 G038 B000</COLOR>
+          <COLOR>R127 G001 B000</COLOR>
+        </OPTION>
+        <OPTION type="choice" id="STRETCH_DEFAULT" name="Adjustment" index="1">Standard Deviation</OPTION>
+        <OPTION type="range" id="STRETCH_LINEAR" name="Linear Percent Stretch">0; 100</OPTION>
+        <OPTION type="double" id="STRETCH_STDDEV" name="Standard Deviation">2</OPTION>
+        <OPTION type="boolean" id="STRETCH_INRANGE" name="Keep in Range">true</OPTION>
+        <OPTION type="range" id="STRETCH_PCTL" name="Percent Clip">1; 99</OPTION>
+        <OPTION type="range" id="METRIC_ZRANGE" name="Range">0; 0</OPTION>
+        <OPTION type="choice" id="METRIC_SCALE_MODE" name="Scaling" index="0">linear intervals</OPTION>
+        <OPTION type="double" id="METRIC_SCALE_LOG" name="Geometric Interval Factor">1</OPTION>
+        <OPTION type="boolean" id="NODATA_SHOW" name="Show No-Data">true</OPTION>
+        <OPTION type="color" id="NODATA_COLOR" name="Color">R192 G192 B192</OPTION>
+        <OPTION type="choice" id="LABEL_FIELD" name="Field" index="1">VALUE</OPTION>
+        <OPTION type="font" id="LABEL_FIELD_FONT" name="Font">
+          <COLOR>R000 G000 B000</COLOR>
+          <FONT>0;-12;0;0;0;400;0;0;0;0;3;2;1;34;Arial</FONT>
+        </OPTION>
+        <OPTION type="choice" id="LABEL_FIELD_EFFECT" name="Boundary Effect" index="1">full frame</OPTION>
+        <OPTION type="color" id="LABEL_FIELD_EFFECT_COLOR" name="Color">R255 G255 B255</OPTION>
+        <OPTION type="integer" id="LABEL_FIELD_EFFECT_SIZE" name="Size">1</OPTION>
+        <OPTION type="choice" id="LABEL_FIELD_PREC" name="Numerical Precision" index="0">fit to value</OPTION>
+        <OPTION type="choice" id="LABEL_FIELD_SIZE_TYPE" name="Size relates to..." index="0">Screen</OPTION>
+        <OPTION type="choice" id="LABEL_FIELD_SIZEBY" name="Size by Attribute" index="2">&lt;none&gt;</OPTION>
+        <OPTION type="double" id="LABEL_FIELD_SIZE" name="Default Size">100</OPTION>
+        <OPTION type="boolean" id="CHART_DISPLAY" name="Show">false</OPTION>
+        <parameters name="Settings" id="CHART_SETTINGS" type="parameters">
+          <OPTION type="choice" id="TYPE" name="Chart Type" parms="CHART_SETTINGS" index="0">bar</OPTION>
+          <OPTION type="boolean" id="OUTLINE" name="Outline" parms="CHART_SETTINGS">false</OPTION>
+          <OPTION type="choice" id="SIZE_FIELD" name="Size Field" parms="CHART_SETTINGS" index="2">&lt;none&gt;</OPTION>
+          <OPTION type="range" id="SIZE_RANGE" name="Size Range" parms="CHART_SETTINGS">5; 25</OPTION>
+          <OPTION type="double" id="SIZE_DEFAULT" name="Default Size" parms="CHART_SETTINGS">15</OPTION>
+          <OPTION type="choice" id="SIZE_TYPE" name="Size relates to..." parms="CHART_SETTINGS" index="0">Screen</OPTION>
+          <OPTION type="boolean" id="FIELD_0" name="ID" parms="CHART_SETTINGS">false</OPTION>
+          <OPTION type="color" id="COLOR_0" parms="CHART_SETTINGS">R000 G001 B128</OPTION>
+          <OPTION type="boolean" id="FIELD_1" name="VALUE" parms="CHART_SETTINGS">false</OPTION>
+          <OPTION type="color" id="COLOR_1" parms="CHART_SETTINGS">R127 G001 B000</OPTION>
+        </parameters>
+        <OPTION type="color" id="SEL_COLOR" name="Color">R255 G000 B000</OPTION>
+        <OPTION type="color" id="EDIT_COLOR" name="Color">R000 G000 B000</OPTION>
+        <OPTION type="boolean" id="EDIT_GLEAM" name="Gleam">true</OPTION>
+        <DATA_LIST type="shapes_list" id="EDIT_SNAP_LIST" name="Snap to...">
+          <DATA>I:\NSTU\MOPAO\лаба3\Tem_iso.shp</DATA>
+        </DATA_LIST>
+        <OPTION type="integer" id="EDIT_SNAP_DIST" name="Snap Distance">10</OPTION>
+        <OPTION type="choice" id="LINE_STYLE" name="Line Style" index="0">Solid style</OPTION>
+        <OPTION type="choice" id="BOUNDARY_EFFECT" name="Boundary Effect" index="0">none</OPTION>
+        <OPTION type="color" id="BOUNDARY_COLOR" name="Color">R255 G255 B255</OPTION>
+        <OPTION type="choice" id="DISPLAY_POINTS" name="Show Vertices" index="0">no</OPTION>
+        <OPTION type="choice" id="SIZE_FIELD" name="Field" index="2">&lt;none&gt;</OPTION>
+        <OPTION type="range" id="SIZE_RANGE" name="Size Range">0; 10</OPTION>
+        <OPTION type="integer" id="SIZE_DEFAULT" name="Default Size">1</OPTION>
+        <OPTION type="choice" id="SIZE_TYPE" name="Size relates to..." index="0">Screen</OPTION>
+        <OPTION type="choice" id="LABEL_STYLE" name="Style" index="3">along line labeling</OPTION>
+        <OPTION type="choice" id="LABEL_ALIGN" name="Align" index="1">center</OPTION>
+        <OPTION type="choice" id="LABEL_ORIENT" name="Orientation" index="1">right</OPTION>
+        <OPTION type="double" id="LABEL_FREQUENCY" name="Along Line Frequency">10</OPTION>
+      </parameters>
+    </DATASET>
+    <DATASET dataset_id="17785380120000003" type="SHAPES">
+      <FILE>..\Os_iso.shp</FILE>
+      <parameters name="метеостанции_Чумаков.Os [Inverse Distance Weighted] [Interval 6]">
+        <OPTION type="text" id="OBJECT_NAME" name="Name">метеостанции_Чумаков.Os [Inverse Distance Weighted] [Interval 6]</OPTION>
+        <OPTION type="long_text" id="OBJECT_DESC" name="Description"/>
+        <OPTION type="double" id="MAX_SAMPLES" name="Sample Size">100</OPTION>
+        <OPTION type="range" id="OBJECT_NODATA" name="Data Exclusion">-99999; -99999</OPTION>
+        <OPTION type="choice" id="TABLE_FLT_STYLE" name="Floating Point Numbers" index="1">compact</OPTION>
+        <OPTION type="integer" id="TABLE_FLT_DECIMALS" name="Decimals">6</OPTION>
+        <OPTION type="choice" id="INFO_FIELD" name="Feature Description" index="2">&lt;none&gt;</OPTION>
+        <OPTION type="boolean" id="LEGEND_SHOW" name="Map Legends">true</OPTION>
+        <OPTION type="choice" id="LEGEND_ORIENTATION" name="Orientation" index="0">vertical</OPTION>
+        <OPTION type="choice" id="LEGEND_TITLE" name="Title" index="0">data set</OPTION>
+        <OPTION type="text" id="LEGEND_TITLE_TEXT" name="User Defined">Title</OPTION>
+        <OPTION type="choice" id="LEGEND_FIELD" name="Field Labeling" index="0">automatic</OPTION>
+        <OPTION type="text" id="LEGEND_FIELD_TEXT" name="User Defined">Label</OPTION>
+        <OPTION type="boolean" id="SHOW_ALWAYS" name="Show at all scales">true</OPTION>
+        <OPTION type="range" id="SHOW_RANGE" name="Scale Range">100; 1000</OPTION>
+        <OPTION type="double" id="DISPLAY_TRANSPARENCY" name="Transparency">0</OPTION>
+        <OPTION type="choice" id="COLORS_TYPE" name="Type" index="0">Single Symbol</OPTION>
+        <OPTION type="color" id="SINGLE_COLOR" name="Color">R000 G128 B000</OPTION>
+        <OPTION type="choice" id="LUT_FIELD" name="Field" index="0">ID</OPTION>
+        <OPTION type="choice" id="LUT_NORMAL" name="Normalization" index="2">&lt;none&gt;</OPTION>
+        <OPTION type="static_table" id="LUT" name="Table">
+          <FIELDS>
+            <FIELD type="COLOR">Color</FIELD>
+            <FIELD type="STRING">Name</FIELD>
+            <FIELD type="STRING">Description</FIELD>
+            <FIELD type="DOUBLE">Minimum</FIELD>
+            <FIELD type="DOUBLE">Maximum</FIELD>
+          </FIELDS>
+          <RECORDS>
+            <RECORD>
+              <FIELD>57215</FIELD>
+              <FIELD>Class 1</FIELD>
+              <FIELD>First Class</FIELD>
+              <FIELD>0.000000</FIELD>
+              <FIELD>1.000000</FIELD>
+            </RECORD>
+            <RECORD>
+              <FIELD>127</FIELD>
+              <FIELD>Class 2</FIELD>
+              <FIELD>Second Class</FIELD>
+              <FIELD>1.000000</FIELD>
+              <FIELD>2.000000</FIELD>
+            </RECORD>
+          </RECORDS>
+        </OPTION>
+        <OPTION type="choice" id="METRIC_FIELD" name="Field" index="0">ID</OPTION>
+        <OPTION type="choice" id="METRIC_NORMAL" name="Normalization" index="2">&lt;none&gt;</OPTION>
+        <OPTION type="choice" id="METRIC_NORFMT" name="Labeling" index="0">fraction</OPTION>
+        <OPTION type="colors" id="METRIC_COLORS" name="Colors">
+          <COLOR>R000 G001 B128</COLOR>
+          <COLOR>R000 G010 B176</COLOR>
+          <COLOR>R000 G079 B245</COLOR>
+          <COLOR>R001 G127 B255</COLOR>
+          <COLOR>R038 G217 B217</COLOR>
+          <COLOR>R128 G255 B128</COLOR>
+          <COLOR>R176 G245 B079</COLOR>
+          <COLOR>R245 G176 B010</COLOR>
+          <COLOR>R255 G128 B001</COLOR>
+          <COLOR>R217 G038 B000</COLOR>
+          <COLOR>R127 G001 B000</COLOR>
+        </OPTION>
+        <OPTION type="choice" id="STRETCH_DEFAULT" name="Adjustment" index="1">Standard Deviation</OPTION>
+        <OPTION type="range" id="STRETCH_LINEAR" name="Linear Percent Stretch">0; 100</OPTION>
+        <OPTION type="double" id="STRETCH_STDDEV" name="Standard Deviation">2</OPTION>
+        <OPTION type="boolean" id="STRETCH_INRANGE" name="Keep in Range">true</OPTION>
+        <OPTION type="range" id="STRETCH_PCTL" name="Percent Clip">1; 99</OPTION>
+        <OPTION type="range" id="METRIC_ZRANGE" name="Range">0; 0</OPTION>
+        <OPTION type="choice" id="METRIC_SCALE_MODE" name="Scaling" index="0">linear intervals</OPTION>
+        <OPTION type="double" id="METRIC_SCALE_LOG" name="Geometric Interval Factor">1</OPTION>
+        <OPTION type="boolean" id="NODATA_SHOW" name="Show No-Data">true</OPTION>
+        <OPTION type="color" id="NODATA_COLOR" name="Color">R192 G192 B192</OPTION>
+        <OPTION type="choice" id="LABEL_FIELD" name="Field" index="1">VALUE</OPTION>
+        <OPTION type="font" id="LABEL_FIELD_FONT" name="Font">
+          <COLOR>R000 G000 B000</COLOR>
+          <FONT>0;-12;0;0;0;400;0;0;0;0;3;2;1;34;Arial</FONT>
+        </OPTION>
+        <OPTION type="choice" id="LABEL_FIELD_EFFECT" name="Boundary Effect" index="1">full frame</OPTION>
+        <OPTION type="color" id="LABEL_FIELD_EFFECT_COLOR" name="Color">R255 G255 B255</OPTION>
+        <OPTION type="integer" id="LABEL_FIELD_EFFECT_SIZE" name="Size">1</OPTION>
+        <OPTION type="choice" id="LABEL_FIELD_PREC" name="Numerical Precision" index="0">fit to value</OPTION>
+        <OPTION type="choice" id="LABEL_FIELD_SIZE_TYPE" name="Size relates to..." index="0">Screen</OPTION>
+        <OPTION type="choice" id="LABEL_FIELD_SIZEBY" name="Size by Attribute" index="2">&lt;none&gt;</OPTION>
+        <OPTION type="double" id="LABEL_FIELD_SIZE" name="Default Size">100</OPTION>
+        <OPTION type="boolean" id="CHART_DISPLAY" name="Show">false</OPTION>
+        <parameters name="Settings" id="CHART_SETTINGS" type="parameters">
+          <OPTION type="choice" id="TYPE" name="Chart Type" parms="CHART_SETTINGS" index="0">bar</OPTION>
+          <OPTION type="boolean" id="OUTLINE" name="Outline" parms="CHART_SETTINGS">false</OPTION>
+          <OPTION type="choice" id="SIZE_FIELD" name="Size Field" parms="CHART_SETTINGS" index="2">&lt;none&gt;</OPTION>
+          <OPTION type="range" id="SIZE_RANGE" name="Size Range" parms="CHART_SETTINGS">5; 25</OPTION>
+          <OPTION type="double" id="SIZE_DEFAULT" name="Default Size" parms="CHART_SETTINGS">15</OPTION>
+          <OPTION type="choice" id="SIZE_TYPE" name="Size relates to..." parms="CHART_SETTINGS" index="0">Screen</OPTION>
+          <OPTION type="boolean" id="FIELD_0" name="ID" parms="CHART_SETTINGS">false</OPTION>
+          <OPTION type="color" id="COLOR_0" parms="CHART_SETTINGS">R000 G001 B128</OPTION>
+          <OPTION type="boolean" id="FIELD_1" name="VALUE" parms="CHART_SETTINGS">false</OPTION>
+          <OPTION type="color" id="COLOR_1" parms="CHART_SETTINGS">R127 G001 B000</OPTION>
+        </parameters>
+        <OPTION type="color" id="SEL_COLOR" name="Color">R255 G000 B000</OPTION>
+        <OPTION type="color" id="EDIT_COLOR" name="Color">R000 G000 B000</OPTION>
+        <OPTION type="boolean" id="EDIT_GLEAM" name="Gleam">true</OPTION>
+        <DATA_LIST type="shapes_list" id="EDIT_SNAP_LIST" name="Snap to...">
+          <DATA>I:\NSTU\MOPAO\лаба3\Os_iso.shp</DATA>
+        </DATA_LIST>
+        <OPTION type="integer" id="EDIT_SNAP_DIST" name="Snap Distance">10</OPTION>
+        <OPTION type="choice" id="LINE_STYLE" name="Line Style" index="0">Solid style</OPTION>
+        <OPTION type="choice" id="BOUNDARY_EFFECT" name="Boundary Effect" index="0">none</OPTION>
+        <OPTION type="color" id="BOUNDARY_COLOR" name="Color">R255 G255 B255</OPTION>
+        <OPTION type="choice" id="DISPLAY_POINTS" name="Show Vertices" index="0">no</OPTION>
+        <OPTION type="choice" id="SIZE_FIELD" name="Field" index="2">&lt;none&gt;</OPTION>
+        <OPTION type="range" id="SIZE_RANGE" name="Size Range">0; 10</OPTION>
+        <OPTION type="integer" id="SIZE_DEFAULT" name="Default Size">1</OPTION>
+        <OPTION type="choice" id="SIZE_TYPE" name="Size relates to..." index="0">Screen</OPTION>
+        <OPTION type="choice" id="LABEL_STYLE" name="Style" index="3">along line labeling</OPTION>
+        <OPTION type="choice" id="LABEL_ALIGN" name="Align" index="1">center</OPTION>
+        <OPTION type="choice" id="LABEL_ORIENT" name="Orientation" index="1">right</OPTION>
+        <OPTION type="double" id="LABEL_FREQUENCY" name="Along Line Frequency">10</OPTION>
+      </parameters>
+    </DATASET>
+    <DATASET dataset_id="17785380120000004" type="SHAPES">
+      <FILE>..\SPEI3_iso.shp</FILE>
+      <parameters name="метеостанции_Чумаков.SPEI3 [Inverse Distance Weighted] [Interval 0.3]">
+        <OPTION type="text" id="OBJECT_NAME" name="Name">метеостанции_Чумаков.SPEI3 [Inverse Distance Weighted] [Interval 0.3]</OPTION>
+        <OPTION type="long_text" id="OBJECT_DESC" name="Description"/>
+        <OPTION type="double" id="MAX_SAMPLES" name="Sample Size">100</OPTION>
+        <OPTION type="range" id="OBJECT_NODATA" name="Data Exclusion">-99999; -99999</OPTION>
+        <OPTION type="choice" id="TABLE_FLT_STYLE" name="Floating Point Numbers" index="1">compact</OPTION>
+        <OPTION type="integer" id="TABLE_FLT_DECIMALS" name="Decimals">6</OPTION>
+        <OPTION type="choice" id="INFO_FIELD" name="Feature Description" index="2">&lt;none&gt;</OPTION>
+        <OPTION type="boolean" id="LEGEND_SHOW" name="Map Legends">true</OPTION>
+        <OPTION type="choice" id="LEGEND_ORIENTATION" name="Orientation" index="0">vertical</OPTION>
+        <OPTION type="choice" id="LEGEND_TITLE" name="Title" index="0">data set</OPTION>
+        <OPTION type="text" id="LEGEND_TITLE_TEXT" name="User Defined">Title</OPTION>
+        <OPTION type="choice" id="LEGEND_FIELD" name="Field Labeling" index="0">automatic</OPTION>
+        <OPTION type="text" id="LEGEND_FIELD_TEXT" name="User Defined">Label</OPTION>
+        <OPTION type="boolean" id="SHOW_ALWAYS" name="Show at all scales">true</OPTION>
+        <OPTION type="range" id="SHOW_RANGE" name="Scale Range">100; 1000</OPTION>
+        <OPTION type="double" id="DISPLAY_TRANSPARENCY" name="Transparency">0</OPTION>
+        <OPTION type="choice" id="COLORS_TYPE" name="Type" index="0">Single Symbol</OPTION>
+        <OPTION type="color" id="SINGLE_COLOR" name="Color">R128 G000 B000</OPTION>
+        <OPTION type="choice" id="LUT_FIELD" name="Field" index="0">ID</OPTION>
+        <OPTION type="choice" id="LUT_NORMAL" name="Normalization" index="2">&lt;none&gt;</OPTION>
+        <OPTION type="static_table" id="LUT" name="Table">
+          <FIELDS>
+            <FIELD type="COLOR">Color</FIELD>
+            <FIELD type="STRING">Name</FIELD>
+            <FIELD type="STRING">Description</FIELD>
+            <FIELD type="DOUBLE">Minimum</FIELD>
+            <FIELD type="DOUBLE">Maximum</FIELD>
+          </FIELDS>
+          <RECORDS>
+            <RECORD>
+              <FIELD>127</FIELD>
+              <FIELD>Class 1</FIELD>
+              <FIELD>First Class</FIELD>
+              <FIELD>0.000000</FIELD>
+              <FIELD>1.000000</FIELD>
+            </RECORD>
+            <RECORD>
+              <FIELD>3394304</FIELD>
+              <FIELD>Class 2</FIELD>
+              <FIELD>Second Class</FIELD>
+              <FIELD>1.000000</FIELD>
+              <FIELD>2.000000</FIELD>
+            </RECORD>
+          </RECORDS>
+        </OPTION>
+        <OPTION type="choice" id="METRIC_FIELD" name="Field" index="0">ID</OPTION>
+        <OPTION type="choice" id="METRIC_NORMAL" name="Normalization" index="2">&lt;none&gt;</OPTION>
+        <OPTION type="choice" id="METRIC_NORFMT" name="Labeling" index="0">fraction</OPTION>
+        <OPTION type="colors" id="METRIC_COLORS" name="Colors">
+          <COLOR>R000 G001 B128</COLOR>
+          <COLOR>R000 G010 B176</COLOR>
+          <COLOR>R000 G079 B245</COLOR>
+          <COLOR>R001 G127 B255</COLOR>
+          <COLOR>R038 G217 B217</COLOR>
+          <COLOR>R128 G255 B128</COLOR>
+          <COLOR>R176 G245 B079</COLOR>
+          <COLOR>R245 G176 B010</COLOR>
+          <COLOR>R255 G128 B001</COLOR>
+          <COLOR>R217 G038 B000</COLOR>
+          <COLOR>R127 G001 B000</COLOR>
+        </OPTION>
+        <OPTION type="choice" id="STRETCH_DEFAULT" name="Adjustment" index="1">Standard Deviation</OPTION>
+        <OPTION type="range" id="STRETCH_LINEAR" name="Linear Percent Stretch">0; 100</OPTION>
+        <OPTION type="double" id="STRETCH_STDDEV" name="Standard Deviation">2</OPTION>
+        <OPTION type="boolean" id="STRETCH_INRANGE" name="Keep in Range">true</OPTION>
+        <OPTION type="range" id="STRETCH_PCTL" name="Percent Clip">1; 99</OPTION>
+        <OPTION type="range" id="METRIC_ZRANGE" name="Range">0; 0</OPTION>
+        <OPTION type="choice" id="METRIC_SCALE_MODE" name="Scaling" index="0">linear intervals</OPTION>
+        <OPTION type="double" id="METRIC_SCALE_LOG" name="Geometric Interval Factor">1</OPTION>
+        <OPTION type="boolean" id="NODATA_SHOW" name="Show No-Data">true</OPTION>
+        <OPTION type="color" id="NODATA_COLOR" name="Color">R192 G192 B192</OPTION>
+        <OPTION type="choice" id="LABEL_FIELD" name="Field" index="1">VALUE</OPTION>
+        <OPTION type="font" id="LABEL_FIELD_FONT" name="Font">
+          <COLOR>R000 G000 B000</COLOR>
+          <FONT>0;-12;0;0;0;400;0;0;0;0;3;2;1;34;Arial</FONT>
+        </OPTION>
+        <OPTION type="choice" id="LABEL_FIELD_EFFECT" name="Boundary Effect" index="1">full frame</OPTION>
+        <OPTION type="color" id="LABEL_FIELD_EFFECT_COLOR" name="Color">R255 G255 B255</OPTION>
+        <OPTION type="integer" id="LABEL_FIELD_EFFECT_SIZE" name="Size">1</OPTION>
+        <OPTION type="choice" id="LABEL_FIELD_PREC" name="Numerical Precision" index="0">fit to value</OPTION>
+        <OPTION type="choice" id="LABEL_FIELD_SIZE_TYPE" name="Size relates to..." index="0">Screen</OPTION>
+        <OPTION type="choice" id="LABEL_FIELD_SIZEBY" name="Size by Attribute" index="2">&lt;none&gt;</OPTION>
+        <OPTION type="double" id="LABEL_FIELD_SIZE" name="Default Size">100</OPTION>
+        <OPTION type="boolean" id="CHART_DISPLAY" name="Show">false</OPTION>
+        <parameters name="Settings" id="CHART_SETTINGS" type="parameters">
+          <OPTION type="choice" id="TYPE" name="Chart Type" parms="CHART_SETTINGS" index="0">bar</OPTION>
+          <OPTION type="boolean" id="OUTLINE" name="Outline" parms="CHART_SETTINGS">false</OPTION>
+          <OPTION type="choice" id="SIZE_FIELD" name="Size Field" parms="CHART_SETTINGS" index="2">&lt;none&gt;</OPTION>
+          <OPTION type="range" id="SIZE_RANGE" name="Size Range" parms="CHART_SETTINGS">5; 25</OPTION>
+          <OPTION type="double" id="SIZE_DEFAULT" name="Default Size" parms="CHART_SETTINGS">15</OPTION>
+          <OPTION type="choice" id="SIZE_TYPE" name="Size relates to..." parms="CHART_SETTINGS" index="0">Screen</OPTION>
+          <OPTION type="boolean" id="FIELD_0" name="ID" parms="CHART_SETTINGS">false</OPTION>
+          <OPTION type="color" id="COLOR_0" parms="CHART_SETTINGS">R000 G001 B128</OPTION>
+          <OPTION type="boolean" id="FIELD_1" name="VALUE" parms="CHART_SETTINGS">false</OPTION>
+          <OPTION type="color" id="COLOR_1" parms="CHART_SETTINGS">R127 G001 B000</OPTION>
+        </parameters>
+        <OPTION type="color" id="SEL_COLOR" name="Color">R255 G000 B000</OPTION>
+        <OPTION type="color" id="EDIT_COLOR" name="Color">R000 G000 B000</OPTION>
+        <OPTION type="boolean" id="EDIT_GLEAM" name="Gleam">true</OPTION>
+        <DATA_LIST type="shapes_list" id="EDIT_SNAP_LIST" name="Snap to...">
+          <DATA>I:\NSTU\MOPAO\лаба3\SPEI3_iso.shp</DATA>
+        </DATA_LIST>
+        <OPTION type="integer" id="EDIT_SNAP_DIST" name="Snap Distance">10</OPTION>
+        <OPTION type="choice" id="LINE_STYLE" name="Line Style" index="0">Solid style</OPTION>
+        <OPTION type="choice" id="BOUNDARY_EFFECT" name="Boundary Effect" index="0">none</OPTION>
+        <OPTION type="color" id="BOUNDARY_COLOR" name="Color">R255 G255 B255</OPTION>
+        <OPTION type="choice" id="DISPLAY_POINTS" name="Show Vertices" index="0">no</OPTION>
+        <OPTION type="choice" id="SIZE_FIELD" name="Field" index="2">&lt;none&gt;</OPTION>
+        <OPTION type="range" id="SIZE_RANGE" name="Size Range">0; 10</OPTION>
+        <OPTION type="integer" id="SIZE_DEFAULT" name="Default Size">1</OPTION>
+        <OPTION type="choice" id="SIZE_TYPE" name="Size relates to..." index="0">Screen</OPTION>
+        <OPTION type="choice" id="LABEL_STYLE" name="Style" index="3">along line labeling</OPTION>
+        <OPTION type="choice" id="LABEL_ALIGN" name="Align" index="1">center</OPTION>
+        <OPTION type="choice" id="LABEL_ORIENT" name="Orientation" index="1">right</OPTION>
+        <OPTION type="double" id="LABEL_FREQUENCY" name="Along Line Frequency">10</OPTION>
+      </parameters>
+    </DATASET>
+    <DATASET dataset_id="17785380120000005" type="SHAPES">
+      <FILE>..\SPEI6.shp</FILE>
+      <parameters name="метеостанции_Чумаков.SPEI6 [Inverse Distance Weighted] [Interval 0.3]">
+        <OPTION type="text" id="OBJECT_NAME" name="Name">метеостанции_Чумаков.SPEI6 [Inverse Distance Weighted] [Interval 0.3]</OPTION>
+        <OPTION type="long_text" id="OBJECT_DESC" name="Description"/>
+        <OPTION type="double" id="MAX_SAMPLES" name="Sample Size">100</OPTION>
+        <OPTION type="range" id="OBJECT_NODATA" name="Data Exclusion">-99999; -99999</OPTION>
+        <OPTION type="choice" id="TABLE_FLT_STYLE" name="Floating Point Numbers" index="1">compact</OPTION>
+        <OPTION type="integer" id="TABLE_FLT_DECIMALS" name="Decimals">6</OPTION>
+        <OPTION type="choice" id="INFO_FIELD" name="Feature Description" index="2">&lt;none&gt;</OPTION>
+        <OPTION type="boolean" id="LEGEND_SHOW" name="Map Legends">true</OPTION>
+        <OPTION type="choice" id="LEGEND_ORIENTATION" name="Orientation" index="0">vertical</OPTION>
+        <OPTION type="choice" id="LEGEND_TITLE" name="Title" index="0">data set</OPTION>
+        <OPTION type="text" id="LEGEND_TITLE_TEXT" name="User Defined">Title</OPTION>
+        <OPTION type="choice" id="LEGEND_FIELD" name="Field Labeling" index="0">automatic</OPTION>
+        <OPTION type="text" id="LEGEND_FIELD_TEXT" name="User Defined">Label</OPTION>
+        <OPTION type="boolean" id="SHOW_ALWAYS" name="Show at all scales">true</OPTION>
+        <OPTION type="range" id="SHOW_RANGE" name="Scale Range">100; 1000</OPTION>
+        <OPTION type="double" id="DISPLAY_TRANSPARENCY" name="Transparency">0</OPTION>
+        <OPTION type="choice" id="COLORS_TYPE" name="Type" index="0">Single Symbol</OPTION>
+        <OPTION type="color" id="SINGLE_COLOR" name="Color">R128 G000 B128</OPTION>
+        <OPTION type="choice" id="LUT_FIELD" name="Field" index="0">ID</OPTION>
+        <OPTION type="choice" id="LUT_NORMAL" name="Normalization" index="2">&lt;none&gt;</OPTION>
+        <OPTION type="static_table" id="LUT" name="Table">
+          <FIELDS>
+            <FIELD type="COLOR">Color</FIELD>
+            <FIELD type="STRING">Name</FIELD>
+            <FIELD type="STRING">Description</FIELD>
+            <FIELD type="DOUBLE">Minimum</FIELD>
+            <FIELD type="DOUBLE">Maximum</FIELD>
+          </FIELDS>
+          <RECORDS>
+            <RECORD>
+              <FIELD>8323136</FIELD>
+              <FIELD>Class 1</FIELD>
+              <FIELD>First Class</FIELD>
+              <FIELD>0.000000</FIELD>
+              <FIELD>1.000000</FIELD>
+            </RECORD>
+            <RECORD>
+              <FIELD>57215</FIELD>
+              <FIELD>Class 2</FIELD>
+              <FIELD>Second Class</FIELD>
+              <FIELD>1.000000</FIELD>
+              <FIELD>2.000000</FIELD>
+            </RECORD>
+          </RECORDS>
+        </OPTION>
+        <OPTION type="choice" id="METRIC_FIELD" name="Field" index="0">ID</OPTION>
+        <OPTION type="choice" id="METRIC_NORMAL" name="Normalization" index="2">&lt;none&gt;</OPTION>
+        <OPTION type="choice" id="METRIC_NORFMT" name="Labeling" index="0">fraction</OPTION>
+        <OPTION type="colors" id="METRIC_COLORS" name="Colors">
+          <COLOR>R000 G001 B128</COLOR>
+          <COLOR>R000 G010 B176</COLOR>
+          <COLOR>R000 G079 B245</COLOR>
+          <COLOR>R001 G127 B255</COLOR>
+          <COLOR>R038 G217 B217</COLOR>
+          <COLOR>R128 G255 B128</COLOR>
+          <COLOR>R176 G245 B079</COLOR>
+          <COLOR>R245 G176 B010</COLOR>
+          <COLOR>R255 G128 B001</COLOR>
+          <COLOR>R217 G038 B000</COLOR>
+          <COLOR>R127 G001 B000</COLOR>
+        </OPTION>
+        <OPTION type="choice" id="STRETCH_DEFAULT" name="Adjustment" index="1">Standard Deviation</OPTION>
+        <OPTION type="range" id="STRETCH_LINEAR" name="Linear Percent Stretch">0; 100</OPTION>
+        <OPTION type="double" id="STRETCH_STDDEV" name="Standard Deviation">2</OPTION>
+        <OPTION type="boolean" id="STRETCH_INRANGE" name="Keep in Range">true</OPTION>
+        <OPTION type="range" id="STRETCH_PCTL" name="Percent Clip">1; 99</OPTION>
+        <OPTION type="range" id="METRIC_ZRANGE" name="Range">0; 0</OPTION>
+        <OPTION type="choice" id="METRIC_SCALE_MODE" name="Scaling" index="0">linear intervals</OPTION>
+        <OPTION type="double" id="METRIC_SCALE_LOG" name="Geometric Interval Factor">1</OPTION>
+        <OPTION type="boolean" id="NODATA_SHOW" name="Show No-Data">true</OPTION>
+        <OPTION type="color" id="NODATA_COLOR" name="Color">R192 G192 B192</OPTION>
+        <OPTION type="choice" id="LABEL_FIELD" name="Field" index="1">VALUE</OPTION>
+        <OPTION type="font" id="LABEL_FIELD_FONT" name="Font">
+          <COLOR>R000 G000 B000</COLOR>
+          <FONT>0;-12;0;0;0;400;0;0;0;0;3;2;1;34;Arial</FONT>
+        </OPTION>
+        <OPTION type="choice" id="LABEL_FIELD_EFFECT" name="Boundary Effect" index="1">full frame</OPTION>
+        <OPTION type="color" id="LABEL_FIELD_EFFECT_COLOR" name="Color">R255 G255 B255</OPTION>
+        <OPTION type="integer" id="LABEL_FIELD_EFFECT_SIZE" name="Size">1</OPTION>
+        <OPTION type="choice" id="LABEL_FIELD_PREC" name="Numerical Precision" index="0">fit to value</OPTION>
+        <OPTION type="choice" id="LABEL_FIELD_SIZE_TYPE" name="Size relates to..." index="0">Screen</OPTION>
+        <OPTION type="choice" id="LABEL_FIELD_SIZEBY" name="Size by Attribute" index="2">&lt;none&gt;</OPTION>
+        <OPTION type="double" id="LABEL_FIELD_SIZE" name="Default Size">100</OPTION>
+        <OPTION type="boolean" id="CHART_DISPLAY" name="Show">false</OPTION>
+        <parameters name="Settings" id="CHART_SETTINGS" type="parameters">
+          <OPTION type="choice" id="TYPE" name="Chart Type" parms="CHART_SETTINGS" index="0">bar</OPTION>
+          <OPTION type="boolean" id="OUTLINE" name="Outline" parms="CHART_SETTINGS">false</OPTION>
+          <OPTION type="choice" id="SIZE_FIELD" name="Size Field" parms="CHART_SETTINGS" index="2">&lt;none&gt;</OPTION>
+          <OPTION type="range" id="SIZE_RANGE" name="Size Range" parms="CHART_SETTINGS">5; 25</OPTION>
+          <OPTION type="double" id="SIZE_DEFAULT" name="Default Size" parms="CHART_SETTINGS">15</OPTION>
+          <OPTION type="choice" id="SIZE_TYPE" name="Size relates to..." parms="CHART_SETTINGS" index="0">Screen</OPTION>
+          <OPTION type="boolean" id="FIELD_0" name="ID" parms="CHART_SETTINGS">false</OPTION>
+          <OPTION type="color" id="COLOR_0" parms="CHART_SETTINGS">R000 G001 B128</OPTION>
+          <OPTION type="boolean" id="FIELD_1" name="VALUE" parms="CHART_SETTINGS">false</OPTION>
+          <OPTION type="color" id="COLOR_1" parms="CHART_SETTINGS">R127 G001 B000</OPTION>
+        </parameters>
+        <OPTION type="color" id="SEL_COLOR" name="Color">R255 G000 B000</OPTION>
+        <OPTION type="color" id="EDIT_COLOR" name="Color">R000 G000 B000</OPTION>
+        <OPTION type="boolean" id="EDIT_GLEAM" name="Gleam">true</OPTION>
+        <DATA_LIST type="shapes_list" id="EDIT_SNAP_LIST" name="Snap to...">
+          <DATA>I:\NSTU\MOPAO\лаба3\SPEI6.shp</DATA>
+        </DATA_LIST>
+        <OPTION type="integer" id="EDIT_SNAP_DIST" name="Snap Distance">10</OPTION>
+        <OPTION type="choice" id="LINE_STYLE" name="Line Style" index="0">Solid style</OPTION>
+        <OPTION type="choice" id="BOUNDARY_EFFECT" name="Boundary Effect" index="0">none</OPTION>
+        <OPTION type="color" id="BOUNDARY_COLOR" name="Color">R255 G255 B255</OPTION>
+        <OPTION type="choice" id="DISPLAY_POINTS" name="Show Vertices" index="0">no</OPTION>
+        <OPTION type="choice" id="SIZE_FIELD" name="Field" index="2">&lt;none&gt;</OPTION>
+        <OPTION type="range" id="SIZE_RANGE" name="Size Range">0; 10</OPTION>
+        <OPTION type="integer" id="SIZE_DEFAULT" name="Default Size">1</OPTION>
+        <OPTION type="choice" id="SIZE_TYPE" name="Size relates to..." index="0">Screen</OPTION>
+        <OPTION type="choice" id="LABEL_STYLE" name="Style" index="3">along line labeling</OPTION>
+        <OPTION type="choice" id="LABEL_ALIGN" name="Align" index="1">center</OPTION>
+        <OPTION type="choice" id="LABEL_ORIENT" name="Orientation" index="1">right</OPTION>
+        <OPTION type="double" id="LABEL_FREQUENCY" name="Along Line Frequency">10</OPTION>
+      </parameters>
+    </DATASET>
+    <DATASET dataset_id="17785380120000006" type="GRID">
+      <FILE>..\Tem.sg-grd-z</FILE>
+      <parameters name="метеостанции_Чумаков.Tem [Inverse Distance Weighted]">
+        <OPTION type="text" id="OBJECT_NAME" name="Name">метеостанции_Чумаков.Tem [Inverse Distance Weighted]</OPTION>
+        <OPTION type="long_text" id="OBJECT_DESC" name="Description"/>
+        <OPTION type="double" id="MAX_SAMPLES" name="Sample Size">100</OPTION>
+        <OPTION type="range" id="OBJECT_NODATA" name="Data Exclusion">-99999; -99999</OPTION>
+        <OPTION type="boolean" id="LEGEND_SHOW" name="Map Legends">true</OPTION>
+        <OPTION type="choice" id="LEGEND_ORIENTATION" name="Orientation" index="0">vertical</OPTION>
+        <OPTION type="choice" id="LEGEND_TITLE" name="Title" index="0">data set</OPTION>
+        <OPTION type="text" id="LEGEND_TITLE_TEXT" name="User Defined">Title</OPTION>
+        <OPTION type="boolean" id="SHOW_ALWAYS" name="Show at all scales">true</OPTION>
+        <OPTION type="range" id="SHOW_RANGE" name="Scale Range">100; 1000</OPTION>
+        <OPTION type="choice" id="DISPLAY_OVERLAY" name="Overlay Mode" index="0">Transparency/Opacity</OPTION>
+        <OPTION type="double" id="DISPLAY_TRANSPARENCY" name="Transparency">0</OPTION>
+        <OPTION type="choice" id="COLORS_TYPE" name="Type" index="3">Graduated Colors</OPTION>
+        <OPTION type="color" id="SINGLE_COLOR" name="Color">R000 G255 B000</OPTION>
+        <OPTION type="static_table" id="LUT" name="Table">
+          <FIELDS>
+            <FIELD type="COLOR">Color</FIELD>
+            <FIELD type="STRING">Name</FIELD>
+            <FIELD type="STRING">Description</FIELD>
+            <FIELD type="DOUBLE">Minimum</FIELD>
+            <FIELD type="DOUBLE">Maximum</FIELD>
+          </FIELDS>
+          <RECORDS>
+            <RECORD>
+              <FIELD>58879</FIELD>
+              <FIELD>Class 1</FIELD>
+              <FIELD>First Class</FIELD>
+              <FIELD>0.000000</FIELD>
+              <FIELD>1.000000</FIELD>
+            </RECORD>
+            <RECORD>
+              <FIELD>8323136</FIELD>
+              <FIELD>Class 2</FIELD>
+              <FIELD>Second Class</FIELD>
+              <FIELD>1.000000</FIELD>
+              <FIELD>2.000000</FIELD>
+            </RECORD>
+          </RECORDS>
+        </OPTION>
+        <OPTION type="choice" id="LUT_RESAMPLING" name="Resampling" index="0">Nearest Neighbour</OPTION>
+        <OPTION type="colors" id="METRIC_COLORS" name="Colors">
+          <COLOR>R000 G001 B128</COLOR>
+          <COLOR>R000 G010 B176</COLOR>
+          <COLOR>R000 G079 B245</COLOR>
+          <COLOR>R001 G127 B255</COLOR>
+          <COLOR>R038 G217 B217</COLOR>
+          <COLOR>R128 G255 B128</COLOR>
+          <COLOR>R176 G245 B079</COLOR>
+          <COLOR>R245 G176 B010</COLOR>
+          <COLOR>R255 G128 B001</COLOR>
+          <COLOR>R217 G038 B000</COLOR>
+          <COLOR>R127 G001 B000</COLOR>
+        </OPTION>
+        <OPTION type="choice" id="STRETCH_DEFAULT" name="Adjustment" index="1">Standard Deviation</OPTION>
+        <OPTION type="range" id="STRETCH_LINEAR" name="Linear Percent Stretch">0; 100</OPTION>
+        <OPTION type="double" id="STRETCH_STDDEV" name="Standard Deviation">2</OPTION>
+        <OPTION type="boolean" id="STRETCH_INRANGE" name="Keep in Range">true</OPTION>
+        <OPTION type="range" id="STRETCH_PCTL" name="Percent Clip">1; 99</OPTION>
+        <OPTION type="range" id="METRIC_ZRANGE" name="Range">22.106499486093387; 30.003289208816096</OPTION>
+        <OPTION type="choice" id="METRIC_SCALE_MODE" name="Scaling" index="0">linear intervals</OPTION>
+        <OPTION type="double" id="METRIC_SCALE_LOG" name="Geometric Interval Factor">1</OPTION>
+        <OPTION type="boolean" id="FILE_CACHE" name="File Cache">false</OPTION>
+        <OPTION type="text" id="OBJECT_Z_UNIT" name="Unit"/>
+        <OPTION type="double" id="OBJECT_Z_FACTOR" name="Scaling">1</OPTION>
+        <OPTION type="double" id="OBJECT_Z_OFFSET" name="Offset">0</OPTION>
+        <OPTION type="boolean" id="VALUES_SHOW" name="Show Cell Values">false</OPTION>
+        <OPTION type="font" id="VALUES_FONT" name="Font">
+          <COLOR>R000 G000 B000</COLOR>
+          <FONT>0;-12;0;0;0;400;0;0;0;0;3;2;1;34;Arial</FONT>
+        </OPTION>
+        <OPTION type="double" id="VALUES_SIZE" name="Size">15</OPTION>
+        <OPTION type="integer" id="VALUES_DECIMALS" name="Decimals">2</OPTION>
+        <OPTION type="choice" id="VALUES_EFFECT" name="Boundary Effect" index="1">full frame</OPTION>
+        <OPTION type="color" id="VALUES_EFFECT_COLOR" name="Color">R255 G255 B255</OPTION>
+        <OPTION type="choice" id="DISPLAY_RESAMPLING" name="Resampling" index="0">Nearest Neighbour</OPTION>
+        <OPTION type="grid_system" id="DISPLAY_ALPHA_GRIDSYSTEM" name="Grid system">
+          <CELLSIZE>0.1</CELLSIZE>
+          <XMIN>25</XMIN>
+          <YMIN>35</YMIN>
+          <XMAX>45</XMAX>
+          <YMAX>43</YMAX>
+        </OPTION>
+        <DATA type="grid" id="DISPLAY_ALPHA" name="Transparency Band">NOT SET</DATA>
+        <OPTION type="double" id="ALPHA_RANGE.MIN" name="Full Transparency">0</OPTION>
+        <OPTION type="double" id="ALPHA_RANGE.MAX" name="Full Opacity">0</OPTION>
+        <OPTION type="choice" id="DISPLAY_SHADING" name="Shading" index="0">none</OPTION>
+        <OPTION type="double" id="SHADING_AZIMUTH" name="Azimuth">315</OPTION>
+        <OPTION type="double" id="SHADING_HEIGHT" name="Height">45</OPTION>
+        <OPTION type="double" id="SHADING_EXAGG" name="Exaggeration">1</OPTION>
+        <OPTION type="double" id="SHADING_MIN" name="Minimum">0</OPTION>
+        <OPTION type="double" id="SHADING_MAX" name="Maximum">1.5</OPTION>
+        <OPTION type="boolean" id="RGB_ALPHA" name="Alpha Channel">false</OPTION>
+        <OPTION type="choice" id="OVERLAY_MODE" name="This Color" index="0">Red</OPTION>
+        <OPTION type="grid_system" id="OVERLAY_R_GRIDSYSTEM" name="Grid system">
+          <CELLSIZE>0.1</CELLSIZE>
+          <XMIN>25</XMIN>
+          <YMIN>35</YMIN>
+          <XMAX>45</XMAX>
+          <YMAX>43</YMAX>
+        </OPTION>
+        <DATA type="grid" id="OVERLAY_R" name="Red">NOT SET</DATA>
+        <OPTION type="grid_system" id="OVERLAY_G_GRIDSYSTEM" name="Grid system">
+          <CELLSIZE>0.1</CELLSIZE>
+          <XMIN>25</XMIN>
+          <YMIN>35</YMIN>
+          <XMAX>45</XMAX>
+          <YMAX>43</YMAX>
+        </OPTION>
+        <DATA type="grid" id="OVERLAY_G" name="Green">NOT SET</DATA>
+        <OPTION type="grid_system" id="OVERLAY_B_GRIDSYSTEM" name="Grid system">
+          <CELLSIZE>0.1</CELLSIZE>
+          <XMIN>25</XMIN>
+          <YMIN>35</YMIN>
+          <XMAX>45</XMAX>
+          <YMAX>43</YMAX>
+        </OPTION>
+        <DATA type="grid" id="OVERLAY_B" name="Blue">NOT SET</DATA>
+      </parameters>
+    </DATASET>
+    <DATASET dataset_id="17785380120000007" type="GRID">
+      <FILE>..\Os.sg-grd-z</FILE>
+      <parameters name="метеостанции_Чумаков.Os [Inverse Distance Weighted]">
+        <OPTION type="text" id="OBJECT_NAME" name="Name">метеостанции_Чумаков.Os [Inverse Distance Weighted]</OPTION>
+        <OPTION type="long_text" id="OBJECT_DESC" name="Description"/>
+        <OPTION type="double" id="MAX_SAMPLES" name="Sample Size">100</OPTION>
+        <OPTION type="range" id="OBJECT_NODATA" name="Data Exclusion">-99999; -99999</OPTION>
+        <OPTION type="boolean" id="LEGEND_SHOW" name="Map Legends">true</OPTION>
+        <OPTION type="choice" id="LEGEND_ORIENTATION" name="Orientation" index="0">vertical</OPTION>
+        <OPTION type="choice" id="LEGEND_TITLE" name="Title" index="0">data set</OPTION>
+        <OPTION type="text" id="LEGEND_TITLE_TEXT" name="User Defined">Title</OPTION>
+        <OPTION type="boolean" id="SHOW_ALWAYS" name="Show at all scales">true</OPTION>
+        <OPTION type="range" id="SHOW_RANGE" name="Scale Range">100; 1000</OPTION>
+        <OPTION type="choice" id="DISPLAY_OVERLAY" name="Overlay Mode" index="0">Transparency/Opacity</OPTION>
+        <OPTION type="double" id="DISPLAY_TRANSPARENCY" name="Transparency">0</OPTION>
+        <OPTION type="choice" id="COLORS_TYPE" name="Type" index="3">Graduated Colors</OPTION>
+        <OPTION type="color" id="SINGLE_COLOR" name="Color">R255 G000 B000</OPTION>
+        <OPTION type="static_table" id="LUT" name="Table">
+          <FIELDS>
+            <FIELD type="COLOR">Color</FIELD>
+            <FIELD type="STRING">Name</FIELD>
+            <FIELD type="STRING">Description</FIELD>
+            <FIELD type="DOUBLE">Minimum</FIELD>
+            <FIELD type="DOUBLE">Maximum</FIELD>
+          </FIELDS>
+          <RECORDS>
+            <RECORD>
+              <FIELD>16737536</FIELD>
+              <FIELD>Class 1</FIELD>
+              <FIELD>First Class</FIELD>
+              <FIELD>0.000000</FIELD>
+              <FIELD>1.000000</FIELD>
+            </RECORD>
+            <RECORD>
+              <FIELD>35839</FIELD>
+              <FIELD>Class 2</FIELD>
+              <FIELD>Second Class</FIELD>
+              <FIELD>1.000000</FIELD>
+              <FIELD>2.000000</FIELD>
+            </RECORD>
+          </RECORDS>
+        </OPTION>
+        <OPTION type="choice" id="LUT_RESAMPLING" name="Resampling" index="0">Nearest Neighbour</OPTION>
+        <OPTION type="colors" id="METRIC_COLORS" name="Colors">
+          <COLOR>R127 G001 B000</COLOR>
+          <COLOR>R217 G038 B000</COLOR>
+          <COLOR>R255 G128 B001</COLOR>
+          <COLOR>R245 G176 B010</COLOR>
+          <COLOR>R176 G245 B079</COLOR>
+          <COLOR>R128 G255 B128</COLOR>
+          <COLOR>R038 G217 B217</COLOR>
+          <COLOR>R001 G127 B255</COLOR>
+          <COLOR>R000 G079 B245</COLOR>
+          <COLOR>R000 G010 B176</COLOR>
+          <COLOR>R000 G001 B128</COLOR>
+        </OPTION>
+        <OPTION type="choice" id="STRETCH_DEFAULT" name="Adjustment" index="1">Standard Deviation</OPTION>
+        <OPTION type="range" id="STRETCH_LINEAR" name="Linear Percent Stretch">0; 100</OPTION>
+        <OPTION type="double" id="STRETCH_STDDEV" name="Standard Deviation">2</OPTION>
+        <OPTION type="boolean" id="STRETCH_INRANGE" name="Keep in Range">true</OPTION>
+        <OPTION type="range" id="STRETCH_PCTL" name="Percent Clip">1; 99</OPTION>
+        <OPTION type="range" id="METRIC_ZRANGE" name="Range">0.0037987739779055; 43.5951743799485456</OPTION>
+        <OPTION type="choice" id="METRIC_SCALE_MODE" name="Scaling" index="0">linear intervals</OPTION>
+        <OPTION type="double" id="METRIC_SCALE_LOG" name="Geometric Interval Factor">1</OPTION>
+        <OPTION type="boolean" id="FILE_CACHE" name="File Cache">false</OPTION>
+        <OPTION type="text" id="OBJECT_Z_UNIT" name="Unit"/>
+        <OPTION type="double" id="OBJECT_Z_FACTOR" name="Scaling">1</OPTION>
+        <OPTION type="double" id="OBJECT_Z_OFFSET" name="Offset">0</OPTION>
+        <OPTION type="boolean" id="VALUES_SHOW" name="Show Cell Values">false</OPTION>
+        <OPTION type="font" id="VALUES_FONT" name="Font">
+          <COLOR>R000 G000 B000</COLOR>
+          <FONT>0;-12;0;0;0;400;0;0;0;0;3;2;1;34;Arial</FONT>
+        </OPTION>
+        <OPTION type="double" id="VALUES_SIZE" name="Size">15</OPTION>
+        <OPTION type="integer" id="VALUES_DECIMALS" name="Decimals">2</OPTION>
+        <OPTION type="choice" id="VALUES_EFFECT" name="Boundary Effect" index="1">full frame</OPTION>
+        <OPTION type="color" id="VALUES_EFFECT_COLOR" name="Color">R255 G255 B255</OPTION>
+        <OPTION type="choice" id="DISPLAY_RESAMPLING" name="Resampling" index="0">Nearest Neighbour</OPTION>
+        <OPTION type="grid_system" id="DISPLAY_ALPHA_GRIDSYSTEM" name="Grid system">
+          <CELLSIZE>0.1</CELLSIZE>
+          <XMIN>25</XMIN>
+          <YMIN>35</YMIN>
+          <XMAX>45</XMAX>
+          <YMAX>43</YMAX>
+        </OPTION>
+        <DATA type="grid" id="DISPLAY_ALPHA" name="Transparency Band">NOT SET</DATA>
+        <OPTION type="double" id="ALPHA_RANGE.MIN" name="Full Transparency">0</OPTION>
+        <OPTION type="double" id="ALPHA_RANGE.MAX" name="Full Opacity">0</OPTION>
+        <OPTION type="choice" id="DISPLAY_SHADING" name="Shading" index="0">none</OPTION>
+        <OPTION type="double" id="SHADING_AZIMUTH" name="Azimuth">315</OPTION>
+        <OPTION type="double" id="SHADING_HEIGHT" name="Height">45</OPTION>
+        <OPTION type="double" id="SHADING_EXAGG" name="Exaggeration">1</OPTION>
+        <OPTION type="double" id="SHADING_MIN" name="Minimum">0</OPTION>
+        <OPTION type="double" id="SHADING_MAX" name="Maximum">1.5</OPTION>
+        <OPTION type="boolean" id="RGB_ALPHA" name="Alpha Channel">false</OPTION>
+        <OPTION type="choice" id="OVERLAY_MODE" name="This Color" index="0">Red</OPTION>
+        <OPTION type="grid_system" id="OVERLAY_R_GRIDSYSTEM" name="Grid system">
+          <CELLSIZE>0.1</CELLSIZE>
+          <XMIN>25</XMIN>
+          <YMIN>35</YMIN>
+          <XMAX>45</XMAX>
+          <YMAX>43</YMAX>
+        </OPTION>
+        <DATA type="grid" id="OVERLAY_R" name="Red">NOT SET</DATA>
+        <OPTION type="grid_system" id="OVERLAY_G_GRIDSYSTEM" name="Grid system">
+          <CELLSIZE>0.1</CELLSIZE>
+          <XMIN>25</XMIN>
+          <YMIN>35</YMIN>
+          <XMAX>45</XMAX>
+          <YMAX>43</YMAX>
+        </OPTION>
+        <DATA type="grid" id="OVERLAY_G" name="Green">NOT SET</DATA>
+        <OPTION type="grid_system" id="OVERLAY_B_GRIDSYSTEM" name="Grid system">
+          <CELLSIZE>0.1</CELLSIZE>
+          <XMIN>25</XMIN>
+          <YMIN>35</YMIN>
+          <XMAX>45</XMAX>
+          <YMAX>43</YMAX>
+        </OPTION>
+        <DATA type="grid" id="OVERLAY_B" name="Blue">NOT SET</DATA>
+      </parameters>
+    </DATASET>
+    <DATASET dataset_id="17785380120000008" type="GRID">
+      <FILE>..\SPEI3.sg-grd-z</FILE>
+      <parameters name="метеостанции_Чумаков.SPEI3 [Inverse Distance Weighted]">
+        <OPTION type="text" id="OBJECT_NAME" name="Name">метеостанции_Чумаков.SPEI3 [Inverse Distance Weighted]</OPTION>
+        <OPTION type="long_text" id="OBJECT_DESC" name="Description"/>
+        <OPTION type="double" id="MAX_SAMPLES" name="Sample Size">100</OPTION>
+        <OPTION type="range" id="OBJECT_NODATA" name="Data Exclusion">-99999; -99999</OPTION>
+        <OPTION type="boolean" id="LEGEND_SHOW" name="Map Legends">true</OPTION>
+        <OPTION type="choice" id="LEGEND_ORIENTATION" name="Orientation" index="0">vertical</OPTION>
+        <OPTION type="choice" id="LEGEND_TITLE" name="Title" index="0">data set</OPTION>
+        <OPTION type="text" id="LEGEND_TITLE_TEXT" name="User Defined">Title</OPTION>
+        <OPTION type="boolean" id="SHOW_ALWAYS" name="Show at all scales">true</OPTION>
+        <OPTION type="range" id="SHOW_RANGE" name="Scale Range">100; 1000</OPTION>
+        <OPTION type="choice" id="DISPLAY_OVERLAY" name="Overlay Mode" index="0">Transparency/Opacity</OPTION>
+        <OPTION type="double" id="DISPLAY_TRANSPARENCY" name="Transparency">0</OPTION>
+        <OPTION type="choice" id="COLORS_TYPE" name="Type" index="3">Graduated Colors</OPTION>
+        <OPTION type="color" id="SINGLE_COLOR" name="Color">R128 G128 B000</OPTION>
+        <OPTION type="static_table" id="LUT" name="Table">
+          <FIELDS>
+            <FIELD type="COLOR">Color</FIELD>
+            <FIELD type="STRING">Name</FIELD>
+            <FIELD type="STRING">Description</FIELD>
+            <FIELD type="DOUBLE">Minimum</FIELD>
+            <FIELD type="DOUBLE">Maximum</FIELD>
+          </FIELDS>
+          <RECORDS>
+            <RECORD>
+              <FIELD>35839</FIELD>
+              <FIELD>Class 1</FIELD>
+              <FIELD>First Class</FIELD>
+              <FIELD>0.000000</FIELD>
+              <FIELD>1.000000</FIELD>
+            </RECORD>
+            <RECORD>
+              <FIELD>14155795</FIELD>
+              <FIELD>Class 2</FIELD>
+              <FIELD>Second Class</FIELD>
+              <FIELD>1.000000</FIELD>
+              <FIELD>2.000000</FIELD>
+            </RECORD>
+          </RECORDS>
+        </OPTION>
+        <OPTION type="choice" id="LUT_RESAMPLING" name="Resampling" index="0">Nearest Neighbour</OPTION>
+        <OPTION type="colors" id="METRIC_COLORS" name="Colors">
+          <COLOR>R000 G001 B128</COLOR>
+          <COLOR>R000 G010 B176</COLOR>
+          <COLOR>R000 G079 B245</COLOR>
+          <COLOR>R001 G127 B255</COLOR>
+          <COLOR>R038 G217 B217</COLOR>
+          <COLOR>R128 G255 B128</COLOR>
+          <COLOR>R176 G245 B079</COLOR>
+          <COLOR>R245 G176 B010</COLOR>
+          <COLOR>R255 G128 B001</COLOR>
+          <COLOR>R217 G038 B000</COLOR>
+          <COLOR>R127 G001 B000</COLOR>
+        </OPTION>
+        <OPTION type="choice" id="STRETCH_DEFAULT" name="Adjustment" index="1">Standard Deviation</OPTION>
+        <OPTION type="range" id="STRETCH_LINEAR" name="Linear Percent Stretch">0; 100</OPTION>
+        <OPTION type="double" id="STRETCH_STDDEV" name="Standard Deviation">2</OPTION>
+        <OPTION type="boolean" id="STRETCH_INRANGE" name="Keep in Range">true</OPTION>
+        <OPTION type="range" id="STRETCH_PCTL" name="Percent Clip">1; 99</OPTION>
+        <OPTION type="range" id="METRIC_ZRANGE" name="Range">-1.2369653041889486; 0.7818683757739950</OPTION>
+        <OPTION type="choice" id="METRIC_SCALE_MODE" name="Scaling" index="0">linear intervals</OPTION>
+        <OPTION type="double" id="METRIC_SCALE_LOG" name="Geometric Interval Factor">1</OPTION>
+        <OPTION type="boolean" id="FILE_CACHE" name="File Cache">false</OPTION>
+        <OPTION type="text" id="OBJECT_Z_UNIT" name="Unit"/>
+        <OPTION type="double" id="OBJECT_Z_FACTOR" name="Scaling">1</OPTION>
+        <OPTION type="double" id="OBJECT_Z_OFFSET" name="Offset">0</OPTION>
+        <OPTION type="boolean" id="VALUES_SHOW" name="Show Cell Values">false</OPTION>
+        <OPTION type="font" id="VALUES_FONT" name="Font">
+          <COLOR>R000 G000 B000</COLOR>
+          <FONT>0;-12;0;0;0;400;0;0;0;0;3;2;1;34;Arial</FONT>
+        </OPTION>
+        <OPTION type="double" id="VALUES_SIZE" name="Size">15</OPTION>
+        <OPTION type="integer" id="VALUES_DECIMALS" name="Decimals">2</OPTION>
+        <OPTION type="choice" id="VALUES_EFFECT" name="Boundary Effect" index="1">full frame</OPTION>
+        <OPTION type="color" id="VALUES_EFFECT_COLOR" name="Color">R255 G255 B255</OPTION>
+        <OPTION type="choice" id="DISPLAY_RESAMPLING" name="Resampling" index="0">Nearest Neighbour</OPTION>
+        <OPTION type="grid_system" id="DISPLAY_ALPHA_GRIDSYSTEM" name="Grid system">
+          <CELLSIZE>0.1</CELLSIZE>
+          <XMIN>25</XMIN>
+          <YMIN>35</YMIN>
+          <XMAX>45</XMAX>
+          <YMAX>43</YMAX>
+        </OPTION>
+        <DATA type="grid" id="DISPLAY_ALPHA" name="Transparency Band">NOT SET</DATA>
+        <OPTION type="double" id="ALPHA_RANGE.MIN" name="Full Transparency">0</OPTION>
+        <OPTION type="double" id="ALPHA_RANGE.MAX" name="Full Opacity">0</OPTION>
+        <OPTION type="choice" id="DISPLAY_SHADING" name="Shading" index="0">none</OPTION>
+        <OPTION type="double" id="SHADING_AZIMUTH" name="Azimuth">315</OPTION>
+        <OPTION type="double" id="SHADING_HEIGHT" name="Height">45</OPTION>
+        <OPTION type="double" id="SHADING_EXAGG" name="Exaggeration">1</OPTION>
+        <OPTION type="double" id="SHADING_MIN" name="Minimum">0</OPTION>
+        <OPTION type="double" id="SHADING_MAX" name="Maximum">1.5</OPTION>
+        <OPTION type="boolean" id="RGB_ALPHA" name="Alpha Channel">false</OPTION>
+        <OPTION type="choice" id="OVERLAY_MODE" name="This Color" index="0">Red</OPTION>
+        <OPTION type="grid_system" id="OVERLAY_R_GRIDSYSTEM" name="Grid system">
+          <CELLSIZE>0.1</CELLSIZE>
+          <XMIN>25</XMIN>
+          <YMIN>35</YMIN>
+          <XMAX>45</XMAX>
+          <YMAX>43</YMAX>
+        </OPTION>
+        <DATA type="grid" id="OVERLAY_R" name="Red">NOT SET</DATA>
+        <OPTION type="grid_system" id="OVERLAY_G_GRIDSYSTEM" name="Grid system">
+          <CELLSIZE>0.1</CELLSIZE>
+          <XMIN>25</XMIN>
+          <YMIN>35</YMIN>
+          <XMAX>45</XMAX>
+          <YMAX>43</YMAX>
+        </OPTION>
+        <DATA type="grid" id="OVERLAY_G" name="Green">NOT SET</DATA>
+        <OPTION type="grid_system" id="OVERLAY_B_GRIDSYSTEM" name="Grid system">
+          <CELLSIZE>0.1</CELLSIZE>
+          <XMIN>25</XMIN>
+          <YMIN>35</YMIN>
+          <XMAX>45</XMAX>
+          <YMAX>43</YMAX>
+        </OPTION>
+        <DATA type="grid" id="OVERLAY_B" name="Blue">NOT SET</DATA>
+      </parameters>
+    </DATASET>
+    <DATASET dataset_id="17785380120000009" type="GRID">
+      <FILE>..\SPEI6.sg-grd-z</FILE>
+      <parameters name="метеостанции_Чумаков.SPEI6 [Inverse Distance Weighted]">
+        <OPTION type="text" id="OBJECT_NAME" name="Name">метеостанции_Чумаков.SPEI6 [Inverse Distance Weighted]</OPTION>
+        <OPTION type="long_text" id="OBJECT_DESC" name="Description"/>
+        <OPTION type="double" id="MAX_SAMPLES" name="Sample Size">100</OPTION>
+        <OPTION type="range" id="OBJECT_NODATA" name="Data Exclusion">-99999; -99999</OPTION>
+        <OPTION type="boolean" id="LEGEND_SHOW" name="Map Legends">true</OPTION>
+        <OPTION type="choice" id="LEGEND_ORIENTATION" name="Orientation" index="0">vertical</OPTION>
+        <OPTION type="choice" id="LEGEND_TITLE" name="Title" index="0">data set</OPTION>
+        <OPTION type="text" id="LEGEND_TITLE_TEXT" name="User Defined">Title</OPTION>
+        <OPTION type="boolean" id="SHOW_ALWAYS" name="Show at all scales">true</OPTION>
+        <OPTION type="range" id="SHOW_RANGE" name="Scale Range">100; 1000</OPTION>
+        <OPTION type="choice" id="DISPLAY_OVERLAY" name="Overlay Mode" index="0">Transparency/Opacity</OPTION>
+        <OPTION type="double" id="DISPLAY_TRANSPARENCY" name="Transparency">0</OPTION>
+        <OPTION type="choice" id="COLORS_TYPE" name="Type" index="3">Graduated Colors</OPTION>
+        <OPTION type="color" id="SINGLE_COLOR" name="Color">R000 G128 B128</OPTION>
+        <OPTION type="static_table" id="LUT" name="Table">
+          <FIELDS>
+            <FIELD type="COLOR">Color</FIELD>
+            <FIELD type="STRING">Name</FIELD>
+            <FIELD type="STRING">Description</FIELD>
+            <FIELD type="DOUBLE">Minimum</FIELD>
+            <FIELD type="DOUBLE">Maximum</FIELD>
+          </FIELDS>
+          <RECORDS>
+            <RECORD>
+              <FIELD>127</FIELD>
+              <FIELD>Class 1</FIELD>
+              <FIELD>First Class</FIELD>
+              <FIELD>0.000000</FIELD>
+              <FIELD>1.000000</FIELD>
+            </RECORD>
+            <RECORD>
+              <FIELD>3394304</FIELD>
+              <FIELD>Class 2</FIELD>
+              <FIELD>Second Class</FIELD>
+              <FIELD>1.000000</FIELD>
+              <FIELD>2.000000</FIELD>
+            </RECORD>
+          </RECORDS>
+        </OPTION>
+        <OPTION type="choice" id="LUT_RESAMPLING" name="Resampling" index="0">Nearest Neighbour</OPTION>
+        <OPTION type="colors" id="METRIC_COLORS" name="Colors">
+          <COLOR>R000 G001 B128</COLOR>
+          <COLOR>R000 G010 B176</COLOR>
+          <COLOR>R000 G079 B245</COLOR>
+          <COLOR>R001 G127 B255</COLOR>
+          <COLOR>R038 G217 B217</COLOR>
+          <COLOR>R128 G255 B128</COLOR>
+          <COLOR>R176 G245 B079</COLOR>
+          <COLOR>R245 G176 B010</COLOR>
+          <COLOR>R255 G128 B001</COLOR>
+          <COLOR>R217 G038 B000</COLOR>
+          <COLOR>R127 G001 B000</COLOR>
+        </OPTION>
+        <OPTION type="choice" id="STRETCH_DEFAULT" name="Adjustment" index="1">Standard Deviation</OPTION>
+        <OPTION type="range" id="STRETCH_LINEAR" name="Linear Percent Stretch">0; 100</OPTION>
+        <OPTION type="double" id="STRETCH_STDDEV" name="Standard Deviation">2</OPTION>
+        <OPTION type="boolean" id="STRETCH_INRANGE" name="Keep in Range">true</OPTION>
+        <OPTION type="range" id="STRETCH_PCTL" name="Percent Clip">1; 99</OPTION>
+        <OPTION type="range" id="METRIC_ZRANGE" name="Range">-1.9930815398643336; 0.9369559938073715</OPTION>
+        <OPTION type="choice" id="METRIC_SCALE_MODE" name="Scaling" index="0">linear intervals</OPTION>
+        <OPTION type="double" id="METRIC_SCALE_LOG" name="Geometric Interval Factor">1</OPTION>
+        <OPTION type="boolean" id="FILE_CACHE" name="File Cache">false</OPTION>
+        <OPTION type="text" id="OBJECT_Z_UNIT" name="Unit"/>
+        <OPTION type="double" id="OBJECT_Z_FACTOR" name="Scaling">1</OPTION>
+        <OPTION type="double" id="OBJECT_Z_OFFSET" name="Offset">0</OPTION>
+        <OPTION type="boolean" id="VALUES_SHOW" name="Show Cell Values">false</OPTION>
+        <OPTION type="font" id="VALUES_FONT" name="Font">
+          <COLOR>R000 G000 B000</COLOR>
+          <FONT>0;-12;0;0;0;400;0;0;0;0;3;2;1;34;Arial</FONT>
+        </OPTION>
+        <OPTION type="double" id="VALUES_SIZE" name="Size">15</OPTION>
+        <OPTION type="integer" id="VALUES_DECIMALS" name="Decimals">2</OPTION>
+        <OPTION type="choice" id="VALUES_EFFECT" name="Boundary Effect" index="1">full frame</OPTION>
+        <OPTION type="color" id="VALUES_EFFECT_COLOR" name="Color">R255 G255 B255</OPTION>
+        <OPTION type="choice" id="DISPLAY_RESAMPLING" name="Resampling" index="0">Nearest Neighbour</OPTION>
+        <OPTION type="grid_system" id="DISPLAY_ALPHA_GRIDSYSTEM" name="Grid system">
+          <CELLSIZE>0.1</CELLSIZE>
+          <XMIN>25</XMIN>
+          <YMIN>35</YMIN>
+          <XMAX>45</XMAX>
+          <YMAX>43</YMAX>
+        </OPTION>
+        <DATA type="grid" id="DISPLAY_ALPHA" name="Transparency Band">NOT SET</DATA>
+        <OPTION type="double" id="ALPHA_RANGE.MIN" name="Full Transparency">0</OPTION>
+        <OPTION type="double" id="ALPHA_RANGE.MAX" name="Full Opacity">0</OPTION>
+        <OPTION type="choice" id="DISPLAY_SHADING" name="Shading" index="0">none</OPTION>
+        <OPTION type="double" id="SHADING_AZIMUTH" name="Azimuth">315</OPTION>
+        <OPTION type="double" id="SHADING_HEIGHT" name="Height">45</OPTION>
+        <OPTION type="double" id="SHADING_EXAGG" name="Exaggeration">1</OPTION>
+        <OPTION type="double" id="SHADING_MIN" name="Minimum">0</OPTION>
+        <OPTION type="double" id="SHADING_MAX" name="Maximum">1.5</OPTION>
+        <OPTION type="boolean" id="RGB_ALPHA" name="Alpha Channel">false</OPTION>
+        <OPTION type="choice" id="OVERLAY_MODE" name="This Color" index="0">Red</OPTION>
+        <OPTION type="grid_system" id="OVERLAY_R_GRIDSYSTEM" name="Grid system">
+          <CELLSIZE>0.1</CELLSIZE>
+          <XMIN>25</XMIN>
+          <YMIN>35</YMIN>
+          <XMAX>45</XMAX>
+          <YMAX>43</YMAX>
+        </OPTION>
+        <DATA type="grid" id="OVERLAY_R" name="Red">NOT SET</DATA>
+        <OPTION type="grid_system" id="OVERLAY_G_GRIDSYSTEM" name="Grid system">
+          <CELLSIZE>0.1</CELLSIZE>
+          <XMIN>25</XMIN>
+          <YMIN>35</YMIN>
+          <XMAX>45</XMAX>
+          <YMAX>43</YMAX>
+        </OPTION>
+        <DATA type="grid" id="OVERLAY_G" name="Green">NOT SET</DATA>
+        <OPTION type="grid_system" id="OVERLAY_B_GRIDSYSTEM" name="Grid system">
+          <CELLSIZE>0.1</CELLSIZE>
+          <XMIN>25</XMIN>
+          <YMIN>35</YMIN>
+          <XMAX>45</XMAX>
+          <YMAX>43</YMAX>
+        </OPTION>
+        <DATA type="grid" id="OVERLAY_B" name="Blue">NOT SET</DATA>
+      </parameters>
+    </DATASET>
+  </DATA>
+  <MAPS>
+    <parameters name="Maps">
+      <OPTION type="boolean" id="THUMBNAILS" name="Thumbnails">true</OPTION>
+      <OPTION type="integer" id="THUMBNAIL_SIZE" name="Size">75</OPTION>
+      <OPTION type="color" id="THUMBNAIL_SELCOLOR" name="Selection Color">R160 G160 B160</OPTION>
+      <OPTION type="boolean" id="PREVIEW" name="Preview">false</OPTION>
+      <OPTION type="integer" id="PREVIEW_SIZE" name="Size">200</OPTION>
+      <OPTION type="integer" id="NUMBERING" name="Map Numeration">2</OPTION>
+      <OPTION type="choice" id="CROSSHAIR" name="Cross Hair" index="0">no</OPTION>
+      <OPTION type="integer" id="WHEEL_DELAY" name="Mouse Wheel Delay">100</OPTION>
+      <OPTION type="boolean" id="CACHE" name="Base Map Caching">false</OPTION>
+      <OPTION type="file" id="CACHE_DIR" name="Cache Directory"/>
+      <OPTION type="choice" id="NAMING" name="Naming" index="1">first added layer name</OPTION>
+      <OPTION type="integer" id="NAMING_LENGTH" name="Maximum Characters">64</OPTION>
+      <OPTION type="choice" id="BG_COLOR" name="Background Color" index="0">system</OPTION>
+      <OPTION type="color" id="BG_USER" name="User Defined">R255 G255 B255</OPTION>
+      <OPTION type="boolean" id="GOTO_NEWLAYER" name="Zoom to added layer">false</OPTION>
+      <OPTION type="boolean" id="CRS_CHECK" name="CRS Check">true</OPTION>
+      <OPTION type="boolean" id="SCALE_BAR" name="Scale Bar">false</OPTION>
+      <OPTION type="boolean" id="FRAME_SHOW" name="Frame">true</OPTION>
+      <OPTION type="integer" id="FRAME_WIDTH" name="Width">17</OPTION>
+      <OPTION type="double" id="3DVIEW_Z_SCALE" name="Exaggeration">1</OPTION>
+      <OPTION type="boolean" id="CLIP_ALPHA" name="Alpha Channel">false</OPTION>
+      <OPTION type="integer" id="CLIP_NX" name="Width">400</OPTION>
+      <OPTION type="integer" id="CLIP_NY" name="Height">400</OPTION>
+      <OPTION type="boolean" id="CLIP_FRAME_SHOW" name="Frame">true</OPTION>
+      <OPTION type="integer" id="CLIP_FRAME_WIDTH" name="Width">17</OPTION>
+      <OPTION type="double" id="CLIP_LEGEND_SCALE" name="Scale">2</OPTION>
+      <OPTION type="integer" id="CLIP_LEGEND_FRAME" name="Frame Width">10</OPTION>
+      <OPTION type="color" id="CLIP_LEGEND_COLOR" name="Border Color">R000 G000 B000</OPTION>
+    </parameters>
+    <MAP SHOWN="1">
+      <PROJECTION>
+        <WKT2>GEODCRS["WGS 84",DATUM["World Geodetic System 1984",ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]],ID["EPSG",6326]],PRIMEM["Greenwich",0,ANGLEUNIT["Degree",0.0174532925199433]],CS[ellipsoidal,2],AXIS["longitude",east,ORDER[1],ANGLEUNIT["Degree",0.0174532925199433]],AXIS["latitude",north,ORDER[2],ANGLEUNIT["Degree",0.0174532925199433]]]</WKT2>
+        <PROJ>+proj=longlat +datum=WGS84 +no_defs +type=crs</PROJ>
+        <CODE>-1</CODE>
+      </PROJECTION>
+      <XMIN>27.1667</XMIN>
+      <XMAX>43.3167</XMAX>
+      <YMIN>36.8167</YMIN>
+      <YMAX>41.2833</YMAX>
+      <parameters name="">
+        <OPTION type="text" id="NAME" name="Name"> 1. метеостанции_Чумаков</OPTION>
+        <OPTION type="choice" id="BG_COLOR" name="Background Color" index="0">system</OPTION>
+        <OPTION type="color" id="BG_USER" name="User Defined">R255 G255 B255</OPTION>
+        <OPTION type="boolean" id="GOTO_NEWLAYER" name="Zoom to Added Layer">false</OPTION>
+        <OPTION type="boolean" id="SYNC_MAPS" name="Synchronize Map Extents">false</OPTION>
+        <OPTION type="boolean" id="CRS_CHECK" name="CRS Check">true</OPTION>
+        <OPTION type="choice" id="GCS_POSITION" name="Display Coordinates" index="0">map coordinates</OPTION>
+        <OPTION type="boolean" id="SEL_EXTENT" name="Show Extent">false</OPTION>
+        <OPTION type="color" id="SEL_COLOUR" name="Colour">R222 G222 B222</OPTION>
+        <OPTION type="double" id="SEL_TRANSP" name="Transparency [%]">50</OPTION>
+        <OPTION type="boolean" id="FRAME_SHOW" name="Frame">true</OPTION>
+        <OPTION type="integer" id="FRAME_WIDTH" name="Size">17</OPTION>
+        <OPTION type="boolean" id="FRAME_SCALE" name="Scale">false</OPTION>
+        <OPTION type="boolean" id="NORTH_SHOW" name="North Arrow">false</OPTION>
+        <OPTION type="double" id="NORTH_ANGLE" name="Direction">0</OPTION>
+        <OPTION type="double" id="NORTH_SIZE" name="Size">5</OPTION>
+        <OPTION type="double" id="NORTH_OFFSET_X" name="Horizontal Offset">5</OPTION>
+        <OPTION type="double" id="NORTH_OFFSET_Y" name="Vertical Offset">90</OPTION>
+        <OPTION type="boolean" id="NORTH_EXTENT" name="Relate to Extent">false</OPTION>
+        <OPTION type="boolean" id="SCALE_SHOW" name="Scale Bar">false</OPTION>
+        <OPTION type="choice" id="SCALE_STYLE" name="Style" index="1">alternating scale bar</OPTION>
+        <OPTION type="choice" id="SCALE_UNIT" name="Unit" index="1">automatically</OPTION>
+        <OPTION type="double" id="SCALE_RESCALE" name="Rescaling">1</OPTION>
+        <OPTION type="double" id="SCALE_WIDTH" name="Width">40</OPTION>
+        <OPTION type="double" id="SCALE_HEIGHT" name="Height">4</OPTION>
+        <OPTION type="double" id="SCALE_OFFSET_X" name="Horizontal Offset">5</OPTION>
+        <OPTION type="double" id="SCALE_OFFSET_Y" name="Vertical Offset">7.5</OPTION>
+        <OPTION type="boolean" id="SCALE_EXTENT" name="Relate to Extent">false</OPTION>
+      </parameters>
+      <layout saga-version="9.11.1">
+        <general>
+          <orientation>landscape</orientation>
+          <paperformat>3</paperformat>
+          <parameters name="">
+            <OPTION type="integer" id="MAX_DPI" name="Maximum Resolution">300</OPTION>
+            <OPTION type="boolean" id="RASTER_SHOW" name="Show">true</OPTION>
+            <OPTION type="boolean" id="RASTER_ALIGN" name="Align">true</OPTION>
+            <OPTION type="integer" id="RASTER_SIZE" name="Size">5</OPTION>
+          </parameters>
+        </general>
+        <items>
+          <item name="map" type="0" show="1">
+            <parameters name="Properties">
+              <OPTION type="integer" id="POSITION_LEFT" name="Left">6</OPTION>
+              <OPTION type="integer" id="POSITION_TOP" name="Top">4</OPTION>
+              <OPTION type="integer" id="POSITION_RIGHT" name="Right">208</OPTION>
+              <OPTION type="integer" id="POSITION_BOTTOM" name="Bottom">189</OPTION>
+              <OPTION type="boolean" id="FRAME_SHOW" name="Frame">true</OPTION>
+              <OPTION type="integer" id="FRAME_SIZE" name="Size">5</OPTION>
+              <OPTION type="choice" id="FONT_USER" name="Font" index="0">system default</OPTION>
+              <OPTION type="font" id="FONT" name="User Defined">
+                <COLOR>R000 G000 B000</COLOR>
+                <FONT>0;-12;0;0;0;400;0;0;0;0;3;2;1;34;Arial</FONT>
+              </OPTION>
+              <OPTION type="boolean" id="SCALE_FIXED" name="Fixed Scale">false</OPTION>
+              <OPTION type="double" id="SCALE_NUMBER" name="Scale Number">10000</OPTION>
+            </parameters>
+          </item>
+          <item name="scalebar" type="1" show="1">
+            <parameters name="Properties">
+              <OPTION type="integer" id="POSITION_LEFT" name="Left">6</OPTION>
+              <OPTION type="integer" id="POSITION_TOP" name="Top">193</OPTION>
+              <OPTION type="integer" id="POSITION_RIGHT" name="Right">149</OPTION>
+              <OPTION type="integer" id="POSITION_BOTTOM" name="Bottom">199</OPTION>
+              <OPTION type="choice" id="STYLE" name="Style" index="1">alternating scale bar</OPTION>
+              <OPTION type="choice" id="UNIT" name="Unit" index="1">automatically</OPTION>
+              <OPTION type="choice" id="FONT_USER" name="Font" index="0">system default</OPTION>
+              <OPTION type="font" id="FONT" name="User Defined">
+                <COLOR>R000 G000 B000</COLOR>
+                <FONT>0;-12;0;0;0;400;0;0;0;0;3;2;1;34;Arial</FONT>
+              </OPTION>
+            </parameters>
+          </item>
+          <item name="scale" type="2" show="1">
+            <parameters name="Properties">
+              <OPTION type="integer" id="POSITION_LEFT" name="Left">163</OPTION>
+              <OPTION type="integer" id="POSITION_TOP" name="Top">193</OPTION>
+              <OPTION type="text" id="TEXT" name="Text">Scale</OPTION>
+              <OPTION type="font" id="FONT" name="Font">
+                <COLOR>R000 G000 B000</COLOR>
+                <FONT>0;-12;0;0;0;400;0;0;0;0;3;2;1;34;Arial</FONT>
+              </OPTION>
+              <OPTION type="integer" id="DECIMALS" name="Decimals">0</OPTION>
+            </parameters>
+          </item>
+          <item name="legend" type="3" show="1">
+            <parameters name="Properties">
+              <OPTION type="integer" id="POSITION_LEFT" name="Left">214</OPTION>
+              <OPTION type="integer" id="POSITION_TOP" name="Top">4</OPTION>
+              <OPTION type="integer" id="POSITION_RIGHT" name="Right">291</OPTION>
+              <OPTION type="integer" id="POSITION_BOTTOM" name="Bottom">199</OPTION>
+              <OPTION type="boolean" id="FILL" name="Fill">false</OPTION>
+              <OPTION type="color" id="FILL_RGB" name="Color">R255 G255 B255</OPTION>
+              <OPTION type="boolean" id="OUTLINE" name="Outline">false</OPTION>
+              <OPTION type="color" id="OUTLINE_RGB" name="Color">R000 G000 B000</OPTION>
+              <OPTION type="integer" id="OUTLINE_SIZE" name="Width">1</OPTION>
+              <OPTION type="integer" id="INFLATE" name="Distance">1</OPTION>
+              <OPTION type="font" id="FONT" name="Font">
+                <COLOR>R000 G000 B000</COLOR>
+                <FONT>0;-12;0;0;0;400;0;0;0;0;3;2;1;34;Arial</FONT>
+              </OPTION>
+            </parameters>
+          </item>
+        </items>
+      </layout>
+      <LAYERS>
+        <FILE dataset_id="17785380120000001">
+          <SHOW>true</SHOW>
+          <PROJECT>false</PROJECT>
+          <PROJECT_AREA>false</PROJECT_AREA>
+          <FITCOLORS>false</FITCOLORS>..\..\метеостанции_Чумаков.shp</FILE>
+      </LAYERS>
+    </MAP>
+    <MAP SHOWN="1">
+      <PROJECTION>
+        <WKT2>GEODCRS["WGS 84",DATUM["World Geodetic System 1984",ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]],ID["EPSG",6326]],PRIMEM["Greenwich",0,ANGLEUNIT["Degree",0.0174532925199433]],CS[ellipsoidal,2],AXIS["longitude",east,ORDER[1],ANGLEUNIT["Degree",0.0174532925199433]],AXIS["latitude",north,ORDER[2],ANGLEUNIT["Degree",0.0174532925199433]]]</WKT2>
+        <PROJ>+proj=longlat +datum=WGS84 +no_defs +type=crs</PROJ>
+        <CODE>-1</CODE>
+      </PROJECTION>
+      <XMIN>12.511602982292638</XMIN>
+      <XMAX>52.71160298229263</XMAX>
+      <YMIN>33.95340167753962</YMIN>
+      <YMAX>50.1534016775396</YMAX>
+      <parameters name="">
+        <OPTION type="text" id="NAME" name="Name"> 4. метеостанции_Чумаков.Os [Inverse Distance Weighted]</OPTION>
+        <OPTION type="choice" id="BG_COLOR" name="Background Color" index="0">system</OPTION>
+        <OPTION type="color" id="BG_USER" name="User Defined">R255 G255 B255</OPTION>
+        <OPTION type="boolean" id="GOTO_NEWLAYER" name="Zoom to Added Layer">false</OPTION>
+        <OPTION type="boolean" id="SYNC_MAPS" name="Synchronize Map Extents">false</OPTION>
+        <OPTION type="boolean" id="CRS_CHECK" name="CRS Check">true</OPTION>
+        <OPTION type="choice" id="GCS_POSITION" name="Display Coordinates" index="0">map coordinates</OPTION>
+        <OPTION type="boolean" id="SEL_EXTENT" name="Show Extent">false</OPTION>
+        <OPTION type="color" id="SEL_COLOUR" name="Colour">R222 G222 B222</OPTION>
+        <OPTION type="double" id="SEL_TRANSP" name="Transparency [%]">50</OPTION>
+        <OPTION type="boolean" id="FRAME_SHOW" name="Frame">true</OPTION>
+        <OPTION type="integer" id="FRAME_WIDTH" name="Size">17</OPTION>
+        <OPTION type="boolean" id="FRAME_SCALE" name="Scale">false</OPTION>
+        <OPTION type="boolean" id="NORTH_SHOW" name="North Arrow">false</OPTION>
+        <OPTION type="double" id="NORTH_ANGLE" name="Direction">0</OPTION>
+        <OPTION type="double" id="NORTH_SIZE" name="Size">5</OPTION>
+        <OPTION type="double" id="NORTH_OFFSET_X" name="Horizontal Offset">5</OPTION>
+        <OPTION type="double" id="NORTH_OFFSET_Y" name="Vertical Offset">90</OPTION>
+        <OPTION type="boolean" id="NORTH_EXTENT" name="Relate to Extent">false</OPTION>
+        <OPTION type="boolean" id="SCALE_SHOW" name="Scale Bar">false</OPTION>
+        <OPTION type="choice" id="SCALE_STYLE" name="Style" index="1">alternating scale bar</OPTION>
+        <OPTION type="choice" id="SCALE_UNIT" name="Unit" index="1">automatically</OPTION>
+        <OPTION type="double" id="SCALE_RESCALE" name="Rescaling">1</OPTION>
+        <OPTION type="double" id="SCALE_WIDTH" name="Width">40</OPTION>
+        <OPTION type="double" id="SCALE_HEIGHT" name="Height">4</OPTION>
+        <OPTION type="double" id="SCALE_OFFSET_X" name="Horizontal Offset">5</OPTION>
+        <OPTION type="double" id="SCALE_OFFSET_Y" name="Vertical Offset">7.5</OPTION>
+        <OPTION type="boolean" id="SCALE_EXTENT" name="Relate to Extent">false</OPTION>
+      </parameters>
+      <layout saga-version="9.11.1">
+        <general>
+          <orientation>landscape</orientation>
+          <paperformat>3</paperformat>
+          <parameters name="">
+            <OPTION type="integer" id="MAX_DPI" name="Maximum Resolution">300</OPTION>
+            <OPTION type="boolean" id="RASTER_SHOW" name="Show">true</OPTION>
+            <OPTION type="boolean" id="RASTER_ALIGN" name="Align">true</OPTION>
+            <OPTION type="integer" id="RASTER_SIZE" name="Size">5</OPTION>
+          </parameters>
+        </general>
+        <items>
+          <item name="map" type="0" show="1">
+            <parameters name="Properties">
+              <OPTION type="integer" id="POSITION_LEFT" name="Left">6</OPTION>
+              <OPTION type="integer" id="POSITION_TOP" name="Top">4</OPTION>
+              <OPTION type="integer" id="POSITION_RIGHT" name="Right">208</OPTION>
+              <OPTION type="integer" id="POSITION_BOTTOM" name="Bottom">189</OPTION>
+              <OPTION type="boolean" id="FRAME_SHOW" name="Frame">true</OPTION>
+              <OPTION type="integer" id="FRAME_SIZE" name="Size">5</OPTION>
+              <OPTION type="choice" id="FONT_USER" name="Font" index="0">system default</OPTION>
+              <OPTION type="font" id="FONT" name="User Defined">
+                <COLOR>R000 G000 B000</COLOR>
+                <FONT>0;-12;0;0;0;400;0;0;0;0;3;2;1;34;Arial</FONT>
+              </OPTION>
+              <OPTION type="boolean" id="SCALE_FIXED" name="Fixed Scale">false</OPTION>
+              <OPTION type="double" id="SCALE_NUMBER" name="Scale Number">10000</OPTION>
+            </parameters>
+          </item>
+          <item name="scalebar" type="1" show="1">
+            <parameters name="Properties">
+              <OPTION type="integer" id="POSITION_LEFT" name="Left">6</OPTION>
+              <OPTION type="integer" id="POSITION_TOP" name="Top">193</OPTION>
+              <OPTION type="integer" id="POSITION_RIGHT" name="Right">149</OPTION>
+              <OPTION type="integer" id="POSITION_BOTTOM" name="Bottom">199</OPTION>
+              <OPTION type="choice" id="STYLE" name="Style" index="1">alternating scale bar</OPTION>
+              <OPTION type="choice" id="UNIT" name="Unit" index="1">automatically</OPTION>
+              <OPTION type="choice" id="FONT_USER" name="Font" index="0">system default</OPTION>
+              <OPTION type="font" id="FONT" name="User Defined">
+                <COLOR>R000 G000 B000</COLOR>
+                <FONT>0;-12;0;0;0;400;0;0;0;0;3;2;1;34;Arial</FONT>
+              </OPTION>
+            </parameters>
+          </item>
+          <item name="scale" type="2" show="1">
+            <parameters name="Properties">
+              <OPTION type="integer" id="POSITION_LEFT" name="Left">163</OPTION>
+              <OPTION type="integer" id="POSITION_TOP" name="Top">193</OPTION>
+              <OPTION type="text" id="TEXT" name="Text">Scale</OPTION>
+              <OPTION type="font" id="FONT" name="Font">
+                <COLOR>R000 G000 B000</COLOR>
+                <FONT>0;-12;0;0;0;400;0;0;0;0;3;2;1;34;Arial</FONT>
+              </OPTION>
+              <OPTION type="integer" id="DECIMALS" name="Decimals">0</OPTION>
+            </parameters>
+          </item>
+          <item name="legend" type="3" show="1">
+            <parameters name="Properties">
+              <OPTION type="integer" id="POSITION_LEFT" name="Left">214</OPTION>
+              <OPTION type="integer" id="POSITION_TOP" name="Top">4</OPTION>
+              <OPTION type="integer" id="POSITION_RIGHT" name="Right">291</OPTION>
+              <OPTION type="integer" id="POSITION_BOTTOM" name="Bottom">199</OPTION>
+              <OPTION type="boolean" id="FILL" name="Fill">false</OPTION>
+              <OPTION type="color" id="FILL_RGB" name="Color">R255 G255 B255</OPTION>
+              <OPTION type="boolean" id="OUTLINE" name="Outline">false</OPTION>
+              <OPTION type="color" id="OUTLINE_RGB" name="Color">R000 G000 B000</OPTION>
+              <OPTION type="integer" id="OUTLINE_SIZE" name="Width">1</OPTION>
+              <OPTION type="integer" id="INFLATE" name="Distance">1</OPTION>
+              <OPTION type="font" id="FONT" name="Font">
+                <COLOR>R000 G000 B000</COLOR>
+                <FONT>0;-12;0;0;0;400;0;0;0;0;3;2;1;34;Arial</FONT>
+              </OPTION>
+            </parameters>
+          </item>
+        </items>
+      </layout>
+      <LAYERS>
+        <FILE dataset_id="17785380120000007">
+          <SHOW>true</SHOW>
+          <PROJECT>false</PROJECT>
+          <PROJECT_AREA>false</PROJECT_AREA>
+          <FITCOLORS>false</FITCOLORS>..\Os.sg-grd-z</FILE>
+        <FILE dataset_id="17785380120000003">
+          <SHOW>true</SHOW>
+          <PROJECT>false</PROJECT>
+          <PROJECT_AREA>false</PROJECT_AREA>
+          <FITCOLORS>false</FITCOLORS>..\Os_iso.shp</FILE>
+        <FILE dataset_id="17785380120000001">
+          <SHOW>true</SHOW>
+          <PROJECT>false</PROJECT>
+          <PROJECT_AREA>false</PROJECT_AREA>
+          <FITCOLORS>false</FITCOLORS>..\..\метеостанции_Чумаков.shp</FILE>
+      </LAYERS>
+    </MAP>
+    <MAP SHOWN="0">
+      <PROJECTION>
+        <WKT2>GEODCRS["WGS 84",DATUM["World Geodetic System 1984",ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]],ID["EPSG",6326]],PRIMEM["Greenwich",0,ANGLEUNIT["Degree",0.0174532925199433]],CS[ellipsoidal,2],AXIS["longitude",east,ORDER[1],ANGLEUNIT["Degree",0.0174532925199433]],AXIS["latitude",north,ORDER[2],ANGLEUNIT["Degree",0.0174532925199433]]]</WKT2>
+        <PROJ>+proj=longlat +datum=WGS84 +no_defs +type=crs</PROJ>
+        <CODE>-1</CODE>
+      </PROJECTION>
+      <XMIN>33.055771059189347</XMIN>
+      <XMAX>38.3843544623746</XMAX>
+      <YMIN>33.48044290446886</YMIN>
+      <YMAX>45.28530459767926</YMAX>
+      <parameters name="">
+        <OPTION type="text" id="NAME" name="Name"> 5. метеостанции_Чумаков.SPEI3 [Inverse Distance Weighted]</OPTION>
+        <OPTION type="choice" id="BG_COLOR" name="Background Color" index="0">system</OPTION>
+        <OPTION type="color" id="BG_USER" name="User Defined">R255 G255 B255</OPTION>
+        <OPTION type="boolean" id="GOTO_NEWLAYER" name="Zoom to Added Layer">false</OPTION>
+        <OPTION type="boolean" id="SYNC_MAPS" name="Synchronize Map Extents">false</OPTION>
+        <OPTION type="boolean" id="CRS_CHECK" name="CRS Check">true</OPTION>
+        <OPTION type="choice" id="GCS_POSITION" name="Display Coordinates" index="0">map coordinates</OPTION>
+        <OPTION type="boolean" id="SEL_EXTENT" name="Show Extent">false</OPTION>
+        <OPTION type="color" id="SEL_COLOUR" name="Colour">R222 G222 B222</OPTION>
+        <OPTION type="double" id="SEL_TRANSP" name="Transparency [%]">50</OPTION>
+        <OPTION type="boolean" id="FRAME_SHOW" name="Frame">true</OPTION>
+        <OPTION type="integer" id="FRAME_WIDTH" name="Size">17</OPTION>
+        <OPTION type="boolean" id="FRAME_SCALE" name="Scale">false</OPTION>
+        <OPTION type="boolean" id="NORTH_SHOW" name="North Arrow">false</OPTION>
+        <OPTION type="double" id="NORTH_ANGLE" name="Direction">0</OPTION>
+        <OPTION type="double" id="NORTH_SIZE" name="Size">5</OPTION>
+        <OPTION type="double" id="NORTH_OFFSET_X" name="Horizontal Offset">5</OPTION>
+        <OPTION type="double" id="NORTH_OFFSET_Y" name="Vertical Offset">90</OPTION>
+        <OPTION type="boolean" id="NORTH_EXTENT" name="Relate to Extent">false</OPTION>
+        <OPTION type="boolean" id="SCALE_SHOW" name="Scale Bar">false</OPTION>
+        <OPTION type="choice" id="SCALE_STYLE" name="Style" index="1">alternating scale bar</OPTION>
+        <OPTION type="choice" id="SCALE_UNIT" name="Unit" index="1">automatically</OPTION>
+        <OPTION type="double" id="SCALE_RESCALE" name="Rescaling">1</OPTION>
+        <OPTION type="double" id="SCALE_WIDTH" name="Width">40</OPTION>
+        <OPTION type="double" id="SCALE_HEIGHT" name="Height">4</OPTION>
+        <OPTION type="double" id="SCALE_OFFSET_X" name="Horizontal Offset">5</OPTION>
+        <OPTION type="double" id="SCALE_OFFSET_Y" name="Vertical Offset">7.5</OPTION>
+        <OPTION type="boolean" id="SCALE_EXTENT" name="Relate to Extent">false</OPTION>
+      </parameters>
+      <layout saga-version="9.11.1">
+        <general>
+          <orientation>landscape</orientation>
+          <paperformat>3</paperformat>
+          <parameters name="">
+            <OPTION type="integer" id="MAX_DPI" name="Maximum Resolution">300</OPTION>
+            <OPTION type="boolean" id="RASTER_SHOW" name="Show">true</OPTION>
+            <OPTION type="boolean" id="RASTER_ALIGN" name="Align">true</OPTION>
+            <OPTION type="integer" id="RASTER_SIZE" name="Size">5</OPTION>
+          </parameters>
+        </general>
+        <items>
+          <item name="map" type="0" show="1">
+            <parameters name="Properties">
+              <OPTION type="integer" id="POSITION_LEFT" name="Left">6</OPTION>
+              <OPTION type="integer" id="POSITION_TOP" name="Top">4</OPTION>
+              <OPTION type="integer" id="POSITION_RIGHT" name="Right">208</OPTION>
+              <OPTION type="integer" id="POSITION_BOTTOM" name="Bottom">189</OPTION>
+              <OPTION type="boolean" id="FRAME_SHOW" name="Frame">true</OPTION>
+              <OPTION type="integer" id="FRAME_SIZE" name="Size">5</OPTION>
+              <OPTION type="choice" id="FONT_USER" name="Font" index="0">system default</OPTION>
+              <OPTION type="font" id="FONT" name="User Defined">
+                <COLOR>R000 G000 B000</COLOR>
+                <FONT>0;-12;0;0;0;400;0;0;0;0;3;2;1;34;Arial</FONT>
+              </OPTION>
+              <OPTION type="boolean" id="SCALE_FIXED" name="Fixed Scale">false</OPTION>
+              <OPTION type="double" id="SCALE_NUMBER" name="Scale Number">10000</OPTION>
+            </parameters>
+          </item>
+          <item name="scalebar" type="1" show="1">
+            <parameters name="Properties">
+              <OPTION type="integer" id="POSITION_LEFT" name="Left">6</OPTION>
+              <OPTION type="integer" id="POSITION_TOP" name="Top">193</OPTION>
+              <OPTION type="integer" id="POSITION_RIGHT" name="Right">149</OPTION>
+              <OPTION type="integer" id="POSITION_BOTTOM" name="Bottom">199</OPTION>
+              <OPTION type="choice" id="STYLE" name="Style" index="1">alternating scale bar</OPTION>
+              <OPTION type="choice" id="UNIT" name="Unit" index="1">automatically</OPTION>
+              <OPTION type="choice" id="FONT_USER" name="Font" index="0">system default</OPTION>
+              <OPTION type="font" id="FONT" name="User Defined">
+                <COLOR>R000 G000 B000</COLOR>
+                <FONT>0;-12;0;0;0;400;0;0;0;0;3;2;1;34;Arial</FONT>
+              </OPTION>
+            </parameters>
+          </item>
+          <item name="scale" type="2" show="1">
+            <parameters name="Properties">
+              <OPTION type="integer" id="POSITION_LEFT" name="Left">163</OPTION>
+              <OPTION type="integer" id="POSITION_TOP" name="Top">193</OPTION>
+              <OPTION type="text" id="TEXT" name="Text">Scale</OPTION>
+              <OPTION type="font" id="FONT" name="Font">
+                <COLOR>R000 G000 B000</COLOR>
+                <FONT>0;-12;0;0;0;400;0;0;0;0;3;2;1;34;Arial</FONT>
+              </OPTION>
+              <OPTION type="integer" id="DECIMALS" name="Decimals">0</OPTION>
+            </parameters>
+          </item>
+          <item name="legend" type="3" show="1">
+            <parameters name="Properties">
+              <OPTION type="integer" id="POSITION_LEFT" name="Left">214</OPTION>
+              <OPTION type="integer" id="POSITION_TOP" name="Top">4</OPTION>
+              <OPTION type="integer" id="POSITION_RIGHT" name="Right">291</OPTION>
+              <OPTION type="integer" id="POSITION_BOTTOM" name="Bottom">199</OPTION>
+              <OPTION type="boolean" id="FILL" name="Fill">false</OPTION>
+              <OPTION type="color" id="FILL_RGB" name="Color">R255 G255 B255</OPTION>
+              <OPTION type="boolean" id="OUTLINE" name="Outline">false</OPTION>
+              <OPTION type="color" id="OUTLINE_RGB" name="Color">R000 G000 B000</OPTION>
+              <OPTION type="integer" id="OUTLINE_SIZE" name="Width">1</OPTION>
+              <OPTION type="integer" id="INFLATE" name="Distance">1</OPTION>
+              <OPTION type="font" id="FONT" name="Font">
+                <COLOR>R000 G000 B000</COLOR>
+                <FONT>0;-12;0;0;0;400;0;0;0;0;3;2;1;34;Arial</FONT>
+              </OPTION>
+            </parameters>
+          </item>
+        </items>
+      </layout>
+      <LAYERS>
+        <FILE dataset_id="17785380120000008">
+          <SHOW>true</SHOW>
+          <PROJECT>false</PROJECT>
+          <PROJECT_AREA>false</PROJECT_AREA>
+          <FITCOLORS>false</FITCOLORS>..\SPEI3.sg-grd-z</FILE>
+        <FILE dataset_id="17785380120000004">
+          <SHOW>true</SHOW>
+          <PROJECT>false</PROJECT>
+          <PROJECT_AREA>false</PROJECT_AREA>
+          <FITCOLORS>false</FITCOLORS>..\SPEI3_iso.shp</FILE>
+        <FILE dataset_id="17785380120000001">
+          <SHOW>true</SHOW>
+          <PROJECT>false</PROJECT>
+          <PROJECT_AREA>false</PROJECT_AREA>
+          <FITCOLORS>false</FITCOLORS>..\..\метеостанции_Чумаков.shp</FILE>
+      </LAYERS>
+    </MAP>
+    <MAP SHOWN="0">
+      <PROJECTION>
+        <WKT2>GEODCRS["WGS 84",DATUM["World Geodetic System 1984",ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]],ID["EPSG",6326]],PRIMEM["Greenwich",0,ANGLEUNIT["Degree",0.0174532925199433]],CS[ellipsoidal,2],AXIS["longitude",east,ORDER[1],ANGLEUNIT["Degree",0.0174532925199433]],AXIS["latitude",north,ORDER[2],ANGLEUNIT["Degree",0.0174532925199433]]]</WKT2>
+        <PROJ>+proj=longlat +datum=WGS84 +no_defs +type=crs</PROJ>
+        <CODE>-1</CODE>
+      </PROJECTION>
+      <XMIN>31.04344009304926</XMIN>
+      <XMAX>38.96213246522025</XMAX>
+      <YMIN>30.97695276711046</YMIN>
+      <YMAX>46.10670968244993</YMAX>
+      <parameters name="">
+        <OPTION type="text" id="NAME" name="Name"> 6. метеостанции_Чумаков.Tem [Inverse Distance Weighted]</OPTION>
+        <OPTION type="choice" id="BG_COLOR" name="Background Color" index="0">system</OPTION>
+        <OPTION type="color" id="BG_USER" name="User Defined">R255 G255 B255</OPTION>
+        <OPTION type="boolean" id="GOTO_NEWLAYER" name="Zoom to Added Layer">false</OPTION>
+        <OPTION type="boolean" id="SYNC_MAPS" name="Synchronize Map Extents">false</OPTION>
+        <OPTION type="boolean" id="CRS_CHECK" name="CRS Check">true</OPTION>
+        <OPTION type="choice" id="GCS_POSITION" name="Display Coordinates" index="0">map coordinates</OPTION>
+        <OPTION type="boolean" id="SEL_EXTENT" name="Show Extent">false</OPTION>
+        <OPTION type="color" id="SEL_COLOUR" name="Colour">R222 G222 B222</OPTION>
+        <OPTION type="double" id="SEL_TRANSP" name="Transparency [%]">50</OPTION>
+        <OPTION type="boolean" id="FRAME_SHOW" name="Frame">true</OPTION>
+        <OPTION type="integer" id="FRAME_WIDTH" name="Size">17</OPTION>
+        <OPTION type="boolean" id="FRAME_SCALE" name="Scale">false</OPTION>
+        <OPTION type="boolean" id="NORTH_SHOW" name="North Arrow">false</OPTION>
+        <OPTION type="double" id="NORTH_ANGLE" name="Direction">0</OPTION>
+        <OPTION type="double" id="NORTH_SIZE" name="Size">5</OPTION>
+        <OPTION type="double" id="NORTH_OFFSET_X" name="Horizontal Offset">5</OPTION>
+        <OPTION type="double" id="NORTH_OFFSET_Y" name="Vertical Offset">90</OPTION>
+        <OPTION type="boolean" id="NORTH_EXTENT" name="Relate to Extent">false</OPTION>
+        <OPTION type="boolean" id="SCALE_SHOW" name="Scale Bar">false</OPTION>
+        <OPTION type="choice" id="SCALE_STYLE" name="Style" index="1">alternating scale bar</OPTION>
+        <OPTION type="choice" id="SCALE_UNIT" name="Unit" index="1">automatically</OPTION>
+        <OPTION type="double" id="SCALE_RESCALE" name="Rescaling">1</OPTION>
+        <OPTION type="double" id="SCALE_WIDTH" name="Width">40</OPTION>
+        <OPTION type="double" id="SCALE_HEIGHT" name="Height">4</OPTION>
+        <OPTION type="double" id="SCALE_OFFSET_X" name="Horizontal Offset">5</OPTION>
+        <OPTION type="double" id="SCALE_OFFSET_Y" name="Vertical Offset">7.5</OPTION>
+        <OPTION type="boolean" id="SCALE_EXTENT" name="Relate to Extent">false</OPTION>
+      </parameters>
+      <layout saga-version="9.11.1">
+        <general>
+          <orientation>landscape</orientation>
+          <paperformat>3</paperformat>
+          <parameters name="">
+            <OPTION type="integer" id="MAX_DPI" name="Maximum Resolution">300</OPTION>
+            <OPTION type="boolean" id="RASTER_SHOW" name="Show">true</OPTION>
+            <OPTION type="boolean" id="RASTER_ALIGN" name="Align">true</OPTION>
+            <OPTION type="integer" id="RASTER_SIZE" name="Size">5</OPTION>
+          </parameters>
+        </general>
+        <items>
+          <item name="map" type="0" show="1">
+            <parameters name="Properties">
+              <OPTION type="integer" id="POSITION_LEFT" name="Left">6</OPTION>
+              <OPTION type="integer" id="POSITION_TOP" name="Top">4</OPTION>
+              <OPTION type="integer" id="POSITION_RIGHT" name="Right">208</OPTION>
+              <OPTION type="integer" id="POSITION_BOTTOM" name="Bottom">189</OPTION>
+              <OPTION type="boolean" id="FRAME_SHOW" name="Frame">true</OPTION>
+              <OPTION type="integer" id="FRAME_SIZE" name="Size">5</OPTION>
+              <OPTION type="choice" id="FONT_USER" name="Font" index="0">system default</OPTION>
+              <OPTION type="font" id="FONT" name="User Defined">
+                <COLOR>R000 G000 B000</COLOR>
+                <FONT>0;-12;0;0;0;400;0;0;0;0;3;2;1;34;Arial</FONT>
+              </OPTION>
+              <OPTION type="boolean" id="SCALE_FIXED" name="Fixed Scale">false</OPTION>
+              <OPTION type="double" id="SCALE_NUMBER" name="Scale Number">10000</OPTION>
+            </parameters>
+          </item>
+          <item name="scalebar" type="1" show="1">
+            <parameters name="Properties">
+              <OPTION type="integer" id="POSITION_LEFT" name="Left">6</OPTION>
+              <OPTION type="integer" id="POSITION_TOP" name="Top">193</OPTION>
+              <OPTION type="integer" id="POSITION_RIGHT" name="Right">149</OPTION>
+              <OPTION type="integer" id="POSITION_BOTTOM" name="Bottom">199</OPTION>
+              <OPTION type="choice" id="STYLE" name="Style" index="1">alternating scale bar</OPTION>
+              <OPTION type="choice" id="UNIT" name="Unit" index="1">automatically</OPTION>
+              <OPTION type="choice" id="FONT_USER" name="Font" index="0">system default</OPTION>
+              <OPTION type="font" id="FONT" name="User Defined">
+                <COLOR>R000 G000 B000</COLOR>
+                <FONT>0;-12;0;0;0;400;0;0;0;0;3;2;1;34;Arial</FONT>
+              </OPTION>
+            </parameters>
+          </item>
+          <item name="scale" type="2" show="1">
+            <parameters name="Properties">
+              <OPTION type="integer" id="POSITION_LEFT" name="Left">163</OPTION>
+              <OPTION type="integer" id="POSITION_TOP" name="Top">193</OPTION>
+              <OPTION type="text" id="TEXT" name="Text">Scale</OPTION>
+              <OPTION type="font" id="FONT" name="Font">
+                <COLOR>R000 G000 B000</COLOR>
+                <FONT>0;-12;0;0;0;400;0;0;0;0;3;2;1;34;Arial</FONT>
+              </OPTION>
+              <OPTION type="integer" id="DECIMALS" name="Decimals">0</OPTION>
+            </parameters>
+          </item>
+          <item name="legend" type="3" show="1">
+            <parameters name="Properties">
+              <OPTION type="integer" id="POSITION_LEFT" name="Left">214</OPTION>
+              <OPTION type="integer" id="POSITION_TOP" name="Top">4</OPTION>
+              <OPTION type="integer" id="POSITION_RIGHT" name="Right">291</OPTION>
+              <OPTION type="integer" id="POSITION_BOTTOM" name="Bottom">199</OPTION>
+              <OPTION type="boolean" id="FILL" name="Fill">false</OPTION>
+              <OPTION type="color" id="FILL_RGB" name="Color">R255 G255 B255</OPTION>
+              <OPTION type="boolean" id="OUTLINE" name="Outline">false</OPTION>
+              <OPTION type="color" id="OUTLINE_RGB" name="Color">R000 G000 B000</OPTION>
+              <OPTION type="integer" id="OUTLINE_SIZE" name="Width">1</OPTION>
+              <OPTION type="integer" id="INFLATE" name="Distance">1</OPTION>
+              <OPTION type="font" id="FONT" name="Font">
+                <COLOR>R000 G000 B000</COLOR>
+                <FONT>0;-12;0;0;0;400;0;0;0;0;3;2;1;34;Arial</FONT>
+              </OPTION>
+            </parameters>
+          </item>
+        </items>
+      </layout>
+      <LAYERS>
+        <FILE dataset_id="17785380120000006">
+          <SHOW>true</SHOW>
+          <PROJECT>false</PROJECT>
+          <PROJECT_AREA>false</PROJECT_AREA>
+          <FITCOLORS>false</FITCOLORS>..\Tem.sg-grd-z</FILE>
+        <FILE dataset_id="17785380120000002">
+          <SHOW>true</SHOW>
+          <PROJECT>false</PROJECT>
+          <PROJECT_AREA>false</PROJECT_AREA>
+          <FITCOLORS>false</FITCOLORS>..\Tem_iso.shp</FILE>
+        <FILE dataset_id="17785380120000001">
+          <SHOW>true</SHOW>
+          <PROJECT>false</PROJECT>
+          <PROJECT_AREA>false</PROJECT_AREA>
+          <FITCOLORS>false</FITCOLORS>..\..\метеостанции_Чумаков.shp</FILE>
+      </LAYERS>
+    </MAP>
+    <MAP SHOWN="1">
+      <PROJECTION>
+        <WKT2>GEODCRS["WGS 84",DATUM["World Geodetic System 1984",ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]],ID["EPSG",6326]],PRIMEM["Greenwich",0,ANGLEUNIT["Degree",0.0174532925199433]],CS[ellipsoidal,2],AXIS["longitude",east,ORDER[1],ANGLEUNIT["Degree",0.0174532925199433]],AXIS["latitude",north,ORDER[2],ANGLEUNIT["Degree",0.0174532925199433]]]</WKT2>
+        <PROJ>+proj=longlat +datum=WGS84 +no_defs +type=crs</PROJ>
+        <CODE>-1</CODE>
+      </PROJECTION>
+      <XMIN>24.95</XMIN>
+      <XMAX>45.05</XMAX>
+      <YMIN>34.95</YMIN>
+      <YMAX>43.05</YMAX>
+      <parameters name="">
+        <OPTION type="text" id="NAME" name="Name"> 7. метеостанции_Чумаков.SPEI6 [Inverse Distance Weighted]</OPTION>
+        <OPTION type="choice" id="BG_COLOR" name="Background Color" index="0">system</OPTION>
+        <OPTION type="color" id="BG_USER" name="User Defined">R255 G255 B255</OPTION>
+        <OPTION type="boolean" id="GOTO_NEWLAYER" name="Zoom to Added Layer">false</OPTION>
+        <OPTION type="boolean" id="SYNC_MAPS" name="Synchronize Map Extents">false</OPTION>
+        <OPTION type="boolean" id="CRS_CHECK" name="CRS Check">true</OPTION>
+        <OPTION type="choice" id="GCS_POSITION" name="Display Coordinates" index="0">map coordinates</OPTION>
+        <OPTION type="boolean" id="SEL_EXTENT" name="Show Extent">false</OPTION>
+        <OPTION type="color" id="SEL_COLOUR" name="Colour">R222 G222 B222</OPTION>
+        <OPTION type="double" id="SEL_TRANSP" name="Transparency [%]">50</OPTION>
+        <OPTION type="boolean" id="FRAME_SHOW" name="Frame">true</OPTION>
+        <OPTION type="integer" id="FRAME_WIDTH" name="Size">17</OPTION>
+        <OPTION type="boolean" id="FRAME_SCALE" name="Scale">false</OPTION>
+        <OPTION type="boolean" id="NORTH_SHOW" name="North Arrow">false</OPTION>
+        <OPTION type="double" id="NORTH_ANGLE" name="Direction">0</OPTION>
+        <OPTION type="double" id="NORTH_SIZE" name="Size">5</OPTION>
+        <OPTION type="double" id="NORTH_OFFSET_X" name="Horizontal Offset">5</OPTION>
+        <OPTION type="double" id="NORTH_OFFSET_Y" name="Vertical Offset">90</OPTION>
+        <OPTION type="boolean" id="NORTH_EXTENT" name="Relate to Extent">false</OPTION>
+        <OPTION type="boolean" id="SCALE_SHOW" name="Scale Bar">false</OPTION>
+        <OPTION type="choice" id="SCALE_STYLE" name="Style" index="1">alternating scale bar</OPTION>
+        <OPTION type="choice" id="SCALE_UNIT" name="Unit" index="1">automatically</OPTION>
+        <OPTION type="double" id="SCALE_RESCALE" name="Rescaling">1</OPTION>
+        <OPTION type="double" id="SCALE_WIDTH" name="Width">40</OPTION>
+        <OPTION type="double" id="SCALE_HEIGHT" name="Height">4</OPTION>
+        <OPTION type="double" id="SCALE_OFFSET_X" name="Horizontal Offset">5</OPTION>
+        <OPTION type="double" id="SCALE_OFFSET_Y" name="Vertical Offset">7.5</OPTION>
+        <OPTION type="boolean" id="SCALE_EXTENT" name="Relate to Extent">false</OPTION>
+      </parameters>
+      <layout saga-version="9.11.1">
+        <general>
+          <orientation>landscape</orientation>
+          <paperformat>3</paperformat>
+          <parameters name="">
+            <OPTION type="integer" id="MAX_DPI" name="Maximum Resolution">300</OPTION>
+            <OPTION type="boolean" id="RASTER_SHOW" name="Show">true</OPTION>
+            <OPTION type="boolean" id="RASTER_ALIGN" name="Align">true</OPTION>
+            <OPTION type="integer" id="RASTER_SIZE" name="Size">5</OPTION>
+          </parameters>
+        </general>
+        <items>
+          <item name="map" type="0" show="1">
+            <parameters name="Properties">
+              <OPTION type="integer" id="POSITION_LEFT" name="Left">6</OPTION>
+              <OPTION type="integer" id="POSITION_TOP" name="Top">4</OPTION>
+              <OPTION type="integer" id="POSITION_RIGHT" name="Right">208</OPTION>
+              <OPTION type="integer" id="POSITION_BOTTOM" name="Bottom">189</OPTION>
+              <OPTION type="boolean" id="FRAME_SHOW" name="Frame">true</OPTION>
+              <OPTION type="integer" id="FRAME_SIZE" name="Size">5</OPTION>
+              <OPTION type="choice" id="FONT_USER" name="Font" index="0">system default</OPTION>
+              <OPTION type="font" id="FONT" name="User Defined">
+                <COLOR>R000 G000 B000</COLOR>
+                <FONT>0;-12;0;0;0;400;0;0;0;0;3;2;1;34;Arial</FONT>
+              </OPTION>
+              <OPTION type="boolean" id="SCALE_FIXED" name="Fixed Scale">false</OPTION>
+              <OPTION type="double" id="SCALE_NUMBER" name="Scale Number">10000</OPTION>
+            </parameters>
+          </item>
+          <item name="scalebar" type="1" show="1">
+            <parameters name="Properties">
+              <OPTION type="integer" id="POSITION_LEFT" name="Left">6</OPTION>
+              <OPTION type="integer" id="POSITION_TOP" name="Top">193</OPTION>
+              <OPTION type="integer" id="POSITION_RIGHT" name="Right">149</OPTION>
+              <OPTION type="integer" id="POSITION_BOTTOM" name="Bottom">199</OPTION>
+              <OPTION type="choice" id="STYLE" name="Style" index="1">alternating scale bar</OPTION>
+              <OPTION type="choice" id="UNIT" name="Unit" index="1">automatically</OPTION>
+              <OPTION type="choice" id="FONT_USER" name="Font" index="0">system default</OPTION>
+              <OPTION type="font" id="FONT" name="User Defined">
+                <COLOR>R000 G000 B000</COLOR>
+                <FONT>0;-12;0;0;0;400;0;0;0;0;3;2;1;34;Arial</FONT>
+              </OPTION>
+            </parameters>
+          </item>
+          <item name="scale" type="2" show="1">
+            <parameters name="Properties">
+              <OPTION type="integer" id="POSITION_LEFT" name="Left">163</OPTION>
+              <OPTION type="integer" id="POSITION_TOP" name="Top">193</OPTION>
+              <OPTION type="text" id="TEXT" name="Text">Scale</OPTION>
+              <OPTION type="font" id="FONT" name="Font">
+                <COLOR>R000 G000 B000</COLOR>
+                <FONT>0;-12;0;0;0;400;0;0;0;0;3;2;1;34;Arial</FONT>
+              </OPTION>
+              <OPTION type="integer" id="DECIMALS" name="Decimals">0</OPTION>
+            </parameters>
+          </item>
+          <item name="legend" type="3" show="1">
+            <parameters name="Properties">
+              <OPTION type="integer" id="POSITION_LEFT" name="Left">214</OPTION>
+              <OPTION type="integer" id="POSITION_TOP" name="Top">4</OPTION>
+              <OPTION type="integer" id="POSITION_RIGHT" name="Right">291</OPTION>
+              <OPTION type="integer" id="POSITION_BOTTOM" name="Bottom">199</OPTION>
+              <OPTION type="boolean" id="FILL" name="Fill">false</OPTION>
+              <OPTION type="color" id="FILL_RGB" name="Color">R255 G255 B255</OPTION>
+              <OPTION type="boolean" id="OUTLINE" name="Outline">false</OPTION>
+              <OPTION type="color" id="OUTLINE_RGB" name="Color">R000 G000 B000</OPTION>
+              <OPTION type="integer" id="OUTLINE_SIZE" name="Width">1</OPTION>
+              <OPTION type="integer" id="INFLATE" name="Distance">1</OPTION>
+              <OPTION type="font" id="FONT" name="Font">
+                <COLOR>R000 G000 B000</COLOR>
+                <FONT>0;-12;0;0;0;400;0;0;0;0;3;2;1;34;Arial</FONT>
+              </OPTION>
+            </parameters>
+          </item>
+        </items>
+      </layout>
+      <LAYERS>
+        <FILE dataset_id="17785380120000009">
+          <SHOW>true</SHOW>
+          <PROJECT>false</PROJECT>
+          <PROJECT_AREA>false</PROJECT_AREA>
+          <FITCOLORS>false</FITCOLORS>..\SPEI6.sg-grd-z</FILE>
+        <FILE dataset_id="17785380120000005">
+          <SHOW>true</SHOW>
+          <PROJECT>false</PROJECT>
+          <PROJECT_AREA>false</PROJECT_AREA>
+          <FITCOLORS>false</FITCOLORS>..\SPEI6.shp</FILE>
+        <FILE dataset_id="17785380120000001">
+          <SHOW>true</SHOW>
+          <PROJECT>false</PROJECT>
+          <PROJECT_AREA>false</PROJECT_AREA>
+          <FITCOLORS>false</FITCOLORS>..\..\метеостанции_Чумаков.shp</FILE>
+      </LAYERS>
+    </MAP>
+  </MAPS>
+</SAGA_PROJECT>

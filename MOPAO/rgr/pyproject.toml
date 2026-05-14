@@ -1,0 +1,16 @@
+[project]
+name = "rgr"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "ipykernel>=7.1.0",
+    "matplotlib>=3.10.8",
+    "nbclient>=0.10.2",
+    "nbformat>=5.10.4",
+    "networkx>=3.6.0",
+    "numpy>=2.4.4",
+    "scikit-fuzzy>=0.5.0",
+    "scipy>=1.16.3",
+]

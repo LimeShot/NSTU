@@ -1,0 +1,15 @@
+﻿parameter;value
+source_file;f96feb3a-6586-4e1b-bb8a-2d0eeaf94b0e.gz
+station_period;2020-01-01 — 2026-01-01
+observations;16292
+daily_rows_with_data;2046
+decade_rows_with_data;204
+monthly_rows_with_data;69
+missing_intervals;2
+aggregation_temperature;mean
+aggregation_humidity;mean
+aggregation_precipitation;sum
+aggregation_evaporation;sum
+SPI_SPEI_window;3 months
+SPI_SPEI_note;"calculated on continuous monthly index; values after long gaps stay blank until 3 consecutive months exist"
+GTK_rule;"10 * precipitation / sum of daily temperatures above 10°C; blank if no active temperatures"

@@ -1,68 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-<title>TableView</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script></head>
+    <title>Данные климата</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'chumakov/styles.css' %}">
+</head>
 <body>
-<div class="container">
-<h2 class="text-center"><u>Среднемесячные температуры воздуха, градусы Цельсия</u></h2><br>
-<table class="table table-dark table-striped">
-<thead>
-<tr>
-<th>Name</th>
-<th>Name2</th>
-<th>BMO</th>
-<th>adress</th>
-<th>lat</th>
-<th>lon</th>
-<th>height</th>
-<th>year</th>
-<th>янв</th>
-<th>фев</th>
-<th>март</th>
-<th>апр</th>
-<th>май</th>
-<th>июнь</th>
-<th>июль</th>
-<th>авг</th>
-<th>сен</th>
-<th>окт</th>
-<th>ноя</th>
-<th>дек</th>
-</tr>
-</thead>
-<tbody>
-{% if d %}
-{% for i in d %}
-<tr>
-<td>{{i.Name}}</td>
-<td>{{i.Name2}}</td>
-<td>{{i.station_id}}</td>
-<td>{{i.Adress}}</td>
-<td>{{i.lat}}</td>
-<td>{{i.lon}}</td>
-<td>{{i.height}}</td>
-<td>{{i.year}}</td>
-<td>{{i.Tem1}}</td>
-<td>{{i.Tem2}}</td>
-<td>{{i.Tem3}}</td>
-<td>{{i.Tem4}}</td>
-<td>{{i.Tem5}}</td>
-<td>{{i.Tem6}}</td>
-<td>{{i.Tem7}}</td>
-<td>{{i.Tem8}}</td>
-<td>{{i.Tem9}}</td>
-<td>{{i.Tem10}}</td>
-<td>{{i.Tem11}}</td>
-<td>{{i.Tem12}}</td>
-</tr>
-{% endfor %}
-{% endif %}
-</tbody>
-</table>
-</div>
+    {% include 'chumakov/includes/header.html' %}
+    <main>
+        <h1>Данные по метеостанциям</h1>
+        <section>
+            <h2>Фильтры</h2>
+            <form class="data-filter data-filter-compact" method="get">
+                <label>
+                    <span>Город / станция</span>
+                    <select name="station">
+                        {% for station in station_options %}
+                            <option value="{{ station.value }}"{% if station.value == selected_station %} selected{% endif %}>
+                                {{ station.label }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </label>
+                <label>
+                    <span>Данные</span>
+                    <select name="data">
+                        {% for data_type in data_type_options %}
+                            <option value="{{ data_type.value }}"{% if data_type.value == selected_data_type %} selected{% endif %}>
+                                {{ data_type.label }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </label>
+                <button type="submit">Показать</button>
+            </form>
+        </section>
+
+        {% if selected_station_metadata %}
+            <section>
+                <h2>Метеостанция</h2>
+                <dl class="metadata-grid station-metadata-grid">
+                    {% for item in selected_station_metadata %}
+                        <div>
+                            <dt>{{ item.label }}</dt>
+                            <dd>{{ item.value }}</dd>
+                        </div>
+                    {% endfor %}
+                </dl>
+            </section>
+        {% endif %}
+
+        <section>
+            <h2>{{ table_title|default:"Данные" }}</h2>
+            {% if error %}
+                <p class="note">{{ error }}</p>
+            {% else %}
+                <p class="muted">
+                    {{ table_note }}
+                    Строк: {{ row_count }}.
+                    Источник: {{ source_file|default:"нет файла" }}.
+                </p>
+                <div class="data-table-wrap">
+                    <table class="data-table data-table-all">
+                        <thead>
+                            <tr>
+                                {% for column in columns %}
+                                    <th title="{{ column.name }}">{{ column.label }}</th>
+                                {% endfor %}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for row in rows %}
+                                <tr>
+                                    {% for value in row %}
+                                        <td>{{ value }}</td>
+                                    {% endfor %}
+                                </tr>
+                            {% empty %}
+                                <tr>
+                                    <td colspan="{{ columns|length }}">Данных для отображения нет.</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            {% endif %}
+        </section>
+    </main>
 </body>
 </html>

@@ -1,25 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-<meta charset="UTF-8">
-<title>Главная</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Главная</title>
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'chumakov/styles.css' %}">
 </head>
 <body>
-<h1> Главная страница приложения chumakov </h1>
-<h2> Дисциплина Моделирование процессов </h2>
-<h2> Кафедра систем сбора и обработки информации </h2>
-<h3> Тема Лабораторная 1. Знакомство с Django. Математические и графические модели. </h3>
-<h3> Новосибирск, 2026 г. </h3>
-<h3> Разработчик приложения: Чумаков Илья </h3>
-	<ul>
-		<li><a href="/about/">О студенте</a></li>
-		<li><a href="/data/">Данные климата</a></li>
-		<li><a href="/graph1/">График 1</a></li>
-		<li><a href="/graph2/">График 2</a></li>
-		<li><a href="/graph3/">График 3</a></li>
-		<li><a href="/graph4/">График 4</a></li>
-		<li><a href="/graph5/">График 5</a></li>
-		<li><a href="/graph6/">График 6</a></li>
-	</ul>
+	{% include 'chumakov/includes/header.html' %}
+	<main>
+		<h1>Главная страница приложения Chumakov</h1>
+		<section>
+			<h2>Описание</h2>
+			<p class="muted">Дисциплина «Моделирование процессов». Кафедра систем сбора и обработки информации.</p>
+			<p>Тема: лабораторная работа 1. Знакомство с Django. Математические и графические модели.</p>
+			<p>Новосибирск, 2026 г.</p>
+			<p>Разработчик приложения: Чумаков Илья.</p>
+		</section>
+		<section>
+			<h2>Разделы</h2>
+			<ul class="link-list">
+				<li><a href="/about/">О студенте</a></li>
+				<li><a href="/data/">Данные климата</a></li>
+				<li><a href="/modeling/">Моделинг</a></li>
+				<li><a href="/graph1/">График 1</a></li>
+				<li><a href="/graph2/">График 2</a></li>
+				<li><a href="/graph3/">График 3</a></li>
+				<li><a href="/graph4/">График 4</a></li>
+				<li><a href="/graph5/">График 5</a></li>
+				<li><a href="/graph6/">График 6</a></li>
+			</ul>
+		</section>
+	</main>
 </body>
 </html>

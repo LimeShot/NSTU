@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ title }}</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'chumakov/styles.css' %}?v=lab2-base-2">
+    <link rel="stylesheet" href="{% static 'chumakov/lab2.css' %}?v=lab2-design-5">
+</head>
+<body class="lab2-body">
+    {% include 'chumakov/includes/header.html' %}
+    <main class="lab2-page">
+        <section class="lab2-hero">
+            <div>
+                <span class="lab2-kicker">SPEI3 / ARIMA / SARIMA / XGBoost / LSTM</span>
+                <h1>{{ labels.page_title }}</h1>
+                <p>{{ labels.data_note }}</p>
+            </div>
+            {% if not error %}
+                <div class="lab2-hero-grid">
+                    <div class="lab2-stat">
+                        <span>{{ labels.station }}</span>
+                        <strong>{{ station_id }}</strong>
+                    </div>
+                    <div class="lab2-stat">
+                        <span>{{ labels.spei_period }}</span>
+                        <strong>{{ series_start }} - {{ series_end }}</strong>
+                    </div>
+                    <div class="lab2-stat">
+                        <span>{{ labels.future_period }}</span>
+                        <strong>{{ future_start }} - {{ future_end }}</strong>
+                    </div>
+                </div>
+            {% endif %}
+        </section>
+        {% if error %}
+            <p class="note">{{ error }}</p>
+        {% else %}
+            <section class="lab2-panel">
+                <h2>{{ labels.data_title }}</h2>
+                <div class="data-table-wrap">
+                    <table class="data-table lab2-table">
+                        <tbody>
+                            <tr>
+                                <th>{{ labels.station }}</th>
+                                <td>{{ station_id }}</td>
+                            </tr>
+                            <tr>
+                                <th>{{ labels.spei_period }}</th>
+                                <td>{{ series_start }} - {{ series_end }}</td>
+                            </tr>
+                            <tr>
+                                <th>{{ labels.train_end }}</th>
+                                <td>{{ train_end }}</td>
+                            </tr>
+                            <tr>
+                                <th>{{ labels.test_start }}</th>
+                                <td>{{ test_start }}</td>
+                            </tr>
+                            <tr>
+                                <th>{{ labels.future_period }}</th>
+                                <td>{{ future_start }} - {{ future_end }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="lab2-panel">
+                <h2>{{ labels.describe_title }}</h2>
+                <div class="table-wrap">
+                    <table class="lab2-table lab2-compact-table">
+                        <tbody>
+                            {% for name, value in describe.items %}
+                                <tr><th>{{ name }}</th><td>{{ value|floatformat:4 }}</td></tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="lab2-panel">
+                <h2>{{ labels.tests_title }}</h2>
+                <div class="table-wrap">
+                    <table class="lab2-table">
+                        <thead>
+                            <tr>
+                                <th>{{ labels.series }}</th>
+                                <th>{{ labels.test }}</th>
+                                <th>{{ labels.statistic }}</th>
+                                <th>p-value</th>
+                                <th>{{ labels.conclusion }}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for row in tests %}
+                                <tr>
+                                    <td>{{ row.series }}</td>
+                                    <td>{{ row.test }}</td>
+                                    <td>{{ row.statistic|floatformat:4 }}</td>
+                                    <td>{{ row.pvalue|floatformat:4 }}</td>
+                                    <td>{{ row.conclusion }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="plot lab2-panel lab2-plot">
+                <h2>Динамика SPEI3 и скользящая статистика</h2>
+                {% autoescape off %}{{ spei_plot }}{% endautoescape %}
+            </section>
+
+            <section class="plot lab2-panel lab2-plot">
+                <h2>ACF и PACF первой разности SPEI3 с 95% областью доверия</h2>
+                {% autoescape off %}{{ corr_plot }}{% endautoescape %}
+            </section>
+
+            <section class="lab2-panel">
+                <h2>{{ labels.metrics_title }}</h2>
+                <div class="table-wrap">
+                    <table class="lab2-table lab2-metrics-table">
+                        <thead>
+                            <tr>
+                                <th>{{ labels.model }}</th>
+                                <th>RMSE</th>
+                                <th>MAE</th>
+                                <th>MAPE, %</th>
+                                <th>R2</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for row in metrics %}
+                                <tr class="{% if row.is_best %}lab2-best-metric{% endif %}">
+                                    <td>{{ row.model }}</td>
+                                    <td>{{ row.RMSE|floatformat:4 }}</td>
+                                    <td>{{ row.MAE|floatformat:4 }}</td>
+                                    <td>{{ row.MAPE|floatformat:2 }}</td>
+                                    <td>{{ row.R2|floatformat:4 }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="lab2-panel lab2-notebook-panel">
+                <h2>Результаты обучения ARIMA и SARIMA</h2>
+                {% for group in notebook_arima_plots %}
+                    <div class="lab2-model-group">
+                        <h3>{{ group.model }}</h3>
+                        <div class="lab2-image-grid">
+                            {% for plot in group.plots %}
+                                <figure class="lab2-image-card">
+                                    <img src="{% static plot.src %}?v=lab2-plots-3" alt="{{ plot.title }}">
+                                    <figcaption>{{ plot.title }}</figcaption>
+                                </figure>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </section>
+
+            <section class="lab2-panel lab2-summary-panel">
+                <h2>{{ labels.arima_summary }}</h2>
+                {% for group in notebook_arima_plots %}
+                    {% if group.model == 'ARIMA' %}
+                        <div class="lab2-model-group">
+                            <div class="lab2-image-grid">
+                                {% for plot in group.plots %}
+                                    <figure class="lab2-image-card">
+                                        <img src="{% static plot.src %}?v=lab2-plots-3" alt="{{ plot.title }}">
+                                        <figcaption>{{ plot.title }}</figcaption>
+                                    </figure>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+                <pre class="summary">{{ arima_summary }}</pre>
+            </section>
+
+            <section class="lab2-panel lab2-summary-panel">
+                <h2>{{ labels.sarima_summary }}</h2>
+                {% for group in notebook_arima_plots %}
+                    {% if group.model == 'SARIMA' %}
+                        <div class="lab2-model-group">
+                            <div class="lab2-image-grid">
+                                {% for plot in group.plots %}
+                                    <figure class="lab2-image-card">
+                                        <img src="{% static plot.src %}?v=lab2-plots-3" alt="{{ plot.title }}">
+                                        <figcaption>{{ plot.title }}</figcaption>
+                                    </figure>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+                <pre class="summary lab2-summary-sarima">{{ sarima_summary }}</pre>
+            </section>
+
+            {% for item in model_plots %}
+                <section class="plot lab2-panel lab2-plot">
+                    <h2>{{ item.model }}: {{ labels.forecast }}</h2>
+                    {% autoescape off %}{{ item.plot }}{% endautoescape %}
+                </section>
+            {% endfor %}
+
+            <section class="plot lab2-panel lab2-plot">
+                <h2>Остатки моделей на тестовом периоде</h2>
+                {% autoescape off %}{{ residual_plot }}{% endautoescape %}
+            </section>
+        {% endif %}
+    </main>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SAGA_METADATA>
+  <DATABASE>
+    <FIELDS>
+      <FIELD TYPE="INTEGER">ID</FIELD>
+      <FIELD TYPE="DOUBLE">VALUE</FIELD>
+    </FIELDS>
+  </DATABASE>
+  <SOURCE></SOURCE>
+  <HISTORY saga-version="9.11.1">
+    <TOOL library="shapes_grid" id="5" name="Contour Lines from Grid">
+      <OPTION type="grid_system" id="GRID_GRIDSYSTEM" name="Grid system">
+        <CELLSIZE>0.1</CELLSIZE>
+        <XMIN>25</XMIN>
+        <YMIN>35</YMIN>
+        <XMAX>45</XMAX>
+        <YMAX>43</YMAX>
+      </OPTION>
+      <OPTION type="choice" id="VERTEX" name="Vertex Type" index="0">x, y</OPTION>
+      <OPTION type="boolean" id="LINE_OMP" name="Parallel Processing">true</OPTION>
+      <OPTION type="boolean" id="LINE_PARTS" name="Split Line Parts">true</OPTION>
+      <OPTION type="double" id="SCALE" name="Interpolation Scale">1</OPTION>
+      <OPTION type="boolean" id="BOUNDARY" name="Boundary Extension">false</OPTION>
+      <OPTION type="double" id="MINLENGTH" name="Minimum Length">0</OPTION>
+      <OPTION type="choice" id="INTERVALS" name="Interval Definition" index="1">equal intervals</OPTION>
+      <OPTION type="double" id="ZMIN" name="Base Contour Value">0</OPTION>
+      <OPTION type="double" id="ZMAX" name="Maximum Contour Value">66</OPTION>
+      <OPTION type="double" id="ZSTEP" name="Contour Interval">6</OPTION>
+      <INPUT type="grid" id="GRID" name="Grid" system="GRID_GRIDSYSTEM">
+        <TOOL library="grid_gridding" id="1" name="Inverse Distance Weighted">
+          <OPTION type="table_field" id="FIELD" name="Attribute" index="10">Os</OPTION>
+          <OPTION type="choice" id="CV_METHOD" name="Cross Validation" index="0">none</OPTION>
+          <OPTION type="choice" id="TARGET_DEFINITION" name="Target Grid System" index="0">user defined</OPTION>
+          <OPTION type="double" id="TARGET_USER_SIZE" name="Cellsize">0.1</OPTION>
+          <OPTION type="double" id="TARGET_USER_XMIN" name="West">25</OPTION>
+          <OPTION type="double" id="TARGET_USER_XMAX" name="East">45</OPTION>
+          <OPTION type="double" id="TARGET_USER_YMIN" name="South">35</OPTION>
+          <OPTION type="double" id="TARGET_USER_YMAX" name="North">43</OPTION>
+          <OPTION type="integer" id="TARGET_USER_COLS" name="Columns">201</OPTION>
+          <OPTION type="integer" id="TARGET_USER_ROWS" name="Rows">81</OPTION>
+          <OPTION type="boolean" id="TARGET_USER_FLAT" name="Rounding">true</OPTION>
+          <OPTION type="choice" id="TARGET_USER_FITS" name="Fit" index="0">nodes</OPTION>
+          <OPTION type="choice" id="SEARCH_RANGE" name="Search Range" index="1">global</OPTION>
+          <OPTION type="choice" id="SEARCH_POINTS_ALL" name="Number of Points" index="1">all points within search distance</OPTION>
+          <OPTION type="choice" id="DW_WEIGHTING" name="Weighting Function" index="1">inverse distance to a power</OPTION>
+          <OPTION type="double" id="DW_IDW_POWER" name="Power">2</OPTION>
+          <INPUT type="shapes" id="POINTS" name="Points">
+            <FILE>I:\NSTU\MOPAO\метеостанции_Чумаков.shp</FILE>
+          </INPUT>
+          <OUTPUT type="grid" id="TARGET_OUT_GRID" name="Target Grid">метеостанции_Чумаков.Os [Inverse Distance Weighted]</OUTPUT>
+        </TOOL>
+      </INPUT>
+      <OUTPUT type="shapes" id="CONTOUR" name="Contour">метеостанции_Чумаков.Os [Inverse Distance Weighted] [Interval 6]</OUTPUT>
+    </TOOL>
+  </HISTORY>
+  <FILE></FILE>
+  <DESCRIPTION></DESCRIPTION>
+  <PROJECTION>
+    <WKT2>GEODCRS["WGS 84",DATUM["World Geodetic System 1984",ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]],ID["EPSG",6326]],PRIMEM["Greenwich",0,ANGLEUNIT["Degree",0.0174532925199433]],CS[ellipsoidal,2],AXIS["longitude",east,ORDER[1],ANGLEUNIT["Degree",0.0174532925199433]],AXIS["latitude",north,ORDER[2],ANGLEUNIT["Degree",0.0174532925199433]]]</WKT2>
+    <PROJ>+proj=longlat +datum=WGS84 +no_defs +type=crs</PROJ>
+    <CODE>-1</CODE>
+  </PROJECTION>
+</SAGA_METADATA>

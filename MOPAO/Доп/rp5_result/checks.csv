@@ -1,0 +1,15 @@
+﻿параметр;значение
+source_file;data.gz
+station_period;2007-07-25 — 2026-01-01
+observations;42579
+daily_rows_with_data;6154
+decade_rows_with_data;613
+monthly_rows_with_data;207
+missing_intervals;8
+aggregation_temperature;mean
+aggregation_humidity;mean
+aggregation_precipitation;sum
+aggregation_evaporation;sum
+SPI_SPEI_window;3 months
+SPI_SPEI_note;"calculated on continuous monthly index; values after long gaps stay blank until 3 consecutive months exist"
+GTK_rule;"10 * precipitation / sum of daily temperatures above 10°C; blank if no active temperatures"

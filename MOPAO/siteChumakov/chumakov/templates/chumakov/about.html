@@ -1,23 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-<meta charset="UTF-8">
-<title>{{title}}</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{{ title }}</title>
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'chumakov/styles.css' %}">
 </head>
 <body>
-<h1> Новосибирский государственный технический университет </h1>
-<h2> Факультет: {{faculty}} </h2>
-<h2> Название дисциплины: {{course}} </h2>
-<h2> Название лабораторной работы: {{project_name}} </h2>
-<h2> Фамилия студента: {{dict.name}} </h2>
-<h2> Имя студента: {{dict.last_name}} </h2>
-<h2> Возраст: {{dict.age}} </h2>
-<h2>Название группы: {{grouplist.0}}</h2>
-<h2> Курс обучения: {{ set.0 }} </h2>
-<h2>Язык программирования: {{langs.0}} </h2>
-<h2>Фреймворк: {{work.0}} </h2>
-<h2>Объект класса a: {{obj.a}} </h2>
-<h2>Объект класса b: {{obj.b}} </h2>
-<h2>Год: {{year.2}} </h2>
+	{% include 'chumakov/includes/header.html' %}
+	<main>
+		<h1>{{ title }}</h1>
+		<section>
+			<h2>Учебные сведения</h2>
+			<table>
+				<tbody>
+					<tr><th>Университет</th><td>Новосибирский государственный технический университет</td></tr>
+					<tr><th>Факультет</th><td>{{ faculty }}</td></tr>
+					<tr><th>Кафедра</th><td>{{ department }}</td></tr>
+					<tr><th>Дисциплина</th><td>{{ course }}</td></tr>
+					<tr><th>Лабораторная работа</th><td>{{ project_name }}</td></tr>
+				</tbody>
+			</table>
+		</section>
+		<section>
+			<h2>Сведения о студенте</h2>
+			<table>
+				<tbody>
+					<tr><th>Фамилия</th><td>{{ dict.last_name }}</td></tr>
+					<tr><th>Имя</th><td>{{ dict.name }}</td></tr>
+					<tr><th>Возраст</th><td>{{ dict.age }}</td></tr>
+					<tr><th>Группа</th><td>{{ grouplist.0 }}</td></tr>
+					<tr><th>Курс обучения</th><td>{{ set.0 }}</td></tr>
+					<tr><th>Год</th><td>{{ year.2 }}</td></tr>
+				</tbody>
+			</table>
+		</section>
+		<section>
+			<h2>Технологии и объекты</h2>
+			<table>
+				<tbody>
+					<tr><th>Язык программирования</th><td>{{ langs.0 }}</td></tr>
+					<tr><th>Фреймворк</th><td>{{ work.0 }}</td></tr>
+					<tr><th>Объект класса A</th><td>{{ obj.a }}</td></tr>
+					<tr><th>Объект класса B</th><td>{{ obj.b }}</td></tr>
+				</tbody>
+			</table>
+		</section>
+	</main>
 </body>
 </html>

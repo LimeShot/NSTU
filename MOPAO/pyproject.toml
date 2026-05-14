@@ -23,3 +23,8 @@ dependencies = [
     "tqdm>=4.67.3",
     "xgboost>=3.2.0",
 ]
+
+[tool.uv.workspace]
+members = [
+    "rgr",
+]
